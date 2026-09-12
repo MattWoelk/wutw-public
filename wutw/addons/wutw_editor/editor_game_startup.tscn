@@ -1,0 +1,568 @@
+[gd_scene format=3 uid="uid://0npt8wiutysg"]
+
+[ext_resource type="Script" uid="uid://bk1o8iyx8h4cm" path="res://addons/wutw_editor/editor_game_startup.gd" id="1_ieuwd"]
+[ext_resource type="Script" uid="uid://d2vwtvh0rw5ne" path="res://addons/wutw_editor/editor_game_startup_config.gd" id="2_f8wj8"]
+[ext_resource type="Resource" uid="uid://cuwtrrj5335mg" path="res://addons/wutw_editor/editor_game_startup_template_default.tres" id="3_4r7ks"]
+[ext_resource type="Resource" uid="uid://bxkcys88wmkk4" path="res://addons/wutw_editor/editor_game_startup_template_from_savegame.tres" id="4_ty87l"]
+[ext_resource type="Resource" uid="uid://be4m5d6b5y7oh" path="res://addons/wutw_editor/editor_game_startup_template_p3_run.tres" id="5_7db6k"]
+[ext_resource type="Resource" uid="uid://dhygda1oplwgx" path="res://addons/wutw_editor/editor_game_startup_template_p5_run.tres" id="6_5bwwx"]
+[ext_resource type="Resource" uid="uid://c5egmhmcyj8u5" path="res://addons/wutw_editor/editor_game_startup_template_convergence.tres" id="7_k1hoe"]
+[ext_resource type="Resource" uid="uid://ckitj4q287vug" path="res://addons/wutw_editor/editor_game_startup_template_hub.tres" id="8_w4du1"]
+[ext_resource type="Resource" uid="uid://cobtgoiu40gjr" path="res://addons/wutw_editor/editor_game_startup_template_hub_endgame.tres" id="9_6uy2h"]
+[ext_resource type="Resource" uid="uid://8kfa2fvp0sgu" path="res://addons/wutw_editor/editor_game_startup_template_intro.tres" id="10_yw4e0"]
+[ext_resource type="Resource" uid="uid://ca7pco3v272sl" path="res://addons/wutw_editor/editor_game_startup_template_survey.tres" id="11_4r7ks"]
+
+[node name="EditorGameStartup" type="GridContainer" unique_id=1028343531]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1508.0
+offset_bottom = -103.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+script = ExtResource("1_ieuwd")
+_templates = Array[ExtResource("2_f8wj8")]([ExtResource("3_4r7ks"), ExtResource("4_ty87l"), ExtResource("5_7db6k"), ExtResource("6_5bwwx"), ExtResource("7_k1hoe"), ExtResource("8_w4du1"), ExtResource("9_6uy2h"), ExtResource("10_yw4e0"), ExtResource("11_4r7ks")])
+
+[node name="Button_Reset" type="Button" parent="." unique_id=639059354]
+layout_mode = 2
+text = "Reset"
+
+[node name="DropDown_LoadTemplate" type="OptionButton" parent="." unique_id=141815201]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text_overrun_behavior = 1
+selected = 0
+item_count = 10
+popup/item_0/text = "Load template..."
+popup/item_0/id = 0
+popup/item_1/text = "Default"
+popup/item_1/id = 1
+popup/item_2/text = "From Savegame"
+popup/item_2/id = 2
+popup/item_3/text = "P 3 Run"
+popup/item_3/id = 3
+popup/item_4/text = "P 5 Run"
+popup/item_4/id = 4
+popup/item_5/text = "Convergence"
+popup/item_5/id = 5
+popup/item_6/text = "Hub"
+popup/item_6/id = 6
+popup/item_7/text = "Hub Endgame"
+popup/item_7/id = 7
+popup/item_8/text = "Intro"
+popup/item_8/id = 8
+popup/item_9/text = "Survey"
+popup/item_9/id = 9
+
+[node name="Label" type="Label" parent="." unique_id=705750350]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+text = "Load Game: "
+horizontal_alignment = 2
+
+[node name="CheckBox_Load" type="CheckBox" parent="." unique_id=1803610252]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label3" type="Label" parent="." unique_id=740455962]
+layout_mode = 2
+text = "Temp Save: "
+horizontal_alignment = 2
+
+[node name="CheckBox_TempSave" type="CheckBox" parent="." unique_id=1334443448]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+button_pressed = true
+
+[node name="Label2" type="Label" parent="." unique_id=656932127]
+layout_mode = 2
+text = "Start State: "
+horizontal_alignment = 2
+
+[node name="DropDown_State" type="OptionButton" parent="." unique_id=1326579076]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+selected = 4
+item_count = 10
+popup/item_0/text = "INITIAL"
+popup/item_0/id = 0
+popup/item_1/text = "MAIN_MENU"
+popup/item_1/id = 1
+popup/item_2/text = "CUTSCENE_INTRO"
+popup/item_2/id = 2
+popup/item_3/text = "HUB"
+popup/item_3/id = 3
+popup/item_4/text = "RUN"
+popup/item_4/id = 4
+popup/item_5/text = "CUTSCENE_1_TO_2"
+popup/item_5/id = 5
+popup/item_6/text = "CUTSCENE_2_TO_3"
+popup/item_6/id = 6
+popup/item_7/text = "CUTSCENE_3_TO_4"
+popup/item_7/id = 7
+popup/item_8/text = "CUTSCENE_OUTRO"
+popup/item_8/id = 8
+popup/item_9/text = "CUTSCENE_DEMO_END"
+popup/item_9/id = 9
+
+[node name="Label4" type="Label" parent="." unique_id=830037314]
+layout_mode = 2
+text = "Main Quest: "
+horizontal_alignment = 2
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="." unique_id=2114869625]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="CheckBox_MainQuest" type="CheckBox" parent="HBoxContainer8" unique_id=1317673010]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+button_pressed = true
+
+[node name="DropDown_MainQuest" type="OptionButton" parent="HBoxContainer8" unique_id=1827752945]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text_overrun_behavior = 1
+selected = 17
+item_count = 31
+popup/item_0/text = "P000_INTRO"
+popup/item_0/id = 0
+popup/item_1/text = "P100_STARTED_RELIGION"
+popup/item_1/id = 100
+popup/item_2/text = "P101_CASTING_ENABLED"
+popup/item_2/id = 101
+popup/item_3/text = "P102_COMPLETED_STARTER_TUTORIAL"
+popup/item_3/id = 102
+popup/item_4/text = "P105_SETTLED_ONCE"
+popup/item_4/id = 105
+popup/item_5/text = "P110_COMPLETED_TUTORIAL"
+popup/item_5/id = 110
+popup/item_6/text = "P115_GATHERED_RELICS"
+popup/item_6/id = 115
+popup/item_7/text = "P118_REACHED_CONVERGENCE"
+popup/item_7/id = 118
+popup/item_8/text = "P120_ESTABLISHED_CAPITAL"
+popup/item_8/id = 120
+popup/item_9/text = "P125_CRAFTED_GLYPH"
+popup/item_9/id = 125
+popup/item_10/text = "P130_ESTABLISHED_SHRINES"
+popup/item_10/id = 130
+popup/item_11/text = "P140_DEDICATED_STATUE"
+popup/item_11/id = 140
+popup/item_12/text = "P200_STARTED_MAGIC"
+popup/item_12/id = 200
+popup/item_13/text = "P210_FOUND_PLACES_OF_POWER"
+popup/item_13/id = 210
+popup/item_14/text = "P220_HAUNTINGS_STUDIED"
+popup/item_14/id = 220
+popup/item_15/text = "P230_PREPARED_RITUAL"
+popup/item_15/id = 230
+popup/item_16/text = "P300_STARTED_LEADERSHIP"
+popup/item_16/id = 300
+popup/item_17/text = "P310_ESTABLISHED_CONTACT"
+popup/item_17/id = 310
+popup/item_18/text = "P320_ESTABLISHED_MONASTERY"
+popup/item_18/id = 320
+popup/item_19/text = "P330_BEFRIENDED_COMPANION"
+popup/item_19/id = 330
+popup/item_20/text = "P340_SUMMONED_DRAGON"
+popup/item_20/id = 340
+popup/item_21/text = "P350_SIGNED_ACCORD"
+popup/item_21/id = 350
+popup/item_22/text = "P400_STARTED_DEPRESSION"
+popup/item_22/id = 400
+popup/item_23/text = "P410_FOUND_KID"
+popup/item_23/id = 410
+popup/item_24/text = "P420_SENT_OFF_KID"
+popup/item_24/id = 420
+popup/item_25/text = "P430_STARTED_DEBATE"
+popup/item_25/id = 430
+popup/item_26/text = "P435_TRANSLATED_COMMANDMENTS"
+popup/item_26/id = 435
+popup/item_27/text = "P440_FINISHED_DEBATE"
+popup/item_27/id = 440
+popup/item_28/text = "P500_STARTED"
+popup/item_28/id = 500
+popup/item_29/text = "P510_FINISHED_OUTRO_CUTSCENE"
+popup/item_29/id = 510
+popup/item_30/text = "NEVER_REACHED"
+popup/item_30/id = 1000
+
+[node name="Label_StagesPerSeason" type="Label" parent="." unique_id=1928815465]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Stages/Season: "
+horizontal_alignment = 2
+
+[node name="HBox_StagesPerSeason" type="HBoxContainer" parent="." unique_id=1245930228]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="CheckBox_StagesPerSeason" type="CheckBox" parent="HBox_StagesPerSeason" unique_id=1640200295]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Slider_StagesPerSeason" type="HSlider" parent="HBox_StagesPerSeason" unique_id=1513019872]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 1.0
+max_value = 10.0
+value = 6.0
+rounded = true
+editable = false
+
+[node name="Label_StagesBeforeSurvey" type="Label" parent="." unique_id=1946845641]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Stages for Survey: "
+horizontal_alignment = 2
+
+[node name="HBox_StagesBeforeSurvey" type="HBoxContainer" parent="." unique_id=1828738048]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="CheckBox_StagesBeforeSurvey" type="CheckBox" parent="HBox_StagesBeforeSurvey" unique_id=1093106751]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+button_pressed = true
+
+[node name="Slider_StagesBeforeSurvey" type="HSlider" parent="HBox_StagesBeforeSurvey" unique_id=189050279]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 1.0
+max_value = 5.0
+value = 1.0
+rounded = true
+
+[node name="Label_HauntingChance" type="Label" parent="." unique_id=1153054919]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Haunt Chance: "
+horizontal_alignment = 2
+
+[node name="HBox_HauntingChance" type="HBoxContainer" parent="." unique_id=165124975]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="CheckBox_HauntingChance" type="CheckBox" parent="HBox_HauntingChance" unique_id=980037941]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Slider_HauntingChance" type="HSlider" parent="HBox_HauntingChance" unique_id=86161209]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 1.0
+editable = false
+
+[node name="Label_Companion" type="Label" parent="." unique_id=598099891]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Companion: "
+horizontal_alignment = 2
+
+[node name="HBox_Companion" type="HBoxContainer" parent="." unique_id=1485912298]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="CheckBox_Companion" type="CheckBox" parent="HBox_Companion" unique_id=1672442057]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="DropDown_Companion" type="OptionButton" parent="HBox_Companion" unique_id=754611233]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+disabled = true
+selected = 0
+item_count = 15
+popup/item_0/text = "Cat"
+popup/item_0/id = 0
+popup/item_1/text = "Crane"
+popup/item_1/id = 1
+popup/item_2/text = "Deer"
+popup/item_2/id = 2
+popup/item_3/text = "Dog"
+popup/item_3/id = 3
+popup/item_4/text = "Dragon"
+popup/item_4/id = 4
+popup/item_5/text = "Fox"
+popup/item_5/id = 5
+popup/item_6/text = "Frog"
+popup/item_6/id = 6
+popup/item_7/text = "Carp"
+popup/item_7/id = 7
+popup/item_8/text = "Monkey"
+popup/item_8/id = 8
+popup/item_9/text = "Snake"
+popup/item_9/id = 9
+popup/item_10/text = "Spider"
+popup/item_10/id = 10
+popup/item_11/text = "Sea Bream"
+popup/item_11/id = 11
+popup/item_12/text = "Tanuki"
+popup/item_12/id = 12
+popup/item_13/text = "Tiger"
+popup/item_13/id = 13
+popup/item_14/text = "Turtle"
+popup/item_14/id = 14
+
+[node name="Label_RunSeed" type="Label" parent="." unique_id=27897424]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Run Seed: "
+horizontal_alignment = 2
+
+[node name="HBox_RunSeed" type="HBoxContainer" parent="." unique_id=2034605121]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="CheckBox_RunSeed" type="CheckBox" parent="HBox_RunSeed" unique_id=1656853564]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="SpinBox_RunSeed" type="SpinBox" parent="HBox_RunSeed" unique_id=641319803]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10000.0
+editable = false
+
+[node name="Label_MapSeed" type="Label" parent="." unique_id=1639673627]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Map Seed: "
+horizontal_alignment = 2
+
+[node name="HBox_MapSeed" type="HBoxContainer" parent="." unique_id=1888949646]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="CheckBox_MapSeed" type="CheckBox" parent="HBox_MapSeed" unique_id=616904821]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+button_pressed = true
+
+[node name="SpinBox_MapSeed" type="SpinBox" parent="HBox_MapSeed" unique_id=588424554]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 10000.0
+value = 8962.0
+rounded = true
+
+[node name="Label11" type="Label" parent="." unique_id=2003546747]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Starting Quest: "
+horizontal_alignment = 2
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="." unique_id=1227819044]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="CheckBox_StartingQuest" type="CheckBox" parent="HBoxContainer9" unique_id=897940357]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="DropDown_StartingQuest" type="OptionButton" parent="HBoxContainer9" unique_id=119854579]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+disabled = true
+text_overrun_behavior = 1
+selected = 0
+item_count = 46
+popup/item_0/text = "-----"
+popup/item_0/id = 0
+popup/item_1/text = "companion_cat"
+popup/item_1/id = 1
+popup/item_2/text = "companion_crane"
+popup/item_2/id = 2
+popup/item_3/text = "companion_deer"
+popup/item_3/id = 3
+popup/item_4/text = "companion_dog"
+popup/item_4/id = 4
+popup/item_5/text = "companion_dragon"
+popup/item_5/id = 5
+popup/item_6/text = "companion_fox"
+popup/item_6/id = 6
+popup/item_7/text = "companion_frog"
+popup/item_7/id = 7
+popup/item_8/text = "companion_koi"
+popup/item_8/id = 8
+popup/item_9/text = "companion_monkey"
+popup/item_9/id = 9
+popup/item_10/text = "companion_snake"
+popup/item_10/id = 10
+popup/item_11/text = "companion_spider"
+popup/item_11/id = 11
+popup/item_12/text = "companion_tai"
+popup/item_12/id = 12
+popup/item_13/text = "companion_tanuki"
+popup/item_13/id = 13
+popup/item_14/text = "companion_tiger"
+popup/item_14/id = 14
+popup/item_15/text = "companion_turtle"
+popup/item_15/id = 15
+popup/item_16/text = "main_1_10_tutorial"
+popup/item_16/id = 16
+popup/item_17/text = "main_1_15_relics"
+popup/item_17/id = 17
+popup/item_18/text = "main_1_20_capital"
+popup/item_18/id = 18
+popup/item_19/text = "main_1_25_crafting"
+popup/item_19/id = 19
+popup/item_20/text = "main_1_30_shrines"
+popup/item_20/id = 20
+popup/item_21/text = "main_1_40_dedication"
+popup/item_21/id = 21
+popup/item_22/text = "main_2_10_places_of_power"
+popup/item_22/id = 22
+popup/item_23/text = "main_2_20_hauntings"
+popup/item_23/id = 23
+popup/item_24/text = "main_2_30_consecration"
+popup/item_24/id = 24
+popup/item_25/text = "main_3_10_listen"
+popup/item_25/id = 25
+popup/item_26/text = "main_3_20_wild_monastery"
+popup/item_26/id = 26
+popup/item_27/text = "main_3_30_companions"
+popup/item_27/id = 27
+popup/item_28/text = "main_3_40_dragon"
+popup/item_28/id = 28
+popup/item_29/text = "main_3_50_companions"
+popup/item_29/id = 29
+popup/item_30/text = "main_4_10_news"
+popup/item_30/id = 30
+popup/item_31/text = "main_4_20_avatar_home"
+popup/item_31/id = 31
+popup/item_32/text = "main_4_30_scholar_hub"
+popup/item_32/id = 32
+popup/item_33/text = "main_4_40_debate"
+popup/item_33/id = 33
+popup/item_34/text = "settler_ascetic"
+popup/item_34/id = 34
+popup/item_35/text = "settler_scholar"
+popup/item_35/id = 35
+popup/item_36/text = "settler_daredevil"
+popup/item_36/id = 36
+popup/item_37/text = "settler_dragon_scale"
+popup/item_37/id = 37
+popup/item_38/text = "settler_hanami"
+popup/item_38/id = 38
+popup/item_39/text = "settler_planner"
+popup/item_39/id = 39
+popup/item_40/text = "settler_sick_elder"
+popup/item_40/id = 40
+popup/item_41/text = "settler_talisman_bead"
+popup/item_41/id = 41
+popup/item_42/text = "settler_talisman_ring"
+popup/item_42/id = 42
+popup/item_43/text = "settler_talisman_scent_bag"
+popup/item_43/id = 43
+popup/item_44/text = "settler_talisman_seed_pouch"
+popup/item_44/id = 44
+popup/item_45/text = "settler_wildlife_ranger"
+popup/item_45/id = 45
+
+[node name="CheckBox_StartingQuestActive" type="CheckBox" parent="HBoxContainer9" unique_id=536725185]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+disabled = true
+text = "Active"
+
+[node name="Label5" type="Label" parent="." unique_id=224215093]
+layout_mode = 2
+text = "All Museum Unlocks: "
+horizontal_alignment = 2
+
+[node name="CheckBox_MuseumUnlocks" type="CheckBox" parent="." unique_id=531707321]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label10" type="Label" parent="." unique_id=1031226073]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Skills: "
+horizontal_alignment = 2
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="." unique_id=1047652774]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CheckBox_Skills" type="CheckBox" parent="HBoxContainer7" unique_id=1905976355]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer7" unique_id=525715269]
+custom_minimum_size = Vector2(200, 500)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBox_Skills" type="VBoxContainer" parent="HBoxContainer7/ScrollContainer" unique_id=197046831]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[connection signal="pressed" from="Button_Reset" to="." method="_on_button_reset_pressed"]
+[connection signal="item_selected" from="DropDown_LoadTemplate" to="." method="_on_drop_down_load_template_item_selected"]
+[connection signal="pressed" from="CheckBox_Load" to="." method="_on_ui_changed"]
+[connection signal="pressed" from="CheckBox_TempSave" to="." method="_on_ui_changed"]
+[connection signal="item_selected" from="DropDown_State" to="." method="_on_item_selected"]
+[connection signal="pressed" from="HBoxContainer8/CheckBox_MainQuest" to="." method="_on_ui_changed"]
+[connection signal="item_selected" from="HBoxContainer8/DropDown_MainQuest" to="." method="_on_item_selected"]
+[connection signal="pressed" from="HBox_StagesPerSeason/CheckBox_StagesPerSeason" to="." method="_on_ui_changed"]
+[connection signal="value_changed" from="HBox_StagesPerSeason/Slider_StagesPerSeason" to="." method="_on_value_changed"]
+[connection signal="pressed" from="HBox_StagesBeforeSurvey/CheckBox_StagesBeforeSurvey" to="." method="_on_ui_changed"]
+[connection signal="value_changed" from="HBox_StagesBeforeSurvey/Slider_StagesBeforeSurvey" to="." method="_on_value_changed"]
+[connection signal="pressed" from="HBox_HauntingChance/CheckBox_HauntingChance" to="." method="_on_ui_changed"]
+[connection signal="value_changed" from="HBox_HauntingChance/Slider_HauntingChance" to="." method="_on_value_changed"]
+[connection signal="pressed" from="HBox_Companion/CheckBox_Companion" to="." method="_on_ui_changed"]
+[connection signal="item_selected" from="HBox_Companion/DropDown_Companion" to="." method="_on_item_selected"]
+[connection signal="pressed" from="HBox_RunSeed/CheckBox_RunSeed" to="." method="_on_ui_changed"]
+[connection signal="value_changed" from="HBox_RunSeed/SpinBox_RunSeed" to="." method="_on_value_changed"]
+[connection signal="pressed" from="HBox_MapSeed/CheckBox_MapSeed" to="." method="_on_ui_changed"]
+[connection signal="value_changed" from="HBox_MapSeed/SpinBox_MapSeed" to="." method="_on_value_changed"]
+[connection signal="pressed" from="HBoxContainer9/CheckBox_StartingQuest" to="." method="_on_ui_changed"]
+[connection signal="item_selected" from="HBoxContainer9/DropDown_StartingQuest" to="." method="_on_item_selected"]
+[connection signal="pressed" from="HBoxContainer9/CheckBox_StartingQuestActive" to="." method="_on_ui_changed"]
+[connection signal="pressed" from="CheckBox_MuseumUnlocks" to="." method="_on_ui_changed"]
+[connection signal="pressed" from="HBoxContainer7/CheckBox_Skills" to="." method="_on_ui_changed"]

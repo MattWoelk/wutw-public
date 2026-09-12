@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://dwslwqfamnrlw"]
+
+[ext_resource type="Script" uid="uid://cg8x404s0xdod" path="res://art/viewer/artist_details.gd" id="1_ql1vj"]
+[ext_resource type="Shader" uid="uid://b7ms4dx6p63n8" path="res://map/settlement_name.gdshader" id="2_sgsp5"]
+[ext_resource type="Texture2D" uid="uid://chxf88ekbq0ie" path="res://visuals/canvas.png" id="3_ejmki"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="4_ppo1h"]
+[ext_resource type="Shader" uid="uid://b0k6ne0jxgco0" path="res://art/viewer/artist_portrait.gdshader" id="5_sgsp5"]
+[ext_resource type="PackedScene" uid="uid://cav5ncic10m8v" path="res://art/viewer/art_listing.tscn" id="5_yrecp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_se2uv"]
+shader = ExtResource("2_sgsp5")
+shader_parameter/overlay_tex = ExtResource("3_ejmki")
+shader_parameter/overlay_scale = 7.89
+shader_parameter/width = 700.0
+shader_parameter/color_add = Color(0.5246, 0.5872267, 0.61, 1)
+shader_parameter/power = 6.775
+shader_parameter/reveal_progress = 0.999999977648
+shader_parameter/reveal_margin = 0.23999999463552
+
+[sub_resource type="LabelSettings" id="LabelSettings_uhs7v"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0.85, 0.76585007, 0.6205, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d7faj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oi1d1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ybksi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_apj2v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jl7qg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pyjxa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ejmki"]
+shader = ExtResource("5_sgsp5")
+shader_parameter/border_size = 0.014000000665
+shader_parameter/border_color = Color(0.31, 0.16016667, 0, 1)
+
+[node name="ArtistDetails" type="MarginContainer" unique_id=1461303784]
+offset_right = 1090.0
+offset_bottom = 704.0
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+script = ExtResource("1_ql1vj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=945082184]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1066754758]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="NameLabel" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=2107477177]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_se2uv")
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Artist Name (1650 - 1730)"
+label_settings = SubResource("LabelSettings_uhs7v")
+vertical_alignment = 1
+
+[node name="LinkButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=970106034]
+unique_name_in_owner = true
+modulate = Color(0.48, 0.105600014, 0.11807999, 1)
+layout_mode = 2
+size_flags_vertical = 8
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d7faj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_oi1d1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ybksi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_apj2v")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jl7qg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pyjxa")
+text = "🔗"
+flat = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1908479247]
+layout_mode = 2
+
+[node name="MainTextLabel" parent="VBoxContainer/HBoxContainer2" unique_id=121303431 instance=ExtResource("4_ppo1h")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(800, 10)
+layout_mode = 2
+size_flags_horizontal = 2
+mouse_filter = 1
+text = "Blurb blurb blurb"
+fit_content = true
+scroll_active = true
+tooltip_directions = Array[int]([5, 1])
+
+[node name="Portrait" type="TextureRect" parent="VBoxContainer/HBoxContainer2" unique_id=516939883]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_ejmki")
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+size_flags_horizontal = 3
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ArtListing" parent="VBoxContainer" unique_id=454470456 instance=ExtResource("5_yrecp")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/LinkButton" to="." method="_on_link_button_pressed"]

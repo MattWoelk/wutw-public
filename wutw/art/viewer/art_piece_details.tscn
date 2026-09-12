@@ -1,0 +1,267 @@
+[gd_scene format=3 uid="uid://c6y6jurtrptc3"]
+
+[ext_resource type="Script" uid="uid://dl40b7h2a7y2h" path="res://art/viewer/art_piece_details.gd" id="1_3kjrg"]
+[ext_resource type="Shader" uid="uid://b7ms4dx6p63n8" path="res://map/settlement_name.gdshader" id="2_vik0l"]
+[ext_resource type="Texture2D" uid="uid://chxf88ekbq0ie" path="res://visuals/canvas.png" id="3_0wv44"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="4_ywuky"]
+[ext_resource type="Texture2D" uid="uid://ujgf00tnktas" path="res://art/viewer/looking_glass.png" id="5_3kjrg"]
+[ext_resource type="Texture2D" uid="uid://ser7uae1y07y" path="res://art/viewer/fullscreen.png" id="6_vik0l"]
+[ext_resource type="PackedScene" uid="uid://cdk80djgnr6am" path="res://art/japan_map/japan_map.tscn" id="7_vik0l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_se2uv"]
+shader = ExtResource("2_vik0l")
+shader_parameter/overlay_tex = ExtResource("3_0wv44")
+shader_parameter/overlay_scale = 7.89
+shader_parameter/width = 700.0
+shader_parameter/color_add = Color(0.5246, 0.5872267, 0.61, 1)
+shader_parameter/power = 6.775
+shader_parameter/reveal_progress = 0.999999977648
+shader_parameter/reveal_margin = 0.23999999463552
+
+[sub_resource type="LabelSettings" id="LabelSettings_uhs7v"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0.85, 0.76585007, 0.6205, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d7faj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oi1d1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ybksi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_apj2v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jl7qg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pyjxa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vik0l"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[node name="ArtPieceDetails" type="MarginContainer" unique_id=1461303784]
+offset_right = 1010.0
+offset_bottom = 753.0
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+script = ExtResource("1_3kjrg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=945082184]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1066754758]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="NameLabel" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=2107477177]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_se2uv")
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Piece Name"
+label_settings = SubResource("LabelSettings_uhs7v")
+vertical_alignment = 1
+
+[node name="ArtistLabel" parent="VBoxContainer/HBoxContainer" unique_id=1794953722 instance=ExtResource("4_ywuky")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 20
+text = "by Foo Bar"
+fit_content = true
+autowrap_mode = 0
+tooltip_directions = Array[int]([5, 1])
+
+[node name="LinkButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=970106034]
+unique_name_in_owner = true
+modulate = Color(0.48, 0.105600014, 0.11807999, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d7faj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_oi1d1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ybksi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_apj2v")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jl7qg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pyjxa")
+text = "🔗"
+flat = true
+
+[node name="ZoomButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=547189875]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.4)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 8
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d7faj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_oi1d1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ybksi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_apj2v")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jl7qg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pyjxa")
+icon = ExtResource("5_3kjrg")
+flat = true
+expand_icon = true
+
+[node name="FullscreenButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=501010235]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.4)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d7faj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_oi1d1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ybksi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_apj2v")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jl7qg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pyjxa")
+icon = ExtResource("6_vik0l")
+flat = true
+expand_icon = true
+
+[node name="HorizontalImage" type="TextureRect" parent="VBoxContainer" unique_id=286587822]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 2
+expand_mode = 1
+
+[node name="Frame" type="Panel" parent="VBoxContainer/HorizontalImage" unique_id=95129393]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vik0l")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=846702712]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2" unique_id=841188731]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MainTextLabel" parent="VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=121303431 instance=ExtResource("4_ywuky")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+theme_override_font_sizes/bold_italics_font_size = 18
+theme_override_font_sizes/italics_font_size = 18
+theme_override_font_sizes/mono_font_size = 18
+text = "Blurb blurb blurbBlurb blurb blurbBlurb blurb blurbBlurb blurb blurbBlurb blurb blurbBlurb blurb blurbBlurb blurb blurbBlurb blurb blurbBlurb blurb blurbBlurb blurb blurb"
+fit_content = true
+scroll_active = true
+tooltip_directions = Array[int]([5, 1])
+
+[node name="Spacer" type="Control" parent="VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1583913832]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="MapOffset" type="Control" parent="VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1229071897]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(410, 410)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+
+[node name="JapanMap" parent="VBoxContainer/HBoxContainer2/VBoxContainer/MapOffset" unique_id=282624809 instance=ExtResource("7_vik0l")]
+unique_name_in_owner = true
+scale = Vector2(0.5, 0.5)
+selected_provice = 25
+
+[node name="VerticalImage" type="TextureRect" parent="VBoxContainer/HBoxContainer2" unique_id=516939883]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 700)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Frame" type="Panel" parent="VBoxContainer/HBoxContainer2/VerticalImage" unique_id=1741317156]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vik0l")
+
+[node name="ZoomPreview" type="Sprite2D" parent="." unique_id=1737567985]
+unique_name_in_owner = true
+top_level = true
+texture_repeat = 1
+position = Vector2(1020, 526)
+region_enabled = true
+region_rect = Rect2(-25.66, 0, 400, 400)
+
+[node name="Frame" type="Panel" parent="ZoomPreview" unique_id=1451635993]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -200.0
+offset_right = -200.0
+offset_bottom = -200.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vik0l")
+
+[node name="FullscreenPreview" type="Node2D" parent="." unique_id=714634243]
+unique_name_in_owner = true
+visible = false
+top_level = true
+z_index = 4096
+
+[node name="FullscreenBG" type="ColorRect" parent="FullscreenPreview" unique_id=1277759658]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="FullscreenImage" type="TextureRect" parent="FullscreenPreview" unique_id=1396861025]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 0
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/LinkButton" to="." method="_on_link_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ZoomButton" to="." method="_on_zoom_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/FullscreenButton" to="." method="_on_fullscreen_button_pressed"]
+[connection signal="gui_input" from="FullscreenPreview/FullscreenImage" to="." method="_on_fullscreen_image_gui_input"]

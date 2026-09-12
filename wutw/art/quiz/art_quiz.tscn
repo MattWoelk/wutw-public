@@ -1,0 +1,574 @@
+[gd_scene format=3 uid="uid://qibgnr1rjw3o"]
+
+[ext_resource type="Script" uid="uid://cc8q0grfji84t" path="res://art/quiz/art_quiz.gd" id="1_ey60x"]
+[ext_resource type="Resource" uid="uid://dyx8q8iako05e" path="res://art/styles/style_meisho.tres" id="2_ti24n"]
+[ext_resource type="Shader" uid="uid://ygmrqrvg5hpm" path="res://theme/button/ukiyoe_button.gdshader" id="3_dnj82"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="4_7y6gr"]
+[ext_resource type="Texture2D" uid="uid://ctgl61r3xxsqv" path="res://theme/button/button_fill.png" id="4_ti24n"]
+[ext_resource type="Texture2D" uid="uid://blje81yu8734p" path="res://theme/button/button_shape.png" id="5_exvpi"]
+[ext_resource type="Texture2D" uid="uid://doe4603a6ngco" path="res://theme/button/button_outline.png" id="6_j7qmt"]
+[ext_resource type="PackedScene" uid="uid://cdk80djgnr6am" path="res://art/japan_map/japan_map.tscn" id="7_3cxu5"]
+[ext_resource type="Texture2D" uid="uid://cwubixgc8n0yr" path="res://theme/button/button_swish_left.png" id="7_j7msj"]
+[ext_resource type="Texture2D" uid="uid://n6l17h4ysayj" path="res://theme/button/button_swish_right.png" id="8_ftfiq"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="9_genih"]
+[ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="10_30rqn"]
+[ext_resource type="Shader" uid="uid://tx68dqb073ho" path="res://art/quiz/art_quiz_frame.gdshader" id="15_j7qmt"]
+[ext_resource type="Texture2D" uid="uid://chvlqjkcjqdts" path="res://stage/survey/episodes/river_bridge.png" id="16_j7qmt"]
+[ext_resource type="PackedScene" uid="uid://b7tihpu7m4sf5" path="res://japanese/practice_blanks/practice_insights_score.tscn" id="17_6puus"]
+[ext_resource type="Script" uid="uid://dbh5bpr5jdgyr" path="res://theme/slider/ukiyoe_slider.gd" id="20_1l5gt"]
+
+[sub_resource type="Gradient" id="Gradient_rmmdd"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jnknv"]
+gradient = SubResource("Gradient_rmmdd")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8o16q"]
+shader = ExtResource("3_dnj82")
+shader_parameter/mask_tex = ExtResource("5_exvpi")
+shader_parameter/background = ExtResource("4_ti24n")
+shader_parameter/gradient = SubResource("GradientTexture2D_jnknv")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("6_j7qmt")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("8_ftfiq")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("7_j7msj")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cnyvt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bx70w"]
+shader = ExtResource("15_j7qmt")
+
+[node name="ArtQuiz" type="MarginContainer" unique_id=1461303784]
+offset_right = 1580.0
+offset_bottom = 753.0
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+script = ExtResource("1_ey60x")
+meisho_style = ExtResource("2_ti24n")
+
+[node name="IntroBox" type="VBoxContainer" parent="." unique_id=876970341]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="IntroLabel" parent="IntroBox" unique_id=1627404269 instance=ExtResource("4_7y6gr")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+theme_override_font_sizes/bold_italics_font_size = 18
+theme_override_font_sizes/italics_font_size = 18
+theme_override_font_sizes/mono_font_size = 18
+text = "
+[b]<header_font_size>Art Quiz[/font_size][/b]
+
+Here you can test your knowledge of the classical art featured in the game.
+
+You will receive questions about various aspects of a given print, such as its artist, style or location.
+
+ If you answer enough questions correctly, you will gain some insights.
+
+ You can browse the art freely during the quiz.
+
+"
+fit_content = true
+scroll_active = true
+horizontal_alignment = 1
+tooltip_directions = Array[int]([5, 1])
+
+[node name="StartButton" type="Button" parent="IntroBox" unique_id=1773788172]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_8o16q")
+instance_shader_parameters/background_offset = Vector2(0.39795402, 0.8583248)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+focus_mode = 0
+theme_override_styles/normal = ExtResource("9_genih")
+theme_override_styles/pressed = ExtResource("9_genih")
+theme_override_styles/hover = ExtResource("9_genih")
+theme_override_styles/hover_pressed = ExtResource("9_genih")
+theme_override_styles/disabled = ExtResource("9_genih")
+text = "Start Quiz"
+script = ExtResource("10_30rqn")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="QuestionBox" type="HBoxContainer" parent="." unique_id=2105300417]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestionBox" unique_id=841188731]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 30
+
+[node name="Control" type="Control" parent="QuestionBox/VBoxContainer" unique_id=1943709795]
+layout_mode = 2
+
+[node name="InsightsScore" parent="QuestionBox/VBoxContainer/Control" unique_id=1276551969 instance=ExtResource("17_6puus")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -72.0
+offset_right = 0.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+tooltip = "<header_font_size>[b]Insights[/b][/font_size]
+
+For every 3 correct answers, you will gain 1 <term:insight>."
+
+[node name="QuestionTitleBox" type="HBoxContainer" parent="QuestionBox/VBoxContainer" unique_id=1845501988]
+layout_mode = 2
+
+[node name="QuestionLabel" parent="QuestionBox/VBoxContainer/QuestionTitleBox" unique_id=121303431 instance=ExtResource("4_7y6gr")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+theme_override_font_sizes/bold_italics_font_size = 18
+theme_override_font_sizes/italics_font_size = 18
+theme_override_font_sizes/mono_font_size = 18
+text = "Choose one of the choices below."
+fit_content = true
+scroll_active = true
+horizontal_alignment = 1
+tooltip_directions = Array[int]([5, 1])
+
+[node name="QuestionSwitcher" type="PanelContainer" parent="QuestionBox/VBoxContainer" unique_id=151217235]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_cnyvt")
+
+[node name="Question_Title" type="VBoxContainer" parent="QuestionBox/VBoxContainer/QuestionSwitcher" unique_id=1020015247]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="TitleButton1" type="Button" parent="QuestionBox/VBoxContainer/QuestionSwitcher/Question_Title" unique_id=1332652345]
+material = SubResource("ShaderMaterial_8o16q")
+instance_shader_parameters/background_offset = Vector2(0.39795402, 0.8583248)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 6
+focus_mode = 0
+theme_override_styles/normal = ExtResource("9_genih")
+theme_override_styles/pressed = ExtResource("9_genih")
+theme_override_styles/hover = ExtResource("9_genih")
+theme_override_styles/hover_pressed = ExtResource("9_genih")
+theme_override_styles/disabled = ExtResource("9_genih")
+text = "Fuji at Midnight"
+script = ExtResource("10_30rqn")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="TitleButton2" type="Button" parent="QuestionBox/VBoxContainer/QuestionSwitcher/Question_Title" unique_id=416921695]
+material = SubResource("ShaderMaterial_8o16q")
+instance_shader_parameters/background_offset = Vector2(0.39795402, 0.8583248)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 6
+focus_mode = 0
+theme_override_styles/normal = ExtResource("9_genih")
+theme_override_styles/pressed = ExtResource("9_genih")
+theme_override_styles/hover = ExtResource("9_genih")
+theme_override_styles/hover_pressed = ExtResource("9_genih")
+theme_override_styles/disabled = ExtResource("9_genih")
+text = "Fuji at Dawn"
+script = ExtResource("10_30rqn")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="TitleButton3" type="Button" parent="QuestionBox/VBoxContainer/QuestionSwitcher/Question_Title" unique_id=899247295]
+material = SubResource("ShaderMaterial_8o16q")
+instance_shader_parameters/background_offset = Vector2(0.39795402, 0.8583248)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 6
+focus_mode = 0
+theme_override_styles/normal = ExtResource("9_genih")
+theme_override_styles/pressed = ExtResource("9_genih")
+theme_override_styles/hover = ExtResource("9_genih")
+theme_override_styles/hover_pressed = ExtResource("9_genih")
+theme_override_styles/disabled = ExtResource("9_genih")
+text = "Fuji at Dawn"
+script = ExtResource("10_30rqn")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="TitleButton4" type="Button" parent="QuestionBox/VBoxContainer/QuestionSwitcher/Question_Title" unique_id=1329048953]
+material = SubResource("ShaderMaterial_8o16q")
+instance_shader_parameters/background_offset = Vector2(0.39795402, 0.8583248)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 6
+focus_mode = 0
+theme_override_styles/normal = ExtResource("9_genih")
+theme_override_styles/pressed = ExtResource("9_genih")
+theme_override_styles/hover = ExtResource("9_genih")
+theme_override_styles/hover_pressed = ExtResource("9_genih")
+theme_override_styles/disabled = ExtResource("9_genih")
+text = "Fuji at Dawn"
+script = ExtResource("10_30rqn")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="Question_Artist" type="VBoxContainer" parent="QuestionBox/VBoxContainer/QuestionSwitcher" unique_id=689107144]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="ArtistButton1" type="Button" parent="QuestionBox/VBoxContainer/QuestionSwitcher/Question_Artist" unique_id=1116284736]
+material = SubResource("ShaderMaterial_8o16q")
+instance_shader_parameters/background_offset = Vector2(0.39795402, 0.8583248)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+focus_mode = 0
+theme_override_styles/normal = ExtResource("9_genih")
+theme_override_styles/pressed = ExtResource("9_genih")
+theme_override_styles/hover = ExtResource("9_genih")
+theme_override_styles/hover_pressed = ExtResource("9_genih")
+theme_override_styles/disabled = ExtResource("9_genih")
+text = "Utagawa Hiroshige"
+script = ExtResource("10_30rqn")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="ArtistButton2" type="Button" parent="QuestionBox/VBoxContainer/QuestionSwitcher/Question_Artist" unique_id=845480565]
+material = SubResource("ShaderMaterial_8o16q")
+instance_shader_parameters/background_offset = Vector2(0.39795402, 0.8583248)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+focus_mode = 0
+theme_override_styles/normal = ExtResource("9_genih")
+theme_override_styles/pressed = ExtResource("9_genih")
+theme_override_styles/hover = ExtResource("9_genih")
+theme_override_styles/hover_pressed = ExtResource("9_genih")
+theme_override_styles/disabled = ExtResource("9_genih")
+text = "Katsushika Hokusai"
+script = ExtResource("10_30rqn")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="ArtistButton3" type="Button" parent="QuestionBox/VBoxContainer/QuestionSwitcher/Question_Artist" unique_id=1151901423]
+material = SubResource("ShaderMaterial_8o16q")
+instance_shader_parameters/background_offset = Vector2(0.39795402, 0.8583248)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+focus_mode = 0
+theme_override_styles/normal = ExtResource("9_genih")
+theme_override_styles/pressed = ExtResource("9_genih")
+theme_override_styles/hover = ExtResource("9_genih")
+theme_override_styles/hover_pressed = ExtResource("9_genih")
+theme_override_styles/disabled = ExtResource("9_genih")
+text = "Ogata Gekkō"
+script = ExtResource("10_30rqn")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="ArtistButton4" type="Button" parent="QuestionBox/VBoxContainer/QuestionSwitcher/Question_Artist" unique_id=736290871]
+material = SubResource("ShaderMaterial_8o16q")
+instance_shader_parameters/background_offset = Vector2(0.39795402, 0.8583248)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+focus_mode = 0
+theme_override_styles/normal = ExtResource("9_genih")
+theme_override_styles/pressed = ExtResource("9_genih")
+theme_override_styles/hover = ExtResource("9_genih")
+theme_override_styles/hover_pressed = ExtResource("9_genih")
+theme_override_styles/disabled = ExtResource("9_genih")
+text = "Elizabeth Keith"
+script = ExtResource("10_30rqn")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="Question_Style" type="VBoxContainer" parent="QuestionBox/VBoxContainer/QuestionSwitcher" unique_id=1193367168]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="StyleButton1" type="Button" parent="QuestionBox/VBoxContainer/QuestionSwitcher/Question_Style" unique_id=1132904355]
+material = SubResource("ShaderMaterial_8o16q")
+instance_shader_parameters/background_offset = Vector2(0.39795402, 0.8583248)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+focus_mode = 0
+theme_override_styles/normal = ExtResource("9_genih")
+theme_override_styles/pressed = ExtResource("9_genih")
+theme_override_styles/hover = ExtResource("9_genih")
+theme_override_styles/hover_pressed = ExtResource("9_genih")
+theme_override_styles/disabled = ExtResource("9_genih")
+text = "meisho-e"
+script = ExtResource("10_30rqn")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="StyleButton2" type="Button" parent="QuestionBox/VBoxContainer/QuestionSwitcher/Question_Style" unique_id=907504226]
+material = SubResource("ShaderMaterial_8o16q")
+instance_shader_parameters/background_offset = Vector2(0.39795402, 0.8583248)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+focus_mode = 0
+theme_override_styles/normal = ExtResource("9_genih")
+theme_override_styles/pressed = ExtResource("9_genih")
+theme_override_styles/hover = ExtResource("9_genih")
+theme_override_styles/hover_pressed = ExtResource("9_genih")
+theme_override_styles/disabled = ExtResource("9_genih")
+text = "genji-e"
+script = ExtResource("10_30rqn")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="StyleButton3" type="Button" parent="QuestionBox/VBoxContainer/QuestionSwitcher/Question_Style" unique_id=905414453]
+material = SubResource("ShaderMaterial_8o16q")
+instance_shader_parameters/background_offset = Vector2(0.39795402, 0.8583248)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+focus_mode = 0
+theme_override_styles/normal = ExtResource("9_genih")
+theme_override_styles/pressed = ExtResource("9_genih")
+theme_override_styles/hover = ExtResource("9_genih")
+theme_override_styles/hover_pressed = ExtResource("9_genih")
+theme_override_styles/disabled = ExtResource("9_genih")
+text = "yakusha-e"
+script = ExtResource("10_30rqn")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="StyleButton4" type="Button" parent="QuestionBox/VBoxContainer/QuestionSwitcher/Question_Style" unique_id=1075258877]
+material = SubResource("ShaderMaterial_8o16q")
+instance_shader_parameters/background_offset = Vector2(0.39795402, 0.8583248)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+focus_mode = 0
+theme_override_styles/normal = ExtResource("9_genih")
+theme_override_styles/pressed = ExtResource("9_genih")
+theme_override_styles/hover = ExtResource("9_genih")
+theme_override_styles/hover_pressed = ExtResource("9_genih")
+theme_override_styles/disabled = ExtResource("9_genih")
+text = "bijin-ga"
+script = ExtResource("10_30rqn")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="Question_Series" type="VBoxContainer" parent="QuestionBox/VBoxContainer/QuestionSwitcher" unique_id=960177943]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="SeriesButton1" type="Button" parent="QuestionBox/VBoxContainer/QuestionSwitcher/Question_Series" unique_id=619485741]
+material = SubResource("ShaderMaterial_8o16q")
+instance_shader_parameters/background_offset = Vector2(0.39795402, 0.8583248)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+focus_mode = 0
+theme_override_styles/normal = ExtResource("9_genih")
+theme_override_styles/pressed = ExtResource("9_genih")
+theme_override_styles/hover = ExtResource("9_genih")
+theme_override_styles/hover_pressed = ExtResource("9_genih")
+theme_override_styles/disabled = ExtResource("9_genih")
+text = "Fuji at Midnight"
+alignment = 0
+script = ExtResource("10_30rqn")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="SeriesButton2" type="Button" parent="QuestionBox/VBoxContainer/QuestionSwitcher/Question_Series" unique_id=1052468468]
+material = SubResource("ShaderMaterial_8o16q")
+instance_shader_parameters/background_offset = Vector2(0.39795402, 0.8583248)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+focus_mode = 0
+theme_override_styles/normal = ExtResource("9_genih")
+theme_override_styles/pressed = ExtResource("9_genih")
+theme_override_styles/hover = ExtResource("9_genih")
+theme_override_styles/hover_pressed = ExtResource("9_genih")
+theme_override_styles/disabled = ExtResource("9_genih")
+text = "Fuji at Dawn"
+alignment = 0
+script = ExtResource("10_30rqn")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="SeriesButton3" type="Button" parent="QuestionBox/VBoxContainer/QuestionSwitcher/Question_Series" unique_id=1455254624]
+material = SubResource("ShaderMaterial_8o16q")
+instance_shader_parameters/background_offset = Vector2(0.39795402, 0.8583248)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+focus_mode = 0
+theme_override_styles/normal = ExtResource("9_genih")
+theme_override_styles/pressed = ExtResource("9_genih")
+theme_override_styles/hover = ExtResource("9_genih")
+theme_override_styles/hover_pressed = ExtResource("9_genih")
+theme_override_styles/disabled = ExtResource("9_genih")
+text = "Fuji at Dawn"
+alignment = 0
+script = ExtResource("10_30rqn")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="SeriesButton4" type="Button" parent="QuestionBox/VBoxContainer/QuestionSwitcher/Question_Series" unique_id=2062304733]
+material = SubResource("ShaderMaterial_8o16q")
+instance_shader_parameters/background_offset = Vector2(0.39795402, 0.8583248)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+focus_mode = 0
+theme_override_styles/normal = ExtResource("9_genih")
+theme_override_styles/pressed = ExtResource("9_genih")
+theme_override_styles/hover = ExtResource("9_genih")
+theme_override_styles/hover_pressed = ExtResource("9_genih")
+theme_override_styles/disabled = ExtResource("9_genih")
+text = "Fuji at Dawn"
+alignment = 0
+script = ExtResource("10_30rqn")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="Question_Date" type="VBoxContainer" parent="QuestionBox/VBoxContainer/QuestionSwitcher" unique_id=922606116]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="QuestionBox/VBoxContainer/QuestionSwitcher/Question_Date" unique_id=1552303276]
+layout_mode = 2
+
+[node name="DateSlider" type="HSlider" parent="QuestionBox/VBoxContainer/QuestionSwitcher/Question_Date/HBoxContainer" unique_id=518736041]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+custom_maximum_size = Vector2(300, -1)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+min_value = 800.0
+max_value = 2026.0
+value = 800.0
+rounded = true
+script = ExtResource("20_1l5gt")
+metadata/_custom_type_script = "uid://dbh5bpr5jdgyr"
+
+[node name="DateLabel" type="Label" parent="QuestionBox/VBoxContainer/QuestionSwitcher/Question_Date/HBoxContainer" unique_id=332447328]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "800"
+horizontal_alignment = 1
+
+[node name="DateConfirmButton" type="Button" parent="QuestionBox/VBoxContainer/QuestionSwitcher/Question_Date" unique_id=223468430]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_8o16q")
+instance_shader_parameters/background_offset = Vector2(0.39795402, 0.8583248)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+focus_mode = 0
+theme_override_styles/normal = ExtResource("9_genih")
+theme_override_styles/pressed = ExtResource("9_genih")
+theme_override_styles/hover = ExtResource("9_genih")
+theme_override_styles/hover_pressed = ExtResource("9_genih")
+theme_override_styles/disabled = ExtResource("9_genih")
+text = "Confirm"
+alignment = 0
+script = ExtResource("10_30rqn")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="Question_Place" type="Control" parent="QuestionBox/VBoxContainer/QuestionSwitcher" unique_id=1229071897]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(410, 410)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+
+[node name="JapanMap" parent="QuestionBox/VBoxContainer/QuestionSwitcher/Question_Place" unique_id=282624809 instance=ExtResource("7_3cxu5")]
+unique_name_in_owner = true
+scale = Vector2(0.6, 0.6)
+
+[node name="AnswerLabel" parent="QuestionBox/VBoxContainer" unique_id=674982777 instance=ExtResource("4_7y6gr")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 10)
+layout_mode = 2
+size_flags_horizontal = 1
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+theme_override_font_sizes/bold_italics_font_size = 18
+theme_override_font_sizes/italics_font_size = 18
+theme_override_font_sizes/mono_font_size = 18
+text = "[color=#006000]Correct![/color]
+
+This is [url=\"art_piece:Princess Soto'ori and Spider\"]Princess Soto'ori and Spider[/url] by [url=artist:Ogata Gekkō]Ogata Gekkō[/url]. It is part of the series [url=art_series:Gekkō's Essays]Gekkō's Essays[/url]."
+fit_content = true
+scroll_active = true
+horizontal_alignment = 1
+tooltip_directions = Array[int]([5, 1])
+
+[node name="NextButton" type="Button" parent="QuestionBox/VBoxContainer" unique_id=1495053833]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_8o16q")
+instance_shader_parameters/background_offset = Vector2(0.39795402, 0.8583248)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_styles/normal = ExtResource("9_genih")
+theme_override_styles/pressed = ExtResource("9_genih")
+theme_override_styles/hover = ExtResource("9_genih")
+theme_override_styles/hover_pressed = ExtResource("9_genih")
+theme_override_styles/disabled = ExtResource("9_genih")
+text = "Next Question"
+script = ExtResource("10_30rqn")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="PieceImage" type="TextureRect" parent="QuestionBox" unique_id=516939883]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_bx70w")
+custom_minimum_size = Vector2(800, 0)
+custom_maximum_size = Vector2(-1, 750)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("16_j7qmt")
+expand_mode = 5
+stretch_mode = 5
+
+[connection signal="pressed" from="IntroBox/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="value_changed" from="QuestionBox/VBoxContainer/QuestionSwitcher/Question_Date/HBoxContainer/DateSlider" to="." method="_on_date_slider_value_changed"]
+[connection signal="pressed" from="QuestionBox/VBoxContainer/QuestionSwitcher/Question_Date/DateConfirmButton" to="." method="_on_date_confirm_button_pressed"]
+[connection signal="pressed" from="QuestionBox/VBoxContainer/NextButton" to="." method="_on_next_button_pressed"]

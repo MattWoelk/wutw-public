@@ -1,0 +1,325 @@
+[gd_scene format=3 uid="uid://vo1ff6e8oqpr"]
+
+[ext_resource type="Texture2D" uid="uid://bd2j17u0ctjeb" path="res://theme/slider/slider_bar.png" id="1_o61qn"]
+[ext_resource type="Script" uid="uid://dnfahwf7vpne4" path="res://art/viewer/art_timeline.gd" id="1_qkpuj"]
+[ext_resource type="Texture2D" uid="uid://ytnsnhex03f8" path="res://art/viewer/art_timeline_bar.png" id="2_io5eh"]
+[ext_resource type="Script" uid="uid://8khxx7cpwmgb" path="res://art/viewer/art_timeline_period.gd" id="4_we3yf"]
+[ext_resource type="FontFile" uid="uid://bvbf4lxycjp8e" path="res://theme/fonts/NotoSansCJK/static/NotoSansJP-ExtraBold.ttf" id="5_we3yf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o61qn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o61qn"]
+texture = ExtResource("1_o61qn")
+texture_margin_left = 32.0
+texture_margin_right = 235.0
+axis_stretch_horizontal = 1
+modulate_color = Color(1, 1, 1, 0.7176471)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_io5eh"]
+texture = ExtResource("2_io5eh")
+texture_margin_left = 13.0
+texture_margin_right = 16.0
+axis_stretch_horizontal = 1
+
+[node name="ArtTimeline" type="PanelContainer" unique_id=1584177136]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -520.0
+offset_bottom = -1039.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_o61qn")
+script = ExtResource("1_qkpuj")
+end_year = 1842
+
+[node name="Control" type="Control" parent="." unique_id=1396485019]
+layout_mode = 2
+
+[node name="BaseLine" type="Panel" parent="Control" unique_id=1005004998]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 19.0
+offset_right = 1401.0
+offset_bottom = 33.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_o61qn")
+
+[node name="StartLabel" type="Label" parent="Control" unique_id=339166089]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 1271.797
+offset_top = -4.0
+offset_right = 1310.7969
+offset_bottom = 21.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_vertical = 0
+text = "1930"
+horizontal_alignment = 1
+
+[node name="EndLabel" type="Label" parent="Control" unique_id=1232743990]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 1170.2358
+offset_top = 28.0
+offset_right = 1211.2357
+offset_bottom = 53.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_vertical = 0
+text = "1842"
+horizontal_alignment = 1
+
+[node name="HeianLine" type="Panel" parent="Control" unique_id=789834501]
+unique_name_in_owner = true
+modulate = Color(0.53333336, 0.28235295, 0.59607846, 1)
+texture_filter = 2
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 0
+offset_left = -12.5
+offset_top = 19.0
+offset_right = 439.955
+offset_bottom = 33.0
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_io5eh")
+script = ExtResource("4_we3yf")
+era_name = "Heian"
+start_year = 794
+end_year = 1185
+tooltip = "The golden age of classical Japan, centered in Heian-kyō (modern-day Kyōto), and known for extreme emphasis on aesthetics among the ruling class.
+
+During this time the Chinese-inspired aristocratic culture took on a distinctive Japanese character, with emphasis on refined poetry and fashion, such as subtle seasonal color choices for their many-layered silk robes. Murasaki Shikibu's The Tale of Genji, often considered the world's first novel, was written during this time. It used [i]hiragana[/i], a native phonetic script developed by the noblewomen of the court, and still in use today.
+
+While little is known about the life of Heian commoners, we know that the rulers mostly neglected the lands outside the capital, which led to the rise of regional warrior clans which eventually took over."
+
+[node name="KamakuraLine" type="Panel" parent="Control" unique_id=91565094]
+unique_name_in_owner = true
+modulate = Color(0.355, 0.43191665, 0.71, 1)
+texture_filter = 2
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 0
+offset_left = 427.455
+offset_top = 19.0
+offset_right = 609.08093
+offset_bottom = 33.0
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_io5eh")
+script = ExtResource("4_we3yf")
+era_name = "Kamakura"
+start_year = 1185
+end_year = 1333
+tooltip = "A militant period that gave rise to the [i]samurai[/i], ruled by shōguns (warrior chieftains) through the feudal [i]bakufu[/i] government from Kamakura (new modern-day Tōkyō), with emperors acting as figureheads.
+
+During this era the refined aristocracy was left behind, replaced by the practical, martial samurai class. Courtly aesthetics likewise gave way to rugged values of loyalty, discipline, and honor.
+
+Religion also evolved. While Buddhism was previously a complex, ritualistic practice reserved for the elite, it was now simplified and began to spread among commoners. In particular, Zen Buddhism arose from its Chinese counterpart (Chan), and promoted the austere self-control that fit samurai values.
+
+At this time, literature shifted away from romantic court intrigues, focusing instead on warrior bravery and the impermanence of life, and visual arts gained a measure of realism."
+
+[node name="MuromachiLine" type="Panel" parent="Control" unique_id=1972364273]
+unique_name_in_owner = true
+modulate = Color(0.28, 0.28, 0.28, 1)
+texture_filter = 2
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 0
+offset_left = 600.0
+offset_top = 19.0
+offset_right = 883.32996
+offset_bottom = 33.0
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_io5eh")
+script = ExtResource("4_we3yf")
+era_name = "Muromachi"
+start_year = 1333
+end_year = 1573
+tooltip = "An era of social and political upheaval, marked by regional lords (daimyō) struggling for power with the shogunate in Kyōto.
+
+Despite civil war, the economy boomed, leading to the rise of a wealthy merchant class and artisan guilds. Farmers also gained power, and occasionally launched coordinated uprisings to demand tax or debt relief from their lords.
+
+Influenced by Zen Buddhism, the wabi-sabi aesthetic developed, focused on appreciating rustic imperfection. Famous traditions like the Japanese tea ceremony, flower arranging, rock gardens, sumi-e painting, and Noh theater arose during this time."
+
+[node name="AzuchiLine" type="Panel" parent="Control" unique_id=2123492001]
+unique_name_in_owner = true
+modulate = Color(0.8664085, 0.6077675, 0, 1)
+texture_filter = 2
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 0
+offset_left = 870.838
+offset_top = 19.0
+offset_right = 914.192
+offset_bottom = 33.0
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_io5eh")
+script = ExtResource("4_we3yf")
+era_name = "Azuchi-Momoyama"
+start_year = 1573
+end_year = 1600
+tooltip = "A brief period that centralized political power and established the class system that would endure until the end of the 19th century.
+
+During this time, the ruling samurai class gained a monopoly on violence through \"sword hunts\", which confiscated weapons from peasants and warrior-monks. Class distinctions were further formalized by requiring different classes to live separately in different areas of each town.
+
+The samurai built massive castles, decorated in a lavish, ostentatious style. These were full of elaborately painted folding screens and sliding doors, often decorated with gold leaf. To contrast this, the tea ceremony reached its apex, with the famous tea master Sen no Rikyū popularizing a highly ritualized, spiritual version among the elites."
+
+[node name="EdoLine" type="Panel" parent="Control" unique_id=1474485889]
+unique_name_in_owner = true
+modulate = Color(0.08627451, 0.36862746, 0.5137255, 1)
+texture_filter = 2
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 0
+offset_left = 901.692
+offset_top = 19.0
+offset_right = 1220.446
+offset_bottom = 33.0
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_io5eh")
+script = ExtResource("4_we3yf")
+era_name = "Edo"
+start_year = 1600
+end_year = 1868
+tooltip = "An era of unprecedented peace and strict national isolation, ruled from Edo (modern-day Tōkyō) by a powerful shogunate.
+
+With no wars to fight, the samurai transitioned into educated bureaucrats. While the class system remained enforced, the peaceful economy allowed merchants to amass immense wealth and invest it into entertainment districts, the [i]ukiyo[/i] (floating worlds), where art and hedonism prospered.
+
+Both arts and literacy became accessible to commoners, leading to the development of many new art forms. The Kabuki theater, geisha entertainment, haiku poetry, and the ukiyo-e genre of woodblock printing arose during this period."
+
+[node name="MeijiLine" type="Panel" parent="Control" unique_id=168150355]
+unique_name_in_owner = true
+modulate = Color(0.58431375, 0.21176471, 0.2509804, 1)
+texture_filter = 2
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 0
+offset_left = 1207.947
+offset_top = 19.0
+offset_right = 1270.728
+offset_bottom = 33.0
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_io5eh")
+script = ExtResource("4_we3yf")
+era_name = "Meiji"
+start_year = 1868
+end_year = 1912
+tooltip = "An era of rapid modernization and Westernization, marking Japan's transformation from an isolated feudal state into a global industrial power under a restored emperor.
+
+During this time, the strict class system was dismantled, stripping the samurai of their status, stipends, and the right to wear swords. Social mobility became possible, driven by compulsory education, a national conscript army, and a shift of workforce from rural agriculture to urban industry.
+
+A philosophy of \"wakon yosai\" (Japanese spirit, Western learning) became the era's slogan, and Western technology, architecture, and fashion were rapidly integrated. Railways, brick architecture, and gas lamps flooded the cities, and the elites started wearing Western hairstyles and clothes.
+
+Buddhism lost some of its influence, with its taboo on eating meat being lifted, and Shinto was remade into a state religion to unify the populace around the new emperor."
+
+[node name="TaishouLine" type="Panel" parent="Control" unique_id=1876305728]
+unique_name_in_owner = true
+modulate = Color(0.96, 0.4032, 0.66304, 1)
+texture_filter = 2
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 0
+offset_left = 1258.228
+offset_top = 19.0
+offset_right = 1286.7261
+offset_bottom = 33.0
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_io5eh")
+script = ExtResource("4_we3yf")
+era_name = "Taishō"
+start_year = 1912
+end_year = 1926
+tooltip = "A brief, vibrant era known for the \"Taishō Democracy\", marked by liberal ideals, mass media, and cosmopolitan urban culture.
+
+Japan's booming economy led to a growing middle class which embraced a consumer lifestyle. The cities filled with [i]mobo[/i] (modern boys) and [i]moga[/i] (modern girls) who defied traditional norms by wearing Western clothes, listening to jazz, and frequenting cafés, dance halls, and cinemas.
+
+Political liberalism also surged, with expanding mass media supporting labor movements and political reform, eventually leading to the passage of universal male suffrage."
+
+[node name="ShouwaLine" type="Panel" parent="Control" unique_id=87578056]
+unique_name_in_owner = true
+modulate = Color(0.7490196, 0.6156863, 0.23137255, 1)
+texture_filter = 2
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 0
+offset_left = 1274.226
+offset_top = 19.0
+offset_right = 1358.719
+offset_bottom = 33.0
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_io5eh")
+script = ExtResource("4_we3yf")
+era_name = "Shōwa"
+start_year = 1926
+end_year = 1989
+tooltip = "An era starting with extreme nationalism, culminating in Japan's role in World War II, followed by a miraculous economic recovery.
+
+In the early decades, the liberal Taishō culture was crushed by militarism, strict state censorship, and a unifying emperor cult. Daily life became heavily regimented and austere as all resources were funneled into a massive war machine.
+
+Following the war, a new democratic constitution and rapid economic growth reshaped the country. The concept of the loyal corporate \"salaryman\" and the nuclear family living in concrete apartment complexes became the new middle class ideal, and modern Japanese culture including manga, anime and video games developed.
+
+Today, the Shōwa period carries a nostalgic appeal as a simpler, warmer, and more community-oriented time before the digital age."
+
+[node name="HeiseiLine" type="Panel" parent="Control" unique_id=1096424804]
+unique_name_in_owner = true
+modulate = Color(0.3019608, 0.56078434, 0.6745098, 1)
+texture_filter = 2
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 0
+offset_left = 1346.219
+offset_top = 19.0
+offset_right = 1393.001
+offset_bottom = 33.0
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_io5eh")
+script = ExtResource("4_we3yf")
+era_name = "Heisei"
+start_year = 1989
+end_year = 2019
+tooltip = "An era defined by economic stagnation but a global explosion of cultural influence.
+
+After the economy crashed in 1989, the country entered into the Lost Decades, where middle class ideals and the promise of lifetime corporate employment began to unravel, giving rise to part-time workers, a rapidly aging population, and the emergence of [i]hikikomori[/i] (extreme social withdrawal).
+
+Compounded by natural disasters, most notably the 2011 Tōhoku earthquake and tsunami, the national mood shifted away from corporate ambition toward a desire for stability and healing. Art and media from this period often explores societal collapse and existential dread, as well as post-apocalyptic recovery and critiques of consumerism. The latter are a major influence for Worlds Upon the Wind.
+
+Despite domestic struggles, Japan gained major international influence, with anime, manga, video games, and the [i]kawaii[/i] (cute) style becoming global phenomenons."
+
+[node name="ReiwaLine" type="Panel" parent="Control" unique_id=2131222722]
+unique_name_in_owner = true
+modulate = Color(0.84705883, 0.6313726, 0.76862746, 1)
+texture_filter = 2
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 0
+offset_left = 1377.073
+offset_top = 19.0
+offset_right = 1402.073
+offset_bottom = 33.0
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_io5eh")
+script = ExtResource("4_we3yf")
+era_name = "Reiwa"
+start_year = 2019
+end_year = 2026
+tooltip = "The current era, beginning with a historic imperial abdication and influenced by the COVID pandemic.
+
+With a shrinking workforce and a rapidly aging population, traditional corporate norms continue to disintegrate, with [i]nomikai[/i] (mandatory after-hours parties) losing favor, and an emphasis on work-life balance and remote work growing. Analog business practices, such as fax machines and [i]hanko[/i] (personal ink stamps), are also finally being digitized.
+
+Until recently, diversity and internationally integration had been increasing, with record numbers of foreigners joining the workforce, though recent political shifts have pushed against this trend.
+
+Despite ongoing economic and political anxieties, Japan remains culturally influential. For example, this game was made by someone with no roots in Japan."
+
+[node name="StartBracketLabel" type="Label" parent="Control" unique_id=374423893]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1182.6919
+offset_top = 11.53157
+offset_right = 1189.6919
+offset_bottom = 36.53157
+theme_override_colors/font_color = Color(0.45, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("5_we3yf")
+text = "["
+
+[node name="EndBracketLabel" type="Label" parent="Control" unique_id=467440942]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1281.6919
+offset_top = 11.53157
+offset_right = 1288.6919
+offset_bottom = 36.53157
+theme_override_colors/font_color = Color(0.45, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("5_we3yf")
+text = "]"

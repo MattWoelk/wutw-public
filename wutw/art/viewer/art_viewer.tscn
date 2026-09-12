@@ -1,0 +1,820 @@
+[gd_scene format=3 uid="uid://diftunj4kboua"]
+
+[ext_resource type="Script" uid="uid://do0w7s4xutp1f" path="res://art/viewer/art_viewer.gd" id="1_yuxxy"]
+[ext_resource type="PackedScene" uid="uid://b5k16hpo8080v" path="res://theme/faded_background/faded_background.tscn" id="2_dxa4t"]
+[ext_resource type="PackedScene" uid="uid://b6ob53b0vla40" path="res://theme/scroll_panel/scroll_panel_big.tscn" id="3_asjj2"]
+[ext_resource type="Shader" uid="uid://bbe7ginxustev" path="res://theme/scroll_panel/scroll_panel_dowel.gdshader" id="4_y6t7y"]
+[ext_resource type="Texture2D" uid="uid://b0cvn7ev1bwut" path="res://theme/scroll_panel/dowel_wood.png" id="5_eaur3"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="6_0rfvf"]
+[ext_resource type="Script" uid="uid://b67iom4b68hfb" path="res://theme/accessible_line_edit.gd" id="8_6ffps"]
+[ext_resource type="Texture2D" uid="uid://3wij4c3db2jn" path="res://shops/trade/arrow.png" id="9_6ffps"]
+[ext_resource type="Shader" uid="uid://ygmrqrvg5hpm" path="res://theme/button/ukiyoe_button.gdshader" id="9_rtbis"]
+[ext_resource type="Texture2D" uid="uid://ctgl61r3xxsqv" path="res://theme/button/button_fill.png" id="10_x212p"]
+[ext_resource type="Texture2D" uid="uid://blje81yu8734p" path="res://theme/button/button_shape.png" id="11_jjrhy"]
+[ext_resource type="Texture2D" uid="uid://doe4603a6ngco" path="res://theme/button/button_outline.png" id="12_60cfc"]
+[ext_resource type="Texture2D" uid="uid://cwubixgc8n0yr" path="res://theme/button/button_swish_left.png" id="13_cgem6"]
+[ext_resource type="Texture2D" uid="uid://n6l17h4ysayj" path="res://theme/button/button_swish_right.png" id="14_ame2v"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="15_4pjer"]
+[ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="16_hxkrt"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="17_crqof"]
+[ext_resource type="Script" uid="uid://dm63mtrlfj005" path="res://theme/faded_scroll_container/faded_scroll_container.gd" id="18_10pr7"]
+[ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="18_vk13e"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="19_10pr7"]
+[ext_resource type="PackedScene" uid="uid://c6y6jurtrptc3" path="res://art/viewer/art_piece_details.tscn" id="19_36wb6"]
+[ext_resource type="PackedScene" uid="uid://dwslwqfamnrlw" path="res://art/viewer/artist_details.tscn" id="19_jrtkt"]
+[ext_resource type="PackedScene" uid="uid://bkdg3u6kql43d" path="res://art/viewer/art_style_details.tscn" id="19_qirbq"]
+[ext_resource type="PackedScene" uid="uid://ccoc23iw7jalt" path="res://art/viewer/art_series_details.tscn" id="20_j6mu3"]
+[ext_resource type="PackedScene" uid="uid://bc1nlnd87ykd4" path="res://art/viewer/art_school_details.tscn" id="20_jrtkt"]
+[ext_resource type="PackedScene" uid="uid://vo1ff6e8oqpr" path="res://art/viewer/art_timeline.tscn" id="24_0rfvf"]
+[ext_resource type="PackedScene" uid="uid://qibgnr1rjw3o" path="res://art/quiz/art_quiz.tscn" id="26_u770u"]
+
+[sub_resource type="Gradient" id="Gradient_8ya12"]
+offsets = PackedFloat32Array(0, 0.196721, 0.460041, 0.525615, 0.603484, 0.732582, 1)
+colors = PackedColorArray(0.59, 0.43424, 0.3068, 0.796078, 0.48, 0.35328, 0.2496, 0.294118, 0.48, 0.35328, 0.2496, 0.0116377, 0.48, 0.35328, 0.2496, 0, 0.48, 0.35328, 0.2496, 0.0431956, 0.48, 0.35328, 0.2496, 0.34902, 0.4, 0.2944, 0.208, 0.929412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g5dkl"]
+gradient = SubResource("Gradient_8ya12")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_f3mgk"]
+colors = PackedColorArray(0.331639, 0.33164, 0.331639, 1, 0.961814, 0.961814, 0.961814, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_eabfy"]
+frequency = 0.0035
+domain_warp_amplitude = 100.0
+domain_warp_frequency = -0.01
+domain_warp_fractal_lacunarity = 8.69
+domain_warp_fractal_gain = 0.19
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jijvn"]
+width = 2048
+noise = SubResource("FastNoiseLite_eabfy")
+color_ramp = SubResource("Gradient_f3mgk")
+seamless = true
+seamless_blend_skirt = 0.27
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u770u"]
+shader = ExtResource("4_y6t7y")
+shader_parameter/size = Vector2(1625, 49)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("5_eaur3")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ffps"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u770u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ffps"]
+content_margin_left = 5.0
+content_margin_right = 5.0
+bg_color = Color(0.23, 0.18315667, 0.12189999, 0.26666668)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.19, 0.14655334, 0.09689999, 1)
+expand_margin_right = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u770u"]
+content_margin_left = 5.0
+content_margin_right = 5.0
+bg_color = Color(0.3, 0.2389, 0.159, 0.26666668)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.52, 0.40109333, 0.2652, 1)
+expand_margin_right = 1.0
+
+[sub_resource type="Gradient" id="Gradient_gnokc"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_okycc"]
+gradient = SubResource("Gradient_gnokc")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rw7fm"]
+shader = ExtResource("9_rtbis")
+shader_parameter/mask_tex = ExtResource("11_jjrhy")
+shader_parameter/background = ExtResource("10_x212p")
+shader_parameter/gradient = SubResource("GradientTexture2D_okycc")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_60cfc")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_ame2v")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_cgem6")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_mbmdf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vtrsc"]
+shader = ExtResource("9_rtbis")
+shader_parameter/mask_tex = ExtResource("11_jjrhy")
+shader_parameter/background = ExtResource("10_x212p")
+shader_parameter/gradient = SubResource("GradientTexture2D_okycc")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_60cfc")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_ame2v")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_cgem6")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mqjig"]
+shader = ExtResource("9_rtbis")
+shader_parameter/mask_tex = ExtResource("11_jjrhy")
+shader_parameter/background = ExtResource("10_x212p")
+shader_parameter/gradient = SubResource("GradientTexture2D_okycc")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_60cfc")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_ame2v")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_cgem6")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1vep6"]
+shader = ExtResource("9_rtbis")
+shader_parameter/mask_tex = ExtResource("11_jjrhy")
+shader_parameter/background = ExtResource("10_x212p")
+shader_parameter/gradient = SubResource("GradientTexture2D_okycc")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_60cfc")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_ame2v")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_cgem6")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t1mi7"]
+shader = ExtResource("9_rtbis")
+shader_parameter/mask_tex = ExtResource("11_jjrhy")
+shader_parameter/background = ExtResource("10_x212p")
+shader_parameter/gradient = SubResource("GradientTexture2D_okycc")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_60cfc")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_ame2v")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_cgem6")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qafpq"]
+shader = ExtResource("9_rtbis")
+shader_parameter/mask_tex = ExtResource("11_jjrhy")
+shader_parameter/background = ExtResource("10_x212p")
+shader_parameter/gradient = SubResource("GradientTexture2D_okycc")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_60cfc")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_ame2v")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_cgem6")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="Gradient" id="Gradient_j5apj"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wqpyw"]
+gradient = SubResource("Gradient_j5apj")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dcpb5"]
+shader = ExtResource("9_rtbis")
+shader_parameter/mask_tex = ExtResource("11_jjrhy")
+shader_parameter/background = ExtResource("10_x212p")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_60cfc")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_ame2v")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_cgem6")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0ahpu"]
+shader = ExtResource("9_rtbis")
+shader_parameter/mask_tex = ExtResource("11_jjrhy")
+shader_parameter/background = ExtResource("10_x212p")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_60cfc")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_ame2v")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_cgem6")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_00ipw"]
+shader = ExtResource("9_rtbis")
+shader_parameter/mask_tex = ExtResource("11_jjrhy")
+shader_parameter/background = ExtResource("10_x212p")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_60cfc")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_ame2v")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_cgem6")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="Gradient" id="Gradient_1xfa0"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rw7fm"]
+gradient = SubResource("Gradient_1xfa0")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1yw2a"]
+shader = ExtResource("9_rtbis")
+shader_parameter/mask_tex = ExtResource("11_jjrhy")
+shader_parameter/background = ExtResource("10_x212p")
+shader_parameter/gradient = SubResource("GradientTexture2D_rw7fm")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_60cfc")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_ame2v")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_cgem6")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i8pkq"]
+shader = ExtResource("4_y6t7y")
+shader_parameter/size = Vector2(1623, 49)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("5_eaur3")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[node name="ArtViewer" type="Node2D" unique_id=239328941]
+script = ExtResource("1_yuxxy")
+
+[node name="BG" parent="." unique_id=1405446200 instance=ExtResource("2_dxa4t")]
+unique_name_in_owner = true
+
+[node name="Control" type="CenterContainer" parent="." unique_id=1457973153]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="ScrollPanel" parent="Control" unique_id=704637184 instance=ExtResource("3_asjj2")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1725, 0)
+layout_mode = 2
+
+[node name="TopDowelWood" parent="Control/ScrollPanel/TopDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_u770u")
+
+[node name="Scroller" parent="Control/ScrollPanel" index="1"]
+custom_minimum_size = Vector2(0, 940)
+
+[node name="ScrollMargin" parent="Control/ScrollPanel/Scroller" index="0"]
+offset_bottom = 922.0
+
+[node name="ContentPanel" parent="Control/ScrollPanel/Scroller/ScrollMargin" index="0"]
+material = ExtResource("6_0rfvf")
+
+[node name="ContentContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel" index="0"]
+theme_override_constants/margin_top = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer" index="0" unique_id=1649851538]
+custom_minimum_size = Vector2(1580, 900)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=1408142076]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer2" unique_id=705023971]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer2/Control" unique_id=2020066027]
+unique_name_in_owner = true
+modulate = Color(0.12941177, 0.05882353, 0.003921569, 1)
+layout_mode = 0
+offset_left = 4.0
+offset_right = 42.0
+offset_bottom = 37.0
+rotation = 3.1415927
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 0
+mouse_default_cursor_shape = 2
+theme_override_constants/icon_max_width = 38
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6ffps")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u770u")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_u770u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_u770u")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_u770u")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u770u")
+icon = ExtResource("9_6ffps")
+flat = true
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer2" unique_id=1592593570]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Art History"
+horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer2" unique_id=690859299]
+layout_mode = 2
+
+[node name="SearchInput" type="LineEdit" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer2/Control2" unique_id=1975876341]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 31.43)
+layout_mode = 0
+offset_left = -262.0
+offset_top = 2.0
+offset_right = -62.0
+offset_bottom = 35.0
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.5372549)
+theme_override_styles/normal = SubResource("StyleBoxFlat_6ffps")
+theme_override_styles/focus = SubResource("StyleBoxFlat_u770u")
+placeholder_text = "Search..."
+context_menu_enabled = false
+emoji_menu_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+script = ExtResource("8_6ffps")
+
+[node name="ForwardButton" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer2/Control2" unique_id=373788716]
+unique_name_in_owner = true
+modulate = Color(0.13, 0.057200007, 0.005200003, 1)
+layout_mode = 0
+offset_left = -42.0
+offset_right = -4.0
+offset_bottom = 37.0
+size_flags_horizontal = 0
+mouse_default_cursor_shape = 2
+theme_override_constants/icon_max_width = 38
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u770u")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u770u")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_u770u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_u770u")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_u770u")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u770u")
+icon = ExtResource("9_6ffps")
+flat = true
+icon_alignment = 1
+
+[node name="Margin_TabBar" type="MarginContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=642977709]
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_constants/margin_left = -8
+theme_override_constants/margin_top = -6
+theme_override_constants/margin_right = -7
+theme_override_constants/margin_bottom = -8
+
+[node name="TabBar" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabBar" unique_id=1674971046]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_constants/separation = -5
+
+[node name="TabButton_Intro" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabBar/TabBar" unique_id=1686296107]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_rw7fm")
+instance_shader_parameters/background_offset = Vector2(0.9967841, 0.44889778)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+focus_mode = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("15_4pjer")
+theme_override_styles/pressed = ExtResource("15_4pjer")
+theme_override_styles/hover = ExtResource("15_4pjer")
+theme_override_styles/hover_pressed = ExtResource("15_4pjer")
+theme_override_styles/disabled = ExtResource("15_4pjer")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_mbmdf")
+text = "Intro"
+script = ExtResource("16_hxkrt")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="TabButton_Pieces" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabBar/TabBar" unique_id=2067422362]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_vtrsc")
+instance_shader_parameters/background_offset = Vector2(0.1163202, 0.074698895)
+instance_shader_parameters/state = 2.0
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+focus_mode = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("15_4pjer")
+theme_override_styles/pressed = ExtResource("15_4pjer")
+theme_override_styles/hover = ExtResource("15_4pjer")
+theme_override_styles/hover_pressed = ExtResource("15_4pjer")
+theme_override_styles/disabled = ExtResource("15_4pjer")
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_mbmdf")
+text = "Art Pieces"
+script = ExtResource("16_hxkrt")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="TabButton_Series" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabBar/TabBar" unique_id=1106867708]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_mqjig")
+instance_shader_parameters/background_offset = Vector2(0.60133934, 0.17259713)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+focus_mode = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("15_4pjer")
+theme_override_styles/pressed = ExtResource("15_4pjer")
+theme_override_styles/hover = ExtResource("15_4pjer")
+theme_override_styles/hover_pressed = ExtResource("15_4pjer")
+theme_override_styles/disabled = ExtResource("15_4pjer")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_mbmdf")
+text = "Series"
+script = ExtResource("16_hxkrt")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="TabButton_Artists" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabBar/TabBar" unique_id=1445590255]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_1vep6")
+instance_shader_parameters/background_offset = Vector2(0.23414394, 0.78832346)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+focus_mode = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("15_4pjer")
+theme_override_styles/pressed = ExtResource("15_4pjer")
+theme_override_styles/hover = ExtResource("15_4pjer")
+theme_override_styles/hover_pressed = ExtResource("15_4pjer")
+theme_override_styles/disabled = ExtResource("15_4pjer")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_mbmdf")
+text = "Artists"
+script = ExtResource("16_hxkrt")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="TabButton_Schools" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabBar/TabBar" unique_id=71981770]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_t1mi7")
+instance_shader_parameters/background_offset = Vector2(0.9401581, 0.39628768)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+focus_mode = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("15_4pjer")
+theme_override_styles/pressed = ExtResource("15_4pjer")
+theme_override_styles/hover = ExtResource("15_4pjer")
+theme_override_styles/hover_pressed = ExtResource("15_4pjer")
+theme_override_styles/disabled = ExtResource("15_4pjer")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_mbmdf")
+text = "Schools
+"
+script = ExtResource("16_hxkrt")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="TabButton_Styles" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabBar/TabBar" unique_id=244160077]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_qafpq")
+instance_shader_parameters/background_offset = Vector2(0.033826947, 0.124989845)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+focus_mode = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("15_4pjer")
+theme_override_styles/pressed = ExtResource("15_4pjer")
+theme_override_styles/hover = ExtResource("15_4pjer")
+theme_override_styles/hover_pressed = ExtResource("15_4pjer")
+theme_override_styles/disabled = ExtResource("15_4pjer")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_mbmdf")
+text = "Styles"
+script = ExtResource("16_hxkrt")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="TabButton_Quiz" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabBar/TabBar" unique_id=1456353441]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_qafpq")
+instance_shader_parameters/background_offset = Vector2(0.033826947, 0.124989845)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+focus_mode = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("15_4pjer")
+theme_override_styles/pressed = ExtResource("15_4pjer")
+theme_override_styles/hover = ExtResource("15_4pjer")
+theme_override_styles/hover_pressed = ExtResource("15_4pjer")
+theme_override_styles/disabled = ExtResource("15_4pjer")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_mbmdf")
+text = "Quiz"
+script = ExtResource("16_hxkrt")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="Margin_TabContent" type="MarginContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=2080704233]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/margin_left = -8
+theme_override_constants/margin_top = -6
+theme_override_constants/margin_right = -7
+theme_override_constants/margin_bottom = -8
+
+[node name="HBox_TabContent" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabContent" unique_id=584504492]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = -6
+
+[node name="Panel_EntriesList" type="PanelContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabContent/HBox_TabContent" unique_id=1840204353]
+unique_name_in_owner = true
+material = ExtResource("6_0rfvf")
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = ExtResource("17_crqof")
+script = ExtResource("18_vk13e")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="EntriesScroller" type="ScrollContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabContent/HBox_TabContent/Panel_EntriesList" unique_id=601027590]
+unique_name_in_owner = true
+clip_children = 1
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+script = ExtResource("18_10pr7")
+
+[node name="EntriesList" type="VBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabContent/HBox_TabContent/Panel_EntriesList/EntriesScroller" unique_id=587585065]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="UkiyoeButton" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabContent/HBox_TabContent/Panel_EntriesList/EntriesScroller/EntriesList" unique_id=703274665]
+material = SubResource("ShaderMaterial_dcpb5")
+instance_shader_parameters/background_offset = Vector2(0.08867355, 0.38472578)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/normal = ExtResource("15_4pjer")
+theme_override_styles/pressed = ExtResource("15_4pjer")
+theme_override_styles/hover = ExtResource("15_4pjer")
+theme_override_styles/hover_pressed = ExtResource("15_4pjer")
+theme_override_styles/disabled = ExtResource("15_4pjer")
+text = "Entry Name"
+alignment = 0
+script = ExtResource("16_hxkrt")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="UkiyoeButton2" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabContent/HBox_TabContent/Panel_EntriesList/EntriesScroller/EntriesList" unique_id=1849302505]
+material = SubResource("ShaderMaterial_0ahpu")
+instance_shader_parameters/background_offset = Vector2(0.98310465, 0.15272495)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/normal = ExtResource("15_4pjer")
+theme_override_styles/pressed = ExtResource("15_4pjer")
+theme_override_styles/hover = ExtResource("15_4pjer")
+theme_override_styles/hover_pressed = ExtResource("15_4pjer")
+theme_override_styles/disabled = ExtResource("15_4pjer")
+text = "Entry Name"
+alignment = 0
+script = ExtResource("16_hxkrt")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="UkiyoeButton3" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabContent/HBox_TabContent/Panel_EntriesList/EntriesScroller/EntriesList" unique_id=845535272]
+material = SubResource("ShaderMaterial_00ipw")
+instance_shader_parameters/background_offset = Vector2(0.8433186, 0.14658196)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/normal = ExtResource("15_4pjer")
+theme_override_styles/pressed = ExtResource("15_4pjer")
+theme_override_styles/hover = ExtResource("15_4pjer")
+theme_override_styles/hover_pressed = ExtResource("15_4pjer")
+theme_override_styles/disabled = ExtResource("15_4pjer")
+text = "Entry Name"
+alignment = 0
+script = ExtResource("16_hxkrt")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="DetailsPanel" type="PanelContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabContent/HBox_TabContent" unique_id=744243641]
+material = ExtResource("6_0rfvf")
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("17_crqof")
+script = ExtResource("18_vk13e")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="DetailsScroller" type="ScrollContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabContent/HBox_TabContent/DetailsPanel" unique_id=1226399797]
+unique_name_in_owner = true
+clip_children = 1
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 4
+script = ExtResource("18_10pr7")
+
+[node name="IntroTab" type="MarginContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabContent/HBox_TabContent/DetailsPanel/DetailsScroller" unique_id=2101172421]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(833.585, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IntroTextLabel" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabContent/HBox_TabContent/DetailsPanel/DetailsScroller/IntroTab" unique_id=842061031 instance=ExtResource("19_10pr7")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+text = "[b]<header_font_size>Intro[/font_size][/b]
+
+The art in Worlds Upon The Wind heavily relies on classical Japanese ukiyo-e woodblock prints, and to a lesser extent on older e-maki, or picture scrolls.
+
+Woodblock printing was invented in China in the early 3rd century, and made its way to Japan in the 8th century. It consists of carving a wooden block, inking it, and pressing it onto paper to efficiently create multiple impressions. It was first used for text, but was eventually adapted to images, and reached its peak in the Edo period (1603-1868). At this point print production involved 4 roles: the publisher who funded the project, the artist who designed the image, the carver who chiseled the wood, and the printer who pressed the paper.
+
+Ukiyo-e (浮世絵) is a style of woodblock printing that started out by depicting courtesans, kabuki actors, and sumo wrestlers, then expanded to include landscapes and a variety of other subjects. Most of the art used in Worlds Upon The Wind falls into the latter category.
+
+The term \"ukiyo\" (憂き世), translated as \"sorrowful world\", originated in Buddhist philosophy, and referred to the fleeting, impermanent nature of life, full of sorrow. However, its homophone 浮世, translated as \"floating world\", took on a hedonistic view of the concept - if life is so fleeting, one might as well enjoy it. It quickly became associated with the pleasure quarters and their raucous image, which is how the term \"ukiyo-e\" (pictures of the floating world) came about, as it started out by depicting people often found in the pleasure quarters.
+
+The game pays homage to both versions of the term, as well as the literal meaning of floating worlds."
+fit_content = true
+scroll_active = true
+horizontal_alignment = 3
+tooltip_directions = Array[int]([5, 1])
+
+[node name="ArtPieceDetails" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabContent/HBox_TabContent/DetailsPanel/DetailsScroller" unique_id=1461303784 instance=ExtResource("19_36wb6")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ArtSeriesDetails" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabContent/HBox_TabContent/DetailsPanel/DetailsScroller" unique_id=1810161218 instance=ExtResource("20_j6mu3")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ArtistDetails" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabContent/HBox_TabContent/DetailsPanel/DetailsScroller" unique_id=636902517 instance=ExtResource("19_jrtkt")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ArtSchoolDetails" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabContent/HBox_TabContent/DetailsPanel/DetailsScroller" unique_id=1418400162 instance=ExtResource("20_jrtkt")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ArtStyleDetails" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabContent/HBox_TabContent/DetailsPanel/DetailsScroller" unique_id=531187923 instance=ExtResource("19_qirbq")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ArtQuiz" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabContent/HBox_TabContent/DetailsPanel/DetailsScroller" unique_id=1999192445 instance=ExtResource("26_u770u")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Margin_TabBar2" type="MarginContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=1336526712]
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_constants/margin_left = -8
+theme_override_constants/margin_right = -7
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabBar2" unique_id=1005278329]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabBar2/HBoxContainer" unique_id=1330276090]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+
+[node name="ArtTimeline" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabBar2/HBoxContainer" unique_id=1127756991 instance=ExtResource("24_0rfvf")]
+unique_name_in_owner = true
+modulate = Color(1.4151802, 1.4151802, 1.4151802, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CloseButton" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabBar2/HBoxContainer" unique_id=1739868294]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_1yw2a")
+instance_shader_parameters/background_offset = Vector2(0.39795402, 0.8583248)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 8
+focus_mode = 0
+theme_override_styles/normal = ExtResource("15_4pjer")
+theme_override_styles/pressed = ExtResource("15_4pjer")
+theme_override_styles/hover = ExtResource("15_4pjer")
+theme_override_styles/hover_pressed = ExtResource("15_4pjer")
+theme_override_styles/disabled = ExtResource("15_4pjer")
+text = "Return"
+script = ExtResource("16_hxkrt")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="BottomDowelContainer" parent="Control/ScrollPanel" index="2"]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="BottomDowelWood" parent="Control/ScrollPanel/BottomDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_i8pkq")
+
+[connection signal="mouse_entered" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer2/Control/BackButton" to="." method="_on_back_button_mouse_entered"]
+[connection signal="mouse_exited" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer2/Control/BackButton" to="." method="_on_back_button_mouse_exited"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer2/Control/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="text_changed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer2/Control2/SearchInput" to="." method="_on_search_input_text_changed"]
+[connection signal="mouse_entered" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer2/Control2/ForwardButton" to="." method="_on_forward_button_mouse_entered"]
+[connection signal="mouse_exited" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer2/Control2/ForwardButton" to="." method="_on_forward_button_mouse_exited"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer2/Control2/ForwardButton" to="." method="_on_forward_button_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Margin_TabBar2/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
+
+[editable path="Control/ScrollPanel"]

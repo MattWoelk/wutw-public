@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="ArtPiece_Composed" format=3 uid="uid://ty1vp72sdug8"]
+
+[ext_resource type="Script" uid="uid://bvwlmtq7h5egq" path="res://art/art_piece.gd" id="1_yo3el"]
+[ext_resource type="Resource" uid="uid://cbtj8hlml666v" path="res://art/pieces/piece_yoshida_sphinx.tres" id="2_t1ful"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="3_u0kpf"]
+[ext_resource type="Resource" uid="uid://bdsnb53mu5o4h" path="res://art/pieces/piece_yoshida_nigatsudo_temple.tres" id="4_yo3el"]
+[ext_resource type="Script" uid="uid://dej4hwyskx43" path="res://art/art_piece_composed.gd" id="6_hmg1u"]
+
+[sub_resource type="Resource" id="Resource_yo3el"]
+script = ExtResource("3_u0kpf")
+_texture_path = "res://events/generic/hanging_monastery/hanging_monastery.png"
+_is_horizontal = false
+
+[resource]
+script = ExtResource("6_hmg1u")
+name = "Canyon Monastery"
+main = ExtResource("4_yo3el")
+additional = Array[ExtResource("1_yo3el")]([ExtResource("2_t1ful")])
+final_image_tex = SubResource("Resource_yo3el")
+province = 73
+blurb = "The main temple image was taken from the Nigatsudo Temple print, while the background was edited out and replaced by a rock wall texture created by sampling the Sphinx print."
+metadata/_custom_type_script = "uid://dej4hwyskx43"

@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://ccoc23iw7jalt"]
+
+[ext_resource type="Script" uid="uid://ce1qivitvupwx" path="res://art/viewer/art_series_details.gd" id="1_houjj"]
+[ext_resource type="Shader" uid="uid://b7ms4dx6p63n8" path="res://map/settlement_name.gdshader" id="2_ax0po"]
+[ext_resource type="Texture2D" uid="uid://chxf88ekbq0ie" path="res://visuals/canvas.png" id="3_7bgpu"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="4_cdhq6"]
+[ext_resource type="PackedScene" uid="uid://cav5ncic10m8v" path="res://art/viewer/art_listing.tscn" id="5_3iabd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ax0po"]
+shader = ExtResource("2_ax0po")
+shader_parameter/overlay_tex = ExtResource("3_7bgpu")
+shader_parameter/overlay_scale = 7.89
+shader_parameter/width = 700.0
+shader_parameter/color_add = Color(0.5246, 0.5872267, 0.61, 1)
+shader_parameter/power = 6.775
+shader_parameter/reveal_progress = 0.999999977648
+shader_parameter/reveal_margin = 0.23999999463552
+
+[sub_resource type="LabelSettings" id="LabelSettings_7bgpu"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0.85, 0.76585007, 0.6205, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cdhq6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3iabd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dnt4w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q2y8i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3ebxq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j7uq0"]
+
+[node name="ArtSeriesDetails" type="MarginContainer" unique_id=1461303784]
+offset_right = 1090.0
+offset_bottom = 704.0
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+script = ExtResource("1_houjj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=945082184]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1755823384]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="NameLabel" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=887788991]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_ax0po")
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Piece Name"
+label_settings = SubResource("LabelSettings_7bgpu")
+vertical_alignment = 1
+
+[node name="ArtistLabel" parent="VBoxContainer/HBoxContainer" unique_id=979263107 instance=ExtResource("4_cdhq6")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 20
+text = "by Foo Bar"
+fit_content = true
+autowrap_mode = 0
+tooltip_directions = Array[int]([5, 1])
+
+[node name="LinkButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=716131940]
+unique_name_in_owner = true
+modulate = Color(0.48, 0.105600014, 0.11807999, 1)
+layout_mode = 2
+size_flags_vertical = 8
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cdhq6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3iabd")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_dnt4w")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_q2y8i")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_3ebxq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j7uq0")
+text = "🔗"
+flat = true
+
+[node name="MainTextLabel" parent="VBoxContainer" unique_id=121303431 instance=ExtResource("4_cdhq6")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(800, 10)
+layout_mode = 2
+size_flags_horizontal = 2
+mouse_filter = 1
+text = "Blurb blurb blurb"
+fit_content = true
+scroll_active = true
+tooltip_directions = Array[int]([5, 1])
+
+[node name="ArtListing" parent="VBoxContainer" unique_id=454470456 instance=ExtResource("5_3iabd")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/LinkButton" to="." method="_on_link_button_pressed"]

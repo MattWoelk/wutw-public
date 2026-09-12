@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://cpyvexgs3gc2k"]
+
+[ext_resource type="Script" uid="uid://copl8eu2gp4q3" path="res://japanese/japanese_utils.gd" id="1_ytvq6"]
+[ext_resource type="Material" uid="uid://dm0coidukcc6" path="res://theme/button/ukiyoe_button_material.tres" id="2_gfcsv"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="3_fd0x6"]
+[ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="4_p6h75"]
+
+[node name="JapaneseUtilsTest" type="Node2D" unique_id=1264036751]
+script = ExtResource("1_ytvq6")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1141041557]
+offset_left = 27.0
+offset_top = 24.0
+offset_right = 817.0
+offset_bottom = 463.0
+columns = 4
+
+[node name="Button_TestRomaji" type="Button" parent="GridContainer" unique_id=773311586]
+material = ExtResource("2_gfcsv")
+instance_shader_parameters/background_offset = Vector2(0.521862, 0.16222571)
+instance_shader_parameters/size = Vector2(91.83673, 27.891151)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+theme_override_styles/normal = ExtResource("3_fd0x6")
+theme_override_styles/pressed = ExtResource("3_fd0x6")
+theme_override_styles/hover = ExtResource("3_fd0x6")
+theme_override_styles/hover_pressed = ExtResource("3_fd0x6")
+theme_override_styles/disabled = ExtResource("3_fd0x6")
+text = "Test Romaji"
+script = ExtResource("4_p6h75")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="Button_TestCards" type="Button" parent="GridContainer" unique_id=871398939]
+material = ExtResource("2_gfcsv")
+instance_shader_parameters/background_offset = Vector2(0.53331244, 0.8097502)
+instance_shader_parameters/size = Vector2(82.99318, 27.891151)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+theme_override_styles/normal = ExtResource("3_fd0x6")
+theme_override_styles/pressed = ExtResource("3_fd0x6")
+theme_override_styles/hover = ExtResource("3_fd0x6")
+theme_override_styles/hover_pressed = ExtResource("3_fd0x6")
+theme_override_styles/disabled = ExtResource("3_fd0x6")
+text = "Test Cards"
+script = ExtResource("4_p6h75")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="Button_TestVocab" type="Button" parent="GridContainer" unique_id=1285718003]
+material = ExtResource("2_gfcsv")
+instance_shader_parameters/background_offset = Vector2(0.151482, 0.34837607)
+instance_shader_parameters/size = Vector2(84.35373, 27.891151)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+theme_override_styles/normal = ExtResource("3_fd0x6")
+theme_override_styles/pressed = ExtResource("3_fd0x6")
+theme_override_styles/hover = ExtResource("3_fd0x6")
+theme_override_styles/hover_pressed = ExtResource("3_fd0x6")
+theme_override_styles/disabled = ExtResource("3_fd0x6")
+text = "Test Vocab"
+script = ExtResource("4_p6h75")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="Button_TestSentences" type="Button" parent="GridContainer" unique_id=1937244320]
+material = ExtResource("2_gfcsv")
+instance_shader_parameters/background_offset = Vector2(0.42025512, 0.9687869)
+instance_shader_parameters/size = Vector2(105.44214, 27.891151)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+theme_override_styles/normal = ExtResource("3_fd0x6")
+theme_override_styles/pressed = ExtResource("3_fd0x6")
+theme_override_styles/hover = ExtResource("3_fd0x6")
+theme_override_styles/hover_pressed = ExtResource("3_fd0x6")
+theme_override_styles/disabled = ExtResource("3_fd0x6")
+text = "Test Sentences"
+script = ExtResource("4_p6h75")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="Button_TestStrokes" type="Button" parent="GridContainer" unique_id=1935138070]
+material = ExtResource("2_gfcsv")
+instance_shader_parameters/background_offset = Vector2(0.63183045, 0.9923325)
+instance_shader_parameters/size = Vector2(91.83673, 27.891151)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+theme_override_styles/normal = ExtResource("3_fd0x6")
+theme_override_styles/pressed = ExtResource("3_fd0x6")
+theme_override_styles/hover = ExtResource("3_fd0x6")
+theme_override_styles/hover_pressed = ExtResource("3_fd0x6")
+theme_override_styles/disabled = ExtResource("3_fd0x6")
+text = "Test Strokes"
+script = ExtResource("4_p6h75")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[connection signal="pressed" from="GridContainer/Button_TestRomaji" to="." method="_on_button_test_romaji_pressed"]
+[connection signal="pressed" from="GridContainer/Button_TestCards" to="." method="_on_button_test_cards_pressed"]
+[connection signal="pressed" from="GridContainer/Button_TestVocab" to="." method="_on_button_test_vocab_pressed"]
+[connection signal="pressed" from="GridContainer/Button_TestSentences" to="." method="_on_button_test_sentences_pressed"]
+[connection signal="pressed" from="GridContainer/Button_TestStrokes" to="." method="_on_button_test_strokes_pressed"]

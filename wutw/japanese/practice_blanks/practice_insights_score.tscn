@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://b7tihpu7m4sf5"]
+
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="1_54gl4"]
+[ext_resource type="Theme" uid="uid://bneu0powe6n80" path="res://theme/theme_ukiyoe.tres" id="4_kc8qq"]
+[ext_resource type="Script" uid="uid://0lahku1yqaf2" path="res://japanese/practice_blanks/practice_insights_score.gd" id="4_n0k6c"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="5_g7nih"]
+[ext_resource type="Shader" uid="uid://cc3g2iigeykq7" path="res://hub/insights/enso_progress.gdshader" id="19_pxi11"]
+[ext_resource type="Texture2D" uid="uid://d336ixgqgqsol" path="res://hub/insights/enso_edge.png" id="20_euhwt"]
+[ext_resource type="Texture2D" uid="uid://bf6g0waib064d" path="res://hub/insights/enso.png" id="21_7xjo8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_67bqs"]
+shader = ExtResource("19_pxi11")
+shader_parameter/edge_tex = ExtResource("20_euhwt")
+shader_parameter/base_alpha = 1.1
+shader_parameter/progress = 0.0
+shader_parameter/edge = 0.0250000011875
+shader_parameter/stroke_range = Vector2(0.045, 0.91)
+shader_parameter/cap_range = Vector2(0.01, 0.87)
+
+[node name="PracticeInsightsScore" type="PanelContainer" unique_id=1276551969]
+material = ExtResource("1_54gl4")
+custom_minimum_size = Vector2(72, 72)
+offset_right = 72.0
+offset_bottom = 72.0
+theme = ExtResource("4_kc8qq")
+theme_override_styles/panel = ExtResource("5_g7nih")
+script = ExtResource("4_n0k6c")
+tooltip = "<header_font_size>[b]Insights[/b][/font_size]
+
+For every 5 correct answers, you will gain 1 <term:insight> at the end of the practice."
+
+[node name="ExcessIcon" type="TextureRect" parent="." unique_id=12937805]
+unique_name_in_owner = true
+texture_filter = 4
+texture_repeat = 1
+material = SubResource("ShaderMaterial_67bqs")
+custom_minimum_size = Vector2(55, 55)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("21_7xjo8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ExcessLabel" type="Label" parent="ExcessIcon" unique_id=1124907971]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(27.5, 27.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 23
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

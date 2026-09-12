@@ -1,0 +1,771 @@
+[gd_scene format=3 uid="uid://dkoda2mubsxu5"]
+
+[ext_resource type="Script" uid="uid://u0kenhwwm2r1" path="res://japanese/practice_blanks/blanks_practice.gd" id="1_d7wtl"]
+[ext_resource type="WwiseEvent" uid="uid://ca6hrbbbxks5n" path="res://Wwise/resources/Event/{7576EA81-69E2-4D02-A478-06CDDB6F52CC}.tres" id="2_fyvw3"]
+[ext_resource type="WwiseEvent" uid="uid://igpucieu8cm" path="res://Wwise/resources/Event/{6B390DD5-1452-4F5F-8A38-E028FB7F617A}.tres" id="3_hd35x"]
+[ext_resource type="WwiseEvent" uid="uid://csu83gxdekrih" path="res://Wwise/resources/Event/{6334122C-BDDD-4FFD-B633-3F6129AAD651}.tres" id="4_yvf7e"]
+[ext_resource type="PackedScene" uid="uid://b5k03f5wr13rr" path="res://cards/deck/card_deck.tscn" id="5_0y8a2"]
+[ext_resource type="PackedScene" uid="uid://b5k16hpo8080v" path="res://theme/faded_background/faded_background.tscn" id="5_yvf7e"]
+[ext_resource type="PackedScene" uid="uid://mtjka26g6iir" path="res://japanese/practice_blanks/practice_inspiration_display.tscn" id="7_2frhs"]
+[ext_resource type="Material" uid="uid://dm0coidukcc6" path="res://theme/button/ukiyoe_button_material.tres" id="8_0lxrk"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="9_2frhs"]
+[ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="10_obts4"]
+[ext_resource type="PackedScene" uid="uid://b6ob53b0vla40" path="res://theme/scroll_panel/scroll_panel_big.tscn" id="11_0y8a2"]
+[ext_resource type="PackedScene" uid="uid://dcw84jgynv7dn" path="res://japanese/practice_blanks/kana_panel.tscn" id="11_t08cu"]
+[ext_resource type="Shader" uid="uid://bbe7ginxustev" path="res://theme/scroll_panel/scroll_panel_dowel.gdshader" id="12_mp1ul"]
+[ext_resource type="Texture2D" uid="uid://b0cvn7ev1bwut" path="res://theme/scroll_panel/dowel_wood.png" id="13_d07gv"]
+[ext_resource type="PackedScene" uid="uid://duhgfqb3rnmyk" path="res://stage/targeting/brushstroke_arrow.tscn" id="14_52qc0"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="14_yxfw8"]
+[ext_resource type="PackedScene" uid="uid://b7tihpu7m4sf5" path="res://japanese/practice_blanks/practice_insights_score.tscn" id="16_r5klx"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="17_mp1ul"]
+[ext_resource type="Theme" uid="uid://bneu0powe6n80" path="res://theme/theme_ukiyoe.tres" id="18_d07gv"]
+[ext_resource type="Script" uid="uid://dbh5bpr5jdgyr" path="res://theme/slider/ukiyoe_slider.gd" id="19_yxfw8"]
+[ext_resource type="Script" uid="uid://dm63mtrlfj005" path="res://theme/faded_scroll_container/faded_scroll_container.gd" id="20_d07gv"]
+[ext_resource type="PackedScene" uid="uid://cvtwogaio38ov" path="res://theme/dropdown/dropdown.tscn" id="20_r5klx"]
+[ext_resource type="Script" uid="uid://bmw3vmo4pm0wc" path="res://theme/dropdown/dropdown_item.gd" id="21_t08cu"]
+
+[sub_resource type="Curve" id="Curve_2frhs"]
+_limits = [5.0, 10.0, 0.0, 60.0]
+_data = [Vector2(0, 5), 0.0, 0.0, 0, 0, Vector2(5.3972044, 5), 0.0, 0.0, 0, 0, Vector2(6.002642, 6.0673504), 0.0, 0.0, 0, 0, Vector2(12.167101, 6.0603905), 0.0, 0.0, 0, 0, Vector2(12.827579, 7.0765076), 0.0, 0.0, 0, 0, Vector2(17.616043, 7.0765076), 0.0, 0.0, 0, 0, Vector2(18.001322, 8.169181), 0.0, 0.0, 0, 0, Vector2(23.670422, 8.17614), 0.0, 0.0, 0, 0, Vector2(24.00066, 9.060022), 0.0, 0.0, 0, 0, Vector2(29.77984, 9.066982), 0.0, 0.0, 0, 0, Vector2(30.330238, 10), 0.6223389, 0.0, 0, 0]
+point_count = 11
+
+[sub_resource type="Curve" id="Curve_obts4"]
+_limits = [0.0, 1.0, 0.0, 60.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(30, 0.0687083), 0.0, 0.0, 0, 0, Vector2(60, 0.040869474), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_ybm1i"]
+_limits = [0.0, 1.0, 0.0, 60.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(29.94496, 0.49742597), 0.0, 0.0, 0, 0, Vector2(60, 0.05896467), -0.010201389, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_yvf7e"]
+_limits = [0.0, 1.0, 0.0, 60.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(40.622684, 0.5029937), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_0y8a2"]
+_limits = [0.0, 1.0, 0.0, 60.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(30.05504, 0.50438565), 0.0, 0.0, 0, 0, Vector2(60, 0.23713309), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_fyvw3"]
+_limits = [0.0, 1.0, 0.0, 60.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(37.650536, 0.8064368), 0.0, 0.0, 0, 0, Vector2(60, 1), 0.008680247, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_t08cu"]
+_limits = [0.0, 1.0, 0.0, 60.0]
+_data = [Vector2(0, 0), 0.0, -4.862552e-05, 0, 0, Vector2(4.296408, 0.07984382), 0.017969003, 0.017969003, 0, 0, Vector2(40.567642, 0.4306128), 0.018692369, 0.018692369, 0, 0, Vector2(60, 0.94980663), 0.021077562, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_mp1ul"]
+_limits = [0.0, 1.0, 0.0, 60.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(3, 0), 0.0, 0.0, 0, 0, Vector2(6.332881, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_d07gv"]
+_limits = [0.0, 1.0, 0.0, 60.0]
+_data = [Vector2(0, 0), 0.0, 9.930647e-05, 0, 0, Vector2(60, 1), 0.017228832, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_yxfw8"]
+_limits = [0.0, 1.0, 0.0, 60.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(60, 1), 0.018778646, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_04bl0"]
+_limits = [0.0, 1.0, 0.0, 60.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(6.8282394, 0), 0.000875245, 0.000875245, 0, 0, Vector2(8.699594, 0.03206694), 0.017201785, 0.017201785, 0, 0, Vector2(60, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_ofyuc"]
+offsets = PackedFloat32Array(0, 0.196721, 0.460041, 0.525615, 0.603484, 0.732582, 1)
+colors = PackedColorArray(0.59, 0.43424, 0.3068, 0.796078, 0.48, 0.35328, 0.2496, 0.294118, 0.48, 0.35328, 0.2496, 0.0116377, 0.48, 0.35328, 0.2496, 0, 0.48, 0.35328, 0.2496, 0.0431956, 0.48, 0.35328, 0.2496, 0.34902, 0.4, 0.2944, 0.208, 0.929412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g5dkl"]
+gradient = SubResource("Gradient_ofyuc")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_0fvof"]
+colors = PackedColorArray(0.331639, 0.33164, 0.331639, 1, 0.961814, 0.961814, 0.961814, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0fvof"]
+frequency = 0.0035
+domain_warp_amplitude = 100.0
+domain_warp_frequency = -0.01
+domain_warp_fractal_lacunarity = 8.69
+domain_warp_fractal_gain = 0.19
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jijvn"]
+width = 2048
+noise = SubResource("FastNoiseLite_0fvof")
+color_ramp = SubResource("Gradient_0fvof")
+seamless = true
+seamless_blend_skirt = 0.27
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t08cu"]
+shader = ExtResource("12_mp1ul")
+shader_parameter/size = Vector2(1245, 49)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("13_d07gv")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yvf7e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f7p5o"]
+shader = ExtResource("12_mp1ul")
+shader_parameter/size = Vector2(1243, 49)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("13_d07gv")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[node name="BlanksPractice" type="Node2D" unique_id=2055433397]
+script = ExtResource("1_d7wtl")
+arrow_start_sound = ExtResource("2_fyvw3")
+arrow_confirm_sound = ExtResource("3_hd35x")
+arrow_cancel_sound = ExtResource("4_yvf7e")
+hand_size_curve = SubResource("Curve_2frhs")
+kanji_meaning_probability_curve = SubResource("Curve_obts4")
+kanji_reading_probability_curve = SubResource("Curve_ybm1i")
+vocab_reading_probability_curve = SubResource("Curve_yvf7e")
+vocab_meaning_probability_curve = SubResource("Curve_0y8a2")
+sentence_probability_curve = SubResource("Curve_fyvw3")
+universal_slot_probability_curve = SubResource("Curve_t08cu")
+multi_blank_probability_curve = SubResource("Curve_mp1ul")
+vocab_difficulty_curve = SubResource("Curve_d07gv")
+sentence_difficulty_curve = SubResource("Curve_yxfw8")
+hide_native_probability_curve = SubResource("Curve_04bl0")
+metadata/_edit_vertical_guides_ = [980.0]
+
+[node name="BG" parent="." unique_id=691473429 instance=ExtResource("5_yvf7e")]
+unique_name_in_owner = true
+
+[node name="CardDeck" parent="." unique_id=1530711462 instance=ExtResource("5_0y8a2")]
+unique_name_in_owner = true
+z_index = 1
+custom_minimum_size = Vector2(500, 200)
+offset_left = 0.0
+offset_top = 648.0
+offset_right = 1917.0
+offset_bottom = 1080.0
+practice_mode = true
+
+[node name="CardArrow" parent="." unique_id=1747139250 instance=ExtResource("14_52qc0")]
+unique_name_in_owner = true
+visible = false
+z_index = 200
+
+[node name="FinishButton" type="Button" parent="." unique_id=1785851214]
+unique_name_in_owner = true
+material = ExtResource("8_0lxrk")
+instance_shader_parameters/background_offset = Vector2(0.73534757, 0.99606556)
+instance_shader_parameters/state = 0.0
+offset_left = 2.0
+offset_top = 817.0
+offset_right = 159.0
+offset_bottom = 858.0
+focus_mode = 0
+theme_override_styles/normal = ExtResource("9_2frhs")
+theme_override_styles/pressed = ExtResource("9_2frhs")
+theme_override_styles/hover = ExtResource("9_2frhs")
+theme_override_styles/hover_pressed = ExtResource("9_2frhs")
+theme_override_styles/disabled = ExtResource("9_2frhs")
+text = "Finish Practice"
+script = ExtResource("10_obts4")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="NextRoundButton" type="Button" parent="." unique_id=121666256]
+unique_name_in_owner = true
+material = ExtResource("8_0lxrk")
+instance_shader_parameters/background_offset = Vector2(0.90709573, 0.9682566)
+instance_shader_parameters/state = 0.0
+offset_left = 848.0
+offset_top = 899.0
+offset_right = 1111.421
+offset_bottom = 976.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+focus_mode = 0
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = ExtResource("9_2frhs")
+theme_override_styles/pressed = ExtResource("9_2frhs")
+theme_override_styles/hover = ExtResource("9_2frhs")
+theme_override_styles/hover_pressed = ExtResource("9_2frhs")
+theme_override_styles/disabled = ExtResource("9_2frhs")
+text = "Next Round"
+script = ExtResource("10_obts4")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="HiraganaPanel" parent="." unique_id=1122741446 instance=ExtResource("11_t08cu")]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(-1, 85)
+offset_left = 17.0
+offset_top = 82.0
+offset_right = 294.0
+offset_bottom = 166.0
+title = "Hiragana Chart"
+tooltip = "Hiragana is one of the two phonetic alphabets of Japanese. It is used for native words and grammar."
+
+[node name="KatakanaPanel" parent="." unique_id=1186288592 instance=ExtResource("11_t08cu")]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(-1, 85)
+offset_left = 1628.0
+offset_top = 82.0
+offset_right = 1905.0
+offset_bottom = 166.0
+title = "Katakana Chart"
+tooltip = "Katakana is one of the two phonetic alphabets of Japanese. It is used primarily for foreign loanwords."
+is_katakana = true
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=668427404]
+offset_right = 1920.0
+offset_bottom = 821.0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="ScrollPanel" parent="CenterContainer" unique_id=2046371096 instance=ExtResource("11_0y8a2")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1345, 0)
+layout_mode = 2
+default_roll_duration = 0.7
+default_unroll_duration = 1.0
+
+[node name="TopDowelWood" parent="CenterContainer/ScrollPanel/TopDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_t08cu")
+
+[node name="Scroller" parent="CenterContainer/ScrollPanel" index="1"]
+custom_minimum_size = Vector2(0, 650)
+
+[node name="ScrollMargin" parent="CenterContainer/ScrollPanel/Scroller" index="0"]
+offset_bottom = 1271.0
+
+[node name="ContentPanel" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin" index="0"]
+material = ExtResource("14_yxfw8")
+
+[node name="MainContainer" type="VBoxContainer" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer" index="0" unique_id=1162995556]
+custom_minimum_size = Vector2(1200, 600)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="TitlePanel" type="PanelContainer" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer" unique_id=1166489438]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_yvf7e")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/TitlePanel" unique_id=947983862]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/TitlePanel/HBoxContainer" unique_id=1215845566]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Kanji Practice"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/TitlePanel/HBoxContainer" unique_id=902012114]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 20
+text = "Round 1 - Level 1"
+horizontal_alignment = 1
+
+[node name="PracticeInspirationDisplay" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/TitlePanel" unique_id=1979713124 instance=ExtResource("7_2frhs")]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="PracticeInsightsScore" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/TitlePanel" unique_id=1276551969 instance=ExtResource("16_r5klx")]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="SetupBox" type="VBoxContainer" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer" unique_id=2130570210]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="IntroLabel" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox" unique_id=338298605 instance=ExtResource("17_mp1ul")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_font_sizes/normal_font_size = 19
+text = "
+This minigame lets you practice the kanji of all the <term:glyph>s you've discovered.
+
+Use <term_lower:glyph>s to fill in the blanks and gain small <term_lower:insight> rewards.
+
+Mistakes will cost you <term:inspiration>, and the session ends if you exhaust it.
+
+Each time you finish a round, the difficulty level increases.
+
+You can start future sessions from any level you've previously reached."
+fit_content = true
+horizontal_alignment = 1
+
+[node name="SettingsList" type="HBoxContainer" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox" unique_id=2000463014]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_constants/separation = 42
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList" unique_id=1376413330]
+layout_mode = 2
+
+[node name="HBox_StartingLevel" type="HBoxContainer" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer" unique_id=583227663]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 33)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label_StartingLevel" type="Label" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer/HBox_StartingLevel" unique_id=916732450]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("18_d07gv")
+text = "Starting Level:"
+horizontal_alignment = 2
+
+[node name="Label_StartingLevelValue" type="Label" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer/HBox_StartingLevel" unique_id=1676307702]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("18_d07gv")
+text = "1"
+horizontal_alignment = 2
+
+[node name="Slider_StartingLevel" type="HSlider" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer/HBox_StartingLevel" unique_id=1760255227]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 1
+max_value = 59.0
+rounded = true
+script = ExtResource("19_yxfw8")
+metadata/_custom_type_script = "uid://dbh5bpr5jdgyr"
+
+[node name="HBox_LevelCap" type="HBoxContainer" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer" unique_id=691588784]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 33)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label_LevelCap" type="Label" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer/HBox_LevelCap" unique_id=1110763775]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("18_d07gv")
+text = "Maximum Level:"
+horizontal_alignment = 2
+
+[node name="Label_LevelCapValue" type="Label" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer/HBox_LevelCap" unique_id=1843527240]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("18_d07gv")
+text = "60 (max)"
+horizontal_alignment = 2
+
+[node name="Slider_LevelCap" type="HSlider" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer/HBox_LevelCap" unique_id=1770608730]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 1
+max_value = 59.0
+value = 59.0
+rounded = true
+script = ExtResource("19_yxfw8")
+metadata/_custom_type_script = "uid://dbh5bpr5jdgyr"
+
+[node name="HBox_FuriganaMode" type="HBoxContainer" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer" unique_id=579988669]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 33)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label_FuriganaMode" type="Label" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer/HBox_FuriganaMode" unique_id=848359793]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("18_d07gv")
+text = "Furigana Display:"
+horizontal_alignment = 2
+
+[node name="Dropdown_FuriganaMode" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer/HBox_FuriganaMode" unique_id=2079276916 instance=ExtResource("20_r5klx")]
+unique_name_in_owner = true
+instance_shader_parameters/background_offset = Vector2(0.71843755, 0.83559924)
+custom_minimum_size = Vector2(0, 41)
+custom_maximum_size = Vector2(-1, 41)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_filter = 1
+initial_items = Array[ExtResource("21_t08cu")]([])
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList" unique_id=1844112846]
+layout_mode = 2
+
+[node name="HBox_MaxGrade" type="HBoxContainer" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer2" unique_id=316173050]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 33)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label_MaxGrade" type="Label" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer2/HBox_MaxGrade" unique_id=1633505113]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("18_d07gv")
+text = "School Grade Up To:"
+horizontal_alignment = 2
+
+[node name="Label_MaxGradeValue" type="Label" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer2/HBox_MaxGrade" unique_id=1646890101]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("18_d07gv")
+text = "Any"
+horizontal_alignment = 2
+
+[node name="Slider_MaxGrade" type="HSlider" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer2/HBox_MaxGrade" unique_id=1121239634]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 1
+min_value = 1.0
+max_value = 11.0
+value = 11.0
+rounded = true
+script = ExtResource("19_yxfw8")
+metadata/_custom_type_script = "uid://dbh5bpr5jdgyr"
+
+[node name="HBox_MaxJlptLevel" type="HBoxContainer" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer2" unique_id=497230576]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 33)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label_MaxJlptLevel" type="Label" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer2/HBox_MaxJlptLevel" unique_id=506424139]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("18_d07gv")
+text = "JLPT Level Up To:"
+horizontal_alignment = 2
+
+[node name="Label_MaxJlptLevelValue" type="Label" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer2/HBox_MaxJlptLevel" unique_id=606324863]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("18_d07gv")
+text = "Any"
+horizontal_alignment = 2
+
+[node name="Slider_MaxJlptLevel" type="HSlider" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer2/HBox_MaxJlptLevel" unique_id=1198470167]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 1
+max_value = 4.0
+value = 4.0
+rounded = true
+script = ExtResource("19_yxfw8")
+metadata/_custom_type_script = "uid://dbh5bpr5jdgyr"
+
+[node name="HBox_TotalCards" type="HBoxContainer" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer2" unique_id=1041741213]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="Label_TotalCards" type="Label" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer2/HBox_TotalCards" unique_id=2003451362]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("18_d07gv")
+text = "Practiced Kanji:"
+horizontal_alignment = 2
+
+[node name="ViewStartingCardsButton" type="Button" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer2/HBox_TotalCards" unique_id=866426457]
+unique_name_in_owner = true
+material = ExtResource("8_0lxrk")
+instance_shader_parameters/background_offset = Vector2(0.60720634, 0.039803993)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+focus_mode = 0
+mouse_filter = 1
+theme_override_styles/normal = ExtResource("9_2frhs")
+theme_override_styles/pressed = ExtResource("9_2frhs")
+theme_override_styles/hover = ExtResource("9_2frhs")
+theme_override_styles/hover_pressed = ExtResource("9_2frhs")
+theme_override_styles/disabled = ExtResource("9_2frhs")
+text = "View 23 Glyphs"
+script = ExtResource("10_obts4")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox" unique_id=2012955378]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/HBoxContainer" unique_id=1155381712]
+material = ExtResource("8_0lxrk")
+instance_shader_parameters/background_offset = Vector2(0.99795127, 0.19453423)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+focus_mode = 0
+theme_override_styles/normal = ExtResource("9_2frhs")
+theme_override_styles/pressed = ExtResource("9_2frhs")
+theme_override_styles/hover = ExtResource("9_2frhs")
+theme_override_styles/hover_pressed = ExtResource("9_2frhs")
+theme_override_styles/disabled = ExtResource("9_2frhs")
+text = "Return"
+script = ExtResource("10_obts4")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="IntroButton" type="Button" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/HBoxContainer" unique_id=148152341]
+material = ExtResource("8_0lxrk")
+instance_shader_parameters/background_offset = Vector2(0.99795127, 0.19453423)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+focus_mode = 0
+theme_override_styles/normal = ExtResource("9_2frhs")
+theme_override_styles/pressed = ExtResource("9_2frhs")
+theme_override_styles/hover = ExtResource("9_2frhs")
+theme_override_styles/hover_pressed = ExtResource("9_2frhs")
+theme_override_styles/disabled = ExtResource("9_2frhs")
+text = "View Japanese Writing Intro"
+script = ExtResource("10_obts4")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="StartButton" type="Button" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/HBoxContainer" unique_id=888169846]
+material = ExtResource("8_0lxrk")
+instance_shader_parameters/background_offset = Vector2(0.5325134, 0.15234298)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+focus_mode = 0
+theme_override_styles/normal = ExtResource("9_2frhs")
+theme_override_styles/pressed = ExtResource("9_2frhs")
+theme_override_styles/hover = ExtResource("9_2frhs")
+theme_override_styles/hover_pressed = ExtResource("9_2frhs")
+theme_override_styles/disabled = ExtResource("9_2frhs")
+text = "Start"
+script = ExtResource("10_obts4")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="QuestionsScroller" type="ScrollContainer" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer" unique_id=2001322370]
+unique_name_in_owner = true
+visible = false
+clip_children = 1
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("20_d07gv")
+metadata/_custom_type_script = "uid://dm63mtrlfj005"
+
+[node name="QuestionsList" type="HFlowContainer" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/QuestionsScroller" unique_id=1281607566]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+mouse_filter = 2
+theme_override_constants/h_separation = 80
+alignment = 1
+last_wrap_alignment = 2
+
+[node name="BlanksPracticeProblem" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/QuestionsScroller/QuestionsList" unique_id=216923470 instance_placeholder="res://japanese/practice_blanks/blanks_practice_problem.tscn"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+prompt = "Water"
+kanji_blanks = Array[String](["水"])
+
+[node name="BlanksPracticeProblem6" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/QuestionsScroller/QuestionsList" unique_id=1219910927 instance_placeholder="res://japanese/practice_blanks/blanks_practice_problem.tscn"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+prompt = "Water"
+kanji_blanks = Array[String](["水"])
+
+[node name="BlanksPracticeProblem7" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/QuestionsScroller/QuestionsList" unique_id=1918790948 instance_placeholder="res://japanese/practice_blanks/blanks_practice_problem.tscn"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+prompt = "Water"
+kanji_blanks = Array[String](["水"])
+
+[node name="BlanksPracticeProblem8" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/QuestionsScroller/QuestionsList" unique_id=1429082954 instance_placeholder="res://japanese/practice_blanks/blanks_practice_problem.tscn"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+prompt = "Water"
+kanji_blanks = Array[String](["水"])
+
+[node name="BlanksPracticeProblem2" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/QuestionsScroller/QuestionsList" unique_id=397546916 instance_placeholder="res://japanese/practice_blanks/blanks_practice_problem.tscn"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+prompt = "Even tough it's such a big garden, it would be wasted if we let it get overrun with weeds."
+
+[node name="BlanksPracticeProblem10" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/QuestionsScroller/QuestionsList" unique_id=350350268 instance_placeholder="res://japanese/practice_blanks/blanks_practice_problem.tscn"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+prompt = "Even tough it's such a big garden, it would be wasted if we let it get overrun with weeds."
+
+[node name="BlanksPracticeProblem9" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/QuestionsScroller/QuestionsList" unique_id=1485055650 instance_placeholder="res://japanese/practice_blanks/blanks_practice_problem.tscn"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+prompt = "Water"
+kanji_blanks = Array[String](["水"])
+
+[node name="BlanksPracticeProblem11" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/QuestionsScroller/QuestionsList" unique_id=1336370099 instance_placeholder="res://japanese/practice_blanks/blanks_practice_problem.tscn"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+prompt = "Even tough it's such a big garden, it would be wasted if we let it get overrun with weeds."
+
+[node name="BlanksPracticeProblem5" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/QuestionsScroller/QuestionsList" unique_id=325404589 instance_placeholder="res://japanese/practice_blanks/blanks_practice_problem.tscn"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+prompt = "Drink water.Drink water.Drink water.Drink water."
+
+[node name="BlanksPracticeProblem12" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/QuestionsScroller/QuestionsList" unique_id=740784378 instance_placeholder="res://japanese/practice_blanks/blanks_practice_problem.tscn"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+prompt = "Even tough it's such a big garden, it would be wasted if we let it get overrun with weeds."
+
+[node name="BlanksPracticeProblem13" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/QuestionsScroller/QuestionsList" unique_id=1465256699 instance_placeholder="res://japanese/practice_blanks/blanks_practice_problem.tscn"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+prompt = "Even tough it's such a big garden, it would be wasted if we let it get overrun with weeds."
+
+[node name="BlanksPracticeProblem3" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/QuestionsScroller/QuestionsList" unique_id=373973202 instance_placeholder="res://japanese/practice_blanks/blanks_practice_problem.tscn"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+prompt = "Drink water.Drink water.Drink water.Drink water."
+
+[node name="BlanksPracticeProblem4" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/QuestionsScroller/QuestionsList" unique_id=1464513039 instance_placeholder="res://japanese/practice_blanks/blanks_practice_problem.tscn"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+prompt = "Drink water.Drink water.Drink water.Drink water."
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer" index="1" unique_id=1118790365]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=535833199]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="StartHintLabel" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=1627404269 instance=ExtResource("17_mp1ul")]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_font_sizes/normal_font_size = 19
+text = "Match the glyphs to the slots below."
+fit_content = true
+horizontal_alignment = 1
+
+[node name="KunOnHintLabel" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=152469878 instance=ExtResource("17_mp1ul")]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_font_sizes/normal_font_size = 19
+theme_override_font_sizes/bold_font_size = 19
+theme_override_font_sizes/bold_italics_font_size = 19
+theme_override_font_sizes/italics_font_size = 19
+theme_override_font_sizes/mono_font_size = 19
+text = "[b]Kunyomi:[/b] Japanese-origin pronunciation
+[b]Onyomi:[/b] Chinese-origin pronunciation"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="EndHintLabel" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer" index="2" unique_id=565110976 instance=ExtResource("17_mp1ul")]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_font_sizes/normal_font_size = 19
+text = "Now that the problems are solved, you can hover over the text for dictionary tooltips.
+You can also right click on one to copy it to your clipboard.
+
+
+
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="BottomDowelWood" parent="CenterContainer/ScrollPanel/BottomDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_f7p5o")
+
+[connection signal="card_drag_ended" from="CardDeck" to="." method="_on_card_deck_card_drag_ended"]
+[connection signal="card_drag_started" from="CardDeck" to="." method="_on_card_deck_card_drag_started"]
+[connection signal="pressed" from="FinishButton" to="." method="_on_finish_button_pressed"]
+[connection signal="pressed" from="NextRoundButton" to="." method="_on_next_round_button_pressed"]
+[connection signal="exhausted" from="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/TitlePanel/PracticeInspirationDisplay" to="." method="_on_practice_inspiration_display_exhausted"]
+[connection signal="value_changed" from="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer/HBox_StartingLevel/Slider_StartingLevel" to="." method="_on_slider_starting_level_value_changed"]
+[connection signal="value_changed" from="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer/HBox_LevelCap/Slider_LevelCap" to="." method="_on_slider_level_cap_value_changed"]
+[connection signal="selected" from="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer/HBox_FuriganaMode/Dropdown_FuriganaMode" to="." method="_on_dropdown_furigana_mode_selected"]
+[connection signal="value_changed" from="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer2/HBox_MaxGrade/Slider_MaxGrade" to="." method="_on_slider_max_grade_value_changed"]
+[connection signal="value_changed" from="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer2/HBox_MaxJlptLevel/Slider_MaxJlptLevel" to="." method="_on_slider_max_jlpt_level_value_changed"]
+[connection signal="pressed" from="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/SettingsList/VBoxContainer2/HBox_TotalCards/ViewStartingCardsButton" to="." method="_on_view_starting_cards_button_pressed"]
+[connection signal="pressed" from="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/HBoxContainer/IntroButton" to="." method="_on_intro_button_pressed"]
+[connection signal="pressed" from="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/MainContainer/SetupBox/HBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+
+[editable path="CenterContainer/ScrollPanel"]

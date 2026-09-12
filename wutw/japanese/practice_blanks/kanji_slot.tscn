@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cxybo3q3vpblr"]
+
+[ext_resource type="PackedScene" uid="uid://be8el7dqxmifk" path="res://aspects/slot/aspect_slot.tscn" id="1_0g2ag"]
+[ext_resource type="Script" uid="uid://davnrmbj2sxr2" path="res://japanese/practice_blanks/kanji_slot.gd" id="1_6lt41"]
+[ext_resource type="LabelSettings" uid="uid://dtg3ja2jp4dtt" path="res://japanese/practice_blanks/blanks_practice_slot_label_settings.tres" id="3_6lt41"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_apwoj"]
+
+[node name="KanjiSlot2" type="PanelContainer" unique_id=1850463629]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1888.0
+offset_bottom = -1041.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_apwoj")
+script = ExtResource("1_6lt41")
+
+[node name="AspectSlot" parent="." unique_id=12973024 instance=ExtResource("1_0g2ag")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+is_universal = true
+
+[node name="Label" type="Label" parent="." unique_id=882416086]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+text = "慰"
+label_settings = ExtResource("3_6lt41")
+horizontal_alignment = 1
+vertical_alignment = 1

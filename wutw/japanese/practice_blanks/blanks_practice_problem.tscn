@@ -1,0 +1,197 @@
+[gd_scene format=3 uid="uid://df8vfnb0pp4ru"]
+
+[ext_resource type="Shader" uid="uid://cy23kwgtjt4et" path="res://theme/panel/panel.gdshader" id="1_2eab3"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="2_jifww"]
+[ext_resource type="Texture2D" uid="uid://bxvoyajed7cvv" path="res://theme/panel/panel_bg_mini.png" id="2_vljl6"]
+[ext_resource type="Texture2D" uid="uid://bnkoruxi23qsp" path="res://theme/panel/panel_frame.png" id="3_i4syd"]
+[ext_resource type="Script" uid="uid://b0jdk1ck5t4oo" path="res://japanese/practice_blanks/blanks_practice_problem.gd" id="3_o7p3v"]
+[ext_resource type="Texture2D" uid="uid://bif8savn5u3o1" path="res://visuals/sparkle.png" id="5_jifww"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y5cr4"]
+shader = ExtResource("1_2eab3")
+shader_parameter/background = ExtResource("2_vljl6")
+shader_parameter/background_tex_size = Vector2(947, 380)
+shader_parameter/background_scale = 2.27
+shader_parameter/frame_tex = ExtResource("3_i4syd")
+shader_parameter/frame_tex_size = Vector2(1127, 976)
+shader_parameter/frame_margin = Vector4(15, 15, 15, 15)
+shader_parameter/frame_scale = 1.125
+shader_parameter/frame_color = Color(0.47, 0.399735, 0.3619, 1)
+shader_parameter/decor_transform = Vector4(0, 0, 100, 100)
+shader_parameter/decor_modulate = Color(1, 1, 1, 0)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_2eab3"]
+blend_mode = 3
+
+[sub_resource type="Curve" id="Curve_jdsml"]
+_data = [Vector2(0.0010101013, 0), 0.0, 5.0516067, 0, 0, Vector2(0.16161615, 1), 0.0, 0.0, 0, 0, Vector2(0.17575756, 0.9653533), -2.7695727, -2.7695727, 0, 0, Vector2(1, 0), 0.030541155, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_mtwdc"]
+curve = SubResource("Curve_jdsml")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jdsml"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(81.5, 0.05, 0)
+emission_shape = 3
+emission_box_extents = Vector3(81.5, 0.05, 1)
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+angular_velocity_min = -90.000015
+angular_velocity_max = 89.999985
+gravity = Vector3(0, 0, 0)
+scale_min = 0.049999997
+scale_max = 0.06
+scale_curve = SubResource("CurveTexture_mtwdc")
+hue_variation_min = -2.2351742e-08
+hue_variation_max = 0.06999998
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2eab3"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(81.5, 86.05, 0)
+emission_shape = 3
+emission_box_extents = Vector3(81.5, 0.05, 1)
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+angular_velocity_min = -90.000015
+angular_velocity_max = 89.999985
+gravity = Vector3(0, 0, 0)
+scale_min = 0.049999997
+scale_max = 0.06
+scale_curve = SubResource("CurveTexture_mtwdc")
+hue_variation_min = -2.2351742e-08
+hue_variation_max = 0.06999998
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vljl6"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0.05, 43, 0)
+emission_shape = 3
+emission_box_extents = Vector3(0.05, 43, 1)
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+angular_velocity_min = -90.000015
+angular_velocity_max = 89.999985
+gravity = Vector3(0, 0, 0)
+scale_min = 0.049999997
+scale_max = 0.06
+scale_curve = SubResource("CurveTexture_mtwdc")
+hue_variation_min = -2.2351742e-08
+hue_variation_max = 0.06999998
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i4syd"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(163.05, 43, 0)
+emission_shape = 3
+emission_box_extents = Vector3(0.05, 43, 1)
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+angular_velocity_min = -90.000015
+angular_velocity_max = 89.999985
+gravity = Vector3(0, 0, 0)
+scale_min = 0.049999997
+scale_max = 0.06
+scale_curve = SubResource("CurveTexture_mtwdc")
+hue_variation_min = -2.2351742e-08
+hue_variation_max = 0.06999998
+
+[node name="BlanksPracticeProblem" type="PanelContainer" unique_id=216923470]
+material = SubResource("ShaderMaterial_y5cr4")
+offset_right = 145.0
+offset_bottom = 78.0
+theme_override_styles/panel = ExtResource("2_jifww")
+script = ExtResource("3_o7p3v")
+prompt = "Drink water."
+kanji_blanks = Array[String](["水", "飲"])
+material_customized = true
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=212816657]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = -7
+theme_override_constants/margin_top = -4
+theme_override_constants/margin_right = -7
+theme_override_constants/margin_bottom = -4
+
+[node name="MistakeFlasher" type="ColorRect" parent="MarginContainer2" unique_id=125765440]
+unique_name_in_owner = true
+material = SubResource("CanvasItemMaterial_2eab3")
+layout_mode = 2
+mouse_filter = 2
+
+[node name="OutlineContainer" type="Control" parent="MarginContainer2" unique_id=1827317295]
+unique_name_in_owner = true
+modulate = Color(1, 0.883333, 0, 1)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VFX_Top" type="GPUParticles2D" parent="MarginContainer2/OutlineContainer" unique_id=632859640]
+unique_name_in_owner = true
+emitting = false
+amount = 80
+texture = ExtResource("5_jifww")
+lifetime = 5.0
+visibility_rect = Rect2(-10, -10, 120, 120)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_jdsml")
+
+[node name="VFX_Bottom" type="GPUParticles2D" parent="MarginContainer2/OutlineContainer" unique_id=1035111325]
+unique_name_in_owner = true
+emitting = false
+amount = 80
+texture = ExtResource("5_jifww")
+lifetime = 5.0
+visibility_rect = Rect2(-10, -10, 120, 120)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_2eab3")
+
+[node name="VFX_Left" type="GPUParticles2D" parent="MarginContainer2/OutlineContainer" unique_id=518982891]
+unique_name_in_owner = true
+emitting = false
+amount = 12
+texture = ExtResource("5_jifww")
+lifetime = 5.0
+visibility_rect = Rect2(-10, -10, 120, 120)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_vljl6")
+
+[node name="VFX_Right" type="GPUParticles2D" parent="MarginContainer2/OutlineContainer" unique_id=1735540328]
+unique_name_in_owner = true
+emitting = false
+amount = 12
+texture = ExtResource("5_jifww")
+lifetime = 5.0
+visibility_rect = Rect2(-10, -10, 120, 120)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_i4syd")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1646927919]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2068323631]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="NativeLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=384852356]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 21
+text = "Drink water."
+
+[node name="JapaneseBox" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1438885724]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_constants/separation = 0

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dt367ov6de0dq"]
+
+[ext_resource type="Script" uid="uid://b16qspl23afsj" path="res://map/sprites/spots/desert/map_effect_vanishing_city.gd" id="1_sd66j"]
+[ext_resource type="Shader" uid="uid://bwknx0nqshwus" path="res://map/sprites/spots/desert/portal_vanishing_city.gdshader" id="2_a6t25"]
+[ext_resource type="Texture2D" uid="uid://mty1egdblbdn" path="res://map/sprites/spots/desert/portal_city.png" id="3_63hae"]
+[ext_resource type="Texture2D" uid="uid://bc8yvwlxbmrne" path="res://visuals/shaders/global_wind_noise.tres" id="4_22d0h"]
+[ext_resource type="Texture2D" uid="uid://cur7najtyx80c" path="res://map/sprites/spots/desert/portal_mask.png" id="5_ye0lq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_owrbf"]
+shader = ExtResource("2_a6t25")
+shader_parameter/city = ExtResource("3_63hae")
+shader_parameter/distort_noise = ExtResource("4_22d0h")
+shader_parameter/min_opacity = 0.15999999642368
+shader_parameter/max_opacity = 0.4499999899416
+shader_parameter/fade_speed = 1.5499999653544
+shader_parameter/distort_speed = 0.030000001425
+shader_parameter/distort_amount = 1.65999996289568
+
+[node name="MapEffectVanishingCity" type="Node2D" unique_id=1352818133]
+script = ExtResource("1_sd66j")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=34655779]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_owrbf")
+texture = ExtResource("5_ye0lq")

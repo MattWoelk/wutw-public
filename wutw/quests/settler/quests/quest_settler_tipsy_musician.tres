@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="Quest_Settler" format=3 uid="uid://bw50sy5viji24"]
+
+[ext_resource type="Script" uid="uid://cjloydxgrv8oa" path="res://quests/settler/settler_quest_challenge.gd" id="1_4v4hx"]
+[ext_resource type="Resource" uid="uid://dmfd5uheymt74" path="res://cards/tier6/card_drunk.tres" id="2_iehwh"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="3_iehwh"]
+[ext_resource type="Script" uid="uid://c8ac4q1waj8ti" path="res://quests/settler/challenges/settler_quest_challenge_card_on_redraw.gd" id="3_imt3f"]
+[ext_resource type="Resource" uid="uid://o88425vrnoax" path="res://characters/jobs/job_musician.tres" id="5_xarol"]
+[ext_resource type="Script" uid="uid://cd4swbq3t72je" path="res://quests/settler/settler_quest_reward.gd" id="8_t43y0"]
+[ext_resource type="Script" uid="uid://cvrgydjebg044" path="res://quests/settler/rewards/settler_quest_reward_run_var.gd" id="9_vs1gs"]
+[ext_resource type="Script" uid="uid://cschghuk4t5qx" path="res://quests/settler/goals/settler_quest_goal_global_upgrades.gd" id="10_8fnc8"]
+[ext_resource type="Script" uid="uid://1na7ymvvvbby" path="res://quests/settler/quest_settler.gd" id="10_bajwy"]
+[ext_resource type="Script" uid="uid://bxua8gxfjp2wy" path="res://quests/settler/settler_quest_goal.gd" id="11_baowj"]
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="11_sui7c"]
+[ext_resource type="Resource" uid="uid://dqw66dei6x0a" path="res://stage/spots/square/upgrade_square_1_festival_grounds.tres" id="12_t43y0"]
+[ext_resource type="Resource" uid="uid://rwd7lndpjibx" path="res://stage/spots/lake/upgrade_lake_3_boat_festival.tres" id="13_vs1gs"]
+[ext_resource type="Resource" uid="uid://b61ux624jtmib" path="res://stage/spots/river/upgrade_river_3_floating_lantern_festival.tres" id="14_bajwy"]
+
+[sub_resource type="Resource" id="Resource_bjd0h"]
+script = ExtResource("3_imt3f")
+card_type = ExtResource("2_iehwh")
+metadata/_custom_type_script = "uid://c8ac4q1waj8ti"
+
+[sub_resource type="Resource" id="Resource_f21y0"]
+script = ExtResource("9_vs1gs")
+run_var = 32
+delta = 2
+preview_description = "Restore 2 points of <term:inspiration> after each <term:foray>."
+outcome_description = "From now on, restore 2 points of <term:inspiration> after each <term:foray>."
+metadata/_custom_type_script = "uid://cvrgydjebg044"
+
+[sub_resource type="Resource" id="Resource_07x58"]
+script = ExtResource("10_8fnc8")
+upgrades = Array[ExtResource("11_sui7c")]([ExtResource("12_t43y0"), ExtResource("13_vs1gs"), ExtResource("14_bajwy")])
+metadata/_custom_type_script = "uid://cschghuk4t5qx"
+
+[resource]
+script = ExtResource("10_bajwy")
+intro_text = "My home shard has instituted an alcohol ban so now I have no parties to play at. I'm looking for a shard where people actually know how to have fun."
+challenges = Array[ExtResource("1_4v4hx")]([SubResource("Resource_bjd0h")])
+settler_goals = Array[ExtResource("11_baowj")]([SubResource("Resource_07x58")])
+rewards = Array[ExtResource("8_t43y0")]([SubResource("Resource_f21y0")])
+restrict_to_jobs = Array[ExtResource("3_iehwh")]([ExtResource("5_xarol")])
+quest_id = "settler_tipsy_musician"
+category = 2
+name = "A Tipsy Musician"
+metadata/_custom_type_script = "uid://1na7ymvvvbby"

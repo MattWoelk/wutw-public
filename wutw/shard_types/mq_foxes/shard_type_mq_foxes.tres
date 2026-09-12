@@ -1,0 +1,297 @@
+[gd_resource type="Resource" script_class="ShardType_MainQuest_Foxes" format=3 uid="uid://mly31fc57yq0"]
+
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="1_75eke"]
+[ext_resource type="Resource" uid="uid://bvn2nygt0oynu" path="res://events/main_quest/2_10_places_of_power/event_firefox.tres" id="1_ojk12"]
+[ext_resource type="Script" uid="uid://bwltjghnyydje" path="res://shard_types/mq_foxes/shard_type_mq_foxes.gd" id="2_vt243"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="3_6gm55"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="4_3315c"]
+[ext_resource type="Texture2D" uid="uid://dgsd1dlk82q2y" path="res://shard_types/mq_foxes/shard_type_mq_foxes.png" id="5_htid0"]
+[ext_resource type="Resource" uid="uid://j0n2nrm5t7q4" path="res://art/pieces/piece_gekkou_foxes_shrine.tres" id="6_ck4g4"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="8_4ui0s"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="9_hk6ad"]
+[ext_resource type="Resource" uid="uid://dwsu7nisvucup" path="res://debate/arguments/argument_magic_self_harm.tres" id="10_nsuv8"]
+[ext_resource type="Resource" uid="uid://s5x47k2fghpv" path="res://debate/arguments/argument_magic_chemicals.tres" id="11_vo6ed"]
+[ext_resource type="Resource" uid="uid://d1s2bct7ixwb" path="res://debate/arguments/argument_magic_science.tres" id="12_ghv6k"]
+[ext_resource type="Resource" uid="uid://ba7rn53dnk7mb" path="res://debate/arguments/argument_magic_fire.tres" id="13_y1x2n"]
+
+[sub_resource type="Resource" id="Resource_g51qk"]
+script = ExtResource("4_3315c")
+scope = 1
+event_id = "firefox"
+var_id = "blood"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_4ui0s"]
+script = ExtResource("3_6gm55")
+text = "$shard_name was the first place where the settlers of the New World encountered hauntings, a group of fox spirits. They led the expedition deep into the woods, and when they finally found their way out, the foxes were gathering around an old tree on the edge of the forest. The Scribe and his acolytes shed blood from their own palms to banish the haunting once and for all."
+requirement = SubResource("Resource_g51qk")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_hk6ad"]
+script = ExtResource("4_3315c")
+scope = 1
+event_id = "firefox"
+var_id = "salt"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_nsuv8"]
+script = ExtResource("3_6gm55")
+text = "$shard_name was the first place where the settlers of the New World encountered hauntings, a group of fox spirits. They led the expedition deep into the woods, and when they finally found their way out, the foxes were gathering around an old tree on the edge of the forest. The Scribe and his acolytes poured salt in arcane circles to banish the haunting once and for all."
+requirement = SubResource("Resource_hk6ad")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_vo6ed"]
+script = ExtResource("4_3315c")
+scope = 1
+event_id = "firefox"
+var_id = "science"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_ghv6k"]
+script = ExtResource("3_6gm55")
+text = "$shard_name was the first place where the settlers of the New World encountered hauntings, a group of fox spirits. They led the expedition deep into the woods, and when they finally found their way out, the foxes were gathering around an old tree on the edge of the forest. Despite the Scribe's objections, the settlers decided to let the foxes be, and merely recorded their findings."
+requirement = SubResource("Resource_vo6ed")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_y1x2n"]
+script = ExtResource("4_3315c")
+scope = 1
+event_id = "firefox"
+var_id = "destroy"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_d4kp3"]
+script = ExtResource("3_6gm55")
+text = "$shard_name was the first place where the settlers of the New World encountered hauntings, a group of fox spirits. They led the expedition deep into the woods, and when they finally found their way out, the foxes were gathering around an old tree on the edge of the forest. The Scribe and his acolytes cut down the tree to banish the haunting once and for all."
+requirement = SubResource("Resource_y1x2n")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_irsb1"]
+script = ExtResource("1_75eke")
+text = "..."
+time_taken = 0
+overrides = Array[ExtResource("3_6gm55")]([SubResource("Resource_4ui0s"), SubResource("Resource_nsuv8"), SubResource("Resource_ghv6k"), SubResource("Resource_d4kp3")])
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_ojk12"]
+script = ExtResource("3_6gm55")
+text = "The culture of $shard_name took an odd turn after the settlers' first encounter with the foxes. The effectiveness of bloodletting in warding off spirits led to the practice spreading like wildfire through the everyday rituals of the locals. A personal misfortune is often treated by spilling a few drops of blood, while a drought calls for a communal self-flagellation ritual."
+requirement = SubResource("Resource_g51qk")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_6gm55"]
+script = ExtResource("3_6gm55")
+text = "The custom of throwing salt to ward off fox spirits soon evolved into the philosophy that if a little salt keeps hauntings at bay, then a lot of it must make a place holy. The practice of salting the earth before breaking ground for a new home or planting a new field became widely accepted. The soil around settlements is now entirely grey, and the locals congratulate themselves on successfully starving out the invisible menace."
+requirement = SubResource("Resource_hk6ad")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_3315c"]
+script = ExtResource("3_6gm55")
+text = "The culture of careful observation on $shard_name took root early. After the encounter with fox spirits, the priests established a routine of regularly returning to study the tree and its surroundings. They soon discovered that an unusually fragrant species of moss grows in the area, and appears to be tempting to the local wildlife. This simple discovery was enough to dispel the belief that the foxes are evil spirits, and they have since been treated as regular animals."
+requirement = SubResource("Resource_vo6ed")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_htid0"]
+script = ExtResource("3_6gm55")
+text = "The culture of $shard_name took an odd turn after the settlers' first encounter with the foxes. The effectiveness of fire in warding off spirits led to burning being a common solution for other issues. For example, when irritating pollen drifts from the forests in the spring, it is customary to simply burn down all trees within settlement range, though some locals complain that the smoke and ashes are just as irritating."
+requirement = SubResource("Resource_y1x2n")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_ck4g4"]
+script = ExtResource("1_75eke")
+text = "..."
+min_main_quest = 220
+overrides = Array[ExtResource("3_6gm55")]([SubResource("Resource_ojk12"), SubResource("Resource_6gm55"), SubResource("Resource_3315c"), SubResource("Resource_htid0")])
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_beunt"]
+script = ExtResource("3_6gm55")
+text = "The healthcare practices of $shard_name are centered entirely around blood-letting, as well as ways to recover from it. The healers have found that certain crops help people maintain the quality of their blood, so it is common to see more fields of spinach and beetroot than buckwheat nowadays. That said, many look with suspicion upon people with particularly healthy complexion, and extreme pallor is in fashion as a sign of spiritual diligence."
+requirement = SubResource("Resource_g51qk")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_253iq"]
+script = ExtResource("3_6gm55")
+text = "$shard_name eventually ran out of readily available salt, even with off-shard imports, and the priesthood began blessing the land with lye and copper shavings. They believe that a pure forest is one with no moss or undergrowth, so the trees can properly channel the energies of the soil. As a result, the woods look like a vast, neatly swept graveyard."
+requirement = SubResource("Resource_hk6ad")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_5uxq4"]
+script = ExtResource("3_6gm55")
+text = "Many scholars on $shard_name specialize in the observation of animal behavior. This has led to numerous discoveries, such as medicinal herbs that the local macaques chew when they are ill. Natural disasters like wildfires are now predicted early by observing animals fleeing out of the forests, and the purity of wells is now judged by the fish and toads living in them."
+requirement = SubResource("Resource_vo6ed")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_bj5m7"]
+script = ExtResource("3_6gm55")
+text = "Over time, the settlements of $shard_name have lost much of their vegetation. In fact, most towns are surrounded by wide open plains where forests once stood. These plains are furthermore remarkably empty, as the animals have retreated further and further into the wilderness, fleeing the devastating burnings. The locals are content with this state of affairs, feeling safe from the incursions of wild hauntings."
+requirement = SubResource("Resource_y1x2n")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_4to1u"]
+script = ExtResource("1_75eke")
+text = "..."
+min_main_quest = 300
+overrides = Array[ExtResource("3_6gm55")]([SubResource("Resource_beunt"), SubResource("Resource_253iq"), SubResource("Resource_5uxq4"), SubResource("Resource_bj5m7")])
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_3ud03"]
+script = ExtResource("3_6gm55")
+text = "As ritual cuts became a universal expectation, the vocation of \"proxy bleeders\" has arisen. The wealthy and the elderly now hire people to perform the rituals in their place, which is particularly valuable for merchants, as all contracts have to be signed in blood to be considered binding."
+requirement = SubResource("Resource_g51qk")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_50022"]
+script = ExtResource("3_6gm55")
+text = "Today, a visitor to $shard_name will find a stark, bleached landscape that smells of iron and ash. The towns are immaculate, and the citizens take immense pride in their purified, pale soil. They spend hours scrubbing their garden stones with toxic pastes to ensure no rogue spirit dares to sprout a patch of lichen. The crop yields on $shard_name are now at a historical minimum, which the locals blame on the lack of spiritual diligence in these wayward times."
+requirement = SubResource("Resource_hk6ad")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_s4847"]
+script = ExtResource("3_6gm55")
+text = "$shard_name has become famous for its animal encyclopedias, thick volumes filled with detailed descriptions of animal anatomy and behavior. When the scholars ran out of local animals to study, they started traveling to other shards to catalogue the fauna all across the Cloud Sea, spreading the shard's reputation far and wide."
+requirement = SubResource("Resource_vo6ed")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_cjc5d"]
+script = ExtResource("3_6gm55")
+text = "Today, the culture of $shard_name has changed. The indiscriminate burnings have given way to small, orderly rituals where incense and prayer slips are burned in little braziers. The main exception to this is the Summer Bonfire festival, where large bonfires in the shape of glyphs are burned on the slopes of specific mountains to guide the fragmented spirits to join the Enlightened One's divine being."
+requirement = SubResource("Resource_y1x2n")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_fqfna"]
+script = ExtResource("1_75eke")
+text = "..."
+min_main_quest = 400
+overrides = Array[ExtResource("3_6gm55")]([SubResource("Resource_3ud03"), SubResource("Resource_50022"), SubResource("Resource_s4847"), SubResource("Resource_cjc5d")])
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_5n8af"]
+script = ExtResource("8_4ui0s")
+text = "(overriden)"
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[sub_resource type="Resource" id="Resource_244gu"]
+script = ExtResource("4_3315c")
+scope = 1
+event_id = "firefox"
+var_id = "blood"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_g8y5f"]
+script = ExtResource("8_4ui0s")
+text = "This was a pretty eerie place. I'd heard that this shard is full of \"blood cultists\", but I'd always dismissed it as exaggerated rumors. Well, imagine my surprise when the customs officials asked me to stamp my name on the visitors list, and handed me a needle. I had to draw a drop of blood instead of using my personal seal.
+
+I spent the whole trip in the small town by the gate. The main plaza is lined with fox statues draped in red aprons. It seems that at some point they stopped considering foxes to be evil spirits, and they now call them the shard's protectors.
+
+Despite the size of the town, I found a branch of the Bleeders Guild there. The bleeders are extra healthy folks who are hired when the wealthy need to sign a lot of documents or make a particularly large donation to the church. Apparently they are well paid and happy with their jobs, so who am I to judge?"
+gained_argument = ExtResource("10_nsuv8")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[sub_resource type="Resource" id="Resource_3pse1"]
+script = ExtResource("9_hk6ad")
+trip_reward = SubResource("Resource_g8y5f")
+requirement = SubResource("Resource_244gu")
+metadata/_custom_type_script = "uid://bt2jv4savcrpl"
+
+[sub_resource type="Resource" id="Resource_mc1m4"]
+script = ExtResource("4_3315c")
+scope = 1
+event_id = "firefox"
+var_id = "salt"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_mh0e4"]
+script = ExtResource("8_4ui0s")
+text = "I wasn't able to do much exploration on this shard. When I tried to check into an inn, I discovered that the only currency accepted here is salt, and having not brought any with me, I couldn't pay.
+
+A local miller took pity on me and let me stay in a spare room, but before she even let me into the house I had to go through a purification ritual, bathing in ice water and being dusted with some sort of metallic shavings.
+
+Having no means of paying for food or passage to other towns, I had to return the next day."
+gained_argument = ExtResource("11_vo6ed")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[sub_resource type="Resource" id="Resource_waq3m"]
+script = ExtResource("9_hk6ad")
+trip_reward = SubResource("Resource_mh0e4")
+requirement = SubResource("Resource_mc1m4")
+metadata/_custom_type_script = "uid://bt2jv4savcrpl"
+
+[sub_resource type="Resource" id="Resource_udnq7"]
+script = ExtResource("4_3315c")
+scope = 1
+event_id = "firefox"
+var_id = "science"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_vq4j6"]
+script = ExtResource("8_4ui0s")
+text = "The people of this shard are remarkably practical. My inn was next to a school, so I went there and was disturbed to find the teacher showing the children a cut-up frog. The teacher later told me that the frog had died of old age, and dissecting it is the best way to understand how bodies work.
+
+After the anatomy lessons, a local ranger took the kids out into the wilderness to sketch local plants and wildlife. He explained that no predators live in the woods this close to town because the rangers plant a certain type of bush whose scents deter these animals.
+
+They apply even more advanced techniques in their farming. They breed a specific kind of beetle and release them into the fields, because these particular bugs eat weeds and leave crops alone, while also chasing off other insects.
+
+I can't argue with the effectiveness of their approach, but I personally prefer to keep a little more mystery in the world."
+gained_argument = ExtResource("12_ghv6k")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[sub_resource type="Resource" id="Resource_3npp1"]
+script = ExtResource("9_hk6ad")
+trip_reward = SubResource("Resource_vq4j6")
+requirement = SubResource("Resource_udnq7")
+metadata/_custom_type_script = "uid://bt2jv4savcrpl"
+
+[sub_resource type="Resource" id="Resource_7lgod"]
+script = ExtResource("4_3315c")
+scope = 1
+event_id = "firefox"
+var_id = "destroy"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_wrxym"]
+script = ExtResource("8_4ui0s")
+text = "I arrived just before the shard's famous Summer Bonfire festival. I joined the townsfolk who were in charge of setting up one of the fires as they climbed up the mountain. They were clearly experts, cutting up grass, layering sticks in the shape of the spirit glyph, and surrounding it with gravel to prevent a wildfire.
+
+Two days later, back in town, everyone gathered in the evening to watch the burning glyphs. I have to admit it was an impressive sight, the bright yellow flames blazing in such a clear shape against the dark mountainside. Later the same night, the kids burned a large fox effigy in the town square. They assured me that no one bears foxes any grudges, and this is simply a fun ancient tradition they keep to this day."
+gained_argument = ExtResource("13_y1x2n")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[sub_resource type="Resource" id="Resource_2tg4y"]
+script = ExtResource("9_hk6ad")
+trip_reward = SubResource("Resource_wrxym")
+requirement = SubResource("Resource_7lgod")
+metadata/_custom_type_script = "uid://bt2jv4savcrpl"
+
+[resource]
+script = ExtResource("2_vt243")
+event = ExtResource("1_ojk12")
+shard_type_id = "mq_foxes"
+name = "The Fox Spirits Domain"
+shard_name_override = "Kitsunebi Mori"
+shard_name_override_jp = "狐火森"
+shard_name_override_meaning = "Fox Fire Woods"
+tier = 3
+illustration = ExtResource("5_htid0")
+illustration_credit = ExtResource("6_ck4g4")
+history = Array[ExtResource("1_75eke")]([SubResource("Resource_irsb1"), SubResource("Resource_ck4g4"), SubResource("Resource_4to1u"), SubResource("Resource_fqfna")])
+trip_reward = SubResource("Resource_5n8af")
+trip_reward_overrides = Array[ExtResource("9_hk6ad")]([SubResource("Resource_3pse1"), SubResource("Resource_waq3m"), SubResource("Resource_3npp1"), SubResource("Resource_2tg4y")])
+min_main_quest_progress = 200
+metadata/_custom_type_script = "uid://bwltjghnyydje"

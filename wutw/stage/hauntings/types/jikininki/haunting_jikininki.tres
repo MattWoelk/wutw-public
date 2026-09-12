@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://b34kaxm33dkxx"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_m62vu"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="2_tfm8c"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="3_04kni"]
+[ext_resource type="Resource" uid="uid://c8ykgnjdubwpm" path="res://cards/tier6/card_fear.tres" id="4_bl8hb"]
+[ext_resource type="Script" uid="uid://777usfqcjmox" path="res://stage/hauntings/effects/haunting_effect_add_card.gd" id="5_kuxan"]
+[ext_resource type="Texture2D" uid="uid://b2h78v1yo0jo0" path="res://stage/hauntings/types/jikininki/haunting_jikininki_realistic_wildlife.png" id="5_m62vu"]
+[ext_resource type="Resource" uid="uid://jommxomv2obt" path="res://art/pieces/piece_kuniyoshi_asakura_togo.tres" id="5_tfm8c"]
+[ext_resource type="Texture2D" uid="uid://6pi8dy4kldhc" path="res://stage/hauntings/types/jikininki/haunting_jikininki.png" id="6_04kni"]
+[ext_resource type="Resource" uid="uid://cinkat1a1laij" path="res://art/pieces/piece_hiroshige_boar.tres" id="7_bl8hb"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="7_p3cvs"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="10_kuxan"]
+[ext_resource type="Script" uid="uid://c53dokbn2lx38" path="res://stage/hauntings/triggers/haunting_trigger_card_drawn.gd" id="11_bl8hb"]
+
+[sub_resource type="Resource" id="Resource_8wvv2"]
+script = ExtResource("5_kuxan")
+card_type = ExtResource("4_bl8hb")
+metadata/_custom_type_script = "uid://777usfqcjmox"
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("11_bl8hb")
+metadata/_custom_type_script = "uid://c53dokbn2lx38"
+
+[resource]
+script = ExtResource("7_p3cvs")
+haunting_id = "jikininki"
+name = "Jikininki"
+name_japanese = "食人鬼"
+name_realistic = "Dangerous Wildlife"
+name_translation = "Human-Eating Demons"
+description = "A ravenous spirit stalks the night, devouring all who linger too long among the dead."
+description_realistic = "Predatory beasts roam the night, drawn by the smell of food. Fear multiplies each time one of the settlers is injured."
+description_long = "Travelers whisper of nights when the land stirs with hunger. They say the Jikininki walk these lands, monks who turned their prayers into coin and their faith into appetite. Now they haunt the scattered ruins and toppled gates, their faces pale as bone dust, their mouths full of teeth too sharp for penance.
+
+Those who sleep in the open find their packs torn open in the morning. The less lucky ones are woken up by vicious attacks from the darkness. While some claim the Jikininki only feed on corpses, they seem to see little difference between the sleeping and the dead."
+image_small = ExtResource("6_04kni")
+image_credit = ExtResource("5_tfm8c")
+image_small_realistic = ExtResource("5_m62vu")
+image_realistic_credit = ExtResource("7_bl8hb")
+base_aspect_types = Array[ExtResource("1_m62vu")]([ExtResource("3_04kni")])
+extra_aspect_type = ExtResource("2_tfm8c")
+scaling_bonus_type = ExtResource("10_kuxan")
+trigger = SubResource("Resource_trtbi")
+effect = SubResource("Resource_8wvv2")
+spot_attach_mode = 1
+settlement_attach_mode = 1
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

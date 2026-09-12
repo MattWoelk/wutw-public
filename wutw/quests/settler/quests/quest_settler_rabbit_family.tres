@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="Quest_Settler" format=3 uid="uid://djjnyh6qjosmp"]
+
+[ext_resource type="Script" uid="uid://cjloydxgrv8oa" path="res://quests/settler/settler_quest_challenge.gd" id="1_wedns"]
+[ext_resource type="Script" uid="uid://dx1xn4k6otkmt" path="res://quests/settler/challenges/settler_quest_challenge_dupe_card_per_foray.gd" id="2_b48it"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="3_q82t8"]
+[ext_resource type="Resource" uid="uid://c2qx8ufo4c12r" path="res://characters/jobs/job_monk_ember.tres" id="4_y1ot6"]
+[ext_resource type="Resource" uid="uid://djn3flqos8t4f" path="res://characters/jobs/job_monk_shattered.tres" id="6_fv6d7"]
+[ext_resource type="Resource" uid="uid://kau1o80i2qm0" path="res://characters/jobs/job_monk_forest.tres" id="7_pubnd"]
+[ext_resource type="Resource" uid="uid://d01sh3wyj45gx" path="res://characters/jobs/job_child.tres" id="8_ejdxq"]
+[ext_resource type="Script" uid="uid://cvrgydjebg044" path="res://quests/settler/rewards/settler_quest_reward_run_var.gd" id="9_tpdar"]
+[ext_resource type="Script" uid="uid://cschghuk4t5qx" path="res://quests/settler/goals/settler_quest_goal_global_upgrades.gd" id="12_cpyuo"]
+[ext_resource type="Script" uid="uid://cd4swbq3t72je" path="res://quests/settler/settler_quest_reward.gd" id="13_cqp8v"]
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="13_wedns"]
+[ext_resource type="Resource" uid="uid://btpcc1kny4v20" path="res://stage/spots/brushland/upgrade_brushland_2_rabbit_warren.tres" id="14_i4vr5"]
+[ext_resource type="Script" uid="uid://1na7ymvvvbby" path="res://quests/settler/quest_settler.gd" id="15_y5nc3"]
+[ext_resource type="Script" uid="uid://bxua8gxfjp2wy" path="res://quests/settler/settler_quest_goal.gd" id="16_hrkar"]
+
+[sub_resource type="Resource" id="Resource_gq4j7"]
+script = ExtResource("2_b48it")
+metadata/_custom_type_script = "uid://dx1xn4k6otkmt"
+
+[sub_resource type="Resource" id="Resource_4baux"]
+script = ExtResource("9_tpdar")
+run_var = 21
+delta = 1
+preview_description = "Get one more <term:glyph> reward at the end of each <term:foray>."
+outcome_description = "Added one more <term:glyph> reward at the end of each <term:foray>."
+metadata/_custom_type_script = "uid://cvrgydjebg044"
+
+[sub_resource type="Resource" id="Resource_p7jql"]
+script = ExtResource("12_cpyuo")
+upgrades = Array[ExtResource("13_wedns")]([ExtResource("14_i4vr5"), ExtResource("14_i4vr5"), ExtResource("14_i4vr5"), ExtResource("14_i4vr5")])
+metadata/_custom_type_script = "uid://cschghuk4t5qx"
+
+[resource]
+script = ExtResource("15_y5nc3")
+intro_text = "I have a couple of rabbit companions, but their family is growing too fast for me to handle. I'm looking for a shard to rehome them."
+challenges = Array[ExtResource("1_wedns")]([SubResource("Resource_gq4j7")])
+settler_goals = Array[ExtResource("16_hrkar")]([SubResource("Resource_p7jql")])
+rewards = Array[ExtResource("13_cqp8v")]([SubResource("Resource_4baux")])
+exclude_jobs = Array[ExtResource("3_q82t8")]([ExtResource("4_y1ot6"), ExtResource("6_fv6d7"), ExtResource("7_pubnd"), ExtResource("8_ejdxq")])
+quest_id = "settler_rabbit_family"
+category = 2
+name = "A Rabbit Family"
+metadata/_custom_type_script = "uid://1na7ymvvvbby"

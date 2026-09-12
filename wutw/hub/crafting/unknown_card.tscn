@@ -1,0 +1,606 @@
+[gd_scene format=3 uid="uid://b56iv8k5emagl"]
+
+[ext_resource type="Script" uid="uid://bq2lxrban8jui" path="res://hub/crafting/unknown_card.gd" id="1_575b2"]
+[ext_resource type="LabelSettings" uid="uid://kfd2iofdfggd" path="res://theme/fonts/presets/label_settings_card_name.tres" id="2_g62ri"]
+[ext_resource type="Texture2D" uid="uid://c66aj8bt8kjit" path="res://cards/art/card_base.png" id="3_kuo7j"]
+[ext_resource type="Shader" uid="uid://wq2ymrioegbn" path="res://cards/art/card_rarity.gdshader" id="4_575b2"]
+[ext_resource type="Texture2D" uid="uid://ev3llicglsq8" path="res://cards/art/card_border.png" id="5_fe0vj"]
+[ext_resource type="Shader" uid="uid://dxc4ewrgbw2ie" path="res://cards/art/card_symbol.gdshader" id="6_g62ri"]
+[ext_resource type="FontVariation" uid="uid://cg0r11kdhnguu" path="res://theme/fonts/presets/font_card_symbol.tres" id="7_vqmod"]
+[ext_resource type="Shader" uid="uid://lpjj2djk1br2" path="res://cards/art/card_dowel.gdshader" id="10_iuhy6"]
+[ext_resource type="Texture2D" uid="uid://bbve8bkg6kx4f" path="res://cards/art/dowel_color.png" id="11_aydp7"]
+[ext_resource type="Texture2D" uid="uid://bmxrghuyk8hjk" path="res://cards/art/dowel_lines.png" id="12_ht3k3"]
+[ext_resource type="Texture2D" uid="uid://cu3b23fafni3r" path="res://cards/art/dowel_shade.png" id="13_hlalk"]
+[ext_resource type="Texture2D" uid="uid://bged7v8k4r7ty" path="res://cards/art/dowel_mask.png" id="14_063yr"]
+[ext_resource type="Shader" uid="uid://gpgadexvoqm8" path="res://visuals/shaders/multiply.gdshader" id="15_8ygtm"]
+
+[sub_resource type="Gradient" id="Gradient_iruc6"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.16291, 0.570312, 0.86373, 1)
+colors = PackedColorArray(1, 1, 1, 0.0705882, 1, 1, 1, 0.297793, 1, 1, 1, 0.564706, 1, 1, 1, 0.32543, 1, 1, 1, 0.0705882)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mpdjx"]
+gradient = SubResource("Gradient_iruc6")
+fill_from = Vector2(1, 1)
+repeat = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g62ri"]
+shader = ExtResource("4_575b2")
+shader_parameter/gradient = SubResource("GradientTexture2D_mpdjx")
+shader_parameter/power = 2.2
+shader_parameter/speed = -0.5
+
+[sub_resource type="Gradient" id="Gradient_wykft"]
+offsets = PackedFloat32Array(0.5061856, 0.56494844)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ehlp7"]
+seed = 140
+frequency = 1.0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 0.405
+domain_warp_frequency = 0.295
+domain_warp_fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_61onk"]
+noise = SubResource("FastNoiseLite_ehlp7")
+color_ramp = SubResource("Gradient_wykft")
+
+[sub_resource type="Gradient" id="Gradient_wjo72"]
+offsets = PackedFloat32Array(0.428279, 0.694672, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.668421, 0.668421, 0.668421, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6lod5"]
+seed = 215
+frequency = 0.0125
+offset = Vector3(0, -126.12, 0)
+fractal_lacunarity = 1.9
+fractal_gain = 0.565
+fractal_weighted_strength = 0.98
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qfw1p"]
+noise = SubResource("FastNoiseLite_6lod5")
+color_ramp = SubResource("Gradient_wjo72")
+bump_strength = 12.6
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1mcvb"]
+shader = ExtResource("6_g62ri")
+shader_parameter/main_noise = SubResource("NoiseTexture2D_qfw1p")
+shader_parameter/detail_noise = SubResource("NoiseTexture2D_61onk")
+shader_parameter/detail_noise_scale = 0.76200003549648
+shader_parameter/shine_noise_scale = 0.48600002238648
+shader_parameter/shine_amount = Vector2(0.21, -0.04)
+shader_parameter/shine_color = Color(1.0249712, 0.8560658, 0.3493494, 0.77254903)
+shader_parameter/size = Vector2(157, 99)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vqmod"]
+shader = ExtResource("10_iuhy6")
+shader_parameter/color_tex = ExtResource("11_aydp7")
+shader_parameter/lines_tex = ExtResource("12_ht3k3")
+shader_parameter/shade_tex = ExtResource("13_hlalk")
+shader_parameter/color_uv_transform = Vector4(0.975, 0.2, 0.01, 0.15)
+shader_parameter/shade_uv_transform = Vector4(0.93, 1, 0.035, -0.4)
+shader_parameter/lines_uv_transform = Vector4(0.985, 1.06, 0.002, -0.12)
+shader_parameter/reveal_lines_margin = 0.15
+shader_parameter/reveal_margin = 0.15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_acvkr"]
+shader = ExtResource("15_8ygtm")
+
+[sub_resource type="Gradient" id="Gradient_kbqer"]
+offsets = PackedFloat32Array(0, 0.30957, 0.484375)
+colors = PackedColorArray(0.5, 0.43825, 0.405, 1, 0.93, 0.899775, 0.8835, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hwwr4"]
+gradient = SubResource("Gradient_kbqer")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Animation" id="Animation_53nac"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Control/Dowel:material:shader_parameter/anim_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(3.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer/Control/MaskContainer/MainContainer:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer/Control/Dowel:material:shader_parameter/reveal_lines_progress")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer/Control/Dowel:material:shader_parameter/reveal_progress")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("VBoxContainer/Control/Dowel/Shadow:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("VBoxContainer/Control/Dowel/Shadow:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:custom_minimum_size:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [214.0]
+}
+
+[sub_resource type="Animation" id="Animation_iruc6"]
+resource_name = "appear"
+length = 0.7
+step = 0.005
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Control/Dowel:material:shader_parameter/anim_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.233333, 1.23422, 3.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.25, 0.7)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer/Control/MaskContainer/MainContainer:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-206, -0.25, 0, 0.25, 0, -206, -0.25, 0, 0.09, 88.8594, 0, -0.285, -53.8051, 0.25, 0),
+"times": PackedFloat32Array(0, 0.25, 0.7)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer/Control/Dowel:material:shader_parameter/reveal_lines_progress")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-0.18, -0.25, 0, 0.015, 0.468652, 1, -0.065, -0.235284, 0.25, 0),
+"times": PackedFloat32Array(0, 0.135)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer/Control/Dowel:material:shader_parameter/reveal_progress")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-0.3, -0.05, -0.0034831, 0.04, -0.0104493, 0, -0.035, -0.162357, 0.02, 0.330138, 1, -0.055, -0.449535, 0.035, 0.0452803),
+"times": PackedFloat32Array(0, 0.135, 0.25)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("VBoxContainer/Control/Dowel/Shadow:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.26, 0.285),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_l8rp0"]
+resource_name = "disappear"
+length = 0.8
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Control/Dowel:material:shader_parameter/anim_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(3.2, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.233333, 1.23422),
+"times": PackedFloat32Array(0, 0.45)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer/Control/MaskContainer/MainContainer:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.285, -53.8051, 0.25, 0, -206, -0.25, 0, 0.25, -0.141708, -206, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.45, 0.7)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer/Control/Dowel:material:shader_parameter/reveal_lines_progress")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.065, -0.235284, 0.0211272, -0.440104, -0.18, -0.043735, 0.26009, 0.015, 0.468652),
+"times": PackedFloat32Array(0.565, 0.7)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer/Control/Dowel:material:shader_parameter/reveal_progress")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.055, -0.449535, 0.035, 0.0452803, 0, -0.0420684, 0.264202, 0.0245983, -0.210025, -0.3, -0.05, -0.0034831, 0.04, -0.0104493),
+"times": PackedFloat32Array(0.45, 0.565, 0.7)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("VBoxContainer/Control/Dowel/Shadow:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.333333, 0.366667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:custom_minimum_size:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5709937, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [214.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_wykft"]
+resource_name = "rollup"
+length = 0.8
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Control/Dowel:material:shader_parameter/anim_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(3.2, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.233333, 1.23422),
+"times": PackedFloat32Array(0, 0.45)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer/Control/MaskContainer/MainContainer:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.285, -53.8051, 0.25, 0, -206, -0.25, 0, 0.25, -0.141708, -206, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.45, 0.7)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer/Control/Dowel:material:shader_parameter/reveal_lines_progress")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.065, -0.235284, 0.0211272, -0.440104, -0.18, -0.043735, 0.26009, 0.015, 0.468652),
+"times": PackedFloat32Array(0.565, 0.7)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer/Control/Dowel:material:shader_parameter/reveal_progress")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.055, -0.449535, 0.035, 0.0452803, 0, -0.0420684, 0.264202, 0.0245983, -0.210025, -0.3, -0.05, -0.0034831, 0.04, -0.0104493),
+"times": PackedFloat32Array(0.45, 0.565, 0.7)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("VBoxContainer/Control/Dowel/Shadow:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.333333, 0.366667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = false
+tracks/5/path = NodePath(".:custom_minimum_size:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5709937, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [214.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0tfah"]
+_data = {
+&"RESET": SubResource("Animation_53nac"),
+&"appear": SubResource("Animation_iruc6"),
+&"disappear": SubResource("Animation_l8rp0"),
+&"rollup": SubResource("Animation_wykft")
+}
+
+[node name="UnknownCard" type="Control" unique_id=1074744728]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(214, 232)
+layout_mode = 3
+anchors_preset = 0
+pivot_offset = Vector2(106.907, 227.72)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+script = ExtResource("1_575b2")
+rarity = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1667104156]
+custom_minimum_size = Vector2(214, 232)
+layout_mode = 1
+offset_right = 214.0
+offset_bottom = 232.0
+
+[node name="NameLabel" type="Label" parent="VBoxContainer" unique_id=1734359804]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+text = "Unknown Glyph"
+label_settings = ExtResource("2_g62ri")
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="VBoxContainer" unique_id=1305309856]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="MaskContainer" type="TextureRect" parent="VBoxContainer/Control" unique_id=1937649228]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="MainContainer" type="Control" parent="VBoxContainer/Control/MaskContainer" unique_id=1226864298]
+unique_name_in_owner = true
+modulate = Color(0.67, 0.67, 0.67, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+metadata/_edit_lock_ = true
+
+[node name="Background" type="TextureRect" parent="VBoxContainer/Control/MaskContainer/MainContainer" unique_id=217724432]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 2.0
+offset_right = 198.0
+offset_bottom = 206.0
+mouse_filter = 2
+texture = ExtResource("3_kuo7j")
+expand_mode = 1
+
+[node name="Control" type="Control" parent="VBoxContainer/Control/MaskContainer/MainContainer" unique_id=610023359]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RarityOverlay" type="TextureRect" parent="VBoxContainer/Control/MaskContainer/MainContainer/Control" unique_id=1505576686]
+unique_name_in_owner = true
+self_modulate = Color(0.47, 0.742, 0.98, 1)
+material = SubResource("ShaderMaterial_g62ri")
+instance_shader_parameters/factor = 0.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = 8.0
+offset_right = -186.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_fe0vj")
+expand_mode = 1
+
+[node name="RarityOverlay2" type="TextureRect" parent="VBoxContainer/Control/MaskContainer/MainContainer/Control" unique_id=472590646]
+unique_name_in_owner = true
+self_modulate = Color(0.47, 0.742, 0.98, 1)
+material = SubResource("ShaderMaterial_g62ri")
+instance_shader_parameters/factor = 0.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 187.0
+offset_top = 7.0
+offset_right = -17.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_fe0vj")
+expand_mode = 1
+flip_h = true
+
+[node name="VBox" type="VBoxContainer" parent="VBoxContainer/Control/MaskContainer/MainContainer" unique_id=1433839559]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 29.0
+offset_top = 11.0
+offset_right = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Symbol" type="Label" parent="VBoxContainer/Control/MaskContainer/MainContainer/VBox" unique_id=739708722]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_1mcvb")
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_vqmod")
+theme_override_font_sizes/font_size = 95
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HoverOverlay" type="ColorRect" parent="VBoxContainer/Control/MaskContainer/MainContainer" unique_id=350717794]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 29.0
+offset_top = 11.0
+offset_right = -28.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Dowel" type="TextureRect" parent="VBoxContainer/Control" unique_id=404530162]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_vqmod")
+instance_shader_parameters/anim_offset = 3.1999999284736
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -214.0
+offset_top = -4.0
+offset_right = -2.0
+offset_bottom = 11.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+mouse_filter = 2
+texture = ExtResource("14_063yr")
+expand_mode = 2
+
+[node name="Shadow" type="TextureRect" parent="VBoxContainer/Control/Dowel" unique_id=1036062035]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_acvkr")
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 16.0
+offset_top = 14.0
+offset_right = -14.0
+offset_bottom = 34.0
+grow_horizontal = 2
+size_flags_vertical = 0
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_hwwr4")
+expand_mode = 1
+
+[node name="CountLabel" type="Label" parent="VBoxContainer/Control" unique_id=529516816]
+unique_name_in_owner = true
+modulate = Color(1, 0.91183335, 0.77, 0.6627451)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -73.85397
+offset_top = -37.550964
+offset_right = -30.853973
+offset_bottom = -0.55096436
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "⨯1"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1077699609]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_0tfah")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

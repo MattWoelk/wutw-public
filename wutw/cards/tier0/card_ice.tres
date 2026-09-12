@@ -1,0 +1,783 @@
+[gd_resource type="Resource" script_class="CardType" format=3 uid="uid://00qsql8js4ef"]
+
+[ext_resource type="Script" uid="uid://b56kytec5oqcb" path="res://cards/abilities/card_ability.gd" id="1_e4420"]
+[ext_resource type="Script" uid="uid://uued7mxh0g4q" path="res://cards/abilities/card_ability_adapt.gd" id="2_6g6dk"]
+[ext_resource type="Resource" uid="uid://c3n8uww1bymv1" path="res://cards/tier0/card_water.tres" id="3_jdx6p"]
+[ext_resource type="Script" uid="uid://bl5b1rm7x8b36" path="res://cards/abilities/card_ability_topdeck.gd" id="4_i7b4k"]
+[ext_resource type="Script" uid="uid://xc73x4t7ckxm" path="res://japanese/example_sentence.gd" id="5_cawj1"]
+[ext_resource type="Script" uid="uid://bl2eelwkj800o" path="res://japanese/japanese_token.gd" id="6_82mq8"]
+[ext_resource type="Script" uid="uid://b6rw4ldrj6wch" path="res://japanese/vocab.gd" id="7_q0v7g"]
+[ext_resource type="Script" uid="uid://du4k150pcdjs6" path="res://japanese/kanji_shape.gd" id="8_uuv8b"]
+[ext_resource type="Script" uid="uid://dc15txdqjanlf" path="res://japanese/stroke_shape.gd" id="9_1ikq8"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="10_hecab"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="11_lae6s"]
+[ext_resource type="Resource" uid="uid://d1k7vakhjcq5g" path="res://glossary/categories/termcategory_card.tres" id="12_ly8om"]
+
+[sub_resource type="Resource" id="Resource_fvlkh"]
+script = ExtResource("2_6g6dk")
+metadata/_custom_type_script = "uid://uued7mxh0g4q"
+
+[sub_resource type="Resource" id="Resource_4a1je"]
+script = ExtResource("4_i7b4k")
+card_type = ExtResource("3_jdx6p")
+count = 2
+metadata/_custom_type_script = "uid://bl5b1rm7x8b36"
+
+[sub_resource type="Resource" id="Resource_dfh2x"]
+script = ExtResource("7_q0v7g")
+japanese = "氷"
+readings = Array[String](["こおり"])
+meanings = Array[String](["ice", "shaved ice (usually served with flavored simple syrup)"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_0qfue"]
+script = ExtResource("6_82mq8")
+raw_text = "氷"
+vocab = SubResource("Resource_dfh2x")
+reading = "こおり"
+
+[sub_resource type="Resource" id="Resource_ybia6"]
+script = ExtResource("6_82mq8")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_u83de"]
+script = ExtResource("7_q0v7g")
+japanese = "入れる"
+readings = Array[String](["いれる"])
+meanings = Array[String](["to put in", "to let in", "to take in", "to bring in", "to insert", "to install (e.g. software)", "to set (a jewel, etc.)", "to ink in (e.g. tattoo)", "to admit", "to accept", "to employ", "to hire", "to comply", "to grant", "to adopt (a policy, etc.)", "to take (advice, etc.)", "to listen to", "to pay attention to", "to include", "to pay (one's rent, etc.)", "to cast (a vote)", "to make (tea, coffee, etc.)", "to turn on (a switch, etc.)", "to send (a fax)", "to call"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_4ik2g"]
+script = ExtResource("6_82mq8")
+raw_text = "入れる"
+vocab = SubResource("Resource_u83de")
+reading = "いれる"
+
+[sub_resource type="Resource" id="Resource_qjouh"]
+script = ExtResource("6_82mq8")
+raw_text = "？"
+reading = "？"
+
+[sub_resource type="Resource" id="Resource_dtpnv"]
+script = ExtResource("5_cawj1")
+japanese = "氷は入れる？"
+native = "Would you like ice?"
+parsed = Array[ExtResource("6_82mq8")]([SubResource("Resource_0qfue"), SubResource("Resource_ybia6"), SubResource("Resource_4ik2g"), SubResource("Resource_qjouh")])
+_difficulty = 189
+
+[sub_resource type="Resource" id="Resource_feqg2"]
+script = ExtResource("7_q0v7g")
+japanese = "氷山"
+readings = Array[String](["ひょうざん"])
+meanings = Array[String](["iceberg"])
+
+[sub_resource type="Resource" id="Resource_ssrmi"]
+script = ExtResource("6_82mq8")
+raw_text = "氷山"
+vocab = SubResource("Resource_feqg2")
+reading = "ひょうざん"
+
+[sub_resource type="Resource" id="Resource_n5pwq"]
+script = ExtResource("6_82mq8")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_p3fec"]
+script = ExtResource("7_q0v7g")
+japanese = "一角"
+readings = Array[String](["いっかく"])
+meanings = Array[String](["corner", "section", "point", "part", "one horn", "pillar (of a group, system, etc.)", "member (of an organization, etc.)", "first corner", "narwhal (Monodon monoceros)"])
+
+[sub_resource type="Resource" id="Resource_jv7v7"]
+script = ExtResource("6_82mq8")
+raw_text = "一角"
+vocab = SubResource("Resource_p3fec")
+reading = "いっかく"
+
+[sub_resource type="Resource" id="Resource_limww"]
+script = ExtResource("6_82mq8")
+raw_text = "だ"
+reading = "だ"
+
+[sub_resource type="Resource" id="Resource_r1djo"]
+script = ExtResource("6_82mq8")
+raw_text = "よ"
+reading = "よ"
+
+[sub_resource type="Resource" id="Resource_ou7ak"]
+script = ExtResource("6_82mq8")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_dalyy"]
+script = ExtResource("5_cawj1")
+japanese = "氷山の一角だよ。"
+native = "It's the tip of the iceberg."
+parsed = Array[ExtResource("6_82mq8")]([SubResource("Resource_ssrmi"), SubResource("Resource_n5pwq"), SubResource("Resource_jv7v7"), SubResource("Resource_limww"), SubResource("Resource_r1djo"), SubResource("Resource_ou7ak")])
+_difficulty = 249
+
+[sub_resource type="Resource" id="Resource_fhry3"]
+script = ExtResource("7_q0v7g")
+japanese = "水"
+readings = Array[String](["みず"])
+meanings = Array[String](["water (esp. cool or cold)", "fluid (esp. in an animal tissue)", "liquid", "flood", "floodwaters", "water offered to wrestlers just prior to a bout", "break granted to wrestlers engaged in a prolonged bout"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_mbd3s"]
+script = ExtResource("6_82mq8")
+raw_text = "水"
+vocab = SubResource("Resource_fhry3")
+reading = "みず"
+
+[sub_resource type="Resource" id="Resource_r3ano"]
+script = ExtResource("6_82mq8")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_u3fsy"]
+script = ExtResource("6_82mq8")
+raw_text = "氷"
+vocab = SubResource("Resource_dfh2x")
+reading = "こおり"
+
+[sub_resource type="Resource" id="Resource_5lidc"]
+script = ExtResource("6_82mq8")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_31isw"]
+script = ExtResource("6_82mq8")
+raw_text = "なり"
+reading = "なり"
+
+[sub_resource type="Resource" id="Resource_kbj8r"]
+script = ExtResource("6_82mq8")
+raw_text = "まし"
+reading = "まし"
+
+[sub_resource type="Resource" id="Resource_eqj7j"]
+script = ExtResource("6_82mq8")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_w7vri"]
+script = ExtResource("6_82mq8")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_a8yix"]
+script = ExtResource("5_cawj1")
+japanese = "水は氷になりました。"
+native = "The water turned into ice."
+parsed = Array[ExtResource("6_82mq8")]([SubResource("Resource_mbd3s"), SubResource("Resource_r3ano"), SubResource("Resource_u3fsy"), SubResource("Resource_5lidc"), SubResource("Resource_31isw"), SubResource("Resource_kbj8r"), SubResource("Resource_eqj7j"), SubResource("Resource_w7vri")])
+_difficulty = 256
+
+[sub_resource type="Resource" id="Resource_v3t5y"]
+script = ExtResource("6_82mq8")
+raw_text = "氷"
+vocab = SubResource("Resource_dfh2x")
+reading = "こおり"
+
+[sub_resource type="Resource" id="Resource_tbhr3"]
+script = ExtResource("6_82mq8")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_8kd7g"]
+script = ExtResource("7_q0v7g")
+japanese = "温める"
+readings = Array[String](["あたためる", "あっためる"])
+meanings = Array[String](["to warm (up)", "to heat (up)"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_gamyp"]
+script = ExtResource("6_82mq8")
+raw_text = "温める"
+vocab = SubResource("Resource_8kd7g")
+reading = "あたためる"
+
+[sub_resource type="Resource" id="Resource_e443r"]
+script = ExtResource("6_82mq8")
+raw_text = "と"
+reading = "と"
+
+[sub_resource type="Resource" id="Resource_kdocb"]
+script = ExtResource("6_82mq8")
+raw_text = "とける"
+reading = "とける"
+
+[sub_resource type="Resource" id="Resource_7beit"]
+script = ExtResource("6_82mq8")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_rpoql"]
+script = ExtResource("5_cawj1")
+japanese = "氷を温めるととける。"
+native = "If you heat ice, it melts."
+parsed = Array[ExtResource("6_82mq8")]([SubResource("Resource_v3t5y"), SubResource("Resource_tbhr3"), SubResource("Resource_gamyp"), SubResource("Resource_e443r"), SubResource("Resource_kdocb"), SubResource("Resource_7beit")])
+_difficulty = 283
+
+[sub_resource type="Resource" id="Resource_mfdts"]
+script = ExtResource("6_82mq8")
+raw_text = "氷"
+vocab = SubResource("Resource_dfh2x")
+reading = "こおり"
+
+[sub_resource type="Resource" id="Resource_xmyjk"]
+script = ExtResource("6_82mq8")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_8ncpu"]
+script = ExtResource("7_q0v7g")
+japanese = "少し"
+readings = Array[String](["すこし"])
+meanings = Array[String](["a little", "a bit", "a small amount", "a few", "some", "slightly", "somewhat", "a little while", "a short time", "a moment", "a minute", "a little way", "a short distance"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_1sg73"]
+script = ExtResource("6_82mq8")
+raw_text = "少し"
+vocab = SubResource("Resource_8ncpu")
+reading = "すこし"
+
+[sub_resource type="Resource" id="Resource_nn8fq"]
+script = ExtResource("7_q0v7g")
+japanese = "持つ"
+readings = Array[String](["もつ"])
+meanings = Array[String](["to hold (in one's hand)", "to take", "to carry", "to possess", "to have", "to own", "to maintain", "to keep", "to last", "to be durable", "to survive", "to take charge of", "to be in charge of", "to hold (meeting, etc.)", "to have (opportunity, etc.)", "to have \"it\"", "to have that special something", "to be blessed with good luck"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_kknmn"]
+script = ExtResource("6_82mq8")
+raw_text = "持っ"
+vocab = SubResource("Resource_nn8fq")
+reading = "もっ"
+
+[sub_resource type="Resource" id="Resource_nk7jx"]
+script = ExtResource("6_82mq8")
+raw_text = "て"
+reading = "て"
+
+[sub_resource type="Resource" id="Resource_uiqe3"]
+script = ExtResource("6_82mq8")
+raw_text = "き"
+reading = "き"
+
+[sub_resource type="Resource" id="Resource_ug6t3"]
+script = ExtResource("6_82mq8")
+raw_text = "て"
+reading = "て"
+
+[sub_resource type="Resource" id="Resource_ngekl"]
+script = ExtResource("6_82mq8")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_nsro1"]
+script = ExtResource("5_cawj1")
+japanese = "氷を少し持ってきて。"
+native = "Get me some ice."
+parsed = Array[ExtResource("6_82mq8")]([SubResource("Resource_mfdts"), SubResource("Resource_xmyjk"), SubResource("Resource_1sg73"), SubResource("Resource_kknmn"), SubResource("Resource_nk7jx"), SubResource("Resource_uiqe3"), SubResource("Resource_ug6t3"), SubResource("Resource_ngekl")])
+_difficulty = 291
+
+[sub_resource type="Resource" id="Resource_ytrv5"]
+script = ExtResource("7_q0v7g")
+japanese = "君"
+readings = Array[String](["きみ"])
+meanings = Array[String](["you", "buddy", "pal", "monarch", "ruler", "sovereign", "(one's) master"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_e6m2o"]
+script = ExtResource("6_82mq8")
+raw_text = "君"
+vocab = SubResource("Resource_ytrv5")
+reading = "きみ"
+
+[sub_resource type="Resource" id="Resource_e5eo3"]
+script = ExtResource("6_82mq8")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_2asp7"]
+script = ExtResource("7_q0v7g")
+japanese = "手"
+readings = Array[String](["て"])
+meanings = Array[String](["hand", "arm", "forepaw", "foreleg", "handle", "worker", "help", "trouble", "care", "effort", "means", "way", "trick", "move", "technique", "workmanship", "handwriting", "kind", "type", "sort", "one's hands", "one's possession", "ability to cope", "hand (of cards)", "direction", "move (in go, shogi, etc.)"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_f7yk1"]
+script = ExtResource("6_82mq8")
+raw_text = "手"
+vocab = SubResource("Resource_2asp7")
+reading = "て"
+
+[sub_resource type="Resource" id="Resource_lpe4y"]
+script = ExtResource("6_82mq8")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_228yx"]
+script = ExtResource("6_82mq8")
+raw_text = "氷"
+vocab = SubResource("Resource_dfh2x")
+reading = "こおり"
+
+[sub_resource type="Resource" id="Resource_jfidm"]
+script = ExtResource("6_82mq8")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_pgu3s"]
+script = ExtResource("6_82mq8")
+raw_text = "よう"
+reading = "よう"
+
+[sub_resource type="Resource" id="Resource_6xheq"]
+script = ExtResource("6_82mq8")
+raw_text = "だ"
+reading = "だ"
+
+[sub_resource type="Resource" id="Resource_t755l"]
+script = ExtResource("6_82mq8")
+raw_text = "ね"
+reading = "ね"
+
+[sub_resource type="Resource" id="Resource_6vqjl"]
+script = ExtResource("6_82mq8")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_miv6c"]
+script = ExtResource("5_cawj1")
+japanese = "君の手は氷のようだね。"
+native = "Your hands are like ice."
+parsed = Array[ExtResource("6_82mq8")]([SubResource("Resource_e6m2o"), SubResource("Resource_e5eo3"), SubResource("Resource_f7yk1"), SubResource("Resource_lpe4y"), SubResource("Resource_228yx"), SubResource("Resource_jfidm"), SubResource("Resource_pgu3s"), SubResource("Resource_6xheq"), SubResource("Resource_t755l"), SubResource("Resource_6vqjl")])
+_difficulty = 298
+
+[sub_resource type="Resource" id="Resource_mu0cn"]
+script = ExtResource("6_82mq8")
+raw_text = "氷"
+vocab = SubResource("Resource_dfh2x")
+reading = "こおり"
+
+[sub_resource type="Resource" id="Resource_1ooty"]
+script = ExtResource("6_82mq8")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_t6t8e"]
+script = ExtResource("6_82mq8")
+raw_text = "よう"
+reading = "よう"
+
+[sub_resource type="Resource" id="Resource_jikeh"]
+script = ExtResource("6_82mq8")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_1j0ie"]
+script = ExtResource("7_q0v7g")
+japanese = "冷たい"
+readings = Array[String](["つめたい", "つべたい"])
+meanings = Array[String](["cold (to the touch)", "chilly", "icy", "freezing", "(emotionally) cold", "coldhearted", "unfeeling", "indifferent", "unfriendly", "distant"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_rl0uq"]
+script = ExtResource("6_82mq8")
+raw_text = "冷たい"
+vocab = SubResource("Resource_1j0ie")
+reading = "つめたい"
+
+[sub_resource type="Resource" id="Resource_vm34y"]
+script = ExtResource("6_82mq8")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_thlsg"]
+script = ExtResource("5_cawj1")
+japanese = "氷のように冷たい。"
+native = "It's as cold as ice."
+parsed = Array[ExtResource("6_82mq8")]([SubResource("Resource_mu0cn"), SubResource("Resource_1ooty"), SubResource("Resource_t6t8e"), SubResource("Resource_jikeh"), SubResource("Resource_rl0uq"), SubResource("Resource_vm34y")])
+_difficulty = 308
+
+[sub_resource type="Resource" id="Resource_d31by"]
+script = ExtResource("7_q0v7g")
+japanese = "池"
+readings = Array[String](["いけ"])
+meanings = Array[String](["pond"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_vaowx"]
+script = ExtResource("6_82mq8")
+raw_text = "池"
+vocab = SubResource("Resource_d31by")
+reading = "いけ"
+
+[sub_resource type="Resource" id="Resource_xjhah"]
+script = ExtResource("6_82mq8")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_fpqy5"]
+script = ExtResource("7_q0v7g")
+japanese = "一"
+readings = Array[String](["いち"])
+meanings = Array[String](["one", "1", "best", "first", "foremost", "beginning", "start", "a (single)", "one (of many)", "ace", "bottom string (on a shamisen, etc.)"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_qm3uj"]
+script = ExtResource("6_82mq8")
+raw_text = "一"
+vocab = SubResource("Resource_fpqy5")
+reading = "いち"
+
+[sub_resource type="Resource" id="Resource_0s126"]
+script = ExtResource("7_q0v7g")
+japanese = "面"
+readings = Array[String](["めん"])
+meanings = Array[String](["face", "mask", "face guard", "striking the head (in kendo)", "surface (esp. a geometrical surface)", "page", "aspect", "facet", "side", "chamfer", "counter for broad, flat objects, levels or stages, e.g. in a video game"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_eh6xy"]
+script = ExtResource("6_82mq8")
+raw_text = "面"
+vocab = SubResource("Resource_0s126")
+reading = "めん"
+
+[sub_resource type="Resource" id="Resource_t5fw8"]
+script = ExtResource("6_82mq8")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_mdhc7"]
+script = ExtResource("6_82mq8")
+raw_text = "氷"
+vocab = SubResource("Resource_dfh2x")
+reading = "こおり"
+
+[sub_resource type="Resource" id="Resource_ccn40"]
+script = ExtResource("6_82mq8")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_402aw"]
+script = ExtResource("6_82mq8")
+raw_text = "はっ"
+reading = "はっ"
+
+[sub_resource type="Resource" id="Resource_nlr2q"]
+script = ExtResource("6_82mq8")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_rwbwy"]
+script = ExtResource("6_82mq8")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_ooqkd"]
+script = ExtResource("5_cawj1")
+japanese = "池は一面に氷がはった。"
+native = "The pond froze over."
+parsed = Array[ExtResource("6_82mq8")]([SubResource("Resource_vaowx"), SubResource("Resource_xjhah"), SubResource("Resource_qm3uj"), SubResource("Resource_eh6xy"), SubResource("Resource_t5fw8"), SubResource("Resource_mdhc7"), SubResource("Resource_ccn40"), SubResource("Resource_402aw"), SubResource("Resource_nlr2q"), SubResource("Resource_rwbwy")])
+_difficulty = 313
+
+[sub_resource type="Resource" id="Resource_ogych"]
+script = ExtResource("7_q0v7g")
+japanese = "今日"
+readings = Array[String](["きょう", "こんにち", "こんち", "こんじつ"])
+meanings = Array[String](["today", "this day", "these days", "recently", "nowadays"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_e84jf"]
+script = ExtResource("6_82mq8")
+raw_text = "今日"
+vocab = SubResource("Resource_ogych")
+reading = "きょう"
+
+[sub_resource type="Resource" id="Resource_244ao"]
+script = ExtResource("6_82mq8")
+raw_text = "も"
+reading = "も"
+
+[sub_resource type="Resource" id="Resource_v2d5s"]
+script = ExtResource("7_q0v7g")
+japanese = "氷点下"
+readings = Array[String](["ひょうてんか"])
+meanings = Array[String](["below freezing"])
+
+[sub_resource type="Resource" id="Resource_ytsa3"]
+script = ExtResource("6_82mq8")
+raw_text = "氷点下"
+vocab = SubResource("Resource_v2d5s")
+reading = "ひょうてんか"
+
+[sub_resource type="Resource" id="Resource_ywl0c"]
+script = ExtResource("6_82mq8")
+raw_text = "です"
+reading = "です"
+
+[sub_resource type="Resource" id="Resource_gchms"]
+script = ExtResource("6_82mq8")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_4rrc4"]
+script = ExtResource("5_cawj1")
+japanese = "今日も氷点下です。"
+native = "The temperature is below freezing today, too."
+parsed = Array[ExtResource("6_82mq8")]([SubResource("Resource_e84jf"), SubResource("Resource_244ao"), SubResource("Resource_ytsa3"), SubResource("Resource_ywl0c"), SubResource("Resource_gchms")])
+_difficulty = 333
+
+[sub_resource type="Resource" id="Resource_f1r3l"]
+script = ExtResource("7_q0v7g")
+japanese = "熱"
+readings = Array[String](["ねつ"])
+meanings = Array[String](["heat", "fever", "temperature", "zeal", "passion", "enthusiasm", "mania", "craze", "rage"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_2hk6g"]
+script = ExtResource("6_82mq8")
+raw_text = "熱"
+vocab = SubResource("Resource_f1r3l")
+reading = "ねつ"
+
+[sub_resource type="Resource" id="Resource_tylr1"]
+script = ExtResource("6_82mq8")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_4i6cg"]
+script = ExtResource("6_82mq8")
+raw_text = "氷"
+vocab = SubResource("Resource_dfh2x")
+reading = "こおり"
+
+[sub_resource type="Resource" id="Resource_cp66b"]
+script = ExtResource("6_82mq8")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_iu72g"]
+script = ExtResource("6_82mq8")
+raw_text = "水"
+vocab = SubResource("Resource_fhry3")
+reading = "みず"
+
+[sub_resource type="Resource" id="Resource_g1t4l"]
+script = ExtResource("6_82mq8")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_grj8j"]
+script = ExtResource("7_q0v7g")
+japanese = "変える"
+readings = Array[String](["かえる"])
+meanings = Array[String](["to change", "to alter", "to transform", "to convert", "to turn", "to vary", "to reform", "to revise", "to amend"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_5jj13"]
+script = ExtResource("6_82mq8")
+raw_text = "変える"
+vocab = SubResource("Resource_grj8j")
+reading = "かえる"
+
+[sub_resource type="Resource" id="Resource_reekx"]
+script = ExtResource("6_82mq8")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_4mudc"]
+script = ExtResource("5_cawj1")
+japanese = "熱は氷を水に変える。"
+native = "Heat changes ice into water."
+parsed = Array[ExtResource("6_82mq8")]([SubResource("Resource_2hk6g"), SubResource("Resource_tylr1"), SubResource("Resource_4i6cg"), SubResource("Resource_cp66b"), SubResource("Resource_iu72g"), SubResource("Resource_g1t4l"), SubResource("Resource_5jj13"), SubResource("Resource_reekx")])
+_difficulty = 344
+
+[sub_resource type="Resource" id="Resource_ci4f0"]
+script = ExtResource("6_82mq8")
+raw_text = "氷"
+vocab = SubResource("Resource_dfh2x")
+reading = "こおり"
+
+[sub_resource type="Resource" id="Resource_4vl53"]
+script = ExtResource("6_82mq8")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_asw1i"]
+script = ExtResource("7_q0v7g")
+japanese = "解ける"
+readings = Array[String](["とける"])
+meanings = Array[String](["to be solved", "to be worked out", "to come loose", "to come untied", "to come undone", "to be removed (of restrictions)", "to be lifted (e.g. of a ban)", "to be broken (of a spell, curse, etc.)", "to dissipate (of anger, tension, etc.)", "to melt away", "to ease", "to be allayed", "to be appeased", "to be resolved (of a dispute, misunderstanding, etc.)", "to be cleared up"])
+jlpt_level = 3
+_difficulty = 63
+
+[sub_resource type="Resource" id="Resource_xq3v5"]
+script = ExtResource("6_82mq8")
+raw_text = "解け"
+vocab = SubResource("Resource_asw1i")
+reading = "とけ"
+
+[sub_resource type="Resource" id="Resource_qy16c"]
+script = ExtResource("6_82mq8")
+raw_text = "ちゃっ"
+reading = "ちゃっ"
+
+[sub_resource type="Resource" id="Resource_ih000"]
+script = ExtResource("6_82mq8")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_25ggj"]
+script = ExtResource("6_82mq8")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_74vqj"]
+script = ExtResource("5_cawj1")
+japanese = "氷が解けちゃった。"
+native = "The ice has melted."
+parsed = Array[ExtResource("6_82mq8")]([SubResource("Resource_ci4f0"), SubResource("Resource_4vl53"), SubResource("Resource_xq3v5"), SubResource("Resource_qy16c"), SubResource("Resource_ih000"), SubResource("Resource_25ggj")])
+_difficulty = 350
+
+[sub_resource type="Resource" id="Resource_u6c8h"]
+script = ExtResource("7_q0v7g")
+japanese = "今夜"
+readings = Array[String](["こんや"])
+meanings = Array[String](["this evening", "tonight"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_rxaqm"]
+script = ExtResource("6_82mq8")
+raw_text = "今夜"
+vocab = SubResource("Resource_u6c8h")
+reading = "こんや"
+
+[sub_resource type="Resource" id="Resource_3uea8"]
+script = ExtResource("6_82mq8")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_uylcb"]
+script = ExtResource("6_82mq8")
+raw_text = "氷"
+vocab = SubResource("Resource_dfh2x")
+reading = "こおり"
+
+[sub_resource type="Resource" id="Resource_qjla7"]
+script = ExtResource("6_82mq8")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_tnjtl"]
+script = ExtResource("7_q0v7g")
+japanese = "張る"
+readings = Array[String](["はる"])
+meanings = Array[String](["to stick", "to paste", "to affix", "to stretch", "to spread", "to strain", "to tighten", "to put up (e.g. a tent)", "to form (e.g. ice on a pond)", "to fill", "to swell", "to stick out", "to push out", "to post (a link, etc. online)", "to be expensive", "to keep a watch on", "to be on the lookout", "to slap", "to span", "to generate"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_agt1o"]
+script = ExtResource("6_82mq8")
+raw_text = "張る"
+vocab = SubResource("Resource_tnjtl")
+reading = "はる"
+
+[sub_resource type="Resource" id="Resource_20uh7"]
+script = ExtResource("6_82mq8")
+raw_text = "よ"
+reading = "よ"
+
+[sub_resource type="Resource" id="Resource_as4di"]
+script = ExtResource("6_82mq8")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_6iabn"]
+script = ExtResource("5_cawj1")
+japanese = "今夜は氷が張るよ。"
+native = "I think it'll freeze tonight."
+parsed = Array[ExtResource("6_82mq8")]([SubResource("Resource_rxaqm"), SubResource("Resource_3uea8"), SubResource("Resource_uylcb"), SubResource("Resource_qjla7"), SubResource("Resource_agt1o"), SubResource("Resource_20uh7"), SubResource("Resource_as4di")])
+_difficulty = 356
+
+[sub_resource type="Resource" id="Resource_dadbf"]
+script = ExtResource("9_1ikq8")
+points = Array[Vector2]([Vector2(52.02, 14.83), Vector2(54, 19.31), Vector2(54.03, 23.3), Vector2(54.02, 27.92), Vector2(54, 33.31), Vector2(53.98, 39.3), Vector2(53.96, 45.67), Vector2(53.93, 52.25), Vector2(53.91, 58.83), Vector2(53.88, 65.23), Vector2(53.85, 71.24), Vector2(53.83, 76.68), Vector2(53.81, 81.35), Vector2(53.79, 85.05), Vector2(53.77, 87.61), Vector2(53.26, 91.39), Vector2(49.61, 91.41), Vector2(45.75, 88)])
+
+[sub_resource type="Resource" id="Resource_uypkl"]
+script = ExtResource("9_1ikq8")
+points = Array[Vector2]([Vector2(24.14, 25.46), Vector2(31.29, 29.51), Vector2(36.06, 34.22)])
+
+[sub_resource type="Resource" id="Resource_55ljy"]
+script = ExtResource("9_1ikq8")
+points = Array[Vector2]([Vector2(16.5, 52.5), Vector2(21.48, 52.95), Vector2(26.33, 51.41), Vector2(32.01, 49.21), Vector2(36.3, 47.54), Vector2(39.47, 50.25), Vector2(38.06, 53.9), Vector2(36.1, 57.93), Vector2(33.6, 62.35), Vector2(30.61, 66.97), Vector2(27.19, 71.58), Vector2(23.39, 75.99), Vector2(19.25, 80)])
+
+[sub_resource type="Resource" id="Resource_ngo1c"]
+script = ExtResource("9_1ikq8")
+points = Array[Vector2]([Vector2(81, 24.88), Vector2(78.8, 29.4), Vector2(75.17, 32.82), Vector2(71.19, 36.11), Vector2(66.82, 39.3), Vector2(62.02, 42.41), Vector2(56.75, 45.5)])
+
+[sub_resource type="Resource" id="Resource_k1q8i"]
+script = ExtResource("9_1ikq8")
+points = Array[Vector2]([Vector2(56.75, 46), Vector2(60.04, 49.71), Vector2(63.52, 53.64), Vector2(67.13, 57.7), Vector2(70.81, 61.78), Vector2(74.49, 65.78), Vector2(78.13, 69.59), Vector2(81.66, 73.11), Vector2(85.03, 76.23), Vector2(88.84, 79.42), Vector2(93.25, 82)])
+
+[sub_resource type="Resource" id="Resource_daype"]
+script = ExtResource("8_uuv8b")
+stroke_shapes = Array[ExtResource("9_1ikq8")]([SubResource("Resource_dadbf"), SubResource("Resource_uypkl"), SubResource("Resource_55ljy"), SubResource("Resource_ngo1c"), SubResource("Resource_k1q8i")])
+
+[sub_resource type="Resource" id="Resource_7e0ve"]
+script = ExtResource("7_q0v7g")
+japanese = "氷"
+readings = Array[String](["こおり"])
+meanings = Array[String](["ice"])
+jlpt_level = 3
+_difficulty = 61
+
+[sub_resource type="Resource" id="Resource_e45p8"]
+script = ExtResource("7_q0v7g")
+japanese = "氷河"
+readings = Array[String](["ひょうが"])
+meanings = Array[String](["glacier"])
+_difficulty = 534
+
+[sub_resource type="Resource" id="Resource_wferk"]
+script = ExtResource("7_q0v7g")
+japanese = "かき氷"
+readings = Array[String](["かきごおり"])
+meanings = Array[String](["shaved ice", "snow cone"])
+_difficulty = 649
+
+[sub_resource type="Resource" id="Resource_cg3lb"]
+script = ExtResource("7_q0v7g")
+japanese = "氷山"
+readings = Array[String](["ひょうざん"])
+meanings = Array[String](["iceberg"])
+_difficulty = 892
+
+[sub_resource type="Resource" id="Resource_24lh3"]
+script = ExtResource("7_q0v7g")
+japanese = "流氷"
+readings = Array[String](["りゅうひょう"])
+meanings = Array[String](["drift ice", "ice floe"])
+_difficulty = 899
+
+[sub_resource type="Resource" id="Resource_wei1g"]
+script = ExtResource("7_q0v7g")
+japanese = "氷点下"
+readings = Array[String](["ひょうてんか"])
+meanings = Array[String](["below freezing"])
+_difficulty = 921
+
+[resource]
+script = ExtResource("10_hecab")
+symbol = "氷"
+card_name = "Ice"
+abilities = Array[ExtResource("1_e4420")]([SubResource("Resource_fvlkh"), SubResource("Resource_4a1je")])
+tags = Array[int]([19])
+vocabulary = Array[ExtResource("7_q0v7g")]([SubResource("Resource_7e0ve"), SubResource("Resource_e45p8"), SubResource("Resource_wferk"), SubResource("Resource_cg3lb"), SubResource("Resource_24lh3"), SubResource("Resource_wei1g")])
+example_sentences = Array[ExtResource("5_cawj1")]([SubResource("Resource_dtpnv"), SubResource("Resource_dalyy"), SubResource("Resource_a8yix"), SubResource("Resource_rpoql"), SubResource("Resource_nsro1"), SubResource("Resource_miv6c"), SubResource("Resource_thlsg"), SubResource("Resource_ooqkd"), SubResource("Resource_4rrc4"), SubResource("Resource_4mudc"), SubResource("Resource_74vqj"), SubResource("Resource_6iabn")])
+kanji_shape = SubResource("Resource_daype")
+init_aspects = 4
+term_categories = Array[ExtResource("11_lae6s")]([ExtResource("12_ly8om")])

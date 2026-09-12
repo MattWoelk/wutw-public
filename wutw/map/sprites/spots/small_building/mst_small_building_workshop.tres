@@ -1,0 +1,65 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://ujvkbsjl0pk"]
+
+[ext_resource type="MapSpriteType_Building" uid="uid://ce7bjb6dy0x5q" path="res://map/sprites/spots/small_building/mst_small_building_granary.tres" id="1_cfbwv"]
+[ext_resource type="MapSpriteType_Building" uid="uid://dfc4afwo8gan6" path="res://map/sprites/buildings/houses/mst_house_4.tres" id="2_2ty8i"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://4j4elu7bbnb0" path="res://map/sprites/spots/small_building/mst_small_building_bucket.tres" id="3_cfbwv"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://cl383j3ohpk1l" path="res://map/sprites/spots/small_building/mst_small_building_shovel.tres" id="4_l3psd"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://dbvymjix7xud2" path="res://map/sprites/spots/steppe/mst_steppe_pots_painted.tres" id="5_5ce8r"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://bx3qxfskagix4" path="res://map/sprites/spots/brushland/mst_brushland_bundle.tres" id="6_3pbq7"]
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_id5ja"]
+p1 = Vector2(-2.375, -0.685)
+p2 = Vector2(0.22, 0.66)
+p3 = Vector2(-0.23, -1.355)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_hckx4"]
+p1 = Vector2(4.665, 1.95)
+p2 = Vector2(4.67, 1.24)
+p3 = Vector2(-0.245, -1.39)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_wtmo3"]
+p1 = Vector2(-0.96, 0.85)
+p2 = Vector2(2.21, 2.01)
+p3 = Vector2(-0.24, -1.33)
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_72hsu"]
+sprite_type = ExtResource("1_cfbwv")
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_gnkn2"]
+sprite_type = ExtResource("2_2ty8i")
+offset = Vector2(1.86, 1.32)
+scale = 1.03
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_3kdaw"]
+sprite_type = ExtResource("3_cfbwv")
+offset = Vector2(4.085, 1.125)
+scale = 0.335
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_1ah4s"]
+sprite_type = ExtResource("4_l3psd")
+offset = Vector2(1.105, 1.26)
+scale = 0.355
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_yuxuq"]
+sprite_type = ExtResource("5_5ce8r")
+offset = Vector2(2.1, 1.49)
+scale = 0.55
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_s3gsu"]
+sprite_type = ExtResource("6_3pbq7")
+offset = Vector2(3.52, 1.525)
+scale = 0.415
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_yh02y"]
+sprite_type = ExtResource("6_3pbq7")
+offset = Vector2(3.145, 1.645)
+scale = 0.41
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_72hsu"), SubResource("MapSpriteComponent_gnkn2"), SubResource("MapSpriteComponent_3kdaw"), SubResource("MapSpriteComponent_1ah4s"), SubResource("MapSpriteComponent_yuxuq"), SubResource("MapSpriteComponent_s3gsu"), SubResource("MapSpriteComponent_yh02y")])
+footprint_radius = 3.015
+must_be_fully_within_clip = true
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Triangle_id5ja"), SubResource("MapSpriteCollision_Triangle_hckx4"), SubResource("MapSpriteCollision_Triangle_wtmo3")])

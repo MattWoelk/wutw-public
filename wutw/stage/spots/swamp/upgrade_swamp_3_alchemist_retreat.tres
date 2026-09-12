@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://dgamb21ubiatw"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_7lmbi"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_abm1s"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="3_abm1s"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="4_knk1g"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="5_b5jvm"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="6_gxyi3"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="6_weuqn"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="8_p172e"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="9_b5jvm"]
+[ext_resource type="Resource" uid="uid://ouecqwnbe2cw" path="res://stage/spots/swamp/spot_swamp.tres" id="10_weuqn"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="11_b5jvm"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://b1x0ldyqnstf7" path="res://map/sprites/spots/swamp/mst_swamp_alchemist.tres" id="12_n5lfn"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://br25tjk2nghfu" path="res://map/sprites/spots/swamp/mst_swamp_apothecary.tres" id="13_p172e"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="14_bxysd"]
+
+[sub_resource type="Resource" id="Resource_v0pvd"]
+script = ExtResource("14_bxysd")
+old_sprite_type = ExtResource("13_p172e")
+new_sprite_type = ExtResource("12_n5lfn")
+biome = 4
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_7lmbi")
+spot_upgrade_id = "swamp_alchemist"
+name = "Alchemist's Retreat"
+description = "Here dwells the sort of person who considers a minor explosion to be the sign of a job well done."
+required_aspects = Array[ExtResource("6_gxyi3")]([ExtResource("8_p172e"), ExtResource("9_b5jvm")])
+granted_bonuses = Dictionary[ExtResource("2_abm1s"), int]({
+ExtResource("3_abm1s"): 15,
+ExtResource("4_knk1g"): 5,
+ExtResource("5_b5jvm"): 10,
+ExtResource("6_weuqn"): -10
+})
+spot = ExtResource("10_weuqn")
+visuals = Array[ExtResource("11_b5jvm")]([SubResource("Resource_v0pvd")])
+min_main_quest_progress = 110

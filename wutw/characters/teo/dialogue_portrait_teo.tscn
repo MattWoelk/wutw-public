@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://3jhieio3io2y"]
+
+[ext_resource type="Shader" uid="uid://q7tio71sbonb" path="res://characters/teo/halo.gdshader" id="2_ge2mr"]
+[ext_resource type="Texture2D" uid="uid://cu47pcgyifef7" path="res://characters/teo/character_teo_p1.png" id="2_y6k2w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_meafq"]
+shader = ExtResource("2_ge2mr")
+shader_parameter/speed = 0.32999999262384
+shader_parameter/offset = 0.55999998748288
+shader_parameter/inv_mask = ExtResource("2_y6k2w")
+shader_parameter/inv_mask_rect = Vector4(0.2, -0.075, 0.935, 0.28)
+
+[sub_resource type="Gradient" id="Gradient_mmlhx"]
+offsets = PackedFloat32Array(0, 0.15029469, 0.27111983, 0.3811395, 0.51375246, 0.6689587, 0.7996071, 0.93713164, 1)
+colors = PackedColorArray(0.27680773, 0.20910245, 0.030407684, 1, 1.2124214, 0.8927565, 0, 1, 0.73249865, 0.5626896, 0.112413436, 1, 0.5891091, 0.4525409, 0.09040806, 1, 1.3582299, 1.0056113, 0, 1, 0.6674389, 0.5127122, 0.102428995, 1, 0.8608888, 0.66131616, 0.13211691, 1, 0.7755155, 0.59573424, 0.119015045, 1, 0.47087172, 0.3594275, 0.06445619, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tqu00"]
+gradient = SubResource("Gradient_mmlhx")
+
+[node name="DialoguePortrait_Teo" type="Control" unique_id=1797227098]
+custom_minimum_size = Vector2(250, 875)
+layout_mode = 3
+anchors_preset = 0
+pivot_offset = Vector2(125, 0)
+metadata/_edit_horizontal_guides_ = [874.0, -1079.9, 788.0, 62.0]
+metadata/_edit_vertical_guides_ = [228.0]
+
+[node name="Root" type="TextureRect" parent="." unique_id=1024111863]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -17.0
+offset_top = 118.0
+offset_right = 319.0
+offset_bottom = 835.4549
+pivot_offset = Vector2(207, 1043)
+texture = ExtResource("2_y6k2w")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Halo" type="TextureRect" parent="Root" unique_id=1474193082]
+show_behind_parent = true
+texture_filter = 4
+texture_repeat = 2
+material = SubResource("ShaderMaterial_meafq")
+layout_mode = 0
+offset_left = 71.0
+offset_top = -48.0
+offset_right = 311.0
+offset_bottom = 192.0
+pivot_offset = Vector2(128, 131)
+texture = SubResource("GradientTexture1D_tqu00")
+expand_mode = 1

@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://qj1fpo58ltk2"]
+
+[ext_resource type="Script" uid="uid://ciowchfeywayc" path="res://quests/settler/settler_challenges_list.gd" id="1_mns6h"]
+[ext_resource type="PackedScene" uid="uid://byk0q0ccedhx0" path="res://theme/scroll_panel/scroll_panel.tscn" id="2_fcudx"]
+[ext_resource type="Shader" uid="uid://bbe7ginxustev" path="res://theme/scroll_panel/scroll_panel_dowel.gdshader" id="3_cyfwk"]
+[ext_resource type="Texture2D" uid="uid://b0cvn7ev1bwut" path="res://theme/scroll_panel/dowel_wood.png" id="4_rqv8a"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="5_wav8r"]
+[ext_resource type="FontFile" uid="uid://4akk8wkhg56y" path="res://theme/fonts/Merienda/static/Merienda-ExtraBold.ttf" id="6_qf4wt"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="7_xakiq"]
+[ext_resource type="Script" uid="uid://dm63mtrlfj005" path="res://theme/faded_scroll_container/faded_scroll_container.gd" id="8_i0npe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jxt03"]
+
+[sub_resource type="Gradient" id="Gradient_ofyuc"]
+offsets = PackedFloat32Array(0, 0.196721, 0.460041, 0.525615, 0.603484, 0.732582, 1)
+colors = PackedColorArray(0.59, 0.43424, 0.3068, 0.796078, 0.48, 0.35328, 0.2496, 0.294118, 0.48, 0.35328, 0.2496, 0.0116377, 0.48, 0.35328, 0.2496, 0, 0.48, 0.35328, 0.2496, 0.0431956, 0.48, 0.35328, 0.2496, 0.34902, 0.4, 0.2944, 0.208, 0.929412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g5dkl"]
+gradient = SubResource("Gradient_ofyuc")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_0fvof"]
+colors = PackedColorArray(0.331639, 0.33164, 0.331639, 1, 0.961814, 0.961814, 0.961814, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0fvof"]
+frequency = 0.0035
+domain_warp_amplitude = 100.0
+domain_warp_frequency = -0.01
+domain_warp_fractal_lacunarity = 8.69
+domain_warp_fractal_gain = 0.19
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jijvn"]
+width = 2048
+noise = SubResource("FastNoiseLite_0fvof")
+color_ramp = SubResource("Gradient_0fvof")
+seamless = true
+seamless_blend_skirt = 0.27
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0ppsm"]
+shader = ExtResource("3_cyfwk")
+shader_parameter/size = Vector2(420, 25)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("4_rqv8a")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mhfqi"]
+shader = ExtResource("3_cyfwk")
+shader_parameter/size = Vector2(418, 25)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("4_rqv8a")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[node name="SettlerChallengesList" type="PanelContainer" unique_id=1101851320]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1499.0
+offset_bottom = -580.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jxt03")
+script = ExtResource("1_mns6h")
+
+[node name="ScrollPanel" parent="." unique_id=877692353 instance=ExtResource("2_fcudx")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(471, 0)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="TopDowelWood" parent="ScrollPanel/TopDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_0ppsm")
+
+[node name="Scroller" parent="ScrollPanel" index="1"]
+custom_minimum_size = Vector2(0, 225)
+
+[node name="ScrollMargin" parent="ScrollPanel/Scroller" index="0"]
+offset_right = 0.0
+offset_bottom = 271.0
+
+[node name="ContentPanel" parent="ScrollPanel/Scroller/ScrollMargin" index="0"]
+material = ExtResource("5_wav8r")
+instance_shader_parameters/size = Vector2(424.70453, 225.90668)
+
+[node name="ContentContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel" index="0"]
+theme_override_constants/margin_bottom = 18
+
+[node name="VBox" type="VBoxContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer" index="0" unique_id=1696129992]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="TitleLabel" type="Label" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox" unique_id=836745119]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_qf4wt")
+theme_override_font_sizes/font_size = 18
+text = "Difficulty Modifiers"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox" unique_id=1506870882]
+unique_name_in_owner = true
+clip_children = 1
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 0
+mouse_force_pass_scroll_events = false
+script = ExtResource("8_i0npe")
+
+[node name="MarkedUpLabel" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox/ScrollContainer" unique_id=1627404269 instance=ExtResource("7_xakiq")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(-1, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_constants/paragraph_separation = 8
+text = "Reduce rarity tier of glyph rewards by 10%.
+Reduce rarity tier of glyph rewards by 10%.
+Reduce rarity tier of glyph rewards by 10%."
+fit_content = true
+scroll_active = true
+visible_characters_behavior = 1
+tooltip_directions = Array[int]([5])
+
+[node name="BottomDowelWood" parent="ScrollPanel/BottomDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_mhfqi")
+
+[editable path="ScrollPanel"]

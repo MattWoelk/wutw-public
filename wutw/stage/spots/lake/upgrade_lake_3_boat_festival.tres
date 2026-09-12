@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://rwd7lndpjibx"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_rjhrt"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_77w5a"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_20hac"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="3_ei47w"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="4_uxknc"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="6_ncpgx"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="7_wvam7"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="8_epp1n"]
+[ext_resource type="Resource" uid="uid://bb65d05uw68x1" path="res://stage/spots/lake/spot_lake.tres" id="9_ncpgx"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_uxknc"]
+[ext_resource type="MapSpriteType_Lake" uid="uid://dcopgy017tsji" path="res://map/sprites/water_features/lake/mst_lake_1.tres" id="11_5fipe"]
+[ext_resource type="MapSpriteType_Lake" uid="uid://gwbeal8t070v" path="res://map/sprites/water_features/lake/mst_lake_2.tres" id="12_j7e8n"]
+[ext_resource type="MapSpriteType_Lake" uid="uid://dhue4qeqrdlxe" path="res://map/sprites/water_features/lake/mst_lake_3.tres" id="13_nwb80"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://d4k0cisnt48jx" path="res://map/sprites/spots/lake/mst_lake_island_shrine.tres" id="14_11xbd"]
+[ext_resource type="Script" uid="uid://den3krl2s3y0b" path="res://stage/spots/spot_upgrade_visual_attach_to_river.gd" id="15_ceyy3"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://5ffws7hmqwex" path="res://map/sprites/spots/lake/mst_lake_boat_festival_1.tres" id="16_avx5e"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://kpb17260vqfa" path="res://map/sprites/spots/lake/mst_lake_boat_festival_2.tres" id="17_vrbwk"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://c1ro436sf853h" path="res://map/sprites/spots/lake/mst_lake_boat_festival_3.tres" id="18_lw7pm"]
+
+[sub_resource type="Resource" id="Resource_rtupf"]
+script = ExtResource("15_ceyy3")
+sprite_type = ExtResource("16_avx5e")
+replaced_sprite_type = ExtResource("14_11xbd")
+keep_replaced = true
+ignored_colliders = Array[MapSpriteType]([ExtResource("11_5fipe"), ExtResource("12_j7e8n"), ExtResource("13_nwb80")])
+metadata/_custom_type_script = "uid://den3krl2s3y0b"
+
+[sub_resource type="Resource" id="Resource_q7brr"]
+script = ExtResource("15_ceyy3")
+sprite_type = ExtResource("17_vrbwk")
+replaced_sprite_type = ExtResource("14_11xbd")
+keep_replaced = true
+ignored_colliders = Array[MapSpriteType]([ExtResource("11_5fipe"), ExtResource("12_j7e8n"), ExtResource("13_nwb80")])
+metadata/_custom_type_script = "uid://den3krl2s3y0b"
+
+[sub_resource type="Resource" id="Resource_e0ses"]
+script = ExtResource("15_ceyy3")
+sprite_type = ExtResource("18_lw7pm")
+replaced_sprite_type = ExtResource("14_11xbd")
+keep_replaced = true
+ignored_colliders = Array[MapSpriteType]([ExtResource("11_5fipe"), ExtResource("12_j7e8n"), ExtResource("13_nwb80")])
+metadata/_custom_type_script = "uid://den3krl2s3y0b"
+
+[resource]
+script = ExtResource("1_rjhrt")
+spot_upgrade_id = "lake_boat_festival"
+name = "Boat Festival"
+description = "Oars splash, sails billow, and the air is thick with merriment, with the occasional panicked yell from an unsteady boat."
+required_aspects = Array[ExtResource("3_20hac")]([ExtResource("6_ncpgx"), ExtResource("7_wvam7"), ExtResource("8_epp1n")])
+granted_bonuses = Dictionary[ExtResource("2_77w5a"), int]({
+ExtResource("3_ei47w"): 35,
+ExtResource("4_uxknc"): 20
+})
+spot = ExtResource("9_ncpgx")
+visuals = Array[ExtResource("9_uxknc")]([SubResource("Resource_rtupf"), SubResource("Resource_q7brr"), SubResource("Resource_e0ses")])
+unique_per_run = true
+min_main_quest_progress = 110

@@ -1,0 +1,23 @@
+[gd_resource type="MapSpriteType_River" format=3 uid="uid://cuddtl0qxdq7y"]
+
+[ext_resource type="Resource" uid="uid://cmbyg0gub8sum" path="res://stage/spots/river/spot_river.tres" id="2_ou5x4"]
+[ext_resource type="WwiseEvent" uid="uid://bo4s7qs73q8s8" path="res://Wwise/resources/Event/{D00CB056-D8E3-49D6-BBFB-4225715D564F}.tres" id="3_il2nd"]
+
+[sub_resource type="MapSpriteCollision_Rect" id="MapSpriteCollision_Rect_fvu7x"]
+rect = Rect2(0.795, -4.055, 19.505, 10.015)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Rect" id="MapSpriteCollision_Rect_w20l8"]
+rect = Rect2(-4.775, -20.06, 10.175, 22.345)
+blocking = true
+
+[resource]
+instance_type = 24
+atlas_rect = Rect2i(0, 400, 100, 100)
+map_rect = Rect2(0, 0, 40, 80)
+footprint_radius = 1.0
+default_scale = 0.25
+z_index = -1
+sound = ExtResource("3_il2nd")
+provided_spot_type = ExtResource("2_ou5x4")
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Rect_fvu7x"), SubResource("MapSpriteCollision_Rect_w20l8")])

@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://4wtci6vg1uji"]
+
+[ext_resource type="PackedScene" uid="uid://bl780vhdwft4i" path="res://hub/contents/hub_facility.tscn" id="1_thtxe"]
+[ext_resource type="Texture2D" uid="uid://ctm8mwpvxx572" path="res://hub/contents/studio/studio_label.png" id="2_2w368"]
+[ext_resource type="Texture2D" uid="uid://bgov6yf376qgy" path="res://hub/contents/studio/studio.png" id="2_lw82t"]
+
+[node name="HubStudio" unique_id=1248399096 instance=ExtResource("1_thtxe")]
+tooltip_text = "[center]<header_font_size>[b]Study Glyphs[/b][/font_size][/center]
+
+Study and <term:craft> new <term:glyph>s to use as <term:signature_card>s at the start of an <term:run>."
+
+[node name="Panel" parent="." index="0" unique_id=1465047343]
+offset_left = 117.29
+offset_top = -288.811
+offset_right = 377.29
+offset_bottom = 285.189
+scale = Vector2(0.24884, 0.24884)
+
+[node name="Label" parent="Panel" index="1" unique_id=541126649]
+visible = false
+text = "書
+院"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" index="2" unique_id=1637858318]
+layout_mode = 2
+theme_override_constants/margin_left = 37
+theme_override_constants/margin_top = 55
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 70
+
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer" index="0" unique_id=1689550544]
+texture_filter = 6
+layout_mode = 2
+texture = ExtResource("2_2w368")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CollisionPolygon2D" parent="Area2D" parent_id_path=PackedInt32Array(2019498285) index="0" unique_id=521856771]
+position = Vector2(7, -7)
+polygon = PackedVector2Array(193.08, 50.059, 405.152, -516.06, -171.614, -527.595, -243.488, -155.802, -197.347, 31.4249, -27.8663, 119.271)
+
+[node name="Sprite" type="Sprite2D" parent="." index="2" unique_id=1630894390]
+position = Vector2(1.57202, -58.1626)
+scale = Vector2(0.231237, 0.231237)
+texture = ExtResource("2_lw82t")
+offset = Vector2(0, -109.23)
+
+[node name="TooltipAnchor" parent="." index="3" unique_id=278453014]
+offset_left = -194.0
+offset_top = -295.0
+offset_right = 201.0
+offset_bottom = 98.0

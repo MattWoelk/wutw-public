@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="Quest_Settler" format=3 uid="uid://c33dw6t0e0o67"]
+
+[ext_resource type="Script" uid="uid://cjloydxgrv8oa" path="res://quests/settler/settler_quest_challenge.gd" id="1_b1ool"]
+[ext_resource type="Script" uid="uid://ck5h8ecedjfx4" path="res://quests/settler/challenges/settler_quest_challenge_foray_goals.gd" id="2_7lcrr"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="3_fw06q"]
+[ext_resource type="Resource" uid="uid://kau1o80i2qm0" path="res://characters/jobs/job_monk_forest.tres" id="4_0dss6"]
+[ext_resource type="Script" uid="uid://cd4swbq3t72je" path="res://quests/settler/settler_quest_reward.gd" id="5_vvdj2"]
+[ext_resource type="Resource" uid="uid://c3wgj8qxnphek" path="res://relics/common/talisman_seed_pouch/relic_talisman_seed_pouch.tres" id="6_0dss6"]
+[ext_resource type="Script" uid="uid://0k12wwnmq50h" path="res://quests/settler/rewards/settler_quest_reward_add_relic.gd" id="7_qe7b0"]
+[ext_resource type="Script" uid="uid://1na7ymvvvbby" path="res://quests/settler/quest_settler.gd" id="8_wsuq0"]
+[ext_resource type="Script" uid="uid://bxua8gxfjp2wy" path="res://quests/settler/settler_quest_goal.gd" id="9_57cf0"]
+[ext_resource type="Script" uid="uid://ku752yv8p8ur" path="res://quests/settler/goals/settler_quest_goal_settlement_upgrades.gd" id="10_yuvx5"]
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="11_diw3x"]
+[ext_resource type="Resource" uid="uid://c56dxbu1pjfbl" path="res://stage/spots/forest/upgrade_forest_3_monastery.tres" id="12_5x4pp"]
+[ext_resource type="Script" uid="uid://vw63je5kb4o1" path="res://quests/settler/goals/settler_quest_goal_biome_settlements.gd" id="13_e26ra"]
+[ext_resource type="Resource" uid="uid://ucnbpdhw8mob" path="res://stage/spots/forest/spot_forest.tres" id="14_ta0gb"]
+
+[sub_resource type="Resource" id="Resource_kitb8"]
+script = ExtResource("2_7lcrr")
+metadata/_custom_type_script = "uid://ck5h8ecedjfx4"
+
+[sub_resource type="Resource" id="Resource_r8u1m"]
+script = ExtResource("7_qe7b0")
+relic = ExtResource("6_0dss6")
+metadata/_custom_type_script = "uid://0k12wwnmq50h"
+
+[sub_resource type="Resource" id="Resource_dmhlh"]
+script = ExtResource("10_yuvx5")
+upgrades = Array[ExtResource("11_diw3x")]([ExtResource("12_5x4pp")])
+metadata/_custom_type_script = "uid://ku752yv8p8ur"
+
+[sub_resource type="Resource" id="Resource_x2el6"]
+script = ExtResource("13_e26ra")
+num_settlements = 3
+spot_type = ExtResource("14_ta0gb")
+metadata/_custom_type_script = "uid://vw63je5kb4o1"
+
+[resource]
+script = ExtResource("8_wsuq0")
+intro_text = "The Order of Growth has sent me to establish a chapter on a new shard. My branch of our order is tasked with maintaining the forests, so we will need a well-forested shard."
+challenges = Array[ExtResource("1_b1ool")]([SubResource("Resource_kitb8")])
+settler_goals = Array[ExtResource("9_57cf0")]([SubResource("Resource_dmhlh"), SubResource("Resource_x2el6")])
+rewards = Array[ExtResource("5_vvdj2")]([SubResource("Resource_r8u1m")])
+restrict_to_jobs = Array[ExtResource("3_fw06q")]([ExtResource("4_0dss6")])
+quest_id = "settler_talisman_seed_pouch"
+category = 2
+name = "A Chapter of the Order of Growth"
+metadata/_custom_type_script = "uid://1na7ymvvvbby"

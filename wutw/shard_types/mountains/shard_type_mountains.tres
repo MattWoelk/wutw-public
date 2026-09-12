@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="ShardType_Mountains" format=3 uid="uid://bkdalmdlh1a6t"]
+
+[ext_resource type="Resource" uid="uid://d1c7ny2xs7pwo" path="res://stage/spots/canyon/spot_canyon.tres" id="1_58yfm"]
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="1_s3n7m"]
+[ext_resource type="Script" uid="uid://b464tckdjbo4c" path="res://shard_types/mountains/shard_type_mountains.gd" id="2_hhqqw"]
+[ext_resource type="Resource" uid="uid://c7lotky0gdtl6" path="res://stage/spots/canyon/upgrade_canyon_2_cliffside_dwellings.tres" id="2_osbe6"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="3_po11c"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="4_eqnos"]
+[ext_resource type="Resource" uid="uid://b2idqb47befcx" path="res://stage/spots/mountain/upgrade_mountain_1_snowmelt_springs.tres" id="5_b1gfi"]
+[ext_resource type="Texture2D" uid="uid://bnfgwemnoisr5" path="res://shard_types/mountains/shard_type_mountains.png" id="6_h2mtn"]
+[ext_resource type="Resource" uid="uid://dxoxvtquc3hu2" path="res://stage/spots/mountain/spot_mountain.tres" id="7_oc71c"]
+[ext_resource type="Resource" uid="uid://df5hk8c7a5vdo" path="res://art/pieces/piece_kyosai_coastal_island.tres" id="7_osbe6"]
+[ext_resource type="Resource" uid="uid://rt8s4tk7pte5" path="res://skills/hauntings/skill_hauntings_ban_2.tres" id="9_ifqs7"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="10_gpk7a"]
+[ext_resource type="Resource" uid="uid://bbriab4xm77gs" path="res://stage/spots/mountain/upgrade_mountain_1_smoldering_crater.tres" id="12_0d2ct"]
+
+[sub_resource type="Resource" id="Resource_vd3sh"]
+script = ExtResource("1_s3n7m")
+text = "When the first settlers arrived on $shard_name, they founded towns in the high mountains and deep valleys. In $canyon_town, homes are cut directly into the rock, turning the entire cliff face into a single, massive building interconnected by hundreds of carved stairways. The locals point out that a solid stone roof has the benefit of never blowing away in the wind. In $ice_town, the locals take advantage of the icy weather around their high peak to preserve food. They mash hardy tubers and spread them on the cold rocks, then once frozen, store them in bags buried under ice. They claim that this method keeps the food perfectly edible for years."
+min_main_quest = 130
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_k6447"]
+script = ExtResource("1_s3n7m")
+text = "As the settlements expanded, the verticality of $shard_name required new ways to stay connected. The people here hold bridge-weaving festivals, where villages on neighboring peaks gather to twist thick hemp and vines into dizzying walkways over the abyss. These festivals are typically started by blowing massive horns, which echo against the mountains and announce the event to all the villages in the area. Agriculture, too, had to adapt. It is now split into two distinct disciplines: valley farmers tending delicate greens and high-altitude specialists coaxing hardy roots from the frozen soil."
+min_main_quest = 210
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_034b0"]
+script = ExtResource("1_s3n7m")
+text = "In $volcano_town, instead of building cooking fires, the locals cook much of their food in springs and on the hot rocks by the lava vents. Yet, the mountain's harshness is never entirely forgotten. By local custom, anyone seeking a seat on the town council must first climb the highest nearby peak wearing nothing but a thin robe. This traditional test of endurance ensures their leaders maintain humility, and intimately experience the harsh realities of the land they govern."
+min_main_quest = 310
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_8dnwy"]
+script = ExtResource("1_s3n7m")
+text = "Today, the architects of $shard_name have perfected the art of living among the cliffs. Having learned from past tremors, $canyon_town is now designed to be completely resistant to earthquakes. Builders carefully avoid existing fault lines, leave exceptionally thick ceilings between levels, and carve deep into the bedrock rather than hugging the fragile cliff face. There and in other $shard_name towns, deep valleys used to be plunged into shadow by early afternoon, but now artisans have mounted massive polished bronze sheets along the upper ridges. These mirrors bounce the sun directly into the valleys below, ensuring many more hours of daylight for the residents."
+min_main_quest = 410
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_w0hlv"]
+script = ExtResource("10_gpk7a")
+text = "The locals met me at the gate with their traditional welcoming gesture: a wad of bitter, gray lichen. They explained that I should chew it to stave off the dizzying effects of the thin air. This remedy worked wonderfully, though I found my teeth stained blue afterwards. I've been told that the color will wear off in a few days.
+
+The archives mentioned the polished bronze mirrors used to light the deep valleys, but reading about them does not prepare you for the reality of standing in these lit valleys. The reflected sunlight doesn't just light the area up, but crisscrosses the air in glowing shafts. It's like standing in a dark room with dozens of pinholes.
+
+The valley farmers use this reflected light to grow delicate greens, which I tasted. I boiled them directly in a hot spring after the local custom, while watching wild goats walk directly on a sheer cliff face. I'm disappointed to report that the greens mostly tasted of sulfur, but the locals seem to like it."
+revealed_skill = ExtResource("9_ifqs7")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[resource]
+script = ExtResource("2_hhqqw")
+mountain = ExtResource("7_oc71c")
+canyon = ExtResource("1_58yfm")
+volcano = ExtResource("12_0d2ct")
+ice_peak = ExtResource("5_b1gfi")
+cliff_dwellings = ExtResource("2_osbe6")
+shard_type_id = "mountains"
+name = "The Dwellers of the Walls"
+shard_name_override = "Gakujima"
+shard_name_override_jp = "岳島"
+shard_name_override_meaning = "Peak Island"
+tier = 1
+illustration = ExtResource("6_h2mtn")
+illustration_credit = ExtResource("7_osbe6")
+history = Array[ExtResource("1_s3n7m")]([SubResource("Resource_vd3sh"), SubResource("Resource_k6447"), SubResource("Resource_034b0"), SubResource("Resource_8dnwy")])
+trip_reward = SubResource("Resource_w0hlv")
+metadata/_custom_type_script = "uid://b464tckdjbo4c"

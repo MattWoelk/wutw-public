@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://bmbr0f72igpb2"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_2lb1t"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_ob1bv"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="3_3iblh"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_kor67"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="4_8jyvc"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="5_8jyvc"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="6_olisa"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="7_eykye"]
+[ext_resource type="Resource" uid="uid://dxoxvtquc3hu2" path="res://stage/spots/mountain/spot_mountain.tres" id="9_eykye"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_olisa"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://c5xqbhyhic2ny" path="res://map/sprites/spots/mountain/mst_mountain_dragon_roost.tres" id="11_5apel"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://yi6r4d10vn2d" path="res://map/sprites/mountains/mst_mountain_1_medium.tres" id="11_55sju"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://bqibjf1qty4ou" path="res://map/sprites/spots/mountain/mst_mountain_ember_monastery.tres" id="12_thbme"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://desakgu6q3yov" path="res://map/sprites/mountains/mst_mountain_2_large.tres" id="12_tvgub"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://c3u877m1spx0" path="res://map/sprites/mountains/mst_mountain_3_large.tres" id="13_7o017"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="13_jtnyh"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://doqqvl0x3b3g4" path="res://map/sprites/mountains/mst_mountain_4_small.tres" id="14_iw4qh"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bxr2aj680eaqd" path="res://map/sprites/mountains/mst_mountain_5_small.tres" id="15_mjtqv"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cekrboxmhdmhk" path="res://map/sprites/mountains/mst_mountain_6_tiny.tres" id="16_lutkj"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cjbrxida4odnk" path="res://map/sprites/mountains/mst_mountain_7_tiny.tres" id="17_bnhqb"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://56t2rh2pg58y" path="res://map/sprites/mountains/mst_mountain_8_medium.tres" id="18_0wyho"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://csjeschaiy5ct" path="res://map/sprites/mountains/mst_mountain_9_large.tres" id="19_pflp8"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bctu7rlwqc3o7" path="res://map/sprites/mountains/mst_mountain_10_medium.tres" id="20_0mm4n"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://t2knd16pwuwg" path="res://map/sprites/mountains/mst_mountain_11_medium.tres" id="21_rb37w"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dxba886xk8sch" path="res://map/sprites/mountains/mst_mountain_12_pair.tres" id="22_og7j2"]
+
+[sub_resource type="Resource" id="Resource_7llf2"]
+script = ExtResource("13_jtnyh")
+old_sprite_type = ExtResource("12_thbme")
+new_sprite_type = ExtResource("11_5apel")
+biome = 7
+extra_removables = Array[MapSpriteType]([ExtResource("11_55sju"), ExtResource("12_tvgub"), ExtResource("13_7o017"), ExtResource("14_iw4qh"), ExtResource("15_mjtqv"), ExtResource("16_lutkj"), ExtResource("17_bnhqb"), ExtResource("18_0wyho"), ExtResource("19_pflp8"), ExtResource("20_0mm4n"), ExtResource("21_rb37w"), ExtResource("22_og7j2")])
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_2lb1t")
+spot_upgrade_id = "mountain_dragon_roost"
+name = "The Dragon's Rest"
+description = "Old World legends speak of great dragons resting within such fiery peaks, though recent sightings are lacking."
+required_aspects = Array[ExtResource("3_kor67")]([ExtResource("6_olisa"), ExtResource("7_eykye"), ExtResource("7_eykye")])
+granted_bonuses = Dictionary[ExtResource("2_ob1bv"), int]({
+ExtResource("3_3iblh"): 30,
+ExtResource("4_8jyvc"): 20,
+ExtResource("5_8jyvc"): 20
+})
+spot = ExtResource("9_eykye")
+visuals = Array[ExtResource("9_olisa")]([SubResource("Resource_7llf2")])
+tags = Array[int]([0])
+unique_per_run = true
+min_main_quest_progress = 110

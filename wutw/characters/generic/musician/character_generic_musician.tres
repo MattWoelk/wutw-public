@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://bsovwn7mlnhok"]
+
+[ext_resource type="Script" uid="uid://dqpgr2ouh8rfm" path="res://characters/hub_character_spec.gd" id="1_lagfs"]
+[ext_resource type="PackedScene" uid="uid://d3tsjy2vwwb2r" path="res://characters/generic/musician/hub_character_musician_female_1.tscn" id="2_7vawm"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="2_8f4pb"]
+[ext_resource type="Resource" uid="uid://o88425vrnoax" path="res://characters/jobs/job_musician.tres" id="3_issin"]
+[ext_resource type="PackedScene" uid="uid://sxrnv512r4q0" path="res://characters/generic/musician/hub_character_musician_female_2.tscn" id="3_wu8uj"]
+[ext_resource type="Resource" uid="uid://gkwrrdvc7850" path="res://characters/jobs/job_storyteller.tres" id="4_2uy55"]
+[ext_resource type="PackedScene" uid="uid://blc8abt0hlcfd" path="res://characters/generic/musician/hub_character_musician_male_1.tscn" id="4_ieq3i"]
+[ext_resource type="Script" uid="uid://dgmvrqp5auq50" path="res://characters/character.gd" id="5_4c7fe"]
+
+[sub_resource type="Resource" id="Resource_8f4pb"]
+script = ExtResource("1_lagfs")
+scene = ExtResource("2_7vawm")
+gender = 1
+direction = 2
+allowed_sockets_mask = 270336
+preferred_sockets_mask = 262144
+allowed_jobs = Array[ExtResource("2_8f4pb")]([ExtResource("3_issin"), ExtResource("4_2uy55")])
+preferred_jobs = Array[ExtResource("2_8f4pb")]([ExtResource("3_issin")])
+min_main_quest_state = 200
+metadata/_custom_type_script = "uid://dqpgr2ouh8rfm"
+
+[sub_resource type="Resource" id="Resource_issin"]
+script = ExtResource("1_lagfs")
+scene = ExtResource("3_wu8uj")
+gender = 1
+allowed_sockets_mask = 262144
+preferred_sockets_mask = 262144
+allowed_jobs = Array[ExtResource("2_8f4pb")]([ExtResource("3_issin")])
+preferred_jobs = Array[ExtResource("2_8f4pb")]([ExtResource("3_issin")])
+min_main_quest_state = 200
+metadata/_custom_type_script = "uid://dqpgr2ouh8rfm"
+
+[sub_resource type="Resource" id="Resource_2uy55"]
+script = ExtResource("1_lagfs")
+scene = ExtResource("4_ieq3i")
+age = 2
+allowed_sockets_mask = 270336
+preferred_sockets_mask = 262144
+allowed_jobs = Array[ExtResource("2_8f4pb")]([ExtResource("3_issin"), ExtResource("4_2uy55")])
+preferred_jobs = Array[ExtResource("2_8f4pb")]([ExtResource("3_issin")])
+min_main_quest_state = 200
+metadata/_custom_type_script = "uid://dqpgr2ouh8rfm"
+
+[resource]
+script = ExtResource("5_4c7fe")
+character_id = "musician"
+character_name = "Musician"
+hub_specs = Array[ExtResource("1_lagfs")]([SubResource("Resource_8f4pb"), SubResource("Resource_issin"), SubResource("Resource_2uy55")])
+metadata/_custom_type_script = "uid://dgmvrqp5auq50"

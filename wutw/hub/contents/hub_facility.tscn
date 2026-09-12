@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bl780vhdwft4i"]
+
+[ext_resource type="Script" uid="uid://kvrmxi7guqq3" path="res://hub/contents/hub_facility.gd" id="1_gx14q"]
+[ext_resource type="Material" uid="uid://bj7an71mlohxi" path="res://hub/contents/hub_label_material.tres" id="2_47tth"]
+[ext_resource type="Texture2D" uid="uid://b65sj65u6g72l" path="res://hub/contents/hub_label_frame.png" id="3_aadi2"]
+[ext_resource type="FontFile" uid="uid://dwycufv0f21v2" path="res://theme/fonts/Yuji_Mai/YujiMai-Regular.ttf" id="4_htoca"]
+
+[node name="HubFacility" type="Node2D" unique_id=311478011 groups=["HubFacilities"]]
+script = ExtResource("1_gx14q")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=1465047343]
+self_modulate = Color(1, 1, 1, 0)
+z_index = -5
+offset_left = 133.0
+offset_top = -337.0
+offset_right = 393.0
+offset_bottom = 81.0
+scale = Vector2(0.325317, 0.325317)
+mouse_filter = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Panel" unique_id=1183906094]
+material = ExtResource("2_47tth")
+layout_mode = 2
+texture = ExtResource("3_aadi2")
+patch_margin_left = 30
+patch_margin_top = 30
+patch_margin_right = 30
+patch_margin_bottom = 30
+
+[node name="Label" type="Label" parent="Panel" unique_id=541126649]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.138034, 0.138034, 0.138034, 1)
+theme_override_fonts/font = ExtResource("4_htoca")
+theme_override_font_sizes/font_size = 165
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2019498285]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=521856771]
+visible = false
+polygon = PackedVector2Array(-138, -5, 245, 0, 240, -368, -151, -356)
+
+[node name="TooltipAnchor" type="Control" parent="." unique_id=278453014]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -135.0
+offset_top = -358.0
+offset_right = 236.0
+offset_bottom = -3.0
+mouse_filter = 2
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

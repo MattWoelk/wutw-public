@@ -1,0 +1,98 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://bpb56jylvk7iw"]
+
+[ext_resource type="MapSpriteType_Composite" uid="uid://bdjf7ed7joala" path="res://map/sprites/spots/cliff/mst_cliff_bird_nesting_cliff.tres" id="1_wsojc"]
+[ext_resource type="MapSpriteType_Lake" uid="uid://dhue4qeqrdlxe" path="res://map/sprites/water_features/lake/mst_lake_3.tres" id="2_kk2ax"]
+[ext_resource type="MapSpriteType_River" uid="uid://cuddtl0qxdq7y" path="res://map/sprites/spots/cliff/mst_cliff_waterfall.tres" id="3_kk2ax"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://dc1pwvhv440nd" path="res://map/sprites/spots/brushland/mst_brushland_mound_2.tres" id="4_ffdld"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://bbtoh7jkqqvi5" path="res://map/sprites/spots/brushland/mst_brushland_mound_1.tres" id="5_ea576"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://bxe0ndbvg16np" path="res://map/sprites/spots/brushland/mst_brushland_mound_3.tres" id="6_nmubh"]
+[ext_resource type="PackedScene" uid="uid://bg5h7bfa8vs48" path="res://map/sprites/water_features/river/map_effect_waterfall.tscn" id="7_smxw2"]
+
+[sub_resource type="MapSpriteCollision_Line" id="MapSpriteCollision_Line_sv5ly"]
+p1 = Vector2(-0.055, -4.77)
+p2 = Vector2(9.91, -8.775)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Line" id="MapSpriteCollision_Line_f4xxj"]
+p1 = Vector2(0.43, 2.355)
+p2 = Vector2(10.755, -3.015)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Line" id="MapSpriteCollision_Line_j182m"]
+p1 = Vector2(0.23, -5.195)
+p2 = Vector2(-13.235, -11.06)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Line" id="MapSpriteCollision_Line_vnjqp"]
+p1 = Vector2(-12.59, -4.375)
+p2 = Vector2(0.105, 2.485)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Circle" id="MapSpriteCollision_Circle_sv5ly"]
+center = Vector2(-0.08, -1.75)
+radius = 5.115
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Circle" id="MapSpriteCollision_Circle_f4xxj"]
+center = Vector2(7.03, -4.95)
+radius = 5.185
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Circle" id="MapSpriteCollision_Circle_j182m"]
+center = Vector2(-5.21, -3.3)
+radius = 4.67
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Circle" id="MapSpriteCollision_Circle_vnjqp"]
+center = Vector2(-10.435, -6.45)
+radius = 4.46
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_4wn1a"]
+sprite_type = ExtResource("1_wsojc")
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_lltua"]
+sprite_type = ExtResource("2_kk2ax")
+offset = Vector2(-3.93, -6.115)
+scale = 0.147
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_fg8br"]
+sprite_type = ExtResource("3_kk2ax")
+offset = Vector2(-5.085, -2.57)
+scale = 0.28
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_3a3bj"]
+sprite_type = ExtResource("4_ffdld")
+offset = Vector2(-4.26, -6.955)
+scale = 0.405
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_5en0o"]
+sprite_type = ExtResource("5_ea576")
+offset = Vector2(-4.985, -6.205)
+scale = 0.52
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_y7scm"]
+sprite_type = ExtResource("5_ea576")
+offset = Vector2(-5.31, -5.555)
+scale = 0.4
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_1whd5"]
+sprite_type = ExtResource("6_nmubh")
+offset = Vector2(-4.19, -5.125)
+scale = 0.49
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_5jinl"]
+sprite_type = ExtResource("4_ffdld")
+offset = Vector2(-2.465, -5.495)
+scale = 0.325
+
+[sub_resource type="MapEffectAttachment" id="MapEffectAttachment_ffdld"]
+scene = ExtResource("7_smxw2")
+offset = Vector2(-4.955767, -5.389674)
+scale = 0.034
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_4wn1a"), SubResource("MapSpriteComponent_lltua"), SubResource("MapSpriteComponent_fg8br"), SubResource("MapSpriteComponent_3a3bj"), SubResource("MapSpriteComponent_5en0o"), SubResource("MapSpriteComponent_y7scm"), SubResource("MapSpriteComponent_1whd5"), SubResource("MapSpriteComponent_5jinl")])
+footprint_radius = 15.0
+effects = Array[MapEffectAttachment]([SubResource("MapEffectAttachment_ffdld")])
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Line_sv5ly"), SubResource("MapSpriteCollision_Line_f4xxj"), SubResource("MapSpriteCollision_Line_j182m"), SubResource("MapSpriteCollision_Line_vnjqp"), SubResource("MapSpriteCollision_Circle_sv5ly"), SubResource("MapSpriteCollision_Circle_f4xxj"), SubResource("MapSpriteCollision_Circle_j182m"), SubResource("MapSpriteCollision_Circle_vnjqp")])

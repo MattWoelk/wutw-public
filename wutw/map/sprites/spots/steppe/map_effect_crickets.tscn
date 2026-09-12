@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://cbhxm12fwox1t"]
+
+[ext_resource type="Script" uid="uid://dh127xapdb8gc" path="res://map/map_effect_particles.gd" id="1_i5kbb"]
+[ext_resource type="Texture2D" uid="uid://b080vhp0l2e7k" path="res://map/sprites/spots/plains/bee.png" id="2_07ww0"]
+
+[sub_resource type="Curve" id="Curve_88uco"]
+_data = [Vector2(0, 0), 0.0, 2.6790414, 0, 0, Vector2(0.05916542, 0.61491275), 0.40445524, 0.40445524, 0, 0, Vector2(0.8748325, 0.5984342), -0.27649114, -0.27649114, 0, 0, Vector2(1, 0), -3.9659877, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_5fdos"]
+curve = SubResource("Curve_88uco")
+
+[sub_resource type="Curve" id="Curve_drwvn"]
+_data = [Vector2(0.3625778, 0.008204699), 0.0, 0.0, 0, 0, Vector2(0.36651823, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_6kwvg"]
+width = 64
+curve = SubResource("Curve_drwvn")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lfm3u"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, 0.1, 0)
+emission_shape = 1
+emission_sphere_radius = 35.0
+direction = Vector3(0, -1, 0)
+spread = 24.511
+flatness = 1.0
+initial_velocity_min = 150.0
+initial_velocity_max = 150.0
+gravity = Vector3(0, 150, 0)
+damping_min = 300.0
+damping_max = 300.0
+damping_curve = SubResource("CurveTexture_6kwvg")
+scale_min = 0.01
+scale_max = 0.01
+color = Color(0.4155171, 0.26150423, 0.07423412, 1)
+alpha_curve = SubResource("CurveTexture_5fdos")
+
+[node name="Crickets" type="Node2D" unique_id=19583879]
+script = ExtResource("1_i5kbb")
+
+[node name="ParticleSystem" type="GPUParticles2D" parent="." unique_id=1295716697]
+unique_name_in_owner = true
+amount = 6
+texture = ExtResource("2_07ww0")
+lifetime = 5.0
+randomness = 1.0
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_lfm3u")

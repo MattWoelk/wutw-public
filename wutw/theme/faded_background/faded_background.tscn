@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5k16hpo8080v"]
+
+[ext_resource type="Shader" uid="uid://br67s8rb0epoh" path="res://theme/faded_background/faded_background.gdshader" id="1_gi5se"]
+[ext_resource type="Texture2D" uid="uid://chxf88ekbq0ie" path="res://visuals/canvas.png" id="2_lm6u8"]
+[ext_resource type="Texture2D" uid="uid://5faa45e16fe1" path="res://theme/faded_background/faded_background_strokes.png" id="3_gi5se"]
+[ext_resource type="Script" uid="uid://d1ixx5ngvcaxl" path="res://theme/faded_background/faded_background.gd" id="4_lm6u8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xs5cr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gi5se"]
+shader = ExtResource("1_gi5se")
+shader_parameter/fade = 1.0
+shader_parameter/background_color = Color(0.218547, 0.198825, 0.152763, 1)
+shader_parameter/background_texture = ExtResource("2_lm6u8")
+shader_parameter/background_tiling = Vector2(1, 1)
+shader_parameter/pattern_color = Color(0.18, 0.14976, 0.0936, 1)
+shader_parameter/pattern_texture = ExtResource("3_gi5se")
+shader_parameter/pattern_tiling = Vector2(16, 9)
+shader_parameter/darkening = 0.50000002375
+shader_parameter/u_threshold1 = 0.7630000362425
+shader_parameter/u_threshold2 = 0.6000000285
+shader_parameter/u_threshold3 = 0.403
+shader_parameter/u_threshold4 = 0.2810000133475
+
+[node name="BG" type="PanelContainer"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xs5cr")
+script = ExtResource("4_lm6u8")
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+unique_name_in_owner = true
+show_behind_parent = true
+copy_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_gi5se")
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 2
+mouse_force_pass_scroll_events = false
+
+[connection signal="gui_input" from="ColorRect" to="." method="_on_color_rect_gui_input"]

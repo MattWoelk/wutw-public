@@ -1,0 +1,46 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://o1vp8okjva5d"]
+
+[ext_resource type="MapSpriteType_Generic" uid="uid://dy857nfrvbivc" path="res://map/sprites/spots/wasteland/mst_wasteland_glass_dune_3.tres" id="1_dfu37"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://bhdjk6ttbrmy3" path="res://map/sprites/spots/wasteland/mst_wasteland_glass_dune_2.tres" id="2_jxrbc"]
+[ext_resource type="PackedScene" uid="uid://djtjuwjcv52q1" path="res://map/sprites/spots/seashore/map_effect_sparkle.tscn" id="3_jxrbc"]
+
+[sub_resource type="MapSpriteCollision_Rect" id="MapSpriteCollision_Rect_dfu37"]
+rect = Rect2(-6.345, -0.565, 10.275, 2.515)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_bvt0k"]
+p1 = Vector2(5.54, 0.48)
+p2 = Vector2(3.83, 1.97)
+p3 = Vector2(3.75, -0.14)
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_4i00j"]
+sprite_type = ExtResource("1_dfu37")
+offset = Vector2(-4.48, 0.09)
+scale = 0.8
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_gnkn2"]
+sprite_type = ExtResource("1_dfu37")
+scale = 0.8
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_oibnl"]
+sprite_type = ExtResource("2_jxrbc")
+offset = Vector2(-3.605, 1.36)
+scale = 0.8
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_d2xoy"]
+sprite_type = ExtResource("1_dfu37")
+offset = Vector2(1.85, 0.79)
+scale = 0.8
+
+[sub_resource type="MapEffectAttachment" id="MapEffectAttachment_4i00j"]
+scene = ExtResource("3_jxrbc")
+offset = Vector2(-1.515, 0.535)
+scale = 0.06
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_4i00j"), SubResource("MapSpriteComponent_gnkn2"), SubResource("MapSpriteComponent_oibnl"), SubResource("MapSpriteComponent_d2xoy")])
+footprint_radius = 2.07
+must_be_fully_within_clip = true
+effects = Array[MapEffectAttachment]([SubResource("MapEffectAttachment_4i00j")])
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Rect_dfu37"), SubResource("MapSpriteCollision_Triangle_bvt0k")])

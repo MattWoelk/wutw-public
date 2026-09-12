@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="ShardType_MainQuest_TeoAbode" format=3 uid="uid://dubndsyn8xv5p"]
+
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="1_r0r5w"]
+[ext_resource type="Script" uid="uid://bf0llsab1xyd6" path="res://shard_types/mq_teo_abode/shard_type_mq_teo_abode.gd" id="2_aqacv"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="2_xxjrj"]
+[ext_resource type="Texture2D" uid="uid://klc1xgh6yfgs" path="res://shard_types/mq_teo_abode/shard_type_mq_teo_abode.png" id="3_d145y"]
+[ext_resource type="Resource" uid="uid://dtnq2ts86u0im" path="res://art/pieces/piece_gekkou_temple_bell.tres" id="4_ia6am"]
+[ext_resource type="Resource" uid="uid://dhuwh4ss4xaal" path="res://quests/main/phase1/1_40_dedication/quest_main_1_40_dedication.tres" id="5_ykrk0"]
+[ext_resource type="Resource" uid="uid://c67m52yqdejgo" path="res://skills/inspiration/skill_inspiration_heal_2.tres" id="7_6xths"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="7_y8gd5"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="9_5dmcr"]
+
+[sub_resource type="Resource" id="Resource_c4wvt"]
+script = ExtResource("1_r0r5w")
+text = "$shard_name has the honor of hosting the grand statue through which the Enlightened One's blessing flows into the New World. The town with the statue, $monastery_town, is entirely dedicated to its care and maintenance, with all but a few of the residents being monks. Other towns have a few more lay residents, but since $shard_name is the center of the monastic order, much of the infrastructure is dedicated to supporting the monks and helping pilgrims reach $monastery_town safely."
+time_taken = 0
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_6xths"]
+script = ExtResource("1_r0r5w")
+text = "When the Scribe declared that the time of passivity had passed, the monks quickly sprung into action. The prayer halls were turned into glyph research hubs, and scholars began producing treatises and commentaries on the old texts. The priesthood organization evolved too, as new teachers arose to lead factions focused on studying different types of essence. These masters now wear special robes and carry gold scepters adorned with relics to mark their station, and pilgrims regularly arrive to beg for their blessing."
+min_main_quest = 200
+time_taken = 2
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_5dmcr"]
+script = ExtResource("1_r0r5w")
+text = "As the revelation that the Enlightened One's spirit is fractured resounded around the world, the priesthood has adapted once again. The Order of Growth now maintains the grounds. Gone are the glyph-covered pillars surrounding the statue, and in their place are vines which slowly climb up the Enlightened One's stone body. The monks hope that these vines will channel the divine blessing throughout the shard and beyond, helping the fragments of the Enlightened One's spirit connect and unify."
+min_main_quest = 320
+time_taken = 0
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_p7cw5"]
+script = ExtResource("7_y8gd5")
+text = "First thing I did was visit the boundary between the two united shards. It's a bit of a wasteland, with sharp cliffs marking the border, but it's already healing. There's even vegetation growing from the cracks. I reckon in a generation or two, it'll be good as new.
+
+As for the child, I asked the monks at the Abode, and they were ecstatic. They launched a shard-wide search, and it only took a few weeks for them to return with two dozen children. Then another week to figure out which of them was the right one and to deal with the parents. I've brought the kid back as instructed."
+revealed_skill = ExtResource("7_6xths")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[resource]
+script = ExtResource("2_aqacv")
+quest = ExtResource("5_ykrk0")
+shard_type_id = "mq_teo_abode"
+name = "The Enlightened One's Abode"
+shard_name_override = "Onogorojima"
+shard_name_override_jp = "磤馭慮島"
+shard_name_override_meaning = "Self Coalescing Island"
+tier = 3
+illustration = ExtResource("3_d145y")
+illustration_credit = ExtResource("4_ia6am")
+history = Array[ExtResource("1_r0r5w")]([SubResource("Resource_c4wvt"), SubResource("Resource_6xths"), SubResource("Resource_5dmcr")])
+trip_reward = SubResource("Resource_p7cw5")
+min_main_quest_progress = 130
+metadata/_custom_type_script = "uid://bf0llsab1xyd6"

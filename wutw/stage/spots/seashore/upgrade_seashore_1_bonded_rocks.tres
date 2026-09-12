@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://clsrghb2yqa3r"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_vli48"]
+[ext_resource type="Resource" uid="uid://ddudln14n54nq" path="res://stage/spots/seashore/upgrade_seashore_2_tide_markers.tres" id="2_uknqc"]
+[ext_resource type="Resource" uid="uid://cj2ytlvvp4wdt" path="res://stage/spots/seashore/upgrade_seashore_2_driftwood_cove.tres" id="3_ju4kr"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="4_b3js4"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="5_msbuv"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="6_4brsy"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="7_6dx34"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="8_1nn2g"]
+[ext_resource type="Resource" uid="uid://skws2o4hx05g" path="res://stage/spots/seashore/spot_seashore.tres" id="9_8sxil"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="10_ffy38"]
+[ext_resource type="Script" uid="uid://dvrtuqbmx4v30" path="res://stage/spots/spot_upgrade_visual_add.gd" id="11_oov8k"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://dh44crp4hv5d7" path="res://map/sprites/spots/seashore/mst_seashore_bonded_rocks.tres" id="12_0rugg"]
+
+[sub_resource type="Resource" id="Resource_qyms2"]
+script = ExtResource("11_oov8k")
+sprite_type = ExtResource("12_0rugg")
+biome = 1
+metadata/_custom_type_script = "uid://dvrtuqbmx4v30"
+
+[resource]
+script = ExtResource("1_vli48")
+spot_upgrade_id = "seashore_bonded_rocks"
+name = "Bonded Rocks"
+description = "These rocks have sworn to keep their vows until erosion does them part."
+required_aspects = Array[ExtResource("7_6dx34")]([ExtResource("8_1nn2g")])
+granted_bonuses = Dictionary[ExtResource("4_b3js4"), int]({
+ExtResource("5_msbuv"): 5,
+ExtResource("6_4brsy"): 5
+})
+child_upgrades = Array[ExtResource("1_vli48")]([ExtResource("2_uknqc"), ExtResource("3_ju4kr")])
+spot = ExtResource("9_8sxil")
+visuals = Array[ExtResource("10_ffy38")]([SubResource("Resource_qyms2")])
+tags = Array[int]([3])

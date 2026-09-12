@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://djcvbjw8ww8tq"]
+
+[ext_resource type="Script" uid="uid://f5rq3ed1pb0l" path="res://companions/hub_companion.gd" id="1_gch27"]
+[ext_resource type="Resource" uid="uid://pe4klyths3xx" path="res://companions/dragon/companion_dragon.tres" id="2_b7wdl"]
+[ext_resource type="Texture2D" uid="uid://cdd2h0tbfsrhc" path="res://companions/dragon/dragon_hub.png" id="3_t0flb"]
+
+[node name="HubCompanion_Dragon" type="Node2D" unique_id=1239197047 groups=["HubFacilities"]]
+texture_filter = 6
+script = ExtResource("1_gch27")
+companion = ExtResource("2_b7wdl")
+tooltip_text = "[b]Cat Companion[/b]"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1287134228]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=295582209]
+visible = false
+position = Vector2(7, -7)
+polygon = PackedVector2Array(171.62738, 44.836304, 161.76715, -71.29578, 111.37018, -119.501526, 150.81122, -149.08228, 161.76715, -230.15561, 96.03192, -385.7287, 9.480774, -481.04462, -124.180664, -475.5667, -142.8056, -279.45694, -115.415955, -144.69995, -186.62903, -103.06775, -205.25397, -7.751831, -125, 53, -28.864746, 89.75531)
+
+[node name="TooltipAnchor" type="Control" parent="." unique_id=1358955170]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -190.77197
+offset_top = -479.19037
+offset_right = 172.51477
+offset_bottom = 64.81616
+mouse_filter = 2
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=191210685]
+position = Vector2(-0.060058594, -203.60367)
+texture = ExtResource("3_t0flb")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

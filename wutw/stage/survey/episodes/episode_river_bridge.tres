@@ -1,0 +1,146 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://1b3xxtst2jr8"]
+
+[ext_resource type="Resource" uid="uid://byxjra6tw8h46" path="res://art/pieces/piece_hasui_autumn_garden.tres" id="1_eh2mk"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_kk04n"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_eh2mk"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_b4ftu"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="4_08br5"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="5_t7pfg"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="6_tsg63"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="7_pr7wr"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="8_dm0x0"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="9_t7e3d"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="10_6dres"]
+[ext_resource type="Script" uid="uid://cbnw4a13y5x8c" path="res://events/system/outcomes/random/event_outcome_random.gd" id="11_3gqse"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="12_vbtu7"]
+[ext_resource type="Script" uid="uid://yxgaymbbt8tk" path="res://events/system/outcomes/override_next_step/event_outcome_override_next_step.gd" id="13_752x4"]
+[ext_resource type="Resource" uid="uid://c8ax48tb3uxge" path="res://cards/tier6/card_soak.tres" id="14_8vnfa"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="15_yynve"]
+[ext_resource type="Resource" uid="uid://dbh52xirtamie" path="res://cards/tier2/card_bridge.tres" id="16_1aib6"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="17_qewmg"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="18_xq1kt"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="19_eoor7"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="20_26wmd"]
+[ext_resource type="Resource" uid="uid://cmbyg0gub8sum" path="res://stage/spots/river/spot_river.tres" id="21_a8b1y"]
+
+[sub_resource type="Resource" id="Resource_2x410"]
+script = ExtResource("1_kk04n")
+_texture_path = "res://stage/survey/episodes/river_bridge.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_vmpkk"]
+script = ExtResource("8_dm0x0")
+bonus_type = ExtResource("7_pr7wr")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_j5utr"]
+script = ExtResource("9_t7e3d")
+delta = 4
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_2vyxr"]
+script = ExtResource("5_t7pfg")
+suboutcomes = Array[ExtResource("6_tsg63")]([SubResource("Resource_vmpkk"), SubResource("Resource_j5utr")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_nk7y4"]
+script = ExtResource("2_eh2mk")
+label = "Repair the bridge."
+aspects = Array[ExtResource("3_b4ftu")]([ExtResource("4_08br5")])
+aspects_per_season = Array[ExtResource("3_b4ftu")]([null])
+outcome = SubResource("Resource_2vyxr")
+outcome_text = "The group sets out to fix the crumbling beams.
+
+They carefully remove the rotten boards, then chop down timber to fashion replacements. By the end of the day, the bridge is sturdy again.
+
+The scouts take pride in having helped preserve the work of the unknown builders."
+
+[sub_resource type="Resource" id="Resource_dle0n"]
+script = ExtResource("8_dm0x0")
+bonus_type = ExtResource("12_vbtu7")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_4q157"]
+script = ExtResource("13_752x4")
+result_text = "The surveyors attempt to cross the bridge, but before they can make it halfway across, a beam breaks.
+
+The whole group finds themselves plunging into the river."
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_t8u61"]
+script = ExtResource("15_yynve")
+card_type = ExtResource("14_8vnfa")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ggsfw"]
+script = ExtResource("5_t7pfg")
+suboutcomes = Array[ExtResource("6_tsg63")]([SubResource("Resource_4q157"), SubResource("Resource_t8u61")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_y4unl"]
+script = ExtResource("11_3gqse")
+suboutcomes = Dictionary[ExtResource("6_tsg63"), float]({
+SubResource("Resource_dle0n"): 0.5,
+SubResource("Resource_ggsfw"): 0.5
+})
+description = "<term:bonus.adventure> or <term:card.soak>"
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_51xf1"]
+script = ExtResource("2_eh2mk")
+label = "Cross it."
+aspects = Array[ExtResource("3_b4ftu")]([ExtResource("10_6dres")])
+aspects_per_season = Array[ExtResource("3_b4ftu")]([null])
+outcome = SubResource("Resource_y4unl")
+outcome_text = "The surveyors attempt to cross the bridge, testing each board carefully before stepping down.
+
+On the other side, they find crumbling walls which must have once surrounded a grove. The space is now choked with weeds, but the old trees still grow in unnaturally straight rows.
+
+It is clear that this place was once special."
+
+[sub_resource type="Resource" id="Resource_f1ydn"]
+script = ExtResource("15_yynve")
+card_type = ExtResource("16_1aib6")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_4oa84"]
+script = ExtResource("18_xq1kt")
+bonus_type = ExtResource("17_qewmg")
+min_count = 20
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_csivo"]
+script = ExtResource("2_eh2mk")
+label = "Sketch it."
+requirement = SubResource("Resource_4oa84")
+aspects = Array[ExtResource("3_b4ftu")]([ExtResource("4_08br5")])
+outcome = SubResource("Resource_f1ydn")
+outcome_text = "Several scouts sketch the peaceful scene.
+
+One focuses on the graceful curve of the bridge.
+
+Another sketches the weathered beams and moss in detail."
+
+[sub_resource type="Resource" id="Resource_htryv"]
+script = ExtResource("2_eh2mk")
+label = "Leave it undisturbed. "
+aspects = Array[ExtResource("3_b4ftu")]([null])
+aspects_per_season = Array[ExtResource("3_b4ftu")]([null])
+outcome_text = "The group pauses by the bridge, appreciating the beautiful artisanship and unwilling to risk damaging it."
+
+[resource]
+script = ExtResource("19_eoor7")
+episode_id = "river_bridge"
+title = "The Old Bridge"
+spot_types = Array[ExtResource("20_26wmd")]([ExtResource("21_a8b1y")])
+text = "As the scouts travel along the riverbank, they come across a beautiful old bridge spanning the quiet water.
+
+Moss clings to the railing, and years of rain and sun have weathered the boards. Though decayed now, it is clear that it was once made with great care."
+background_image = SubResource("Resource_2x410")
+background_credit = ExtResource("1_eh2mk")
+choices = Array[ExtResource("2_eh2mk")]([SubResource("Resource_nk7y4"), SubResource("Resource_51xf1"), SubResource("Resource_csivo"), SubResource("Resource_htryv")])

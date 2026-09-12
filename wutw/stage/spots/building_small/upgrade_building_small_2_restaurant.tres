@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://dmokfbf36hs3u"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_a0car"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_8ipt0"]
+[ext_resource type="Resource" uid="uid://c0511h8unpsdb" path="res://stage/spots/building_small/upgrade_building_small_3_fermenter.tres" id="2_k2t3y"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="4_igrvl"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="4_po64w"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="6_ucwoo"]
+[ext_resource type="Resource" uid="uid://w8n0bwomyvod" path="res://stage/spots/building_small/spot_building_small.tres" id="7_j2mp5"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="8_ewgwd"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://d4nj2286tk0h5" path="res://map/sprites/spots/small_building/mst_small_building_noodle_stall.tres" id="9_0jiqy"]
+[ext_resource type="MapSpriteType_Building" uid="uid://ce7bjb6dy0x5q" path="res://map/sprites/spots/small_building/mst_small_building_granary.tres" id="9_xwvwr"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="10_0jiqy"]
+
+[sub_resource type="Resource" id="Resource_kannq"]
+script = ExtResource("10_0jiqy")
+old_sprite_type = ExtResource("9_xwvwr")
+new_sprite_type = ExtResource("9_0jiqy")
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_a0car")
+spot_upgrade_id = "building_small_restaurant"
+name = "Noodle Stall"
+description = "Strands of fresh noodles hang from the beams before plunging into steaming bowls."
+required_aspects = Array[ExtResource("4_po64w")]([ExtResource("6_ucwoo")])
+granted_bonuses = Dictionary[ExtResource("2_8ipt0"), int]({
+ExtResource("4_igrvl"): 10
+})
+child_upgrades = Array[ExtResource("1_a0car")]([ExtResource("2_k2t3y")])
+spot = ExtResource("7_j2mp5")
+visuals = Array[ExtResource("8_ewgwd")]([SubResource("Resource_kannq")])

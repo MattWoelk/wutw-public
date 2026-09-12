@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="Quest_Main440_Debate" format=3 uid="uid://beg720q1cjibf"]
+
+[ext_resource type="Resource" uid="uid://cg2kww228up0x" path="res://quests/main/phase4/4_40_debate/dlg_quest_main_4_40_debate_abdication.tres" id="1_0lapi"]
+[ext_resource type="Resource" uid="uid://cqbic2uhyjd31" path="res://quests/main/phase4/4_40_debate/dlg_quest_main_4_40_debate_begin.tres" id="1_lp717"]
+[ext_resource type="Script" uid="uid://do0acm87x1q4t" path="res://quests/main/phase4/4_40_debate/quest_main_4_40_debate.gd" id="2_7ogsb"]
+[ext_resource type="Resource" uid="uid://qse052mg5fa5" path="res://quests/main/phase4/4_40_debate/dlg_quest_main_4_40_debate_doubts.tres" id="3_0uv5h"]
+[ext_resource type="Script" uid="uid://xhjv8q6d2y7b" path="res://debate/debate_argument.gd" id="3_7ogsb"]
+[ext_resource type="Resource" uid="uid://boy4c2wer2cgd" path="res://debate/arguments/argument_final.tres" id="4_wxfjv"]
+[ext_resource type="Resource" uid="uid://bvr63r4ke2rj1" path="res://quests/main/phase4/4_40_debate/dlg_quest_main_4_40_debate_teo_diary.tres" id="6_wxfjv"]
+[ext_resource type="Resource" uid="uid://dtl7vp2ogmcvh" path="res://debate/arguments/argument_golden_age.tres" id="7_nyt7w"]
+[ext_resource type="Resource" uid="uid://l2y3vi7xl3gt" path="res://debate/arguments/argument_sacrifice.tres" id="8_cs4ww"]
+[ext_resource type="Resource" uid="uid://b2q1nm7h4yid" path="res://debate/arguments/argument_communal_joy.tres" id="9_fv605"]
+[ext_resource type="Resource" uid="uid://cpej38npgfxn8" path="res://debate/arguments/argument_doubt.tres" id="10_wiyih"]
+[ext_resource type="Resource" uid="uid://bu823ukk40bxo" path="res://debate/arguments/argument_investment.tres" id="11_d8d8t"]
+[ext_resource type="Script" uid="uid://cocdm5ulvrs8m" path="res://relics/relic.gd" id="12_101q7"]
+[ext_resource type="Resource" uid="uid://ts2kd5ds3e2m" path="res://debate/arguments/argument_dragon_mine.tres" id="12_hjb2y"]
+[ext_resource type="Resource" uid="uid://c3wgj8qxnphek" path="res://relics/common/talisman_seed_pouch/relic_talisman_seed_pouch.tres" id="13_hjb2y"]
+[ext_resource type="Resource" uid="uid://bv5ef12v3hn71" path="res://debate/arguments/argument_talisman_pouch.tres" id="14_h3w6k"]
+[ext_resource type="Resource" uid="uid://lgy2st27yh5v" path="res://relics/common/talisman_copper_ring/relic_talisman_copper_ring.tres" id="15_7kmvo"]
+[ext_resource type="Resource" uid="uid://deh7tibjpbgrc" path="res://debate/arguments/argument_talisman_ring.tres" id="16_ee8e8"]
+[ext_resource type="Resource" uid="uid://cwt7x3fd6ms86" path="res://relics/common/talisman_charcoal_bead/relic_talisman_charcoal_bead.tres" id="17_84j8q"]
+[ext_resource type="Resource" uid="uid://db1r5oywe75ek" path="res://debate/arguments/argument_talisman_bead.tres" id="18_titph"]
+[ext_resource type="Resource" uid="uid://cxwl0l6i8dpm6" path="res://relics/common/talisman_herbal_scent_bag/relic_talisman_herbal_scent_bag.tres" id="19_op7iq"]
+[ext_resource type="Resource" uid="uid://ci0g5nyby7iqw" path="res://debate/arguments/argument_talisman_scent_bag.tres" id="20_o2h3g"]
+[ext_resource type="Resource" uid="uid://ca10i37hayksc" path="res://quests/main/phase4/4_40_debate/dlg_quest_main_4_40_debate_translated.tres" id="23_hjb2y"]
+[ext_resource type="Resource" uid="uid://b60xa080vpg15" path="res://hub/museum/historical_record_commandments.tres" id="24_h3w6k"]
+
+[resource]
+script = ExtResource("2_7ogsb")
+begin_dialogue = ExtResource("1_lp717")
+starting_arguments = Array[ExtResource("3_7ogsb")]([ExtResource("7_nyt7w"), ExtResource("8_cs4ww"), ExtResource("9_fv605"), ExtResource("10_wiyih"), ExtResource("11_d8d8t"), ExtResource("12_hjb2y")])
+talisman_arguments = Dictionary[ExtResource("12_101q7"), ExtResource("3_7ogsb")]({
+ExtResource("13_hjb2y"): ExtResource("14_h3w6k"),
+ExtResource("15_7kmvo"): ExtResource("16_ee8e8"),
+ExtResource("17_84j8q"): ExtResource("18_titph"),
+ExtResource("19_op7iq"): ExtResource("20_o2h3g")
+})
+doubts_dialogue = ExtResource("3_0uv5h")
+teo_diary_dialogue = ExtResource("6_wxfjv")
+translated_dialogue = ExtResource("23_hjb2y")
+translated_record = ExtResource("24_h3w6k")
+abdication_dialogue = ExtResource("1_0lapi")
+final_argument = ExtResource("4_wxfjv")
+quest_id = "main_4_40_debate"
+name = "The Debate"
+goals = Array[String](["Resolve the Debate."])
+metadata/_custom_type_script = "uid://do0acm87x1q4t"

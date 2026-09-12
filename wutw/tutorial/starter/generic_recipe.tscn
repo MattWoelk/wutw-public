@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://bvrmgebiqxcw1"]
+
+[ext_resource type="Script" uid="uid://dxs5bvsxaxfw0" path="res://tutorial/starter/generic_recipe.gd" id="1_6t0th"]
+[ext_resource type="Shader" uid="uid://cy23kwgtjt4et" path="res://theme/panel/panel.gdshader" id="2_xp1mq"]
+[ext_resource type="Texture2D" uid="uid://bxvoyajed7cvv" path="res://theme/panel/panel_bg_mini.png" id="3_2p7dl"]
+[ext_resource type="Texture2D" uid="uid://bnkoruxi23qsp" path="res://theme/panel/panel_frame.png" id="4_usob3"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="5_ybgm0"]
+[ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="6_3cvab"]
+[ext_resource type="Shader" uid="uid://cmg08h0262u6j" path="res://stage/spots/spot_recipe_outline.gdshader" id="7_ddvor"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fc4qn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ddvor"]
+shader = ExtResource("2_xp1mq")
+shader_parameter/size = Vector2(30, 55.5)
+shader_parameter/background = ExtResource("3_2p7dl")
+shader_parameter/background_tex_size = Vector2(947, 380)
+shader_parameter/background_scale = 2.27
+shader_parameter/frame_tex = ExtResource("4_usob3")
+shader_parameter/frame_tex_size = Vector2(1127, 976)
+shader_parameter/frame_margin = Vector4(1, 0, 0, 5.115)
+shader_parameter/frame_scale = 1.125
+shader_parameter/frame_color = Color(0.47, 0.399735, 0.3619, 1)
+shader_parameter/decor_transform = Vector4(0, 0, 100, 100)
+shader_parameter/decor_modulate = Color(1, 1, 1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_buoh8"]
+shader = ExtResource("2_xp1mq")
+shader_parameter/size = Vector2(108, 55.5)
+shader_parameter/background = ExtResource("3_2p7dl")
+shader_parameter/background_tex_size = Vector2(947, 380)
+shader_parameter/background_scale = 2.27
+shader_parameter/frame_tex = ExtResource("4_usob3")
+shader_parameter/frame_tex_size = Vector2(1127, 976)
+shader_parameter/frame_margin = Vector4(1, 1, 6.285, 5.34)
+shader_parameter/frame_scale = 1.125
+shader_parameter/frame_color = Color(0.47, 0.399735, 0.3619, 1)
+shader_parameter/decor_transform = Vector4(0, 0, 100, 100)
+shader_parameter/decor_modulate = Color(1, 1, 1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_usob3"]
+shader = ExtResource("7_ddvor")
+shader_parameter/color = Color(1, 0.883333, 0, 1)
+shader_parameter/speed = 2.0
+shader_parameter/expand = Vector2(0, -1.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybgm0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="GenericRecipe" type="PanelContainer" unique_id=1078807274]
+offset_right = 88.0
+offset_bottom = 37.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fc4qn")
+script = ExtResource("1_6t0th")
+
+[node name="HBox" type="HBoxContainer" parent="." unique_id=1244833765]
+unique_name_in_owner = true
+show_behind_parent = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = -4
+
+[node name="AspectsPanel" type="PanelContainer" parent="HBox" unique_id=625939692]
+unique_name_in_owner = true
+self_modulate = Color(0.9, 0.9, 0.9, 1)
+material = SubResource("ShaderMaterial_ddvor")
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("5_ybgm0")
+script = ExtResource("6_3cvab")
+material_customized = true
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="MarginContainer" type="MarginContainer" parent="HBox/AspectsPanel" unique_id=2136844267]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="AspectsList" type="HBoxContainer" parent="HBox/AspectsPanel/MarginContainer" unique_id=1906425801]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NamePanel" type="PanelContainer" parent="HBox" unique_id=1360141523]
+unique_name_in_owner = true
+self_modulate = Color(0.9, 0.9, 0.9, 1)
+material = SubResource("ShaderMaterial_buoh8")
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("5_ybgm0")
+script = ExtResource("6_3cvab")
+material_customized = true
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="MarginContainer" type="MarginContainer" parent="HBox/NamePanel" unique_id=1801623991]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBox/NamePanel/MarginContainer" unique_id=677076739]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="HBox/NamePanel/MarginContainer/HBoxContainer" unique_id=813586223]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+vertical_alignment = 1
+
+[node name="HighlightOutline" type="Panel" parent="." unique_id=1013940704]
+unique_name_in_owner = true
+visible = false
+material = SubResource("ShaderMaterial_usob3")
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ybgm0")

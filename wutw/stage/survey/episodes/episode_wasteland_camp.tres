@@ -1,0 +1,75 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://bspouvcbos3or"]
+
+[ext_resource type="Resource" uid="uid://bys50pc5r81pv" path="res://art/pieces/piece_yoshida_camping.tres" id="1_1i7gn"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_lryil"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_1i7gn"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_6qc1q"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="4_3qjpv"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="5_vkcgt"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="6_gruky"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="7_1jos1"]
+[ext_resource type="Resource" uid="uid://c8ax48tb3uxge" path="res://cards/tier6/card_soak.tres" id="8_r5hgn"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="9_67ugm"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="10_8tvew"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="11_48ndx"]
+
+[sub_resource type="Resource" id="Resource_ksty6"]
+script = ExtResource("1_lryil")
+_texture_path = "res://stage/survey/episodes/episode_wasteland_camp.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_d66tv"]
+script = ExtResource("5_vkcgt")
+delta = -3
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_5bjr4"]
+script = ExtResource("2_1i7gn")
+label = "Climb a ridge."
+aspects = Array[ExtResource("3_6qc1q")]([ExtResource("4_3qjpv")])
+outcome = SubResource("Resource_d66tv")
+outcome_text = "The team decides to climb a nearby rocky ridge to scout out the weather. They watch the dark, ominous clouds drift ever closer, their tops growing taller by the minute.
+
+By the time the group returns to the camp to report that the storm is headed in their direction, it has already begun to rain."
+
+[sub_resource type="Resource" id="Resource_bp7gf"]
+script = ExtResource("5_vkcgt")
+delta = -3
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_87l1h"]
+script = ExtResource("2_1i7gn")
+label = "Seek shelter elsewhere."
+aspects = Array[ExtResource("3_6qc1q")]([ExtResource("6_gruky")])
+outcome = SubResource("Resource_bp7gf")
+outcome_text = "The group ignores the minority who believe that the storm will miss them. They break camp and walk back the way they came, seeking shelter under rocky overhangs. Although they remain dry, the team loses valuable time and misses dinner."
+
+[sub_resource type="Resource" id="Resource_87830"]
+script = ExtResource("2_1i7gn")
+label = "Reinforce the camp."
+aspects = Array[ExtResource("3_6qc1q")]([ExtResource("7_1jos1")])
+outcome_text = "The group decides to stay in the camp, but not to ignore the storm. They layer extra cloth over their tents, secure them with pegs, and bring the firewood inside to keep it dry. The work is tiring, but when the storm arrives, they easily withstand the worst of the wind and rain."
+
+[sub_resource type="Resource" id="Resource_dfrdl"]
+script = ExtResource("9_67ugm")
+card_type = ExtResource("8_r5hgn")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_gmnme"]
+script = ExtResource("2_1i7gn")
+label = "Ignore the clouds."
+aspects = Array[ExtResource("3_6qc1q")]([null])
+outcome = SubResource("Resource_dfrdl")
+outcome_text = "One member of the group, confident in his weather-watching abilities, assures the rest that the storm will pass far to the north. The scouts continue their meal and settle in for the night. Soon, however, the winds shift and the group wakes up to soaked supplies and dead fires."
+
+[resource]
+script = ExtResource("10_8tvew")
+episode_id = "wasteland_camp"
+title = "Preparing for a Storm"
+biome_types = Array[int]([7, 3])
+text = "As evening falls and the group prepares dinner, the surveyors notice dark clouds gathering in the distance.
+
+Most of the team argues that they should seek shelter somewhere more secluded, but a few of the scouts think that the storm will probably pass them by."
+background_image = SubResource("Resource_ksty6")
+background_credit = ExtResource("1_1i7gn")
+choices = Array[ExtResource("2_1i7gn")]([SubResource("Resource_5bjr4"), SubResource("Resource_87l1h"), SubResource("Resource_87830"), SubResource("Resource_gmnme")])

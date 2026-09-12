@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="Quest_Settler" format=3 uid="uid://bg5shsymwwvlm"]
+
+[ext_resource type="Script" uid="uid://cjloydxgrv8oa" path="res://quests/settler/settler_quest_challenge.gd" id="1_4f82g"]
+[ext_resource type="Script" uid="uid://ck5h8ecedjfx4" path="res://quests/settler/challenges/settler_quest_challenge_foray_goals.gd" id="2_716ny"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="3_175cg"]
+[ext_resource type="Resource" uid="uid://brr7uk3citu0o" path="res://characters/jobs/job_monk_wilds.tres" id="4_y1cq1"]
+[ext_resource type="Script" uid="uid://cd4swbq3t72je" path="res://quests/settler/settler_quest_reward.gd" id="5_0gqlq"]
+[ext_resource type="Resource" uid="uid://cxwl0l6i8dpm6" path="res://relics/common/talisman_herbal_scent_bag/relic_talisman_herbal_scent_bag.tres" id="6_y1cq1"]
+[ext_resource type="Script" uid="uid://0k12wwnmq50h" path="res://quests/settler/rewards/settler_quest_reward_add_relic.gd" id="7_ph56h"]
+[ext_resource type="Script" uid="uid://1na7ymvvvbby" path="res://quests/settler/quest_settler.gd" id="8_jip8s"]
+[ext_resource type="Script" uid="uid://bxua8gxfjp2wy" path="res://quests/settler/settler_quest_goal.gd" id="9_yru2l"]
+[ext_resource type="Script" uid="uid://ku752yv8p8ur" path="res://quests/settler/goals/settler_quest_goal_settlement_upgrades.gd" id="10_narfc"]
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="11_mr6ix"]
+[ext_resource type="Resource" uid="uid://bhli4xwx0vayp" path="res://stage/spots/brushland/upgrade_brushland_3_monastery_of_the_wilds.tres" id="12_4f82g"]
+[ext_resource type="Resource" uid="uid://cgnttpxl266fx" path="res://stage/spots/brushland/upgrade_brushland_2_incense_workshop.tres" id="13_716ny"]
+
+[sub_resource type="Resource" id="Resource_kitb8"]
+script = ExtResource("2_716ny")
+metadata/_custom_type_script = "uid://ck5h8ecedjfx4"
+
+[sub_resource type="Resource" id="Resource_r8u1m"]
+script = ExtResource("7_ph56h")
+relic = ExtResource("6_y1cq1")
+metadata/_custom_type_script = "uid://0k12wwnmq50h"
+
+[sub_resource type="Resource" id="Resource_dmhlh"]
+script = ExtResource("10_narfc")
+upgrades = Array[ExtResource("11_mr6ix")]([ExtResource("12_4f82g"), ExtResource("13_716ny")])
+metadata/_custom_type_script = "uid://ku752yv8p8ur"
+
+[resource]
+script = ExtResource("8_jip8s")
+intro_text = "The Order of the Wilds has sent me to establish a chapter on a new shard. We channel the Enlightened One's will by meditating on the scents of the wilderness, so we must settle away from the foul air of large cities."
+challenges = Array[ExtResource("1_4f82g")]([SubResource("Resource_kitb8")])
+settler_goals = Array[ExtResource("9_yru2l")]([SubResource("Resource_dmhlh")])
+rewards = Array[ExtResource("5_0gqlq")]([SubResource("Resource_r8u1m")])
+restrict_to_jobs = Array[ExtResource("3_175cg")]([ExtResource("4_y1cq1")])
+quest_id = "settler_talisman_scent_bag"
+category = 2
+name = "A Chapter of the Order of the Wilds"
+metadata/_custom_type_script = "uid://1na7ymvvvbby"

@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="Quest_Settler" format=3 uid="uid://cvuvhw1b2wsj3"]
+
+[ext_resource type="Script" uid="uid://cjloydxgrv8oa" path="res://quests/settler/settler_quest_challenge.gd" id="1_aft7t"]
+[ext_resource type="Resource" uid="uid://d3m1xh5q3vjl3" path="res://cards/tier6/card_disease.tres" id="2_fy1hb"]
+[ext_resource type="Script" uid="uid://btpxdvsphpfj0" path="res://quests/settler/challenges/settler_quest_challenge_card_after_foray.gd" id="3_1caxu"]
+[ext_resource type="Resource" uid="uid://djgxin6rsfiok" path="res://characters/jobs/job_healer.tres" id="5_1duoi"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="5_fy1hb"]
+[ext_resource type="Resource" uid="uid://c42kw1m70orw3" path="res://characters/jobs/job_herbalist.tres" id="6_twvd1"]
+[ext_resource type="Resource" uid="uid://jttde8t0g8wh" path="res://characters/jobs/job_priest.tres" id="7_e4jh0"]
+[ext_resource type="Resource" uid="uid://kau1o80i2qm0" path="res://characters/jobs/job_monk_forest.tres" id="8_7tflh"]
+[ext_resource type="Script" uid="uid://cd4swbq3t72je" path="res://quests/settler/settler_quest_reward.gd" id="8_twvd1"]
+[ext_resource type="Script" uid="uid://1na7ymvvvbby" path="res://quests/settler/quest_settler.gd" id="10_7tflh"]
+[ext_resource type="Resource" uid="uid://bmxfymucm2kv5" path="res://relics/uncommon/butterbur_extract/relic_butterbur_extract.tres" id="10_hff8b"]
+[ext_resource type="Script" uid="uid://0k12wwnmq50h" path="res://quests/settler/rewards/settler_quest_reward_add_relic.gd" id="11_eehra"]
+[ext_resource type="Script" uid="uid://bxua8gxfjp2wy" path="res://quests/settler/settler_quest_goal.gd" id="11_hff8b"]
+[ext_resource type="Script" uid="uid://cschghuk4t5qx" path="res://quests/settler/goals/settler_quest_goal_global_upgrades.gd" id="14_8hmfg"]
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="15_w4ofm"]
+[ext_resource type="Resource" uid="uid://515h2qap8n77" path="res://stage/spots/plains/upgrade_plains_2_herb_garden.tres" id="16_e3ail"]
+[ext_resource type="Resource" uid="uid://gpnysm72dhii" path="res://stage/spots/swamp/upgrade_swamp_2_apothecary_hut.tres" id="17_7riys"]
+[ext_resource type="Resource" uid="uid://3jck4mxc8uj8" path="res://stage/spots/building_large/upgrade_building_large_2_hospital.tres" id="18_mlo6m"]
+
+[sub_resource type="Resource" id="Resource_e3ail"]
+script = ExtResource("3_1caxu")
+card_type = ExtResource("2_fy1hb")
+metadata/_custom_type_script = "uid://btpxdvsphpfj0"
+
+[sub_resource type="Resource" id="Resource_mlo6m"]
+script = ExtResource("11_eehra")
+relic = ExtResource("10_hff8b")
+metadata/_custom_type_script = "uid://0k12wwnmq50h"
+
+[sub_resource type="Resource" id="Resource_7riys"]
+script = ExtResource("14_8hmfg")
+upgrades = Array[ExtResource("15_w4ofm")]([ExtResource("16_e3ail"), ExtResource("17_7riys"), ExtResource("18_mlo6m")])
+metadata/_custom_type_script = "uid://cschghuk4t5qx"
+
+[resource]
+script = ExtResource("10_7tflh")
+intro_text = "My home shard has been hit by an epidemic, and I am exploring the shards in search of a solution. I am infected myself, but once I find a cure, I will be able to help people throughout the Cloud Sea!"
+challenges = Array[ExtResource("1_aft7t")]([SubResource("Resource_e3ail")])
+settler_goals = Array[ExtResource("11_hff8b")]([SubResource("Resource_7riys")])
+rewards = Array[ExtResource("8_twvd1")]([SubResource("Resource_mlo6m")])
+restrict_to_jobs = Array[ExtResource("5_fy1hb")]([ExtResource("5_1duoi"), ExtResource("6_twvd1"), ExtResource("7_e4jh0"), ExtResource("8_7tflh")])
+quest_id = "settler_healer"
+category = 2
+name = "A Traveling Healer"
+metadata/_custom_type_script = "uid://1na7ymvvvbby"

@@ -1,0 +1,88 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://6xjfr4v45fsy"]
+
+[ext_resource type="Resource" uid="uid://bs6vl8cq1huh6" path="res://art/pieces/piece_hiroshige_motoyama.tres" id="1_jqjvj"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_y1caq"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_jqjvj"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_igv2q"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="4_ic0lq"]
+[ext_resource type="Script" uid="uid://foju0o4i75rv" path="res://events/system/outcomes/choose_remove_card/event_outcome_choose_remove_card.gd" id="5_cmkpn"]
+[ext_resource type="Script" uid="uid://gu7gcielbwdr" path="res://events/system/outcomes/choose_card/event_outcome_choose_card.gd" id="6_doh6f"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="7_iaouq"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="8_k0bxo"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="9_hvt57"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="10_bri4c"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="11_r120j"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="12_etrul"]
+[ext_resource type="Resource" uid="uid://cfuqwl06ioxwd" path="res://stage/spots/hill/spot_hill.tres" id="13_vxhlh"]
+
+[sub_resource type="Resource" id="Resource_olmgh"]
+script = ExtResource("1_y1caq")
+_texture_path = "res://stage/survey/episodes/episode_campfire.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_im02d"]
+script = ExtResource("5_cmkpn")
+metadata/_custom_type_script = "uid://foju0o4i75rv"
+
+[sub_resource type="Resource" id="Resource_g72kf"]
+script = ExtResource("2_jqjvj")
+label = "Discuss how to avoid inefficiencies."
+aspects = Array[ExtResource("3_igv2q")]([ExtResource("4_ic0lq")])
+aspects_per_season = Array[ExtResource("3_igv2q")]([null])
+outcome = SubResource("Resource_im02d")
+outcome_text = "The team spends the evening discussing ways to pack lighter and to find better shortcuts. They compare the weights of different foods, and the advantages of using a single tool to do multiple tasks. By the end of the discussion, they are certain that they can achieve more with less."
+
+[sub_resource type="Resource" id="Resource_tfsqt"]
+script = ExtResource("6_doh6f")
+card_tag = 23
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_kjn8d"]
+script = ExtResource("2_jqjvj")
+label = "Compare maps."
+aspects = Array[ExtResource("3_igv2q")]([null])
+outcome = SubResource("Resource_tfsqt")
+outcome_text = "The scouts take out the maps they've been sketching and compare them, correcting discrepancies and adding in bits others have noticed."
+
+[sub_resource type="Resource" id="Resource_sufir"]
+script = ExtResource("6_doh6f")
+card_tag = 7
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_kbrbd"]
+script = ExtResource("9_hvt57")
+bonus_type = ExtResource("8_k0bxo")
+min_count = 20
+max_count = -1
+extra_per_season = 15
+
+[sub_resource type="Resource" id="Resource_enujo"]
+script = ExtResource("2_jqjvj")
+label = "Play music instead."
+requirement = SubResource("Resource_kbrbd")
+aspects = Array[ExtResource("3_igv2q")]([null])
+outcome = SubResource("Resource_sufir")
+outcome_text = "One of the scouts takes out a flute and starts playing an old melody, one that everybody recognizes. Another joins by drumming on a hollow log. The group grows closer, though no words are exchanged."
+
+[sub_resource type="Resource" id="Resource_a07nq"]
+script = ExtResource("6_doh6f")
+card_tag = 17
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_q5j0j"]
+script = ExtResource("2_jqjvj")
+label = "Tell ghost stories instead."
+aspects = Array[ExtResource("3_igv2q")]([ExtResource("10_bri4c")])
+outcome = SubResource("Resource_a07nq")
+outcome_text = "The scouts go around in a circle telling stories of spirits haunting the woods and ghosts coming back to claim revenge. They speak of Lady Chrysanthemum and the Black Monk, of the Two-Mouthed Woman and the Bitter Smile, as well as countless others. Each story is more chilling than the last one, and more than a few of the scouts end up waking up from nightmares that night."
+
+[resource]
+script = ExtResource("11_r120j")
+episode_id = "campfire"
+title = "Chatting by the Fire"
+biome_types = Array[int]([4, 9, 10, 7])
+spot_types = Array[ExtResource("12_etrul")]([ExtResource("13_vxhlh")])
+text = "As the team settles down to camp for the night, they gather around a campfire, intent on discussing the plan for the next day."
+background_image = SubResource("Resource_olmgh")
+background_credit = ExtResource("1_jqjvj")
+choices = Array[ExtResource("2_jqjvj")]([SubResource("Resource_g72kf"), SubResource("Resource_kjn8d"), SubResource("Resource_enujo"), SubResource("Resource_q5j0j")])

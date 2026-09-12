@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://1d5p5isd42ha"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_ukqkp"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_484c3"]
+[ext_resource type="Resource" uid="uid://55xk3aofgc7" path="res://stage/spots/mountain/upgrade_mountain_3_onsen_retreat.tres" id="2_jmula"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_oc8ft"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="4_uwdvo"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="5_tsrok"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="6_k5l4n"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="8_rilcg"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="9_4urx8"]
+[ext_resource type="Resource" uid="uid://dxoxvtquc3hu2" path="res://stage/spots/mountain/spot_mountain.tres" id="10_tsrok"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="11_k5l4n"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://cli07lpkt8hny" path="res://map/sprites/spots/mountain/mst_mountain_hot_springs.tres" id="12_4urx8"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://yi6r4d10vn2d" path="res://map/sprites/mountains/mst_mountain_1_medium.tres" id="12_7b5mx"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://4uknhohkpjxh" path="res://map/sprites/spots/mountain/mst_mountain_smoldering_crater.tres" id="13_37i5b"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://desakgu6q3yov" path="res://map/sprites/mountains/mst_mountain_2_large.tres" id="13_d0y44"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="14_6t8vw"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://c3u877m1spx0" path="res://map/sprites/mountains/mst_mountain_3_large.tres" id="14_gtjyc"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://doqqvl0x3b3g4" path="res://map/sprites/mountains/mst_mountain_4_small.tres" id="15_xx013"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bxr2aj680eaqd" path="res://map/sprites/mountains/mst_mountain_5_small.tres" id="16_na8jf"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cekrboxmhdmhk" path="res://map/sprites/mountains/mst_mountain_6_tiny.tres" id="17_cyyvq"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cjbrxida4odnk" path="res://map/sprites/mountains/mst_mountain_7_tiny.tres" id="18_hj1sp"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://56t2rh2pg58y" path="res://map/sprites/mountains/mst_mountain_8_medium.tres" id="19_5ha5l"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://csjeschaiy5ct" path="res://map/sprites/mountains/mst_mountain_9_large.tres" id="20_k3w2l"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bctu7rlwqc3o7" path="res://map/sprites/mountains/mst_mountain_10_medium.tres" id="21_e178v"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://t2knd16pwuwg" path="res://map/sprites/mountains/mst_mountain_11_medium.tres" id="22_msxls"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dxba886xk8sch" path="res://map/sprites/mountains/mst_mountain_12_pair.tres" id="23_440hd"]
+
+[sub_resource type="Resource" id="Resource_50kt2"]
+script = ExtResource("14_6t8vw")
+old_sprite_type = ExtResource("13_37i5b")
+new_sprite_type = ExtResource("12_4urx8")
+biome = 7
+extra_removables = Array[MapSpriteType]([ExtResource("12_7b5mx"), ExtResource("13_d0y44"), ExtResource("14_gtjyc"), ExtResource("15_xx013"), ExtResource("16_na8jf"), ExtResource("17_cyyvq"), ExtResource("18_hj1sp"), ExtResource("19_5ha5l"), ExtResource("20_k3w2l"), ExtResource("21_e178v"), ExtResource("22_msxls"), ExtResource("23_440hd")])
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_ukqkp")
+spot_upgrade_id = "mountain_hot_spring"
+name = "Natural Hot Springs"
+description = "You won't need a cauldron or a fire to take a hot bath in this spring. The mountain takes care of that."
+required_aspects = Array[ExtResource("3_oc8ft")]([ExtResource("8_rilcg"), ExtResource("9_4urx8")])
+granted_bonuses = Dictionary[ExtResource("2_484c3"), int]({
+ExtResource("4_uwdvo"): 10,
+ExtResource("5_tsrok"): 5,
+ExtResource("6_k5l4n"): 5
+})
+child_upgrades = Array[ExtResource("1_ukqkp")]([ExtResource("2_jmula")])
+spot = ExtResource("10_tsrok")
+visuals = Array[ExtResource("11_k5l4n")]([SubResource("Resource_50kt2")])
+tags = Array[int]([0])

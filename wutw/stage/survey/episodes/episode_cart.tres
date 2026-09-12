@@ -1,0 +1,114 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://b33q6jov1udcg"]
+
+[ext_resource type="Resource" uid="uid://dr5bdjgleunjd" path="res://art/pieces/piece_goyou_yabakei_rain.tres" id="1_3s006"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_5vpex"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_3s006"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_pkasv"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="4_7up4d"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="5_g33fg"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="6_kn6c4"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="7_f3acn"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="8_itmjj"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="9_ig7yh"]
+[ext_resource type="Resource" uid="uid://cbyuye3lyqwac" path="res://relics/common/cart_wheel/relic_cart_wheel.tres" id="10_hty2e"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="11_blsub"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="12_d52uo"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="13_yw6kb"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="14_jpogy"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="15_xytmk"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="16_3twa1"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="17_txanq"]
+
+[sub_resource type="Resource" id="Resource_p687i"]
+script = ExtResource("1_5vpex")
+_texture_path = "res://stage/survey/episodes/episode_cart.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_ovoh5"]
+script = ExtResource("6_kn6c4")
+delta = 4
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_xhi8v"]
+script = ExtResource("2_3s006")
+label = "Carry the cart over."
+aspects = Array[ExtResource("3_pkasv")]([ExtResource("4_7up4d"), ExtResource("5_g33fg")])
+outcome = SubResource("Resource_ovoh5")
+outcome_text = "Three scouts join the settler and raise the whole cart onto their shoulders. Together, they carefully carry it over the bridge and leave it safely on the other end. The whole team finds such shared physical effort inspiring."
+
+[sub_resource type="Resource" id="Resource_t07oo"]
+script = ExtResource("6_kn6c4")
+delta = -6
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_sdk0c"]
+script = ExtResource("11_blsub")
+relic = ExtResource("10_hty2e")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_mvbfe"]
+script = ExtResource("8_itmjj")
+suboutcomes = Array[ExtResource("9_ig7yh")]([SubResource("Resource_t07oo"), SubResource("Resource_sdk0c")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_6in3u"]
+script = ExtResource("2_3s006")
+label = "Dismantle the cart first."
+aspects = Array[ExtResource("3_pkasv")]([ExtResource("7_f3acn")])
+aspects_per_season = Array[ExtResource("3_pkasv")]([null])
+outcome = SubResource("Resource_mvbfe")
+outcome_text = "One of the scouts suggests taking the cart apart and carrying it piece by piece. The plan works perfectly until someone manages to drop one of the wheels, which is quickly carried off by the current. The settler is left heartbroken, waiting for the rest of the expedition to catch up."
+
+[sub_resource type="Resource" id="Resource_5t4h7"]
+script = ExtResource("14_jpogy")
+bonus_type = ExtResource("13_yw6kb")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_v5flc"]
+script = ExtResource("14_jpogy")
+bonus_type = ExtResource("15_xytmk")
+amount = 15
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_lxfjq"]
+script = ExtResource("8_itmjj")
+suboutcomes = Array[ExtResource("9_ig7yh")]([SubResource("Resource_5t4h7"), SubResource("Resource_v5flc")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_jaeo7"]
+script = ExtResource("2_3s006")
+label = "Take the settler along instead."
+aspects = Array[ExtResource("3_pkasv")]([ExtResource("12_d52uo")])
+aspects_per_season = Array[ExtResource("3_pkasv")]([null])
+outcome = SubResource("Resource_lxfjq")
+outcome_text = "It is a waste to leave all these supplies behind, but that cart was never going to fit over the bridge. The settler decides to let it go and join the survey team. At least they'll always have someone around to help."
+
+[sub_resource type="Resource" id="Resource_xf84g"]
+script = ExtResource("14_jpogy")
+bonus_type = ExtResource("15_xytmk")
+amount = -15
+extra_per_season = -15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_ece21"]
+script = ExtResource("2_3s006")
+label = "Leave the settler alone."
+aspects = Array[ExtResource("3_pkasv")]([null])
+aspects_per_season = Array[ExtResource("3_pkasv")]([null])
+outcome = SubResource("Resource_xf84g")
+outcome_text = "The survey team bows an apology and carries on, certain that their mission is too important to stop and help bystanders."
+
+[resource]
+script = ExtResource("16_3twa1")
+episode_id = "cart"
+title = "The Hapless Carter"
+biome_types = Array[int]([8])
+text = "The survey team comes upon a cart stuck before a little stream.
+
+The settler pulling the cart had decided to go ahead of the expedition, and is now stuck, unable to get the wide cart over the narrow bridge."
+background_image = SubResource("Resource_p687i")
+background_credit = ExtResource("1_3s006")
+choices = Array[ExtResource("2_3s006")]([SubResource("Resource_xhi8v"), SubResource("Resource_6in3u"), SubResource("Resource_jaeo7"), SubResource("Resource_ece21")])

@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://c27xky7vb28c7"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_f81v2"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_hxgwq"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="3_ol3pg"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_pfvvg"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="4_jdb5m"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="5_xb6wu"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="7_ujs6y"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="8_5xegm"]
+[ext_resource type="Resource" uid="uid://skws2o4hx05g" path="res://stage/spots/seashore/spot_seashore.tres" id="9_sxg1m"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_u0d46"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://ptr7m3pwga2c" path="res://map/sprites/spots/seashore/mst_seashore_ghost_lanterns.tres" id="11_6lxit"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://blu6bxc5hqv58" path="res://map/sprites/spots/seashore/mst_seashore_tide_markers.tres" id="12_g1v2v"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="13_n2nee"]
+
+[sub_resource type="Resource" id="Resource_sijf8"]
+script = ExtResource("13_n2nee")
+old_sprite_type = ExtResource("12_g1v2v")
+new_sprite_type = ExtResource("11_6lxit")
+biome = 1
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_f81v2")
+spot_upgrade_id = "seashore_lanterns"
+name = "Ghost Lanterns"
+description = "A procession of pale lanterns, leading the bold into communion with the sea."
+required_aspects = Array[ExtResource("3_pfvvg")]([ExtResource("7_ujs6y"), ExtResource("8_5xegm")])
+granted_bonuses = Dictionary[ExtResource("2_hxgwq"), int]({
+ExtResource("3_ol3pg"): 20,
+ExtResource("4_jdb5m"): 20,
+ExtResource("5_xb6wu"): -5
+})
+spot = ExtResource("9_sxg1m")
+visuals = Array[ExtResource("9_u0d46")]([SubResource("Resource_sijf8")])
+tags = Array[int]([3])
+unique_per_run = true
+min_main_quest_progress = 110

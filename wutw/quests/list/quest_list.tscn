@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://w3x16ookd85k"]
+
+[ext_resource type="PackedScene" uid="uid://byk0q0ccedhx0" path="res://theme/scroll_panel/scroll_panel.tscn" id="1_ahxem"]
+[ext_resource type="Script" uid="uid://cs8jgxaadsx7j" path="res://quests/list/quest_list.gd" id="1_ncdxl"]
+[ext_resource type="Shader" uid="uid://bbe7ginxustev" path="res://theme/scroll_panel/scroll_panel_dowel.gdshader" id="2_ncdxl"]
+[ext_resource type="Texture2D" uid="uid://b0cvn7ev1bwut" path="res://theme/scroll_panel/dowel_wood.png" id="3_lptuc"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="5_ncdxl"]
+[ext_resource type="FontFile" uid="uid://4akk8wkhg56y" path="res://theme/fonts/Merienda/static/Merienda-ExtraBold.ttf" id="7_3gsv5"]
+[ext_resource type="Script" uid="uid://dm63mtrlfj005" path="res://theme/faded_scroll_container/faded_scroll_container.gd" id="7_lptuc"]
+[ext_resource type="PackedScene" uid="uid://dt3fw5jcyebtr" path="res://quests/list/shard_type_entry.tscn" id="9_lptuc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rgtuo"]
+
+[sub_resource type="Gradient" id="Gradient_ofyuc"]
+offsets = PackedFloat32Array(0, 0.196721, 0.460041, 0.525615, 0.603484, 0.732582, 1)
+colors = PackedColorArray(0.59, 0.43424, 0.3068, 0.796078, 0.48, 0.35328, 0.2496, 0.294118, 0.48, 0.35328, 0.2496, 0.0116377, 0.48, 0.35328, 0.2496, 0, 0.48, 0.35328, 0.2496, 0.0431956, 0.48, 0.35328, 0.2496, 0.34902, 0.4, 0.2944, 0.208, 0.929412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g5dkl"]
+gradient = SubResource("Gradient_ofyuc")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_0fvof"]
+colors = PackedColorArray(0.331639, 0.33164, 0.331639, 1, 0.961814, 0.961814, 0.961814, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0fvof"]
+frequency = 0.0035
+domain_warp_amplitude = 100.0
+domain_warp_frequency = -0.01
+domain_warp_fractal_lacunarity = 8.69
+domain_warp_fractal_gain = 0.19
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jijvn"]
+width = 2048
+noise = SubResource("FastNoiseLite_0fvof")
+color_ramp = SubResource("Gradient_0fvof")
+seamless = true
+seamless_blend_skirt = 0.27
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nf8nr"]
+shader = ExtResource("2_ncdxl")
+shader_parameter/size = Vector2(453, 25)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("3_lptuc")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bklnm"]
+shader = ExtResource("2_ncdxl")
+shader_parameter/size = Vector2(451, 25)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("3_lptuc")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[node name="QuestList" type="PanelContainer" unique_id=796824552]
+offset_right = 200.18
+offset_bottom = 141.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rgtuo")
+script = ExtResource("1_ncdxl")
+
+[node name="ScrollPanel" parent="." unique_id=1750323991 instance=ExtResource("1_ahxem")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(504, 0)
+layout_mode = 2
+
+[node name="TopDowelWood" parent="ScrollPanel/TopDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_nf8nr")
+
+[node name="Scroller" parent="ScrollPanel" index="1"]
+custom_minimum_size = Vector2(0, 174)
+
+[node name="ScrollMargin" parent="ScrollPanel/Scroller" index="0"]
+offset_right = 0.0
+offset_bottom = 185.0
+
+[node name="ContentPanel" parent="ScrollPanel/Scroller/ScrollMargin" index="0"]
+material = ExtResource("5_ncdxl")
+instance_shader_parameters/size = Vector2(553.9834, 211.3884)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer" index="0" unique_id=1247731313]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="TitleLabel" type="Label" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=1337792165]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("7_3gsv5")
+theme_override_font_sizes/font_size = 18
+text = "Quests"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scroller" type="ScrollContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=1679663465]
+unique_name_in_owner = true
+clip_children = 1
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+horizontal_scroll_mode = 0
+script = ExtResource("7_lptuc")
+metadata/_custom_type_script = "uid://dm63mtrlfj005"
+
+[node name="ScrollerContents" type="VBoxContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Scroller" unique_id=1548952792]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="List" type="VBoxContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Scroller/ScrollerContents" unique_id=102094034]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="QuestEntry" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Scroller/ScrollerContents/List" unique_id=848739895 instance_placeholder="res://quests/list/quest_entry.tscn"]
+layout_mode = 2
+
+[node name="QuestEntry2" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Scroller/ScrollerContents/List" unique_id=1930029980 instance_placeholder="res://quests/list/quest_entry.tscn"]
+layout_mode = 2
+
+[node name="ShardTypeEntry" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Scroller/ScrollerContents" unique_id=1770026561 instance=ExtResource("9_lptuc")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BottomDowelWood" parent="ScrollPanel/BottomDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_bklnm")
+
+[editable path="ScrollPanel"]

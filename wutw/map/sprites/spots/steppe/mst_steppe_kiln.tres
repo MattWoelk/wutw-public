@@ -1,0 +1,26 @@
+[gd_resource type="MapSpriteType_Building" format=3 uid="uid://bumilmefwd6jp"]
+
+[ext_resource type="PackedScene" uid="uid://c4v3rpw46jdvq" path="res://map/sprites/spots/steppe/map_effect_kiln_smoke.tscn" id="1_okbem"]
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_ybsp4"]
+p1 = Vector2(0, -0.825)
+p2 = Vector2(2.965, 0.42)
+p3 = Vector2(0.135, 0.935)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_w54c5"]
+p1 = Vector2(-2.55, -0.23)
+p2 = Vector2(0.19, 0.96)
+p3 = Vector2(-0.02, -0.795)
+blocking = true
+
+[sub_resource type="MapEffectAttachment" id="MapEffectAttachment_sb4w7"]
+scene = ExtResource("1_okbem")
+offset = Vector2(-0.7, -3)
+
+[resource]
+atlas_rect = Rect2i(130, 910, 65, 35)
+map_rect = Rect2(-0.115, -1.56, 6.5, 3.5)
+footprint_radius = 2.56
+effects = Array[MapEffectAttachment]([SubResource("MapEffectAttachment_sb4w7")])
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Triangle_ybsp4"), SubResource("MapSpriteCollision_Triangle_w54c5")])

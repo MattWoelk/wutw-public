@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="Quest_Settler" format=3 uid="uid://bahs50kr10rd"]
+
+[ext_resource type="Script" uid="uid://cjloydxgrv8oa" path="res://quests/settler/settler_quest_challenge.gd" id="1_bbjur"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="2_e5e4d"]
+[ext_resource type="Resource" uid="uid://d3m1xh5q3vjl3" path="res://cards/tier6/card_disease.tres" id="3_wp3ei"]
+[ext_resource type="Script" uid="uid://rn2jydwomyr2" path="res://quests/settler/challenges/settler_quest_challenge_starting_cards.gd" id="4_ku1bk"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="5_xph77"]
+[ext_resource type="Resource" uid="uid://gqnk0ka6qeuw" path="res://characters/jobs/job_retired.tres" id="6_pqu7w"]
+[ext_resource type="Script" uid="uid://cd4swbq3t72je" path="res://quests/settler/settler_quest_reward.gd" id="7_v6v5o"]
+[ext_resource type="Script" uid="uid://cvrgydjebg044" path="res://quests/settler/rewards/settler_quest_reward_run_var.gd" id="8_bbjur"]
+[ext_resource type="Script" uid="uid://1na7ymvvvbby" path="res://quests/settler/quest_settler.gd" id="9_k6j8u"]
+[ext_resource type="Script" uid="uid://bxua8gxfjp2wy" path="res://quests/settler/settler_quest_goal.gd" id="10_egnv7"]
+[ext_resource type="Script" uid="uid://c0f31c6uvr016" path="res://quests/settler/goals/settler_quest_goal_any_upgrade.gd" id="13_1v2gl"]
+[ext_resource type="Resource" uid="uid://3jck4mxc8uj8" path="res://stage/spots/building_large/upgrade_building_large_2_hospital.tres" id="13_e5e4d"]
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="14_m1wkq"]
+
+[sub_resource type="Resource" id="Resource_7ufah"]
+script = ExtResource("4_ku1bk")
+card_types = Array[ExtResource("2_e5e4d")]([ExtResource("3_wp3ei")])
+metadata/_custom_type_script = "uid://rn2jydwomyr2"
+
+[sub_resource type="Resource" id="Resource_ec8sx"]
+script = ExtResource("8_bbjur")
+run_var = 6
+delta = 5
+preview_description = "Gain 5 maximum inspiration."
+outcome_description = "Gained 5 maximum inspiration."
+metadata/_custom_type_script = "uid://cvrgydjebg044"
+
+[sub_resource type="Resource" id="Resource_cjx8r"]
+script = ExtResource("13_1v2gl")
+upgrades = Array[ExtResource("14_m1wkq")]([ExtResource("13_e5e4d")])
+metadata/_custom_type_script = "uid://c0f31c6uvr016"
+
+[resource]
+script = ExtResource("9_k6j8u")
+intro_text = "The years have caught up with me. My joints are swollen now, and it's time to put my days of traveling behind. I need to settle down on a shard with proper healers to care for me in my old age."
+challenges = Array[ExtResource("1_bbjur")]([SubResource("Resource_7ufah")])
+settler_goals = Array[ExtResource("10_egnv7")]([SubResource("Resource_cjx8r")])
+rewards = Array[ExtResource("7_v6v5o")]([SubResource("Resource_ec8sx")])
+restrict_to_jobs = Array[ExtResource("5_xph77")]([ExtResource("6_pqu7w")])
+quest_id = "settler_sick_elder"
+category = 2
+name = "A Sick Elder"
+metadata/_custom_type_script = "uid://1na7ymvvvbby"

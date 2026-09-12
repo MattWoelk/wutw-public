@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://0mkjwhaqhctb"]
+
+[ext_resource type="Shader" uid="uid://eg4vx61insu0" path="res://map/roads/road.gdshader" id="1_ijvpa"]
+[ext_resource type="Texture2D" uid="uid://bwatuur8r7jrp" path="res://map/roads/bokashi_overlay_h.png" id="2_57bjc"]
+[ext_resource type="Script" uid="uid://4hlsykw3a2ak" path="res://map/roads/road.gd" id="2_iewwl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iewwl"]
+shader = ExtResource("1_ijvpa")
+shader_parameter/path_length = 100.0
+shader_parameter/progress = 1.0
+shader_parameter/starting_length = 12.63200060002
+shader_parameter/width_thresholds = Vector2(-0.1, 0.41)
+shader_parameter/wave_frequency = 0.12400000519148
+shader_parameter/waviness = 0.09200000367148
+shader_parameter/bokashi_texture = ExtResource("2_57bjc")
+shader_parameter/overlay_offset_vertical = 0.0
+shader_parameter/overlay_multiplier_u = 0.00800000038
+shader_parameter/overlay_multiplier_v = 0.0230000010925
+shader_parameter/min_border = 0.4590000218025
+shader_parameter/border_size = 1.0
+shader_parameter/noise_scale = 6.8000002755
+shader_parameter/border_color = Color(0.24269018, 0.20523298, 0.18112436, 1)
+shader_parameter/noise_strength = 2.0
+shader_parameter/noise_smoothness = 1.0
+shader_parameter/noise_uv_ratio = 0.230000010925
+
+[sub_resource type="Gradient" id="Gradient_vsjuk"]
+offsets = PackedFloat32Array(0.15452756, 0.41141734, 0.50295275, 0.734252, 1)
+colors = PackedColorArray(0.55, 0.43816668, 0.2145, 1, 0.82, 0.7382733, 0.6068, 1, 0.83, 0.71864164, 0.5395, 1, 0.77, 0.6784983, 0.5313, 1, 0.7488952, 0.6596323, 0.5175858, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_r3n4i"]
+gradient = SubResource("Gradient_vsjuk")
+
+[node name="Road" type="Line2D" unique_id=91509960]
+material = SubResource("ShaderMaterial_iewwl")
+points = PackedVector2Array(207.26501, 120.35951, 207.83224, 127.96155, 208.94174, 134.39603, 208.37592, 142.34744, 206.57735, 149.01239, 205.79898, 153.31142)
+width = 2.0
+texture = SubResource("GradientTexture1D_r3n4i")
+texture_mode = 2
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+script = ExtResource("2_iewwl")

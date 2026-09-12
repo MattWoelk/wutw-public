@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://cubqwtf6wb6m1"]
+
+[ext_resource type="Script" uid="uid://xnq06eh3rnti" path="res://glossary/tooltip/tooltip.gd" id="1_6rjvc"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="1_sfgp1"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="2_eopsq"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="4_85l7p"]
+
+[node name="PanelContainer" type="PanelContainer" unique_id=247507665]
+self_modulate = Color(1.0822712, 1.0822712, 1.0822712, 1)
+material = ExtResource("1_sfgp1")
+instance_shader_parameters/size = Vector2(510.24792, 267.2727)
+offset_right = 420.0
+offset_bottom = 220.0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("4_85l7p")
+script = ExtResource("1_6rjvc")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1716341982]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBox" type="VBoxContainer" parent="MarginContainer" unique_id=1702555663]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 6
+
+[node name="Extras_Above" type="HBoxContainer" parent="MarginContainer/VBox" unique_id=1441896284]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+mouse_filter = 2
+mouse_behavior_recursive = 1
+
+[node name="HBox" type="HBoxContainer" parent="MarginContainer/VBox" unique_id=1251466538]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 6
+
+[node name="Extras_Left" type="VBoxContainer" parent="MarginContainer/VBox/HBox" unique_id=1309709016]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
+
+[node name="MarkedUpLabel" parent="MarginContainer/VBox/HBox" unique_id=1995607182 instance=ExtResource("2_eopsq")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+
+[node name="Extras_Right" type="VBoxContainer" parent="MarginContainer/VBox/HBox" unique_id=821594167]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
+
+[node name="Extras_Below" type="HBoxContainer" parent="MarginContainer/VBox" unique_id=382363155]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1

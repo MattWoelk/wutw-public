@@ -1,0 +1,27 @@
+[gd_resource type="MapSpriteType_Generic" format=3 uid="uid://c7bph6udtgt3c"]
+
+[ext_resource type="Resource" uid="uid://ctiwrqhub05ib" path="res://stage/spots/square/spot_square.tres" id="1_qulvs"]
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_hecig"]
+p1 = Vector2(-11.65, 0.12)
+p2 = Vector2(1.385, 6.635)
+p3 = Vector2(0.115, -7.385)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Circle" id="MapSpriteCollision_Circle_fj0rq"]
+center = Vector2(2.615, -0.26)
+radius = 7.035
+blocking = true
+
+[resource]
+instance_type = 23
+atlas_type = 1
+atlas_rect = Rect2i(11, 164, 264, 177)
+use_line_noise = true
+map_rect = Rect2(0, 0, 26.4, 17.7)
+footprint_radius = 6.095
+default_scale = 0.75
+must_be_fully_within_clip = true
+z_index = -1
+provided_spot_type = ExtResource("1_qulvs")
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Triangle_hecig"), SubResource("MapSpriteCollision_Circle_fj0rq")])

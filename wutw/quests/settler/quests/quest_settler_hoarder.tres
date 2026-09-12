@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="Quest_Settler" format=3 uid="uid://cpwxpruruoiw"]
+
+[ext_resource type="Script" uid="uid://cjloydxgrv8oa" path="res://quests/settler/settler_quest_challenge.gd" id="1_ntd7o"]
+[ext_resource type="Script" uid="uid://baua6vtinnl5a" path="res://quests/settler/challenges/settler_quest_challenge_damage_on_card_removal.gd" id="2_b7b6n"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="3_b7b6n"]
+[ext_resource type="Resource" uid="uid://dv3lbdpuck0v6" path="res://characters/jobs/job_printer.tres" id="4_sbjbr"]
+[ext_resource type="Resource" uid="uid://b7xcctjgthxw7" path="res://characters/jobs/job_merchant.tres" id="5_i7k1t"]
+[ext_resource type="Script" uid="uid://cd4swbq3t72je" path="res://quests/settler/settler_quest_reward.gd" id="6_kf88x"]
+[ext_resource type="Resource" uid="uid://dwnannqnpu25r" path="res://relics/rare/last_thread/relic_last_thread.tres" id="7_sbjbr"]
+[ext_resource type="Script" uid="uid://0k12wwnmq50h" path="res://quests/settler/rewards/settler_quest_reward_add_relic.gd" id="8_i7k1t"]
+[ext_resource type="Script" uid="uid://1na7ymvvvbby" path="res://quests/settler/quest_settler.gd" id="9_iqq0m"]
+[ext_resource type="Script" uid="uid://bxua8gxfjp2wy" path="res://quests/settler/settler_quest_goal.gd" id="10_2t4d2"]
+[ext_resource type="Script" uid="uid://cschghuk4t5qx" path="res://quests/settler/goals/settler_quest_goal_global_upgrades.gd" id="11_igch8"]
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="12_jblu3"]
+[ext_resource type="Resource" uid="uid://ja4x0v44f605" path="res://stage/spots/building_large/upgrade_building_large_1_warehouse.tres" id="13_kf88x"]
+[ext_resource type="Resource" uid="uid://b743gtu5q1cl1" path="res://stage/spots/building_small/upgrade_building_small_1_granary.tres" id="14_3okwv"]
+[ext_resource type="Resource" uid="uid://hxgknn8dj1r8" path="res://stage/spots/seashore/upgrade_seashore_1_warehouse.tres" id="15_tq3dg"]
+
+[sub_resource type="Resource" id="Resource_rcbs4"]
+script = ExtResource("2_b7b6n")
+metadata/_custom_type_script = "uid://baua6vtinnl5a"
+
+[sub_resource type="Resource" id="Resource_51bqo"]
+script = ExtResource("8_i7k1t")
+relic = ExtResource("7_sbjbr")
+metadata/_custom_type_script = "uid://0k12wwnmq50h"
+
+[sub_resource type="Resource" id="Resource_p7jql"]
+script = ExtResource("11_igch8")
+upgrades = Array[ExtResource("12_jblu3")]([ExtResource("13_kf88x"), ExtResource("13_kf88x"), ExtResource("14_3okwv"), ExtResource("15_tq3dg")])
+metadata/_custom_type_script = "uid://cschghuk4t5qx"
+
+[resource]
+script = ExtResource("9_iqq0m")
+intro_text = "People throw away the most useful things. I can't take it. I need a place to store all my collections. They must be kept safe for generations to come!"
+challenges = Array[ExtResource("1_ntd7o")]([SubResource("Resource_rcbs4")])
+settler_goals = Array[ExtResource("10_2t4d2")]([SubResource("Resource_p7jql")])
+rewards = Array[ExtResource("6_kf88x")]([SubResource("Resource_51bqo")])
+restrict_to_jobs = Array[ExtResource("3_b7b6n")]([ExtResource("4_sbjbr"), ExtResource("5_i7k1t")])
+quest_id = "settler_hoarder"
+category = 2
+name = "A Hoarder"
+metadata/_custom_type_script = "uid://1na7ymvvvbby"

@@ -1,0 +1,436 @@
+[gd_scene format=3 uid="uid://b0q3jevgrsmt"]
+
+[ext_resource type="Script" uid="uid://bsr2xyv2pvy2s" path="res://stage/stage_end.gd" id="1_x8g5w"]
+[ext_resource type="PackedScene" uid="uid://b6ob53b0vla40" path="res://theme/scroll_panel/scroll_panel_big.tscn" id="2_3mccp"]
+[ext_resource type="Theme" uid="uid://bneu0powe6n80" path="res://theme/theme_ukiyoe.tres" id="2_puita"]
+[ext_resource type="PackedScene" uid="uid://b5k16hpo8080v" path="res://theme/faded_background/faded_background.tscn" id="2_xma6e"]
+[ext_resource type="Shader" uid="uid://bbe7ginxustev" path="res://theme/scroll_panel/scroll_panel_dowel.gdshader" id="3_xma6e"]
+[ext_resource type="PackedScene" uid="uid://227b305k8bpi" path="res://bonuses/bonus.tscn" id="4_4ia0b"]
+[ext_resource type="Texture2D" uid="uid://b0cvn7ev1bwut" path="res://theme/scroll_panel/dowel_wood.png" id="4_5ahyn"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="5_hf72p"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="6_41v6d"]
+[ext_resource type="Texture2D" uid="uid://d3sukw4scgcir" path="res://run/inspiration.png" id="7_6xa0r"]
+[ext_resource type="Texture2D" uid="uid://bf6g0waib064d" path="res://hub/insights/enso.png" id="7_hf72p"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="8_3mccp"]
+[ext_resource type="PackedScene" uid="uid://njdji4l7s1q0" path="res://bonuses/bonus_counter.tscn" id="9_ce0bq"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="10_k1i2u"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="11_g6qdf"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="12_krwe4"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="13_noitf"]
+[ext_resource type="Shader" uid="uid://ygmrqrvg5hpm" path="res://theme/button/ukiyoe_button.gdshader" id="14_33vqn"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="14_rxo08"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="15_dwqxc"]
+[ext_resource type="Texture2D" uid="uid://ctgl61r3xxsqv" path="res://theme/button/button_fill.png" id="15_l2peg"]
+[ext_resource type="Texture2D" uid="uid://blje81yu8734p" path="res://theme/button/button_shape.png" id="16_pyml4"]
+[ext_resource type="Texture2D" uid="uid://doe4603a6ngco" path="res://theme/button/button_outline.png" id="17_ce0bq"]
+[ext_resource type="Texture2D" uid="uid://cwubixgc8n0yr" path="res://theme/button/button_swish_left.png" id="18_k1i2u"]
+[ext_resource type="Texture2D" uid="uid://n6l17h4ysayj" path="res://theme/button/button_swish_right.png" id="19_g6qdf"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="20_krwe4"]
+[ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="21_noitf"]
+
+[sub_resource type="Gradient" id="Gradient_ofyuc"]
+offsets = PackedFloat32Array(0, 0.196721, 0.460041, 0.525615, 0.603484, 0.732582, 1)
+colors = PackedColorArray(0.59, 0.43424, 0.3068, 0.796078, 0.48, 0.35328, 0.2496, 0.294118, 0.48, 0.35328, 0.2496, 0.0116377, 0.48, 0.35328, 0.2496, 0, 0.48, 0.35328, 0.2496, 0.0431956, 0.48, 0.35328, 0.2496, 0.34902, 0.4, 0.2944, 0.208, 0.929412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g5dkl"]
+gradient = SubResource("Gradient_ofyuc")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_0fvof"]
+colors = PackedColorArray(0.331639, 0.33164, 0.331639, 1, 0.961814, 0.961814, 0.961814, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0fvof"]
+frequency = 0.0035
+domain_warp_amplitude = 100.0
+domain_warp_frequency = -0.01
+domain_warp_fractal_lacunarity = 8.69
+domain_warp_fractal_gain = 0.19
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jijvn"]
+width = 2048
+noise = SubResource("FastNoiseLite_0fvof")
+color_ramp = SubResource("Gradient_0fvof")
+seamless = true
+seamless_blend_skirt = 0.27
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ce0bq"]
+shader = ExtResource("3_xma6e")
+shader_parameter/size = Vector2(645, 49)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("4_5ahyn")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[sub_resource type="Gradient" id="Gradient_j5apj"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wqpyw"]
+gradient = SubResource("Gradient_j5apj")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l2peg"]
+shader = ExtResource("14_33vqn")
+shader_parameter/mask_tex = ExtResource("16_pyml4")
+shader_parameter/background = ExtResource("15_l2peg")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("17_ce0bq")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("19_g6qdf")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("18_k1i2u")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k1i2u"]
+shader = ExtResource("3_xma6e")
+shader_parameter/size = Vector2(643, 49)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("4_5ahyn")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[node name="StageEnd" type="Node2D" unique_id=1503044718]
+script = ExtResource("1_x8g5w")
+
+[node name="BG" parent="." unique_id=1839143262 instance=ExtResource("2_xma6e")]
+unique_name_in_owner = true
+
+[node name="InputBlocker" type="CenterContainer" parent="." unique_id=299667295]
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_force_pass_scroll_events = false
+
+[node name="ScrollPanel" parent="InputBlocker" unique_id=769653927 instance=ExtResource("2_3mccp")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(745, 0)
+layout_mode = 2
+default_roll_duration = 0.5
+default_unroll_duration = 0.75
+
+[node name="TopDowelWood" parent="InputBlocker/ScrollPanel/TopDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_ce0bq")
+
+[node name="Scroller" parent="InputBlocker/ScrollPanel" index="1"]
+custom_minimum_size = Vector2(0, 677)
+
+[node name="ScrollMargin" parent="InputBlocker/ScrollPanel/Scroller" index="0"]
+offset_bottom = 467.0
+
+[node name="ContentPanel" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin" index="0"]
+material = ExtResource("6_41v6d")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer" index="0" unique_id=129232996]
+layout_mode = 2
+theme = ExtResource("2_puita")
+theme_override_constants/separation = 20
+
+[node name="TitleLabel" type="Label" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=1255248836]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Foray Outcome"
+horizontal_alignment = 1
+
+[node name="NamingLabel" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=140562464 instance=ExtResource("8_3mccp")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 1
+text = "The settlement is named
+[b]%s (%s)[/b]
+after the %s"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="BonusesList" type="HBoxContainer" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=2095311431]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_constants/separation = 2
+
+[node name="BonusCounter" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/BonusesList" unique_id=1670415943 instance=ExtResource("9_ce0bq")]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+bonus_type = ExtResource("10_k1i2u")
+
+[node name="BonusCounter3" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/BonusesList" unique_id=533987481 instance=ExtResource("9_ce0bq")]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+bonus_type = ExtResource("11_g6qdf")
+
+[node name="BonusCounter2" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/BonusesList" unique_id=632257892 instance=ExtResource("9_ce0bq")]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+bonus_type = ExtResource("12_krwe4")
+
+[node name="BonusCounter4" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/BonusesList" unique_id=457766703 instance=ExtResource("9_ce0bq")]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+bonus_type = ExtResource("13_noitf")
+
+[node name="BonusCounter5" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/BonusesList" unique_id=695936797 instance=ExtResource("9_ce0bq")]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+bonus_type = ExtResource("14_rxo08")
+
+[node name="BonusCounter6" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/BonusesList" unique_id=359338759 instance=ExtResource("9_ce0bq")]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+bonus_type = ExtResource("15_dwqxc")
+
+[node name="BonusCounter7" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/BonusesList" unique_id=986226475 instance=ExtResource("9_ce0bq")]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+bonus_type = ExtResource("5_hf72p")
+
+[node name="MarginContainer" type="MarginContainer" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=1354837688]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer" unique_id=1540236406]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="YieldBox" type="HBoxContainer" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=522378813]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="YieldLabel" type="Label" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/VBoxContainer/YieldBox" unique_id=12178589]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Settlement specialization:"
+
+[node name="YieldBonus" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/VBoxContainer/YieldBox" unique_id=1270448107 instance=ExtResource("4_4ia0b")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+mouse_filter = 2
+highlight_type = 1
+
+[node name="LackBox" type="HBoxContainer" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1299380807]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="LackLabel" type="Label" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/VBoxContainer/LackBox" unique_id=794900041]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Settlement shortage:"
+
+[node name="LackBonus1" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/VBoxContainer/LackBox" unique_id=1816329174 instance=ExtResource("4_4ia0b")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+mouse_filter = 2
+bonus_type = ExtResource("5_hf72p")
+highlight_type = 2
+
+[node name="LackBonus2" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/VBoxContainer/LackBox" unique_id=415326348 instance=ExtResource("4_4ia0b")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+mouse_filter = 2
+highlight_type = 2
+
+[node name="SpacerLabel" type="Label" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1881718443]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="InspirationBox" type="HBoxContainer" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1334943523]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="InspirationHintLabel" type="Label" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/VBoxContainer/InspirationBox" unique_id=1745590819]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_colors/font_color = Color(0.501961, 0, 0, 1)
+text = "Inspiration Lost:"
+
+[node name="InspirationPenaltyLabel" type="Label" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/VBoxContainer/InspirationBox" unique_id=1218600521]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.501961, 0, 0, 1)
+text = "-2"
+
+[node name="InspirationIcon" type="TextureRect" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/VBoxContainer/InspirationBox" unique_id=1207187924]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("7_6xa0r")
+expand_mode = 3
+
+[node name="SpacerLabel2" type="Label" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1689208771]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="InsightsBox" type="HBoxContainer" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=387992306]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="InsightsLabel" type="Label" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/VBoxContainer/InsightsBox" unique_id=252323003]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.310344, 0.17732, 1)
+text = "Insights Gained:"
+
+[node name="InsightsCountLabel" type="Label" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/VBoxContainer/InsightsBox" unique_id=344051155]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.310344, 0.17732, 1)
+text = "+2"
+
+[node name="InsightsIcon" type="TextureRect" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/VBoxContainer/InsightsBox" unique_id=684987508]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("7_hf72p")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="ExtraInsightsBox" type="HBoxContainer" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=785629393]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ExtraInsightsLabel" type="Label" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/VBoxContainer/ExtraInsightsBox" unique_id=1157997280]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.310344, 0.17732, 1)
+text = "Bonus Insights Gained:"
+
+[node name="ExtraInsightsCountLabel" type="Label" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/VBoxContainer/ExtraInsightsBox" unique_id=397694361]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.310344, 0.17732, 1)
+text = "+2"
+
+[node name="InsightsIcon" type="TextureRect" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/VBoxContainer/ExtraInsightsBox" unique_id=1556560740]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("7_hf72p")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="RelicsBox" type="VBoxContainer" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=1712600651]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="RelicsHeader" type="Label" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/RelicsBox" unique_id=1706407652]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Relics Gained"
+horizontal_alignment = 1
+
+[node name="RelicsList" type="HBoxContainer" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/RelicsBox" unique_id=503855155]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+
+[node name="RelicIcon" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/RelicsBox/RelicsList" unique_id=1818035931 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+forced_size = 80
+
+[node name="RelicIcon2" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/RelicsBox/RelicsList" unique_id=303800395 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+forced_size = 80
+
+[node name="RelicIcon3" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/RelicsBox/RelicsList" unique_id=692191161 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+forced_size = 80
+
+[node name="RelicIcon4" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/RelicsBox/RelicsList" unique_id=1422114540 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+forced_size = 80
+
+[node name="RelicIcon5" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/RelicsBox/RelicsList" unique_id=165956328 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+forced_size = 80
+
+[node name="RelicIcon6" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/RelicsBox/RelicsList" unique_id=1284993016 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+forced_size = 80
+
+[node name="InspirationExhaustedLabel" type="Label" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=204152413]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/font_color = Color(0.501961, 0, 0, 1)
+text = "You have exhausted all your Inspiration and the Expedition will end now."
+horizontal_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=1747943943]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_l2peg")
+instance_shader_parameters/background_offset = Vector2(0.91241455, 0.3855307)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+focus_mode = 0
+theme_override_styles/normal = ExtResource("20_krwe4")
+theme_override_styles/pressed = ExtResource("20_krwe4")
+theme_override_styles/hover = ExtResource("20_krwe4")
+theme_override_styles/hover_pressed = ExtResource("20_krwe4")
+theme_override_styles/disabled = ExtResource("20_krwe4")
+text = "Continue"
+script = ExtResource("21_noitf")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="BottomDowelWood" parent="InputBlocker/ScrollPanel/BottomDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_k1i2u")
+
+[editable path="InputBlocker/ScrollPanel"]

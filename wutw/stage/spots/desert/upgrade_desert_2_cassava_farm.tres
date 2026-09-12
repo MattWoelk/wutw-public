@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://dyqj40hwoi8mg"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_tu7ba"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_hpqpy"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_6dklw"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="3_u17yn"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="5_1d6ym"]
+[ext_resource type="Resource" uid="uid://coqtbomfb4xc" path="res://stage/spots/desert/spot_desert.tres" id="6_1d6ym"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="7_5ej76"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://dsj2nhmdt7lfx" path="res://map/sprites/spots/desert/mst_desert_cassava_farm.tres" id="8_0lmpx"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://dboe6k87s7hni" path="res://map/sprites/spots/desert/mst_desert_cactus_forest.tres" id="9_boqgm"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="10_22uw8"]
+
+[sub_resource type="Resource" id="Resource_vli5o"]
+script = ExtResource("10_22uw8")
+old_sprite_type = ExtResource("9_boqgm")
+new_sprite_type = ExtResource("8_0lmpx")
+biome = 2
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_tu7ba")
+spot_upgrade_id = "desert_cassava_farm"
+name = "Cassava Farm"
+description = "These hardy tubers make for hearty meals, and don't mind the sand at all."
+required_aspects = Array[ExtResource("3_6dklw")]([ExtResource("5_1d6ym")])
+granted_bonuses = Dictionary[ExtResource("2_hpqpy"), int]({
+ExtResource("3_u17yn"): 10
+})
+spot = ExtResource("6_1d6ym")
+visuals = Array[ExtResource("7_5ej76")]([SubResource("Resource_vli5o")])
+tags = Array[int]([1])

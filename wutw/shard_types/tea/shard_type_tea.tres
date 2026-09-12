@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="ShardType_Tea" format=3 uid="uid://b6aorn7hoi0ve"]
+
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="1_pob30"]
+[ext_resource type="Texture2D" uid="uid://bl313l8eemhsd" path="res://shard_types/tea/shard_type_tea.png" id="2_1biie"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="2_h1jmc"]
+[ext_resource type="Script" uid="uid://d0kwdxjofrc5n" path="res://shard_types/tea/shard_type_tea.gd" id="2_y8v7m"]
+[ext_resource type="Resource" uid="uid://djscg053ft17p" path="res://events/generic/tea_ceremony/event_tea_ceremony_2c.tres" id="3_7wgt2"]
+[ext_resource type="Resource" uid="uid://c03xuoo1phdrl" path="res://art/pieces/piece_unknown_teapot.tres" id="3_rm41f"]
+[ext_resource type="Resource" uid="uid://drcja7l50fxb7" path="res://events/generic/tea_ceremony/event_tea_ceremony_1.tres" id="4_1biie"]
+[ext_resource type="Resource" uid="uid://brnjsw2kmbnbq" path="res://debate/arguments/argument_ichi_go_ichi_e.tres" id="8_5cyk6"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="8_7mtu5"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="10_5cyk6"]
+
+[sub_resource type="Resource" id="Resource_42s6q"]
+script = ExtResource("1_pob30")
+text = "The unique tea culture of $shard_name traces its roots to two quiet tea houses. It began in $teatown1, where good, no-nonsense tea was served without pretense or ritual. In $teatown2, this rebellion against formality progressed, with cracked teacups becoming common vessels. These two seeds sprouted into a belief that would define the shard: that the vessel matters far less than the warmth it holds, and the ritual matters less than the connection it fosters."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_7c60o"]
+script = ExtResource("1_pob30")
+text = "Over time, this refusal of ritual evolved into a cultural idiom, exemplified by the phrase One Time, One Meeting. The settlers realized that a chipped cup or an awkward pause in a conversation isn't a flaw to be corrected, but a unique signature of that specific moment in time, never to be repeated. To smooth a tablecloth too perfectly is considered pretentious here. The Way of Tea on this shard is not a path of rigid choreography, but a practice of being entirely present for the imperfect, fleeting reality of the now."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_nw6pk"]
+script = ExtResource("1_pob30")
+text = "This appreciation for the worn and the well-loved has seeped into the broader culture. Instead of delicate lacquered porcelain, folks prefer unique, if imperfect, vessels that carry the maker's personal touch. Artisans here rarely polish out the marks of their tools, and it is said that a proper tea house is known by the lumps in its cushions and the scratches on its floorboards."
+time_taken = 2
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_v7pj1"]
+script = ExtResource("1_pob30")
+text = "Today, tea houses are everywhere in $shard_name. They serve humble brews infused with local herbs and offer whatever snacks the proprietor has on hand. A tea house is where you go to hear the latest gossip or offer your wares. It's where marriages are held, and where chance meetings lead to lifelong friendships. The people of $shard_name believe that unlike a cup of tea cooling on the table, the warmth of a shared moment is the only thing that truly endures."
+time_taken = 2
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_5cyk6"]
+script = ExtResource("8_7mtu5")
+text = "After visiting this shard, I've had enough tea to last me the rest of my days. There are tea houses everywhere. The inns are tea houses with sleeping rooms. The taverns are tea houses with sake mixed into the tea. Even the town halls are tea houses.
+
+What's more interesting is that despite all this obsession with tea houses they don't seem to be that fussy about the tea itself. They don't name tea blends or rank them. They seem to just steep whatever leaves grow nearby and call it tea."
+gained_argument = ExtResource("8_5cyk6")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[resource]
+script = ExtResource("2_y8v7m")
+tea_start_event = ExtResource("4_1biie")
+tea_simplicity_event = ExtResource("3_7wgt2")
+shard_type_id = "tea"
+name = "The Origin of the Way of Tea"
+shard_name_override = "Wakabashima"
+shard_name_override_jp = "若葉島"
+shard_name_override_meaning = "Young Leaf Island"
+illustration = ExtResource("2_1biie")
+illustration_credit = ExtResource("3_rm41f")
+history = Array[ExtResource("1_pob30")]([SubResource("Resource_42s6q"), SubResource("Resource_7c60o"), SubResource("Resource_nw6pk"), SubResource("Resource_v7pj1")])
+trip_reward = SubResource("Resource_5cyk6")
+metadata/_custom_type_script = "uid://c6vrs2bxrk07c"

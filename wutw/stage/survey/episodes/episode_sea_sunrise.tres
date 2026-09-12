@@ -1,0 +1,95 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://b28aeeylgnb10"]
+
+[ext_resource type="Resource" uid="uid://fyh3a77mmrhr" path="res://art/pieces/piece_hasui_ryugashima.tres" id="1_83645"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_v3qiw"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_83645"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_uogi3"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="4_8gllq"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="5_teeod"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="6_gl1hv"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="7_0lvvq"]
+[ext_resource type="Resource" uid="uid://d3wg4t7wix2b6" path="res://relics/common/scallop_shell/relic_scallop_shell.tres" id="8_et6xq"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="9_ox82t"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="10_r05vt"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="11_a6aim"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="12_obnqa"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="13_1qckn"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="14_0nhij"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="14_uogi3"]
+
+[sub_resource type="Resource" id="Resource_0xhk2"]
+script = ExtResource("1_v3qiw")
+_texture_path = "res://stage/survey/episodes/episode_sea_sunrise.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_xv5ry"]
+script = ExtResource("5_teeod")
+delta = 3
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_xy53q"]
+script = ExtResource("2_83645")
+label = "Admire the view."
+aspects = Array[ExtResource("3_uogi3")]([ExtResource("4_8gllq")])
+aspects_per_season = Array[ExtResource("3_uogi3")]([null])
+outcome = SubResource("Resource_xv5ry")
+outcome_text = "The surveyors stay for a while to breathe in the briny scent of seaweed and marvel at the divine beauty of the landscape.
+
+They watch the rocks turn orange, then yellow as the sun rises higher and higher. Seagull calls reach them from beyond the rocks, as the sea spray leaves little crystals of salt on their skin."
+
+[sub_resource type="Resource" id="Resource_3qwgp"]
+script = ExtResource("9_ox82t")
+relic = ExtResource("8_et6xq")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_407v5"]
+script = ExtResource("2_83645")
+label = "Gather seashells."
+aspects = Array[ExtResource("3_uogi3")]([ExtResource("6_gl1hv"), ExtResource("7_0lvvq")])
+aspects_per_season = Array[ExtResource("3_uogi3")]([null])
+outcome = SubResource("Resource_3qwgp")
+outcome_text = "The scouts walk along the shoreline as the sun rises.
+
+This shore has not seen people for a long, long time, and the ground is covered in a layer of seashells, each a different shape.
+
+They take a colorful scallop shell with them as a memento."
+
+[sub_resource type="Resource" id="Resource_uq2rn"]
+script = ExtResource("12_obnqa")
+bonus_type = ExtResource("11_a6aim")
+amount = 15
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_kksl2"]
+script = ExtResource("2_83645")
+label = "Climb the rocks."
+aspects = Array[ExtResource("3_uogi3")]([ExtResource("10_r05vt")])
+aspects_per_season = Array[ExtResource("3_uogi3")]([null])
+outcome = SubResource("Resource_uq2rn")
+outcome_text = "A few of the scouts venture out onto the rocks. It is a dangerous climb, but the view from above is magnificent, revealing a honeycomb of tide pools, teeming with sea life."
+
+[sub_resource type="Resource" id="Resource_tawna"]
+script = ExtResource("2_83645")
+label = "Move on."
+aspects = Array[ExtResource("3_uogi3")]([null])
+aspects_per_season = Array[ExtResource("3_uogi3")]([null])
+outcome_text = "The group decides to continue along their route without stopping."
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("14_uogi3")
+min_progress = 120
+metadata/_custom_type_script = "uid://c50bhh4sr0g8o"
+
+[resource]
+script = ExtResource("13_1qckn")
+episode_id = "sea_sunrise"
+title = "The Serene Sunrise"
+biome_types = Array[int]([1, 10])
+requirement = SubResource("Resource_trtbi")
+text = "The sea is calm this morning, the grey rocks painted a coral red by the magnificent sunrise.
+
+The scouts contemplate the scene, taking in the gentle waves lapping against the shore and the grass-covered hills further ahead."
+background_image = SubResource("Resource_0xhk2")
+background_credit = ExtResource("1_83645")
+choices = Array[ExtResource("2_83645")]([SubResource("Resource_xy53q"), SubResource("Resource_407v5"), SubResource("Resource_kksl2"), SubResource("Resource_tawna")])

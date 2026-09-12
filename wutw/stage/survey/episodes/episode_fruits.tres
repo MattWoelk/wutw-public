@@ -1,0 +1,127 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://ckdf3my4s2fpv"]
+
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="1_2r1cx"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_or350"]
+[ext_resource type="Resource" uid="uid://c31wvf6g5p4k7" path="res://art/pieces/piece_kiyochika_persimmon.tres" id="1_vhefn"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="2_xe782"]
+[ext_resource type="Script" uid="uid://cbnw4a13y5x8c" path="res://events/system/outcomes/random/event_outcome_random.gd" id="3_sqk3c"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="4_b2qpm"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="5_jt45v"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="6_or350"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="7_vhefn"]
+[ext_resource type="Script" uid="uid://yxgaymbbt8tk" path="res://events/system/outcomes/override_next_step/event_outcome_override_next_step.gd" id="8_bi6rd"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="9_0xtqu"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="10_h0wbv"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="11_js4rn"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="12_jtthi"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="13_0dscv"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="14_q7oe3"]
+[ext_resource type="Script" uid="uid://gu7gcielbwdr" path="res://events/system/outcomes/choose_card/event_outcome_choose_card.gd" id="15_jt45v"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="15_pyoe3"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="16_or350"]
+[ext_resource type="Resource" uid="uid://cfuqwl06ioxwd" path="res://stage/spots/hill/spot_hill.tres" id="16_sqk3c"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="17_b2qpm"]
+
+[sub_resource type="Resource" id="Resource_p6nwn"]
+script = ExtResource("1_or350")
+_texture_path = "uid://08nhsueltwrn"
+_is_horizontal = true
+metadata/_custom_type_script = "uid://c7u2t141hgkj5"
+
+[sub_resource type="Resource" id="Resource_yxk55"]
+script = ExtResource("6_or350")
+bonus_type = ExtResource("5_jt45v")
+amount = -15
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_tljcf"]
+script = ExtResource("8_bi6rd")
+result_text = "Luckily, the fruit turns out to be perfectly safe. The team eats their fill and packs the leftovers to carry for the rest of their trip."
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_g6hyk"]
+script = ExtResource("6_or350")
+bonus_type = ExtResource("9_0xtqu")
+amount = 15
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_v8beq"]
+script = ExtResource("7_vhefn")
+suboutcomes = Array[ExtResource("4_b2qpm")]([SubResource("Resource_tljcf"), SubResource("Resource_g6hyk")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_c6jrb"]
+script = ExtResource("3_sqk3c")
+suboutcomes = Dictionary[ExtResource("4_b2qpm"), float]({
+SubResource("Resource_yxk55"): 0.5,
+SubResource("Resource_v8beq"): 0.5
+})
+description = "<term:bonus.food> gain or <term:bonus.safety> loss"
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_hu0sv"]
+script = ExtResource("11_js4rn")
+bonus_type = ExtResource("10_h0wbv")
+min_count = 10
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_1ld54"]
+script = ExtResource("1_2r1cx")
+label = "Try the fruit raw."
+requirement = SubResource("Resource_hu0sv")
+aspects = Array[ExtResource("2_xe782")]([null])
+aspects_per_season = Array[ExtResource("2_xe782")]([null])
+outcome = SubResource("Resource_c6jrb")
+outcome_text = "One of the scouts takes a tiny bite of the fruit, and the team waits to see the effects. Not half an hour later, the scout is bent over with a stomach ache. It's bad enough that the team has to stop and rest for the night to wait it out."
+
+[sub_resource type="Resource" id="Resource_fm03l"]
+script = ExtResource("6_or350")
+bonus_type = ExtResource("9_0xtqu")
+amount = 15
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_vcr2v"]
+script = ExtResource("1_2r1cx")
+label = "Cook the fruit."
+aspects = Array[ExtResource("2_xe782")]([ExtResource("12_jtthi")])
+aspects_per_season = Array[ExtResource("2_xe782")]([ExtResource("13_0dscv")])
+outcome = SubResource("Resource_fm03l")
+outcome_text = "The team sets up a campfire and boils the fruit into a sweet, nutritious paste. They leave with their bellies full and their rations replenished."
+
+[sub_resource type="Resource" id="Resource_0eiya"]
+script = ExtResource("15_jt45v")
+card_tag = 18
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_gwm2c"]
+script = ExtResource("1_2r1cx")
+label = "Find something the wildlife does eat."
+aspects = Array[ExtResource("2_xe782")]([ExtResource("14_q7oe3")])
+outcome = SubResource("Resource_0eiya")
+outcome_text = "The scouts search the area and find several gnawed-upon roots. These prove safe, but the taste leaves much to be desired."
+
+[sub_resource type="Resource" id="Resource_tf6ca"]
+script = ExtResource("1_2r1cx")
+label = "Leave the fruit alone."
+aspects = Array[ExtResource("2_xe782")]([null])
+aspects_per_season = Array[ExtResource("2_xe782")]([null])
+outcome_text = "The team moves on, their hunger unsatisfied, unwilling to take a risk."
+
+[resource]
+script = ExtResource("15_pyoe3")
+episode_id = "fruits"
+title = "Wild Fruits"
+biome_types = Array[int]([4, 6, 8, 9])
+spot_types = Array[ExtResource("17_b2qpm")]([ExtResource("16_sqk3c")])
+text = "The team stumbles upon a grove of trees drooping under the weight of plump fruit.
+
+They look a bit like Old World persimmons, but they have grown wild since the Shattering.
+
+The scouts are quite hungry, but they find it suspicious that no birds or insects seem to be touching the fruit."
+background_image = SubResource("Resource_p6nwn")
+background_credit = ExtResource("1_vhefn")
+choices = Array[ExtResource("1_2r1cx")]([SubResource("Resource_1ld54"), SubResource("Resource_vcr2v"), SubResource("Resource_gwm2c"), SubResource("Resource_tf6ca")])

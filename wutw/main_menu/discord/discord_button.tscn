@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bvr1ix2v3b2h8"]
+
+[ext_resource type="Script" uid="uid://b5tnd5gucjkvl" path="res://main_menu/discord/discord_button.gd" id="1_ko5oc"]
+[ext_resource type="LabelSettings" uid="uid://kfd2iofdfggd" path="res://theme/fonts/presets/label_settings_card_name.tres" id="2_ko5oc"]
+[ext_resource type="Texture2D" uid="uid://kjimxsrrryst" path="res://main_menu/discord/discord.png" id="3_cy0xy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vd6nh"]
+
+[node name="Button" type="Button" unique_id=1674398515]
+offset_right = 118.0
+offset_bottom = 141.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vd6nh")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_vd6nh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vd6nh")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_vd6nh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vd6nh")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_vd6nh")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_vd6nh")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_vd6nh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vd6nh")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_vd6nh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vd6nh")
+script = ExtResource("1_ko5oc")
+
+[node name="DiscordButton" type="VBoxContainer" parent="." unique_id=1701995490]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -15
+
+[node name="Label" type="Label" parent="DiscordButton" unique_id=1492113545]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Discord"
+label_settings = ExtResource("2_ko5oc")
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="DiscordButton" unique_id=359096590]
+modulate = Color(0.15470403, 0.19496138, 0.373883, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_cy0xy")
+expand_mode = 3
+stretch_mode = 4
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

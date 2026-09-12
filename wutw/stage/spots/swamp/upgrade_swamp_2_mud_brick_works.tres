@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://bfwkd307x4tvc"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_smymq"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_grk4u"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="4_3h25f"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="5_mjlbx"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="6_5njfd"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="7_v811d"]
+[ext_resource type="Resource" uid="uid://ouecqwnbe2cw" path="res://stage/spots/swamp/spot_swamp.tres" id="8_smymq"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="9_4jupx"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_grk4u"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://db8qmhy3alocd" path="res://map/sprites/spots/swamp/mst_swamp_brickworks.tres" id="10_3h25f"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://fhw3fmj6sqb0" path="res://map/sprites/spots/swamp/mst_swamp_peat_bog.tres" id="11_mjlbx"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="12_mwckj"]
+
+[sub_resource type="Resource" id="Resource_v811d"]
+script = ExtResource("12_mwckj")
+old_sprite_type = ExtResource("11_mjlbx")
+new_sprite_type = ExtResource("10_3h25f")
+biome = 4
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_smymq")
+spot_upgrade_id = "swamp_bricks"
+name = "Mud Brick Works"
+description = "What some see as filth, brickmakers see as future walls."
+required_aspects = Array[ExtResource("7_v811d")]([ExtResource("6_5njfd"), ExtResource("9_4jupx")])
+granted_bonuses = Dictionary[ExtResource("2_grk4u"), int]({
+ExtResource("4_3h25f"): 5,
+ExtResource("5_mjlbx"): 15
+})
+spot = ExtResource("8_smymq")
+visuals = Array[ExtResource("9_grk4u")]([SubResource("Resource_v811d")])
+tags = Array[int]([2])

@@ -1,0 +1,26 @@
+[gd_resource type="MapSpriteType_Mountain" format=3 uid="uid://bxr2aj680eaqd"]
+
+[ext_resource type="Resource" uid="uid://dxoxvtquc3hu2" path="res://stage/spots/mountain/spot_mountain.tres" id="1_ix35q"]
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_ix35q"]
+p1 = Vector2(-23.735, 3.735)
+p2 = Vector2(23.99, 5.16)
+p3 = Vector2(0, -5.185)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_dfgfa"]
+p1 = Vector2(0, 9.1)
+p2 = Vector2(-23.93, 3.25)
+p3 = Vector2(22.055, 4.67)
+blocking = true
+
+[resource]
+atlas_rect = Rect2i(833, 130, 121, 64)
+map_rect = Rect2(-1.73, -0.08, 52.938, 28)
+footprint_radius = 5.155
+default_scale = 0.12
+min_scale = 0.1
+priority_multiplier = 0.1
+provided_spot_type = ExtResource("1_ix35q")
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Triangle_ix35q"), SubResource("MapSpriteCollision_Triangle_dfgfa")])
+removable = true

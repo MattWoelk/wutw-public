@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://pds277ovxo4c"]
+
+[ext_resource type="Texture2D" uid="uid://d0gt3ri6pvso2" path="res://hub/contents/trees/sakura/petal.png" id="1_qc5pc"]
+
+[sub_resource type="Curve" id="Curve_5xv8e"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.1, 1), 0.0, 0.0, 0, 0, Vector2(0.846566, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_ovx8t"]
+curve = SubResource("Curve_5xv8e")
+
+[sub_resource type="Curve" id="Curve_5a8vg"]
+_limits = [0.0, 100.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.677039, 10.5328), 0.0, 0.0, 0, 0, Vector2(0.993562, 100), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_8m5g2"]
+curve = SubResource("Curve_5a8vg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dhbk7"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(1, 0, 0)
+emission_shape = 3
+emission_box_extents = Vector3(125, 1, 1)
+angle_min = -123.6
+angle_max = 190.5
+inherit_velocity_ratio = 10.0
+spread = 20.0
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, 98, 0)
+damping_min = 1.0
+damping_max = 1.0
+damping_curve = SubResource("CurveTexture_8m5g2")
+scale_min = 0.5
+scale_max = 0.6
+color = Color(0.98, 0.771587, 0.7644, 1)
+alpha_curve = SubResource("CurveTexture_ovx8t")
+hue_variation_min = -0.03
+hue_variation_max = 0.03
+turbulence_enabled = true
+turbulence_influence_min = 0.038
+turbulence_influence_max = 0.038
+
+[node name="SakuraParticles" type="GPUParticles2D"]
+show_behind_parent = true
+amount = 10
+texture = ExtResource("1_qc5pc")
+lifetime = 2.0
+preprocess = 2.0
+speed_scale = 0.15
+randomness = 1.0
+visibility_rect = Rect2(-164.367, -9.001, 302.546, 300)
+process_material = SubResource("ParticleProcessMaterial_dhbk7")

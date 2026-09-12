@@ -1,0 +1,139 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://bfp8sdob233y0"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_arh43"]
+[ext_resource type="Resource" uid="uid://dw7d4ggygqmt3" path="res://art/pieces/piece_hiroshige_tsuchiyama_suzuka.tres" id="1_b5omd"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_b5omd"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_3fsis"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="4_h78ue"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="5_80u0j"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="6_1anq8"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="7_1oo2v"]
+[ext_resource type="Script" uid="uid://cbnw4a13y5x8c" path="res://events/system/outcomes/random/event_outcome_random.gd" id="8_s6tvb"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="9_w521j"]
+[ext_resource type="Script" uid="uid://gu7gcielbwdr" path="res://events/system/outcomes/choose_card/event_outcome_choose_card.gd" id="10_n0rvj"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="11_6mf1n"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="12_um7xe"]
+[ext_resource type="Script" uid="uid://yxgaymbbt8tk" path="res://events/system/outcomes/override_next_step/event_outcome_override_next_step.gd" id="13_60wag"]
+[ext_resource type="Resource" uid="uid://b102hmkc4f48k" path="res://cards/tier6/card_poison.tres" id="14_ac321"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="15_l74c5"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="16_qgkbr"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="17_c6m34"]
+[ext_resource type="Script" uid="uid://ccdhemnw1w5pf" path="res://events/system/outcomes/insights/event_outcome_insights.gd" id="18_pg04x"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="19_egfr1"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="20_1emds"]
+[ext_resource type="Resource" uid="uid://cfuqwl06ioxwd" path="res://stage/spots/hill/spot_hill.tres" id="21_0nuxu"]
+
+[sub_resource type="Resource" id="Resource_61lsy"]
+script = ExtResource("1_arh43")
+_texture_path = "res://stage/survey/episodes/slippery_hill.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_vush7"]
+script = ExtResource("6_1anq8")
+bonus_type = ExtResource("5_80u0j")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_xk1pw"]
+script = ExtResource("2_b5omd")
+label = "Cling to a rock."
+aspects = Array[ExtResource("3_3fsis")]([ExtResource("4_h78ue")])
+aspects_per_season = Array[ExtResource("3_3fsis")]([null])
+outcome = SubResource("Resource_vush7")
+outcome_text = "The scout spots a large boulder protruding from the slope.
+
+She reaches out and grabs it tightly, safely stopping her slide."
+
+[sub_resource type="Resource" id="Resource_7k62h"]
+script = ExtResource("10_n0rvj")
+card_tag = 2
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_03ufe"]
+script = ExtResource("13_60wag")
+result_text = "The scout spots a clump of shrubs halfway down the slope. She steers herself towards them, hoping to gently break her fall.
+
+She crashes into the dense bushes, grateful for the springy branches which soften her landing.
+
+Standing up, she feels an itchy burning on her arms."
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_x456t"]
+script = ExtResource("15_l74c5")
+card_type = ExtResource("14_ac321")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_2ordd"]
+script = ExtResource("12_um7xe")
+suboutcomes = Array[ExtResource("9_w521j")]([SubResource("Resource_03ufe"), SubResource("Resource_x456t")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_8357l"]
+script = ExtResource("8_s6tvb")
+suboutcomes = Dictionary[ExtResource("9_w521j"), float]({
+SubResource("Resource_7k62h"): 0.5,
+SubResource("Resource_2ordd"): 0.5
+})
+description = "<term:card.poison> or choice of plant <term_lower:glyph>s"
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_okvoj"]
+script = ExtResource("2_b5omd")
+label = "Aim for the bushes."
+aspects = Array[ExtResource("3_3fsis")]([ExtResource("7_1oo2v")])
+aspects_per_season = Array[ExtResource("3_3fsis")]([null])
+outcome = SubResource("Resource_8357l")
+outcome_text = "The scout spots a clump of shrubs halfway down the slope. She steers herself towards them, hoping to gently break her fall.
+
+She crashes into the dense bushes, the springy branches softening her landing."
+
+[sub_resource type="Resource" id="Resource_08gyp"]
+script = ExtResource("6_1anq8")
+bonus_type = ExtResource("17_c6m34")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_pjuvv"]
+script = ExtResource("2_b5omd")
+label = "Roll."
+aspects = Array[ExtResource("3_3fsis")]([ExtResource("16_qgkbr")])
+aspects_per_season = Array[ExtResource("3_3fsis")]([null])
+outcome = SubResource("Resource_08gyp")
+outcome_text = "The scout makes an instant decision to stretch out her limbs and roll sideways down the grassy slope.
+
+As she rolls, her body picks up speed and she is unable to slow down.
+
+She arrives at the bottom of the hill within seconds, muddy, dizzy, but laughing."
+
+[sub_resource type="Resource" id="Resource_1pm6g"]
+script = ExtResource("18_pg04x")
+amount = 15
+metadata/_custom_type_script = "uid://ccdhemnw1w5pf"
+
+[sub_resource type="Resource" id="Resource_u3oko"]
+script = ExtResource("2_b5omd")
+label = "Embrace the fall."
+aspects = Array[ExtResource("3_3fsis")]([null])
+aspects_per_season = Array[ExtResource("3_3fsis")]([null])
+outcome = SubResource("Resource_1pm6g")
+outcome_text = "The surveyor accepts that she can't stop now.
+
+She relaxes her limbs, leans backward, and coasts on her back down the muddy grass.
+
+She arrives at the bottom with a torn robe and a serene smile."
+
+[resource]
+script = ExtResource("19_egfr1")
+episode_id = "slippery_hill"
+title = "The Slick Slope Slide"
+spot_types = Array[ExtResource("20_1emds")]([ExtResource("21_0nuxu")])
+text = "The surveyors grumble as they trudge through a pass. It has been raining for two days in a row, and the slopes have turned slick with mud. 
+
+Most of the group has made their way down a steep incline when they hear a yelp from above.
+
+A scout, struggling to lift her pack, has suddenly lost her footing and is now hurtling down the slope."
+background_image = SubResource("Resource_61lsy")
+background_credit = ExtResource("1_b5omd")
+choices = Array[ExtResource("2_b5omd")]([SubResource("Resource_xk1pw"), SubResource("Resource_okvoj"), SubResource("Resource_pjuvv"), SubResource("Resource_u3oko")])

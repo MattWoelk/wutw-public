@@ -1,0 +1,36 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://rxuq4j65fm7e"]
+
+[ext_resource type="MapSpriteType_Building" uid="uid://gkpl7kulxcpe" path="res://map/sprites/spots/square/mst_square_market_buildings.tres" id="1_isl61"]
+[ext_resource type="MapSpriteType_Building" uid="uid://dvbguyhduqc34" path="res://map/sprites/spots/square/mst_square_market_buildings_2.tres" id="2_1hw0b"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://5l60hhmyeauj" path="res://map/sprites/spots/desert/mst_desert_caravanserai.tres" id="3_1d6cx"]
+[ext_resource type="WwiseEvent" uid="uid://hiut5oifqc57" path="res://Wwise/resources/Event/{C5DC03A8-9DC4-4C3C-8285-42C53B9B7871}.tres" id="4_1hw0b"]
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_isl61"]
+p1 = Vector2(-0.885, 2.43)
+p2 = Vector2(-7.17, -0.47)
+p3 = Vector2(8.355, -0.31)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_1hw0b"]
+p1 = Vector2(-7.185, -0.5)
+p2 = Vector2(0.89, -3.945)
+p3 = Vector2(8.265, -0.26)
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_csbt0"]
+sprite_type = ExtResource("1_isl61")
+offset = Vector2(-2.63, -0.765)
+scale = 1.63
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_djvl5"]
+sprite_type = ExtResource("2_1hw0b")
+offset = Vector2(4.52, 0.155)
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_wgrcm"]
+sprite_type = ExtResource("3_1d6cx")
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_csbt0"), SubResource("MapSpriteComponent_djvl5"), SubResource("MapSpriteComponent_wgrcm")])
+footprint_radius = 4.345
+sound = ExtResource("4_1hw0b")
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Triangle_isl61"), SubResource("MapSpriteCollision_Triangle_1hw0b")])

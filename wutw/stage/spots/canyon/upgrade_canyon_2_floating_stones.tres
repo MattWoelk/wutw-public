@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://bjm86mjj0kums"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_naaut"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_rx4jx"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_00dlh"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="3_gc0sw"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="4_wbodi"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="6_5tr1o"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="7_8co7c"]
+[ext_resource type="Resource" uid="uid://d1c7ny2xs7pwo" path="res://stage/spots/canyon/spot_canyon.tres" id="8_5tr1o"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_8co7c"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://yi6r4d10vn2d" path="res://map/sprites/mountains/mst_mountain_1_medium.tres" id="10_nfjp5"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://c5ktgcgcd1u4o" path="res://map/sprites/spots/canyon/mst_canyon_floating_stones.tres" id="10_ytkfk"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://dt0uqrpft1quu" path="res://map/sprites/spots/canyon/mst_canyon_murmuring_ravine.tres" id="11_1mgs2"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://desakgu6q3yov" path="res://map/sprites/mountains/mst_mountain_2_large.tres" id="11_2xtut"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://c3u877m1spx0" path="res://map/sprites/mountains/mst_mountain_3_large.tres" id="12_3nng6"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="12_teits"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://doqqvl0x3b3g4" path="res://map/sprites/mountains/mst_mountain_4_small.tres" id="13_b4hmb"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bxr2aj680eaqd" path="res://map/sprites/mountains/mst_mountain_5_small.tres" id="14_3rgtk"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cekrboxmhdmhk" path="res://map/sprites/mountains/mst_mountain_6_tiny.tres" id="15_rvoj6"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cjbrxida4odnk" path="res://map/sprites/mountains/mst_mountain_7_tiny.tres" id="16_35dpw"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://56t2rh2pg58y" path="res://map/sprites/mountains/mst_mountain_8_medium.tres" id="17_ift8n"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://csjeschaiy5ct" path="res://map/sprites/mountains/mst_mountain_9_large.tres" id="18_dg5lw"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bctu7rlwqc3o7" path="res://map/sprites/mountains/mst_mountain_10_medium.tres" id="19_p6wyn"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://t2knd16pwuwg" path="res://map/sprites/mountains/mst_mountain_11_medium.tres" id="20_xjpr0"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dxba886xk8sch" path="res://map/sprites/mountains/mst_mountain_12_pair.tres" id="21_axee2"]
+
+[sub_resource type="Resource" id="Resource_gngwn"]
+script = ExtResource("12_teits")
+old_sprite_type = ExtResource("11_1mgs2")
+new_sprite_type = ExtResource("10_ytkfk")
+extra_removables = Array[MapSpriteType]([ExtResource("10_nfjp5"), ExtResource("11_2xtut"), ExtResource("12_3nng6"), ExtResource("13_b4hmb"), ExtResource("14_3rgtk"), ExtResource("15_rvoj6"), ExtResource("16_35dpw"), ExtResource("17_ift8n"), ExtResource("18_dg5lw"), ExtResource("19_p6wyn"), ExtResource("20_xjpr0"), ExtResource("21_axee2")])
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_naaut")
+spot_upgrade_id = "canyon_floating_stones"
+name = "Floating Stones"
+description = "These stones by all rights should fall. Yet they do not."
+required_aspects = Array[ExtResource("3_00dlh")]([ExtResource("6_5tr1o"), ExtResource("7_8co7c")])
+granted_bonuses = Dictionary[ExtResource("2_rx4jx"), int]({
+ExtResource("3_gc0sw"): 10,
+ExtResource("4_wbodi"): 10
+})
+spot = ExtResource("8_5tr1o")
+visuals = Array[ExtResource("9_8co7c")]([SubResource("Resource_gngwn")])
+tags = Array[int]([0])

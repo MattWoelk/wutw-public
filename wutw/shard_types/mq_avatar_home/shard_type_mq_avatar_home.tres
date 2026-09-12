@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="ShardType_MainQuest_AvatarHome" format=3 uid="uid://bb1st677b1rbo"]
+
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="1_i16mo"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="2_5dvyb"]
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="2_6sbcs"]
+[ext_resource type="Texture2D" uid="uid://b2dmxuc7qplx4" path="res://shard_types/mq_avatar_home/shard_type_mq_avatar_home.png" id="2_hjh1y"]
+[ext_resource type="Script" uid="uid://bp46daintxhhq" path="res://shard_types/mq_avatar_home/shard_type_mq_avatar_home.gd" id="3_2jsbs"]
+[ext_resource type="Resource" uid="uid://c56dxbu1pjfbl" path="res://stage/spots/forest/upgrade_forest_3_monastery.tres" id="3_c6gyf"]
+[ext_resource type="Resource" uid="uid://dwros26e2tcs1" path="res://art/pieces/piece_gekkou_boys_fishing.tres" id="4_5dvyb"]
+[ext_resource type="Resource" uid="uid://dhsu0y2nvmlf4" path="res://stage/spots/canyon/upgrade_canyon_3_hanging_monastery.tres" id="4_fhsvl"]
+[ext_resource type="Resource" uid="uid://bi3q0q8mk0b41" path="res://stage/spots/mountain/upgrade_mountain_2_ember_monastery.tres" id="5_hjh1y"]
+[ext_resource type="Resource" uid="uid://bhli4xwx0vayp" path="res://stage/spots/brushland/upgrade_brushland_3_monastery_of_the_wilds.tres" id="6_5dvyb"]
+[ext_resource type="Resource" uid="uid://ttlit2wbfgbj" path="res://stage/spots/square/upgrade_square_2_philosophy_corner.tres" id="7_nm271"]
+[ext_resource type="Resource" uid="uid://c4geqaow8tvvd" path="res://stage/spots/building_large/upgrade_building_large_2_library.tres" id="11_t0o7u"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="13_t0o7u"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="14_iwyp3"]
+
+[sub_resource type="Resource" id="Resource_nm271"]
+script = ExtResource("1_i16mo")
+text = "$shard_name was settled with the sole aim of becoming the Avatar's secret home, and $avatar_town was founded with everything a young deity might need. When the Scribe arrived with the Avatar in tow, the monks were prepared with solemn rituals and ancient scripture. The child, however, was more interested in the frogs by the meditation ponds. The Scribe did not attempt to force the heavy burden of history onto small shoulders. If the Avatar spent the afternoon watching ripples in the water, the Scribe reasoned, then surely there was deep wisdom to be found in those ripples. The most respected theologians of the age dedicated their days to maintaining the quiet sanctuary, finding reverence in watching a child play."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_5dvyb"]
+script = ExtResource("1_i16mo")
+text = "As the years passed, the Scribe's endless hours of instruction began to take root. The Avatar came to understand the fading daydreams of youth as fragmented memories of an ancient past. Now, looking at a map of the scattered shards or tracing the glyphs of a sacred text brought on a strange, undeniable sense of familiarity. When the time finally came to leave this quiet sanctuary and return to the Haven, the Avatar bid farewell to the monks and made sure to check the meditation ponds for frogs one last time before stepping into the gate and solemnly accepting the heavy burden of reuniting the world."
+min_main_quest = 430
+time_taken = 0
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_ocgnc"]
+script = ExtResource("1_i16mo")
+text = "After the monks and nuns that raised the Avatar heard of their decision to retire from the world, they took it as a teaching of non-intervention. They still live in the monastery, but they have let nature reclaim all but the living quarters. Today, the grounds are overgrown with waist-high shrubs, and the meditation pond the Avatar had loved so much has become a tiny swamp."
+min_main_quest = 500
+time_taken = 3
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_6plys"]
+script = ExtResource("13_t0o7u")
+text = "This trip was a little underwhelming. I know the Avatar was no god, but they did ignite the spark that led to this new age of enlightenment, so I was surprised that the place isn't as well maintained as our other monuments.
+
+The temple complex looks abandoned, and isn't open to visitors. The surrounding town is heavily catering to tourists, and full of folks trying to make money by showing visitors a tree that the Avatar allegedly climbed as a child, or a tea house which the Avatar used to frequent, no doubt run by their friends."
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[resource]
+script = ExtResource("3_2jsbs")
+school = ExtResource("11_t0o7u")
+philosophy_corner = ExtResource("7_nm271")
+monasteries = Array[ExtResource("2_6sbcs")]([ExtResource("3_c6gyf"), ExtResource("4_fhsvl"), ExtResource("5_hjh1y"), ExtResource("6_5dvyb")])
+shard_type_id = "mq_avatar_home"
+name = "The Avatar's Home"
+shard_name_override = "Shizugokoro Shima"
+shard_name_override_jp = "静心島"
+shard_name_override_meaning = "Calm Heart Island"
+tier = 3
+illustration = ExtResource("2_hjh1y")
+illustration_credit = ExtResource("4_5dvyb")
+history = Array[ExtResource("1_i16mo")]([SubResource("Resource_nm271"), SubResource("Resource_5dvyb"), SubResource("Resource_ocgnc")])
+trip_reward = SubResource("Resource_6plys")
+min_main_quest_progress = 410
+metadata/_custom_type_script = "uid://bp46daintxhhq"

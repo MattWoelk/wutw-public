@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://csqqncq7572gr"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_j5off"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="3_5026t"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="4_4f1an"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="4_lw3p4"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="5_j5off"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="6_1xvex"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="6_hh53e"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="8_ecslc"]
+[ext_resource type="Resource" uid="uid://ouecqwnbe55w" path="res://stage/spots/wasteland/spot_wasteland.tres" id="9_d5hy2"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="10_imdvo"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://oyjnt6jsgpck" path="res://map/sprites/spots/wasteland/mst_wasteland_stormwatch_citadel.tres" id="11_0y3rq"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://btov06kt3g6gm" path="res://map/sprites/spots/wasteland/mst_wasteland_stormchaser_camp.tres" id="12_6mvra"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="13_w7oyv"]
+
+[sub_resource type="Resource" id="Resource_f4afq"]
+script = ExtResource("13_w7oyv")
+old_sprite_type = ExtResource("12_6mvra")
+new_sprite_type = ExtResource("11_0y3rq")
+biome = 3
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_j5off")
+spot_upgrade_id = "wasteland_storm_castle"
+name = "Stormwatch Citadel"
+description = "A stern fortress scarred by the storms, ramparts covered with lightning rods."
+required_aspects = Array[ExtResource("6_hh53e")]([ExtResource("5_j5off"), ExtResource("6_1xvex"), ExtResource("8_ecslc")])
+granted_bonuses = Dictionary[ExtResource("4_lw3p4"), int]({
+ExtResource("3_5026t"): 40,
+ExtResource("4_4f1an"): 10
+})
+spot = ExtResource("9_d5hy2")
+visuals = Array[ExtResource("10_imdvo")]([SubResource("Resource_f4afq")])
+unique_per_run = true
+min_main_quest_progress = 110

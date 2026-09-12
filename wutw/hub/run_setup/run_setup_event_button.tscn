@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://dlc1hhwlcl00u"]
+
+[ext_resource type="Shader" uid="uid://ygmrqrvg5hpm" path="res://theme/button/ukiyoe_button.gdshader" id="1_hy221"]
+[ext_resource type="Texture2D" uid="uid://ctgl61r3xxsqv" path="res://theme/button/button_fill.png" id="2_6mcye"]
+[ext_resource type="Script" uid="uid://gcgb552a4ejf" path="res://hub/run_setup/run_setup_event_button.gd" id="2_lir8x"]
+[ext_resource type="Texture2D" uid="uid://blje81yu8734p" path="res://theme/button/button_shape.png" id="3_327qn"]
+[ext_resource type="Texture2D" uid="uid://go64cbx1ohwd" path="res://theme/button/white_1x1px.png" id="3_lir8x"]
+[ext_resource type="Texture2D" uid="uid://doe4603a6ngco" path="res://theme/button/button_outline.png" id="4_dnn8f"]
+[ext_resource type="Texture2D" uid="uid://cwubixgc8n0yr" path="res://theme/button/button_swish_left.png" id="5_s5uq2"]
+[ext_resource type="Texture2D" uid="uid://n6l17h4ysayj" path="res://theme/button/button_swish_right.png" id="6_1y7y7"]
+
+[sub_resource type="Gradient" id="Gradient_o5u0e"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g2ld2"]
+gradient = SubResource("Gradient_o5u0e")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_av4vr"]
+shader = ExtResource("1_hy221")
+shader_parameter/mask_tex = ExtResource("3_327qn")
+shader_parameter/background = ExtResource("2_6mcye")
+shader_parameter/gradient = SubResource("GradientTexture2D_g2ld2")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/outline_tex = ExtResource("4_dnn8f")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("6_1y7y7")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("5_s5uq2")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b0siv"]
+content_margin_left = 4.0
+content_margin_top = 6.0
+content_margin_right = 4.0
+content_margin_bottom = 6.0
+texture = ExtResource("3_lir8x")
+
+[node name="RunSetupEventButton" type="Button" unique_id=287747575]
+material = SubResource("ShaderMaterial_av4vr")
+instance_shader_parameters/background_offset = Vector2(0.753993, 0.72171354)
+instance_shader_parameters/size = Vector2(102.04082, 102.04082)
+instance_shader_parameters/state = 0.0
+custom_minimum_size = Vector2(109, 150)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1770.0
+offset_bottom = -930.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_b0siv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_b0siv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_b0siv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_b0siv")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_b0siv")
+text = "Choose Event to Guarantee"
+autowrap_mode = 2
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_lir8x")
+stylebox_override = SubResource("StyleBoxTexture_b0siv")

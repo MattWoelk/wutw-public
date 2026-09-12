@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://rxmafo8gn7ml"]
+
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="1_i5wd0"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="3_wiecp"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="4_e5xug"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="4_opvtk"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="5_ktrmn"]
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="7_h2aob"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="7_j3qq5"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="8_w6iq7"]
+[ext_resource type="Resource" uid="uid://f8guout8235a" path="res://stage/spots/plains/spot_plains.tres" id="8_wnwnc"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://71anjqrnjuag" path="res://map/sprites/spots/plains/mst_plains_apiary.tres" id="10_wnwnc"]
+[ext_resource type="Script" uid="uid://dvrtuqbmx4v30" path="res://stage/spots/spot_upgrade_visual_add.gd" id="13_y8ken"]
+
+[sub_resource type="Resource" id="Resource_c84cv"]
+script = ExtResource("13_y8ken")
+sprite_type = ExtResource("10_wnwnc")
+biome = 6
+metadata/_custom_type_script = "uid://dvrtuqbmx4v30"
+
+[resource]
+script = ExtResource("7_h2aob")
+spot_upgrade_id = "plains_apiary"
+name = "Apiary"
+description = "Hives hum within hollow stumps, patiently nurtured by oddly dressed caretakers."
+required_aspects = Array[ExtResource("4_e5xug")]([ExtResource("5_ktrmn"), ExtResource("7_j3qq5")])
+granted_bonuses = Dictionary[ExtResource("1_i5wd0"), int]({
+ExtResource("3_wiecp"): 10,
+ExtResource("4_opvtk"): 15
+})
+spot = ExtResource("8_wnwnc")
+visuals = Array[ExtResource("8_w6iq7")]([SubResource("Resource_c84cv")])
+tags = Array[int]([1])

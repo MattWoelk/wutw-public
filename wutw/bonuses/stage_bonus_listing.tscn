@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://g0jcwxg6lhb3"]
+
+[ext_resource type="Script" uid="uid://w6ecs1ap8agq" path="res://bonuses/stage_bonus_listing.gd" id="1_61wtw"]
+[ext_resource type="PackedScene" uid="uid://njdji4l7s1q0" path="res://bonuses/bonus_counter.tscn" id="8_ph62b"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="9_qti4o"]
+[ext_resource type="Texture2D" uid="uid://bif8savn5u3o1" path="res://visuals/sparkle.png" id="10_rwmm7"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="11_ykxhy"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="12_mkbt8"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="13_ghrnh"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="14_e4dqr"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="15_8l4cp"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="16_e1pgm"]
+
+[sub_resource type="Curve" id="Curve_njf1v"]
+_data = [Vector2(0.0010101013, 0), 0.0, 5.0516067, 0, 0, Vector2(0.16161615, 1), 0.0, 0.0, 0, 0, Vector2(0.17575756, 0.9653533), -2.7695727, -2.7695727, 0, 0, Vector2(1, 0), 0.030541155, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_mtwdc"]
+curve = SubResource("Curve_njf1v")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_feuwb"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(26.76, 13.07, 0)
+emission_shape = 3
+emission_box_extents = Vector3(31.99, 11.585, 1)
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+angular_velocity_min = -90.000015
+angular_velocity_max = 89.999985
+gravity = Vector3(0, 0, 0)
+scale_min = 0.04
+scale_max = 0.049999997
+scale_curve = SubResource("CurveTexture_mtwdc")
+color = Color(1, 1, 1, 0.8509804)
+hue_variation_min = -0.07000002
+hue_variation_max = 0.13999997
+
+[node name="StageBonusListing" type="HBoxContainer" unique_id=1169866148]
+offset_right = 459.0
+offset_bottom = 27.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+script = ExtResource("1_61wtw")
+
+[node name="Listing_Food" parent="." unique_id=1365415596 instance=ExtResource("8_ph62b")]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bonus_type = ExtResource("9_qti4o")
+current_value = 999
+highlight_type = 2
+emit_request = true
+
+[node name="VFX_Blessed_Food" type="GPUParticles2D" parent="Listing_Food" unique_id=1185242642]
+show_behind_parent = true
+emitting = false
+amount = 60
+texture = ExtResource("10_rwmm7")
+lifetime = 5.0
+visibility_rect = Rect2(-10, -10, 120, 120)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_feuwb")
+
+[node name="Listing_Safety" parent="." unique_id=678460260 instance=ExtResource("8_ph62b")]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bonus_type = ExtResource("11_ykxhy")
+current_value = 999
+emit_request = true
+
+[node name="VFX_Blessed_Safety" type="GPUParticles2D" parent="Listing_Safety" unique_id=26827278]
+show_behind_parent = true
+emitting = false
+amount = 60
+texture = ExtResource("10_rwmm7")
+lifetime = 5.0
+visibility_rect = Rect2(-10, -10, 120, 120)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_feuwb")
+
+[node name="Listing_Beauty" parent="." unique_id=2140389730 instance=ExtResource("8_ph62b")]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bonus_type = ExtResource("12_mkbt8")
+current_value = 999
+emit_request = true
+
+[node name="VFX_Blessed_Beauty" type="GPUParticles2D" parent="Listing_Beauty" unique_id=789283356]
+show_behind_parent = true
+emitting = false
+amount = 60
+texture = ExtResource("10_rwmm7")
+lifetime = 5.0
+visibility_rect = Rect2(-10, -10, 120, 120)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_feuwb")
+
+[node name="Listing_Harmony" parent="." unique_id=1181518734 instance=ExtResource("8_ph62b")]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bonus_type = ExtResource("13_ghrnh")
+current_value = 999
+emit_request = true
+
+[node name="VFX_Blessed_Harmony" type="GPUParticles2D" parent="Listing_Harmony" unique_id=1267783972]
+show_behind_parent = true
+emitting = false
+amount = 60
+texture = ExtResource("10_rwmm7")
+lifetime = 5.0
+visibility_rect = Rect2(-10, -10, 120, 120)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_feuwb")
+
+[node name="Listing_Knowledge" parent="." unique_id=1095228791 instance=ExtResource("8_ph62b")]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+bonus_type = ExtResource("14_e4dqr")
+current_value = 999
+emit_request = true
+
+[node name="VFX_Blessed_Knowledge" type="GPUParticles2D" parent="Listing_Knowledge" unique_id=1261194853]
+show_behind_parent = true
+emitting = false
+amount = 60
+texture = ExtResource("10_rwmm7")
+lifetime = 5.0
+visibility_rect = Rect2(-10, -10, 120, 120)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_feuwb")
+
+[node name="Listing_Adventure" parent="." unique_id=716353723 instance=ExtResource("8_ph62b")]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+bonus_type = ExtResource("15_8l4cp")
+current_value = 999
+emit_request = true
+
+[node name="VFX_Blessed_Adventure" type="GPUParticles2D" parent="Listing_Adventure" unique_id=1697747891]
+show_behind_parent = true
+emitting = false
+amount = 60
+texture = ExtResource("10_rwmm7")
+lifetime = 5.0
+visibility_rect = Rect2(-10, -10, 120, 120)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_feuwb")
+
+[node name="Listing_Productivity" parent="." unique_id=1834148433 instance=ExtResource("8_ph62b")]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+bonus_type = ExtResource("16_e1pgm")
+current_value = 999
+emit_request = true
+
+[node name="VFX_Blessed_Productivity" type="GPUParticles2D" parent="Listing_Productivity" unique_id=1403327073]
+show_behind_parent = true
+emitting = false
+amount = 60
+texture = ExtResource("10_rwmm7")
+lifetime = 5.0
+visibility_rect = Rect2(-10, -10, 120, 120)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_feuwb")

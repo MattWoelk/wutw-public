@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://b11j1h3wlrp4a"]
+
+[ext_resource type="Script" uid="uid://bnmvxp3rm3aun" path="res://hub/crafting/stroke_display.gd" id="1_sldwv"]
+[ext_resource type="Resource" uid="uid://b5iioscj3g8o5" path="res://japanese/strokes/stroke_beta.tres" id="2_sldwv"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="3_emmv4"]
+[ext_resource type="Texture2D" uid="uid://d1af0d1u6jhnk" path="res://japanese/strokes/art/beta.png" id="3_sldwv"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="6_81q0j"]
+[ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="7_kv6wi"]
+
+[node name="StrokeDisplay" type="Control" unique_id=1912420490]
+custom_minimum_size = Vector2(67, 88)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1853.0
+offset_bottom = -992.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sldwv")
+stroke = ExtResource("2_sldwv")
+count = 999
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=16440326]
+unique_name_in_owner = true
+material = ExtResource("3_emmv4")
+instance_shader_parameters/size = Vector2(109.95599, 148.764)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("6_81q0j")
+script = ExtResource("7_kv6wi")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1081583719]
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="Icon" type="TextureRect" parent="PanelContainer/VBoxContainer" unique_id=1336751751]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+texture = ExtResource("3_sldwv")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CountLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1223403762]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "×999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

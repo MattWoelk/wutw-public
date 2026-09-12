@@ -1,0 +1,111 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://ck5mnpaw2hoxo"]
+
+[ext_resource type="Resource" uid="uid://cvldot2vu60db" path="res://art/pieces/piece_hiroshige_sagami_oyama.tres" id="1_7e5qk"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_ht7tm"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_7e5qk"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_bd3k0"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="4_ansb6"]
+[ext_resource type="Resource" uid="uid://dixtbrkrttrae" path="res://relics/common/boar_mask/relic_boar_mask.tres" id="5_ul507"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="6_02ru4"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="7_xq1fg"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="8_guukh"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="9_8h5b3"]
+[ext_resource type="Resource" uid="uid://dhal843mubr37" path="res://cards/tier6/card_wound.tres" id="10_gtrkf"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="11_xia5b"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="12_87kip"]
+[ext_resource type="Script" uid="uid://foju0o4i75rv" path="res://events/system/outcomes/choose_remove_card/event_outcome_choose_remove_card.gd" id="13_j8c0q"]
+[ext_resource type="Script" uid="uid://dadces6knf8fj" path="res://events/system/outcomes/run_var/event_outcome_run_var.gd" id="14_80ogo"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="15_1dkb0"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="16_kkmkt"]
+[ext_resource type="Resource" uid="uid://d1c7ny2xs7pwo" path="res://stage/spots/canyon/spot_canyon.tres" id="17_e1srv"]
+
+[sub_resource type="Resource" id="Resource_6c7ct"]
+script = ExtResource("1_ht7tm")
+_texture_path = "res://stage/survey/episodes/canyon_shrine.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_ryrc3"]
+script = ExtResource("6_02ru4")
+relic = ExtResource("5_ul507")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_657jf"]
+script = ExtResource("8_guukh")
+bonus_type = ExtResource("7_xq1fg")
+min_count = 15
+max_count = -1
+extra_per_season = 25
+
+[sub_resource type="Resource" id="Resource_yhywf"]
+script = ExtResource("2_7e5qk")
+label = "Search the shrine."
+requirement = SubResource("Resource_657jf")
+aspects = Array[ExtResource("3_bd3k0")]([ExtResource("4_ansb6")])
+aspects_per_season = Array[ExtResource("3_bd3k0")]([null])
+outcome = SubResource("Resource_ryrc3")
+outcome_text = "Inside the shrine the scouts find a collection of animal masks hanging on the walls. The best preserved one appears to be carved to resemble a boar's face.
+
+One of the scouts dons the mask, laughing, and watches his companions suddenly turn white, pointing behind him. When he looks, he sees nothing but a copse of trees.
+
+His companions explain that they saw a giant boar staring at them, then disappearing into the trees."
+
+[sub_resource type="Resource" id="Resource_r7eoy"]
+script = ExtResource("11_xia5b")
+card_type = ExtResource("10_gtrkf")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_5v4vr"]
+script = ExtResource("2_7e5qk")
+label = "Investigate surroundings."
+aspects = Array[ExtResource("3_bd3k0")]([ExtResource("9_8h5b3")])
+aspects_per_season = Array[ExtResource("3_bd3k0")]([null])
+outcome = SubResource("Resource_r7eoy")
+outcome_text = "Eager to explore, a scout walks beyond the shrine, his foot stepping on a pinecone with a loud crunch.
+
+A boar suddenly appears from behind the trees and lowers its head, preparing to charge. The surveyors flee, hurriedly scrambling down the canyon wall."
+
+[sub_resource type="Resource" id="Resource_j4s6g"]
+script = ExtResource("13_j8c0q")
+metadata/_custom_type_script = "uid://foju0o4i75rv"
+
+[sub_resource type="Resource" id="Resource_2pguj"]
+script = ExtResource("2_7e5qk")
+label = "Leave an offering."
+aspects = Array[ExtResource("3_bd3k0")]([ExtResource("12_87kip")])
+aspects_per_season = Array[ExtResource("3_bd3k0")]([null])
+outcome = SubResource("Resource_j4s6g")
+outcome_text = "A nun among the surveyors makes a crude altar out of the nearby pinecones.
+
+She leaves a small inscribed blessing on top."
+
+[sub_resource type="Resource" id="Resource_jjak6"]
+script = ExtResource("14_80ogo")
+run_var = 6
+delta = 1
+preview_description = "Gain 1 maximum <term:inspiration>"
+outcome_description = "Gained 1 maximum <term:inspiration>."
+metadata/_custom_type_script = "uid://dadces6knf8fj"
+
+[sub_resource type="Resource" id="Resource_3vjof"]
+script = ExtResource("2_7e5qk")
+label = "Admire the scenery."
+aspects = Array[ExtResource("3_bd3k0")]([null])
+aspects_per_season = Array[ExtResource("3_bd3k0")]([null])
+outcome = SubResource("Resource_jjak6")
+outcome_text = "Exhausted from the steep climb, the surveyors bow before the shrine.
+
+They stand by the red shrine gate for a while, directing their gaze toward the grey mountain in the distance."
+
+[resource]
+script = ExtResource("15_1dkb0")
+episode_id = "canyon_shrine"
+title = "The Canyon Shrine"
+spot_types = Array[ExtResource("16_kkmkt")]([ExtResource("17_e1srv")])
+text = "As the scouts make their way through a canyon pass, their attention is drawn toward a great grey mountain towering on the horizon.
+
+Admiring its imposing height, they almost miss the bright red shrine gate sitting on the cliff above them.
+
+Beyond the gate stands a stone shrine, its sloped roof covered with moss."
+background_image = SubResource("Resource_6c7ct")
+background_credit = ExtResource("1_7e5qk")
+choices = Array[ExtResource("2_7e5qk")]([SubResource("Resource_yhywf"), SubResource("Resource_5v4vr"), SubResource("Resource_2pguj"), SubResource("Resource_3vjof")])

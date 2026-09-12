@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Relic_RecordOfRuin" format=3 uid="uid://c2ymhj5o1js1g"]
+
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="1_wc1q4"]
+[ext_resource type="Texture2D" uid="uid://bg6gowxulikn3" path="res://relics/common/record_of_ruin/record_of_ruin.png" id="2_ub4lc"]
+[ext_resource type="Script" uid="uid://crv5mo1ibfaf1" path="res://relics/common/record_of_ruin/relic_record_of_ruin.gd" id="2_vc4jr"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="4_ub4lc"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="5_3shll"]
+[ext_resource type="Resource" uid="uid://5q63svcbmx37" path="res://glossary/categories/termcategory_relic.tres" id="5_nq7xe"]
+
+[resource]
+script = ExtResource("2_vc4jr")
+triggering_bonus_type = ExtResource("4_ub4lc")
+added_bonus_type = ExtResource("1_wc1q4")
+relic_id = "record_of_ruin"
+default_name = "Record of Ruin"
+default_description = "Whenever you gain %s, gain half as much %s."
+flavor_text = "An angry hero stares back from the scroll."
+icon = ExtResource("2_ub4lc")
+var_modifiers = Dictionary[int, int]({
+14: -20
+})
+default_starting_state = 1
+term_categories = Array[ExtResource("5_3shll")]([ExtResource("5_nq7xe")])
+metadata/_custom_type_script = "uid://cocdm5ulvrs8m"

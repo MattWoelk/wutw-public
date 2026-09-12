@@ -1,0 +1,99 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://c3fvv7i3qf0o5"]
+
+[ext_resource type="Resource" uid="uid://dvupyu7ydgto1" path="res://art/pieces/piece_hiroshige_kanaya.tres" id="1_klaar"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_mr4b7"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_klaar"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_iifpr"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="4_mjrwy"]
+[ext_resource type="Script" uid="uid://cbnw4a13y5x8c" path="res://events/system/outcomes/random/event_outcome_random.gd" id="5_ir5wt"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="6_7i8ve"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="7_7vsxx"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="8_isclt"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="9_rqko4"]
+[ext_resource type="Resource" uid="uid://dmoj3ldoyhfv4" path="res://cards/tier3/card_bee.tres" id="10_kjcff"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="11_khhgq"]
+[ext_resource type="Script" uid="uid://gu7gcielbwdr" path="res://events/system/outcomes/choose_card/event_outcome_choose_card.gd" id="12_1hirm"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="13_mxauq"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="14_8yd36"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="15_f2nrp"]
+[ext_resource type="Resource" uid="uid://cfuqwl06ioxwd" path="res://stage/spots/hill/spot_hill.tres" id="16_u5k8i"]
+
+[sub_resource type="Resource" id="Resource_tmy53"]
+script = ExtResource("1_mr4b7")
+_texture_path = "res://stage/survey/episodes/rest_hill.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_nujqq"]
+script = ExtResource("8_isclt")
+bonus_type = ExtResource("7_7vsxx")
+amount = 20
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_v03f7"]
+script = ExtResource("5_ir5wt")
+suboutcomes = Dictionary[ExtResource("6_7i8ve"), float]({
+SubResource("Resource_nujqq"): 0.5
+})
+description = "Gain <term:bonus.beauty> or lose <term:inspiration>"
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_pogdi"]
+script = ExtResource("2_klaar")
+label = "Take a nap."
+aspects = Array[ExtResource("3_iifpr")]([ExtResource("4_mjrwy")])
+outcome = SubResource("Resource_v03f7")
+outcome_text = "The surveyors stretch out in the sun and fall asleep. 
+
+When they awake, the trees are casting long shadows across their faces in the afternoon sun.
+
+A herd of deer is grazing only steps away from them. When one of the scouts rises, the whole herd takes off in a rush."
+
+[sub_resource type="Resource" id="Resource_o51dv"]
+script = ExtResource("11_khhgq")
+card_type = ExtResource("10_kjcff")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_bt0lp"]
+script = ExtResource("2_klaar")
+label = "Explore the grove."
+aspects = Array[ExtResource("3_iifpr")]([ExtResource("9_rqko4")])
+outcome = SubResource("Resource_o51dv")
+outcome_text = "The explorers walk through the little pine grove, looking for anything worth recording in their logs.
+
+All they find is a beehive in a fallen log."
+
+[sub_resource type="Resource" id="Resource_u5f64"]
+script = ExtResource("12_1hirm")
+card_tier_bonus = 15
+card_tag = 23
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_1xc0c"]
+script = ExtResource("2_klaar")
+label = "Rest briefly."
+aspects = Array[ExtResource("3_iifpr")]([null])
+outcome = SubResource("Resource_u5f64")
+outcome_text = "The explorers stop for a brief rest, relaxing in the sun.
+
+Someone plays a flute. A few people sketch the landscape. The rest just sit down, taking in the beautiful view."
+
+[sub_resource type="Resource" id="Resource_78o4x"]
+script = ExtResource("2_klaar")
+label = "Keep hiking."
+aspects = Array[ExtResource("3_iifpr")]([null])
+outcome_text = "The group decides to move on, not wanting to waste any time.
+
+As they march past the grove, a few surveyors can't help but look back at the sunny hill."
+
+[resource]
+script = ExtResource("14_8yd36")
+episode_id = "rest_hill"
+title = "The Restful Hill"
+spot_types = Array[ExtResource("15_f2nrp")]([ExtResource("16_u5k8i")])
+text = "The scouts have climbed a gently sloping hill, where a light breeze stirs the leaves and the morning sun warms their faces. The smell of crushed pine needles fills the air, and the soft grass looks inviting.
+
+The day has only just begun, but this seems like a perfect place to rest."
+background_image = SubResource("Resource_tmy53")
+background_credit = ExtResource("1_klaar")
+choices = Array[ExtResource("2_klaar")]([SubResource("Resource_pogdi"), SubResource("Resource_bt0lp"), SubResource("Resource_1xc0c"), SubResource("Resource_78o4x")])

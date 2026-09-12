@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="ShardType_Adventurers" format=3 uid="uid://bgohnj0g6llwc"]
+
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="1_bl6fi"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="1_r6raq"]
+[ext_resource type="Resource" uid="uid://bxm0nh4ofcxan" path="res://stage/spots/building_large/upgrade_building_large_2_adventurer_guild.tres" id="2_3h8ul"]
+[ext_resource type="Texture2D" uid="uid://dpmndfwqx2oxi" path="res://shard_types/adventurers/shard_type_adventurers.png" id="4_3h8ul"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="4_mwed1"]
+[ext_resource type="Script" uid="uid://3da70y7b7aax" path="res://shard_types/adventurers/shard_type_adventurers.gd" id="4_x63iw"]
+[ext_resource type="Resource" uid="uid://bammp5wq82y35" path="res://art/pieces/piece_zeshin_old_man_and_dog.tres" id="5_x63iw"]
+[ext_resource type="Resource" uid="uid://b8bcw0011212p" path="res://skills/settlement/skill_settlement_nongoal.tres" id="8_yeehh"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="9_va374"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="10_yeehh"]
+
+[sub_resource type="Resource" id="Resource_42s6q"]
+script = ExtResource("1_bl6fi")
+text = "$shard_name was settled by adventurers and daredevils. It is said that in the shard's early days, a child was not considered educated until they could draw a topographical map of the nearest settlement, yet teaching them to read was considered an optional luxury. \"Literacy is useful,\" the elders of $town1 would say, \"but it will not help you find your way back through the forest in a storm.\""
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_7c60o"]
+script = ExtResource("1_bl6fi")
+text = "Architecture in $shard_name developed with a peculiar philosophy: stability was boring. When the architects designed a great bridge across a gorge, they deliberately engineered a wobble into it. They argued that a bridge that does not sway offers no excitement to the spirit, and that walking across a static structure is merely commuting, whereas crossing their bridge was an event. To this day, guardrails are viewed as insults to one's agility."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_nw6pk"]
+script = ExtResource("1_bl6fi")
+text = "The culture here reveres the \"Party\" above the family unit. Social standing is determined by who you trust to hold your rope when you climb a cliff. The local tea houses are rowdy halls where groups form based on complementary skills. You might see a monk, a merchant, and a woodcutter huddled over a map of the local forest, planning a route just because the monk heard a rumor that getting lost in the deep woods is \"life-changingly terrifying\"."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_v7pj1"]
+script = ExtResource("1_bl6fi")
+text = "In other shards, the appearance of a dangerous beast is a cause for alarm. Here, it is a cause for jealousy. When a massive beast began terrorizing the outskirts of $town3, instead of mobilizing the guards, the village council held a lottery to choose who got the honor of chasing it first. The winners were paraded through the streets in celebration, while the losers sulked and complained that they never got to have any fun."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_r6raq"]
+script = ExtResource("1_bl6fi")
+text = "The Adventurers Guild in $shard_name serves as the de facto government, though it governs lightly. Their primary function is maintaining the Great Board, a massive slab of wood where \"quests\" are posted, though most are merely civic duties wrapped in grandeur. Repairing a roof is framed as \"Summiting the Leaking Tiles\", and delivering grain is \"Bearing the Golden Burden\". It turns out people will happily do mundane chores if you promise them a title and a badge."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_qrc8r"]
+script = ExtResource("9_va374")
+text = "Well, this was an eventful trip. My very first day at the tavern, I was recruited into a party to \"Scour the Infinite Abyss\". They turned out to be a cleaning crew and we spent the next day cleaning the town well. At least I got a shiny copper badge for it.
+
+As I continued traveling, I found the towns bustling but utterly chaotic. Whoever decides to build something doesn't seem to care much for what the settlement actually needs. They just want to tackle the hardest possible project. Like an inn I stayed at that was hanging between two sides of a canyon on a bunch of ropes. Apparently just building on solid ground is \"too boring\"."
+revealed_skill = ExtResource("8_yeehh")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[resource]
+script = ExtResource("4_x63iw")
+adventure_bonus = ExtResource("1_r6raq")
+guild = ExtResource("2_3h8ul")
+shard_type_id = "adventurers"
+name = "The Restless Seekers"
+shard_name_override = "Fūkyōjima"
+shard_name_override_jp = "風狂島"
+shard_name_override_meaning = "Island of Wind-Madness"
+tier = 1
+illustration = ExtResource("4_3h8ul")
+illustration_credit = ExtResource("5_x63iw")
+history = Array[ExtResource("1_bl6fi")]([SubResource("Resource_42s6q"), SubResource("Resource_7c60o"), SubResource("Resource_nw6pk"), SubResource("Resource_v7pj1"), SubResource("Resource_r6raq")])
+trip_reward = SubResource("Resource_qrc8r")
+metadata/_custom_type_script = "uid://c6vrs2bxrk07c"

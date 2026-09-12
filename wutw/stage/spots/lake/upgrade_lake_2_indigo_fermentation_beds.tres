@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://boe5jh48wg71t"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_gpbmq"]
+[ext_resource type="Resource" uid="uid://vmqir3bk0osf" path="res://stage/spots/lake/upgrade_lake_3_master_dyer_workshop.tres" id="2_30wgh"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_krybb"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_sv73j"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="4_tlpvy"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="5_jqjcy"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="7_65vxf"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="8_fkc8q"]
+[ext_resource type="Resource" uid="uid://bb65d05uw68x1" path="res://stage/spots/lake/spot_lake.tres" id="9_jqjcy"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="10_65vxf"]
+[ext_resource type="MapSpriteType_Lake" uid="uid://dcopgy017tsji" path="res://map/sprites/water_features/lake/mst_lake_1.tres" id="11_by5tq"]
+[ext_resource type="MapSpriteType_Lake" uid="uid://gwbeal8t070v" path="res://map/sprites/water_features/lake/mst_lake_2.tres" id="12_r88w4"]
+[ext_resource type="MapSpriteType_Lake" uid="uid://dhue4qeqrdlxe" path="res://map/sprites/water_features/lake/mst_lake_3.tres" id="13_1t33w"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://ghbqby6ai7ir" path="res://map/sprites/spots/lake/mst_lake_indigo_fermenters.tres" id="14_dlted"]
+[ext_resource type="Script" uid="uid://den3krl2s3y0b" path="res://stage/spots/spot_upgrade_visual_attach_to_river.gd" id="15_quqod"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://dnvive6xepqpi" path="res://map/sprites/spots/lake/mst_lake_retting_station.tres" id="16_xjwh0"]
+
+[sub_resource type="Resource" id="Resource_hy1iq"]
+script = ExtResource("15_quqod")
+sprite_type = ExtResource("14_dlted")
+replaced_sprite_type = ExtResource("16_xjwh0")
+ignored_colliders = Array[MapSpriteType]([ExtResource("11_by5tq"), ExtResource("12_r88w4"), ExtResource("13_1t33w")])
+metadata/_custom_type_script = "uid://den3krl2s3y0b"
+
+[resource]
+script = ExtResource("1_gpbmq")
+spot_upgrade_id = "lake_indigo"
+name = "Indigo Fermentation Beds"
+description = "Indigo leaves travel here from the Shrublands to begin the long wait to meet the cloth."
+required_aspects = Array[ExtResource("3_sv73j")]([ExtResource("7_65vxf"), ExtResource("8_fkc8q")])
+granted_bonuses = Dictionary[ExtResource("2_krybb"), int]({
+ExtResource("4_tlpvy"): 10,
+ExtResource("5_jqjcy"): 10
+})
+child_upgrades = Array[ExtResource("1_gpbmq")]([ExtResource("2_30wgh")])
+spot = ExtResource("9_jqjcy")
+visuals = Array[ExtResource("10_65vxf")]([SubResource("Resource_hy1iq")])
+tags = Array[int]([2])

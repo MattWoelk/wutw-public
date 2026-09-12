@@ -1,0 +1,98 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://24h2le8snjm5"]
+
+[ext_resource type="Resource" uid="uid://bv6c0v4iwflk1" path="res://art/pieces/piece_hiroshige_nakanotake.tres" id="1_8dyke"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_gyqs7"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_8dyke"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_fbqck"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="4_f6lre"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="5_085dr"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="6_1b7bg"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="7_sspy7"]
+[ext_resource type="Resource" uid="uid://b6ng25wsqdq2f" path="res://cards/tier2/card_carry.tres" id="8_1verb"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="9_4g20i"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="10_8tpl3"]
+[ext_resource type="Resource" uid="uid://dmfsflijcgrtr" path="res://cards/tier6/card_blind.tres" id="11_41neq"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="12_2l2jq"]
+[ext_resource type="Resource" uid="uid://jigsn0jb4ulf" path="res://cards/tier0/card_wait.tres" id="13_xa3p2"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="14_q7lqm"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="15_nkow5"]
+
+[sub_resource type="Resource" id="Resource_ggyeo"]
+script = ExtResource("1_gyqs7")
+_texture_path = "res://stage/survey/episodes/episode_scary_climb.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_evwjy"]
+script = ExtResource("6_1b7bg")
+bonus_type = ExtResource("5_085dr")
+amount = 15
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_u6fhw"]
+script = ExtResource("2_8dyke")
+label = "Calm her down."
+aspects = Array[ExtResource("3_fbqck")]([ExtResource("4_f6lre")])
+aspects_per_season = Array[ExtResource("3_fbqck")]([null])
+outcome = SubResource("Resource_evwjy")
+outcome_text = "The two scouts closest to the frightened woman speak soothingly to her.
+
+They remove her pack and, holding her hands, walk down the rest of the slope together."
+
+[sub_resource type="Resource" id="Resource_nyibn"]
+script = ExtResource("9_4g20i")
+card_type = ExtResource("8_1verb")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_bch5c"]
+script = ExtResource("2_8dyke")
+label = "Carry her."
+aspects = Array[ExtResource("3_fbqck")]([ExtResource("7_sspy7")])
+aspects_per_season = Array[ExtResource("3_fbqck")]([null])
+outcome = SubResource("Resource_nyibn")
+outcome_text = "The two scouts closest to the frightened woman remove her pack and gently pick her up. 
+
+The group moves slower than before, but they still complete their descent by nightfall.
+"
+
+[sub_resource type="Resource" id="Resource_whfhc"]
+script = ExtResource("9_4g20i")
+card_type = ExtResource("11_41neq")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_tq0cv"]
+script = ExtResource("2_8dyke")
+label = "Use a blindfold."
+aspects = Array[ExtResource("3_fbqck")]([ExtResource("10_8tpl3")])
+aspects_per_season = Array[ExtResource("3_fbqck")]([null])
+outcome = SubResource("Resource_whfhc")
+outcome_text = "A scout comes up with the bright idea of tying a blindfold around the woman's head, to spare her the frightening sight.
+
+Miraculously, she manages to complete the descent safely."
+
+[sub_resource type="Resource" id="Resource_v81iw"]
+script = ExtResource("9_4g20i")
+card_type = ExtResource("13_xa3p2")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_t5axi"]
+script = ExtResource("2_8dyke")
+label = "Wait for her."
+aspects = Array[ExtResource("3_fbqck")]([ExtResource("12_2l2jq")])
+aspects_per_season = Array[ExtResource("3_fbqck")]([null])
+outcome = SubResource("Resource_v81iw")
+outcome_text = "None of the scouts is willing to offer concrete help. They stand around and wait, hoping the woman will recover by herself. She does, eventually."
+
+[resource]
+script = ExtResource("14_q7lqm")
+episode_id = "scary_climb"
+title = "The Anxious Descent"
+biome_types = Array[int]([7])
+text = "The sun is setting behind the rocky peaks as the survey team makes its way down an ancient mountain path. The trail is steep and narrow, making for a daunting descent.
+
+As the evening mist surrounds them, they can just barely make out the shadowy pine forest below.
+
+Suddenly, a scout looks over the edge and freezes in fear, overwhelmed by the sheer drop."
+background_image = SubResource("Resource_ggyeo")
+background_credit = ExtResource("1_8dyke")
+choices = Array[ExtResource("2_8dyke")]([SubResource("Resource_u6fhw"), SubResource("Resource_bch5c"), SubResource("Resource_tq0cv"), SubResource("Resource_t5axi")])

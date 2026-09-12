@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dcw5521io26jy"]
+
+[ext_resource type="Shader" uid="uid://dtp4275w1suyw" path="res://tutorial/starter/starburst.gdshader" id="1_cuxpv"]
+[ext_resource type="Texture2D" uid="uid://chxf88ekbq0ie" path="res://visuals/canvas.png" id="2_81u71"]
+[ext_resource type="Script" uid="uid://cbex0fr82470u" path="res://visuals/portal_transition/portal_transition.gd" id="3_o7kxm"]
+
+[sub_resource type="Gradient" id="Gradient_uc84u"]
+offsets = PackedFloat32Array(0, 0.11752577, 0.20618556, 0.3443299)
+colors = PackedColorArray(0.75, 0.40000004, 0.22500001, 1, 0.9, 0.7542, 0.576, 1, 0.93142855, 0.80316865, 0.619804, 1, 1, 0.895, 0.7, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6gl8b"]
+gradient = SubResource("Gradient_uc84u")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t8iom"]
+shader = ExtResource("1_cuxpv")
+shader_parameter/progress = 0.28400001349
+shader_parameter/center = Vector2(0.48, 0.38)
+shader_parameter/max_dist = 1.014000048165
+shader_parameter/fadein_margin = 0.03
+shader_parameter/fadeout_margin = 0.03
+shader_parameter/slices = 70
+shader_parameter/stripe_variation_frequency = 0.35400001611648
+shader_parameter/stripe_variation_factor = 0.93200004357148
+shader_parameter/aspect_ratio = 1.2
+shader_parameter/speed = 0.00310000013997
+shader_parameter/bg_color = Color(0.38746843, 0.3830845, 0.40943903, 1)
+shader_parameter/ray_gradient = SubResource("GradientTexture1D_6gl8b")
+shader_parameter/ray_gradient_scale = 0.18600000813648
+shader_parameter/overlay_tex = ExtResource("2_81u71")
+shader_parameter/noise_scale = 1376.0
+shader_parameter/noise_strength = 0.167
+shader_parameter/noise_smoothness = 1.0
+
+[node name="PortalTransition" type="ColorRect" unique_id=947332093]
+texture_filter = 4
+texture_repeat = 1
+material = SubResource("ShaderMaterial_t8iom")
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("3_o7kxm")
+
+[node name="SavedTex" type="TextureRect" parent="." unique_id=241288789]
+unique_name_in_owner = true
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_81u71")
+expand_mode = 1

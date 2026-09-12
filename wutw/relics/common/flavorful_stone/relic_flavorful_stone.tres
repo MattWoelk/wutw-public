@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Relic_FlavorfulStone" format=3 uid="uid://bqr2mxlkyigq3"]
+
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="1_7mgaq"]
+[ext_resource type="Script" uid="uid://bd63qaj0ojkc3" path="res://relics/common/flavorful_stone/relic_flavorful_stone.gd" id="1_a1fc0"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="2_askwe"]
+[ext_resource type="Texture2D" uid="uid://ieh7hwxrot20" path="res://relics/common/flavorful_stone/flavorful_stone.png" id="2_rgpmn"]
+[ext_resource type="Resource" uid="uid://5q63svcbmx37" path="res://glossary/categories/termcategory_relic.tres" id="3_7mgaq"]
+
+[resource]
+script = ExtResource("1_a1fc0")
+triggering_bonus = ExtResource("1_7mgaq")
+amount_required = 15
+relic_id = "flavorful_stone"
+default_name = "Flavorful Stone"
+default_description = "If at least %d %s is gained during a <term_lower:turn>, <term_lower:draw> an extra <term_lower:glyph> on the next <term_lower:redraw>."
+flavor_text = "Just needs a bit of miso and a drop of soy sauce."
+icon = ExtResource("2_rgpmn")
+default_starting_state = 1
+term_categories = Array[ExtResource("2_askwe")]([ExtResource("3_7mgaq")])
+metadata/_custom_type_script = "uid://bd63qaj0ojkc3"

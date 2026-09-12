@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cpkphc2j05xkg"]
+
+[ext_resource type="Script" uid="uid://dv7d72x3g22ic" path="res://bonuses/bonus_progress.gd" id="1_8p2f4"]
+[ext_resource type="PackedScene" uid="uid://227b305k8bpi" path="res://bonuses/bonus.tscn" id="2_5hdjn"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="2_86nd8"]
+[ext_resource type="PackedScene" uid="uid://qi2x1knh3gac" path="res://theme/progress_bar/ukiyoe_progress_bar.tscn" id="5_fvkwh"]
+[ext_resource type="Shader" uid="uid://cy23kwgtjt4et" path="res://theme/panel/panel.gdshader" id="6_2e0ay"]
+[ext_resource type="Texture2D" uid="uid://cgsn7350xgqr5" path="res://theme/panel/panel_bg.png" id="7_eb8q7"]
+[ext_resource type="Texture2D" uid="uid://bnkoruxi23qsp" path="res://theme/panel/panel_frame.png" id="8_5t4is"]
+
+[sub_resource type="Gradient" id="Gradient_wd1og"]
+offsets = PackedFloat32Array(0.00512295)
+colors = PackedColorArray(0.53, 0.345383, 0.0265, 0.317647)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tloj2"]
+gradient = SubResource("Gradient_wd1og")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rermm"]
+shader = ExtResource("6_2e0ay")
+shader_parameter/size = Vector2(141, 55.5)
+shader_parameter/background = ExtResource("7_eb8q7")
+shader_parameter/background_shade = SubResource("GradientTexture2D_tloj2")
+shader_parameter/background_tex_size = Vector2(2291, 3118)
+shader_parameter/background_scale = 2.0
+shader_parameter/frame_tex = ExtResource("8_5t4is")
+shader_parameter/frame_tex_size = Vector2(1127, 976)
+shader_parameter/frame_margin = Vector4(15, 15, 15, 15)
+shader_parameter/frame_scale = 0.93
+shader_parameter/frame_color = Color(0.24, 0.18848, 0.1056, 1)
+shader_parameter/decor_transform = Vector4(0, 0, 300, 100)
+shader_parameter/decor_modulate = Color(1, 1, 1, 0)
+
+[node name="BonusProgress" type="HBoxContainer" unique_id=511275840]
+offset_right = 127.0
+offset_bottom = 49.0
+theme_override_constants/separation = -3
+script = ExtResource("1_8p2f4")
+bonus_type = ExtResource("2_86nd8")
+goal_value = 9
+current_value = 3
+
+[node name="Bonus" parent="." unique_id=380923082 instance=ExtResource("2_5hdjn")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+mouse_filter = 2
+bonus_type = ExtResource("2_86nd8")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1247470489]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="ProgressBar" parent="MarginContainer" unique_id=1794460434 instance=ExtResource("5_fvkwh")]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_rermm")
+layout_mode = 2
+max_value = 9.0
+value = 3.0
+animate_when_full = true

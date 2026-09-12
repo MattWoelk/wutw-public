@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://c3002t5ds1wfi"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_r06b7"]
+[ext_resource type="Script" uid="uid://b2sp10jrl0p1v" path="res://stage/hauntings/effects/haunting_effect_lose_gained_bonus.gd" id="3_541vj"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="3_uyqx7"]
+[ext_resource type="Resource" uid="uid://drrooi5hfwshd" path="res://art/pieces/piece_yokai_kappa.tres" id="4_nnx6r"]
+[ext_resource type="Texture2D" uid="uid://5m1i5oanfqe1" path="res://stage/hauntings/types/kappa/haunting_kappa.png" id="4_nrcy0"]
+[ext_resource type="Texture2D" uid="uid://c4b4q26btwe7k" path="res://stage/hauntings/types/kappa/haunting_kappa_realistic_slippery_rocks.png" id="5_nnx6r"]
+[ext_resource type="Resource" uid="uid://ba143sxrj8la6" path="res://art/pieces/piece_hiroshige_ushiwakamaru_waterfall.tres" id="5_oaybg"]
+[ext_resource type="Resource" uid="uid://cmbyg0gub8sum" path="res://stage/spots/river/spot_river.tres" id="7_oaybg"]
+[ext_resource type="Script" uid="uid://bf8kygsbxpshs" path="res://stage/hauntings/triggers/haunting_trigger_goal_gained.gd" id="8_ccsk8"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="8_j54wq"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="8_oaybg"]
+
+[sub_resource type="Resource" id="Resource_mg0sj"]
+script = ExtResource("3_541vj")
+is_half = true
+metadata/_custom_type_script = "uid://b2sp10jrl0p1v"
+
+[sub_resource type="Resource" id="Resource_17e70"]
+script = ExtResource("8_ccsk8")
+nongoal = true
+any_spot = false
+metadata/_custom_type_script = "uid://bf8kygsbxpshs"
+
+[resource]
+script = ExtResource("8_j54wq")
+haunting_id = "kappa"
+name = "Kappa"
+name_japanese = "河童"
+name_realistic = "Slippery Rocks"
+name_translation = "Children of the River"
+description = "Settlers blame the mischievous Kappa for dragging their goods and children into the river."
+description_realistic = "Algae and moss have made the river stones slick, causing folks to lose their footing."
+description_long = "Work by the river has become treacherous. People slip and tumble into the rapids, coming back soaked and shivering, claiming webbed hands grabbed at their ankles from just beneath the surface.
+
+The locals say the Kappa have claimed the banks. These river children have a hollow dish of water set into the top of their heads, granting them the strength to drag humans into the rushing stream. Tradition dictates that offering them a cucumber might buy safe passage, but priests suggest bowing instead. The creatures are compelled to bow in return, spilling the life-giving water from their heads and losing their strength."
+image_small = ExtResource("4_nrcy0")
+image_credit = ExtResource("4_nnx6r")
+image_small_realistic = ExtResource("5_nnx6r")
+image_realistic_credit = ExtResource("5_oaybg")
+spot_type = ExtResource("7_oaybg")
+base_aspect_types = Array[ExtResource("1_r06b7")]([ExtResource("3_uyqx7")])
+extra_aspect_type = ExtResource("3_uyqx7")
+scaling_bonus_type = ExtResource("8_oaybg")
+trigger = SubResource("Resource_17e70")
+effect = SubResource("Resource_mg0sj")
+spot_attach_mode = 2
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

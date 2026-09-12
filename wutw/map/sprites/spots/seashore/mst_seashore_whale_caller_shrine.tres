@@ -1,0 +1,57 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://br6virlat4ykc"]
+
+[ext_resource type="MapSpriteType_Generic" uid="uid://bonk70v3vay2a" path="res://map/sprites/spots/seashore/mst_seashore_driftwood_shoal.tres" id="1_e8ta4"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://b548ltw41s15m" path="res://map/sprites/hills/mst_hill_6.tres" id="2_bpweu"]
+[ext_resource type="MapSpriteType_Building" uid="uid://ccblatml4m6d" path="res://map/sprites/buildings/houses/mst_house_2.tres" id="3_4iksv"]
+[ext_resource type="MapSpriteType_Tree" uid="uid://budsed5i5pmcv" path="res://map/sprites/trees/fir/mst_tree_fir_4_single_tall.tres" id="4_jur2e"]
+[ext_resource type="MapSpriteType_Tree" uid="uid://c4oeipookrc6w" path="res://map/sprites/trees/fir/mst_tree_fir_7_single_tall.tres" id="5_i278d"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://3neyiepeaf7c" path="res://map/sprites/spots/seashore/mst_seashore_whale_statue.tres" id="6_26xiu"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://byyq76l0ykoob" path="res://map/sprites/buildings/mst_torii_minor.tres" id="7_seutd"]
+[ext_resource type="WwiseEvent" uid="uid://clsvvfb3wx4sd" path="res://Wwise/resources/Event/{A3D014E4-C7CD-4F02-8279-A98BFF04D0C3}.tres" id="8_jur2e"]
+
+[sub_resource type="MapSpriteCollision_Rect" id="MapSpriteCollision_Rect_4iksv"]
+rect = Rect2(-6.205, -1.44, 12.51, 3.985)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Rect" id="MapSpriteCollision_Rect_jur2e"]
+rect = Rect2(-2.85, -3.74, 6.295, 2.685)
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_5jinl"]
+sprite_type = ExtResource("1_e8ta4")
+offset = Vector2(0.39, -1.855)
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_js8xt"]
+sprite_type = ExtResource("2_bpweu")
+offset = Vector2(-2.385, -0.25)
+scale = 0.96
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_rek8g"]
+sprite_type = ExtResource("3_4iksv")
+offset = Vector2(-2.465, -0.6)
+scale = 0.695
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_auwa3"]
+sprite_type = ExtResource("4_jur2e")
+offset = Vector2(3.665, 0.65)
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_r2jhk"]
+sprite_type = ExtResource("5_i278d")
+offset = Vector2(2.545, -0.56)
+scale = 0.815
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_ug2t1"]
+sprite_type = ExtResource("6_26xiu")
+offset = Vector2(-1.655, 0.475)
+scale = 1.16
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_l07qd"]
+sprite_type = ExtResource("7_seutd")
+offset = Vector2(3.34, 2.07)
+scale = 0.795
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_5jinl"), SubResource("MapSpriteComponent_js8xt"), SubResource("MapSpriteComponent_rek8g"), SubResource("MapSpriteComponent_auwa3"), SubResource("MapSpriteComponent_r2jhk"), SubResource("MapSpriteComponent_ug2t1"), SubResource("MapSpriteComponent_l07qd")])
+footprint_radius = 6.5
+sound = ExtResource("8_jur2e")
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Rect_4iksv"), SubResource("MapSpriteCollision_Rect_jur2e")])

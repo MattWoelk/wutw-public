@@ -1,0 +1,24 @@
+[gd_resource type="MapSpriteType_Tree" format=3 uid="uid://cvkjpcbfcxuq"]
+
+[ext_resource type="PackedScene" uid="uid://cipqyvkq40q5u" path="res://map/sprites/trees/deciduous/map_effect_sakura_petals.tscn" id="1_sovk5"]
+
+[sub_resource type="MapSpriteCollision_Circle" id="MapSpriteCollision_Circle_2qck8"]
+radius = 0.84
+blocking = true
+
+[sub_resource type="MapEffectAttachment" id="MapEffectAttachment_knlhj"]
+scene = ExtResource("1_sovk5")
+offset = Vector2(-0.112, -0.655)
+scale = 0.025
+
+[resource]
+atlas_rect = Rect2i(1182, 65, 60, 40)
+daubs = Array[Rect2]([Rect2(-1.235, -0.05, 2.82, 2.98), Rect2(1.595, -0.765, 2.69, 2.54), Rect2(0.35, -1.065, 3.87, 3.345)])
+daub_instance_type = 26
+use_prepass = false
+map_rect = Rect2(-0.515, -1, 6, 4)
+footprint_radius = 2.375
+default_scale = 0.5
+effects = Array[MapEffectAttachment]([SubResource("MapEffectAttachment_knlhj")])
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Circle_2qck8")])
+removable = true

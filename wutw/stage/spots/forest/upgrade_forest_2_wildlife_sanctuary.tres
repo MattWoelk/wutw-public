@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://bphp08b0lalpe"]
+
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="1_ch4jm"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="2_eq8eo"]
+[ext_resource type="Resource" uid="uid://bmpu6lf4an37v" path="res://stage/spots/forest/upgrade_forest_3_labyrinth.tres" id="2_kf5po"]
+[ext_resource type="Resource" uid="uid://bl3yqobwttr4n" path="res://stage/spots/forest/upgrade_forest_3_old_glade.tres" id="3_1lk8a"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="3_kf5po"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="4_1lk8a"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="5_mkr7j"]
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="6_vpopo"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_5nh4j"]
+[ext_resource type="Resource" uid="uid://ucnbpdhw8mob" path="res://stage/spots/forest/spot_forest.tres" id="9_gdvua"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://c5kilms4cuprs" path="res://map/sprites/spots/forest/mst_forest_wildlife_reserve.tres" id="11_snx3j"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://bryu745m44dyi" path="res://map/sprites/spots/forest/mst_forest_foraging_glade.tres" id="12_3y884"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="13_qghnn"]
+
+[sub_resource type="Resource" id="Resource_quago"]
+script = ExtResource("13_qghnn")
+old_sprite_type = ExtResource("12_3y884")
+new_sprite_type = ExtResource("11_snx3j")
+biome = 9
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("6_vpopo")
+spot_upgrade_id = "forest_animal_sanctuary"
+name = "Wildlife Sanctuary"
+description = "A place where the wild beasts outnumber the words scholars have for naming them."
+required_aspects = Array[ExtResource("4_1lk8a")]([ExtResource("5_mkr7j")])
+granted_bonuses = Dictionary[ExtResource("1_ch4jm"), int]({
+ExtResource("2_eq8eo"): 10,
+ExtResource("3_kf5po"): 5
+})
+child_upgrades = Array[ExtResource("6_vpopo")]([ExtResource("2_kf5po"), ExtResource("3_1lk8a")])
+spot = ExtResource("9_gdvua")
+visuals = Array[ExtResource("9_5nh4j")]([SubResource("Resource_quago")])
+tags = Array[int]([0])

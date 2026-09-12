@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="Quest_Settler" format=3 uid="uid://cwh5wvlol4chx"]
+
+[ext_resource type="Script" uid="uid://cjloydxgrv8oa" path="res://quests/settler/settler_quest_challenge.gd" id="1_4vnr7"]
+[ext_resource type="Script" uid="uid://ck5h8ecedjfx4" path="res://quests/settler/challenges/settler_quest_challenge_foray_goals.gd" id="2_4vnr7"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="3_mrnxd"]
+[ext_resource type="Resource" uid="uid://c2qx8ufo4c12r" path="res://characters/jobs/job_monk_ember.tres" id="4_a4wlo"]
+[ext_resource type="Resource" uid="uid://cwt7x3fd6ms86" path="res://relics/common/talisman_charcoal_bead/relic_talisman_charcoal_bead.tres" id="6_mrnxd"]
+[ext_resource type="Script" uid="uid://cd4swbq3t72je" path="res://quests/settler/settler_quest_reward.gd" id="6_wo51k"]
+[ext_resource type="Script" uid="uid://0k12wwnmq50h" path="res://quests/settler/rewards/settler_quest_reward_add_relic.gd" id="8_dmhlh"]
+[ext_resource type="Script" uid="uid://1na7ymvvvbby" path="res://quests/settler/quest_settler.gd" id="9_62kpm"]
+[ext_resource type="Script" uid="uid://bxua8gxfjp2wy" path="res://quests/settler/settler_quest_goal.gd" id="10_rxw0p"]
+[ext_resource type="Script" uid="uid://ku752yv8p8ur" path="res://quests/settler/goals/settler_quest_goal_settlement_upgrades.gd" id="10_u3vav"]
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="12_d3rjg"]
+[ext_resource type="Resource" uid="uid://bi3q0q8mk0b41" path="res://stage/spots/mountain/upgrade_mountain_2_ember_monastery.tres" id="12_rpiyx"]
+
+[sub_resource type="Resource" id="Resource_kitb8"]
+script = ExtResource("2_4vnr7")
+metadata/_custom_type_script = "uid://ck5h8ecedjfx4"
+
+[sub_resource type="Resource" id="Resource_r8u1m"]
+script = ExtResource("8_dmhlh")
+relic = ExtResource("6_mrnxd")
+metadata/_custom_type_script = "uid://0k12wwnmq50h"
+
+[sub_resource type="Resource" id="Resource_dmhlh"]
+script = ExtResource("10_u3vav")
+upgrades = Array[ExtResource("12_d3rjg")]([ExtResource("12_rpiyx"), ExtResource("12_rpiyx")])
+metadata/_custom_type_script = "uid://ku752yv8p8ur"
+
+[resource]
+script = ExtResource("9_62kpm")
+intro_text = "The Ember Order has sent me to establish a chapter on a new shard. I have many fellow monks and nuns with me, though, so we will need two monasteries to fit us all."
+challenges = Array[ExtResource("1_4vnr7")]([SubResource("Resource_kitb8")])
+settler_goals = Array[ExtResource("10_rxw0p")]([SubResource("Resource_dmhlh")])
+rewards = Array[ExtResource("6_wo51k")]([SubResource("Resource_r8u1m")])
+restrict_to_jobs = Array[ExtResource("3_mrnxd")]([ExtResource("4_a4wlo")])
+quest_id = "settler_talisman_bead"
+category = 2
+name = "A Chapter of the Ember Order"
+metadata/_custom_type_script = "uid://1na7ymvvvbby"

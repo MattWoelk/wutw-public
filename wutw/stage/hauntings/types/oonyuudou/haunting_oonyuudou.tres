@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://b84isvnm4n73q"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_1g10y"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="2_je25i"]
+[ext_resource type="Resource" uid="uid://dte7x7g42k5o6" path="res://cards/tier6/card_quake.tres" id="3_246g2"]
+[ext_resource type="Texture2D" uid="uid://d4kgs1encu7ob" path="res://stage/hauntings/types/oonyuudou/haunting_oonyuudou.png" id="5_2epjy"]
+[ext_resource type="Script" uid="uid://777usfqcjmox" path="res://stage/hauntings/effects/haunting_effect_add_card.gd" id="5_2k1fg"]
+[ext_resource type="Resource" uid="uid://begjnmv1hlfw8" path="res://art/pieces/piece_bakemono_oonyuudou.tres" id="5_246g2"]
+[ext_resource type="Resource" uid="uid://tre4mqpt5qkr" path="res://art/pieces/piece_eisen_kounosu.tres" id="6_2epjy"]
+[ext_resource type="Texture2D" uid="uid://c5ja022bbvmxc" path="res://stage/hauntings/types/oonyuudou/haunting_oonyuudou_realistc_earthquake.png" id="6_yrnpf"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="8_oyis0"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="9_yrnpf"]
+[ext_resource type="Script" uid="uid://2820j4fqvhls" path="res://stage/hauntings/triggers/haunting_trigger_slot_filled.gd" id="10_2epjy"]
+
+[sub_resource type="Resource" id="Resource_uurmi"]
+script = ExtResource("5_2k1fg")
+card_type = ExtResource("3_246g2")
+metadata/_custom_type_script = "uid://777usfqcjmox"
+
+[sub_resource type="Resource" id="Resource_uj6x6"]
+script = ExtResource("10_2epjy")
+any_spot = false
+metadata/_custom_type_script = "uid://2820j4fqvhls"
+
+[resource]
+script = ExtResource("8_oyis0")
+haunting_id = "oonyuudou"
+name = "Ōnyūdō"
+name_japanese = "大入道"
+name_realistic = "Earthquake"
+name_translation = "Giant Priests"
+description = "Settlers warn of a towering, shadowy priest whose heavy footsteps make the very foundations of the world tremble."
+description_realistic = "Regular earthquakes shake the area, disrupting construction and daily life."
+description_long = "It begins with tea spilling from cups and tools rattling on workbenches. Soon, the tremors grow stronger. Every time a new beam is raised or a great task is undertaken, the ground shudders violently, throwing workers to their knees.
+
+The elders speak of the Ōnyūdō, the Giant Priests. They say these towering monks appear when a settlement grows too proud, building their homes taller than the ancient trees and forgetting their humility. The giant's massive feet stomp the earth, reminding the settlers that the ground they stand on is not theirs to control."
+image_small = ExtResource("5_2epjy")
+image_credit = ExtResource("5_246g2")
+image_small_realistic = ExtResource("6_yrnpf")
+image_realistic_credit = ExtResource("6_2epjy")
+base_aspect_types = Array[ExtResource("1_1g10y")]([ExtResource("2_je25i")])
+extra_aspect_type = ExtResource("2_je25i")
+scaling_bonus_type = ExtResource("9_yrnpf")
+trigger = SubResource("Resource_uj6x6")
+effect = SubResource("Resource_uurmi")
+spot_attach_mode = 2
+settlement_attach_mode = 2
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

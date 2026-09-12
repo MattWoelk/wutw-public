@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bjgjlkb7wy3eu"]
+
+[ext_resource type="Script" uid="uid://bmjaaduvj3bls" path="res://hub/hub.gd" id="1_n4d7h"]
+[ext_resource type="PackedScene" uid="uid://bdxi78wdduwfu" path="res://hub/hub_content.scn" id="3_6ebxt"]
+[ext_resource type="PackedScene" uid="uid://ddmrf2j3js8rs" path="res://debate/debate_status_bar.tscn" id="3_clbpi"]
+
+[node name="Hub" type="Node2D" unique_id=652285157]
+script = ExtResource("1_n4d7h")
+max_zoom = 4.0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=641595601]
+unique_name_in_owner = true
+offset_right = 1920.0
+offset_bottom = 1080.0
+metadata/_edit_lock_ = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=955169789]
+unique_name_in_owner = true
+handle_input_locally = false
+physics_object_picking = true
+physics_object_picking_sort = true
+gui_snap_controls_to_pixels = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="HubContent" parent="SubViewportContainer/SubViewport" unique_id=1067868658 instance=ExtResource("3_6ebxt")]
+unique_name_in_owner = true
+
+[node name="Camera" type="Camera2D" parent="SubViewportContainer/SubViewport" unique_id=767130348]
+unique_name_in_owner = true
+position = Vector2(960, 517)
+zoom = Vector2(1.05, 1.05)
+metadata/_edit_lock_ = true
+
+[node name="DebateStatusBar" parent="." unique_id=992195053 instance=ExtResource("3_clbpi")]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 510.0
+offset_top = 16.0
+offset_right = 1410.0
+offset_bottom = 71.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[connection signal="gui_input" from="SubViewportContainer" to="." method="_on_gui_input"]
+[connection signal="character_clicked" from="SubViewportContainer/SubViewport/HubContent" to="." method="_on_hub_content_character_clicked"]
+[connection signal="companion_clicked" from="SubViewportContainer/SubViewport/HubContent" to="." method="_on_hub_content_companion_clicked"]
+[connection signal="lookout_tower_clicked" from="SubViewportContainer/SubViewport/HubContent" to="." method="_on_hub_content_lookout_tower_clicked"]
+[connection signal="main_gate_clicked" from="SubViewportContainer/SubViewport/HubContent" to="." method="_on_hub_content_main_gate_clicked"]
+[connection signal="museum_clicked" from="SubViewportContainer/SubViewport/HubContent" to="." method="_on_hub_content_museum_clicked"]
+[connection signal="museum_exhibit_clicked" from="SubViewportContainer/SubViewport/HubContent" to="." method="_on_hub_content_museum_exhibit_clicked"]
+[connection signal="notice_board_clicked" from="SubViewportContainer/SubViewport/HubContent" to="." method="_on_hub_content_notice_board_clicked"]
+[connection signal="portal_network_clicked" from="SubViewportContainer/SubViewport/HubContent" to="." method="_on_hub_content_portal_network_clicked"]
+[connection signal="scroll_clicked" from="SubViewportContainer/SubViewport/HubContent" to="." method="_on_hub_content_scroll_clicked"]
+[connection signal="shrine_clicked" from="SubViewportContainer/SubViewport/HubContent" to="." method="_on_hub_content_shrine_clicked"]
+[connection signal="studio_clicked" from="SubViewportContainer/SubViewport/HubContent" to="." method="_on_hub_content_studio_clicked"]
+[connection signal="on_speech_requested" from="DebateStatusBar" to="." method="_on_debate_status_bar_on_speech_requested"]

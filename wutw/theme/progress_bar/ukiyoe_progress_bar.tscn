@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://qi2x1knh3gac"]
+
+[ext_resource type="Script" uid="uid://cyvobhuv4fsii" path="res://theme/progress_bar/ukiyoe_progress_bar.gd" id="1_tloj2"]
+[ext_resource type="Shader" uid="uid://cy23kwgtjt4et" path="res://theme/panel/panel.gdshader" id="1_wd1og"]
+[ext_resource type="Texture2D" uid="uid://cgsn7350xgqr5" path="res://theme/panel/panel_bg.png" id="2_tloj2"]
+[ext_resource type="Texture2D" uid="uid://bnkoruxi23qsp" path="res://theme/panel/panel_frame.png" id="3_cdwed"]
+[ext_resource type="Shader" uid="uid://dsaci6xxr2re0" path="res://theme/progress_bar/ukiyoe_progress_bar.gdshader" id="5_cdwed"]
+[ext_resource type="Texture2D" uid="uid://go64cbx1ohwd" path="res://theme/button/white_1x1px.png" id="5_tloj2"]
+[ext_resource type="Texture2D" uid="uid://hoyrjynxrxih" path="res://map/sprites/atlases/watercolor_brush_atlas.png" id="6_ohjbc"]
+
+[sub_resource type="Gradient" id="Gradient_wd1og"]
+offsets = PackedFloat32Array(0.00512295)
+colors = PackedColorArray(0.53, 0.345383, 0.0265, 0.317647)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tloj2"]
+gradient = SubResource("Gradient_wd1og")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wd1og"]
+shader = ExtResource("1_wd1og")
+shader_parameter/size = Vector2(177, 67.5)
+shader_parameter/background = ExtResource("2_tloj2")
+shader_parameter/background_shade = SubResource("GradientTexture2D_tloj2")
+shader_parameter/background_tex_size = Vector2(2291, 3118)
+shader_parameter/background_scale = 2.0
+shader_parameter/frame_tex = ExtResource("3_cdwed")
+shader_parameter/frame_tex_size = Vector2(1127, 976)
+shader_parameter/frame_margin = Vector4(15, 15, 15, 15)
+shader_parameter/frame_scale = 0.93
+shader_parameter/frame_color = Color(0.24, 0.18848, 0.1056, 1)
+shader_parameter/decor_transform = Vector4(0, 0, 300, 100)
+shader_parameter/decor_modulate = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tl6pn"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tloj2"]
+shader = ExtResource("5_cdwed")
+shader_parameter/margin = 1.865
+shader_parameter/spacing = 0.19
+shader_parameter/positive_color = Color(0.5, 0.358, 0, 0.486)
+shader_parameter/negative_color = Color(0.032, 0.277, 0.29, 0.6)
+shader_parameter/full_color = Color(0.43677083, 0.032759327, 0.24018463, 0.6)
+shader_parameter/blend = 0.4
+shader_parameter/damage_blend = 0.33
+shader_parameter/roundness = 0.57
+shader_parameter/progress_margin = 0.09
+shader_parameter/progress_scale = 1.16
+shader_parameter/is_negative = false
+shader_parameter/daub_tex = ExtResource("6_ohjbc")
+shader_parameter/daub_frames_h = 3
+shader_parameter/daub_frames_v = 3
+shader_parameter/size = Vector2(110, 37)
+shader_parameter/progress = 0.5
+shader_parameter/damage_progress = 0.0
+shader_parameter/full_anim_progress = 0.0
+
+[node name="UkiyoeProgressBar" type="PanelContainer" unique_id=44961872]
+material = SubResource("ShaderMaterial_wd1og")
+offset_right = 118.0
+offset_bottom = 45.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tl6pn")
+script = ExtResource("1_tloj2")
+material_customized = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=620611424]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_tloj2")
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("5_tloj2")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="." unique_id=44959674]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 0
+text = " 50 / 100 "
+horizontal_alignment = 1
+vertical_alignment = 1

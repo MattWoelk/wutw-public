@@ -1,0 +1,29 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://kpg7r5ffkh7w"]
+
+[ext_resource type="Shader" uid="uid://cy23kwgtjt4et" path="res://theme/panel/panel.gdshader" id="1_8tpgs"]
+[ext_resource type="Texture2D" uid="uid://cgsn7350xgqr5" path="res://theme/panel/panel_bg.png" id="2_v2cs4"]
+[ext_resource type="Texture2D" uid="uid://btmgwpuh401tj" path="res://stage/spots/seashore/panel_decor_seashore.png" id="3_8tpgs"]
+[ext_resource type="Texture2D" uid="uid://bnkoruxi23qsp" path="res://theme/panel/panel_frame.png" id="4_fsax7"]
+
+[sub_resource type="Gradient" id="Gradient_v2cs4"]
+offsets = PackedFloat32Array(0, 0.328893, 0.995902)
+colors = PackedColorArray(0.798, 0.884133, 0.95, 1, 0.6552, 0.888767, 0.91, 0, 1, 0.979833, 0.89, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2mtbx"]
+gradient = SubResource("Gradient_v2cs4")
+fill_to = Vector2(0, 1)
+
+[resource]
+shader = ExtResource("1_8tpgs")
+shader_parameter/background = ExtResource("2_v2cs4")
+shader_parameter/background_shade = SubResource("GradientTexture2D_2mtbx")
+shader_parameter/background_tex_size = Vector2(2291, 3118)
+shader_parameter/background_scale = 2.93
+shader_parameter/frame_tex = ExtResource("4_fsax7")
+shader_parameter/frame_tex_size = Vector2(1127, 976)
+shader_parameter/frame_margin = Vector4(15, 15, 15, 15)
+shader_parameter/frame_scale = 0.93
+shader_parameter/frame_color = Color(0, 0, 0, 1)
+shader_parameter/decor_tex = ExtResource("3_8tpgs")
+shader_parameter/decor_transform = Vector4(0, -4.56, 503.605, 300)
+shader_parameter/decor_modulate = Color(1, 1, 1, 0.282353)

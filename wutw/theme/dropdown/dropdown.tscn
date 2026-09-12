@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cvtwogaio38ov"]
+
+[ext_resource type="Material" uid="uid://dm0coidukcc6" path="res://theme/button/ukiyoe_button_material.tres" id="1_ipr4i"]
+[ext_resource type="Texture2D" uid="uid://go64cbx1ohwd" path="res://theme/button/white_1x1px.png" id="2_rv80g"]
+[ext_resource type="Script" uid="uid://dtd2vheh46im4" path="res://theme/dropdown/dropdown.gd" id="3_axt20"]
+[ext_resource type="Texture2D" uid="uid://cdpl0sb6xpqe2" path="res://theme/dropdown/dowpdown_arrow.png" id="4_kshxn"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="6_cxh7u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iii7n"]
+content_margin_left = 20.0
+content_margin_top = 14.0
+content_margin_right = 8.0
+content_margin_bottom = 13.0
+texture = ExtResource("2_rv80g")
+
+[node name="Dropdown" type="Button" unique_id=2079276916]
+material = ExtResource("1_ipr4i")
+instance_shader_parameters/size = Vector2(279.30005, 58.799988)
+instance_shader_parameters/state = 0.0
+offset_right = 190.0
+offset_bottom = 40.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_iii7n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_iii7n")
+theme_override_styles/hover = SubResource("StyleBoxTexture_iii7n")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_iii7n")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_iii7n")
+icon = ExtResource("4_kshxn")
+icon_alignment = 2
+expand_icon = true
+script = ExtResource("3_axt20")
+initial_items = Dictionary[String, Variant]({})
+stylebox_override = SubResource("StyleBoxTexture_iii7n")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="Label" parent="." unique_id=304132895 instance=ExtResource("6_cxh7u")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_right = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Current Choice"
+vertical_alignment = 1

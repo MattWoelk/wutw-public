@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="Quest_Settler" format=3 uid="uid://mfcptnln2og3"]
+
+[ext_resource type="Script" uid="uid://cjloydxgrv8oa" path="res://quests/settler/settler_quest_challenge.gd" id="1_sp01r"]
+[ext_resource type="Script" uid="uid://4wq52c05i2oa" path="res://quests/settler/challenges/settler_quest_challenge_run_var.gd" id="2_6fj5x"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="3_f7xn0"]
+[ext_resource type="Resource" uid="uid://gb2hon6q3l08" path="res://characters/jobs/job_adventurer.tres" id="4_fqds5"]
+[ext_resource type="Script" uid="uid://cd4swbq3t72je" path="res://quests/settler/settler_quest_reward.gd" id="5_pi8yy"]
+[ext_resource type="Script" uid="uid://cvrgydjebg044" path="res://quests/settler/rewards/settler_quest_reward_run_var.gd" id="6_87w5x"]
+[ext_resource type="Script" uid="uid://1na7ymvvvbby" path="res://quests/settler/quest_settler.gd" id="7_1x65m"]
+[ext_resource type="Script" uid="uid://bxua8gxfjp2wy" path="res://quests/settler/settler_quest_goal.gd" id="8_851an"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="9_pia73"]
+[ext_resource type="Script" uid="uid://b47segbdx24bm" path="res://quests/settler/goals/settler_quest_goal_run_bonus.gd" id="10_66wwq"]
+
+[sub_resource type="Resource" id="Resource_3c148"]
+script = ExtResource("2_6fj5x")
+var_type = 43
+delta = 10
+description = "Increases <term_lower:haunting> probability by 10%."
+metadata/_custom_type_script = "uid://4wq52c05i2oa"
+
+[sub_resource type="Resource" id="Resource_5rqou"]
+script = ExtResource("6_87w5x")
+run_var = 8
+delta = 10
+preview_description = "Increase the <term_lower:card_rarity_tier> of <term_lower:glyph> rewards by 10%."
+outcome_description = "Increased the <term_lower:card_rarity_tier> of <term_lower:glyph> rewards by 10%."
+metadata/_custom_type_script = "uid://cvrgydjebg044"
+
+[sub_resource type="Resource" id="Resource_svwwh"]
+script = ExtResource("10_66wwq")
+bonus_type = ExtResource("9_pia73")
+bonus_amount = 200
+metadata/_custom_type_script = "uid://b47segbdx24bm"
+
+[resource]
+script = ExtResource("7_1x65m")
+intro_text = "My old shard is so boring. They just eat, work, and sleep. I want to settle on a shard full of mysteries and adventure!"
+challenges = Array[ExtResource("1_sp01r")]([SubResource("Resource_3c148")])
+settler_goals = Array[ExtResource("8_851an")]([SubResource("Resource_svwwh")])
+rewards = Array[ExtResource("5_pi8yy")]([SubResource("Resource_5rqou")])
+restrict_to_jobs = Array[ExtResource("3_f7xn0")]([ExtResource("4_fqds5")])
+quest_id = "settler_daredevil"
+category = 2
+name = "A Daredevil"
+metadata/_custom_type_script = "uid://1na7ymvvvbby"

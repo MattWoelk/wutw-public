@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://bbriab4xm77gs"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_qqays"]
+[ext_resource type="Resource" uid="uid://bi3q0q8mk0b41" path="res://stage/spots/mountain/upgrade_mountain_2_ember_monastery.tres" id="2_54jow"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_cre6w"]
+[ext_resource type="Resource" uid="uid://bg32qkqbt7iyx" path="res://stage/spots/mountain/upgrade_mountain_2_lava_fed_forges.tres" id="3_r83al"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_x5rwk"]
+[ext_resource type="Resource" uid="uid://1d5p5isd42ha" path="res://stage/spots/mountain/upgrade_mountain_2_natural_hot_spring.tres" id="4_7fixe"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="6_0e342"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="7_k0c35"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="9_3tc3e"]
+[ext_resource type="Resource" uid="uid://dxoxvtquc3hu2" path="res://stage/spots/mountain/spot_mountain.tres" id="10_7fixe"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="11_0e342"]
+[ext_resource type="Script" uid="uid://cm6qovq4s06ky" path="res://stage/spots/spot_upgrade_visual_replace.gd" id="12_0e342"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://yi6r4d10vn2d" path="res://map/sprites/mountains/mst_mountain_1_medium.tres" id="12_p08a7"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://desakgu6q3yov" path="res://map/sprites/mountains/mst_mountain_2_large.tres" id="13_63xfd"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://c3u877m1spx0" path="res://map/sprites/mountains/mst_mountain_3_large.tres" id="14_p1jbr"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://doqqvl0x3b3g4" path="res://map/sprites/mountains/mst_mountain_4_small.tres" id="15_2b2pn"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bxr2aj680eaqd" path="res://map/sprites/mountains/mst_mountain_5_small.tres" id="16_ry8vn"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cekrboxmhdmhk" path="res://map/sprites/mountains/mst_mountain_6_tiny.tres" id="17_2e7h0"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cjbrxida4odnk" path="res://map/sprites/mountains/mst_mountain_7_tiny.tres" id="18_lq5t3"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://56t2rh2pg58y" path="res://map/sprites/mountains/mst_mountain_8_medium.tres" id="19_7d7lh"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://csjeschaiy5ct" path="res://map/sprites/mountains/mst_mountain_9_large.tres" id="20_810et"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bctu7rlwqc3o7" path="res://map/sprites/mountains/mst_mountain_10_medium.tres" id="21_xha8o"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://t2knd16pwuwg" path="res://map/sprites/mountains/mst_mountain_11_medium.tres" id="22_c0cyp"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://4uknhohkpjxh" path="res://map/sprites/spots/mountain/mst_mountain_smoldering_crater.tres" id="23_1hg6e"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dxba886xk8sch" path="res://map/sprites/mountains/mst_mountain_12_pair.tres" id="23_p1jbr"]
+[ext_resource type="Script" uid="uid://dvrtuqbmx4v30" path="res://stage/spots/spot_upgrade_visual_add.gd" id="25_63xfd"]
+
+[sub_resource type="Resource" id="Resource_k0c35"]
+script = ExtResource("12_0e342")
+old_sprite_types = Array[MapSpriteType]([ExtResource("20_810et"), ExtResource("14_p1jbr"), ExtResource("13_63xfd")])
+new_sprite_type = ExtResource("23_1hg6e")
+extra_removables = Array[MapSpriteType]([ExtResource("12_p08a7"), ExtResource("13_63xfd"), ExtResource("14_p1jbr"), ExtResource("15_2b2pn"), ExtResource("16_ry8vn"), ExtResource("17_2e7h0"), ExtResource("18_lq5t3"), ExtResource("19_7d7lh"), ExtResource("20_810et"), ExtResource("21_xha8o"), ExtResource("22_c0cyp"), ExtResource("23_p1jbr")])
+metadata/_custom_type_script = "uid://cm6qovq4s06ky"
+
+[sub_resource type="Resource" id="Resource_p1jbr"]
+script = ExtResource("25_63xfd")
+sprite_type = ExtResource("23_1hg6e")
+biome = 7
+extra_removables = Array[MapSpriteType]([ExtResource("12_p08a7"), ExtResource("13_63xfd"), ExtResource("14_p1jbr"), ExtResource("15_2b2pn"), ExtResource("16_ry8vn"), ExtResource("17_2e7h0"), ExtResource("18_lq5t3"), ExtResource("19_7d7lh"), ExtResource("20_810et"), ExtResource("21_xha8o"), ExtResource("22_c0cyp"), ExtResource("23_p1jbr")])
+metadata/_custom_type_script = "uid://dvrtuqbmx4v30"
+
+[resource]
+script = ExtResource("1_qqays")
+spot_upgrade_id = "mountain_volcano"
+name = "Smoldering Crater"
+description = "The shard's molten core breaches the surface at the tip of this mountain, letting out a sigh of relief."
+required_aspects = Array[ExtResource("3_x5rwk")]([ExtResource("9_3tc3e")])
+granted_bonuses = Dictionary[ExtResource("2_cre6w"), int]({
+ExtResource("6_0e342"): 5,
+ExtResource("7_k0c35"): 10
+})
+child_upgrades = Array[ExtResource("1_qqays")]([ExtResource("2_54jow"), ExtResource("3_r83al"), ExtResource("4_7fixe")])
+spot = ExtResource("10_7fixe")
+visuals = Array[ExtResource("11_0e342")]([SubResource("Resource_k0c35"), SubResource("Resource_p1jbr")])
+tags = Array[int]([0])

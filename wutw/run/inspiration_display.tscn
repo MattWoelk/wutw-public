@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bkq2tif4ts3wn"]
+
+[ext_resource type="Script" uid="uid://ba0nua58lrvea" path="res://run/inspiration_display.gd" id="1_0m83v"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="1_1mkdr"]
+[ext_resource type="Texture2D" uid="uid://d3sukw4scgcir" path="res://run/inspiration.png" id="2_4nfek"]
+[ext_resource type="Shader" uid="uid://cy23kwgtjt4et" path="res://theme/panel/panel.gdshader" id="3_7gqaj"]
+[ext_resource type="PackedScene" uid="uid://qi2x1knh3gac" path="res://theme/progress_bar/ukiyoe_progress_bar.tscn" id="3_8ng55"]
+[ext_resource type="Texture2D" uid="uid://cgsn7350xgqr5" path="res://theme/panel/panel_bg.png" id="4_1mkdr"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="5_1mkdr"]
+[ext_resource type="Texture2D" uid="uid://bnkoruxi23qsp" path="res://theme/panel/panel_frame.png" id="5_a18jy"]
+
+[sub_resource type="Gradient" id="Gradient_wd1og"]
+offsets = PackedFloat32Array(0.00512295)
+colors = PackedColorArray(0.53, 0.345383, 0.0265, 0.317647)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tloj2"]
+gradient = SubResource("Gradient_wd1og")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a18jy"]
+shader = ExtResource("3_7gqaj")
+shader_parameter/background = ExtResource("4_1mkdr")
+shader_parameter/background_shade = SubResource("GradientTexture2D_tloj2")
+shader_parameter/background_tex_size = Vector2(2291, 3118)
+shader_parameter/background_scale = 2.0
+shader_parameter/frame_tex = ExtResource("5_a18jy")
+shader_parameter/frame_tex_size = Vector2(1127, 976)
+shader_parameter/frame_margin = Vector4(15, 15, 15, 15)
+shader_parameter/frame_scale = 0.93
+shader_parameter/frame_color = Color(0.24, 0.18848, 0.1056, 1)
+shader_parameter/decor_transform = Vector4(0, 0, 300, 100)
+shader_parameter/decor_modulate = Color(1, 1, 1, 0)
+
+[node name="InspirationDisplay" type="PanelContainer" unique_id=65672330]
+material = ExtResource("1_1mkdr")
+instance_shader_parameters/size = Vector2(204.32005, 79.51916)
+offset_right = 185.0
+offset_bottom = 72.0
+theme_override_styles/panel = ExtResource("5_1mkdr")
+script = ExtResource("1_0m83v")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=1252336169]
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="VBox" unique_id=939401490]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Icon" type="TextureRect" parent="VBox/HBox" unique_id=1299686723]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_4nfek")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="VBox/HBox" unique_id=1076392248]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Inspiration"
+horizontal_alignment = 1
+
+[node name="ProgressBar" parent="VBox" unique_id=381185564 instance=ExtResource("3_8ng55")]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_a18jy")
+instance_shader_parameters/size = Vector2(186.64912, 36.44628)
+layout_mode = 2

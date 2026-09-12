@@ -1,0 +1,243 @@
+[gd_scene load_steps=27 format=3 uid="uid://byk0q0ccedhx0"]
+
+[ext_resource type="Script" uid="uid://dbnda81f1wygw" path="res://theme/scroll_panel/scroll_panel.gd" id="1_hp724"]
+[ext_resource type="Texture2D" uid="uid://dtxpux7lhworb" path="res://theme/scroll_panel/scroll_panel_dowel_container.png" id="2_lhh7m"]
+[ext_resource type="WwiseEvent" uid="uid://bjbee5hahum3e" path="res://Wwise/resources/Event/{00D08121-FFB4-4BFC-9A9D-D7F6C08C49BE}.tres" id="2_wc6pt"]
+[ext_resource type="WwiseEvent" uid="uid://c3twaschx8pcj" path="res://Wwise/resources/Event/{AE5EE484-9079-4D94-AFAD-E10017944FFD}.tres" id="3_spjwi"]
+[ext_resource type="Shader" uid="uid://bbe7ginxustev" path="res://theme/scroll_panel/scroll_panel_dowel.gdshader" id="3_wc6pt"]
+[ext_resource type="Texture2D" uid="uid://b0cvn7ev1bwut" path="res://theme/scroll_panel/dowel_wood.png" id="4_spjwi"]
+[ext_resource type="Texture2D" uid="uid://go64cbx1ohwd" path="res://theme/button/white_1x1px.png" id="5_uyta3"]
+[ext_resource type="Shader" uid="uid://cy23kwgtjt4et" path="res://theme/panel/panel.gdshader" id="6_0176d"]
+[ext_resource type="Shader" uid="uid://gpgadexvoqm8" path="res://visuals/shaders/multiply.gdshader" id="6_lhh7m"]
+[ext_resource type="Texture2D" uid="uid://cgsn7350xgqr5" path="res://theme/panel/panel_bg.png" id="7_g0t5o"]
+[ext_resource type="Texture2D" uid="uid://bnkoruxi23qsp" path="res://theme/panel/panel_frame.png" id="8_3rujo"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="9_paxx0"]
+[ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="10_mkvk1"]
+
+[sub_resource type="Gradient" id="Gradient_ofyuc"]
+offsets = PackedFloat32Array(0, 0.196721, 0.460041, 0.525615, 0.603484, 0.732582, 1)
+colors = PackedColorArray(0.59, 0.43424, 0.3068, 0.796078, 0.48, 0.35328, 0.2496, 0.294118, 0.48, 0.35328, 0.2496, 0.0116377, 0.48, 0.35328, 0.2496, 0, 0.48, 0.35328, 0.2496, 0.0431956, 0.48, 0.35328, 0.2496, 0.34902, 0.4, 0.2944, 0.208, 0.929412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g5dkl"]
+gradient = SubResource("Gradient_ofyuc")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_0fvof"]
+colors = PackedColorArray(0.331639, 0.33164, 0.331639, 1, 0.961814, 0.961814, 0.961814, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0fvof"]
+frequency = 0.0035
+domain_warp_amplitude = 100.0
+domain_warp_frequency = -0.01
+domain_warp_fractal_lacunarity = 8.69
+domain_warp_fractal_gain = 0.19
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jijvn"]
+width = 2048
+noise = SubResource("FastNoiseLite_0fvof")
+color_ramp = SubResource("Gradient_0fvof")
+seamless = true
+seamless_blend_skirt = 0.27
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uyta3"]
+shader = ExtResource("3_wc6pt")
+shader_parameter/size = Vector2(149, 25)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("4_spjwi")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_spjwi"]
+shader = ExtResource("6_lhh7m")
+
+[sub_resource type="Gradient" id="Gradient_kbqer"]
+offsets = PackedFloat32Array(0, 0.30957, 0.484375)
+colors = PackedColorArray(0.5, 0.43825, 0.405, 1, 0.93, 0.899775, 0.8835, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_55rq6"]
+gradient = SubResource("Gradient_kbqer")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_4qknn"]
+offsets = PackedFloat32Array(0.00512295)
+colors = PackedColorArray(0.71, 0.543387, 0.2556, 0.168627)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l7j7v"]
+gradient = SubResource("Gradient_4qknn")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0176d"]
+shader = ExtResource("6_0176d")
+shader_parameter/size = Vector2(404.39398, 85.03485)
+shader_parameter/background = ExtResource("7_g0t5o")
+shader_parameter/background_shade = SubResource("GradientTexture2D_l7j7v")
+shader_parameter/background_tex_size = Vector2(2291, 3118)
+shader_parameter/background_scale = 2.0
+shader_parameter/frame_tex = ExtResource("8_3rujo")
+shader_parameter/frame_tex_size = Vector2(1127, 976)
+shader_parameter/frame_margin = Vector4(15, 15, 15, 15)
+shader_parameter/frame_scale = 0.93
+shader_parameter/frame_color = Color(0.24, 0.18848, 0.1056, 1)
+shader_parameter/decor_transform = Vector4(0, 0, 300, 100)
+shader_parameter/decor_modulate = Color(1, 1, 1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g0t5o"]
+shader = ExtResource("3_wc6pt")
+shader_parameter/size = Vector2(147, 25)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("4_spjwi")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[node name="ScrollPanel" type="VBoxContainer"]
+custom_minimum_size = Vector2(200.18, 0)
+offset_right = 200.0
+offset_bottom = 84.0
+pivot_offset = Vector2(75, 75)
+mouse_filter = 2
+theme_override_constants/separation = -10
+script = ExtResource("1_hp724")
+min_height = 30.0
+roll_sound = ExtResource("2_wc6pt")
+roll_end_sound = ExtResource("3_spjwi")
+
+[node name="TopDowelContainer" type="NinePatchRect" parent="."]
+texture_filter = 2
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+texture = ExtResource("2_lhh7m")
+patch_margin_left = 37
+patch_margin_right = 37
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="TopDowelWood" type="TextureRect" parent="TopDowelContainer"]
+unique_name_in_owner = true
+show_behind_parent = true
+material = SubResource("ShaderMaterial_uyta3")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 26.0
+offset_top = 5.0
+offset_right = -25.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_uyta3")
+expand_mode = 1
+
+[node name="TopShadow" type="TextureRect" parent="TopDowelContainer"]
+material = SubResource("ShaderMaterial_spjwi")
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 29.0
+offset_top = 30.0
+offset_right = -28.0
+offset_bottom = 94.0
+grow_horizontal = 2
+size_flags_vertical = 0
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_55rq6")
+
+[node name="Scroller" type="Control" parent="."]
+unique_name_in_owner = true
+show_behind_parent = true
+clip_contents = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="ScrollMargin" type="MarginContainer" parent="Scroller"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.17999268
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = 23
+
+[node name="ContentPanel" type="PanelContainer" parent="Scroller/ScrollMargin"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_0176d")
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("9_paxx0")
+script = ExtResource("10_mkvk1")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="ContentContainer" type="MarginContainer" parent="Scroller/ScrollMargin/ContentPanel"]
+custom_minimum_size = Vector2(136.18, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 12
+
+[node name="BottomDowelContainer" type="NinePatchRect" parent="."]
+texture_filter = 2
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("2_lhh7m")
+patch_margin_left = 75
+patch_margin_right = 75
+axis_stretch_horizontal = 1
+
+[node name="BottomDowelWood" type="TextureRect" parent="BottomDowelContainer"]
+unique_name_in_owner = true
+show_behind_parent = true
+material = SubResource("ShaderMaterial_g0t5o")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 26.0
+offset_top = 5.0
+offset_right = -27.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_uyta3")
+expand_mode = 1
+flip_v = true
+
+[node name="BottomShadow" type="TextureRect" parent="BottomDowelContainer"]
+material = SubResource("ShaderMaterial_spjwi")
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 29.0
+offset_top = -94.0
+offset_right = -27.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 0
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_55rq6")
+flip_v = true

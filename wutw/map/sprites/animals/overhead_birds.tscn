@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://hdqey44fhjkf"]
+
+[ext_resource type="Shader" uid="uid://biums6tykhqlw" path="res://map/sprites/animals/overhead_birds.gdshader" id="1_8tmwy"]
+[ext_resource type="Texture2D" uid="uid://8un2stucsbyp" path="res://map/sprites/animals/bird.png" id="1_dpw27"]
+[ext_resource type="Script" uid="uid://bp2c3ppileq3j" path="res://map/sprites/animals/overhead_birds.gd" id="2_8tmwy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3cu6u"]
+shader = ExtResource("1_8tmwy")
+shader_parameter/particles_anim_h_frames = 10
+shader_parameter/particles_anim_v_frames = 4
+shader_parameter/debug_frame = -0.00999999977648
+
+[sub_resource type="Curve" id="Curve_k3v62"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.12418237, 1), 0.0, 0.0, 0, 0, Vector2(0.7782923, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_l0c0k"]
+curve = SubResource("Curve_k3v62")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l0c0k"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(1010, 540, 0)
+emission_shape = 1
+emission_sphere_radius = 34.28
+direction = Vector3(-1, -0.5, 0)
+spread = 0.0
+initial_velocity_min = 30.0
+initial_velocity_max = 30.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.19999999
+scale_max = 0.19999999
+alpha_curve = SubResource("CurveTexture_l0c0k")
+anim_speed_min = 11.0
+anim_speed_max = 11.0
+anim_offset_max = 1.0
+turbulence_noise_strength = 0.29
+turbulence_noise_scale = 0.898
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.0
+turbulence_initial_displacement_min = 4.0000014
+turbulence_initial_displacement_max = 4.0000014
+
+[node name="OverheadBirds" type="GPUParticles2D" unique_id=9239785]
+material = SubResource("ShaderMaterial_3cu6u")
+emitting = false
+amount = 15
+texture = ExtResource("1_dpw27")
+lifetime = 40.0
+one_shot = true
+explosiveness = 0.83
+fixed_fps = 60
+visibility_rect = Rect2(0, 0, 9600, 2160)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_l0c0k")
+script = ExtResource("2_8tmwy")

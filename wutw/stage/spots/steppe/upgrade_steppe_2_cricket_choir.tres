@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://bi58w1qhe5g5h"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_ysfh5"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_x14s6"]
+[ext_resource type="Resource" uid="uid://c686q2ob3lxch" path="res://stage/spots/steppe/upgrade_steppe_3_migratory_crossroads.tres" id="2_xd0u0"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_o2wpt"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="4_l1fcl"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="5_4wxt6"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="7_ai4ts"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="8_ai4ts"]
+[ext_resource type="Resource" uid="uid://cht5gp5i657sg" path="res://stage/spots/steppe/spot_steppe.tres" id="8_j55r1"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://emtgg8l1vmwo" path="res://map/sprites/spots/steppe/mst_steppe_cricket_choir.tres" id="10_ognc3"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://hfhwouwbnimb" path="res://map/sprites/spots/steppe/mst_steppe_thistle_field.tres" id="11_ognc3"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="12_3fg0q"]
+
+[sub_resource type="Resource" id="Resource_27yey"]
+script = ExtResource("12_3fg0q")
+old_sprite_type = ExtResource("11_ognc3")
+new_sprite_type = ExtResource("10_ognc3")
+biome = 5
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_ysfh5")
+spot_upgrade_id = "steppe_cricket_choir"
+name = "Cricket Choir"
+description = "Every evening the great insect orchestra performs a concert, whether they have an audience or not."
+required_aspects = Array[ExtResource("3_o2wpt")]([ExtResource("7_ai4ts")])
+granted_bonuses = Dictionary[ExtResource("2_x14s6"), int]({
+ExtResource("4_l1fcl"): 5,
+ExtResource("5_4wxt6"): 5
+})
+child_upgrades = Array[ExtResource("1_ysfh5")]([ExtResource("2_xd0u0")])
+spot = ExtResource("8_j55r1")
+visuals = Array[ExtResource("8_ai4ts")]([SubResource("Resource_27yey")])
+tags = Array[int]([0])

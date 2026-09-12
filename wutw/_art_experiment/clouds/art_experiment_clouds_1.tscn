@@ -1,0 +1,85 @@
+[gd_scene load_steps=10 format=4 uid="uid://dc1ufdambfgg0"]
+
+[ext_resource type="Texture2D" uid="uid://chxf88ekbq0ie" path="res://visuals/canvas.png" id="1_28x0q"]
+[ext_resource type="Material" uid="uid://dsrib64sanc40" path="res://_art_experiment/clouds/moving_cloud_material.tres" id="3_8dwxf"]
+[ext_resource type="Material" uid="uid://j0l146tqr038" path="res://_art_experiment/clouds/_temp_mat.tres" id="6_8dwxf"]
+[ext_resource type="Shader" uid="uid://dart6wj65w6tw" path="res://_art_experiment/clouds/moving_cloud.gdshader" id="6_uwfc6"]
+
+[sub_resource type="Gradient" id="Gradient_8dwxf"]
+offsets = PackedFloat32Array(0.00409836, 0.160861, 0.302254, 0.440574, 0.510246, 0.546107, 0.567623, 0.580943)
+colors = PackedColorArray(1, 1, 1, 1, 0.999838, 0.999791, 0.999727, 0.999699, 0.997506, 0.99677, 0.995793, 0.995354, 0.9764, 0.969438, 0.960193, 0.956032, 0.946325, 0.93049, 0.909462, 0.9, 0.886, 0.853, 0.809, 0.65, 0, 0, 0, 0.627451, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_i26cb"]
+gradient = SubResource("Gradient_8dwxf")
+
+[sub_resource type="Gradient" id="Gradient_yba8n"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dmuoq"]
+gradient = SubResource("Gradient_yba8n")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_21205"]
+shader = ExtResource("6_uwfc6")
+shader_parameter/ellipses = PackedVector4Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/merge_k = 0.008
+shader_parameter/distortion_amplitude = 0.0101
+shader_parameter/distortion_frequency = 0.754
+shader_parameter/distortion_speed = 1.0
+shader_parameter/range = 0.119
+shader_parameter/gradient = SubResource("GradientTexture1D_i26cb")
+shader_parameter/noise_scale = 72.885
+shader_parameter/noise_strength = 0.063
+shader_parameter/noise_smoothness = 1.0
+shader_parameter/noise_color = Color(0.29499, 0.194805, 0.0301999, 1)
+shader_parameter/variation_random = 0.0
+shader_parameter/debug = false
+shader_parameter/gradient_debug = SubResource("GradientTexture1D_dmuoq")
+
+[node name="ArtExperimentSplines" type="Node2D"]
+
+[node name="Canvas" type="TextureRect" parent="."]
+texture_filter = 4
+offset_left = 671.0
+offset_top = 245.0
+offset_right = 1416.0
+offset_bottom = 791.0
+texture = ExtResource("1_28x0q")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_21205")
+offset_left = 926.0
+offset_top = 374.0
+offset_right = 1126.0
+offset_bottom = 574.0
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+material = ExtResource("3_8dwxf")
+offset_left = 1108.0
+offset_top = 390.0
+offset_right = 1308.0
+offset_bottom = 590.0
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+material = ExtResource("3_8dwxf")
+offset_left = 1115.0
+offset_top = 429.0
+offset_right = 1315.0
+offset_bottom = 629.0
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.426)
+material = ExtResource("3_8dwxf")
+offset_left = 1181.0
+offset_top = 403.0
+offset_right = 1381.0
+offset_bottom = 603.0
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.596078)
+material = ExtResource("6_8dwxf")
+offset_left = 758.0
+offset_top = 371.0
+offset_right = 958.0
+offset_bottom = 571.0

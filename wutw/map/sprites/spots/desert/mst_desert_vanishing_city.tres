@@ -1,0 +1,21 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://dguw3lrlq41bm"]
+
+[ext_resource type="MapSpriteType_Generic" uid="uid://qf7jfw824yih" path="res://map/sprites/spots/desert/mst_desert_mirage_gate.tres" id="1_0fhb7"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://dmi84qlvh4v67" path="res://map/sprites/spots/desert/mst_desert_portal.tres" id="2_kcy27"]
+
+[sub_resource type="MapSpriteCollision_Rect" id="MapSpriteCollision_Rect_2coy1"]
+rect = Rect2(-1.595, -0.785, 3.47, 1.28)
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_0adb5"]
+sprite_type = ExtResource("1_0fhb7")
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_wgrcm"]
+sprite_type = ExtResource("2_kcy27")
+offset = Vector2(-0.15, -1.245)
+scale = 0.157
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_0adb5"), SubResource("MapSpriteComponent_wgrcm")])
+footprint_radius = 1.5
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Rect_2coy1")])

@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://cc1nq2cduugwf"]
+
+[ext_resource type="Script" uid="uid://hulc1y4pbpqc" path="res://relics/selector/relic_choice.gd" id="1_n5se6"]
+[ext_resource type="Theme" uid="uid://bneu0powe6n80" path="res://theme/theme_ukiyoe.tres" id="2_rkuj3"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="3_4b2ue"]
+[ext_resource type="Shader" uid="uid://ygmrqrvg5hpm" path="res://theme/button/ukiyoe_button.gdshader" id="3_07jss"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="4_170cf"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="4_ld44f"]
+[ext_resource type="Texture2D" uid="uid://ctgl61r3xxsqv" path="res://theme/button/button_fill.png" id="4_xoar3"]
+[ext_resource type="Texture2D" uid="uid://blje81yu8734p" path="res://theme/button/button_shape.png" id="5_f4552"]
+[ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="5_hhj3c"]
+[ext_resource type="Texture2D" uid="uid://doe4603a6ngco" path="res://theme/button/button_outline.png" id="6_f43in"]
+[ext_resource type="Texture2D" uid="uid://cwubixgc8n0yr" path="res://theme/button/button_swish_left.png" id="7_vwjj8"]
+[ext_resource type="Texture2D" uid="uid://n6l17h4ysayj" path="res://theme/button/button_swish_right.png" id="8_ecncx"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="9_4b2ue"]
+[ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="10_ld44f"]
+[ext_resource type="WwiseEvent" uid="uid://cb88kcuutpvmt" path="res://Wwise/resources/Event/{158E2442-012A-4822-BC23-73BDEE81C212}.tres" id="11_f4552"]
+[ext_resource type="Texture2D" uid="uid://dpplnqfh1e02w" path="res://relics/common/seal_paste/seal_paste.png" id="11_xoar3"]
+[ext_resource type="FontFile" uid="uid://d357sc75ncblr" path="res://theme/fonts/Merienda/static/Merienda-Black.ttf" id="12_xoar3"]
+[ext_resource type="PackedScene" uid="uid://c486xx01esukm" path="res://theme/new_indicator.tscn" id="15_f43in"]
+
+[sub_resource type="Gradient" id="Gradient_j5apj"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wqpyw"]
+gradient = SubResource("Gradient_j5apj")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f43in"]
+shader = ExtResource("3_07jss")
+shader_parameter/mask_tex = ExtResource("5_f4552")
+shader_parameter/background = ExtResource("4_xoar3")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("6_f43in")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("8_ecncx")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("7_vwjj8")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[node name="RelicChoice" type="MarginContainer" unique_id=269332232]
+custom_minimum_size = Vector2(138, 138)
+offset_right = 138.0
+offset_bottom = 138.0
+theme = ExtResource("2_rkuj3")
+script = ExtResource("1_n5se6")
+
+[node name="FakeButton" type="PanelContainer" parent="." unique_id=1318062113]
+unique_name_in_owner = true
+visible = false
+material = ExtResource("3_4b2ue")
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("4_ld44f")
+script = ExtResource("5_hhj3c")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="Button" type="Button" parent="." unique_id=72245286]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_f43in")
+instance_shader_parameters/background_offset = Vector2(0.6235929, 0.80809873)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = ExtResource("9_4b2ue")
+theme_override_styles/pressed = ExtResource("9_4b2ue")
+theme_override_styles/hover = ExtResource("9_4b2ue")
+theme_override_styles/hover_pressed = ExtResource("9_4b2ue")
+theme_override_styles/disabled = ExtResource("9_4b2ue")
+script = ExtResource("10_ld44f")
+click_sound = ExtResource("11_f4552")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1191008567]
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1104919561]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1302984142]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("11_xoar3")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1587223553]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="NameLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1285066248]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_xoar3")
+text = "Relic Name"
+
+[node name="DescriptionLabel" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=381613592 instance=ExtResource("4_170cf")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 1
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+text = "Whenever you lose inspiration, gain half as much maximum inspiration (rounded down)."
+fit_content = true
+tooltip_directions = Array[int]([5, 6, 1])
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=754499248]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+
+[node name="NewIcon" parent="MarginContainer2" unique_id=2016704122 instance=ExtResource("15_f43in")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+
+[connection signal="gui_input" from="FakeButton" to="." method="_on_button_gui_input"]
+[connection signal="gui_input" from="Button" to="." method="_on_button_gui_input"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="gui_input" from="MarginContainer/HBoxContainer/VBoxContainer/DescriptionLabel" to="." method="_on_description_label_gui_input"]
+[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/DescriptionLabel" to="." method="_on_description_label_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/HBoxContainer/VBoxContainer/DescriptionLabel" to="." method="_on_description_label_mouse_exited"]

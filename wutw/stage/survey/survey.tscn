@@ -1,0 +1,529 @@
+[gd_scene format=3 uid="uid://tsti1276ep3v"]
+
+[ext_resource type="Script" uid="uid://bki3nu0by33bv" path="res://stage/survey/survey.gd" id="1_76be7"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="4_yyxqy"]
+[ext_resource type="Script" uid="uid://dm63mtrlfj005" path="res://theme/faded_scroll_container/faded_scroll_container.gd" id="5_nw83i"]
+[ext_resource type="PackedScene" uid="uid://c0vbj77sccws5" path="res://stage/survey/survey_prep_button.tscn" id="7_ncla8"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="8_5bj80"]
+[ext_resource type="PackedScene" uid="uid://byk0q0ccedhx0" path="res://theme/scroll_panel/scroll_panel.tscn" id="8_om0fb"]
+[ext_resource type="Material" uid="uid://dm0coidukcc6" path="res://theme/button/ukiyoe_button_material.tres" id="8_u5jpr"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="9_5bj80"]
+[ext_resource type="Texture2D" uid="uid://cswm4x5hux4oa" path="res://cutscenes/intro/slides/frame.png" id="9_8hgul"]
+[ext_resource type="Shader" uid="uid://bbe7ginxustev" path="res://theme/scroll_panel/scroll_panel_dowel.gdshader" id="9_ioe47"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="9_l2o63"]
+[ext_resource type="Texture2D" uid="uid://b2j4sn87bmvuo" path="res://cutscenes/intro/slides/8.png" id="10_3xney"]
+[ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="10_l2o63"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="10_nqdhh"]
+[ext_resource type="Resource" uid="uid://duq7jj2fmslhe" path="res://art/pieces/piece_none.tres" id="10_nw83i"]
+[ext_resource type="Texture2D" uid="uid://b0cvn7ev1bwut" path="res://theme/scroll_panel/dowel_wood.png" id="10_qaajt"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="11_lvov4"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="12_1m30r"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="13_7nbu5"]
+[ext_resource type="PackedScene" uid="uid://dbkrwj5jf26v1" path="res://theme/credits_icon/credits_icon.tscn" id="14_34y33"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="14_k5ty7"]
+[ext_resource type="PackedScene" uid="uid://bxea3wmxf80xf" path="res://stage/survey/survey_prep_buff_label.tscn" id="15_1m30r"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="16_gmnb7"]
+[ext_resource type="PackedScene" uid="uid://c486xx01esukm" path="res://theme/new_indicator.tscn" id="28_hm7hm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sb6la"]
+
+[sub_resource type="Gradient" id="Gradient_ofyuc"]
+offsets = PackedFloat32Array(0, 0.196721, 0.460041, 0.525615, 0.603484, 0.732582, 1)
+colors = PackedColorArray(0.59, 0.43424, 0.3068, 0.796078, 0.48, 0.35328, 0.2496, 0.294118, 0.48, 0.35328, 0.2496, 0.0116377, 0.48, 0.35328, 0.2496, 0, 0.48, 0.35328, 0.2496, 0.0431956, 0.48, 0.35328, 0.2496, 0.34902, 0.4, 0.2944, 0.208, 0.929412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g5dkl"]
+gradient = SubResource("Gradient_ofyuc")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_0fvof"]
+colors = PackedColorArray(0.331639, 0.33164, 0.331639, 1, 0.961814, 0.961814, 0.961814, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0fvof"]
+frequency = 0.0035
+domain_warp_amplitude = 100.0
+domain_warp_frequency = -0.01
+domain_warp_fractal_lacunarity = 8.69
+domain_warp_fractal_gain = 0.19
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jijvn"]
+width = 2048
+noise = SubResource("FastNoiseLite_0fvof")
+color_ramp = SubResource("Gradient_0fvof")
+seamless = true
+seamless_blend_skirt = 0.27
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lvov4"]
+shader = ExtResource("9_ioe47")
+shader_parameter/size = Vector2(1437, 25)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("10_qaajt")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3xney"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cnyvt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1m30r"]
+shader = ExtResource("9_ioe47")
+shader_parameter/size = Vector2(1435, 25)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("10_qaajt")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[node name="Survey" type="PanelContainer" unique_id=1232933605]
+offset_right = 1050.0
+offset_bottom = 678.0
+pivot_offset = Vector2(150.5, 0)
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_sb6la")
+script = ExtResource("1_76be7")
+
+[node name="ScrollPanel" parent="." unique_id=880734421 instance=ExtResource("8_om0fb")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1488, 0)
+layout_mode = 2
+size_flags_vertical = 2
+min_height = 20.0
+
+[node name="TopDowelWood" parent="ScrollPanel/TopDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_lvov4")
+
+[node name="Scroller" parent="ScrollPanel" index="1"]
+custom_minimum_size = Vector2(0, 688)
+
+[node name="ScrollMargin" parent="ScrollPanel/Scroller" index="0"]
+offset_right = 0.0
+offset_bottom = 717.9802
+
+[node name="ContentPanel" parent="ScrollPanel/Scroller/ScrollMargin" index="0"]
+material = ExtResource("4_yyxqy")
+
+[node name="VBox_Preparation" type="VBoxContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer" index="0" unique_id=1756979340]
+unique_name_in_owner = true
+visible = false
+material = ExtResource("4_yyxqy")
+custom_minimum_size = Vector2(1417, 656)
+custom_maximum_size = Vector2(1417, 656)
+layout_mode = 2
+
+[node name="PrepTitleLabel" type="Label" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Preparation" unique_id=1145268761]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Survey Preparation"
+horizontal_alignment = 1
+
+[node name="PrepText" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Preparation" unique_id=1627404269 instance=ExtResource("16_gmnb7")]
+custom_minimum_size = Vector2(400, 0)
+custom_maximum_size = Vector2(900, -1)
+layout_mode = 2
+size_flags_horizontal = 6
+mouse_filter = 1
+theme_override_colors/default_color = Color(0.09, 0.075825, 0.049500003, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+theme_override_font_sizes/italics_font_size = 18
+theme_override_font_sizes/mono_font_size = 18
+text = "
+The expedition is preparing a survey team to send off into the wilderness.
+
+We can invest yields to improve their chances."
+fit_content = true
+horizontal_alignment = 1
+visible_characters_behavior = 1
+tooltip_directions = Array[int]([5, 0, 1, 3])
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Preparation" unique_id=333157728]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Preparation/HBoxContainer" unique_id=1391802241]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PrepButton_Food" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Preparation/HBoxContainer/VBoxContainer" unique_id=703690899 instance=ExtResource("7_ncla8")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+action_label = "Pack extra supplies."
+outcome_label = "Increase <term_lower:hand_size> by 1."
+bonus_type = ExtResource("8_5bj80")
+cost_per_season = 100
+run_var_delta = 1
+
+[node name="PrepButton_Safety" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Preparation/HBoxContainer/VBoxContainer" unique_id=349268450 instance=ExtResource("7_ncla8")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+action_label = "Recruit a healer."
+outcome_label = "Reduce <term_lower:bonus> losses by 50%."
+bonus_type = ExtResource("9_l2o63")
+base_cost = 30
+cost_per_season = 80
+run_var = 46
+run_var_delta = -40
+
+[node name="PrepButton_Beauty" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Preparation/HBoxContainer/VBoxContainer" unique_id=842651928 instance=ExtResource("7_ncla8")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+action_label = "Recruit an artist."
+outcome_label = "Increase <term_lower:inspiration> gain by 50%."
+bonus_type = ExtResource("10_nqdhh")
+cost_per_season = 100
+run_var = 48
+run_var_delta = 50
+
+[node name="PrepButton_Harmony" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Preparation/HBoxContainer/VBoxContainer" unique_id=45423261 instance=ExtResource("7_ncla8")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+action_label = "Throw a party before departing."
+outcome_label = "Reduce <term_lower:inspiration> losses by 50%."
+bonus_type = ExtResource("11_lvov4")
+base_cost = 30
+cost_per_season = 80
+run_var = 49
+run_var_delta = -50
+max_uses = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Preparation/HBoxContainer" unique_id=705417319]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="PrepButton_Knowledge" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Preparation/HBoxContainer/VBoxContainer2" unique_id=1789414358 instance=ExtResource("7_ncla8")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+action_label = "Recruit a scholar."
+outcome_label = "Increase <term_lower:card_rarity_tier> by 25%."
+bonus_type = ExtResource("12_1m30r")
+cost_per_season = 100
+run_var = 8
+run_var_delta = 25
+
+[node name="PrepButton_Adventure" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Preparation/HBoxContainer/VBoxContainer2" unique_id=1572400465 instance=ExtResource("7_ncla8")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+action_label = "Recruit an adventurer."
+outcome_label = "Gain an extra <term_lower:redraw>."
+bonus_type = ExtResource("13_7nbu5")
+base_cost = 100
+cost_per_season = 150
+run_var = 1
+run_var_delta = 1
+max_uses = 1
+
+[node name="PrepButton_Productivity" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Preparation/HBoxContainer/VBoxContainer2" unique_id=406651314 instance=ExtResource("7_ncla8")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+action_label = "Recruit an artisan."
+outcome_label = "Increase <term_lower:bonus> gains by 50%."
+bonus_type = ExtResource("14_k5ty7")
+base_cost = 30
+cost_per_season = 80
+run_var = 47
+run_var_delta = 50
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Preparation/HBoxContainer" unique_id=807558414]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="PrepBuffsTitleLabel" type="Label" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Preparation/HBoxContainer/VBoxContainer3" unique_id=1691272546]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Current Bonuses"
+horizontal_alignment = 1
+
+[node name="PrepBuffsSubtitleLabel" type="Label" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Preparation/HBoxContainer/VBoxContainer3" unique_id=1436789491]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.215686, 0.184314, 0.12549, 1)
+text = "for the duration of this survey"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Preparation/HBoxContainer/VBoxContainer3" unique_id=1081357764]
+custom_minimum_size = Vector2(0, 8.55)
+layout_mode = 2
+
+[node name="PrepBuffLabel_Adventure" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Preparation/HBoxContainer/VBoxContainer3" unique_id=1779078546 node_paths=PackedStringArray("related_button") instance=ExtResource("15_1m30r")]
+layout_mode = 2
+size_flags_horizontal = 4
+related_button = NodePath("../../VBoxContainer2/PrepButton_Adventure")
+label = "Redraws"
+
+[node name="PrepBuffLabel_Food" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Preparation/HBoxContainer/VBoxContainer3" unique_id=429526914 node_paths=PackedStringArray("related_button") instance=ExtResource("15_1m30r")]
+layout_mode = 2
+size_flags_horizontal = 4
+related_button = NodePath("../../VBoxContainer/PrepButton_Food")
+label = "Hand Size"
+
+[node name="PrepBuffLabel_Knowledge" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Preparation/HBoxContainer/VBoxContainer3" unique_id=2024885455 node_paths=PackedStringArray("related_button") instance=ExtResource("15_1m30r")]
+layout_mode = 2
+size_flags_horizontal = 4
+related_button = NodePath("../../VBoxContainer2/PrepButton_Knowledge")
+label = "Glyph Rarity"
+percentage = true
+
+[node name="PrepBuffLabel_Beauty" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Preparation/HBoxContainer/VBoxContainer3" unique_id=1018095208 node_paths=PackedStringArray("related_button") instance=ExtResource("15_1m30r")]
+layout_mode = 2
+size_flags_horizontal = 4
+related_button = NodePath("../../VBoxContainer/PrepButton_Beauty")
+label = "Inspiration Gains"
+percentage = true
+
+[node name="PrepBuffLabel_Harmony" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Preparation/HBoxContainer/VBoxContainer3" unique_id=1578322887 node_paths=PackedStringArray("related_button") instance=ExtResource("15_1m30r")]
+layout_mode = 2
+size_flags_horizontal = 4
+related_button = NodePath("../../VBoxContainer/PrepButton_Harmony")
+label = "Inspiration Losses"
+percentage = true
+
+[node name="PrepBuffLabel_Productivity" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Preparation/HBoxContainer/VBoxContainer3" unique_id=1793499129 node_paths=PackedStringArray("related_button") instance=ExtResource("15_1m30r")]
+layout_mode = 2
+size_flags_horizontal = 4
+related_button = NodePath("../../VBoxContainer2/PrepButton_Productivity")
+label = "Yield Gains"
+percentage = true
+
+[node name="PrepBuffLabel_Safety" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Preparation/HBoxContainer/VBoxContainer3" unique_id=445609524 node_paths=PackedStringArray("related_button") instance=ExtResource("15_1m30r")]
+layout_mode = 2
+size_flags_horizontal = 4
+related_button = NodePath("../../VBoxContainer/PrepButton_Safety")
+label = "Yield Losses"
+percentage = true
+
+[node name="StartButton" type="Button" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Preparation" unique_id=41458404]
+unique_name_in_owner = true
+material = ExtResource("8_u5jpr")
+instance_shader_parameters/background_offset = Vector2(0.51692253, 0.4514923)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+focus_mode = 0
+theme_override_styles/normal = ExtResource("9_5bj80")
+theme_override_styles/pressed = ExtResource("9_5bj80")
+theme_override_styles/hover = ExtResource("9_5bj80")
+theme_override_styles/hover_pressed = ExtResource("9_5bj80")
+theme_override_styles/disabled = ExtResource("9_5bj80")
+text = "Start Survey"
+script = ExtResource("10_l2o63")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="VBox_Episode" type="VBoxContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer" index="1" unique_id=434696099]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1417, 656)
+custom_maximum_size = Vector2(1417, 656)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Episode" unique_id=976999094]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="BGMask" type="TextureRect" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Episode/HBoxContainer" unique_id=1475841448]
+clip_children = 1
+custom_minimum_size = Vector2(1013, 564)
+custom_maximum_size = Vector2(1013, 564)
+layout_mode = 2
+texture = ExtResource("9_8hgul")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="BG" type="TextureRect" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Episode/HBoxContainer/BGMask" unique_id=2102547289]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1013, 564)
+custom_maximum_size = Vector2(1013, 564)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_3xney")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CreditsIcon" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Episode/HBoxContainer/BGMask/BG" unique_id=382726284 instance=ExtResource("14_34y33")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+icon_size = Vector2(32, 32)
+art_piece = ExtResource("10_nw83i")
+
+[node name="NewIcon" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Episode/HBoxContainer/BGMask" unique_id=835625473 instance=ExtResource("28_hm7hm")]
+unique_name_in_owner = true
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 0.0
+offset_right = 32.0
+grow_horizontal = 1
+size_flags_horizontal = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(12.03, 5.15)
+offset_transform_visual_only = false
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Episode/HBoxContainer" unique_id=1453987721]
+custom_minimum_size = Vector2(400, 0)
+custom_maximum_size = Vector2(400, -1)
+layout_mode = 2
+theme_override_constants/margin_bottom = 16
+
+[node name="MainTextPanel" type="VBoxContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Episode/HBoxContainer/MarginContainer" unique_id=1262859724]
+material = ExtResource("4_yyxqy")
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Episode/HBoxContainer/MarginContainer/MainTextPanel" unique_id=1808056498]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.215686, 0.184314, 0.12549, 1)
+theme_override_font_sizes/font_size = 24
+text = "A Mountain Cave (2/4)"
+horizontal_alignment = 1
+
+[node name="Scroller" type="ScrollContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Episode/HBoxContainer/MarginContainer/MainTextPanel" unique_id=125663214]
+unique_name_in_owner = true
+clip_children = 1
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 4
+script = ExtResource("5_nw83i")
+
+[node name="ScrollerContents" type="VBoxContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Episode/HBoxContainer/MarginContainer/MainTextPanel/Scroller" unique_id=346929506]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 26
+
+[node name="MainText" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Episode/HBoxContainer/MarginContainer/MainTextPanel/Scroller/ScrollerContents" unique_id=639243559 instance=ExtResource("16_gmnb7")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_colors/default_color = Color(0.09, 0.075825, 0.049500003, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+theme_override_font_sizes/italics_font_size = 18
+theme_override_font_sizes/mono_font_size = 18
+text = "A crack in the rock quickly expands into a shaft disappearing into the darkness below. A crack in the rock quickly expands into a shaft disappearing into the darkness below.
+
+A crack in the rock quickly expands into a shaft disappearing into the darkness below."
+fit_content = true
+visible_characters_behavior = 1
+tooltip_directions = Array[int]([5, 0, 1, 3])
+
+[node name="OutcomeBox" type="PanelContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Episode/HBoxContainer/MarginContainer/MainTextPanel/Scroller/ScrollerContents" unique_id=1272532876]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_3xney")
+
+[node name="PanelContainer" type="PanelContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Episode/HBoxContainer/MarginContainer/MainTextPanel" unique_id=490202549]
+custom_minimum_size = Vector2(0, 41)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_cnyvt")
+
+[node name="EndText" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Episode/HBoxContainer/MarginContainer/MainTextPanel/PanelContainer" unique_id=144926223 instance=ExtResource("16_gmnb7")]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(200, 41)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+mouse_filter = 1
+theme_override_colors/default_color = Color(0.09, 0.075825, 0.049500003, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+theme_override_font_sizes/italics_font_size = 18
+theme_override_font_sizes/mono_font_size = 18
+text = "[b]The survey is finished.[/b]"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters_behavior = 1
+tooltip_directions = Array[int]([5, 0, 1, 3])
+
+[node name="ContinueButton" type="Button" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Episode/HBoxContainer/MarginContainer/MainTextPanel/PanelContainer" unique_id=1189504913]
+unique_name_in_owner = true
+visible = false
+material = ExtResource("8_u5jpr")
+instance_shader_parameters/background_offset = Vector2(0.15782933, 0.08129113)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+focus_mode = 0
+theme_override_styles/normal = ExtResource("9_5bj80")
+theme_override_styles/pressed = ExtResource("9_5bj80")
+theme_override_styles/hover = ExtResource("9_5bj80")
+theme_override_styles/hover_pressed = ExtResource("9_5bj80")
+theme_override_styles/disabled = ExtResource("9_5bj80")
+text = "Continue"
+script = ExtResource("10_l2o63")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="ChoicesList" type="HBoxContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Episode" unique_id=655928367]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 92)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 15
+
+[node name="SurveyRecipe" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Episode/ChoicesList" unique_id=304402368 instance_placeholder="res://stage/survey/survey_recipe.tscn"]
+custom_maximum_size = Vector2(-1, 50)
+propagate_maximum_size = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="SurveyRecipe2" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Episode/ChoicesList" unique_id=652184846 instance_placeholder="res://stage/survey/survey_recipe.tscn"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SurveyRecipe3" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Episode/ChoicesList" unique_id=105064352 instance_placeholder="res://stage/survey/survey_recipe.tscn"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SurveyRecipe4" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox_Episode/ChoicesList" unique_id=1108838246 instance_placeholder="res://stage/survey/survey_recipe.tscn"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SkipButton" type="Button" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer" index="2" unique_id=124286812]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0, 0, 0, 0)
+layout_mode = 2
+
+[node name="BottomDowelWood" parent="ScrollPanel/BottomDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_1m30r")
+
+[connection signal="pressed" from="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/SkipButton" to="." method="_on_skip_button_pressed"]
+
+[editable path="ScrollPanel"]

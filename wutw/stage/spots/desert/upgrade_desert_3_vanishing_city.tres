@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://0dcj8q0vlk5k"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_xc8xa"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_aqlpm"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="3_daast"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_wyb0x"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="4_cj44k"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="5_f6i21"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="7_4lcga"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="8_hy4gi"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="9_koya8"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="10_pdosc"]
+[ext_resource type="Resource" uid="uid://coqtbomfb4xc" path="res://stage/spots/desert/spot_desert.tres" id="11_f6i21"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="12_4lcga"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://dguw3lrlq41bm" path="res://map/sprites/spots/desert/mst_desert_vanishing_city.tres" id="13_koya8"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://qf7jfw824yih" path="res://map/sprites/spots/desert/mst_desert_mirage_gate.tres" id="14_pdosc"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="15_1krcg"]
+
+[sub_resource type="Resource" id="Resource_x7xc2"]
+script = ExtResource("15_1krcg")
+old_sprite_type = ExtResource("14_pdosc")
+new_sprite_type = ExtResource("13_koya8")
+biome = 2
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_xc8xa")
+spot_upgrade_id = "desert_vanishing_city"
+name = "Vanishing City"
+description = "Once upon a blue moon this gateway appears to lead to a city spoken of in legends, but no one who has stepped through has ever returned."
+required_aspects = Array[ExtResource("3_wyb0x")]([ExtResource("7_4lcga"), ExtResource("8_hy4gi"), ExtResource("9_koya8"), ExtResource("10_pdosc")])
+granted_bonuses = Dictionary[ExtResource("2_aqlpm"), int]({
+ExtResource("3_daast"): 35,
+ExtResource("4_cj44k"): 25,
+ExtResource("5_f6i21"): 15
+})
+spot = ExtResource("11_f6i21")
+visuals = Array[ExtResource("12_4lcga")]([SubResource("Resource_x7xc2")])
+unique_per_run = true
+min_main_quest_progress = 110

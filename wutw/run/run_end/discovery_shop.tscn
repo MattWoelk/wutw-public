@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://bnfw0116bbuit"]
+
+[ext_resource type="Material" uid="uid://dmrs5krb7mu22" path="res://hub/museum/museum_tile.tres" id="3_sow8v"]
+[ext_resource type="Script" uid="uid://ko4h77pqq0tu" path="res://run/run_end/discovery_shop.gd" id="5_0ofba"]
+[ext_resource type="Resource" uid="uid://biemkdnrm7pl5" path="res://shops/get_rare_cards/shop_get_rare_card.tres" id="6_eg55y"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="7_1tc3t"]
+[ext_resource type="FontVariation" uid="uid://b3smiw8fmrdc5" path="res://theme/fonts/presets/font_normal_spaced.tres" id="7_sow8v"]
+[ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="8_nen44"]
+[ext_resource type="Texture2D" uid="uid://drvsp52vosdy8" path="res://events/landmark/mirage_gate/mirage_gate.png" id="9_ggmkd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_24gt5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h0xnt"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Discovery_Shop" type="PanelContainer" unique_id=478599391]
+custom_minimum_size = Vector2(207, 282)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_24gt5")
+script = ExtResource("5_0ofba")
+shop_type = ExtResource("6_eg55y")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="BG" type="TextureRect" parent="." unique_id=25580302]
+unique_name_in_owner = true
+material = ExtResource("3_sow8v")
+instance_shader_parameters/is_tall = true
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("9_ggmkd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2001990064]
+layout_mode = 2
+theme_override_constants/margin_bottom = 4
+
+[node name="UkiyoePanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=949411365]
+material = ExtResource("7_1tc3t")
+instance_shader_parameters/size = Vector2(244.02002, 49.97998)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_h0xnt")
+script = ExtResource("8_nen44")
+material_customized = true
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/UkiyoePanelContainer" unique_id=1367782202]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_sow8v")
+theme_override_font_sizes/font_size = 18
+text = "Mirage Gate"
+horizontal_alignment = 1
+autowrap_mode = 3

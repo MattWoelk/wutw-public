@@ -1,0 +1,35 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://711pcpyw6cbu"]
+
+[ext_resource type="MapSpriteType_Composite" uid="uid://chbfh2oc362kc" path="res://map/sprites/spots/hills/mst_hills_signal_beacon.tres" id="1_wg3rn"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://chgnofuesrvmq" path="res://map/sprites/spots/hills/mst_hills_windmill_building.tres" id="2_sktme"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://dp75qhj4f0rs3" path="res://map/sprites/spots/hills/mst_hills_windmill_wings.tres" id="3_okl7f"]
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_wg3rn"]
+p1 = Vector2(12.92, 1.25)
+p2 = Vector2(7.685, -0.45)
+p3 = Vector2(2.035, 0.15)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_sktme"]
+p1 = Vector2(-5.61, 0.265)
+p2 = Vector2(0, -1.33)
+p3 = Vector2(4.495, -0.07)
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_js8xt"]
+sprite_type = ExtResource("1_wg3rn")
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_rek8g"]
+sprite_type = ExtResource("2_sktme")
+offset = Vector2(7.77, -2.435)
+scale = 0.675
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_ug2t1"]
+sprite_type = ExtResource("3_okl7f")
+offset = Vector2(7.165, -3.77)
+scale = 0.635
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_js8xt"), SubResource("MapSpriteComponent_rek8g"), SubResource("MapSpriteComponent_ug2t1")])
+footprint_radius = 2.0
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Triangle_wg3rn"), SubResource("MapSpriteCollision_Triangle_sktme")])

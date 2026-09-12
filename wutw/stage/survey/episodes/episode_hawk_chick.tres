@@ -1,0 +1,139 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://culfwc63mm4bn"]
+
+[ext_resource type="Resource" uid="uid://f3teyuqt4qkt" path="res://art/pieces/piece_hiroshige_satta.tres" id="1_6di8s"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_6k005"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_6di8s"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_6njkv"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="4_6fwsx"]
+[ext_resource type="Script" uid="uid://cbnw4a13y5x8c" path="res://events/system/outcomes/random/event_outcome_random.gd" id="5_8g1pa"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="6_usytp"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="7_5hisg"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="8_kxxoo"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="9_fhjre"]
+[ext_resource type="Script" uid="uid://yxgaymbbt8tk" path="res://events/system/outcomes/override_next_step/event_outcome_override_next_step.gd" id="10_88a1f"]
+[ext_resource type="Resource" uid="uid://dhal843mubr37" path="res://cards/tier6/card_wound.tres" id="11_g3fv4"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="12_5mbqn"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="13_5dd27"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="14_w51sv"]
+[ext_resource type="Resource" uid="uid://4ehjm1o76x8c" path="res://cards/tier3/card_hawk.tres" id="15_ywwfc"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="16_8qcn1"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="17_u1pov"]
+[ext_resource type="Resource" uid="uid://cmbyg0gub8sum" path="res://stage/spots/river/spot_river.tres" id="18_bn7xh"]
+[ext_resource type="Resource" uid="uid://bb65d05uw68x1" path="res://stage/spots/lake/spot_lake.tres" id="19_3h6pv"]
+
+[sub_resource type="Resource" id="Resource_rqkin"]
+script = ExtResource("1_6k005")
+_texture_path = "res://stage/survey/episodes/hawk_chick.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_0od2j"]
+script = ExtResource("8_kxxoo")
+bonus_type = ExtResource("7_5hisg")
+amount = 25
+extra_per_season = 25
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_h3yx7"]
+script = ExtResource("10_88a1f")
+result_text = "Fearing for the chick's odds of survival, the surveyors decide to return it to the nest.
+
+One of them gently picks up the chick, wraps it in a cloth, and climbs up the tree.
+
+The adult hawk flies off for a moment then swoops down, screeching fiercely.
+
+Sharp talons rip into the scouts robe and send him hurtling to the ground."
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_oanl6"]
+script = ExtResource("12_5mbqn")
+card_type = ExtResource("11_g3fv4")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_j6tmy"]
+script = ExtResource("9_fhjre")
+suboutcomes = Array[ExtResource("6_usytp")]([SubResource("Resource_h3yx7"), SubResource("Resource_oanl6")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_tjq03"]
+script = ExtResource("5_8g1pa")
+suboutcomes = Dictionary[ExtResource("6_usytp"), float]({
+SubResource("Resource_0od2j"): 0.5,
+SubResource("Resource_j6tmy"): 0.5
+})
+description = "Much <term:bonus.harmony> or <term:card.wound>"
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_8qym0"]
+script = ExtResource("2_6di8s")
+label = "Return it to its nest."
+aspects = Array[ExtResource("3_6njkv")]([ExtResource("4_6fwsx")])
+aspects_per_season = Array[ExtResource("3_6njkv")]([null])
+outcome = SubResource("Resource_tjq03")
+outcome_text = "Fearing for the chick's odds of survival, the surveyors decide to return it to the nest.
+
+One of them gently picks up the chick, wraps it in a cloth, and climbs up the tree.
+
+The adult hawk flies away and starts circling above, letting the scout safely deposit the chick."
+
+[sub_resource type="Resource" id="Resource_luco3"]
+script = ExtResource("8_kxxoo")
+bonus_type = ExtResource("7_5hisg")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_khd6g"]
+script = ExtResource("2_6di8s")
+label = "Move it to a safe spot."
+aspects = Array[ExtResource("3_6njkv")]([ExtResource("13_5dd27")])
+aspects_per_season = Array[ExtResource("3_6njkv")]([null])
+outcome = SubResource("Resource_luco3")
+outcome_text = "Fearing for the chick's odds of survival, the surveyors gently move the nestling so it lies sheltered among the roots of the tree.
+
+Perhaps that will keep it out of harm's way for a time."
+
+[sub_resource type="Resource" id="Resource_67n1v"]
+script = ExtResource("12_5mbqn")
+card_type = ExtResource("15_ywwfc")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_oewu8"]
+script = ExtResource("2_6di8s")
+label = "Adopt it."
+aspects = Array[ExtResource("3_6njkv")]([ExtResource("14_w51sv"), ExtResource("14_w51sv")])
+outcome = SubResource("Resource_67n1v")
+outcome_text = "The group decides to take the nestling with them.
+
+They gently wrap it into a soft cloth, and feed it regularly throughout the day.
+
+Soon a young hawk will follow them everywhere."
+
+[sub_resource type="Resource" id="Resource_wfu6h"]
+script = ExtResource("8_kxxoo")
+bonus_type = ExtResource("7_5hisg")
+amount = -5
+extra_per_season = -5
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_h2na2"]
+script = ExtResource("2_6di8s")
+label = "Leave it alone."
+aspects = Array[ExtResource("3_6njkv")]([null])
+aspects_per_season = Array[ExtResource("3_6njkv")]([null])
+outcome = SubResource("Resource_wfu6h")
+outcome_text = "The group decides to leave the nestling where it is.
+
+As they walk away, they see the adult hawk circling overhead."
+
+[resource]
+script = ExtResource("16_8qcn1")
+episode_id = "hawk_chick"
+title = "The Baby Hawk"
+biome_types = Array[int]([1, 10])
+spot_types = Array[ExtResource("17_u1pov")]([ExtResource("18_bn7xh"), ExtResource("19_3h6pv")])
+text = "As the survey team hikes up a steep path, they see a hawk racing overhead. It lands on a pine tree and cries out sharply.
+
+The scouts hear another cry, and looking down, see a small nestling stuck in a thorny shrub, helplessly flapping its wings."
+background_image = SubResource("Resource_rqkin")
+background_credit = ExtResource("1_6di8s")
+choices = Array[ExtResource("2_6di8s")]([SubResource("Resource_8qym0"), SubResource("Resource_khd6g"), SubResource("Resource_oewu8"), SubResource("Resource_h2na2")])

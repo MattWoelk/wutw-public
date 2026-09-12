@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="ShardType_Hunger" format=3 uid="uid://dkq0a6vlef8jx"]
+
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="1_ca2sl"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="1_us01j"]
+[ext_resource type="Script" uid="uid://b1omvf7rxfwrj" path="res://shard_types/hunger/shard_type_hunger.gd" id="2_kd3ja"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="3_8fhkr"]
+[ext_resource type="Texture2D" uid="uid://rakmg5kda1nc" path="res://shard_types/hunger/shard_type_hunger.png" id="3_sllme"]
+[ext_resource type="Resource" uid="uid://m0qsbe8freip" path="res://art/pieces/piece_gekkou_shunkan_in_exile.tres" id="4_4br4y"]
+[ext_resource type="Resource" uid="uid://cptm4kegfpe78" path="res://skills/cards/skill_cards_reserve.tres" id="7_qf1hm"]
+[ext_resource type="Resource" uid="uid://crwoctot0p27o" path="res://debate/arguments/argument_redistribution.tres" id="7_r4huu"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="8_r4huu"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="10_r4huu"]
+
+[sub_resource type="Resource" id="Resource_42s6q"]
+script = ExtResource("1_ca2sl")
+text = "$shard_name has been a hungry place ever since its founding. Between the scarce natural resources and the lack of agriculture, starvation has been a constant companion for the people. In time, they have adapted to the hunger. They calibrated their scales to the weight of a single hair and began locking people up for spilling a bag of rice. Survival is a luxury here, for which the people compete daily."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_7c60o"]
+script = ExtResource("1_ca2sl")
+text = "Crime is uncommon on $shard_name, partly because there's little to steal. The town guards spend much of their time patrolling the mess halls, watching for hands reaching for a second scoop or the telltale bulge of a turnip hoarded in a sleeve. A neighbor with a full belly is a neighbor stealing from the stockpile, and a round stomach is probable cause for an audit of one's household."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_nw6pk"]
+script = ExtResource("1_ca2sl")
+text = "Despite the austere conditions, $shard_name is not without celebrations. $town3 hosts a grand festival at the end of its fasting season, where every citizen receives a full bowl of rice and all the miso soup they can take. Still, some locals abstain even during these days, as they view hunger as a badge of civic loyalty."
+time_taken = 2
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_v7pj1"]
+script = ExtResource("1_ca2sl")
+text = "With time, new agricultural techniques and distribution policies have made starvation a thing of the past, yet the culture is not so quick to change. The granaries may be full now, but tables remain sparse. The memory of hunger persists in the back of people's minds, keeping them anxious about the next time a harvest might fail, or a storm might ruin a town's orchard."
+time_taken = 2
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_tqudr"]
+script = ExtResource("8_r4huu")
+text = "This was an odd place. At first it seemed like just another shard, but after I spent a few days with the locals, I noticed some oddities. First off, even the rich officials seem to be wearing worn-out clothes. They have shops bursting at the seams with robes and sashes, yet they consider it a waste to throw out an outfit until it's full of holes.
+
+The dining customs are odd too. You can't order a dish at a restaurant until you've finished everything already on your plate. I met a traveler who brought some pears to eat on the way, and once he was done, he packed the cores into a little bag, saying that he'll be planting them in his garden, because it would be a waste to throw them away."
+revealed_skill = ExtResource("7_qf1hm")
+gained_argument = ExtResource("7_r4huu")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[resource]
+script = ExtResource("2_kd3ja")
+food_bonus_type = ExtResource("1_us01j")
+shard_type_id = "hunger"
+name = "The Austere Rationers"
+shard_name_override = "Wabi no Kuni"
+shard_name_override_jp = "侘国"
+shard_name_override_meaning = "Austerity Province"
+tier = 1
+illustration = ExtResource("3_sllme")
+illustration_credit = ExtResource("4_4br4y")
+history = Array[ExtResource("1_ca2sl")]([SubResource("Resource_42s6q"), SubResource("Resource_7c60o"), SubResource("Resource_nw6pk"), SubResource("Resource_v7pj1")])
+trip_reward = SubResource("Resource_tqudr")
+metadata/_custom_type_script = "uid://c6vrs2bxrk07c"

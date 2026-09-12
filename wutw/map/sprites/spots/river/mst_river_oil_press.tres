@@ -1,0 +1,28 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://bwlymfjtsrbpd"]
+
+[ext_resource type="MapSpriteType_Building" uid="uid://db1aj3pyhkulp" path="res://map/sprites/buildings/houses/mst_house_9.tres" id="1_j2f42"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://dbvymjix7xud2" path="res://map/sprites/spots/steppe/mst_steppe_pots_painted.tres" id="2_0pdr2"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://dywa8r83nnmke" path="res://map/sprites/spots/steppe/mst_steppe_pots.tres" id="3_rut75"]
+
+[sub_resource type="MapSpriteCollision_Rect" id="MapSpriteCollision_Rect_0pdr2"]
+rect = Rect2(-1.805, -1.15, 3.55, 1.79)
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_a5qs8"]
+sprite_type = ExtResource("1_j2f42")
+scale = 0.635
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_pyjm5"]
+sprite_type = ExtResource("2_0pdr2")
+offset = Vector2(-1.14, 0.235)
+scale = 0.33
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_b8pl1"]
+sprite_type = ExtResource("3_rut75")
+offset = Vector2(-0.46, 0.275)
+scale = 0.39
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_a5qs8"), SubResource("MapSpriteComponent_pyjm5"), SubResource("MapSpriteComponent_b8pl1")])
+footprint_radius = 2.125
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Rect_0pdr2")])

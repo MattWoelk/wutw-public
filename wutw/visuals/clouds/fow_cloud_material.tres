@@ -1,0 +1,38 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://d4glhcme1baj5"]
+
+[ext_resource type="Shader" uid="uid://dqi7qsjg0elp6" path="res://visuals/clouds/fow_cloud.gdshader" id="1_q6t0a"]
+
+[sub_resource type="Gradient" id="Gradient_q6t0a"]
+offsets = PackedFloat32Array(0.00409836, 0.150099, 0.306352, 0.441598, 0.516393, 0.567594, 0.648566)
+colors = PackedColorArray(1, 1, 1, 1, 0.999838, 0.999791, 0.999727, 0.999699, 1, 1, 1, 1, 0.98, 0.971507, 0.9604, 1, 0.99, 0.97713, 0.9603, 1, 0.97, 0.953187, 0.9312, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vvqpp"]
+gradient = SubResource("Gradient_q6t0a")
+
+[sub_resource type="Gradient" id="Gradient_vvqpp"]
+offsets = PackedFloat32Array(0.00409836, 0.160861, 0.306352, 0.441598, 0.516393, 0.571721, 0.597336, 0.617828, 0.639344, 0.648566)
+colors = PackedColorArray(1, 1, 1, 1, 0.999838, 0.999791, 0.999727, 0.999699, 1, 1, 1, 1, 0.98, 0.971507, 0.9604, 1, 0.95, 0.933533, 0.912, 1, 0.89, 0.85529, 0.8099, 1, 0.121569, 0.113725, 0.109804, 1, 0.121569, 0.113725, 0.109804, 1, 0, 0, 0, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yujkb"]
+gradient = SubResource("Gradient_vvqpp")
+
+[resource]
+shader = ExtResource("1_q6t0a")
+shader_parameter/clip_threshold = 0.369
+shader_parameter/clip_distance = 0.0511
+shader_parameter/clip_edge_threshold = 0.438
+shader_parameter/clip_edge_distance = 0.1
+shader_parameter/landmass_encroach_fade_from_scale = 0.465
+shader_parameter/range = 0.119
+shader_parameter/gradient = SubResource("GradientTexture1D_vvqpp")
+shader_parameter/gradient_near_land = SubResource("GradientTexture1D_yujkb")
+shader_parameter/noise_scale = 158.562
+shader_parameter/noise_strength = 0.062
+shader_parameter/noise_smoothness = 1.0
+shader_parameter/noise_color = Color(0.85, 0.657758, 0.3485, 1)
+shader_parameter/edge_noise_scale = 325.0
+shader_parameter/edge_noise_strength = 1.235
+shader_parameter/edge_noise_smoothness = 1.0
+shader_parameter/cloud_merge_k = 0.004
+shader_parameter/distortion_amplitude = 0.0101
+shader_parameter/distortion_speed = 1.0

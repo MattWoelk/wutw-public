@@ -1,0 +1,101 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://dqkp5tb4s0w3r"]
+
+[ext_resource type="Resource" uid="uid://dkmj4dkugbvee" path="res://art/pieces/piece_hokusai_fuji_taiseki.tres" id="1_35bc7"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_k426q"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_35bc7"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_aveeh"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="4_e7nv7"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="5_f2h5s"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="6_acryy"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="7_6kfkc"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="8_i82hb"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="9_nfut3"]
+[ext_resource type="Script" uid="uid://gu7gcielbwdr" path="res://events/system/outcomes/choose_card/event_outcome_choose_card.gd" id="10_tbm74"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="11_qhxcd"]
+[ext_resource type="Resource" uid="uid://dhal843mubr37" path="res://cards/tier6/card_wound.tres" id="12_kkm5u"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="13_24p0v"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="14_lpeie"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="15_jbl1k"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="16_f1pwd"]
+
+[sub_resource type="Resource" id="Resource_bpnpi"]
+script = ExtResource("1_k426q")
+_texture_path = "res://stage/survey/episodes/episode_beautiful_valley.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_8454k"]
+script = ExtResource("6_acryy")
+bonus_type = ExtResource("5_f2h5s")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_xt37u"]
+script = ExtResource("2_35bc7")
+label = "Wait for her."
+aspects = Array[ExtResource("3_aveeh")]([ExtResource("4_e7nv7")])
+aspects_per_season = Array[ExtResource("3_aveeh")]([null])
+outcome = SubResource("Resource_8454k")
+outcome_text = "The team calls a break to let the artist draw. The finished sketch is a striking work of art: not only does it show the distant mountain and the valley below, but even the members of the team are immortalized within the sketch."
+
+[sub_resource type="Resource" id="Resource_g8f3a"]
+script = ExtResource("6_acryy")
+bonus_type = ExtResource("5_f2h5s")
+amount = 15
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_vgquo"]
+script = ExtResource("10_tbm74")
+card_tag = 23
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_sl00i"]
+script = ExtResource("8_i82hb")
+suboutcomes = Array[ExtResource("9_nfut3")]([SubResource("Resource_g8f3a"), SubResource("Resource_vgquo")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_taytr"]
+script = ExtResource("2_35bc7")
+label = "Have everyone sketch a version."
+aspects = Array[ExtResource("3_aveeh")]([ExtResource("4_e7nv7"), ExtResource("7_6kfkc")])
+aspects_per_season = Array[ExtResource("3_aveeh")]([null])
+outcome = SubResource("Resource_sl00i")
+outcome_text = "The team calls a break and rather than letting the artist draw alone, they split the charcoal and each scout sketches their own take on the landscape.
+
+The result is surprisingly varied - some have drawn the valley alone. Others have focused on the distant peak rising from the clouds. One man drew a portrait of the artist instead, and now shyly presents it to her before resuming the trip."
+
+[sub_resource type="Resource" id="Resource_q5tvv"]
+script = ExtResource("13_24p0v")
+card_type = ExtResource("12_kkm5u")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_u23im"]
+script = ExtResource("2_35bc7")
+label = "Let the artist catch up."
+aspects = Array[ExtResource("3_aveeh")]([null])
+outcome = SubResource("Resource_q5tvv")
+outcome_text = "The team moves on, leaving the artist to sketch. By nightfall she has still failed to catch up, so they backtrack. It turns out the poor woman had sprained her ankle, and decided to rest for the night rather than walk the treacherous path in the dark."
+
+[sub_resource type="Resource" id="Resource_o5w7m"]
+script = ExtResource("14_lpeie")
+delta = -5
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_f1eex"]
+script = ExtResource("2_35bc7")
+label = "Continue on together."
+aspects = Array[ExtResource("3_aveeh")]([null])
+aspects_per_season = Array[ExtResource("3_aveeh")]([null])
+outcome = SubResource("Resource_o5w7m")
+outcome_text = "The team refuses to split up and forges ahead. The artist keeps on grumbling about tyrannical leadership, but the rest pay her no mind."
+
+[resource]
+script = ExtResource("15_jbl1k")
+episode_id = "beautiful_valley"
+title = "The Picturesque Vista"
+biome_types = Array[int]([7])
+text = "One of the scouts is struck by the beauty of the valley over which the surveyors are passing. She asks to stay behind to sketch the landscape, promising to catch up as soon as she is done."
+background_image = SubResource("Resource_bpnpi")
+background_credit = ExtResource("1_35bc7")
+choices = Array[ExtResource("2_35bc7")]([SubResource("Resource_xt37u"), SubResource("Resource_taytr"), SubResource("Resource_u23im"), SubResource("Resource_f1eex")])

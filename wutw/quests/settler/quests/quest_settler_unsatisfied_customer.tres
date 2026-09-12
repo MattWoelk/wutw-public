@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="Quest_Settler" format=3 uid="uid://dfxgvf6wtheya"]
+
+[ext_resource type="Script" uid="uid://cjloydxgrv8oa" path="res://quests/settler/settler_quest_challenge.gd" id="1_2kgmu"]
+[ext_resource type="Script" uid="uid://4wq52c05i2oa" path="res://quests/settler/challenges/settler_quest_challenge_run_var.gd" id="2_qt4tu"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="3_0gklk"]
+[ext_resource type="Resource" uid="uid://kau1o80i2qm0" path="res://characters/jobs/job_monk_forest.tres" id="4_bs522"]
+[ext_resource type="Resource" uid="uid://c2qx8ufo4c12r" path="res://characters/jobs/job_monk_ember.tres" id="5_h7avm"]
+[ext_resource type="Resource" uid="uid://brr7uk3citu0o" path="res://characters/jobs/job_monk_wilds.tres" id="6_6l80f"]
+[ext_resource type="Script" uid="uid://cd4swbq3t72je" path="res://quests/settler/settler_quest_reward.gd" id="7_h6pe0"]
+[ext_resource type="Resource" uid="uid://djn3flqos8t4f" path="res://characters/jobs/job_monk_shattered.tres" id="7_ha5lr"]
+[ext_resource type="Resource" uid="uid://jttde8t0g8wh" path="res://characters/jobs/job_priest.tres" id="8_6kgcd"]
+[ext_resource type="Resource" uid="uid://bcyiqb6aoy7gy" path="res://characters/jobs/job_scholar.tres" id="9_qglma"]
+[ext_resource type="Resource" uid="uid://d01sh3wyj45gx" path="res://characters/jobs/job_child.tres" id="10_trjeg"]
+[ext_resource type="Script" uid="uid://1na7ymvvvbby" path="res://quests/settler/quest_settler.gd" id="10_wefls"]
+[ext_resource type="Resource" uid="uid://djgxin6rsfiok" path="res://characters/jobs/job_healer.tres" id="11_b3ety"]
+[ext_resource type="Script" uid="uid://bxua8gxfjp2wy" path="res://quests/settler/settler_quest_goal.gd" id="11_ly7qh"]
+[ext_resource type="Resource" uid="uid://gmdrouwpddwx" path="res://characters/jobs/job_hermit.tres" id="12_gfxjw"]
+[ext_resource type="Script" uid="uid://cvrgydjebg044" path="res://quests/settler/rewards/settler_quest_reward_run_var.gd" id="14_h7avm"]
+[ext_resource type="Script" uid="uid://cschghuk4t5qx" path="res://quests/settler/goals/settler_quest_goal_global_upgrades.gd" id="17_6l80f"]
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="18_ha5lr"]
+[ext_resource type="Resource" uid="uid://bneroyflus0ar" path="res://stage/spots/square/upgrade_square_2_market.tres" id="19_6kgcd"]
+[ext_resource type="Resource" uid="uid://djxb6mm527cn4" path="res://stage/spots/lake/upgrade_lake_2_floating_market.tres" id="20_qglma"]
+
+[sub_resource type="Resource" id="Resource_0ss3g"]
+script = ExtResource("2_qt4tu")
+var_type = 53
+delta = -9999
+description = "Cannot use <term:card_ability.satisfy> <term_lower:card_ability>s."
+metadata/_custom_type_script = "uid://4wq52c05i2oa"
+
+[sub_resource type="Resource" id="Resource_8lytx"]
+script = ExtResource("14_h7avm")
+run_var = 14
+delta = -20
+preview_description = "All <term:shop> thresholds are reduced by 20%."
+outcome_description = "All <term:shop> thresholds will now be reduced by 20%."
+metadata/_custom_type_script = "uid://cvrgydjebg044"
+
+[sub_resource type="Resource" id="Resource_cnsy7"]
+script = ExtResource("17_6l80f")
+upgrades = Array[ExtResource("18_ha5lr")]([ExtResource("19_6kgcd"), ExtResource("20_qglma")])
+metadata/_custom_type_script = "uid://cschghuk4t5qx"
+
+[resource]
+script = ExtResource("10_wefls")
+intro_text = "The markets on my home shard are just the worst! All overpriced, and not a single fashionable item in stock! I need a shard where I can do some proper shopping."
+challenges = Array[ExtResource("1_2kgmu")]([SubResource("Resource_0ss3g")])
+settler_goals = Array[ExtResource("11_ly7qh")]([SubResource("Resource_cnsy7")])
+rewards = Array[ExtResource("7_h6pe0")]([SubResource("Resource_8lytx")])
+exclude_jobs = Array[ExtResource("3_0gklk")]([ExtResource("4_bs522"), ExtResource("5_h7avm"), ExtResource("6_6l80f"), ExtResource("7_ha5lr"), ExtResource("8_6kgcd"), ExtResource("9_qglma"), ExtResource("10_trjeg"), ExtResource("11_b3ety"), ExtResource("12_gfxjw")])
+quest_id = "settler_unsatisfied_customer"
+category = 2
+name = "An Unsatisfied Customer"
+metadata/_custom_type_script = "uid://1na7ymvvvbby"

@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://d3l8k6g4pib6c"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_10yuv"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_wd6bb"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="4_10yuv"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="5_cmxh2"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="5_wd6bb"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="6_qpj2p"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="8_nte4i"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="8_sgjsy"]
+[ext_resource type="Resource" uid="uid://ouecqwnbe2cw" path="res://stage/spots/swamp/spot_swamp.tres" id="9_sgjsy"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="10_tu4tl"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://dk7k8cbrgm0lm" path="res://map/sprites/spots/swamp/mst_swamp_reed_weaver.tres" id="11_qpj2p"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://bp26ovrxxbcrl" path="res://map/sprites/spots/swamp/mst_swamp_rice_paddy.tres" id="12_4ggfr"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="13_nte4i"]
+
+[sub_resource type="Resource" id="Resource_rs1fw"]
+script = ExtResource("13_nte4i")
+old_sprite_type = ExtResource("12_4ggfr")
+new_sprite_type = ExtResource("11_qpj2p")
+biome = 4
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_10yuv")
+spot_upgrade_id = "swamp_weaver"
+name = "Reed Weaver's Hut"
+description = "Reeds are woven into huts, and huts into communities, or occasionally into stories of gracefully collapsing roofs."
+required_aspects = Array[ExtResource("6_qpj2p")]([ExtResource("8_nte4i"), ExtResource("8_sgjsy")])
+granted_bonuses = Dictionary[ExtResource("2_wd6bb"), int]({
+ExtResource("5_cmxh2"): 5,
+ExtResource("4_10yuv"): 8,
+ExtResource("5_wd6bb"): 8
+})
+spot = ExtResource("9_sgjsy")
+visuals = Array[ExtResource("10_tu4tl")]([SubResource("Resource_rs1fw")])
+tags = Array[int]([2])

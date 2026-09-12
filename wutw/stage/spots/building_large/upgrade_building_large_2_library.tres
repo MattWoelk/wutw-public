@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://c4geqaow8tvvd"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_ndqeg"]
+[ext_resource type="Resource" uid="uid://dh1sy0fm46wde" path="res://stage/spots/building_large/upgrade_building_large_3_artisans_college.tres" id="2_jf0k4"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_vt2qn"]
+[ext_resource type="Resource" uid="uid://ckascrqbwrpsy" path="res://stage/spots/building_large/upgrade_building_large_3_printer.tres" id="3_2qckh"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_emip8"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="5_xxx5a"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="7_aw7ok"]
+[ext_resource type="Resource" uid="uid://b85k7x2ec04xc" path="res://stage/spots/building_large/spot_building_large.tres" id="8_5i0mb"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_de8ys"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://bpryqve107y4f" path="res://map/sprites/spots/large_building/mst_large_building_scriptorium.tres" id="10_jym0s"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://dnwpmiumphuqb" path="res://map/sprites/spots/large_building/mst_large_building_school.tres" id="11_axo32"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="12_185p6"]
+
+[sub_resource type="Resource" id="Resource_sd2mx"]
+script = ExtResource("12_185p6")
+old_sprite_type = ExtResource("11_axo32")
+new_sprite_type = ExtResource("10_jym0s")
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_ndqeg")
+spot_upgrade_id = "building_large_library"
+name = "Archives"
+description = "Scrolls from the Old World sit snugly next to new census records and poetry compilations."
+required_aspects = Array[ExtResource("3_emip8")]([ExtResource("7_aw7ok")])
+granted_bonuses = Dictionary[ExtResource("2_vt2qn"), int]({
+ExtResource("5_xxx5a"): 15
+})
+child_upgrades = Array[ExtResource("1_ndqeg")]([ExtResource("2_jf0k4"), ExtResource("3_2qckh")])
+spot = ExtResource("8_5i0mb")
+visuals = Array[ExtResource("9_de8ys")]([SubResource("Resource_sd2mx")])

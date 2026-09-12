@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://br5ix4bcon0ns"]
+
+[ext_resource type="Script" uid="uid://vdvl83yyiseo" path="res://hub/hub_top_hud.gd" id="1_b6tc1"]
+[ext_resource type="PackedScene" uid="uid://cq31vml753tl7" path="res://hub/insights/insights_counter.tscn" id="2_p0bmo"]
+[ext_resource type="PackedScene" uid="uid://2ts6fufc7wli" path="res://quests/hud/quest_hud.tscn" id="6_nv4nm"]
+[ext_resource type="PackedScene" uid="uid://if8t46q48gc2" path="res://pause_menu/pause_button.tscn" id="8_18pv5"]
+
+[node name="HubTopHud" type="Node2D" unique_id=394293609]
+script = ExtResource("1_b6tc1")
+
+[node name="TopBar" type="HBoxContainer" parent="." unique_id=17101304]
+custom_minimum_size = Vector2(0, 72)
+offset_left = 1.0
+offset_top = 7.0
+offset_right = 1911.0
+offset_bottom = 79.0
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="InsightsCounter" parent="TopBar" unique_id=1839573111 instance=ExtResource("2_p0bmo")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="QuestHud" parent="TopBar" unique_id=1165934622 instance=ExtResource("6_nv4nm")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="PauseButton" parent="TopBar" unique_id=28221169 instance=ExtResource("8_18pv5")]
+unique_name_in_owner = true
+self_modulate = Color(0.83, 0.83, 0.83, 1)
+instance_shader_parameters/background_offset = Vector2(0.02039354, 0.011866024)
+instance_shader_parameters/size = Vector2(40.816284, 40.81633)
+custom_maximum_size = Vector2(-1, -1)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4

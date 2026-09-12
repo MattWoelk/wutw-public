@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://b5b4w1emxneov"]
+
+[ext_resource type="Script" uid="uid://dnrdfmuaxxd51" path="res://hub/skill_management/skill_node.gd" id="1_7lsg6"]
+[ext_resource type="Texture2D" uid="uid://bfcrc12a0ivqe" path="res://hub/skill_management/skill_unknown.png" id="3_66ybj"]
+[ext_resource type="Shader" uid="uid://pfe32qaxu6r" path="res://hub/skill_management/skill_node.gdshader" id="3_aj7v0"]
+[ext_resource type="Texture2D" uid="uid://q5me1e8nedxd" path="res://visuals/clouds/white_200x200.png" id="4_66ybj"]
+[ext_resource type="Texture2D" uid="uid://go64cbx1ohwd" path="res://theme/button/white_1x1px.png" id="5_wruqg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x341j"]
+shader = ExtResource("3_aj7v0")
+shader_parameter/unknown_color = Color(0, 0, 0, 0.33333334)
+shader_parameter/unavailable_color = Color(0, 0, 0, 0.62352943)
+shader_parameter/available_color = Color(0, 0, 0, 1)
+shader_parameter/unlocked_color = Color(0.47, 0.1786, 0.1786, 1)
+shader_parameter/hovered_color = Color(0.57, 0.11399999, 0.11399999, 1)
+shader_parameter/radius = 0.3710000176225
+shader_parameter/frame_width = 0.06400000304
+shader_parameter/frame_smoothness = 0.0170000008075
+shader_parameter/margin = 0.1310000062225
+shader_parameter/noise_scale = 68.90700327238399
+shader_parameter/noise_strength = 1.61600007676
+shader_parameter/noise_smoothness = 1.0
+shader_parameter/noise_min = 0.5510000261725
+shader_parameter/noise_max = 1.0
+shader_parameter/color = Color(0, 0, 0, 0.654902)
+shader_parameter/width = 0.026000001235
+shader_parameter/edge = 0.005
+shader_parameter/lines_margin = 0.015
+
+[sub_resource type="LabelSettings" id="LabelSettings_7lsg6"]
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="SkillNode" type="Control" unique_id=213045558]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1848.0
+offset_bottom = -1008.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7lsg6")
+up = true
+down = true
+left = true
+right = true
+unknown_texture = ExtResource("3_66ybj")
+placeholder_texture = ExtResource("4_66ybj")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=1041844907]
+unique_name_in_owner = true
+texture_filter = 4
+texture_repeat = 1
+material = SubResource("ShaderMaterial_x341j")
+instance_shader_parameters/line_downleft = true
+instance_shader_parameters/line_downright = true
+instance_shader_parameters/line_left = true
+instance_shader_parameters/line_right = true
+instance_shader_parameters/line_up = true
+instance_shader_parameters/line_upleft = true
+instance_shader_parameters/line_upright = true
+instance_shader_parameters/state = 0
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -37.0
+offset_right = 37.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("5_wruqg")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="." unique_id=566781583]
+unique_name_in_owner = true
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -17.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 0
+text = "123"
+label_settings = SubResource("LabelSettings_7lsg6")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[connection signal="gui_input" from="Icon" to="." method="_on_icon_gui_input"]
+[connection signal="mouse_entered" from="Icon" to="." method="_on_icon_mouse_entered"]
+[connection signal="mouse_exited" from="Icon" to="." method="_on_icon_mouse_exited"]

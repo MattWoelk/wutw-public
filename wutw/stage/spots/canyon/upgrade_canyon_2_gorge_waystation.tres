@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://dkm1klnpi62em"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_gude2"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_pb86x"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_0y30l"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="3_fhc2q"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="4_qwl7q"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="6_rs2ji"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="7_emq43"]
+[ext_resource type="Resource" uid="uid://d1c7ny2xs7pwo" path="res://stage/spots/canyon/spot_canyon.tres" id="8_rs2ji"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_emq43"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://ddi51n11ikii4" path="res://map/sprites/spots/canyon/mst_canyon_gorge_waystation.tres" id="10_3thds"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://yi6r4d10vn2d" path="res://map/sprites/mountains/mst_mountain_1_medium.tres" id="10_lbwsd"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://dj3v8t4s3gl5l" path="res://map/sprites/spots/canyon/mst_canyon_suspended_bridge.tres" id="11_7agb6"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://desakgu6q3yov" path="res://map/sprites/mountains/mst_mountain_2_large.tres" id="11_s4x3n"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="12_5d13w"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://c3u877m1spx0" path="res://map/sprites/mountains/mst_mountain_3_large.tres" id="12_mff5c"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://doqqvl0x3b3g4" path="res://map/sprites/mountains/mst_mountain_4_small.tres" id="13_qlupu"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bxr2aj680eaqd" path="res://map/sprites/mountains/mst_mountain_5_small.tres" id="14_odvwm"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cekrboxmhdmhk" path="res://map/sprites/mountains/mst_mountain_6_tiny.tres" id="15_6xklc"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cjbrxida4odnk" path="res://map/sprites/mountains/mst_mountain_7_tiny.tres" id="16_l2rnj"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://56t2rh2pg58y" path="res://map/sprites/mountains/mst_mountain_8_medium.tres" id="17_88rmv"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://csjeschaiy5ct" path="res://map/sprites/mountains/mst_mountain_9_large.tres" id="18_nr62f"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bctu7rlwqc3o7" path="res://map/sprites/mountains/mst_mountain_10_medium.tres" id="19_xqfud"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://t2knd16pwuwg" path="res://map/sprites/mountains/mst_mountain_11_medium.tres" id="20_px74k"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dxba886xk8sch" path="res://map/sprites/mountains/mst_mountain_12_pair.tres" id="21_dvqkp"]
+
+[sub_resource type="Resource" id="Resource_hm366"]
+script = ExtResource("12_5d13w")
+old_sprite_type = ExtResource("11_7agb6")
+new_sprite_type = ExtResource("10_3thds")
+extra_removables = Array[MapSpriteType]([ExtResource("10_lbwsd"), ExtResource("11_s4x3n"), ExtResource("12_mff5c"), ExtResource("13_qlupu"), ExtResource("14_odvwm"), ExtResource("15_6xklc"), ExtResource("16_l2rnj"), ExtResource("17_88rmv"), ExtResource("18_nr62f"), ExtResource("19_xqfud"), ExtResource("20_px74k"), ExtResource("21_dvqkp")])
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_gude2")
+spot_upgrade_id = "canyon_gorge"
+name = "Gorge Waystation"
+description = "A tea house on one side of the gorge, and an inn on the other, helping motivate folks to brave the bridge."
+required_aspects = Array[ExtResource("3_0y30l")]([ExtResource("6_rs2ji"), ExtResource("7_emq43")])
+granted_bonuses = Dictionary[ExtResource("2_pb86x"), int]({
+ExtResource("3_fhc2q"): 10,
+ExtResource("4_qwl7q"): 10
+})
+spot = ExtResource("8_rs2ji")
+visuals = Array[ExtResource("9_emq43")]([SubResource("Resource_hm366")])

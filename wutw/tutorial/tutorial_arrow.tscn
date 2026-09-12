@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://jkaeiwtg6s5q"]
+
+[ext_resource type="Shader" uid="uid://b1prpr4mafjum" path="res://stage/targeting/brushstroke_arrow.gdshader" id="1_ey5if"]
+[ext_resource type="Texture2D" uid="uid://obube1vemkw6" path="res://stage/targeting/brushstroke_arrow.png" id="2_yk7tt"]
+[ext_resource type="Script" uid="uid://0k1ux8508eii" path="res://tutorial/tutorial_arrow.gd" id="3_ob73p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ey5if"]
+shader = ExtResource("1_ey5if")
+shader_parameter/arrowhead_pixels = 100.0
+shader_parameter/arrowhead_u = 0.4
+shader_parameter/color = Color(0.47322875, 0.11908949, 0.028255397, 1)
+shader_parameter/glow_speed = 0.2
+shader_parameter/band_period = 1.0
+shader_parameter/band_exponent = 2.0
+shader_parameter/glow_color = Color(0.32713696, 0.16050872, 0.13038373, 1)
+
+[node name="TutorialArrow" type="TextureRect" unique_id=1273548819]
+material = SubResource("ShaderMaterial_ey5if")
+custom_minimum_size = Vector2(0, 70)
+offset_right = 274.0
+offset_bottom = 70.0
+pivot_offset = Vector2(0, 39)
+mouse_filter = 2
+texture = ExtResource("2_yk7tt")
+expand_mode = 1
+script = ExtResource("3_ob73p")
+color = Color(0.47322875, 0.11908949, 0.028255397, 1)
+arrowhead_texture_range = 0.4
+direction = 2

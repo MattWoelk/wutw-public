@@ -1,0 +1,28 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://dckqxto4xug58"]
+
+[ext_resource type="MapSpriteType_Composite" uid="uid://cip1q4rdlnkyd" path="res://map/sprites/spots/square/mst_square_festival_ground.tres" id="1_578dv"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://doduo0ydwh3f" path="res://map/sprites/spots/square/mst_square_stone.tres" id="2_doole"]
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_4cija"]
+p1 = Vector2(-8.635, 0.075)
+p2 = Vector2(1.05, 4.875)
+p3 = Vector2(0, -5.465)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Circle" id="MapSpriteCollision_Circle_eutuo"]
+center = Vector2(2, -0.26)
+radius = 5.24
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_tq1at"]
+sprite_type = ExtResource("1_578dv")
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_t5dtp"]
+sprite_type = ExtResource("2_doole")
+offset = Vector2(4.1, -1.365)
+scale = 1.485
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_tq1at"), SubResource("MapSpriteComponent_t5dtp")])
+footprint_radius = 6.0
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Triangle_4cija"), SubResource("MapSpriteCollision_Circle_eutuo")])

@@ -1,0 +1,45 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://dopwhecj8a77l"]
+
+[ext_resource type="MapSpriteType_Generic" uid="uid://pef24q6tpyym" path="res://map/sprites/spots/swamp/mst_swamp_bricks_2.tres" id="1_olnjg"]
+[ext_resource type="MapSpriteType_Building" uid="uid://do75g3rh3m2wd" path="res://map/sprites/spots/large_building/mst_large_building_school_building.tres" id="2_c1gpm"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://cba4xgpqxii6i" path="res://map/sprites/spots/swamp/mst_swamp_bricks_1.tres" id="3_qe7k8"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://dywa8r83nnmke" path="res://map/sprites/spots/steppe/mst_steppe_pots.tres" id="4_q7qsh"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://dbvymjix7xud2" path="res://map/sprites/spots/steppe/mst_steppe_pots_painted.tres" id="5_wvprs"]
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_olnjg"]
+p1 = Vector2(-4.78, 2.025)
+p2 = Vector2(4.725, -0.13)
+p3 = Vector2(1.99, -1.145)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_c1gpm"]
+p1 = Vector2(-1.68, 3.525)
+p2 = Vector2(-4.71, 1.87)
+p3 = Vector2(4.64, -0.155)
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_a7shb"]
+sprite_type = ExtResource("1_olnjg")
+offset = Vector2(3.825, -0.01)
+scale = 0.62
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_nthkj"]
+sprite_type = ExtResource("2_c1gpm")
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_7hcbt"]
+sprite_type = ExtResource("3_qe7k8")
+offset = Vector2(-3.695, 1.93)
+scale = 0.6
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_y16l7"]
+sprite_type = ExtResource("4_q7qsh")
+offset = Vector2(-2.395, 2.275)
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_kcy5e"]
+sprite_type = ExtResource("5_wvprs")
+offset = Vector2(-1.39, 2.355)
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_a7shb"), SubResource("MapSpriteComponent_nthkj"), SubResource("MapSpriteComponent_7hcbt"), SubResource("MapSpriteComponent_y16l7"), SubResource("MapSpriteComponent_kcy5e")])
+footprint_radius = 5.12
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Triangle_olnjg"), SubResource("MapSpriteCollision_Triangle_c1gpm")])

@@ -1,0 +1,121 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://qyf821rr5grk"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_mcaus"]
+[ext_resource type="Resource" uid="uid://bvwndgvxlflru" path="res://art/pieces/piece_hiroshige_agematsu.tres" id="1_s55kp"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_s55kp"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_2epi6"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="4_qe1c4"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="5_dum65"]
+[ext_resource type="Resource" uid="uid://b2dd8ocgqga2j" path="res://cards/tier2/card_priestess.tres" id="6_dx0v2"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="7_t4028"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="8_xj81c"]
+[ext_resource type="Resource" uid="uid://sxe3178ffulg" path="res://cards/tier2/card_pray.tres" id="9_uk1o1"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="10_uusjg"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="11_1xbmh"]
+[ext_resource type="Resource" uid="uid://ckyuuxahgsi3v" path="res://relics/common/jade_bead/relic_jade_bead.tres" id="12_g2pfl"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="13_5h5bt"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="14_wjwe7"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="15_jvbwj"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="16_tfsx2"]
+[ext_resource type="Resource" uid="uid://cqe4wuepmkokp" path="res://cards/tier3/card_fresh.tres" id="17_7rvhq"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="18_2pd0f"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="19_xvrh1"]
+[ext_resource type="Resource" uid="uid://bom6dwl3t2obc" path="res://stage/spots/cliff/spot_cliff.tres" id="20_jq28v"]
+
+[sub_resource type="Resource" id="Resource_0wrne"]
+script = ExtResource("1_mcaus")
+_texture_path = "res://stage/survey/episodes/episode_cliff_shrine.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_wxrn0"]
+script = ExtResource("7_t4028")
+card_type = ExtResource("6_dx0v2")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_lkr2a"]
+script = ExtResource("2_s55kp")
+label = "Clean the shrine."
+aspects = Array[ExtResource("3_2epi6")]([ExtResource("4_qe1c4"), ExtResource("5_dum65")])
+outcome = SubResource("Resource_wxrn0")
+outcome_text = "The scouts wipe away layers of moss that had started to grow on the shrine's roof, and brush decades of dust from the necklace.
+
+Carved in the rock behind the pillar they find the image of a shrine maiden, whirling with the necklace held in her hand."
+
+[sub_resource type="Resource" id="Resource_rgitb"]
+script = ExtResource("7_t4028")
+card_type = ExtResource("9_uk1o1")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_1gdhi"]
+script = ExtResource("2_s55kp")
+label = "Pray at the shrine."
+aspects = Array[ExtResource("3_2epi6")]([ExtResource("8_xj81c")])
+aspects_per_season = Array[ExtResource("3_2epi6")]([null])
+outcome = SubResource("Resource_rgitb")
+outcome_text = "The scouts bow to the shrine, each saying a brief prayer, before they continue on their way."
+
+[sub_resource type="Resource" id="Resource_lx68j"]
+script = ExtResource("13_5h5bt")
+relic = ExtResource("12_g2pfl")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_5skxf"]
+script = ExtResource("15_jvbwj")
+bonus_type = ExtResource("14_wjwe7")
+amount = -30
+extra_per_season = -20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_5s7yb"]
+script = ExtResource("10_uusjg")
+suboutcomes = Array[ExtResource("11_1xbmh")]([SubResource("Resource_lx68j"), SubResource("Resource_5skxf")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_vuudc"]
+script = ExtResource("16_tfsx2")
+bonus_type = ExtResource("14_wjwe7")
+min_count = -1
+max_count = 30
+extra_per_season = 60
+
+[sub_resource type="Resource" id="Resource_8skht"]
+script = ExtResource("2_s55kp")
+label = "Take the necklace."
+requirement = SubResource("Resource_vuudc")
+aspects = Array[ExtResource("3_2epi6")]([ExtResource("5_dum65")])
+outcome = SubResource("Resource_5s7yb")
+outcome_text = "One of the scouts takes a liking to the necklace and decides to keep it as a memento. She rinses it in the stream, watching it glimmer bright green in the cool water.
+
+Before she can stuff the necklace into her sleeve, one of her teammates demands she hand it over, claiming that he had spotted the shrine first. The others, hearing the commotion, likewise protest.
+
+By the time they resolve the disagreement, the necklace is torn apart, each scout keeping a few of the stones."
+
+[sub_resource type="Resource" id="Resource_ycsfn"]
+script = ExtResource("7_t4028")
+card_type = ExtResource("17_7rvhq")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_5efhl"]
+script = ExtResource("2_s55kp")
+label = "Rest by the stream."
+aspects = Array[ExtResource("3_2epi6")]([null])
+aspects_per_season = Array[ExtResource("3_2epi6")]([null])
+outcome = SubResource("Resource_ycsfn")
+outcome_text = "The team ignores the shrine, instead spending an hour basking in the cool spray.
+
+They fill their canteens, rinse their headbands, and continue on fully refreshed."
+
+[resource]
+script = ExtResource("18_2pd0f")
+episode_id = "cliff_shrine"
+title = "The Little Cliff Shrine"
+biome_types = Array[int]([0])
+spot_types = Array[ExtResource("19_xvrh1")]([ExtResource("20_jq28v")])
+text = "The air is oppressively hot and humid as the survey team makes its way to the top of a cliff.
+
+As they crest the final rise, they see an old bridge crossing over a stream ending in a roaring waterfall.
+
+A tiny shrine overlooks the site, sheltering a little stone pillar wrapped in a beautiful jade necklace."
+background_image = SubResource("Resource_0wrne")
+background_credit = ExtResource("1_s55kp")
+choices = Array[ExtResource("2_s55kp")]([SubResource("Resource_lkr2a"), SubResource("Resource_1gdhi"), SubResource("Resource_8skht"), SubResource("Resource_5efhl")])

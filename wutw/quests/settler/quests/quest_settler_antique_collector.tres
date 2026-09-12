@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="Quest_Settler" format=3 uid="uid://pqflxdmxqqgy"]
+
+[ext_resource type="Script" uid="uid://cjloydxgrv8oa" path="res://quests/settler/settler_quest_challenge.gd" id="1_1bxa1"]
+[ext_resource type="Script" uid="uid://4wq52c05i2oa" path="res://quests/settler/challenges/settler_quest_challenge_run_var.gd" id="2_k6ldu"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="3_5f0t3"]
+[ext_resource type="Resource" uid="uid://bcyiqb6aoy7gy" path="res://characters/jobs/job_scholar.tres" id="4_cm5h5"]
+[ext_resource type="Resource" uid="uid://gb2hon6q3l08" path="res://characters/jobs/job_adventurer.tres" id="5_1o4a2"]
+[ext_resource type="Resource" uid="uid://jttde8t0g8wh" path="res://characters/jobs/job_priest.tres" id="6_4iq4c"]
+[ext_resource type="Resource" uid="uid://gqnk0ka6qeuw" path="res://characters/jobs/job_retired.tres" id="7_g34hg"]
+[ext_resource type="Script" uid="uid://cd4swbq3t72je" path="res://quests/settler/settler_quest_reward.gd" id="8_wgiyf"]
+[ext_resource type="Script" uid="uid://cvrgydjebg044" path="res://quests/settler/rewards/settler_quest_reward_run_var.gd" id="9_k1k55"]
+[ext_resource type="Script" uid="uid://1na7ymvvvbby" path="res://quests/settler/quest_settler.gd" id="10_ko8ba"]
+[ext_resource type="Script" uid="uid://bxua8gxfjp2wy" path="res://quests/settler/settler_quest_goal.gd" id="11_aikcx"]
+[ext_resource type="Script" uid="uid://dahrkovyetuc0" path="res://quests/settler/goals/settler_quest_goal_num_relics.gd" id="12_ib0sp"]
+
+[sub_resource type="Resource" id="Resource_54jhd"]
+script = ExtResource("2_k6ldu")
+var_type = 8
+delta = -25
+description = "Reduce <term_lower:card_rarity_tier> by 25%."
+metadata/_custom_type_script = "uid://4wq52c05i2oa"
+
+[sub_resource type="Resource" id="Resource_f21y0"]
+script = ExtResource("9_k1k55")
+run_var = 18
+delta = 2
+preview_description = "Get 2 extra options whenever you get a <term:relic> choice."
+outcome_description = "From now on, get 2 extra options whenever you get a <term:relic> choice."
+metadata/_custom_type_script = "uid://cvrgydjebg044"
+
+[sub_resource type="Resource" id="Resource_i4xkh"]
+script = ExtResource("12_ib0sp")
+num_required = 8
+metadata/_custom_type_script = "uid://dahrkovyetuc0"
+
+[resource]
+script = ExtResource("10_ko8ba")
+intro_text = "I am a scholar on a quest for ancient artifacts. Folks keep bringing me modern devices trying to impress me, but I am sure the ancients had much more impressive mechanisms."
+challenges = Array[ExtResource("1_1bxa1")]([SubResource("Resource_54jhd")])
+settler_goals = Array[ExtResource("11_aikcx")]([SubResource("Resource_i4xkh")])
+rewards = Array[ExtResource("8_wgiyf")]([SubResource("Resource_f21y0")])
+restrict_to_jobs = Array[ExtResource("3_5f0t3")]([ExtResource("4_cm5h5"), ExtResource("5_1o4a2"), ExtResource("6_4iq4c"), ExtResource("7_g34hg")])
+quest_id = "settler_antique_collector"
+category = 2
+name = "An Antique Collector"
+metadata/_custom_type_script = "uid://1na7ymvvvbby"

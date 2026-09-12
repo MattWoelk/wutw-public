@@ -1,0 +1,33 @@
+[gd_scene load_steps=13 format=3 uid="uid://ebvko78ijm2x"]
+
+[ext_resource type="Script" uid="uid://b37kcyyhv6eoi" path="res://map/sprites/animals/map_effect_butterfly.gd" id="1_aemcr"]
+[ext_resource type="Texture2D" uid="uid://ct7asamqmliox" path="res://map/sprites/animals/butterfly.png" id="2_b4ycl"]
+[ext_resource type="MapSpriteType_Grass" uid="uid://crjcrn8sjeon8" path="res://map/sprites/grass/plains/mst_flower_plains_1.tres" id="2_v4keh"]
+[ext_resource type="MapSpriteType_Grass" uid="uid://lod4rf1ya3yp" path="res://map/sprites/grass/plains/mst_flower_plains_2.tres" id="3_ddah8"]
+[ext_resource type="MapSpriteType_Grass" uid="uid://byhfkuffua65k" path="res://map/sprites/grass/plains/mst_flower_plains_3.tres" id="4_gbxt4"]
+[ext_resource type="MapSpriteType_Grass" uid="uid://5lwdctiaupul" path="res://map/sprites/grass/plains/mst_flower_plains_4_stemless.tres" id="5_r567x"]
+[ext_resource type="MapSpriteType_Grass" uid="uid://bw6clejjimifr" path="res://map/sprites/grass/plains/mst_flower_plains_5_stemless.tres" id="6_thcnm"]
+[ext_resource type="MapSpriteType_Grass" uid="uid://bp266d4is3t81" path="res://map/sprites/grass/plains/mst_flower_plains_6_stemless.tres" id="7_h5htf"]
+[ext_resource type="MapSpriteType_Grass" uid="uid://dn7ubo7dgvj0d" path="res://map/sprites/grass/steppe/mst_flower_steppe_1.tres" id="8_afs8m"]
+[ext_resource type="MapSpriteType_Grass" uid="uid://b3fyhyifot70c" path="res://map/sprites/grass/steppe/mst_flower_steppe_2.tres" id="9_8lyxp"]
+[ext_resource type="MapSpriteType_Grass" uid="uid://b5ox6mk1rf21m" path="res://map/sprites/grass/steppe/mst_flower_steppe_3.tres" id="10_tyf0d"]
+[ext_resource type="MapSpriteType_Grass" uid="uid://c5alrhxjhhex" path="res://map/sprites/grass/steppe/mst_flower_steppe_4.tres" id="11_12s3e"]
+
+[node name="Butterfly" type="Node2D"]
+script = ExtResource("1_aemcr")
+enable_movement = true
+anim_speed = 8.0
+speed = 0.35
+hover_radius = 0.1
+arrive_time = 2.0
+noise_scale = 0.7
+attractor_sprites = Array[MapSpriteType]([ExtResource("2_v4keh"), ExtResource("3_ddah8"), ExtResource("4_gbxt4"), ExtResource("5_r567x"), ExtResource("6_thcnm"), ExtResource("7_h5htf"), ExtResource("8_afs8m"), ExtResource("9_8lyxp"), ExtResource("10_tyf0d"), ExtResource("11_12s3e")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("2_b4ycl")
+flip_h = true
+hframes = 6
+frame = 5

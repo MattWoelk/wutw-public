@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://bqxnuxr4bsc84"]
+
+[ext_resource type="Script" uid="uid://cuokuettvk2wl" path="res://hub/museum/museum_detail_dialogue.gd" id="1_tljfs"]
+[ext_resource type="PackedScene" uid="uid://ccxgitrv6shry" path="res://dialogue/dialogue_portrait_display.tscn" id="2_b2oje"]
+[ext_resource type="Resource" uid="uid://dvl50mbwc8oyx" path="res://characters/teo/character_teo.tres" id="3_vpjq2"]
+[ext_resource type="Script" uid="uid://dm63mtrlfj005" path="res://theme/faded_scroll_container/faded_scroll_container.gd" id="4_lvuxi"]
+[ext_resource type="Material" uid="uid://dm0coidukcc6" path="res://theme/button/ukiyoe_button_material.tres" id="4_oausq"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="5_tljfs"]
+[ext_resource type="FontVariation" uid="uid://ckpqln0o7u7y6" path="res://theme/fonts/presets/font_normal.tres" id="5_vpjq2"]
+[ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="6_b2oje"]
+[ext_resource type="FontVariation" uid="uid://bves8clr1wany" path="res://theme/fonts/presets/font_normal_bold.tres" id="6_lvuxi"]
+[ext_resource type="Resource" uid="uid://c11xqatrqpo3m" path="res://characters/scribe/character_scribe.tres" id="7_8aimq"]
+[ext_resource type="FontVariation" uid="uid://d3ggcn7nxh5he" path="res://theme/fonts/presets/font_normal_bold_italic.tres" id="7_chx06"]
+[ext_resource type="FontVariation" uid="uid://wjln8rwbc1ax" path="res://theme/fonts/presets/font_normal_italic.tres" id="8_14ecy"]
+
+[node name="MuseumDetail_Dialogue" type="MarginContainer" unique_id=1452038428]
+custom_minimum_size = Vector2(972.515, 721)
+offset_right = 972.515
+offset_bottom = 721.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 20
+script = ExtResource("1_tljfs")
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=1739323208]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TitleLabel" type="Label" parent="VBox" unique_id=1585791840]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Debate Speech: Plague"
+horizontal_alignment = 1
+
+[node name="PageLabel" type="Label" parent="VBox" unique_id=66004116]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 19
+text = "Page 1 of 7"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBox" unique_id=415872260]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="VBox/HBoxContainer2" unique_id=502079431]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+
+[node name="PortraitDisplay1" parent="VBox/HBoxContainer2/Control" unique_id=1412634268 instance=ExtResource("2_b2oje")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 875.0
+scale = Vector2(0.695, 0.695)
+character = ExtResource("3_vpjq2")
+mirrored = true
+
+[node name="MarginContainer" type="MarginContainer" parent="VBox/HBoxContainer2" unique_id=213766297]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_top = 51
+theme_override_constants/margin_bottom = 17
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBox/HBoxContainer2/MarginContainer" unique_id=1185352093]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBox/HBoxContainer2/MarginContainer/VBoxContainer" unique_id=1049519053]
+unique_name_in_owner = true
+clip_children = 1
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 4
+script = ExtResource("4_lvuxi")
+
+[node name="RichText" type="RichTextLabel" parent="VBox/HBoxContainer2/MarginContainer/VBoxContainer/ScrollContainer" unique_id=5379551]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_vpjq2")
+theme_override_fonts/bold_font = ExtResource("6_lvuxi")
+theme_override_fonts/bold_italics_font = ExtResource("7_chx06")
+theme_override_fonts/italics_font = ExtResource("8_14ecy")
+theme_override_font_sizes/normal_font_size = 19
+theme_override_font_sizes/bold_font_size = 19
+theme_override_font_sizes/bold_italics_font_size = 19
+theme_override_font_sizes/italics_font_size = 19
+theme_override_font_sizes/mono_font_size = 19
+bbcode_enabled = true
+text = "Text text text text text text text text text text text text text text text text text text text text text text text"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+visible_characters_behavior = 1
+
+[node name="Control2" type="Control" parent="VBox/HBoxContainer2" unique_id=285701869]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+
+[node name="PortraitDisplay2" parent="VBox/HBoxContainer2/Control2" unique_id=1489553296 instance=ExtResource("2_b2oje")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 875.0
+scale = Vector2(0.695, 0.695)
+character = ExtResource("7_8aimq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBox" unique_id=1905699393]
+layout_mode = 2
+
+[node name="Button_Prev" type="Button" parent="VBox/HBoxContainer" unique_id=2057644129]
+unique_name_in_owner = true
+visible = false
+material = ExtResource("4_oausq")
+instance_shader_parameters/size = Vector2(184.44025, 45.28174)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_styles/normal = ExtResource("5_tljfs")
+theme_override_styles/pressed = ExtResource("5_tljfs")
+theme_override_styles/hover = ExtResource("5_tljfs")
+theme_override_styles/hover_pressed = ExtResource("5_tljfs")
+theme_override_styles/disabled = ExtResource("5_tljfs")
+text = "< Previous Page"
+script = ExtResource("6_b2oje")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="Button_Next" type="Button" parent="VBox/HBoxContainer" unique_id=121425044]
+unique_name_in_owner = true
+material = ExtResource("4_oausq")
+instance_shader_parameters/size = Vector2(151.30737, 45.28174)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/normal = ExtResource("5_tljfs")
+theme_override_styles/pressed = ExtResource("5_tljfs")
+theme_override_styles/hover = ExtResource("5_tljfs")
+theme_override_styles/hover_pressed = ExtResource("5_tljfs")
+theme_override_styles/disabled = ExtResource("5_tljfs")
+text = "Next Page >"
+script = ExtResource("6_b2oje")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[connection signal="pressed" from="VBox/HBoxContainer/Button_Prev" to="." method="_on_button_prev_pressed"]
+[connection signal="pressed" from="VBox/HBoxContainer/Button_Next" to="." method="_on_button_next_pressed"]

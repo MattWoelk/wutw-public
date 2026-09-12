@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://4e4bwjdkmj2y"]
+
+[ext_resource type="Shader" uid="uid://ygmrqrvg5hpm" path="res://theme/button/ukiyoe_button.gdshader" id="1_iog8d"]
+[ext_resource type="Texture2D" uid="uid://ctgl61r3xxsqv" path="res://theme/button/button_fill.png" id="2_k7i4n"]
+[ext_resource type="Texture2D" uid="uid://blje81yu8734p" path="res://theme/button/button_shape.png" id="3_gvwdy"]
+[ext_resource type="Texture2D" uid="uid://doe4603a6ngco" path="res://theme/button/button_outline.png" id="4_x03q6"]
+[ext_resource type="Texture2D" uid="uid://cwubixgc8n0yr" path="res://theme/button/button_swish_left.png" id="5_xvd8y"]
+[ext_resource type="Texture2D" uid="uid://n6l17h4ysayj" path="res://theme/button/button_swish_right.png" id="6_srawo"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="7_rt14x"]
+[ext_resource type="Script" uid="uid://bewly36v4ir00" path="res://shops/accord_monument/accord_button.gd" id="8_iog8d"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="9_6w7wb"]
+
+[sub_resource type="Gradient" id="Gradient_j5apj"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wqpyw"]
+gradient = SubResource("Gradient_j5apj")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ldgks"]
+shader = ExtResource("1_iog8d")
+shader_parameter/mask_tex = ExtResource("3_gvwdy")
+shader_parameter/background = ExtResource("2_k7i4n")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("4_x03q6")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("6_srawo")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("5_xvd8y")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[node name="AccordButton" type="Button" unique_id=2044183942]
+material = SubResource("ShaderMaterial_ldgks")
+instance_shader_parameters/state = 0.0
+custom_minimum_size = Vector2(400, 36.87)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = ExtResource("7_rt14x")
+theme_override_styles/pressed = ExtResource("7_rt14x")
+theme_override_styles/hover = ExtResource("7_rt14x")
+theme_override_styles/hover_pressed = ExtResource("7_rt14x")
+theme_override_styles/disabled = ExtResource("7_rt14x")
+expand_icon = true
+script = ExtResource("8_iog8d")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="MarkedUpLabel" parent="." unique_id=2043831104 instance=ExtResource("9_6w7wb")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Contribute 100 <term:bonus.knowledge>"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1

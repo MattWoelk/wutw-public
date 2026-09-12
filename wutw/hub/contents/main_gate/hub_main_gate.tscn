@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://bmatpo8sbh6fl"]
+
+[ext_resource type="PackedScene" uid="uid://bl780vhdwft4i" path="res://hub/contents/hub_facility.tscn" id="1_82t0x"]
+[ext_resource type="Texture2D" uid="uid://dlaflrathcfqd" path="res://hub/contents/main_gate/gate.png" id="1_gnrmi"]
+[ext_resource type="Texture2D" uid="uid://ciiqcead3l57g" path="res://hub/contents/main_gate/gate_label.png" id="2_82t0x"]
+[ext_resource type="PackedScene" uid="uid://d148ubyd5gneo" path="res://hub/contents/main_gate/hub_lantern.tscn" id="4_llkd3"]
+
+[node name="HubMainGate" unique_id=396329370 instance=ExtResource("1_82t0x")]
+y_sort_enabled = true
+tooltip_text = "[center]<header_font_size>[b]Launch Expedition[/b][/font_size][/center]
+
+Embark on a new <term:run> to settle a <term:world_shard>."
+
+[node name="Panel" parent="." index="0" unique_id=1465047343]
+offset_left = 125.0
+offset_top = -263.0
+offset_right = 346.0
+offset_bottom = 115.0
+scale = Vector2(0.24884, 0.24884)
+
+[node name="Label" parent="Panel" index="1" unique_id=541126649]
+visible = false
+text = "門"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" index="2" unique_id=1665278384]
+layout_mode = 2
+theme_override_constants/margin_left = 37
+theme_override_constants/margin_top = 90
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 70
+
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer" index="0" unique_id=816037863]
+texture_filter = 6
+layout_mode = 2
+texture = ExtResource("2_82t0x")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CollisionPolygon2D" parent="Area2D" parent_id_path=PackedInt32Array(2019498285) index="0" unique_id=521856771]
+position = Vector2(7, -7)
+polygon = PackedVector2Array(204, 68, 204, -182, 202, -404, -168, -385, -143, -160, -99, 32, 43, 110)
+
+[node name="Sprite" type="Sprite2D" parent="." index="2" unique_id=966826878]
+y_sort_enabled = true
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("1_gnrmi")
+offset = Vector2(0, -500)
+
+[node name="LanternL1" parent="Sprite" index="0" unique_id=1084364814 instance=ExtResource("4_llkd3")]
+position = Vector2(-47.7374, 219.721)
+
+[node name="LanternL2" parent="Sprite" index="1" unique_id=1365247572 instance=ExtResource("4_llkd3")]
+position = Vector2(145.977, 320.041)
+scale = Vector2(1.14283, 1.14283)
+
+[node name="LanternL3" parent="Sprite" index="2" unique_id=1157394911 instance=ExtResource("4_llkd3")]
+position = Vector2(338.658, 408.152)
+scale = Vector2(0.993959, 0.993959)
+
+[node name="LanternR1" parent="Sprite" index="3" unique_id=1060663071 instance=ExtResource("4_llkd3")]
+position = Vector2(555.391, 80.5381)
+
+[node name="LanternR2" parent="Sprite" index="4" unique_id=1173661254 instance=ExtResource("4_llkd3")]
+position = Vector2(755.145, 179.77)
+scale = Vector2(1.12914, 1.12914)
+
+[node name="LanternR3" parent="Sprite" index="5" unique_id=425996396 instance=ExtResource("4_llkd3")]
+position = Vector2(944.588, 276.425)
+scale = Vector2(1.02717, 1.02717)
+
+[node name="TooltipAnchor" parent="." index="3" unique_id=278453014]
+offset_left = -121.0
+offset_top = -271.0
+offset_right = 197.0
+offset_bottom = 82.0

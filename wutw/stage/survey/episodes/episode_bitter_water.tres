@@ -1,0 +1,103 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://cywcskygd08g8"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_nrxjv"]
+[ext_resource type="Resource" uid="uid://ds3yqjcxc7kq3" path="res://art/pieces/piece_hiroshige_tsuchiyama_reisho.tres" id="1_tfini"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_tfini"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_pcrjt"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="4_o7o2r"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="5_8g487"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="6_agmwq"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="7_1lso3"]
+[ext_resource type="Resource" uid="uid://dhjg5km7rqeih" path="res://cards/tier6/card_vomit.tres" id="8_m3j6k"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="9_idrv1"]
+[ext_resource type="Resource" uid="uid://cqe4wuepmkokp" path="res://cards/tier3/card_fresh.tres" id="10_0qrrw"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="11_wvp8y"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="12_djacy"]
+
+[sub_resource type="Resource" id="Resource_t6sns"]
+script = ExtResource("1_nrxjv")
+_texture_path = "uid://y7mi0qb807lj"
+_is_horizontal = true
+
+[sub_resource type="Resource" id="Resource_qh6co"]
+script = ExtResource("6_agmwq")
+bonus_type = ExtResource("5_8g487")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_sdk2y"]
+script = ExtResource("2_tfini")
+label = "Boil the water."
+aspects = Array[ExtResource("3_pcrjt")]([ExtResource("4_o7o2r")])
+outcome = SubResource("Resource_qh6co")
+outcome_text = "The group boils several pots of water, but the heat does nothing to remove the bitter taste.
+
+Their fuel and time are wasted."
+
+[sub_resource type="Resource" id="Resource_ul4cq"]
+script = ExtResource("9_idrv1")
+card_type = ExtResource("8_m3j6k")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_kwg8t"]
+script = ExtResource("2_tfini")
+label = "Drink it despite the taste."
+aspects = Array[ExtResource("3_pcrjt")]([ExtResource("7_1lso3")])
+outcome = SubResource("Resource_ul4cq")
+outcome_text = "The scouts decide that they are too thirsty to wait.
+
+They fill their vessels with the clear water and drink deeply.
+
+Several hours later, everyone is violently sick."
+
+[sub_resource type="Resource" id="Resource_2057y"]
+script = ExtResource("9_idrv1")
+card_type = ExtResource("10_0qrrw")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_l3j8l"]
+script = ExtResource("2_tfini")
+label = "Search downstream."
+aspects = Array[ExtResource("3_pcrjt")]([null, null])
+aspects_per_season = Array[ExtResource("3_pcrjt")]([null])
+outcome = SubResource("Resource_2057y")
+outcome_text = "The scouts walk several miles downstream and try the water again.
+
+It is still clear, and the taste is clearly better.
+
+They fill their vessels and drink deeply, refreshed."
+
+[sub_resource type="Resource" id="Resource_yl2kl"]
+script = ExtResource("6_agmwq")
+bonus_type = ExtResource("5_8g487")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_vwxq6"]
+script = ExtResource("2_tfini")
+label = "Search upstream."
+aspects = Array[ExtResource("3_pcrjt")]([null, null])
+aspects_per_season = Array[ExtResource("3_pcrjt")]([null])
+outcome = SubResource("Resource_yl2kl")
+outcome_text = "A small party walks towards the stream's source.
+
+They discover a mineral spring gushing from pale rock into the main water source.
+
+They confirm it to be the source of bitterness and mark the point on their map."
+
+[resource]
+script = ExtResource("11_wvp8y")
+episode_id = "bitter_water"
+title = "The Bitter Water"
+text = "The scouts have been rationing water for days. They finally reach a stream so clear that every stone beneath the water is visible.
+
+Three thirsty travelers rush ahead of the group and, dipping their vessels into the flowing water, take a drink.
+
+They immediately spit it out. The water is unbearably bitter.
+
+Some suspect that the stream has been cursed by spirits. Others worry it was contaminated upstream."
+background_image = SubResource("Resource_t6sns")
+background_credit = ExtResource("1_tfini")
+choices = Array[ExtResource("2_tfini")]([SubResource("Resource_sdk2y"), SubResource("Resource_kwg8t"), SubResource("Resource_l3j8l"), SubResource("Resource_vwxq6")])

@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="ShardType_Poets" format=3 uid="uid://lqbg8ejvt1sk"]
+
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="1_dyuv1"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="1_ttxrb"]
+[ext_resource type="Script" uid="uid://cwc4xr8hm8sqw" path="res://shard_types/poets/shard_type_poets.gd" id="2_iah1e"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="3_abk7q"]
+[ext_resource type="Texture2D" uid="uid://cdwe6hjuuyicj" path="res://shard_types/poets/shard_type_poets.png" id="4_abk7q"]
+[ext_resource type="Resource" uid="uid://d7rkplmn6k05" path="res://cards/tier2/card_poem.tres" id="4_hems3"]
+[ext_resource type="Resource" uid="uid://c1yickbfqpmml" path="res://art/pieces/piece_gekkou_plum_and_flycatcher.tres" id="5_hems3"]
+[ext_resource type="Resource" uid="uid://drw8qs27los7k" path="res://debate/arguments/argument_foreign_poem.tres" id="8_wihfb"]
+[ext_resource type="Resource" uid="uid://cy8d7wr2t7o41" path="res://skills/cards/skill_cards_reroll_4.tres" id="9_4kl7c"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="10_du1kt"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="11_0j61n"]
+
+[sub_resource type="Resource" id="Resource_r3mwo"]
+script = ExtResource("1_dyuv1")
+text = "Among the original settlers of $shard_name was a tribe of illiterate storytellers who maintained an oral tradition preserving songs and stories from before the Shattering. Their remarkable memory was due to a system of mnemonic poems used to ensure important details remain consistent through retellings. These settlers established a culture focused on spoken language, dismissive of the written word."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_i43h8"]
+script = ExtResource("1_dyuv1")
+text = "The poems of the storytellers spread quickly among the population, but their use far exceeded their original practical purpose. Instead, the beauty and conciseness of the words became revered, and poets throughout the shard competed to pack the most profound meaning into the fewest syllables. The most masterful of these new compositions have often been adopted by the community as common proverbs, their authors forgotten."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_whtfk"]
+script = ExtResource("1_dyuv1")
+text = "The culture of poetry on $shard_name is no longer limited to artists. Mochi pounders recite poems to maintain rhythm as they pound rice. Merchants compose poems to advertise their wares. Even laws here are written in verse, ensuring that magistrates can easily memorize them."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_wihfb"]
+script = ExtResource("1_dyuv1")
+text = "The poetic tradition is still used as a historical record on $shard_name. Every town maintains a generational epic, and each decade the town's greatest poets collaborate to compose a verse that best summarizes recent history. Personal history is maintained in a similar fashion. In addition to common names each of the locals has a \"story name\", a verse they compose over the course of their life, adding syllables after each significant life event they experience. This includes death, as it is custom for a person on their deathbed to add three final syllables to summarize their life experience."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_yuekc"]
+script = ExtResource("10_du1kt")
+text = "My first experience on this shard was getting lost on my way to the inn. There are no written signs anywhere, so I had to ask one of the locals for directions. He came up with a funny verse on the spot that used homophones for directions as rhymes. I don't remember the exact wording, since I ended up listening to so much other poetry.
+
+Later, I shared a pot of tea with an old woman who explained their \"story name\" custom. It's a verse that works like a brief biography. Hers mentioned her first job as a messenger and incorporated the names of all her grandchildren. She mentioned that she already had the final three syllables picked out to reveal on her deathbed, but these are always kept secret until the time comes.
+
+I can't say I became a poet from this trip, but I brought back several of their most famous poems and picked up a few tricks for choosing the right words."
+revealed_skill = ExtResource("9_4kl7c")
+gained_argument = ExtResource("8_wihfb")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[resource]
+script = ExtResource("2_iah1e")
+beauty = ExtResource("1_ttxrb")
+poem_card = ExtResource("4_hems3")
+shard_type_id = "poets"
+name = "The Inkless Lands"
+shard_name_override = "Uta Gatari no Oka"
+shard_name_override_jp = "歌語り岡"
+shard_name_override_meaning = "Sung Tales Hill"
+illustration = ExtResource("4_abk7q")
+illustration_credit = ExtResource("5_hems3")
+history = Array[ExtResource("1_dyuv1")]([SubResource("Resource_r3mwo"), SubResource("Resource_i43h8"), SubResource("Resource_whtfk"), SubResource("Resource_wihfb")])
+trip_reward = SubResource("Resource_yuekc")
+metadata/_custom_type_script = "uid://cwc4xr8hm8sqw"

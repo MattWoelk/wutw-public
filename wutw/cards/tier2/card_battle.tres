@@ -1,0 +1,728 @@
+[gd_resource type="Resource" script_class="CardType" format=3 uid="uid://y6x5dtxxn1d7"]
+
+[ext_resource type="Script" uid="uid://b56kytec5oqcb" path="res://cards/abilities/card_ability.gd" id="1_d4to1"]
+[ext_resource type="Resource" uid="uid://dhal843mubr37" path="res://cards/tier6/card_wound.tres" id="2_xmkko"]
+[ext_resource type="Script" uid="uid://c176jrcyakipx" path="res://cards/abilities/card_ability_add_card.gd" id="3_wvlqd"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="3_x5xg3"]
+[ext_resource type="Script" uid="uid://c0aqmugrp1wmn" path="res://cards/abilities/card_ability_gain.gd" id="4_6lumq"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="4_bvh23"]
+[ext_resource type="Script" uid="uid://xc73x4t7ckxm" path="res://japanese/example_sentence.gd" id="5_mh13j"]
+[ext_resource type="Script" uid="uid://du4k150pcdjs6" path="res://japanese/kanji_shape.gd" id="6_vprf2"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="6_x5xg3"]
+[ext_resource type="Resource" uid="uid://d1k7vakhjcq5g" path="res://glossary/categories/termcategory_card.tres" id="7_6lumq"]
+[ext_resource type="Script" uid="uid://bl2eelwkj800o" path="res://japanese/japanese_token.gd" id="7_wvlqd"]
+[ext_resource type="Script" uid="uid://dc15txdqjanlf" path="res://japanese/stroke_shape.gd" id="7_xmkko"]
+[ext_resource type="Script" uid="uid://b6rw4ldrj6wch" path="res://japanese/vocab.gd" id="9_k4eo6"]
+
+[sub_resource type="Resource" id="Resource_8bgea"]
+script = ExtResource("3_wvlqd")
+card_type = ExtResource("2_xmkko")
+metadata/_custom_type_script = "uid://c176jrcyakipx"
+
+[sub_resource type="Resource" id="Resource_k4eo6"]
+script = ExtResource("4_6lumq")
+bonus_type = ExtResource("3_x5xg3")
+points = 15
+metadata/_custom_type_script = "uid://c0aqmugrp1wmn"
+
+[sub_resource type="Resource" id="Resource_kkl78"]
+script = ExtResource("9_k4eo6")
+japanese = "戦い"
+readings = Array[String](["たたかい"])
+meanings = Array[String](["battle", "war", "fight", "conflict", "fight (against time, poverty, etc.)", "struggle (for freedom, survival, etc.)", "war (e.g. on drugs)", "battle (e.g. against nature)", "contest", "competition", "match", "game"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_6j4ct"]
+script = ExtResource("7_wvlqd")
+raw_text = "戦い"
+vocab = SubResource("Resource_kkl78")
+reading = "たたかい"
+
+[sub_resource type="Resource" id="Resource_t0ha7"]
+script = ExtResource("7_wvlqd")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_npmct"]
+script = ExtResource("9_k4eo6")
+japanese = "終わる"
+readings = Array[String](["おわる"])
+meanings = Array[String](["to end", "to come to an end", "to finish", "to close", "to be over", "to complete", "to conclude", "to finish doing", "to be past its (one's) prime", "to be awful", "to be terrible", "to suck", "to be hopeless"])
+jlpt_level = 1
+
+[sub_resource type="Resource" id="Resource_7t6iv"]
+script = ExtResource("7_wvlqd")
+raw_text = "終わっ"
+vocab = SubResource("Resource_npmct")
+reading = "おわっ"
+
+[sub_resource type="Resource" id="Resource_v5ui2"]
+script = ExtResource("7_wvlqd")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_ng432"]
+script = ExtResource("7_wvlqd")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_0gcds"]
+script = ExtResource("5_mh13j")
+japanese = "戦いは終わった。"
+native = "The fight is over."
+parsed = Array[ExtResource("7_wvlqd")]([SubResource("Resource_6j4ct"), SubResource("Resource_t0ha7"), SubResource("Resource_7t6iv"), SubResource("Resource_v5ui2"), SubResource("Resource_ng432")])
+_difficulty = 292
+_used_kanji = Array[String](["戦", "終"])
+
+[sub_resource type="Resource" id="Resource_gsg6a"]
+script = ExtResource("9_k4eo6")
+japanese = "戦争"
+readings = Array[String](["せんそう"])
+meanings = Array[String](["war", "fighting", "fierce competition"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_l2vml"]
+script = ExtResource("7_wvlqd")
+raw_text = "戦争"
+vocab = SubResource("Resource_gsg6a")
+reading = "せんそう"
+
+[sub_resource type="Resource" id="Resource_qyv1s"]
+script = ExtResource("7_wvlqd")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_qyc4p"]
+script = ExtResource("7_wvlqd")
+raw_text = "よく"
+reading = "よく"
+
+[sub_resource type="Resource" id="Resource_e36qo"]
+script = ExtResource("7_wvlqd")
+raw_text = "ない"
+reading = "ない"
+
+[sub_resource type="Resource" id="Resource_ibcgk"]
+script = ExtResource("7_wvlqd")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_xmkko"]
+script = ExtResource("5_mh13j")
+japanese = "戦争はよくない。"
+native = "War isn't good."
+parsed = Array[ExtResource("7_wvlqd")]([SubResource("Resource_l2vml"), SubResource("Resource_qyv1s"), SubResource("Resource_qyc4p"), SubResource("Resource_e36qo"), SubResource("Resource_ibcgk")])
+_difficulty = 306
+_used_kanji = Array[String](["戦", "争"])
+
+[sub_resource type="Resource" id="Resource_iqi2b"]
+script = ExtResource("7_wvlqd")
+raw_text = "戦争"
+vocab = SubResource("Resource_gsg6a")
+reading = "せんそう"
+
+[sub_resource type="Resource" id="Resource_isu52"]
+script = ExtResource("7_wvlqd")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_ookbl"]
+script = ExtResource("7_wvlqd")
+raw_text = "終わり"
+vocab = SubResource("Resource_npmct")
+reading = "おわり"
+
+[sub_resource type="Resource" id="Resource_17r07"]
+script = ExtResource("7_wvlqd")
+raw_text = "だ"
+reading = "だ"
+
+[sub_resource type="Resource" id="Resource_5v5i4"]
+script = ExtResource("7_wvlqd")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_4iqde"]
+script = ExtResource("5_mh13j")
+japanese = "戦争は終わりだ。"
+native = "This war is over."
+parsed = Array[ExtResource("7_wvlqd")]([SubResource("Resource_iqi2b"), SubResource("Resource_isu52"), SubResource("Resource_ookbl"), SubResource("Resource_17r07"), SubResource("Resource_5v5i4")])
+_difficulty = 313
+_used_kanji = Array[String](["戦", "争", "終"])
+
+[sub_resource type="Resource" id="Resource_vsd0e"]
+script = ExtResource("9_k4eo6")
+japanese = "戦士"
+readings = Array[String](["せんし"])
+meanings = Array[String](["soldier", "combatant", "warrior"])
+
+[sub_resource type="Resource" id="Resource_034f2"]
+script = ExtResource("7_wvlqd")
+raw_text = "戦士"
+vocab = SubResource("Resource_vsd0e")
+reading = "せんし"
+
+[sub_resource type="Resource" id="Resource_2jvkw"]
+script = ExtResource("7_wvlqd")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_aj1yj"]
+script = ExtResource("9_k4eo6")
+japanese = "戦う"
+readings = Array[String](["たたかう"])
+meanings = Array[String](["to make war (on)", "to wage war (against)", "to go to war (with)", "to fight (with)", "to do battle (against)", "to compete (against)", "to struggle (against adversities, etc.)", "to fight", "to contend", "to resist"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_b62ky"]
+script = ExtResource("7_wvlqd")
+raw_text = "戦う"
+vocab = SubResource("Resource_aj1yj")
+reading = "たたかう"
+
+[sub_resource type="Resource" id="Resource_7dvac"]
+script = ExtResource("7_wvlqd")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_wvlqd"]
+script = ExtResource("5_mh13j")
+japanese = "戦士が戦う。"
+native = "Warriors fight."
+parsed = Array[ExtResource("7_wvlqd")]([SubResource("Resource_034f2"), SubResource("Resource_2jvkw"), SubResource("Resource_b62ky"), SubResource("Resource_7dvac")])
+_difficulty = 326
+_used_kanji = Array[String](["戦", "士"])
+
+[sub_resource type="Resource" id="Resource_aq821"]
+script = ExtResource("9_k4eo6")
+japanese = "私"
+readings = Array[String](["わたし"])
+meanings = Array[String](["I", "me"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_akkml"]
+script = ExtResource("7_wvlqd")
+raw_text = "私"
+vocab = SubResource("Resource_aq821")
+reading = "わたし"
+
+[sub_resource type="Resource" id="Resource_uff4x"]
+script = ExtResource("9_k4eo6")
+japanese = "達"
+readings = Array[String](["たち"])
+meanings = Array[String](["pluralizing suffix (esp. for people and animals; formerly honorific)"])
+
+[sub_resource type="Resource" id="Resource_hpt52"]
+script = ExtResource("7_wvlqd")
+raw_text = "達"
+vocab = SubResource("Resource_uff4x")
+reading = "たち"
+
+[sub_resource type="Resource" id="Resource_pkf6t"]
+script = ExtResource("7_wvlqd")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_5g02m"]
+script = ExtResource("7_wvlqd")
+raw_text = "戦争"
+vocab = SubResource("Resource_gsg6a")
+reading = "せんそう"
+
+[sub_resource type="Resource" id="Resource_6smjm"]
+script = ExtResource("7_wvlqd")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_tq8at"]
+script = ExtResource("9_k4eo6")
+japanese = "反対"
+readings = Array[String](["はんたい"])
+meanings = Array[String](["opposition", "resistance", "antagonism", "hostility", "objection", "dissent", "reverse", "opposite", "inverse", "contrary"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_kth76"]
+script = ExtResource("7_wvlqd")
+raw_text = "反対"
+vocab = SubResource("Resource_tq8at")
+reading = "はんたい"
+
+[sub_resource type="Resource" id="Resource_6wtdp"]
+script = ExtResource("7_wvlqd")
+raw_text = "だ"
+reading = "だ"
+
+[sub_resource type="Resource" id="Resource_yn4eh"]
+script = ExtResource("7_wvlqd")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_tly6s"]
+script = ExtResource("5_mh13j")
+japanese = "私達は戦争に反対だ。"
+native = "We're against war."
+parsed = Array[ExtResource("7_wvlqd")]([SubResource("Resource_akkml"), SubResource("Resource_hpt52"), SubResource("Resource_pkf6t"), SubResource("Resource_5g02m"), SubResource("Resource_6smjm"), SubResource("Resource_kth76"), SubResource("Resource_6wtdp"), SubResource("Resource_yn4eh")])
+_difficulty = 494
+_used_kanji = Array[String](["私", "達", "戦", "争", "反", "対"])
+
+[sub_resource type="Resource" id="Resource_61yqg"]
+script = ExtResource("9_k4eo6")
+japanese = "彼ら"
+readings = Array[String](["かれら"])
+meanings = Array[String](["they", "them"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_y5fll"]
+script = ExtResource("7_wvlqd")
+raw_text = "彼ら"
+vocab = SubResource("Resource_61yqg")
+reading = "かれら"
+
+[sub_resource type="Resource" id="Resource_5utr7"]
+script = ExtResource("7_wvlqd")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_40euq"]
+script = ExtResource("9_k4eo6")
+japanese = "挑戦"
+readings = Array[String](["ちょうせん"])
+meanings = Array[String](["challenge", "defiance", "dare", "attempt", "try"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_7iwsk"]
+script = ExtResource("7_wvlqd")
+raw_text = "挑戦"
+vocab = SubResource("Resource_40euq")
+reading = "ちょうせん"
+
+[sub_resource type="Resource" id="Resource_vtd64"]
+script = ExtResource("7_wvlqd")
+raw_text = "し"
+reading = "し"
+
+[sub_resource type="Resource" id="Resource_ft75b"]
+script = ExtResource("7_wvlqd")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_emrgk"]
+script = ExtResource("7_wvlqd")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_vprf2"]
+script = ExtResource("5_mh13j")
+japanese = "彼らは挑戦した。"
+native = "They tried."
+parsed = Array[ExtResource("7_wvlqd")]([SubResource("Resource_y5fll"), SubResource("Resource_5utr7"), SubResource("Resource_7iwsk"), SubResource("Resource_vtd64"), SubResource("Resource_ft75b"), SubResource("Resource_emrgk")])
+_difficulty = 507
+_used_kanji = Array[String](["彼", "挑", "戦"])
+
+[sub_resource type="Resource" id="Resource_6yy7c"]
+script = ExtResource("9_k4eo6")
+japanese = "誰"
+readings = Array[String](["だれ", "だあれ", "だーれ"])
+meanings = Array[String](["who"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_y7bjx"]
+script = ExtResource("7_wvlqd")
+raw_text = "誰"
+vocab = SubResource("Resource_6yy7c")
+reading = "だれ"
+
+[sub_resource type="Resource" id="Resource_burph"]
+script = ExtResource("7_wvlqd")
+raw_text = "も"
+reading = "も"
+
+[sub_resource type="Resource" id="Resource_vc2q6"]
+script = ExtResource("7_wvlqd")
+raw_text = "戦争"
+vocab = SubResource("Resource_gsg6a")
+reading = "せんそう"
+
+[sub_resource type="Resource" id="Resource_55mqj"]
+script = ExtResource("7_wvlqd")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_g4s2l"]
+script = ExtResource("9_k4eo6")
+japanese = "好む"
+readings = Array[String](["このむ"])
+meanings = Array[String](["to like", "to prefer"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_dq6bj"]
+script = ExtResource("7_wvlqd")
+raw_text = "好む"
+vocab = SubResource("Resource_g4s2l")
+reading = "このむ"
+
+[sub_resource type="Resource" id="Resource_tpwxs"]
+script = ExtResource("7_wvlqd")
+raw_text = "もの"
+reading = "もの"
+
+[sub_resource type="Resource" id="Resource_pnmon"]
+script = ExtResource("7_wvlqd")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_ilg3q"]
+script = ExtResource("7_wvlqd")
+raw_text = "い"
+reading = "い"
+
+[sub_resource type="Resource" id="Resource_r7u5a"]
+script = ExtResource("7_wvlqd")
+raw_text = "ない"
+reading = "ない"
+
+[sub_resource type="Resource" id="Resource_ammxk"]
+script = ExtResource("7_wvlqd")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_15k6l"]
+script = ExtResource("5_mh13j")
+japanese = "誰も戦争を好むものはいない。"
+native = "No one loves war."
+parsed = Array[ExtResource("7_wvlqd")]([SubResource("Resource_y7bjx"), SubResource("Resource_burph"), SubResource("Resource_vc2q6"), SubResource("Resource_55mqj"), SubResource("Resource_dq6bj"), SubResource("Resource_tpwxs"), SubResource("Resource_pnmon"), SubResource("Resource_ilg3q"), SubResource("Resource_r7u5a"), SubResource("Resource_ammxk")])
+_difficulty = 578
+_used_kanji = Array[String](["誰", "戦", "争", "好"])
+
+[sub_resource type="Resource" id="Resource_bmvmx"]
+script = ExtResource("9_k4eo6")
+japanese = "相変わらず"
+readings = Array[String](["あいかわらず"])
+meanings = Array[String](["as usual", "as always", "as before", "as ever", "still"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_k4o16"]
+script = ExtResource("7_wvlqd")
+raw_text = "相変わらず"
+vocab = SubResource("Resource_bmvmx")
+reading = "あいかわらず"
+
+[sub_resource type="Resource" id="Resource_tw14x"]
+script = ExtResource("7_wvlqd")
+raw_text = "、"
+reading = "、"
+
+[sub_resource type="Resource" id="Resource_7je8l"]
+script = ExtResource("7_wvlqd")
+raw_text = "挑戦"
+vocab = SubResource("Resource_40euq")
+reading = "ちょうせん"
+
+[sub_resource type="Resource" id="Resource_40fjp"]
+script = ExtResource("9_k4eo6")
+japanese = "的"
+readings = Array[String](["てき"])
+meanings = Array[String](["-ical", "-ive", "-al", "-ic", "-y", "-like", "-ish", "-sort of", "-kind of", "(something) like", "along the lines of", "-wise", "in terms of", "for", "from the viewpoint of", "from a ... standpoint", "as far as ... is concerned", "Mr.", "Ms.", "Mrs."])
+jlpt_level = 1
+
+[sub_resource type="Resource" id="Resource_5vf6y"]
+script = ExtResource("7_wvlqd")
+raw_text = "的"
+vocab = SubResource("Resource_40fjp")
+reading = "てき"
+
+[sub_resource type="Resource" id="Resource_1is42"]
+script = ExtResource("7_wvlqd")
+raw_text = "ね"
+reading = "ね"
+
+[sub_resource type="Resource" id="Resource_pap7l"]
+script = ExtResource("7_wvlqd")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_d3v5f"]
+script = ExtResource("5_mh13j")
+japanese = "相変わらず、挑戦的ね。"
+native = "As is usual, he is combative."
+parsed = Array[ExtResource("7_wvlqd")]([SubResource("Resource_k4o16"), SubResource("Resource_tw14x"), SubResource("Resource_7je8l"), SubResource("Resource_5vf6y"), SubResource("Resource_1is42"), SubResource("Resource_pap7l")])
+_difficulty = 583
+_used_kanji = Array[String](["相", "変", "挑", "戦", "的"])
+
+[sub_resource type="Resource" id="Resource_7laec"]
+script = ExtResource("9_k4eo6")
+japanese = "人間"
+readings = Array[String](["にんげん"])
+meanings = Array[String](["human being", "human", "person", "man", "mankind", "humankind", "character (of a person)"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_12wbv"]
+script = ExtResource("7_wvlqd")
+raw_text = "人間"
+vocab = SubResource("Resource_7laec")
+reading = "にんげん"
+
+[sub_resource type="Resource" id="Resource_4khax"]
+script = ExtResource("7_wvlqd")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_ca733"]
+script = ExtResource("7_wvlqd")
+raw_text = "戦争"
+vocab = SubResource("Resource_gsg6a")
+reading = "せんそう"
+
+[sub_resource type="Resource" id="Resource_p5rcq"]
+script = ExtResource("7_wvlqd")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_u3xe8"]
+script = ExtResource("9_k4eo6")
+japanese = "怖がる"
+readings = Array[String](["こわがる"])
+meanings = Array[String](["to be afraid (of)", "to fear", "to be frightened (of)", "to be scared (of)", "to worry (about)"])
+
+[sub_resource type="Resource" id="Resource_q4qgb"]
+script = ExtResource("7_wvlqd")
+raw_text = "怖がっ"
+vocab = SubResource("Resource_u3xe8")
+reading = "こわがっ"
+
+[sub_resource type="Resource" id="Resource_6rarm"]
+script = ExtResource("7_wvlqd")
+raw_text = "て"
+reading = "て"
+
+[sub_resource type="Resource" id="Resource_7gx4w"]
+script = ExtResource("7_wvlqd")
+raw_text = "いる"
+reading = "いる"
+
+[sub_resource type="Resource" id="Resource_farwa"]
+script = ExtResource("7_wvlqd")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_ydixc"]
+script = ExtResource("5_mh13j")
+japanese = "人間は戦争を怖がっている。"
+native = "People are afraid of war."
+parsed = Array[ExtResource("7_wvlqd")]([SubResource("Resource_12wbv"), SubResource("Resource_4khax"), SubResource("Resource_ca733"), SubResource("Resource_p5rcq"), SubResource("Resource_q4qgb"), SubResource("Resource_6rarm"), SubResource("Resource_7gx4w"), SubResource("Resource_farwa")])
+_difficulty = 594
+_used_kanji = Array[String](["人", "間", "戦", "争", "怖"])
+
+[sub_resource type="Resource" id="Resource_i3xek"]
+script = ExtResource("7_wvlqd")
+raw_text = "戦争"
+vocab = SubResource("Resource_gsg6a")
+reading = "せんそう"
+
+[sub_resource type="Resource" id="Resource_2ew6d"]
+script = ExtResource("7_wvlqd")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_r5qnq"]
+script = ExtResource("9_k4eo6")
+japanese = "恐ろしい"
+readings = Array[String](["おそろしい"])
+meanings = Array[String](["terrible", "dreadful", "terrifying", "frightening"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_hxhua"]
+script = ExtResource("7_wvlqd")
+raw_text = "恐ろしい"
+vocab = SubResource("Resource_r5qnq")
+reading = "おそろしい"
+
+[sub_resource type="Resource" id="Resource_5qisw"]
+script = ExtResource("9_k4eo6")
+japanese = "不幸"
+readings = Array[String](["ふこう"])
+meanings = Array[String](["unhappiness", "sorrow", "misfortune", "disaster", "accident", "death (usu. of a relative)", "bereavement"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_0jnni"]
+script = ExtResource("7_wvlqd")
+raw_text = "不幸"
+vocab = SubResource("Resource_5qisw")
+reading = "ふこう"
+
+[sub_resource type="Resource" id="Resource_kctis"]
+script = ExtResource("7_wvlqd")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_bohde"]
+script = ExtResource("9_k4eo6")
+japanese = "引き起こす"
+readings = Array[String](["ひきおこす"])
+meanings = Array[String](["to cause", "to induce", "to bring about", "to provoke", "to pull upright", "to help up (e.g. a fallen person)"])
+jlpt_level = 1
+
+[sub_resource type="Resource" id="Resource_3hiv7"]
+script = ExtResource("7_wvlqd")
+raw_text = "引き起こす"
+vocab = SubResource("Resource_bohde")
+reading = "ひきおこす"
+
+[sub_resource type="Resource" id="Resource_conml"]
+script = ExtResource("7_wvlqd")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_u81ew"]
+script = ExtResource("5_mh13j")
+japanese = "戦争は恐ろしい不幸を引き起こす。"
+native = "War causes terrible miseries."
+parsed = Array[ExtResource("7_wvlqd")]([SubResource("Resource_i3xek"), SubResource("Resource_2ew6d"), SubResource("Resource_hxhua"), SubResource("Resource_0jnni"), SubResource("Resource_kctis"), SubResource("Resource_3hiv7"), SubResource("Resource_conml")])
+_difficulty = 650
+_used_kanji = Array[String](["戦", "争", "恐", "不", "幸", "引", "起"])
+
+[sub_resource type="Resource" id="Resource_etbi8"]
+script = ExtResource("7_xmkko")
+points = Array[Vector2]([Vector2(13.75, 22.62), Vector2(18.42, 28.12), Vector2(21.35, 33.03)])
+
+[sub_resource type="Resource" id="Resource_vphft"]
+script = ExtResource("7_xmkko")
+points = Array[Vector2]([Vector2(25.88, 18), Vector2(30.33, 23.55), Vector2(33.73, 30.52)])
+
+[sub_resource type="Resource" id="Resource_6ntqe"]
+script = ExtResource("7_xmkko")
+points = Array[Vector2]([Vector2(50.23, 16.12), Vector2(48.77, 20.89), Vector2(45.86, 25.4), Vector2(42.99, 29.24)])
+
+[sub_resource type="Resource" id="Resource_rlk65"]
+script = ExtResource("7_xmkko")
+points = Array[Vector2]([Vector2(16.83, 39.2), Vector2(19.28, 44.58), Vector2(20.44, 50.52), Vector2(21.39, 56.63), Vector2(22.2, 62.79)])
+
+[sub_resource type="Resource" id="Resource_phsge"]
+script = ExtResource("7_xmkko")
+points = Array[Vector2]([Vector2(18.91, 40.11), Vector2(24.15, 39.25), Vector2(29.96, 38.35), Vector2(35.82, 37.48), Vector2(41.25, 36.71), Vector2(45.75, 36.09), Vector2(50.19, 37.5), Vector2(50.03, 42.76), Vector2(49.16, 48.4), Vector2(48.19, 53.98), Vector2(47.21, 59.17)])
+
+[sub_resource type="Resource" id="Resource_kdcsm"]
+script = ExtResource("7_xmkko")
+points = Array[Vector2]([Vector2(21.8, 50.1), Vector2(25.05, 49.59), Vector2(30.75, 48.66), Vector2(37.49, 47.6), Vector2(43.83, 46.67), Vector2(48.35, 46.17)])
+
+[sub_resource type="Resource" id="Resource_g60y3"]
+script = ExtResource("7_xmkko")
+points = Array[Vector2]([Vector2(22.84, 60.36), Vector2(28.54, 59.39), Vector2(34.41, 58.53), Vector2(40.42, 57.78), Vector2(46.52, 57.11)])
+
+[sub_resource type="Resource" id="Resource_mscv7"]
+script = ExtResource("7_xmkko")
+points = Array[Vector2]([Vector2(13.42, 73.48), Vector2(18.92, 73.82), Vector2(23.97, 72.94), Vector2(29.19, 71.89), Vector2(34.64, 70.77), Vector2(40.4, 69.69), Vector2(46.56, 68.73), Vector2(52.34, 68.75)])
+
+[sub_resource type="Resource" id="Resource_cl6wq"]
+script = ExtResource("7_xmkko")
+points = Array[Vector2]([Vector2(33.31, 39.75), Vector2(34.5, 44.38), Vector2(34.5, 48.33), Vector2(34.5, 53.08), Vector2(34.49, 58.42), Vector2(34.49, 64.12), Vector2(34.49, 69.97), Vector2(34.48, 75.76), Vector2(34.48, 81.28), Vector2(34.48, 86.29), Vector2(34.47, 91.22), Vector2(34.38, 95.99)])
+
+[sub_resource type="Resource" id="Resource_rym6a"]
+script = ExtResource("7_xmkko")
+points = Array[Vector2]([Vector2(55, 43.46), Vector2(60.41, 43.55), Vector2(65.95, 42.46), Vector2(71.75, 40.98), Vector2(77.38, 39.39), Vector2(82.38, 37.95), Vector2(87.47, 37.28)])
+
+[sub_resource type="Resource" id="Resource_602eu"]
+script = ExtResource("7_xmkko")
+points = Array[Vector2]([Vector2(63.06, 14.25), Vector2(65.04, 18.23), Vector2(65.55, 24.54), Vector2(66.15, 30.44), Vector2(66.92, 36.24), Vector2(67.86, 41.94), Vector2(68.98, 47.5), Vector2(70.29, 52.91), Vector2(71.76, 58.12), Vector2(73.42, 63.13), Vector2(75.25, 67.9), Vector2(77.27, 72.41), Vector2(79.46, 76.64), Vector2(81.83, 80.56), Vector2(84.38, 84.14), Vector2(87.11, 87.36), Vector2(90.02, 90.19), Vector2(93.93, 93.02), Vector2(95.71, 91.55), Vector2(95.24, 84.66)])
+
+[sub_resource type="Resource" id="Resource_ljxdq"]
+script = ExtResource("7_xmkko")
+points = Array[Vector2]([Vector2(84.49, 47.33), Vector2(83.29, 52.16), Vector2(81.78, 55.34), Vector2(79.89, 58.84), Vector2(77.59, 62.57), Vector2(74.83, 66.48), Vector2(71.59, 70.5), Vector2(67.83, 74.58), Vector2(63.5, 78.65), Vector2(58.57, 82.64), Vector2(53, 86.5)])
+
+[sub_resource type="Resource" id="Resource_qe46a"]
+script = ExtResource("7_xmkko")
+points = Array[Vector2]([Vector2(76.12, 18), Vector2(79.7, 21.14), Vector2(83.32, 25.31), Vector2(85.78, 29.56)])
+
+[sub_resource type="Resource" id="Resource_f0ha0"]
+script = ExtResource("6_vprf2")
+stroke_shapes = Array[ExtResource("7_xmkko")]([SubResource("Resource_etbi8"), SubResource("Resource_vphft"), SubResource("Resource_6ntqe"), SubResource("Resource_rlk65"), SubResource("Resource_phsge"), SubResource("Resource_kdcsm"), SubResource("Resource_g60y3"), SubResource("Resource_mscv7"), SubResource("Resource_cl6wq"), SubResource("Resource_rym6a"), SubResource("Resource_602eu"), SubResource("Resource_ljxdq"), SubResource("Resource_qe46a")])
+
+[sub_resource type="Resource" id="Resource_v5emk"]
+script = ExtResource("9_k4eo6")
+japanese = "戦争"
+readings = Array[String](["せんそう"])
+meanings = Array[String](["war"])
+jlpt_level = 4
+_difficulty = 32
+_used_kanji = Array[String](["戦", "争"])
+
+[sub_resource type="Resource" id="Resource_futav"]
+script = ExtResource("9_k4eo6")
+japanese = "戦う"
+readings = Array[String](["たたかう"])
+meanings = Array[String](["to wage war", "to fight", "to struggle against"])
+jlpt_level = 3
+_difficulty = 62
+_used_kanji = Array[String](["戦"])
+
+[sub_resource type="Resource" id="Resource_cbyx0"]
+script = ExtResource("9_k4eo6")
+japanese = "挑戦"
+readings = Array[String](["ちょうせん"])
+meanings = Array[String](["challenge", "defiance"])
+jlpt_level = 3
+_difficulty = 62
+_used_kanji = Array[String](["挑", "戦"])
+
+[sub_resource type="Resource" id="Resource_qhngw"]
+script = ExtResource("9_k4eo6")
+japanese = "戦い"
+readings = Array[String](["たたかい"])
+meanings = Array[String](["battle", "fight", "conflict", "contest"])
+jlpt_level = 3
+_difficulty = 62
+_used_kanji = Array[String](["戦"])
+
+[sub_resource type="Resource" id="Resource_f0uqw"]
+script = ExtResource("9_k4eo6")
+japanese = "戦"
+readings = Array[String](["いくさ"])
+meanings = Array[String](["battle"])
+jlpt_level = 2
+_difficulty = 91
+_used_kanji = Array[String](["戦"])
+
+[sub_resource type="Resource" id="Resource_uswxx"]
+script = ExtResource("9_k4eo6")
+japanese = "対戦"
+readings = Array[String](["たいせん"])
+meanings = Array[String](["fighting against", "confronting", "battle", "fight"])
+_difficulty = 516
+_used_kanji = Array[String](["対", "戦"])
+
+[sub_resource type="Resource" id="Resource_logur"]
+script = ExtResource("9_k4eo6")
+japanese = "不戦"
+readings = Array[String](["ふせん"])
+meanings = Array[String](["against war"])
+_difficulty = 713
+_used_kanji = Array[String](["不", "戦"])
+
+[sub_resource type="Resource" id="Resource_e0mxd"]
+script = ExtResource("9_k4eo6")
+japanese = "反戦"
+readings = Array[String](["はんせん"])
+meanings = Array[String](["against war"])
+_difficulty = 832
+_used_kanji = Array[String](["反", "戦"])
+
+[sub_resource type="Resource" id="Resource_pwg3g"]
+script = ExtResource("9_k4eo6")
+japanese = "論戦"
+readings = Array[String](["ろんせん"])
+meanings = Array[String](["battle of words", "debate", "dispute"])
+_difficulty = 951
+_used_kanji = Array[String](["論", "戦"])
+
+[resource]
+script = ExtResource("4_bvh23")
+symbol = "戦"
+card_name = "Battle"
+rarity = 2
+abilities = Array[ExtResource("1_d4to1")]([SubResource("Resource_8bgea"), SubResource("Resource_k4eo6")])
+tags = Array[int]([9, 21])
+vocabulary = Array[ExtResource("9_k4eo6")]([SubResource("Resource_v5emk"), SubResource("Resource_futav"), SubResource("Resource_cbyx0"), SubResource("Resource_qhngw"), SubResource("Resource_f0uqw"), SubResource("Resource_uswxx"), SubResource("Resource_logur"), SubResource("Resource_e0mxd"), SubResource("Resource_pwg3g")])
+example_sentences = Array[ExtResource("5_mh13j")]([SubResource("Resource_0gcds"), SubResource("Resource_xmkko"), SubResource("Resource_4iqde"), SubResource("Resource_wvlqd"), SubResource("Resource_tly6s"), SubResource("Resource_vprf2"), SubResource("Resource_15k6l"), SubResource("Resource_d3v5f"), SubResource("Resource_ydixc"), SubResource("Resource_u81ew")])
+kanji_shape = SubResource("Resource_f0ha0")
+init_aspects = 65
+term_categories = Array[ExtResource("6_x5xg3")]([ExtResource("7_6lumq")])

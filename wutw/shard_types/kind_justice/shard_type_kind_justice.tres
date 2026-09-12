@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="ShardType_KindJustice" format=3 uid="uid://bbk8ed02k1pb1"]
+
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="1_8xttm"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="1_11icq"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="3_3hy03"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="3_gje74"]
+[ext_resource type="Texture2D" uid="uid://5ug56mjh1sgy" path="res://shard_types/kind_justice/shard_type_kind_justice.png" id="3_wguy4"]
+[ext_resource type="Resource" uid="uid://cwe7hjlk0a2e1" path="res://art/pieces/piece_gekkou_cranes_on_beach.tres" id="4_ey6ll"]
+[ext_resource type="Script" uid="uid://dretm602hobqt" path="res://shard_types/kind_justice/shard_type_kind_justice.gd" id="4_wguy4"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="8_ej23p"]
+[ext_resource type="Resource" uid="uid://c08cyh7jsigp8" path="res://debate/arguments/argument_kind_justice.tres" id="8_hge6f"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="9_ej23p"]
+
+[sub_resource type="Resource" id="Resource_42s6q"]
+script = ExtResource("1_8xttm")
+text = "The legal system of $shard_name is a source of confusion for newcomers, who might ask where the prison is, only to be pointed toward the town square. When a person here breaks the law, they are not locked up or fined. Instead, the community forms a circle around the accused. One by one, they take turns ruthlessly listing every nice thing the accused has ever done. \"You fixed my roof,\" one might say, or \"you delivered medicine to my grandma\". This ritual, or \"Turning\" as the folks here call it, lasts until the criminal, mortified by their own decency, breaks down and begs to be allowed to just be good again."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_7c60o"]
+script = ExtResource("1_8xttm")
+text = "This unique approach to justice has transformed the role of the town guard in $town1. Since there are no arrests to make, their primary duty is surveillance of the benevolent kind. They stalk the streets with thick ledgers, lying in wait to catch someone helping a turtle cross the road or returning a dropped coin. This ensures that if a Turning is ever held, they have plenty of ammunition to use against the accused."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_nw6pk"]
+script = ExtResource("1_8xttm")
+text = "$shard_name's approach to safety has led to a considerable lack of privacy among the townspeople. In $town2, locks are considered rude, and fences rarely reach above one's knee. The people reason that to maintain harmony, everyone should be fully aware of their neighbors' lives. Burglary is very rare, mostly because robbing a house where you've already been invited for tea is socially awkward."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_v7pj1"]
+script = ExtResource("1_8xttm")
+text = "This culture of aggressive positivity has created a peculiar social pressure in the marketplace of $town3. Haggling has been turned on its head, transforming into reverse-bidding, where the seller insists the price is too high and the buyer insists it is too low. Disputes are resolved quickly, usually because both parties are worried that a prolonged argument might trigger a Turning, which everyone agrees is socially exhausting."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_ey6ll"]
+script = ExtResource("1_8xttm")
+text = "Historians note that the people here view the Shattering not as the result of a sin, but of a temporary lapse in society's judgement. Just as they remind a criminal of their goodness to restore them, they tend to the land with gentle care, as if reminding the soil of all the gifts it has given them."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_hge6f"]
+script = ExtResource("8_ej23p")
+text = "This was a lovely place to visit. Everyone was welcoming, and eager to introduce me to a dozen of their friends. The streets were clean, and the communal meals were filled with folks offering to let me stay at their houses. I gladly accepted one such invitation, since inns didn't seem to exist on the shard. Local travelers just show up in a town and assume someone will lend them a room.
+
+However, the people all seemed a bit... naive. When I asked how they collect taxes, they told me it's on an honor system. When a woman's coinpurse went missing at a bathhouse, she said she'd just look for it next time she visits. I suppose they get on just fine, but I sure hope no one comes to take advantage of them."
+gained_argument = ExtResource("8_hge6f")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[resource]
+script = ExtResource("4_wguy4")
+harmony = ExtResource("1_11icq")
+safety = ExtResource("3_gje74")
+shard_type_id = "kind_justice"
+name = "The Turning Society"
+shard_name_override = "Zenrintō"
+shard_name_override_jp = "善隣島"
+shard_name_override_meaning = "Good Neighbor Island"
+tier = 2
+illustration = ExtResource("3_wguy4")
+illustration_credit = ExtResource("4_ey6ll")
+history = Array[ExtResource("1_8xttm")]([SubResource("Resource_42s6q"), SubResource("Resource_7c60o"), SubResource("Resource_nw6pk"), SubResource("Resource_v7pj1"), SubResource("Resource_ey6ll")])
+trip_reward = SubResource("Resource_hge6f")
+metadata/_custom_type_script = "uid://c6vrs2bxrk07c"

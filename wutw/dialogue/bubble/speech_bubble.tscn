@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://dkw8vifri0vxh"]
+
+[ext_resource type="Texture2D" uid="uid://cwo7ikoi75thg" path="res://dialogue/bubble/speech_bubble_mask.png" id="1_breld"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="2_5fk40"]
+[ext_resource type="Script" uid="uid://bmb7ehetu2m0y" path="res://dialogue/bubble/speech_bubble.gd" id="2_qoivi"]
+[ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="4_nipry"]
+[ext_resource type="Texture2D" uid="uid://dr1ty46qasy01" path="res://characters/scribe/portrait_scribe.png" id="6_qoivi"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="6_ukw77"]
+[ext_resource type="FontFile" uid="uid://4akk8wkhg56y" path="res://theme/fonts/Merienda/static/Merienda-ExtraBold.ttf" id="7_nipry"]
+[ext_resource type="Texture2D" uid="uid://dphebgupobayo" path="res://dialogue/bubble/speech_bubble_frame.png" id="8_euq4s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_breld"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0jdje"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = ExtResource("1_breld")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_breld"]
+content_margin_left = 8.0
+content_margin_top = 5.0
+content_margin_right = 8.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 1)
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lfojw"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = ExtResource("8_euq4s")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[node name="SpeechBubble" type="PanelContainer" unique_id=946924250]
+z_index = 1
+offset_right = 16.0
+offset_bottom = 10.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_breld")
+script = ExtResource("2_qoivi")
+material_customized = true
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="ClipPanel" type="PanelContainer" parent="." unique_id=1154886869]
+clip_children = 1
+texture_filter = 6
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0jdje")
+
+[node name="BG" type="PanelContainer" parent="ClipPanel" unique_id=1715581692]
+material = ExtResource("2_5fk40")
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_breld")
+script = ExtResource("4_nipry")
+material_customized = true
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="DirectionHBox" type="HBoxContainer" parent="ClipPanel" unique_id=1498793724]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
+theme_override_constants/separation = -14
+
+[node name="PortraitContainer" type="MarginContainer" parent="ClipPanel/DirectionHBox" unique_id=1981266773]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_bottom = 0
+
+[node name="Portrait" type="TextureRect" parent="ClipPanel/DirectionHBox/PortraitContainer" unique_id=1550657082]
+unique_name_in_owner = true
+texture_filter = 6
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+mouse_filter = 2
+texture = ExtResource("6_qoivi")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextContainer" type="MarginContainer" parent="ClipPanel/DirectionHBox" unique_id=1339730542]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 13
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ClipPanel/DirectionHBox/TextContainer" unique_id=28331414]
+layout_mode = 2
+theme_override_constants/separation = -12
+
+[node name="NameLabel" type="Label" parent="ClipPanel/DirectionHBox/TextContainer/VBoxContainer" unique_id=472441553]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("7_nipry")
+text = "The Scribe"
+horizontal_alignment = 1
+
+[node name="MarkedUpLabel" parent="ClipPanel/DirectionHBox/TextContainer/VBoxContainer" unique_id=1385738327 instance=ExtResource("6_ukw77")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 20)
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 6
+text = "Have you noticed the birds? Have you noticed the birds?"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 3
+justification_flags = 34
+visible_characters_behavior = 1
+
+[node name="BorderPanel" type="Panel" parent="." unique_id=1136136403]
+texture_filter = 6
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_lfojw")

@@ -1,0 +1,394 @@
+[gd_scene format=3 uid="uid://bx46hh2vxbx6n"]
+
+[ext_resource type="Script" uid="uid://42w0r1wogwdh" path="res://hub/shard_explorer/past_run_details.gd" id="1_8tksm"]
+[ext_resource type="Script" uid="uid://dm63mtrlfj005" path="res://theme/faded_scroll_container/faded_scroll_container.gd" id="2_gs1t1"]
+[ext_resource type="Shader" uid="uid://ygmrqrvg5hpm" path="res://theme/button/ukiyoe_button.gdshader" id="3_4fqbd"]
+[ext_resource type="Shader" uid="uid://dm1alxfn1vrfv" path="res://hub/shard_explorer/shard_map_preview.gdshader" id="3_gs1t1"]
+[ext_resource type="Texture2D" uid="uid://ctgl61r3xxsqv" path="res://theme/button/button_fill.png" id="4_v2kmn"]
+[ext_resource type="Texture2D" uid="uid://blje81yu8734p" path="res://theme/button/button_shape.png" id="5_et3ol"]
+[ext_resource type="PackedScene" uid="uid://njdji4l7s1q0" path="res://bonuses/bonus_counter.tscn" id="5_s8eyr"]
+[ext_resource type="Texture2D" uid="uid://5faa45e16fe1" path="res://theme/faded_background/faded_background_strokes.png" id="6_50x1h"]
+[ext_resource type="Texture2D" uid="uid://doe4603a6ngco" path="res://theme/button/button_outline.png" id="6_l2amr"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="6_wfc2o"]
+[ext_resource type="Texture2D" uid="uid://cwubixgc8n0yr" path="res://theme/button/button_swish_left.png" id="7_nyje4"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="7_t7piv"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="8_4fqbd"]
+[ext_resource type="Texture2D" uid="uid://n6l17h4ysayj" path="res://theme/button/button_swish_right.png" id="8_jwxnt"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="9_6ql8g"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="9_v2kmn"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="10_et3ol"]
+[ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="10_mfxcd"]
+[ext_resource type="Texture2D" uid="uid://dhjw5ubvrkwx8" path="res://stage/hauntings/haunting_frame_edge.png" id="11_7avne"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="11_l2amr"]
+[ext_resource type="Shader" uid="uid://b7ms4dx6p63n8" path="res://map/settlement_name.gdshader" id="12_gs1t1"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="12_nyje4"]
+[ext_resource type="Texture2D" uid="uid://chxf88ekbq0ie" path="res://visuals/canvas.png" id="13_50x1h"]
+[ext_resource type="PackedScene" uid="uid://i2fmn1y05u5y" path="res://aspects/aspect_counters_panel.tscn" id="25_c8w76"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="26_g0ld6"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="26_vup6n"]
+[ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="27_gdq36"]
+[ext_resource type="LabelSettings" uid="uid://bc3l8vvpbl2k" path="res://theme/fonts/presets/label_settings_header.tres" id="28_w5a48"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="29_nhy7k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bg3aj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_50x1h"]
+shader = ExtResource("3_gs1t1")
+shader_parameter/fade = 1.0
+shader_parameter/mask = ExtResource("11_7avne")
+shader_parameter/background_color = Color(0.4, 0.31645265, 0.20784314, 1)
+shader_parameter/background_texture = ExtResource("13_50x1h")
+shader_parameter/background_tiling = Vector2(0.3, 0.3)
+shader_parameter/pattern_color = Color(0.18, 0.14976, 0.0936, 1)
+shader_parameter/pattern_texture = ExtResource("6_50x1h")
+shader_parameter/pattern_tiling = Vector2(24, 13.5)
+shader_parameter/darkening = 0.3030000143925
+shader_parameter/u_threshold1 = 0.7550000358625
+shader_parameter/u_threshold2 = 0.5830000276925
+shader_parameter/u_threshold3 = 0.4070000193325
+shader_parameter/u_threshold4 = 0.3110000147725
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_se2uv"]
+shader = ExtResource("12_gs1t1")
+shader_parameter/overlay_tex = ExtResource("13_50x1h")
+shader_parameter/overlay_scale = 7.89
+shader_parameter/width = 700.0
+shader_parameter/color_add = Color(0.5246, 0.5872267, 0.61, 1)
+shader_parameter/power = 6.775
+shader_parameter/reveal_progress = 0.999999977648
+shader_parameter/reveal_margin = 0.23999999463552
+
+[sub_resource type="LabelSettings" id="LabelSettings_8tksm"]
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+outline_size = 16
+outline_color = Color(0.7058824, 0.63529414, 0.5176471, 1)
+
+[sub_resource type="Gradient" id="Gradient_j5apj"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wqpyw"]
+gradient = SubResource("Gradient_j5apj")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jwxnt"]
+shader = ExtResource("3_4fqbd")
+shader_parameter/mask_tex = ExtResource("5_et3ol")
+shader_parameter/background = ExtResource("4_v2kmn")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("6_l2amr")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("8_jwxnt")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("7_nyje4")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="Gradient" id="Gradient_d7mwo"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g0ld6"]
+gradient = SubResource("Gradient_d7mwo")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gdq36"]
+shader = ExtResource("3_4fqbd")
+shader_parameter/mask_tex = ExtResource("5_et3ol")
+shader_parameter/background = ExtResource("4_v2kmn")
+shader_parameter/gradient = SubResource("GradientTexture2D_g0ld6")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("6_l2amr")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("8_jwxnt")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("7_nyje4")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[node name="PastRunDetails" type="MarginContainer" unique_id=8404436]
+offset_right = 1130.0
+offset_bottom = 704.0
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+script = ExtResource("1_8tksm")
+
+[node name="Scroller" type="ScrollContainer" parent="." unique_id=121480753]
+unique_name_in_owner = true
+clip_children = 1
+layout_mode = 2
+size_flags_horizontal = 3
+scroll_vertical = 400
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 4
+script = ExtResource("2_gs1t1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Scroller" unique_id=553727378]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PreviewContainer" type="PanelContainer" parent="Scroller/VBoxContainer" unique_id=193559388]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bg3aj")
+
+[node name="Image" type="TextureRect" parent="Scroller/VBoxContainer/PreviewContainer" unique_id=1421397837]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_50x1h")
+custom_minimum_size = Vector2(1104.153, 620.79)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 4
+
+[node name="ShardNameLabel" type="Label" parent="Scroller/VBoxContainer/PreviewContainer" unique_id=766312876]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_se2uv")
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+mouse_filter = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Shard Name"
+label_settings = SubResource("LabelSettings_8tksm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TypeButton" type="Button" parent="Scroller/VBoxContainer/PreviewContainer" unique_id=1907214909]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_jwxnt")
+instance_shader_parameters/state = 0.0
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+focus_mode = 0
+theme_override_styles/normal = ExtResource("9_6ql8g")
+theme_override_styles/pressed = ExtResource("9_6ql8g")
+theme_override_styles/hover = ExtResource("9_6ql8g")
+theme_override_styles/hover_pressed = ExtResource("9_6ql8g")
+theme_override_styles/disabled = ExtResource("9_6ql8g")
+text = "The Land of Bottled Lightning"
+script = ExtResource("10_mfxcd")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="MarginContainer" type="MarginContainer" parent="Scroller/VBoxContainer" unique_id=1685352140]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Scroller/VBoxContainer/MarginContainer" unique_id=130284776]
+custom_minimum_size = Vector2(0, 41)
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="CountLabel" type="Label" parent="Scroller/VBoxContainer/MarginContainer/HBoxContainer" unique_id=299554914]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "12 Settlements"
+vertical_alignment = 1
+
+[node name="PopulationLabel" type="Label" parent="Scroller/VBoxContainer/MarginContainer/HBoxContainer" unique_id=22969131]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Population: 144,200"
+vertical_alignment = 1
+
+[node name="BonusesList" type="HBoxContainer" parent="Scroller/VBoxContainer/MarginContainer/HBoxContainer" unique_id=158089870]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="BonusCounter" parent="Scroller/VBoxContainer/MarginContainer/HBoxContainer/BonusesList" unique_id=1085645149 instance=ExtResource("5_s8eyr")]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+bonus_type = ExtResource("6_wfc2o")
+
+[node name="BonusCounter3" parent="Scroller/VBoxContainer/MarginContainer/HBoxContainer/BonusesList" unique_id=1598722705 instance=ExtResource("5_s8eyr")]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+bonus_type = ExtResource("7_t7piv")
+
+[node name="BonusCounter2" parent="Scroller/VBoxContainer/MarginContainer/HBoxContainer/BonusesList" unique_id=1208505008 instance=ExtResource("5_s8eyr")]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+bonus_type = ExtResource("8_4fqbd")
+
+[node name="BonusCounter4" parent="Scroller/VBoxContainer/MarginContainer/HBoxContainer/BonusesList" unique_id=1637993416 instance=ExtResource("5_s8eyr")]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+bonus_type = ExtResource("9_v2kmn")
+
+[node name="BonusCounter5" parent="Scroller/VBoxContainer/MarginContainer/HBoxContainer/BonusesList" unique_id=117457707 instance=ExtResource("5_s8eyr")]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+bonus_type = ExtResource("10_et3ol")
+
+[node name="BonusCounter6" parent="Scroller/VBoxContainer/MarginContainer/HBoxContainer/BonusesList" unique_id=10768271 instance=ExtResource("5_s8eyr")]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+bonus_type = ExtResource("11_l2amr")
+
+[node name="BonusCounter7" parent="Scroller/VBoxContainer/MarginContainer/HBoxContainer/BonusesList" unique_id=1612755530 instance=ExtResource("5_s8eyr")]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+bonus_type = ExtResource("12_nyje4")
+
+[node name="MarginContainer2" type="MarginContainer" parent="Scroller/VBoxContainer" unique_id=550326431]
+layout_mode = 2
+theme_override_constants/margin_left = 38
+theme_override_constants/margin_right = 25
+
+[node name="CardsAndRelicsContainer" type="HBoxContainer" parent="Scroller/VBoxContainer/MarginContainer2" unique_id=1657893246]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="VBox_Deck" type="VBoxContainer" parent="Scroller/VBoxContainer/MarginContainer2/CardsAndRelicsContainer" unique_id=1748291621]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="AspectCountersPanel" parent="Scroller/VBoxContainer/MarginContainer2/CardsAndRelicsContainer/VBox_Deck" unique_id=1348354989 instance=ExtResource("25_c8w76")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+
+[node name="ViewDeckButton" type="Button" parent="Scroller/VBoxContainer/MarginContainer2/CardsAndRelicsContainer/VBox_Deck" unique_id=8926096]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_gdq36")
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_styles/normal = ExtResource("9_6ql8g")
+theme_override_styles/pressed = ExtResource("9_6ql8g")
+theme_override_styles/hover = ExtResource("9_6ql8g")
+theme_override_styles/hover_pressed = ExtResource("9_6ql8g")
+theme_override_styles/disabled = ExtResource("9_6ql8g")
+text = "View Final Deck"
+script = ExtResource("10_mfxcd")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="RelicsScroller" type="ScrollContainer" parent="Scroller/VBoxContainer/MarginContainer2/CardsAndRelicsContainer" unique_id=1722725525]
+custom_minimum_size = Vector2(701.335, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+vertical_scroll_mode = 0
+
+[node name="RelicsList" type="HBoxContainer" parent="Scroller/VBoxContainer/MarginContainer2/CardsAndRelicsContainer/RelicsScroller" unique_id=1665334402]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+alignment = 2
+
+[node name="RelicIcon" parent="Scroller/VBoxContainer/MarginContainer2/CardsAndRelicsContainer/RelicsScroller/RelicsList" unique_id=1594301061 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+forced_size = 80
+
+[node name="RelicIcon2" parent="Scroller/VBoxContainer/MarginContainer2/CardsAndRelicsContainer/RelicsScroller/RelicsList" unique_id=1979294985 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+forced_size = 80
+
+[node name="RelicIcon3" parent="Scroller/VBoxContainer/MarginContainer2/CardsAndRelicsContainer/RelicsScroller/RelicsList" unique_id=1197835606 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+forced_size = 80
+
+[node name="RelicIcon4" parent="Scroller/VBoxContainer/MarginContainer2/CardsAndRelicsContainer/RelicsScroller/RelicsList" unique_id=1921363474 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+forced_size = 80
+
+[node name="RelicIcon5" parent="Scroller/VBoxContainer/MarginContainer2/CardsAndRelicsContainer/RelicsScroller/RelicsList" unique_id=1504335537 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+forced_size = 80
+
+[node name="RelicIcon6" parent="Scroller/VBoxContainer/MarginContainer2/CardsAndRelicsContainer/RelicsScroller/RelicsList" unique_id=1249276453 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+forced_size = 80
+
+[node name="QuestsBlock" type="MarginContainer" parent="Scroller/VBoxContainer" unique_id=2093143209]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 38
+theme_override_constants/margin_right = 25
+
+[node name="UkiyoePanelContainer" type="PanelContainer" parent="Scroller/VBoxContainer/QuestsBlock" unique_id=1065396844]
+material = ExtResource("26_vup6n")
+layout_mode = 2
+theme_override_styles/panel = ExtResource("26_g0ld6")
+script = ExtResource("27_gdq36")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Scroller/VBoxContainer/QuestsBlock/UkiyoePanelContainer" unique_id=815476893]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Scroller/VBoxContainer/QuestsBlock/UkiyoePanelContainer/VBoxContainer" unique_id=623612260]
+layout_mode = 2
+text = "Settler Quests"
+label_settings = ExtResource("28_w5a48")
+horizontal_alignment = 1
+
+[node name="QuestsLabel" parent="Scroller/VBoxContainer/QuestsBlock/UkiyoePanelContainer/VBoxContainer" unique_id=1627404269 instance=ExtResource("29_nhy7k")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+size_flags_horizontal = 1
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 20
+text = "[url=http://asd.com]Quest Name[/url]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="Scroller/VBoxContainer" unique_id=1276101709]
+layout_mode = 2
+theme_override_constants/margin_left = 38
+theme_override_constants/margin_right = 25
+
+[node name="SettlementsList" type="VBoxContainer" parent="Scroller/VBoxContainer/MarginContainer3" unique_id=1108539974]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="PastRunSettlement" parent="Scroller/VBoxContainer/MarginContainer3/SettlementsList" unique_id=2039585991 instance_placeholder="res://hub/shard_explorer/past_run_settlement.tscn"]
+layout_mode = 2
+
+[connection signal="pressed" from="Scroller/VBoxContainer/PreviewContainer/TypeButton" to="." method="_on_type_button_pressed"]
+[connection signal="pressed" from="Scroller/VBoxContainer/MarginContainer2/CardsAndRelicsContainer/VBox_Deck/ViewDeckButton" to="." method="_on_view_deck_button_pressed"]

@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://dgeej25vntlg0"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_yhasg"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="2_1bihm"]
+[ext_resource type="Script" uid="uid://c8r1lojo6hfkm" path="res://stage/hauntings/effects/haunting_effect_lose_inspiration.gd" id="3_arfco"]
+[ext_resource type="Resource" uid="uid://bxfiv2rs0dod0" path="res://art/pieces/piece_bakemono_furaribi.tres" id="4_3br6r"]
+[ext_resource type="Resource" uid="uid://bifjirk0s0he7" path="res://art/pieces/piece_kuniyoshi_monkey_sign.tres" id="5_hd6qt"]
+[ext_resource type="Texture2D" uid="uid://bdbft5bbdr5x6" path="res://stage/hauntings/types/furaribi/haunting_furaribi.png" id="6_j7fdn"]
+[ext_resource type="Texture2D" uid="uid://cuakra54uavd8" path="res://stage/hauntings/types/furaribi/haunting_furaribi_realistic_extreme_heat.png" id="7_pjqn2"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="8_4bqkv"]
+[ext_resource type="Script" uid="uid://b0w3rjuqw0ja" path="res://stage/hauntings/triggers/haunting_trigger_deck_reshuffled.gd" id="10_no74g"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="10_sslpk"]
+
+[sub_resource type="Resource" id="Resource_aq72k"]
+script = ExtResource("3_arfco")
+base_amount = 2
+extra_amount_per_season = 2
+metadata/_custom_type_script = "uid://c8r1lojo6hfkm"
+
+[sub_resource type="Resource" id="Resource_fhvea"]
+script = ExtResource("10_no74g")
+metadata/_custom_type_script = "uid://b0w3rjuqw0ja"
+
+[resource]
+script = ExtResource("10_sslpk")
+haunting_id = "furaribi"
+name = "Furaribi"
+name_japanese = "ふらり火"
+name_realistic = "Extreme Heat"
+name_translation = "Aimless Fire"
+description = "Settlers working outside risk being attacked by Furaribi, fiery birds with dog faces who dive down from the sky to steal souls from those too weak to resist their clutches."
+description_realistic = "Extreme heat stops settlers from spending long hours working outside."
+description_long = "The area has become known for Furaribi, fiery birds with dog faces who dive down from the sky to steal souls from those too weak to resist their clutches. Even if the person manages to fight them off, they usually end up unconscious, their spirit wounded by the struggle.
+
+It is said that one can feel the approach of Furaribi when the air becomes unnaturally hot."
+image_small = ExtResource("6_j7fdn")
+image_credit = ExtResource("4_3br6r")
+image_small_realistic = ExtResource("7_pjqn2")
+image_realistic_credit = ExtResource("5_hd6qt")
+base_aspect_types = Array[ExtResource("1_yhasg")]([ExtResource("2_1bihm")])
+extra_aspect_type = ExtResource("2_1bihm")
+scaling_bonus_type = ExtResource("8_4bqkv")
+trigger = SubResource("Resource_fhvea")
+effect = SubResource("Resource_aq72k")
+spot_attach_mode = 1
+settlement_attach_mode = 1
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://fbk64cyb0gk3"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_oqdku"]
+[ext_resource type="Resource" uid="uid://0dcj8q0vlk5k" path="res://stage/spots/desert/upgrade_desert_3_vanishing_city.tres" id="2_gjtoa"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_gkb8d"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_hgowr"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="3_qf4mi"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="4_gjtoa"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="6_rfy65"]
+[ext_resource type="Resource" uid="uid://coqtbomfb4xc" path="res://stage/spots/desert/spot_desert.tres" id="8_esxxl"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_65wk0"]
+[ext_resource type="Script" uid="uid://dvrtuqbmx4v30" path="res://stage/spots/spot_upgrade_visual_add.gd" id="10_ihvpg"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://qf7jfw824yih" path="res://map/sprites/spots/desert/mst_desert_mirage_gate.tres" id="11_of4w4"]
+
+[sub_resource type="Resource" id="Resource_uycc1"]
+script = ExtResource("10_ihvpg")
+sprite_type = ExtResource("11_of4w4")
+biome = 2
+metadata/_custom_type_script = "uid://dvrtuqbmx4v30"
+
+[resource]
+script = ExtResource("1_oqdku")
+spot_upgrade_id = "desert_mirage_gate"
+name = "Mirage Gate"
+description = "If you look out of the corner of your eye, you can catch a glimpse of spires rising into a vast blue sky just beyond this gate."
+required_aspects = Array[ExtResource("3_hgowr")]([ExtResource("6_rfy65")])
+granted_bonuses = Dictionary[ExtResource("2_gkb8d"), int]({
+ExtResource("3_qf4mi"): 5,
+ExtResource("4_gjtoa"): 5
+})
+child_upgrades = Array[ExtResource("1_oqdku")]([ExtResource("2_gjtoa")])
+spot = ExtResource("8_esxxl")
+visuals = Array[ExtResource("9_65wk0")]([SubResource("Resource_uycc1")])

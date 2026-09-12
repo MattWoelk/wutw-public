@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://gia5p2avy13r"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_vp8g7"]
+[ext_resource type="Resource" uid="uid://ow38ychmmv3g" path="res://stage/spots/seashore/upgrade_seashore_3_shimmering_reef.tres" id="2_myhxe"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_weguk"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_5jrlw"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="4_gfvvg"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="5_kljt5"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="7_phtb1"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="8_51ol5"]
+[ext_resource type="Resource" uid="uid://skws2o4hx05g" path="res://stage/spots/seashore/spot_seashore.tres" id="9_kljt5"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="10_phtb1"]
+[ext_resource type="Script" uid="uid://dvrtuqbmx4v30" path="res://stage/spots/spot_upgrade_visual_add.gd" id="11_51ol5"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://cmxoelfwhud48" path="res://map/sprites/spots/seashore/mst_seashore_coral_garden.tres" id="12_5o8vq"]
+
+[sub_resource type="Resource" id="Resource_ddd8p"]
+script = ExtResource("11_51ol5")
+sprite_type = ExtResource("12_5o8vq")
+biome = 1
+metadata/_custom_type_script = "uid://dvrtuqbmx4v30"
+
+[resource]
+script = ExtResource("1_vp8g7")
+spot_upgrade_id = "seashore_corals"
+name = "Coral Garden"
+description = "A thicket of stony branches covers the seafloor, adding a drop of crimson into the blue expanse."
+required_aspects = Array[ExtResource("3_5jrlw")]([ExtResource("7_phtb1"), ExtResource("8_51ol5")])
+granted_bonuses = Dictionary[ExtResource("2_weguk"), int]({
+ExtResource("4_gfvvg"): 15,
+ExtResource("5_kljt5"): 5
+})
+child_upgrades = Array[ExtResource("1_vp8g7")]([ExtResource("2_myhxe")])
+spot = ExtResource("9_kljt5")
+visuals = Array[ExtResource("10_phtb1")]([SubResource("Resource_ddd8p")])
+tags = Array[int]([0])

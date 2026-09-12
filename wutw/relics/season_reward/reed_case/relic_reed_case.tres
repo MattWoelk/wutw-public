@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Relic" format=3 uid="uid://bvjcjelphv3c1"]
+
+[ext_resource type="Texture2D" uid="uid://d2i8u5wd7htt1" path="res://relics/season_reward/reed_case/reed_case.png" id="1_bd4t4"]
+[ext_resource type="Script" uid="uid://cocdm5ulvrs8m" path="res://relics/relic.gd" id="2_tdkjq"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="3_p4idd"]
+[ext_resource type="Resource" uid="uid://5q63svcbmx37" path="res://glossary/categories/termcategory_relic.tres" id="4_8vlby"]
+
+[resource]
+script = ExtResource("2_tdkjq")
+relic_id = "reed_case"
+default_name = "Reed Case"
+default_description = "Increase the average <term_lower:card_rarity_tier> of <term_lower:glyph>s you are offered when selecting a reward by 50%."
+flavor_text = "Each scroll inside was chosen with care. If we're building the world again, let's build it well."
+icon = ExtResource("1_bd4t4")
+rarity = 3
+var_modifiers = Dictionary[int, int]({
+8: 50
+})
+default_starting_state = 1
+term_categories = Array[ExtResource("3_p4idd")]([ExtResource("4_8vlby")])
+metadata/_custom_type_script = "uid://cocdm5ulvrs8m"

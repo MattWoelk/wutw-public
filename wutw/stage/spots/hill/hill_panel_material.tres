@@ -1,0 +1,29 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://droa681b6axy3"]
+
+[ext_resource type="Shader" uid="uid://cy23kwgtjt4et" path="res://theme/panel/panel.gdshader" id="1_dmo8w"]
+[ext_resource type="Texture2D" uid="uid://cgsn7350xgqr5" path="res://theme/panel/panel_bg.png" id="2_dr8qr"]
+[ext_resource type="Texture2D" uid="uid://csholjs5yetrf" path="res://stage/spots/hill/panel_decor_hill.png" id="3_dmo8w"]
+[ext_resource type="Texture2D" uid="uid://bnkoruxi23qsp" path="res://theme/panel/panel_frame.png" id="4_r6bs3"]
+
+[sub_resource type="Gradient" id="Gradient_h4apa"]
+offsets = PackedFloat32Array(0.00512295, 0.1875, 0.372951, 1)
+colors = PackedColorArray(0.776, 0.885933, 0.97, 0.913725, 0.65, 0.953333, 1, 0.203922, 0.58, 0.916, 1, 0.219608, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rg4bp"]
+gradient = SubResource("Gradient_h4apa")
+fill_to = Vector2(0, 1)
+
+[resource]
+shader = ExtResource("1_dmo8w")
+shader_parameter/background = ExtResource("2_dr8qr")
+shader_parameter/background_shade = SubResource("GradientTexture2D_rg4bp")
+shader_parameter/background_tex_size = Vector2(2291, 3118)
+shader_parameter/background_scale = 2.93
+shader_parameter/frame_tex = ExtResource("4_r6bs3")
+shader_parameter/frame_tex_size = Vector2(1127, 976)
+shader_parameter/frame_margin = Vector4(15, 15, 15, 15)
+shader_parameter/frame_scale = 0.93
+shader_parameter/frame_color = Color(0, 0, 0, 1)
+shader_parameter/decor_tex = ExtResource("3_dmo8w")
+shader_parameter/decor_transform = Vector4(8.515, 55.355, 435, 193.18)
+shader_parameter/decor_modulate = Color(1, 1, 1, 0.305882)

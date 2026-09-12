@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="Quest_Settler" format=3 uid="uid://q371ll5lhtre"]
+
+[ext_resource type="Script" uid="uid://cjloydxgrv8oa" path="res://quests/settler/settler_quest_challenge.gd" id="1_c02w1"]
+[ext_resource type="Script" uid="uid://bh1mop5p5nxi" path="res://quests/settler/challenges/settler_quest_challenge_damage_per_stage.gd" id="2_c02w1"]
+[ext_resource type="Resource" uid="uid://c5e7uvgwx4xd6" path="res://characters/jobs/job_wanderer.tres" id="4_nr44a"]
+[ext_resource type="Resource" uid="uid://gb2hon6q3l08" path="res://characters/jobs/job_adventurer.tres" id="5_icaqq"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="5_qx4px"]
+[ext_resource type="Script" uid="uid://cd4swbq3t72je" path="res://quests/settler/settler_quest_reward.gd" id="7_8avxr"]
+[ext_resource type="Resource" uid="uid://83qh03xketvs" path="res://relics/common/curious_stone/relic_curious_stone.tres" id="7_bl167"]
+[ext_resource type="Script" uid="uid://0k12wwnmq50h" path="res://quests/settler/rewards/settler_quest_reward_add_relic.gd" id="8_qx4px"]
+[ext_resource type="Script" uid="uid://1na7ymvvvbby" path="res://quests/settler/quest_settler.gd" id="9_5p6r1"]
+[ext_resource type="Script" uid="uid://bxua8gxfjp2wy" path="res://quests/settler/settler_quest_goal.gd" id="10_fu77w"]
+[ext_resource type="Script" uid="uid://c0f31c6uvr016" path="res://quests/settler/goals/settler_quest_goal_any_upgrade.gd" id="11_xjs8e"]
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="12_6wuck"]
+[ext_resource type="Resource" uid="uid://bmbr0f72igpb2" path="res://stage/spots/mountain/upgrade_mountain_3_dragon_roost.tres" id="13_dx5iq"]
+
+[sub_resource type="Resource" id="Resource_8avxr"]
+script = ExtResource("2_c02w1")
+damage = 2
+metadata/_custom_type_script = "uid://bh1mop5p5nxi"
+
+[sub_resource type="Resource" id="Resource_r8u1m"]
+script = ExtResource("8_qx4px")
+relic = ExtResource("7_bl167")
+metadata/_custom_type_script = "uid://0k12wwnmq50h"
+
+[sub_resource type="Resource" id="Resource_cjx8r"]
+script = ExtResource("11_xjs8e")
+upgrades = Array[ExtResource("12_6wuck")]([ExtResource("13_dx5iq")])
+metadata/_custom_type_script = "uid://c0f31c6uvr016"
+
+[resource]
+script = ExtResource("9_5p6r1")
+intro_text = "No one believes that my collection of dragon scales is real. I must find a dragon's lair and prove them all wrong! I've read that dragons used to live inside volcanoes, deep in the vents..."
+challenges = Array[ExtResource("1_c02w1")]([SubResource("Resource_8avxr")])
+settler_goals = Array[ExtResource("10_fu77w")]([SubResource("Resource_cjx8r")])
+rewards = Array[ExtResource("7_8avxr")]([SubResource("Resource_r8u1m")])
+restrict_to_jobs = Array[ExtResource("5_qx4px")]([ExtResource("4_nr44a"), ExtResource("5_icaqq")])
+quest_id = "settler_dragon_scale"
+category = 2
+name = "A Dragon Enthusiast"
+metadata/_custom_type_script = "uid://1na7ymvvvbby"

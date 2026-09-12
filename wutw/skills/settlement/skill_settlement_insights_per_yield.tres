@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Skill" format=3 uid="uid://ckjvfmf3jbglm"]
+
+[ext_resource type="Texture2D" uid="uid://cma3qdbuu6rbu" path="res://skills/settlement/skill_settlement_insights_per_yield.png" id="1_k4ybk"]
+[ext_resource type="Resource" uid="uid://cbpom5ccgsarw" path="res://skills/settlement/skill_settlement_root.tres" id="2_sv6pr"]
+[ext_resource type="Script" uid="uid://bbk0qffsme200" path="res://skills/skill.gd" id="3_fyt0n"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="4_dse7m"]
+[ext_resource type="Resource" uid="uid://b7x5e3q02vwqw" path="res://glossary/categories/termcategory_skill.tres" id="5_rr4ye"]
+
+[resource]
+script = ExtResource("3_fyt0n")
+skill_id = "settlement_insights_per_yield"
+skill_name = "Insights from Excess"
+description = "Grants an <term:insight> for every 10 <term_lower:bonus> points of any type that do not directly progress the <term_lower:stage_goal>s during <term_lower:foray>s, up to 20."
+icon = ExtResource("1_k4ybk")
+unlock_cost = 15
+var_type = 55
+var_amount = 1
+requirement = ExtResource("2_sv6pr")
+min_main_quest_progress = 110
+term_categories = Array[ExtResource("4_dse7m")]([ExtResource("5_rr4ye")])
+metadata/_custom_type_script = "uid://bbk0qffsme200"

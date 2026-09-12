@@ -1,0 +1,65 @@
+[gd_resource type="Resource" script_class="ShardType_Medicine" format=3 uid="uid://hptjso6slxyp"]
+
+[ext_resource type="Resource" uid="uid://bj6lkas4ufm01" path="res://events/generic/giant_butterbur/event_giant_butterbur.tres" id="1_jwjt6"]
+[ext_resource type="Resource" uid="uid://3jck4mxc8uj8" path="res://stage/spots/building_large/upgrade_building_large_2_hospital.tres" id="2_8y1hh"]
+[ext_resource type="Resource" uid="uid://bmxfymucm2kv5" path="res://relics/uncommon/butterbur_extract/relic_butterbur_extract.tres" id="2_n2vas"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="3_jwjt6"]
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="3_l4wax"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="3_ogo6g"]
+[ext_resource type="Script" uid="uid://bfx1wav57sy8h" path="res://shard_types/medicine/shard_type_medicine.gd" id="4_jethq"]
+[ext_resource type="Texture2D" uid="uid://bf3c18gi22k8v" path="res://shard_types/medicine/shard_type_medicine.png" id="4_y8hdl"]
+[ext_resource type="Resource" uid="uid://5bil2pev7sy" path="res://art/pieces/piece_gekkou_morning_glory.tres" id="5_iq2yd"]
+[ext_resource type="Resource" uid="uid://lypwtbekaxi8" path="res://skills/hauntings/skill_hauntings_pacify_3.tres" id="10_1adyf"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="11_pyvj3"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="12_1adyf"]
+
+[sub_resource type="Resource" id="Resource_42s6q"]
+script = ExtResource("3_l4wax")
+text = "The discovery of the Butterbur Extract was a defining moment in $shard_name's history. Healers quickly realized that more effective medicine was within their grasp, and much of the scholarship done on the shard turned toward healthcare and life extension. Even chefs became experts in pharmacy, abandoning the pursuit of flavor for the pursuit of efficacy. Sweets are viewed with suspicion here, while a dish that tastes like wet tree bark is praised for its wholesomeness."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_7c60o"]
+script = ExtResource("3_l4wax")
+text = "A revolution in healing arrived with the discovery of disease spirits like the [b]Housougami[/b], invisible to the eye but deadly to the body. It was found that these spirits cling to unwashed surfaces, and need to be exorcised through regular baths and scrubs. Since these spirits jump from person to person, touching among strangers has become a taboo. A visitor who offers a handshake is shunned as an unwashed barbarian, and to hug an outsider is a quick way to become a pariah."
+min_main_quest = 210
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_v7pj1"]
+script = ExtResource("3_l4wax")
+text = "Perhaps the most unusual feature of $shard_name is its art scene. Where other cultures paint landscapes or portraits, the masters of $shard_name produce lovingly detailed charcoal sketches of hearts, livers, and spleens. To visitors, the art gallery in the capital might look macabre and disturbing, but to a local, an accurate, lifelike sketch of an appendix is the highest form of beauty."
+min_main_quest = 210
+time_taken = 2
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_nw6pk"]
+script = ExtResource("3_l4wax")
+text = "$shard_name's ultimate claim to fame is the longevity of its inhabitants. It is common for people to grow old enough to meet their great-grandchildren. These elders are revered for their attention to their health, and are often elected as leaders of their communities. While this has kept decisions resistant to the whims of youth, it has also led to a culture obsessed with caution, avoiding any project that might involve even the tiniest sliver of risk."
+min_main_quest = 400
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_mrgqe"]
+script = ExtResource("11_pyvj3")
+text = "This shard was a bit boring. Half of the residents are elders, and the few youngsters I met might as well have been elders themselves, with the way they shy away from the least bit of fun.
+
+I wanted to get a cup of sake at an inn, but they informed me that it's illegal because it harms your health. Rock climbing is also illegal, and so is sailing. What's the point of living so long if you don't even get to enjoy your life?"
+revealed_skill = ExtResource("10_1adyf")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[resource]
+script = ExtResource("4_jethq")
+event = ExtResource("1_jwjt6")
+var_name = "extract"
+relic = ExtResource("2_n2vas")
+knowledge = ExtResource("3_jwjt6")
+hospital = ExtResource("2_8y1hh")
+shard_type_id = "medicine"
+name = "A Healer's Rest"
+shard_name_override = "Kiyomebara"
+shard_name_override_jp = "清目原"
+shard_name_override_meaning = "Purification Plains"
+tier = 2
+illustration = ExtResource("4_y8hdl")
+illustration_credit = ExtResource("5_iq2yd")
+history = Array[ExtResource("3_l4wax")]([SubResource("Resource_42s6q"), SubResource("Resource_7c60o"), SubResource("Resource_v7pj1"), SubResource("Resource_nw6pk")])
+trip_reward = SubResource("Resource_mrgqe")
+metadata/_custom_type_script = "uid://c6vrs2bxrk07c"

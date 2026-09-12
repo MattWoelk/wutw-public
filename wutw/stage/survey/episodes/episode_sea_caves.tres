@@ -1,0 +1,177 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://dce33k3a8qqi1"]
+
+[ext_resource type="Resource" uid="uid://c6l4ff177ijgj" path="res://art/pieces/piece_hiroshige_enoshima_cave.tres" id="1_a1k6a"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_xcqww"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_a1k6a"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_eepx8"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="4_vjbfp"]
+[ext_resource type="Script" uid="uid://cbnw4a13y5x8c" path="res://events/system/outcomes/random/event_outcome_random.gd" id="5_jnsr6"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="6_umvm4"]
+[ext_resource type="Resource" uid="uid://xtkp7o4bidhi" path="res://relics/common/chisel_fang/relic_chisel_fang.tres" id="7_3f3ll"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="8_1ked4"]
+[ext_resource type="Resource" uid="uid://ckyuuxahgsi3v" path="res://relics/common/jade_bead/relic_jade_bead.tres" id="9_k36w4"]
+[ext_resource type="Resource" uid="uid://cb13shr80bibh" path="res://relics/common/old_coin/relic_old_coin.tres" id="10_ceohc"]
+[ext_resource type="Resource" uid="uid://ccw8l2yx74uwu" path="res://relics/common/crystal_twig/relic_crystal_twig.tres" id="11_gpvi6"]
+[ext_resource type="Resource" uid="uid://cjik8tpk2ixsj" path="res://relics/uncommon/stone_needle/relic_stone_needle.tres" id="12_ia3l2"]
+[ext_resource type="Script" uid="uid://yxgaymbbt8tk" path="res://events/system/outcomes/override_next_step/event_outcome_override_next_step.gd" id="13_staq2"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="14_k53br"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="15_h3xrp"]
+[ext_resource type="Resource" uid="uid://c3lqm5twcoed3" path="res://relics/common/ancient_bone/relic_ancient_bone.tres" id="16_qe8m8"]
+[ext_resource type="Resource" uid="uid://c7y02jnxa1jw8" path="res://relics/common/oracle_bone/relic_oracle_bone.tres" id="17_lm3n6"]
+[ext_resource type="Resource" uid="uid://s2g1kejry2yr" path="res://relics/common/spring_rune/relic_spring_rune.tres" id="18_k0a6d"]
+[ext_resource type="Resource" uid="uid://y6fmm1drk2gr" path="res://relics/common/jade_shard/relic_jade_shard.tres" id="19_fjdwm"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="20_xwqsy"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="21_ewfb4"]
+[ext_resource type="Script" uid="uid://gu7gcielbwdr" path="res://events/system/outcomes/choose_card/event_outcome_choose_card.gd" id="22_p2jxw"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="23_qxenc"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="24_00trc"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="25_twc4m"]
+
+[sub_resource type="Resource" id="Resource_opi5i"]
+script = ExtResource("1_xcqww")
+_texture_path = "uid://db1qbpn3668ai"
+_is_horizontal = true
+
+[sub_resource type="Resource" id="Resource_12ktv"]
+script = ExtResource("8_1ked4")
+relic = ExtResource("7_3f3ll")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_1vk7k"]
+script = ExtResource("8_1ked4")
+relic = ExtResource("9_k36w4")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_pvmtr"]
+script = ExtResource("8_1ked4")
+relic = ExtResource("10_ceohc")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_jfp54"]
+script = ExtResource("8_1ked4")
+relic = ExtResource("11_gpvi6")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_vsdhr"]
+script = ExtResource("8_1ked4")
+relic = ExtResource("12_ia3l2")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_yxw80"]
+script = ExtResource("13_staq2")
+result_text = "The scouts spread out, searching the main chamber.
+
+They quickly find an alcove carved into the wall. The inscription above it has long since eroded, and the space is otherwise empty."
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_fe1tt"]
+script = ExtResource("5_jnsr6")
+suboutcomes = Dictionary[ExtResource("6_umvm4"), float]({
+SubResource("Resource_12ktv"): 0.1,
+SubResource("Resource_1vk7k"): 0.1,
+SubResource("Resource_pvmtr"): 0.1,
+SubResource("Resource_jfp54"): 0.1,
+SubResource("Resource_vsdhr"): 0.1,
+SubResource("Resource_yxw80"): 0.5
+})
+description = "A chance of one of five relics"
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_tsw4t"]
+script = ExtResource("2_a1k6a")
+label = "Examine the main chamber."
+aspects = Array[ExtResource("3_eepx8")]([ExtResource("4_vjbfp"), null])
+aspects_per_season = Array[ExtResource("3_eepx8")]([null])
+outcome = SubResource("Resource_fe1tt")
+outcome_text = "The scouts spread out, searching the main chamber.
+
+They quickly find an alcove carved into the wall. The inscription above it has long since eroded, but a relic still lies intact on a raised dais."
+
+[sub_resource type="Resource" id="Resource_yu5pf"]
+script = ExtResource("8_1ked4")
+relic = ExtResource("16_qe8m8")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_avtu5"]
+script = ExtResource("8_1ked4")
+relic = ExtResource("17_lm3n6")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_m1cg6"]
+script = ExtResource("8_1ked4")
+relic = ExtResource("18_k0a6d")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_dn8s7"]
+script = ExtResource("8_1ked4")
+relic = ExtResource("19_fjdwm")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_pc2tf"]
+script = ExtResource("5_jnsr6")
+suboutcomes = Dictionary[ExtResource("6_umvm4"), float]({
+SubResource("Resource_yu5pf"): 1.0,
+SubResource("Resource_avtu5"): 1.0,
+SubResource("Resource_m1cg6"): 1.0,
+SubResource("Resource_dn8s7"): 1.0
+})
+description = "Get one of four relics"
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_se7l4"]
+script = ExtResource("21_ewfb4")
+bonus_type = ExtResource("20_xwqsy")
+min_count = 20
+max_count = -1
+extra_per_season = 50
+
+[sub_resource type="Resource" id="Resource_ra1er"]
+script = ExtResource("2_a1k6a")
+label = "Delve deep into the cave."
+requirement = SubResource("Resource_se7l4")
+aspects = Array[ExtResource("3_eepx8")]([ExtResource("14_k53br"), ExtResource("15_h3xrp")])
+aspects_per_season = Array[ExtResource("3_eepx8")]([null])
+outcome = SubResource("Resource_pc2tf")
+outcome_text = "The survey team ties a rope to a nearby rock and slowly descends into the depths.
+
+Their torches are too smoky to keep lit in the narrow tunnel, so they navigate mostly by touch.
+
+The bottom of the shaft is filled with rubble, some of which they haul back up.
+
+Among the rocks is a relic."
+
+[sub_resource type="Resource" id="Resource_8ed14"]
+script = ExtResource("22_p2jxw")
+card_tag = 17
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_jljau"]
+script = ExtResource("2_a1k6a")
+label = "Pray to the dragon spirit."
+aspects = Array[ExtResource("3_eepx8")]([ExtResource("14_k53br")])
+outcome = SubResource("Resource_8ed14")
+outcome_text = "The scouts kneel by the entrance, their backs exposed to the waves.
+
+They clap their hands and each whispers an old prayer.
+
+Perhaps the dragon will favor this expedition."
+
+[sub_resource type="Resource" id="Resource_byjbe"]
+script = ExtResource("2_a1k6a")
+label = "Ignore the cave."
+aspects = Array[ExtResource("3_eepx8")]([null])
+outcome_text = "The scouts decide that delving into a deep, slippery cave is too much of a risk, and continue on their way."
+
+[resource]
+script = ExtResource("24_00trc")
+episode_id = "sea_caves"
+title = "The Sea Caves"
+biome_types = Array[int]([10, 1])
+text = "As the scouts are walking along the shore, they approach a huge cave.
+
+Waves crash unceasingly into the entrance, filling the main chamber with a layer of seawater.
+
+Old World legends claim such caves used to be inhabited by many-headed dragons who ruled the seas."
+background_image = SubResource("Resource_opi5i")
+background_credit = ExtResource("1_a1k6a")
+choices = Array[ExtResource("2_a1k6a")]([SubResource("Resource_tsw4t"), SubResource("Resource_ra1er"), SubResource("Resource_jljau"), SubResource("Resource_byjbe")])

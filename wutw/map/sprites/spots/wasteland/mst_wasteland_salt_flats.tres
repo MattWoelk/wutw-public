@@ -1,0 +1,83 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://d27evmqjpejqb"]
+
+[ext_resource type="MapSpriteType_Lake" uid="uid://b8c72iw03oxkc" path="res://map/sprites/spots/wasteland/mst_wasteland_shallow_pool.tres" id="1_sgj84"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://hyibllidmb6c" path="res://map/sprites/decor/mst_wasteland_salt_1.tres" id="2_pn00y"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://daotj68b3282f" path="res://map/sprites/spots/wasteland/mst_wasteland_salt_shine.tres" id="2_svx55"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://bluivb4ai6rvi" path="res://map/sprites/decor/mst_wasteland_salt_2.tres" id="3_svx55"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://5oaokhojeg3p" path="res://map/sprites/decor/mst_wasteland_salt_3.tres" id="4_ut8cd"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://c10xwciqk6m0j" path="res://map/sprites/decor/mst_wasteland_salt_4.tres" id="5_b610h"]
+[ext_resource type="PackedScene" uid="uid://djtjuwjcv52q1" path="res://map/sprites/spots/seashore/map_effect_sparkle.tscn" id="7_svx55"]
+
+[sub_resource type="MapSpriteCollision_Circle" id="MapSpriteCollision_Circle_1au84"]
+center = Vector2(-2.07, 1.175)
+radius = 1.69
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Circle" id="MapSpriteCollision_Circle_ut8cd"]
+center = Vector2(-1.35, -1.06)
+radius = 2.535
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Circle" id="MapSpriteCollision_Circle_b610h"]
+center = Vector2(2.565, -0.755)
+radius = 1.965
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Circle" id="MapSpriteCollision_Circle_a4bo8"]
+center = Vector2(0.745, 0.72)
+radius = 1.455
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_ut8cd"]
+sprite_type = ExtResource("1_sgj84")
+offset = Vector2(-0.205, -0.9)
+scale = 0.95
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_a4bo8"]
+sprite_type = ExtResource("2_svx55")
+offset = Vector2(-0.13, -0.025)
+scale = 2.26
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_gnkn2"]
+sprite_type = ExtResource("2_pn00y")
+scale = 1.06
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_hmnbm"]
+sprite_type = ExtResource("3_svx55")
+offset = Vector2(2.91, 0.065)
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_1au84"]
+sprite_type = ExtResource("4_ut8cd")
+offset = Vector2(0.525, 1.325)
+scale = 0.915
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_2skt4"]
+sprite_type = ExtResource("5_b610h")
+offset = Vector2(2.45, -1.425)
+scale = 1.15
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_3vajm"]
+sprite_type = ExtResource("3_svx55")
+offset = Vector2(-0.97, -2.015)
+scale = 1.2
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_md7b8"]
+sprite_type = ExtResource("2_pn00y")
+offset = Vector2(-2.355, 0.005)
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_dlxyt"]
+sprite_type = ExtResource("4_ut8cd")
+offset = Vector2(-2.32, 1.76)
+scale = 0.905
+
+[sub_resource type="MapEffectAttachment" id="MapEffectAttachment_dlxyt"]
+scene = ExtResource("7_svx55")
+offset = Vector2(-1.4425822, -1.0403073)
+scale = 0.06
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_ut8cd"), SubResource("MapSpriteComponent_a4bo8"), SubResource("MapSpriteComponent_gnkn2"), SubResource("MapSpriteComponent_hmnbm"), SubResource("MapSpriteComponent_1au84"), SubResource("MapSpriteComponent_2skt4"), SubResource("MapSpriteComponent_3vajm"), SubResource("MapSpriteComponent_md7b8"), SubResource("MapSpriteComponent_dlxyt")])
+footprint_radius = 4.36
+must_be_fully_within_clip = true
+effects = Array[MapEffectAttachment]([SubResource("MapEffectAttachment_dlxyt")])
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Circle_1au84"), SubResource("MapSpriteCollision_Circle_ut8cd"), SubResource("MapSpriteCollision_Circle_b610h"), SubResource("MapSpriteCollision_Circle_a4bo8")])

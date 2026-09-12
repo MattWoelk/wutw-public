@@ -1,0 +1,24 @@
+[gd_resource type="MapSpriteType_Building" format=3 uid="uid://7q50hlx03foq"]
+
+[ext_resource type="Resource" uid="uid://w8n0bwomyvod" path="res://stage/spots/building_small/spot_building_small.tres" id="1_xu033"]
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_ybsp4"]
+p1 = Vector2(0.39, -1.935)
+p2 = Vector2(4.85, -1.45)
+p3 = Vector2(0.58, 0.81)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_w54c5"]
+p1 = Vector2(-4.235, -0.065)
+p2 = Vector2(0.49, 0.79)
+p3 = Vector2(0.67, -1.945)
+blocking = true
+
+[resource]
+atlas_rect = Rect2i(15, 25, 110, 70)
+map_rect = Rect2(-0.085, -1.87, 11, 7)
+footprint_radius = 4.29
+default_scale = 0.75
+must_be_fully_within_clip = true
+provided_spot_type = ExtResource("1_xu033")
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Triangle_ybsp4"), SubResource("MapSpriteCollision_Triangle_w54c5")])

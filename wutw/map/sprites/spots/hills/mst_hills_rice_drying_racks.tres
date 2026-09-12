@@ -1,0 +1,45 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://c1qyjr5xjxho0"]
+
+[ext_resource type="MapSpriteType_Composite" uid="uid://cpqmycr3lndya" path="res://map/sprites/spots/hills/mst_hills_rice_terraces.tres" id="1_45b8j"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://ce37r437gm5a1" path="res://map/sprites/spots/hills/mst_hills_rack.tres" id="2_m3vkn"]
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_m3vkn"]
+p1 = Vector2(11.95, 1.48)
+p2 = Vector2(6.3, -0.27)
+p3 = Vector2(1.06, 1.255)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_bts34"]
+p1 = Vector2(-5.665, 1.265)
+p2 = Vector2(1.225, -0.78)
+p3 = Vector2(6.585, 1.31)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_wl6ut"]
+p1 = Vector2(-1.5, 2.465)
+p2 = Vector2(1.05, 1.335)
+p3 = Vector2(-3.815, 1.285)
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_5jinl"]
+sprite_type = ExtResource("1_45b8j")
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_bts34"]
+sprite_type = ExtResource("2_m3vkn")
+offset = Vector2(6.395, -1.29)
+scale = 0.575
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_js8xt"]
+sprite_type = ExtResource("2_m3vkn")
+offset = Vector2(5.2, -0.71)
+scale = 0.53
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_wl6ut"]
+sprite_type = ExtResource("2_m3vkn")
+offset = Vector2(3.95, -0.245)
+scale = 0.475
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_5jinl"), SubResource("MapSpriteComponent_bts34"), SubResource("MapSpriteComponent_js8xt"), SubResource("MapSpriteComponent_wl6ut")])
+footprint_radius = 2.0
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Triangle_m3vkn"), SubResource("MapSpriteCollision_Triangle_bts34"), SubResource("MapSpriteCollision_Triangle_wl6ut")])

@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://us16ch8gfroc"]
+
+[ext_resource type="Texture2D" uid="uid://jgyos7xqxmpt" path="res://hub/contents/museum/curtain2_stand.png" id="1_ojf4q"]
+[ext_resource type="Script" uid="uid://b8c7n28a48b6j" path="res://hub/contents/museum/museum_exhibit.gd" id="2_2po42"]
+[ext_resource type="Shader" uid="uid://bwxhld0dc0w0v" path="res://hub/contents/museum/museum_exhibit.gdshader" id="2_6whcg"]
+[ext_resource type="Texture2D" uid="uid://c8kjl6bwyjhng" path="res://hub/contents/museum/curtain2.png" id="3_2po42"]
+[ext_resource type="Texture2D" uid="uid://dc356i2jyhg7n" path="res://visuals/transparent.png" id="4_2po42"]
+[ext_resource type="Texture2D" uid="uid://7h4u66d2qhfi" path="res://hub/contents/museum/curtain2_mask.png" id="4_2wrn2"]
+[ext_resource type="Texture2D" uid="uid://b241hhbyyqcke" path="res://hub/contents/wind_noise.tres" id="5_ajt11"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wd2g8"]
+shader = ExtResource("2_6whcg")
+shader_parameter/image = ExtResource("4_2po42")
+shader_parameter/image_size = Vector2(1, 1)
+shader_parameter/mask = ExtResource("4_2wrn2")
+shader_parameter/slot_size = Vector2(117, 98)
+shader_parameter/area_uv_offset = Vector2(0.065, 0.23)
+shader_parameter/area_uv_size = Vector2(0.88, 0.645)
+shader_parameter/skew_x = 0.0
+shader_parameter/skew_y = 0.24
+shader_parameter/wind_direction = Vector2(-1.8, 1)
+shader_parameter/wind_strength = 0.0190000009025
+shader_parameter/wind_noise = ExtResource("5_ajt11")
+shader_parameter/wind_speed = 0.074
+
+[node name="MuseumExhibit2" type="Sprite2D" unique_id=1290563988]
+scale = Vector2(0.5396032, 0.5396032)
+texture = ExtResource("1_ojf4q")
+offset = Vector2(0, -110)
+script = ExtResource("2_2po42")
+tooltip_text = "[center]<header_font_size>[b]Select Exhibit[/b][/font_size][/center]
+
+Select the exhibit to display in this spot."
+
+[node name="ArtCanvas" type="Sprite2D" parent="." unique_id=1306417851]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_wd2g8")
+texture = ExtResource("3_2po42")
+offset = Vector2(0, -110)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1867046404]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=895107164]
+visible = false
+position = Vector2(-118.62, -323.734)
+polygon = PackedVector2Array(236.61046, 308.71243, 237.3262, 91.84123, -3.5225143, 148.38521, 2.9192123, 362.39343)
+
+[node name="TooltipAnchor" type="Control" parent="." unique_id=1795345918]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -118.91405
+offset_top = -252.01198
+offset_right = 118.53667
+offset_bottom = 35.21022
+mouse_filter = 2
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

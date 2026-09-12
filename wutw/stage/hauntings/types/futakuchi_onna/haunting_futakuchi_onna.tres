@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://dln10gse3smi7"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_hnpd0"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="2_a2hat"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="2_hi4m5"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="3_qg7pn"]
+[ext_resource type="Script" uid="uid://b2sp10jrl0p1v" path="res://stage/hauntings/effects/haunting_effect_lose_gained_bonus.gd" id="4_dc34g"]
+[ext_resource type="Resource" uid="uid://dku4xp4dd46kl" path="res://art/pieces/piece_bakemono_nukekubi.tres" id="5_a2hat"]
+[ext_resource type="Texture2D" uid="uid://tq0008ix0q4" path="res://stage/hauntings/types/futakuchi_onna/haunting_futakuchi_onna.png" id="6_3ywa6"]
+[ext_resource type="Resource" uid="uid://dxtf3ya8htjuc" path="res://art/pieces/piece_hiroshige_joruri_town_7.tres" id="6_4ex50"]
+[ext_resource type="Texture2D" uid="uid://dg7iwg44aebn5" path="res://stage/hauntings/types/futakuchi_onna/haunting_futakuchi_onna_realistic_corruption.png" id="7_a2hat"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="9_gl8fl"]
+[ext_resource type="Script" uid="uid://wcgm3rptcu7x" path="res://stage/hauntings/triggers/haunting_trigger_bonus_gained.gd" id="9_pkham"]
+
+[sub_resource type="Resource" id="Resource_7r41g"]
+script = ExtResource("4_dc34g")
+is_half = true
+metadata/_custom_type_script = "uid://b2sp10jrl0p1v"
+
+[sub_resource type="Resource" id="Resource_gopc6"]
+script = ExtResource("9_pkham")
+metadata/_custom_type_script = "uid://wcgm3rptcu7x"
+
+[resource]
+script = ExtResource("2_hi4m5")
+haunting_id = "futakuchi_onna"
+name = "Futakuchi Onna"
+name_japanese = "二口女"
+name_realistic = "Corruption"
+name_translation = "Two-Mouthed Woman"
+description = "Rumors speak of people with a second mouth on the back of their heads, consuming twice the resources."
+description_realistic = "Corruption is rife among the leaders of this settler group."
+description_long = "Warehouses in this settlement turn up empty overnight. Households run out of food twice as fast.
+
+Whispers speak of people with mouths hiding behind their heads, covered by locks of hair. The most common story is of the Futakuchi Onna, a lady who smiles sweetly while her hair stirs behind her like a nest of living threads, feeding a hidden mouth that demands its share of every meal. Some claim she was once a leader who hoarded plenty while others starved, and that her second mouth belongs to those she wronged, forever consuming what she once denied."
+image_small = ExtResource("6_3ywa6")
+image_credit = ExtResource("5_a2hat")
+image_small_realistic = ExtResource("7_a2hat")
+image_realistic_credit = ExtResource("6_4ex50")
+base_aspect_types = Array[ExtResource("1_hnpd0")]([ExtResource("3_qg7pn")])
+extra_aspect_type = ExtResource("2_a2hat")
+scaling_bonus_type = ExtResource("9_gl8fl")
+trigger = SubResource("Resource_gopc6")
+effect = SubResource("Resource_7r41g")
+mechanics_description_override = "Lose half of all gained <term_lower:bonus>s."
+spot_attach_mode = 1
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

@@ -1,0 +1,65 @@
+[gd_resource type="Resource" script_class="ShardType_Newspaper" format=3 uid="uid://xr0iowp5ebsw"]
+
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="1_br8pf"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="2_7jfe7"]
+[ext_resource type="Script" uid="uid://daky5nx2t266d" path="res://shard_types/newspaper/shard_type_newspaper.gd" id="2_oem4a"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="2_y3mxj"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="3_16hos"]
+[ext_resource type="Resource" uid="uid://6daetq4vn11q" path="res://stage/spots/square/upgrade_square_1_notice_board.tres" id="3_ckad4"]
+[ext_resource type="Texture2D" uid="uid://b82e1g1l2p3uj" path="res://shard_types/newspaper/shard_type_newspaper.png" id="3_lq3it"]
+[ext_resource type="Resource" uid="uid://ckascrqbwrpsy" path="res://stage/spots/building_large/upgrade_building_large_3_printer.tres" id="4_cbe3c"]
+[ext_resource type="Resource" uid="uid://dvhalgn605sn8" path="res://art/pieces/piece_yoshitoshi_newspaper.tres" id="4_lq3it"]
+[ext_resource type="Resource" uid="uid://dffls1ubwkx6w" path="res://stage/spots/brushland/upgrade_brushland_3_paper_artisan_studio.tres" id="6_agqpn"]
+[ext_resource type="Resource" uid="uid://cckygspreu2hv" path="res://skills/craft/skill_craft_shop_recall.tres" id="9_lkjvw"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="10_hgl0t"]
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("1_br8pf")
+text = "In the early days, the temples on $shard_name sought to spread the teachings of the Enlightened One to every household. They set monks to the tedious task of copying the holy text, and freely gave out copies to temple visitors. Junior scribes, finding their wrists sore and their sleeves empty, began a side business. They copied the daily postings from village notice boards and sold them as single-page news broadsheets. People could buy a broadsheet and read a month's worth of posting without having to visit the notice board every day."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_d174p"]
+script = ExtResource("1_br8pf")
+text = "With reading material suddenly cheap and plentiful, few of the inhabitants remain illiterate. Seeing a willing market, private publishers have begun producing weekly lists of auspicious glyphs and newly invented invocations alongside the traditional holy texts. This has become a big worry for the priests, afraid that these unauthorized claims will dilute the true doctrine. It usually goes unsaid that they are perhaps equally worried about having competition with much more appealing offerings."
+min_main_quest = 200
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_a6ufw"]
+script = ExtResource("1_br8pf")
+text = "Hand-copying has given way to carved woodblocks, and broadsheets are printed by the hundreds in dedicated studios. While most still have a small section on auspicious glyphs, much of the space is dedicated to market prices, job postings, and town council edicts. To keep the news fresh, studios even hire couriers to run bundles of papers between settlements. This new boom has caused $shard_name's paper mills immense prosperity. Entire forests of mulberry have been planted just to keep up with the demand, at the cost of eliminating much of the native brushland plant life."
+min_main_quest = 300
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_bgisj"]
+script = ExtResource("1_br8pf")
+text = "Today, the studios have mastered color illustrations, and the papers regularly announce touring plays and sumo matches with vibrant, block-printed portraits of the participants. Yet the most popular section remains the back page, where an anonymous mountain hermit gives blunt interpersonal advice to heart-broken lovers and bickering siblings. The industry did suffer one notable hiccup, however, when a careless printer swapped one character, causing the $town1 paper to announce that a colony of demons had devastated a local field, rather than carrying the intended news of a wild rabbit incursion."
+min_main_quest = 400
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_pakit"]
+script = ExtResource("10_hgl0t")
+text = "When I stepped through the gate, a young girl shoved a printed broadsheet into my hands and demanded I pay for it, which I did. The front page had a critical tea house review and a list of rice prices in every settlement. The back page declared that 猫 was today's auspicious glyph, and had a section where Master Abe, a famous local hermit, advised a reader to leave his wife because she argued against him in front of his boss.
+
+I had dinner at the inn the first night, and found that half of the patrons had their noses buried in the paper, occasionally scoffing or nodding. When I asked to take my leftover food with me, the innkeeper ended up wrapping it in one of these broadsheets too.
+
+My trip also included a detour to visit $town1. At some point a misprint in the paper announced that demons (rather than rabbits) invaded a field, and the locals have fully embraced the joke. The local shrine offers rabbit-warding charms, and the bakeries sell spicy steamed buns shaped like angry rabbits."
+revealed_skill = ExtResource("9_lkjvw")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[resource]
+script = ExtResource("2_oem4a")
+printer = ExtResource("4_cbe3c")
+notice_board = ExtResource("3_ckad4")
+paper_studio = ExtResource("6_agqpn")
+knowledge = ExtResource("2_7jfe7")
+shard_type_id = "newspaper"
+name = "The Paper Distributors"
+shard_name_override = "Kami no Kuni"
+shard_name_override_jp = "紙の国"
+shard_name_override_meaning = "Paper Country"
+tier = 2
+illustration = ExtResource("3_lq3it")
+illustration_credit = ExtResource("4_lq3it")
+history = Array[ExtResource("1_br8pf")]([SubResource("Resource_trtbi"), SubResource("Resource_d174p"), SubResource("Resource_a6ufw"), SubResource("Resource_bgisj")])
+trip_reward = SubResource("Resource_pakit")
+metadata/_custom_type_script = "uid://daky5nx2t266d"

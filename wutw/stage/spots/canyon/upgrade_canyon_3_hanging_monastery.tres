@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://dhsu0y2nvmlf4"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_aoqyw"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_4squa"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_1hete"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="3_x754k"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="4_kddtn"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="5_xsglt"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="7_kfad3"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="8_skn34"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="9_oldw5"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="10_kddtn"]
+[ext_resource type="Resource" uid="uid://d1c7ny2xs7pwo" path="res://stage/spots/canyon/spot_canyon.tres" id="10_xsglt"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://cab41j21v6qsr" path="res://map/sprites/spots/canyon/mst_canyon_hanging_monastery.tres" id="12_oldw5"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://yi6r4d10vn2d" path="res://map/sprites/mountains/mst_mountain_1_medium.tres" id="12_vjd6y"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://desakgu6q3yov" path="res://map/sprites/mountains/mst_mountain_2_large.tres" id="13_bosg0"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://claocpeyk1b0r" path="res://map/sprites/spots/canyon/mst_canyon_cliffside_dwellings.tres" id="13_tc0fm"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="14_tyqge"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://c3u877m1spx0" path="res://map/sprites/mountains/mst_mountain_3_large.tres" id="14_w4xng"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://doqqvl0x3b3g4" path="res://map/sprites/mountains/mst_mountain_4_small.tres" id="15_ekbdc"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bxr2aj680eaqd" path="res://map/sprites/mountains/mst_mountain_5_small.tres" id="16_0mr5v"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cekrboxmhdmhk" path="res://map/sprites/mountains/mst_mountain_6_tiny.tres" id="17_j085y"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cjbrxida4odnk" path="res://map/sprites/mountains/mst_mountain_7_tiny.tres" id="18_ikn08"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://56t2rh2pg58y" path="res://map/sprites/mountains/mst_mountain_8_medium.tres" id="19_cjyem"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://csjeschaiy5ct" path="res://map/sprites/mountains/mst_mountain_9_large.tres" id="20_jt0tc"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bctu7rlwqc3o7" path="res://map/sprites/mountains/mst_mountain_10_medium.tres" id="21_71an0"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://t2knd16pwuwg" path="res://map/sprites/mountains/mst_mountain_11_medium.tres" id="22_3gxxo"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dxba886xk8sch" path="res://map/sprites/mountains/mst_mountain_12_pair.tres" id="23_uktso"]
+
+[sub_resource type="Resource" id="Resource_hv7cq"]
+script = ExtResource("14_tyqge")
+old_sprite_type = ExtResource("13_tc0fm")
+new_sprite_type = ExtResource("12_oldw5")
+extra_removables = Array[MapSpriteType]([ExtResource("12_vjd6y"), ExtResource("13_bosg0"), ExtResource("14_w4xng"), ExtResource("15_ekbdc"), ExtResource("16_0mr5v"), ExtResource("17_j085y"), ExtResource("18_ikn08"), ExtResource("19_cjyem"), ExtResource("20_jt0tc"), ExtResource("21_71an0"), ExtResource("22_3gxxo"), ExtResource("23_uktso")])
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_aoqyw")
+spot_upgrade_id = "canyon_monastery"
+name = "Hanging Monastery"
+description = "A massive building perched on a wooden platform and chained to the wall, creaking with every step the monks take."
+required_aspects = Array[ExtResource("3_1hete")]([ExtResource("7_kfad3"), ExtResource("8_skn34"), ExtResource("9_oldw5")])
+granted_bonuses = Dictionary[ExtResource("2_4squa"), int]({
+ExtResource("3_x754k"): 25,
+ExtResource("4_kddtn"): 15,
+ExtResource("5_xsglt"): 15
+})
+spot = ExtResource("10_xsglt")
+visuals = Array[ExtResource("10_kddtn")]([SubResource("Resource_hv7cq")])
+tags = Array[int]([3])
+unique_per_run = true
+min_main_quest_progress = 130

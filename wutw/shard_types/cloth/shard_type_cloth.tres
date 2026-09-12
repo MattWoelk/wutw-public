@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="ShardType_Cloth" format=3 uid="uid://8od80616tgm7"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_xu7g4"]
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="2_gq88e"]
+[ext_resource type="Resource" uid="uid://buffbajf212d2" path="res://stage/spots/brushland/upgrade_brushland_2_silk_weaver_hut.tres" id="2_tu5ta"]
+[ext_resource type="Resource" uid="uid://cfb354e7i6h13" path="res://stage/spots/building_small/upgrade_building_small_3_weaver.tres" id="3_5ld3j"]
+[ext_resource type="Script" uid="uid://dbc57aeg0ajj5" path="res://shard_types/cloth/shard_type_cloth.gd" id="3_6q64b"]
+[ext_resource type="Resource" uid="uid://bfjhperid285q" path="res://stage/spots/lake/upgrade_lake_2_cloth_rinsing_station.tres" id="4_u46ae"]
+[ext_resource type="Resource" uid="uid://vmqir3bk0osf" path="res://stage/spots/lake/upgrade_lake_3_master_dyer_workshop.tres" id="5_00md7"]
+[ext_resource type="Resource" uid="uid://dekisdcx6ul0y" path="res://stage/spots/river/upgrade_river_2_textile_watermill.tres" id="6_dey77"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="8_00md7"]
+[ext_resource type="Texture2D" uid="uid://bojtkidf6f0c4" path="res://shard_types/cloth/shard_type_cloth.png" id="8_5ld3j"]
+[ext_resource type="Resource" uid="uid://bfmpfnyt7628t" path="res://art/pieces/piece_gekkou_sewing.tres" id="10_dey77"]
+[ext_resource type="Resource" uid="uid://c0stthqpa0s2y" path="res://debate/arguments/argument_small_industries.tres" id="12_3n16x"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="13_aim6f"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="14_a7s61"]
+
+[sub_resource type="Resource" id="Resource_oxacc"]
+script = ExtResource("2_gq88e")
+text = "When the first settlers arrived on $shard_name, many of them set up weaving workshops in towns across the shard. These workshops were tiny, single-family affairs, producing just enough to keep their neighbors clothed. Most used labor-intensive backstrap looms, and sewed the cloth into simple garments by themselves. Although hemp was the predominant material, some began to raise silkworms, but they barely produced enough silk to make handkerchiefs."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_3n16x"]
+script = ExtResource("2_gq88e")
+text = "Over time, the weaving industry of $shard_name expanded. Workshops grew to consist of several households sharing free-standing looms. As inter-town trade began to spread, many weaving households only spun the fiber into yarn and shipped it to large textile watermills on the river for weaving. The cloth would then continue on to tailors in other towns, and the garments would be distributed by traders to towns all over the shard."
+min_main_quest = 200
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_aim6f"]
+script = ExtResource("2_gq88e")
+text = "As the weaving industry developed further, quality control became crucial. Without a central government to enforce standards, quality was policed through a web of trust. Each tailor worked with the same textile mills for much of their career, each textile mill operator knew the dyers they trusted, and each dyer sourced yarn from the same households. Because the production pipeline was so interdependent, whenever a dyer's vats cracked or a watermill broke, the other artisans would immediately pool resources to repair them."
+min_main_quest = 310
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_a7s61"]
+script = ExtResource("2_gq88e")
+text = "Today, $shard_name is known across the Cloud Sea for its fine textiles and masterwork garments, featuring remarkably durable cloth and elaborate color layering. A robe from $shard_name is said to be made to outlast the wearer, and distant shards keep such robes as family heirlooms."
+min_main_quest = 340
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_04xvw"]
+script = ExtResource("13_aim6f")
+text = "I did things differently on this trip. Instead of visiting specific sites, I followed the journey silk takes to become a robe. I started from a mulberry grove where the silkworms are raised. The grove is shared, but each family has their own silkworms.
+
+Next I saw how they spin the fiber into silk. The workshop I visited had just one loom, and the family worked it in shifts. They packed the yarn into baskets, and I joined the porter caravan that took it to a massive watermill on the river, which turned it into cloth. The chief there told me she'd worked with the same spinners for thirty years.
+
+The cloth was then dyed in the same town. Since it was a solid color fabric, they did the dyeing after the cloth was woven, rather than at the yarn stage. This went on to a tailor at the capital. I didn't stay long enough to see that particular cloth turn into a robe, but they had several examples of finished work, and it certainly deserves its reputation."
+gained_argument = ExtResource("12_3n16x")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[resource]
+script = ExtResource("3_6q64b")
+cloth_upgrades = Array[ExtResource("1_xu7g4")]([ExtResource("2_tu5ta"), ExtResource("3_5ld3j"), ExtResource("4_u46ae"), ExtResource("5_00md7"), ExtResource("6_dey77")])
+shard_type_id = "cloth"
+name = "The Yarn Spinners"
+shard_name_override = "Tsumugi Shima"
+shard_name_override_jp = "紬島"
+shard_name_override_meaning = "Pongee Island"
+tier = 1
+illustration = ExtResource("8_5ld3j")
+illustration_credit = ExtResource("10_dey77")
+history = Array[ExtResource("2_gq88e")]([SubResource("Resource_oxacc"), SubResource("Resource_3n16x"), SubResource("Resource_aim6f"), SubResource("Resource_a7s61")])
+trip_reward = SubResource("Resource_04xvw")
+metadata/_custom_type_script = "uid://dbc57aeg0ajj5"

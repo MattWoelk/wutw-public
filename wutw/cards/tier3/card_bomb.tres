@@ -1,0 +1,629 @@
+[gd_resource type="Resource" script_class="CardType" format=3 uid="uid://brgyj5wvj852i"]
+
+[ext_resource type="Script" uid="uid://b56kytec5oqcb" path="res://cards/abilities/card_ability.gd" id="1_4p21r"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="2_fthre"]
+[ext_resource type="Script" uid="uid://7y26eumsxbnb" path="res://cards/abilities/card_ability_support.gd" id="3_g5ui6"]
+[ext_resource type="Resource" uid="uid://dvtqnk0xkd3uj" path="res://cards/tier2/card_fragment.tres" id="4_lja2s"]
+[ext_resource type="Script" uid="uid://c176jrcyakipx" path="res://cards/abilities/card_ability_add_card.gd" id="5_3188m"]
+[ext_resource type="Script" uid="uid://xc73x4t7ckxm" path="res://japanese/example_sentence.gd" id="6_ra2d6"]
+[ext_resource type="Script" uid="uid://bl2eelwkj800o" path="res://japanese/japanese_token.gd" id="7_aaqg8"]
+[ext_resource type="Script" uid="uid://b6rw4ldrj6wch" path="res://japanese/vocab.gd" id="8_m0phg"]
+[ext_resource type="Script" uid="uid://du4k150pcdjs6" path="res://japanese/kanji_shape.gd" id="9_oqn6x"]
+[ext_resource type="Script" uid="uid://dc15txdqjanlf" path="res://japanese/stroke_shape.gd" id="10_lfpht"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="11_d8vu3"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="12_3bild"]
+[ext_resource type="Resource" uid="uid://d1k7vakhjcq5g" path="res://glossary/categories/termcategory_card.tres" id="13_j527n"]
+
+[sub_resource type="Resource" id="Resource_ge532"]
+script = ExtResource("3_g5ui6")
+bonus_type = ExtResource("2_fthre")
+reversed = true
+metadata/_custom_type_script = "uid://7y26eumsxbnb"
+
+[sub_resource type="Resource" id="Resource_q6cpt"]
+script = ExtResource("5_3188m")
+card_type = ExtResource("4_lja2s")
+count = 2
+metadata/_custom_type_script = "uid://c176jrcyakipx"
+
+[sub_resource type="Resource" id="Resource_wlvft"]
+script = ExtResource("8_m0phg")
+japanese = "爆睡"
+readings = Array[String](["ばくすい"])
+meanings = Array[String](["sleeping like a log", "(being) fast asleep (bombed, crashed)"])
+
+[sub_resource type="Resource" id="Resource_oei32"]
+script = ExtResource("7_aaqg8")
+raw_text = "爆睡"
+vocab = SubResource("Resource_wlvft")
+reading = "ばくすい"
+
+[sub_resource type="Resource" id="Resource_gmhwe"]
+script = ExtResource("7_aaqg8")
+raw_text = "し"
+reading = "し"
+
+[sub_resource type="Resource" id="Resource_cj562"]
+script = ExtResource("7_aaqg8")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_bk6mt"]
+script = ExtResource("7_aaqg8")
+raw_text = "よ"
+reading = "よ"
+
+[sub_resource type="Resource" id="Resource_6oy0c"]
+script = ExtResource("7_aaqg8")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_mdmhc"]
+script = ExtResource("6_ra2d6")
+japanese = "爆睡したよ。"
+native = "I slept like a log."
+parsed = Array[ExtResource("7_aaqg8")]([SubResource("Resource_oei32"), SubResource("Resource_gmhwe"), SubResource("Resource_cj562"), SubResource("Resource_bk6mt"), SubResource("Resource_6oy0c")])
+_difficulty = 494
+
+[sub_resource type="Resource" id="Resource_ay418"]
+script = ExtResource("8_m0phg")
+japanese = "聴衆"
+readings = Array[String](["ちょうしゅう"])
+meanings = Array[String](["audience", "attendance", "hearers"])
+
+[sub_resource type="Resource" id="Resource_m7tio"]
+script = ExtResource("7_aaqg8")
+raw_text = "聴衆"
+vocab = SubResource("Resource_ay418")
+reading = "ちょうしゅう"
+
+[sub_resource type="Resource" id="Resource_u1at1"]
+script = ExtResource("7_aaqg8")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_jg1mm"]
+script = ExtResource("8_m0phg")
+japanese = "爆笑"
+readings = Array[String](["ばくしょう"])
+meanings = Array[String](["roar of laughter (from multiple people)", "burst of laughter", "uproarious laughter", "laughing hard (of a single person)"])
+
+[sub_resource type="Resource" id="Resource_lqckx"]
+script = ExtResource("7_aaqg8")
+raw_text = "爆笑"
+vocab = SubResource("Resource_jg1mm")
+reading = "ばくしょう"
+
+[sub_resource type="Resource" id="Resource_ts4hf"]
+script = ExtResource("7_aaqg8")
+raw_text = "し"
+reading = "し"
+
+[sub_resource type="Resource" id="Resource_n578b"]
+script = ExtResource("7_aaqg8")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_nfjtj"]
+script = ExtResource("7_aaqg8")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_coydh"]
+script = ExtResource("6_ra2d6")
+japanese = "聴衆は爆笑した。"
+native = "The audience exploded with laughter."
+parsed = Array[ExtResource("7_aaqg8")]([SubResource("Resource_m7tio"), SubResource("Resource_u1at1"), SubResource("Resource_lqckx"), SubResource("Resource_ts4hf"), SubResource("Resource_n578b"), SubResource("Resource_nfjtj")])
+_difficulty = 519
+
+[sub_resource type="Resource" id="Resource_hnpkm"]
+script = ExtResource("8_m0phg")
+japanese = "僕"
+readings = Array[String](["ぼく"])
+meanings = Array[String](["I", "me", "you", "manservant"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_8gdrw"]
+script = ExtResource("7_aaqg8")
+raw_text = "僕"
+vocab = SubResource("Resource_hnpkm")
+reading = "ぼく"
+
+[sub_resource type="Resource" id="Resource_ie00b"]
+script = ExtResource("7_aaqg8")
+raw_text = "たち"
+reading = "たち"
+
+[sub_resource type="Resource" id="Resource_psicw"]
+script = ExtResource("7_aaqg8")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_wmij4"]
+script = ExtResource("7_aaqg8")
+raw_text = "爆笑"
+vocab = SubResource("Resource_jg1mm")
+reading = "ばくしょう"
+
+[sub_resource type="Resource" id="Resource_you38"]
+script = ExtResource("7_aaqg8")
+raw_text = "し"
+reading = "し"
+
+[sub_resource type="Resource" id="Resource_7ppju"]
+script = ExtResource("7_aaqg8")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_ewp81"]
+script = ExtResource("7_aaqg8")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_aqsgy"]
+script = ExtResource("6_ra2d6")
+japanese = "僕たちは爆笑した。"
+native = "We roared with laughter."
+parsed = Array[ExtResource("7_aaqg8")]([SubResource("Resource_8gdrw"), SubResource("Resource_ie00b"), SubResource("Resource_psicw"), SubResource("Resource_wmij4"), SubResource("Resource_you38"), SubResource("Resource_7ppju"), SubResource("Resource_ewp81")])
+_difficulty = 524
+
+[sub_resource type="Resource" id="Resource_1tnar"]
+script = ExtResource("7_aaqg8")
+raw_text = "聴衆"
+vocab = SubResource("Resource_ay418")
+reading = "ちょうしゅう"
+
+[sub_resource type="Resource" id="Resource_ivieq"]
+script = ExtResource("7_aaqg8")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_k4kpd"]
+script = ExtResource("7_aaqg8")
+raw_text = "みな"
+reading = "みな"
+
+[sub_resource type="Resource" id="Resource_wnuy4"]
+script = ExtResource("7_aaqg8")
+raw_text = "爆笑"
+vocab = SubResource("Resource_jg1mm")
+reading = "ばくしょう"
+
+[sub_resource type="Resource" id="Resource_bjfi1"]
+script = ExtResource("7_aaqg8")
+raw_text = "し"
+reading = "し"
+
+[sub_resource type="Resource" id="Resource_viprx"]
+script = ExtResource("7_aaqg8")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_rhtg1"]
+script = ExtResource("7_aaqg8")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_8l0f6"]
+script = ExtResource("6_ra2d6")
+japanese = "聴衆はみな爆笑した。"
+native = "The whole audience erupted in laughter."
+parsed = Array[ExtResource("7_aaqg8")]([SubResource("Resource_1tnar"), SubResource("Resource_ivieq"), SubResource("Resource_k4kpd"), SubResource("Resource_wnuy4"), SubResource("Resource_bjfi1"), SubResource("Resource_viprx"), SubResource("Resource_rhtg1")])
+_difficulty = 553
+
+[sub_resource type="Resource" id="Resource_v6oy6"]
+script = ExtResource("8_m0phg")
+japanese = "彼"
+readings = Array[String](["かれ"])
+meanings = Array[String](["he", "him", "boyfriend"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_hr1ux"]
+script = ExtResource("7_aaqg8")
+raw_text = "彼"
+vocab = SubResource("Resource_v6oy6")
+reading = "かれ"
+
+[sub_resource type="Resource" id="Resource_gafcv"]
+script = ExtResource("7_aaqg8")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_ikju2"]
+script = ExtResource("8_m0phg")
+japanese = "怒り"
+readings = Array[String](["いかり"])
+meanings = Array[String](["anger", "rage", "fury", "wrath", "indignation"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_g24jb"]
+script = ExtResource("7_aaqg8")
+raw_text = "怒り"
+vocab = SubResource("Resource_ikju2")
+reading = "いかり"
+
+[sub_resource type="Resource" id="Resource_v6b06"]
+script = ExtResource("7_aaqg8")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_owxdk"]
+script = ExtResource("8_m0phg")
+japanese = "爆発"
+readings = Array[String](["ばくはつ"])
+meanings = Array[String](["explosion", "detonation", "blast", "blowing up", "eruption", "outburst (of emotion)", "explosion (e.g. of anger)", "eruption (e.g. of discontent)"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_i2vy0"]
+script = ExtResource("7_aaqg8")
+raw_text = "爆発"
+vocab = SubResource("Resource_owxdk")
+reading = "ばくはつ"
+
+[sub_resource type="Resource" id="Resource_cwasg"]
+script = ExtResource("7_aaqg8")
+raw_text = "さ"
+reading = "さ"
+
+[sub_resource type="Resource" id="Resource_4qbvo"]
+script = ExtResource("7_aaqg8")
+raw_text = "せ"
+reading = "せ"
+
+[sub_resource type="Resource" id="Resource_jdswp"]
+script = ExtResource("7_aaqg8")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_u8ee8"]
+script = ExtResource("7_aaqg8")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_16wox"]
+script = ExtResource("6_ra2d6")
+japanese = "彼は怒りを爆発させた。"
+native = "He exploded with anger."
+parsed = Array[ExtResource("7_aaqg8")]([SubResource("Resource_hr1ux"), SubResource("Resource_gafcv"), SubResource("Resource_g24jb"), SubResource("Resource_v6b06"), SubResource("Resource_i2vy0"), SubResource("Resource_cwasg"), SubResource("Resource_4qbvo"), SubResource("Resource_jdswp"), SubResource("Resource_u8ee8")])
+_difficulty = 576
+
+[sub_resource type="Resource" id="Resource_4obda"]
+script = ExtResource("8_m0phg")
+japanese = "人口"
+readings = Array[String](["じんこう"])
+meanings = Array[String](["population", "common talk"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_1sknb"]
+script = ExtResource("7_aaqg8")
+raw_text = "人口"
+vocab = SubResource("Resource_4obda")
+reading = "じんこう"
+
+[sub_resource type="Resource" id="Resource_qirl2"]
+script = ExtResource("7_aaqg8")
+raw_text = "爆発"
+vocab = SubResource("Resource_owxdk")
+reading = "ばくはつ"
+
+[sub_resource type="Resource" id="Resource_wwwk3"]
+script = ExtResource("7_aaqg8")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_7dpcn"]
+script = ExtResource("8_m0phg")
+japanese = "重大"
+readings = Array[String](["じゅうだい"])
+meanings = Array[String](["serious", "important", "significant", "grave", "weighty"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_cyoyp"]
+script = ExtResource("7_aaqg8")
+raw_text = "重大"
+vocab = SubResource("Resource_7dpcn")
+reading = "じゅうだい"
+
+[sub_resource type="Resource" id="Resource_2nyrk"]
+script = ExtResource("7_aaqg8")
+raw_text = "な"
+reading = "な"
+
+[sub_resource type="Resource" id="Resource_l1hmt"]
+script = ExtResource("8_m0phg")
+japanese = "問題"
+readings = Array[String](["もんだい"])
+meanings = Array[String](["question (e.g. on a test)", "problem", "problem (e.g. societal, political)", "question", "issue", "subject (e.g. of research)", "case", "matter", "question (i.e. doubt)", "public discussion", "controversy", "trouble", "inconvenience", "difficulty"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_lcqxm"]
+script = ExtResource("7_aaqg8")
+raw_text = "問題"
+vocab = SubResource("Resource_l1hmt")
+reading = "もんだい"
+
+[sub_resource type="Resource" id="Resource_0u5u1"]
+script = ExtResource("7_aaqg8")
+raw_text = "で"
+reading = "で"
+
+[sub_resource type="Resource" id="Resource_305es"]
+script = ExtResource("7_aaqg8")
+raw_text = "ある"
+reading = "ある"
+
+[sub_resource type="Resource" id="Resource_7pa13"]
+script = ExtResource("7_aaqg8")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_38ny3"]
+script = ExtResource("6_ra2d6")
+japanese = "人口爆発は重大な問題である。"
+native = "The population explosion is a serious problem."
+parsed = Array[ExtResource("7_aaqg8")]([SubResource("Resource_1sknb"), SubResource("Resource_qirl2"), SubResource("Resource_wwwk3"), SubResource("Resource_cyoyp"), SubResource("Resource_2nyrk"), SubResource("Resource_lcqxm"), SubResource("Resource_0u5u1"), SubResource("Resource_305es"), SubResource("Resource_7pa13")])
+_difficulty = 585
+
+[sub_resource type="Resource" id="Resource_hyl4p"]
+script = ExtResource("8_m0phg")
+japanese = "大"
+readings = Array[String](["だい"])
+meanings = Array[String](["large", "big", "great", "huge", "vast", "major", "important", "serious", "severe", "prominent", "eminent", "distinguished", "-sized", "as big as", "the size of", "university", "large (e.g. serving size)", "large option", "long month (i.e. having 31 days)"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_7pdu8"]
+script = ExtResource("7_aaqg8")
+raw_text = "大"
+vocab = SubResource("Resource_hyl4p")
+reading = "だい"
+
+[sub_resource type="Resource" id="Resource_hlb80"]
+script = ExtResource("8_m0phg")
+japanese = "音響"
+readings = Array[String](["おんきょう"])
+meanings = Array[String](["sound", "noise", "audio", "acoustics", "reverberation"])
+
+[sub_resource type="Resource" id="Resource_otiji"]
+script = ExtResource("7_aaqg8")
+raw_text = "音響"
+vocab = SubResource("Resource_hlb80")
+reading = "おんきょう"
+
+[sub_resource type="Resource" id="Resource_6a3ab"]
+script = ExtResource("7_aaqg8")
+raw_text = "とともに"
+reading = "とともに"
+
+[sub_resource type="Resource" id="Resource_er66f"]
+script = ExtResource("7_aaqg8")
+raw_text = "爆発"
+vocab = SubResource("Resource_owxdk")
+reading = "ばくはつ"
+
+[sub_resource type="Resource" id="Resource_qwkg7"]
+script = ExtResource("7_aaqg8")
+raw_text = "し"
+reading = "し"
+
+[sub_resource type="Resource" id="Resource_v40ns"]
+script = ExtResource("7_aaqg8")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_3pd2d"]
+script = ExtResource("7_aaqg8")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_wtt4g"]
+script = ExtResource("6_ra2d6")
+japanese = "大音響とともに爆発した。"
+native = "It exploded with a loud noise."
+parsed = Array[ExtResource("7_aaqg8")]([SubResource("Resource_7pdu8"), SubResource("Resource_otiji"), SubResource("Resource_6a3ab"), SubResource("Resource_er66f"), SubResource("Resource_qwkg7"), SubResource("Resource_v40ns"), SubResource("Resource_3pd2d")])
+_difficulty = 589
+
+[sub_resource type="Resource" id="Resource_86uvp"]
+script = ExtResource("7_aaqg8")
+raw_text = "彼"
+vocab = SubResource("Resource_v6oy6")
+reading = "かれ"
+
+[sub_resource type="Resource" id="Resource_7rftj"]
+script = ExtResource("7_aaqg8")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_04lts"]
+script = ExtResource("7_aaqg8")
+raw_text = "その"
+reading = "その"
+
+[sub_resource type="Resource" id="Resource_7r0xh"]
+script = ExtResource("7_aaqg8")
+raw_text = "爆発"
+vocab = SubResource("Resource_owxdk")
+reading = "ばくはつ"
+
+[sub_resource type="Resource" id="Resource_hqm8v"]
+script = ExtResource("7_aaqg8")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_jrxoq"]
+script = ExtResource("7_aaqg8")
+raw_text = "ぎょっと"
+reading = "ぎょっと"
+
+[sub_resource type="Resource" id="Resource_7j3ob"]
+script = ExtResource("7_aaqg8")
+raw_text = "し"
+reading = "し"
+
+[sub_resource type="Resource" id="Resource_06fml"]
+script = ExtResource("7_aaqg8")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_rom1a"]
+script = ExtResource("7_aaqg8")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_agov0"]
+script = ExtResource("6_ra2d6")
+japanese = "彼はその爆発にぎょっとした。"
+native = "He was alarmed by the explosion."
+parsed = Array[ExtResource("7_aaqg8")]([SubResource("Resource_86uvp"), SubResource("Resource_7rftj"), SubResource("Resource_04lts"), SubResource("Resource_7r0xh"), SubResource("Resource_hqm8v"), SubResource("Resource_jrxoq"), SubResource("Resource_7j3ob"), SubResource("Resource_06fml"), SubResource("Resource_rom1a")])
+_difficulty = 598
+
+[sub_resource type="Resource" id="Resource_j6nmp"]
+script = ExtResource("10_lfpht")
+points = Array[Vector2]([Vector2(14.04, 36.85), Vector2(15.14, 41.63), Vector2(16.18, 47.79), Vector2(16.65, 53.18)])
+
+[sub_resource type="Resource" id="Resource_k2vco"]
+script = ExtResource("10_lfpht")
+points = Array[Vector2]([Vector2(39.68, 30), Vector2(38.03, 33.84), Vector2(33.84, 38.5), Vector2(29.33, 42.75)])
+
+[sub_resource type="Resource" id="Resource_a0jvf"]
+script = ExtResource("10_lfpht")
+points = Array[Vector2]([Vector2(25.57, 18), Vector2(26.56, 24.57), Vector2(26.51, 33.81), Vector2(26.35, 41.91), Vector2(26.07, 48.98), Vector2(25.65, 55.13), Vector2(25.09, 60.46), Vector2(24.37, 65.09), Vector2(23.5, 69.12), Vector2(22.45, 72.67), Vector2(21.22, 75.83), Vector2(19.8, 78.73), Vector2(18.17, 81.46), Vector2(16.34, 84.13), Vector2(14.29, 86.86), Vector2(12, 89.75)])
+
+[sub_resource type="Resource" id="Resource_8mdb5"]
+script = ExtResource("10_lfpht")
+points = Array[Vector2]([Vector2(28, 61.62), Vector2(32.75, 66.56), Vector2(35.8, 72.08)])
+
+[sub_resource type="Resource" id="Resource_dvgjp"]
+script = ExtResource("10_lfpht")
+points = Array[Vector2]([Vector2(45.05, 16.06), Vector2(46.58, 19.42), Vector2(47.57, 24.52), Vector2(48.87, 31.22), Vector2(49.9, 36.77)])
+
+[sub_resource type="Resource" id="Resource_nrjtt"]
+script = ExtResource("10_lfpht")
+points = Array[Vector2]([Vector2(47.2, 17.59), Vector2(51.07, 16.89), Vector2(55.92, 16.06), Vector2(61.39, 15.18), Vector2(67.13, 14.32), Vector2(72.81, 13.58), Vector2(78.08, 13.03), Vector2(82.81, 14.29), Vector2(83.09, 18.64), Vector2(82.05, 23.78), Vector2(80.86, 29.5), Vector2(79.86, 34.59)])
+
+[sub_resource type="Resource" id="Resource_w2xyv"]
+script = ExtResource("10_lfpht")
+points = Array[Vector2]([Vector2(49.12, 26.17), Vector2(52.67, 25.66), Vector2(58.38, 24.97), Vector2(65.17, 24.21), Vector2(71.97, 23.49), Vector2(77.69, 22.93), Vector2(81.25, 22.63)])
+
+[sub_resource type="Resource" id="Resource_vklbc"]
+script = ExtResource("10_lfpht")
+points = Array[Vector2]([Vector2(51.17, 35.12), Vector2(56.76, 34.44), Vector2(62.51, 33.8), Vector2(68.24, 33.24), Vector2(73.79, 32.79), Vector2(78.96, 32.51)])
+
+[sub_resource type="Resource" id="Resource_bcf5w"]
+script = ExtResource("10_lfpht")
+points = Array[Vector2]([Vector2(45.7, 47.96), Vector2(50.77, 48.13), Vector2(54.72, 47.55), Vector2(59.78, 46.84), Vector2(65.48, 46.07), Vector2(71.28, 45.34), Vector2(76.68, 44.74), Vector2(81.15, 44.35), Vector2(86.19, 44.55)])
+
+[sub_resource type="Resource" id="Resource_glqje"]
+script = ExtResource("10_lfpht")
+points = Array[Vector2]([Vector2(53.78, 41.18), Vector2(55.56, 47.18), Vector2(56.28, 53.15), Vector2(56.75, 58.76)])
+
+[sub_resource type="Resource" id="Resource_o58r8"]
+script = ExtResource("10_lfpht")
+points = Array[Vector2]([Vector2(73.64, 39.01), Vector2(73.92, 44.98), Vector2(73.2, 51.08), Vector2(72.37, 56.79)])
+
+[sub_resource type="Resource" id="Resource_6c6yl"]
+script = ExtResource("10_lfpht")
+points = Array[Vector2]([Vector2(38.75, 61.39), Vector2(44.4, 61.69), Vector2(48.84, 61.1), Vector2(53.92, 60.44), Vector2(59.66, 59.75), Vector2(65.75, 59.06), Vector2(71.87, 58.41), Vector2(77.73, 57.81), Vector2(83.01, 57.3), Vector2(87.92, 56.88), Vector2(93.41, 57.21)])
+
+[sub_resource type="Resource" id="Resource_s7m6m"]
+script = ExtResource("10_lfpht")
+points = Array[Vector2]([Vector2(53.94, 63.42), Vector2(52.18, 67.27), Vector2(49.65, 70.24), Vector2(46.41, 73.55), Vector2(42.33, 77.09), Vector2(37.26, 80.75), Vector2(31.07, 84.42)])
+
+[sub_resource type="Resource" id="Resource_m4j11"]
+script = ExtResource("10_lfpht")
+points = Array[Vector2]([Vector2(70.23, 59.26), Vector2(73.46, 61.84), Vector2(77.76, 65.37), Vector2(82.52, 69.24), Vector2(87.12, 72.86), Vector2(91.02, 75.68), Vector2(95.95, 78.14)])
+
+[sub_resource type="Resource" id="Resource_mc00j"]
+script = ExtResource("10_lfpht")
+points = Array[Vector2]([Vector2(63.74, 65.59), Vector2(64.82, 70.67), Vector2(64.8, 76.77), Vector2(64.78, 83.42), Vector2(64.76, 89.41), Vector2(64.75, 93.52), Vector2(62.62, 97.56), Vector2(58.91, 94.32)])
+
+[sub_resource type="Resource" id="Resource_nskmw"]
+script = ExtResource("10_lfpht")
+points = Array[Vector2]([Vector2(52.12, 74.5), Vector2(54.99, 76.6), Vector2(56.91, 79.04)])
+
+[sub_resource type="Resource" id="Resource_n43su"]
+script = ExtResource("10_lfpht")
+points = Array[Vector2]([Vector2(44.72, 92), Vector2(48.65, 91.63), Vector2(52.46, 88.98), Vector2(57.36, 85.35)])
+
+[sub_resource type="Resource" id="Resource_nlju7"]
+script = ExtResource("10_lfpht")
+points = Array[Vector2]([Vector2(76.71, 72.13), Vector2(74.68, 75.88), Vector2(71.06, 79.89)])
+
+[sub_resource type="Resource" id="Resource_16ctl"]
+script = ExtResource("10_lfpht")
+points = Array[Vector2]([Vector2(68.15, 80.59), Vector2(73.54, 83.65), Vector2(78.92, 88.08), Vector2(83, 92.84)])
+
+[sub_resource type="Resource" id="Resource_706vy"]
+script = ExtResource("9_oqn6x")
+stroke_shapes = Array[ExtResource("10_lfpht")]([SubResource("Resource_j6nmp"), SubResource("Resource_k2vco"), SubResource("Resource_a0jvf"), SubResource("Resource_8mdb5"), SubResource("Resource_dvgjp"), SubResource("Resource_nrjtt"), SubResource("Resource_w2xyv"), SubResource("Resource_vklbc"), SubResource("Resource_bcf5w"), SubResource("Resource_glqje"), SubResource("Resource_o58r8"), SubResource("Resource_6c6yl"), SubResource("Resource_s7m6m"), SubResource("Resource_m4j11"), SubResource("Resource_mc00j"), SubResource("Resource_nskmw"), SubResource("Resource_n43su"), SubResource("Resource_nlju7"), SubResource("Resource_16ctl")])
+
+[sub_resource type="Resource" id="Resource_qb3oo"]
+script = ExtResource("8_m0phg")
+japanese = "爆発"
+readings = Array[String](["ばくはつ"])
+meanings = Array[String](["explosion", "detonation", "blast", "blowing up", "eruption", "outburst, e.g. of emotion"])
+jlpt_level = 3
+_difficulty = 62
+
+[sub_resource type="Resource" id="Resource_qtw5n"]
+script = ExtResource("8_m0phg")
+japanese = "爆弾"
+readings = Array[String](["ばくだん"])
+meanings = Array[String](["bomb"])
+jlpt_level = 1
+_difficulty = 122
+
+[sub_resource type="Resource" id="Resource_8ewl7"]
+script = ExtResource("8_m0phg")
+japanese = "爆破"
+readings = Array[String](["ばくは"])
+meanings = Array[String](["destructive blast", "blowing up", "explosion"])
+jlpt_level = 1
+_difficulty = 122
+
+[sub_resource type="Resource" id="Resource_emrl6"]
+script = ExtResource("8_m0phg")
+japanese = "起爆"
+readings = Array[String](["きばく"])
+meanings = Array[String](["ignition", "detonation", "triggering", "explosion"])
+_difficulty = 593
+
+[sub_resource type="Resource" id="Resource_o75f5"]
+script = ExtResource("8_m0phg")
+japanese = "爆薬"
+readings = Array[String](["ばくやく"])
+meanings = Array[String](["explosive", "blasting powder"])
+_difficulty = 636
+
+[sub_resource type="Resource" id="Resource_ho15n"]
+script = ExtResource("8_m0phg")
+japanese = "爆笑"
+readings = Array[String](["ばくしょう"])
+meanings = Array[String](["roar of laughter", "burst of laughter", "uproarious laughter", "laughing hard"])
+_difficulty = 680
+
+[sub_resource type="Resource" id="Resource_21sm2"]
+script = ExtResource("8_m0phg")
+japanese = "爆音"
+readings = Array[String](["ばくおん"])
+meanings = Array[String](["sound of an explosion", "roar of a machine"])
+_difficulty = 766
+
+[sub_resource type="Resource" id="Resource_2jcvc"]
+script = ExtResource("8_m0phg")
+japanese = "爆竹"
+readings = Array[String](["ばくちく"])
+meanings = Array[String](["firecracker"])
+_difficulty = 938
+
+[resource]
+script = ExtResource("11_d8vu3")
+symbol = "爆"
+card_name = "Bomb"
+rarity = 3
+abilities = Array[ExtResource("1_4p21r")]([SubResource("Resource_ge532"), SubResource("Resource_q6cpt")])
+tags = Array[int]([1, 11])
+vocabulary = Array[ExtResource("8_m0phg")]([SubResource("Resource_qb3oo"), SubResource("Resource_qtw5n"), SubResource("Resource_8ewl7"), SubResource("Resource_emrl6"), SubResource("Resource_o75f5"), SubResource("Resource_ho15n"), SubResource("Resource_21sm2"), SubResource("Resource_2jcvc")])
+example_sentences = Array[ExtResource("6_ra2d6")]([SubResource("Resource_mdmhc"), SubResource("Resource_coydh"), SubResource("Resource_aqsgy"), SubResource("Resource_8l0f6"), SubResource("Resource_16wox"), SubResource("Resource_38ny3"), SubResource("Resource_wtt4g"), SubResource("Resource_agov0")])
+kanji_shape = SubResource("Resource_706vy")
+init_aspects = 41
+term_categories = Array[ExtResource("12_3bild")]([ExtResource("13_j527n")])

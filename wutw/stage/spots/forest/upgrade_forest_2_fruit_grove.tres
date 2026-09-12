@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://cem57n26te6mg"]
+
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="1_rgekh"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="2_sqwpe"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="5_rgekh"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="5_uyohm"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="6_ni8c1"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="7_81dln"]
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="7_k2gqh"]
+[ext_resource type="Resource" uid="uid://ucnbpdhw8mob" path="res://stage/spots/forest/spot_forest.tres" id="7_odqka"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://ugxthteipd40" path="res://map/sprites/spots/forest/mst_forest_fruit_grove.tres" id="9_t3ilc"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://bryu745m44dyi" path="res://map/sprites/spots/forest/mst_forest_foraging_glade.tres" id="10_27o8y"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="11_tiu54"]
+
+[sub_resource type="Resource" id="Resource_f5fh7"]
+script = ExtResource("11_tiu54")
+old_sprite_type = ExtResource("10_27o8y")
+new_sprite_type = ExtResource("9_t3ilc")
+biome = 9
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("7_k2gqh")
+spot_upgrade_id = "forest_fruit_grove"
+name = "Fruit Grove"
+description = "Plums and persimmons weigh down these hard-working branches, eager to find their way into a dinner bowl or a pickle jar."
+required_aspects = Array[ExtResource("5_uyohm")]([ExtResource("5_rgekh"), ExtResource("6_ni8c1")])
+granted_bonuses = Dictionary[ExtResource("1_rgekh"), int]({
+ExtResource("2_sqwpe"): 25
+})
+spot = ExtResource("7_odqka")
+visuals = Array[ExtResource("7_81dln")]([SubResource("Resource_f5fh7")])
+tags = Array[int]([1])

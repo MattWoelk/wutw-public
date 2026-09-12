@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dhee1yuxt41f3"]
+
+[ext_resource type="Script" uid="uid://dh127xapdb8gc" path="res://map/map_effect_particles.gd" id="1_tlllx"]
+[ext_resource type="Texture2D" uid="uid://b080vhp0l2e7k" path="res://map/sprites/spots/plains/bee.png" id="2_diejm"]
+
+[sub_resource type="Curve" id="Curve_88uco"]
+_data = [Vector2(0, 0), 0.0, 2.6790414, 0, 0, Vector2(0.28475454, 0.57475495), 0.40445524, 0.40445524, 0, 0, Vector2(0.7241115, 0.56592816), -0.47708133, -0.47708133, 0, 0, Vector2(1, 0), -3.9659877, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_5fdos"]
+curve = SubResource("Curve_88uco")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lfm3u"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, 0.1, 0)
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 35.0
+emission_ring_inner_radius = 50.0
+emission_ring_cone_angle = 90.0
+spread = 180.0
+initial_velocity_min = -15.0
+initial_velocity_max = 15.0
+orbit_velocity_min = -0.29999992
+orbit_velocity_max = 0.3000001
+gravity = Vector3(0, 0, 0)
+scale_min = 0.01
+scale_max = 0.01
+color = Color(0.4155171, 0.26150423, 0.07423412, 1)
+alpha_curve = SubResource("CurveTexture_5fdos")
+
+[node name="Bees" type="Node2D" unique_id=19583879]
+script = ExtResource("1_tlllx")
+
+[node name="ParticleSystem" type="GPUParticles2D" parent="." unique_id=1295716697]
+unique_name_in_owner = true
+amount = 5
+texture = ExtResource("2_diejm")
+lifetime = 5.0
+explosiveness = 0.56
+visibility_rect = Rect2(-50, -50, 100, 100)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_lfm3u")

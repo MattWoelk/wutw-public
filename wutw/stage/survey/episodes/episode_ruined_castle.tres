@@ -1,0 +1,83 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://pafskicnthnc"]
+
+[ext_resource type="Resource" uid="uid://bpam6eu2v7im1" path="res://art/pieces/piece_keith_seoul_gate.tres" id="1_gevk7"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_ktygb"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_gevk7"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_qpgsw"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="4_n24sx"]
+[ext_resource type="Resource" uid="uid://1ejjxcp03cnl" path="res://cards/tier2/card_emptiness.tres" id="5_vk443"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="6_ar68j"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="7_gq4mc"]
+[ext_resource type="Resource" uid="uid://bqhmrqu63w4w5" path="res://relics/common/indecipherable_schematics/relic_indecipherable_schematics.tres" id="8_7h6p6"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="9_818e5"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="10_w2dtj"]
+[ext_resource type="Resource" uid="uid://clfljjq48yt6d" path="res://cards/tier2/card_castle.tres" id="11_ye3hd"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="12_7c141"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="13_p34qi"]
+
+[sub_resource type="Resource" id="Resource_qlcpq"]
+script = ExtResource("1_ktygb")
+_texture_path = "res://stage/survey/episodes/episode_ruined_castle.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_wctm8"]
+script = ExtResource("6_ar68j")
+card_type = ExtResource("5_vk443")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_76cyt"]
+script = ExtResource("2_gevk7")
+label = "Search for treasure."
+aspects = Array[ExtResource("3_qpgsw")]([ExtResource("4_n24sx")])
+aspects_per_season = Array[ExtResource("3_qpgsw")]([null])
+outcome = SubResource("Resource_wctm8")
+outcome_text = "With torches lit, the scouts stumble through the halls and storerooms, but it appears that the castle had been looted long ago. All they find are empty chests, shattered remnants of pottery, and a few crows that scatter off into the darkness."
+
+[sub_resource type="Resource" id="Resource_hbbax"]
+script = ExtResource("9_818e5")
+relic = ExtResource("8_7h6p6")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_0h2qx"]
+script = ExtResource("2_gevk7")
+label = "Investigate the inner rooms."
+aspects = Array[ExtResource("3_qpgsw")]([ExtResource("7_gq4mc")])
+aspects_per_season = Array[ExtResource("3_qpgsw")]([null])
+outcome = SubResource("Resource_hbbax")
+outcome_text = "The scouts explore deep into the fort until they reach a cellar that must have served as a workshop. Minute metal tools are stored on marble shelves, and metal boxes are stacked in the corner, not rusted despite the passage of centuries.
+
+Most of the boxes contain little more than dust, but one seems to have been sealed particularly well. It contains sheets of cracked, yellowed paper, with writing in a language unlike any the scouts had seen before. One of the sheets, instead of writing, contains schematics for some sort of complicated machinery."
+
+[sub_resource type="Resource" id="Resource_vsxj6"]
+script = ExtResource("6_ar68j")
+card_type = ExtResource("11_ye3hd")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_prktl"]
+script = ExtResource("2_gevk7")
+label = "Climb the keep."
+aspects = Array[ExtResource("3_qpgsw")]([ExtResource("10_w2dtj")])
+aspects_per_season = Array[ExtResource("3_qpgsw")]([null])
+outcome = SubResource("Resource_vsxj6")
+outcome_text = "The explorers climb the worn stone stairs to the top of the fort. From the roof, they watch the storm passing through the barren wasteland. As the lightning flashes, they catch glimpses of iron wrecks littering the horizon."
+
+[sub_resource type="Resource" id="Resource_ypsgq"]
+script = ExtResource("2_gevk7")
+label = "Take shelter in the entryway."
+aspects = Array[ExtResource("3_qpgsw")]([null])
+aspects_per_season = Array[ExtResource("3_qpgsw")]([null])
+outcome_text = "The team decides to spend the night by the entrance, afraid to explore deeper. The place has an odd, eerie feeling in the darkness, with the approaching storm."
+
+[resource]
+script = ExtResource("12_7c141")
+episode_id = "ruined_castle"
+title = "The Fort in the Wastes"
+biome_types = Array[int]([3])
+text = "The surveyors are trudging through the wasteland when they spot a crumbling fort in the distance.
+
+By the time they reach it, night has fallen.
+
+The wind picks up as they draw near, whistling through the cracks in the walls, and drowning out the thunder rumbling in the distance."
+background_image = SubResource("Resource_qlcpq")
+background_credit = ExtResource("1_gevk7")
+choices = Array[ExtResource("2_gevk7")]([SubResource("Resource_76cyt"), SubResource("Resource_0h2qx"), SubResource("Resource_prktl"), SubResource("Resource_ypsgq")])

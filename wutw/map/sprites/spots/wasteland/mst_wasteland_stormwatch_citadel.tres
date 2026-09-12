@@ -1,0 +1,34 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://oyjnt6jsgpck"]
+
+[ext_resource type="MapSpriteType_Composite" uid="uid://d27evmqjpejqb" path="res://map/sprites/spots/wasteland/mst_wasteland_salt_flats.tres" id="1_3ewku"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://di4qu86hcx0jv" path="res://map/sprites/spots/wasteland/mst_wasteland_citadel.tres" id="2_3ewku"]
+[ext_resource type="PackedScene" uid="uid://c84m8deemndrb" path="res://map/sprites/spots/wasteland/map_effect_thunderstorm_large.tscn" id="4_onh8b"]
+
+[sub_resource type="MapSpriteCollision_Rect" id="MapSpriteCollision_Rect_onh8b"]
+rect = Rect2(-9.535, 0.42, 15.59, 2.585)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Circle" id="MapSpriteCollision_Circle_rpp0f"]
+center = Vector2(1.59, 0.155)
+radius = 2.76
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_m42mp"]
+sprite_type = ExtResource("1_3ewku")
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_m2715"]
+sprite_type = ExtResource("2_3ewku")
+offset = Vector2(-1.56, -0.09)
+scale = 0.865
+
+[sub_resource type="MapEffectAttachment" id="MapEffectAttachment_onh8b"]
+scene = ExtResource("4_onh8b")
+offset = Vector2(-0.5139826, -4.274124)
+scale = 0.1
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_m42mp"), SubResource("MapSpriteComponent_m2715")])
+footprint_radius = 2.91
+must_be_fully_within_clip = true
+effects = Array[MapEffectAttachment]([SubResource("MapEffectAttachment_onh8b")])
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Rect_onh8b"), SubResource("MapSpriteCollision_Circle_rpp0f")])

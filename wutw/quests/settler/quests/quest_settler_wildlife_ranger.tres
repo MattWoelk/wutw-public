@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="Quest_Settler" format=3 uid="uid://b0vxt8phpjhuo"]
+
+[ext_resource type="Script" uid="uid://cjloydxgrv8oa" path="res://quests/settler/settler_quest_challenge.gd" id="1_tb8ah"]
+[ext_resource type="Script" uid="uid://4wq52c05i2oa" path="res://quests/settler/challenges/settler_quest_challenge_run_var.gd" id="2_ra3e2"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="3_mpdjo"]
+[ext_resource type="Resource" uid="uid://jttde8t0g8wh" path="res://characters/jobs/job_priest.tres" id="4_mpdjo"]
+[ext_resource type="Resource" uid="uid://bwq6ens5iq38t" path="res://relics/common/forester_staff/relic_forester_staff.tres" id="5_0iokd"]
+[ext_resource type="Resource" uid="uid://c2qx8ufo4c12r" path="res://characters/jobs/job_monk_ember.tres" id="5_gdbux"]
+[ext_resource type="Script" uid="uid://0k12wwnmq50h" path="res://quests/settler/rewards/settler_quest_reward_add_relic.gd" id="6_iyhgl"]
+[ext_resource type="Resource" uid="uid://brr7uk3citu0o" path="res://characters/jobs/job_monk_wilds.tres" id="6_lcxsk"]
+[ext_resource type="Resource" uid="uid://kau1o80i2qm0" path="res://characters/jobs/job_monk_forest.tres" id="7_nhsfj"]
+[ext_resource type="Resource" uid="uid://djn3flqos8t4f" path="res://characters/jobs/job_monk_shattered.tres" id="8_2xspn"]
+[ext_resource type="Script" uid="uid://cd4swbq3t72je" path="res://quests/settler/settler_quest_reward.gd" id="9_dt27u"]
+[ext_resource type="Script" uid="uid://ku752yv8p8ur" path="res://quests/settler/goals/settler_quest_goal_settlement_upgrades.gd" id="9_tb8ah"]
+[ext_resource type="Resource" uid="uid://bphp08b0lalpe" path="res://stage/spots/forest/upgrade_forest_2_wildlife_sanctuary.tres" id="11_fjx0l"]
+[ext_resource type="Script" uid="uid://1na7ymvvvbby" path="res://quests/settler/quest_settler.gd" id="11_kt0jk"]
+[ext_resource type="Script" uid="uid://bxua8gxfjp2wy" path="res://quests/settler/settler_quest_goal.gd" id="12_0vffg"]
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="14_8kxkm"]
+[ext_resource type="Resource" uid="uid://bxfsnqpj2fir0" path="res://stage/spots/forest/upgrade_forest_2_hermit.tres" id="15_482x5"]
+
+[sub_resource type="Resource" id="Resource_mpdjo"]
+script = ExtResource("2_ra3e2")
+var_type = 6
+delta = 5
+description = "Reduce maximum inspiration by 5."
+metadata/_custom_type_script = "uid://4wq52c05i2oa"
+
+[sub_resource type="Resource" id="Resource_gdbux"]
+script = ExtResource("6_iyhgl")
+relic = ExtResource("5_0iokd")
+metadata/_custom_type_script = "uid://0k12wwnmq50h"
+
+[sub_resource type="Resource" id="Resource_lcxsk"]
+script = ExtResource("9_tb8ah")
+upgrades = Array[ExtResource("14_8kxkm")]([ExtResource("11_fjx0l"), ExtResource("15_482x5")])
+metadata/_custom_type_script = "uid://ku752yv8p8ur"
+
+[resource]
+script = ExtResource("11_kt0jk")
+intro_text = "The people in my life have brought me nothing but disappointment. I have resolved to live in the forest among the beasts."
+challenges = Array[ExtResource("1_tb8ah")]([SubResource("Resource_mpdjo")])
+settler_goals = Array[ExtResource("12_0vffg")]([SubResource("Resource_lcxsk")])
+rewards = Array[ExtResource("9_dt27u")]([SubResource("Resource_gdbux")])
+exclude_jobs = Array[ExtResource("3_mpdjo")]([ExtResource("4_mpdjo"), ExtResource("5_gdbux"), ExtResource("6_lcxsk"), ExtResource("7_nhsfj"), ExtResource("8_2xspn")])
+restrict_to_ages = Array[int]([1, 2])
+quest_id = "settler_wildlife_ranger"
+category = 2
+name = "A Wildlife Warden"
+metadata/_custom_type_script = "uid://1na7ymvvvbby"

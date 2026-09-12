@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://bjnt7vamai8si"]
+
+[ext_resource type="Material" uid="uid://cw1bp2nwjfhtl" path="res://hub/shard_explorer/shard_type_button_common_mat.tres" id="1_8clki"]
+[ext_resource type="Resource" uid="uid://b0nm7516f88fa" path="res://shard_types/small_community/shard_type_small_community.tres" id="4_8clki"]
+[ext_resource type="Material" uid="uid://bu0kvnoxck15w" path="res://hub/shard_explorer/shard_type_button_uncommon_mat.tres" id="5_wn0oe"]
+[ext_resource type="Material" uid="uid://c3mrplrdgmtjx" path="res://hub/shard_explorer/shard_type_button_rare_mat.tres" id="6_qp0vj"]
+[ext_resource type="Material" uid="uid://b8lhbv35pymc" path="res://hub/shard_explorer/shard_type_button_story_mat.tres" id="7_gytpj"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="7_p7c51"]
+[ext_resource type="Material" uid="uid://kkbmg7g435dh" path="res://hub/shard_explorer/shard_type_button_common_mat_compatibility.tres" id="8_w2rmd"]
+[ext_resource type="Script" uid="uid://h6bpssacdv3w" path="res://hub/shard_explorer/shard_type_button.gd" id="9_2f0f6"]
+[ext_resource type="Material" uid="uid://7acoejilhsjd" path="res://hub/shard_explorer/shard_type_button_uncommon_mat_compatibility.tres" id="9_5ysjk"]
+[ext_resource type="Material" uid="uid://chs0n1x3sy8vo" path="res://hub/shard_explorer/shard_type_button_rare_mat_compatibility.tres" id="10_ea1c4"]
+[ext_resource type="PackedScene" uid="uid://qi2x1knh3gac" path="res://theme/progress_bar/ukiyoe_progress_bar.tscn" id="10_qp0vj"]
+[ext_resource type="Material" uid="uid://bukcp6j70wi83" path="res://hub/shard_explorer/shard_type_button_story_mat_compatibility.tres" id="11_c0sj3"]
+[ext_resource type="Shader" uid="uid://cy23kwgtjt4et" path="res://theme/panel/panel.gdshader" id="11_p7c51"]
+[ext_resource type="Texture2D" uid="uid://cgsn7350xgqr5" path="res://theme/panel/panel_bg.png" id="12_gytpj"]
+[ext_resource type="Texture2D" uid="uid://bnkoruxi23qsp" path="res://theme/panel/panel_frame.png" id="13_w2rmd"]
+[ext_resource type="Texture2D" uid="uid://dhahrckxpa52w" path="res://theme/new_icon.png" id="14_p7c51"]
+[ext_resource type="Texture2D" uid="uid://ci0ha4gi3onc2" path="res://hub/shard_explorer/pinned_icon.png" id="17_5ysjk"]
+
+[sub_resource type="Gradient" id="Gradient_wd1og"]
+offsets = PackedFloat32Array(0.00512295)
+colors = PackedColorArray(0.53, 0.345383, 0.0265, 0.317647)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tloj2"]
+gradient = SubResource("Gradient_wd1og")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a68yh"]
+shader = ExtResource("11_p7c51")
+shader_parameter/background = ExtResource("12_gytpj")
+shader_parameter/background_shade = SubResource("GradientTexture2D_tloj2")
+shader_parameter/background_tex_size = Vector2(2291, 3118)
+shader_parameter/background_scale = 2.0
+shader_parameter/frame_tex = ExtResource("13_w2rmd")
+shader_parameter/frame_tex_size = Vector2(1127, 976)
+shader_parameter/frame_margin = Vector4(15, 15, 15, 15)
+shader_parameter/frame_scale = 0.93
+shader_parameter/frame_color = Color(0.24, 0.18848, 0.1056, 1)
+shader_parameter/decor_transform = Vector4(0, 0, 300, 100)
+shader_parameter/decor_modulate = Color(1, 1, 1, 0)
+
+[node name="ShardTypeButton" type="Button" unique_id=1960524235]
+material = ExtResource("1_8clki")
+instance_shader_parameters/background_offset = Vector2(0.5184926, 0.37868032)
+instance_shader_parameters/state = 0.0
+offset_right = 381.4305
+offset_bottom = 41.0
+focus_mode = 0
+theme_override_styles/normal = ExtResource("7_p7c51")
+theme_override_styles/pressed = ExtResource("7_p7c51")
+theme_override_styles/hover = ExtResource("7_p7c51")
+theme_override_styles/hover_pressed = ExtResource("7_p7c51")
+theme_override_styles/disabled = ExtResource("7_p7c51")
+toggle_mode = true
+text = "A Tight-Knit Community"
+alignment = 0
+text_overrun_behavior = 3
+script = ExtResource("9_2f0f6")
+shard_type = ExtResource("4_8clki")
+materials = Dictionary[int, ShaderMaterial]({
+0: ExtResource("1_8clki"),
+1: ExtResource("5_wn0oe"),
+2: ExtResource("6_qp0vj"),
+3: ExtResource("7_gytpj")
+})
+materials_compatibility = Dictionary[int, ShaderMaterial]({
+0: ExtResource("8_w2rmd"),
+1: ExtResource("9_5ysjk"),
+2: ExtResource("10_ea1c4"),
+3: ExtResource("11_c0sj3")
+})
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="Offset" type="Control" parent="." unique_id=610013791]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 0.00048828125
+offset_top = -20.5
+offset_right = 0.00048828125
+offset_bottom = -20.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ProgressBar" parent="Offset" unique_id=44961872 instance=ExtResource("10_qp0vj")]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_a68yh")
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -57.431
+offset_top = 3.0
+offset_right = -3.4309998
+offset_bottom = 36.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(42.5, 16.5)
+mouse_behavior_recursive = 1
+max_value = 5.0
+value = 1.0
+tween_speed = 10.0
+
+[node name="NewIcon" type="TextureRect" parent="Offset" unique_id=541495361]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -89.431
+offset_top = 4.0
+offset_right = -56.431
+offset_bottom = 35.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("14_p7c51")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="PinnedIcon" type="TextureRect" parent="Offset" unique_id=684841407]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0.85, 0.7791667, 0.68, 1)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -38.53
+offset_top = 4.0
+offset_right = -5.529999
+offset_bottom = 35.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("17_5ysjk")
+expand_mode = 1
+stretch_mode = 4

@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://b6cnfgujh7t7l"]
+
+[ext_resource type="Script" uid="uid://d0dedkb1gbjte" path="res://hub/museum/museum_detail_haunting.gd" id="1_4u56t"]
+[ext_resource type="Shader" uid="uid://xfg5dy6oupgw" path="res://stage/hauntings/haunting_details.gdshader" id="1_b46gb"]
+[ext_resource type="Texture2D" uid="uid://dhjw5ubvrkwx8" path="res://stage/hauntings/haunting_frame_edge.png" id="2_1gckb"]
+[ext_resource type="Resource" uid="uid://cfcnqlgpv4xyd" path="res://run/scaling/run_scaling.tres" id="2_4u56t"]
+[ext_resource type="Texture2D" uid="uid://cndarkm63tu3b" path="res://stage/hauntings/types/akashita/haunting_akashita.png" id="4_46t1d"]
+[ext_resource type="PackedScene" uid="uid://dbkrwj5jf26v1" path="res://theme/credits_icon/credits_icon.tscn" id="5_46t1d"]
+[ext_resource type="Material" uid="uid://dm0coidukcc6" path="res://theme/button/ukiyoe_button_material.tres" id="7_h8yka"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="8_4u56t"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="9_ct5ma"]
+[ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="9_rn5mx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vemot"]
+shader = ExtResource("1_b46gb")
+shader_parameter/mask = ExtResource("2_1gckb")
+
+[node name="MuseumDetail_Haunting" type="MarginContainer" unique_id=439316833]
+offset_right = 822.0
+offset_bottom = 784.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+script = ExtResource("1_4u56t")
+default_scaling = ExtResource("2_4u56t")
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=514040104]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TitleLabel" type="Label" parent="VBox" unique_id=1674221998]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Haunting: Akashita"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBox" unique_id=1776532020]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBox/MarginContainer2" unique_id=1004045940]
+layout_mode = 2
+
+[node name="MainText" parent="VBox/MarginContainer2/HBoxContainer" unique_id=663770699 instance=ExtResource("9_ct5ma")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+theme_override_font_sizes/bold_italics_font_size = 18
+theme_override_font_sizes/italics_font_size = 18
+theme_override_font_sizes/mono_font_size = 18
+text = "Warehouses in this settlement turn up empty overnight. Households run out of food twice as fast.
+
+Whispers speak of people with mouths hiding behind people's heads, covered by locks of hair. The most common story is of the Futakuchi Onna, a lady who smiles sweetly while her hair stirs behind her like a nest of living threads, feeding a hidden mouth that demands its share of every harvest. Some claim she was once a leader who hoarded plenty while others starved, and that her second mouth is of those she wronged, forever consuming what she once denied."
+fit_content = true
+tooltip_directions = Array[int]([5, 1, 3])
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBox/MarginContainer2/HBoxContainer" unique_id=1438676940]
+layout_mode = 2
+
+[node name="Illustration" type="TextureRect" parent="VBox/MarginContainer2/HBoxContainer/VBoxContainer" unique_id=1843535113]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_vemot")
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("4_46t1d")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CreditsIcon" parent="VBox/MarginContainer2/HBoxContainer/VBoxContainer/Illustration" unique_id=1613876825 instance=ExtResource("5_46t1d")]
+unique_name_in_owner = true
+layout_mode = 1
+
+[node name="TypeSwapButton" type="Button" parent="VBox/MarginContainer2/HBoxContainer/VBoxContainer" unique_id=2006023538]
+unique_name_in_owner = true
+material = ExtResource("7_h8yka")
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_styles/normal = ExtResource("8_4u56t")
+theme_override_styles/pressed = ExtResource("8_4u56t")
+theme_override_styles/hover = ExtResource("8_4u56t")
+theme_override_styles/hover_pressed = ExtResource("8_4u56t")
+theme_override_styles/disabled = ExtResource("8_4u56t")
+toggle_mode = true
+text = "View Haunting Version"
+script = ExtResource("9_rn5mx")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[connection signal="toggled" from="VBox/MarginContainer2/HBoxContainer/VBoxContainer/TypeSwapButton" to="." method="_on_type_swap_button_toggled"]

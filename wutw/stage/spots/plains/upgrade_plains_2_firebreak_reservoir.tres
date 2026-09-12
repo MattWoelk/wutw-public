@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://b6ghgkv80qtr2"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_ofskx"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_144gd"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="3_kjs2f"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="4_eiw2v"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="5_gvpna"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="6_ysy7p"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="7_clwan"]
+[ext_resource type="Resource" uid="uid://f8guout8235a" path="res://stage/spots/plains/spot_plains.tres" id="7_dp5ye"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://diyi3148yxsnu" path="res://map/sprites/spots/plains/mst_plains_firebreak_reservoir.tres" id="9_dp5ye"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://bg3c0u87dkvjl" path="res://map/sprites/spots/plains/mst_plains_rest_stop.tres" id="9_mqfy2"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="10_dp5ye"]
+
+[sub_resource type="Resource" id="Resource_paw87"]
+script = ExtResource("10_dp5ye")
+old_sprite_type = ExtResource("9_mqfy2")
+new_sprite_type = ExtResource("9_dp5ye")
+biome = 6
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_ofskx")
+spot_upgrade_id = "plains_reservoir"
+name = "Firebreak Reservoir"
+description = "Just a pit full of water, in case of fire. Works better than prayers."
+required_aspects = Array[ExtResource("4_eiw2v")]([ExtResource("5_gvpna"), ExtResource("6_ysy7p")])
+granted_bonuses = Dictionary[ExtResource("2_144gd"), int]({
+ExtResource("3_kjs2f"): 20
+})
+spot = ExtResource("7_dp5ye")
+visuals = Array[ExtResource("7_clwan")]([SubResource("Resource_paw87")])

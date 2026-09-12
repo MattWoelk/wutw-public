@@ -1,0 +1,790 @@
+[gd_resource type="Resource" script_class="CardType" format=3 uid="uid://hb7mnrh3x1dk"]
+
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="1_o30dy"]
+[ext_resource type="Script" uid="uid://b56kytec5oqcb" path="res://cards/abilities/card_ability.gd" id="1_oht2v"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="2_35qyb"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="3_1y5sw"]
+[ext_resource type="Script" uid="uid://7y26eumsxbnb" path="res://cards/abilities/card_ability_support.gd" id="3_06qre"]
+[ext_resource type="Resource" uid="uid://d1k7vakhjcq5g" path="res://glossary/categories/termcategory_card.tres" id="4_0xau4"]
+[ext_resource type="Script" uid="uid://xc73x4t7ckxm" path="res://japanese/example_sentence.gd" id="4_snoud"]
+[ext_resource type="Script" uid="uid://du4k150pcdjs6" path="res://japanese/kanji_shape.gd" id="5_k3exg"]
+[ext_resource type="Script" uid="uid://bl2eelwkj800o" path="res://japanese/japanese_token.gd" id="5_umj5q"]
+[ext_resource type="Script" uid="uid://dc15txdqjanlf" path="res://japanese/stroke_shape.gd" id="6_umj5q"]
+[ext_resource type="Script" uid="uid://b6rw4ldrj6wch" path="res://japanese/vocab.gd" id="8_ldt4d"]
+
+[sub_resource type="Resource" id="Resource_snoud"]
+script = ExtResource("3_06qre")
+bonus_type = ExtResource("2_35qyb")
+metadata/_custom_type_script = "uid://7y26eumsxbnb"
+
+[sub_resource type="Resource" id="Resource_o6bob"]
+script = ExtResource("8_ldt4d")
+japanese = "真っ白"
+readings = Array[String](["まっしろ", "ましろ"])
+meanings = Array[String](["pure white", "blank (e.g. mind, paper)"])
+jlpt_level = 2
+
+[sub_resource type="Resource" id="Resource_q0d3u"]
+script = ExtResource("5_umj5q")
+raw_text = "真っ白"
+vocab = SubResource("Resource_o6bob")
+reading = "まっしろ"
+
+[sub_resource type="Resource" id="Resource_30p6n"]
+script = ExtResource("5_umj5q")
+raw_text = "です"
+reading = "です"
+
+[sub_resource type="Resource" id="Resource_07ofy"]
+script = ExtResource("5_umj5q")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_10c7e"]
+script = ExtResource("4_snoud")
+japanese = "真っ白です。"
+native = "It's all white."
+parsed = Array[ExtResource("5_umj5q")]([SubResource("Resource_q0d3u"), SubResource("Resource_30p6n"), SubResource("Resource_07ofy")])
+_difficulty = 189
+_used_kanji = Array[String](["真", "白"])
+
+[sub_resource type="Resource" id="Resource_hqiem"]
+script = ExtResource("5_umj5q")
+raw_text = "もう"
+reading = "もう"
+
+[sub_resource type="Resource" id="Resource_mxqh7"]
+script = ExtResource("8_ldt4d")
+japanese = "真夜中"
+readings = Array[String](["まよなか"])
+meanings = Array[String](["dead of night", "midnight"])
+
+[sub_resource type="Resource" id="Resource_vscc7"]
+script = ExtResource("5_umj5q")
+raw_text = "真夜中"
+vocab = SubResource("Resource_mxqh7")
+reading = "まよなか"
+
+[sub_resource type="Resource" id="Resource_bjro8"]
+script = ExtResource("5_umj5q")
+raw_text = "だ"
+reading = "だ"
+
+[sub_resource type="Resource" id="Resource_sdlq5"]
+script = ExtResource("5_umj5q")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_k3exg"]
+script = ExtResource("4_snoud")
+japanese = "もう真夜中だ。"
+native = "It's midnight."
+parsed = Array[ExtResource("5_umj5q")]([SubResource("Resource_hqiem"), SubResource("Resource_vscc7"), SubResource("Resource_bjro8"), SubResource("Resource_sdlq5")])
+_difficulty = 222
+_used_kanji = Array[String](["真", "夜", "中"])
+
+[sub_resource type="Resource" id="Resource_aq0c2"]
+script = ExtResource("8_ldt4d")
+japanese = "真実"
+readings = Array[String](["しんじつ", "しんじち"])
+meanings = Array[String](["truth", "reality", "truly", "really", "absolute truth"])
+jlpt_level = 1
+
+[sub_resource type="Resource" id="Resource_mukpa"]
+script = ExtResource("5_umj5q")
+raw_text = "真実"
+vocab = SubResource("Resource_aq0c2")
+reading = "しんじつ"
+
+[sub_resource type="Resource" id="Resource_p1jif"]
+script = ExtResource("5_umj5q")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_cp4ea"]
+script = ExtResource("8_ldt4d")
+japanese = "勝つ"
+readings = Array[String](["かつ"])
+meanings = Array[String](["to win", "to gain victory"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_nxusw"]
+script = ExtResource("5_umj5q")
+raw_text = "勝つ"
+vocab = SubResource("Resource_cp4ea")
+reading = "かつ"
+
+[sub_resource type="Resource" id="Resource_b8vpj"]
+script = ExtResource("5_umj5q")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_umj5q"]
+script = ExtResource("4_snoud")
+japanese = "真実が勝つ。"
+native = "Truth prevails."
+parsed = Array[ExtResource("5_umj5q")]([SubResource("Resource_mukpa"), SubResource("Resource_p1jif"), SubResource("Resource_nxusw"), SubResource("Resource_b8vpj")])
+_difficulty = 233
+_used_kanji = Array[String](["真", "実", "勝"])
+
+[sub_resource type="Resource" id="Resource_vrfi4"]
+script = ExtResource("8_ldt4d")
+japanese = "真面目"
+readings = Array[String](["まじめ"])
+meanings = Array[String](["serious", "earnest", "sober", "grave", "honest", "sincere"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_e0eug"]
+script = ExtResource("5_umj5q")
+raw_text = "真面目"
+vocab = SubResource("Resource_vrfi4")
+reading = "まじめ"
+
+[sub_resource type="Resource" id="Resource_y374c"]
+script = ExtResource("5_umj5q")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_kk8gf"]
+script = ExtResource("5_umj5q")
+raw_text = "お"
+reading = "お"
+
+[sub_resource type="Resource" id="Resource_kbjjm"]
+script = ExtResource("5_umj5q")
+raw_text = "やり"
+reading = "やり"
+
+[sub_resource type="Resource" id="Resource_j7y3c"]
+script = ExtResource("5_umj5q")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_ldt4d"]
+script = ExtResource("4_snoud")
+japanese = "真面目におやり。"
+native = "Be serious."
+parsed = Array[ExtResource("5_umj5q")]([SubResource("Resource_e0eug"), SubResource("Resource_y374c"), SubResource("Resource_kk8gf"), SubResource("Resource_kbjjm"), SubResource("Resource_j7y3c")])
+_difficulty = 248
+_used_kanji = Array[String](["真", "面", "目"])
+
+[sub_resource type="Resource" id="Resource_t4ed1"]
+script = ExtResource("5_umj5q")
+raw_text = "これ"
+reading = "これ"
+
+[sub_resource type="Resource" id="Resource_mswno"]
+script = ExtResource("5_umj5q")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_1yn43"]
+script = ExtResource("5_umj5q")
+raw_text = "真実"
+vocab = SubResource("Resource_aq0c2")
+reading = "しんじつ"
+
+[sub_resource type="Resource" id="Resource_gb0so"]
+script = ExtResource("5_umj5q")
+raw_text = "で"
+reading = "で"
+
+[sub_resource type="Resource" id="Resource_jwvto"]
+script = ExtResource("5_umj5q")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_ywhm0"]
+script = ExtResource("5_umj5q")
+raw_text = "ない"
+reading = "ない"
+
+[sub_resource type="Resource" id="Resource_2s7wa"]
+script = ExtResource("5_umj5q")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_wc2n5"]
+script = ExtResource("4_snoud")
+japanese = "これは真実ではない。"
+native = "This isn't true."
+parsed = Array[ExtResource("5_umj5q")]([SubResource("Resource_t4ed1"), SubResource("Resource_mswno"), SubResource("Resource_1yn43"), SubResource("Resource_gb0so"), SubResource("Resource_jwvto"), SubResource("Resource_ywhm0"), SubResource("Resource_2s7wa")])
+_difficulty = 283
+_used_kanji = Array[String](["真", "実"])
+
+[sub_resource type="Resource" id="Resource_2rb3a"]
+script = ExtResource("5_umj5q")
+raw_text = "真面目"
+vocab = SubResource("Resource_vrfi4")
+reading = "まじめ"
+
+[sub_resource type="Resource" id="Resource_k63q6"]
+script = ExtResource("5_umj5q")
+raw_text = "で"
+reading = "で"
+
+[sub_resource type="Resource" id="Resource_4xh23"]
+script = ExtResource("5_umj5q")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_y8org"]
+script = ExtResource("8_ldt4d")
+japanese = "有る"
+readings = Array[String](["ある"])
+meanings = Array[String](["to be", "to exist", "to live", "to have", "to be located", "to be equipped with", "to happen", "to come about", "to exist (in a completed state)", "to be (something unchanged in its current state)"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_3dto0"]
+script = ExtResource("5_umj5q")
+raw_text = "有り"
+vocab = SubResource("Resource_y8org")
+reading = "あり"
+
+[sub_resource type="Resource" id="Resource_8ju8c"]
+script = ExtResource("5_umj5q")
+raw_text = "ませ"
+reading = "ませ"
+
+[sub_resource type="Resource" id="Resource_p33ln"]
+script = ExtResource("5_umj5q")
+raw_text = "ん"
+reading = "ん"
+
+[sub_resource type="Resource" id="Resource_b457v"]
+script = ExtResource("5_umj5q")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_c3c0c"]
+script = ExtResource("4_snoud")
+japanese = "真面目では有りません。"
+native = "He's not serious."
+parsed = Array[ExtResource("5_umj5q")]([SubResource("Resource_2rb3a"), SubResource("Resource_k63q6"), SubResource("Resource_4xh23"), SubResource("Resource_3dto0"), SubResource("Resource_8ju8c"), SubResource("Resource_p33ln"), SubResource("Resource_b457v")])
+_difficulty = 319
+_used_kanji = Array[String](["真", "面", "目", "有"])
+
+[sub_resource type="Resource" id="Resource_ky3j5"]
+script = ExtResource("5_umj5q")
+raw_text = "それ"
+reading = "それ"
+
+[sub_resource type="Resource" id="Resource_kx4xv"]
+script = ExtResource("5_umj5q")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_5yq5m"]
+script = ExtResource("5_umj5q")
+raw_text = "真実"
+vocab = SubResource("Resource_aq0c2")
+reading = "しんじつ"
+
+[sub_resource type="Resource" id="Resource_2tqyf"]
+script = ExtResource("5_umj5q")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_w70ii"]
+script = ExtResource("8_ldt4d")
+japanese = "愛"
+readings = Array[String](["あい"])
+meanings = Array[String](["love", "affection", "care", "attachment", "craving", "desire", "agape", "Ireland"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_hiyoo"]
+script = ExtResource("5_umj5q")
+raw_text = "愛"
+vocab = SubResource("Resource_w70ii")
+reading = "あい"
+
+[sub_resource type="Resource" id="Resource_hh5ic"]
+script = ExtResource("5_umj5q")
+raw_text = "だ"
+reading = "だ"
+
+[sub_resource type="Resource" id="Resource_gvf04"]
+script = ExtResource("5_umj5q")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_n6txa"]
+script = ExtResource("4_snoud")
+japanese = "それは真実の愛だ。"
+native = "That's true love."
+parsed = Array[ExtResource("5_umj5q")]([SubResource("Resource_ky3j5"), SubResource("Resource_kx4xv"), SubResource("Resource_5yq5m"), SubResource("Resource_2tqyf"), SubResource("Resource_hiyoo"), SubResource("Resource_hh5ic"), SubResource("Resource_gvf04")])
+_difficulty = 320
+_used_kanji = Array[String](["真", "実", "愛"])
+
+[sub_resource type="Resource" id="Resource_djjfc"]
+script = ExtResource("8_ldt4d")
+japanese = "真似"
+readings = Array[String](["まね"])
+meanings = Array[String](["imitating", "copying", "mimicry", "behavior", "behaviour", "action", "conduct"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_3tlt8"]
+script = ExtResource("5_umj5q")
+raw_text = "真似"
+vocab = SubResource("Resource_djjfc")
+reading = "まね"
+
+[sub_resource type="Resource" id="Resource_2kaof"]
+script = ExtResource("5_umj5q")
+raw_text = "し"
+reading = "し"
+
+[sub_resource type="Resource" id="Resource_t0tps"]
+script = ExtResource("5_umj5q")
+raw_text = "ない"
+reading = "ない"
+
+[sub_resource type="Resource" id="Resource_fu8ty"]
+script = ExtResource("5_umj5q")
+raw_text = "で"
+reading = "で"
+
+[sub_resource type="Resource" id="Resource_p375h"]
+script = ExtResource("5_umj5q")
+raw_text = "よ"
+reading = "よ"
+
+[sub_resource type="Resource" id="Resource_as3lb"]
+script = ExtResource("5_umj5q")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_ndy1b"]
+script = ExtResource("4_snoud")
+japanese = "真似しないでよ。"
+native = "Stop copying me."
+parsed = Array[ExtResource("5_umj5q")]([SubResource("Resource_3tlt8"), SubResource("Resource_2kaof"), SubResource("Resource_t0tps"), SubResource("Resource_fu8ty"), SubResource("Resource_p375h"), SubResource("Resource_as3lb")])
+_difficulty = 333
+_used_kanji = Array[String](["真", "似"])
+
+[sub_resource type="Resource" id="Resource_3tgk1"]
+script = ExtResource("8_ldt4d")
+japanese = "真っ直ぐ"
+readings = Array[String](["まっすぐ"])
+meanings = Array[String](["straight (ahead)", "direct", "upright", "erect", "straightforward", "honest", "frank"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_ym7le"]
+script = ExtResource("5_umj5q")
+raw_text = "真っ直ぐ"
+vocab = SubResource("Resource_3tgk1")
+reading = "まっすぐ"
+
+[sub_resource type="Resource" id="Resource_y2qv1"]
+script = ExtResource("8_ldt4d")
+japanese = "前方"
+readings = Array[String](["ぜんぽう"])
+meanings = Array[String](["ahead", "forward", "(in) front", "having a square front"])
+
+[sub_resource type="Resource" id="Resource_o8lim"]
+script = ExtResource("5_umj5q")
+raw_text = "前方"
+vocab = SubResource("Resource_y2qv1")
+reading = "ぜんぽう"
+
+[sub_resource type="Resource" id="Resource_dvcwk"]
+script = ExtResource("5_umj5q")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_p71wm"]
+script = ExtResource("8_ldt4d")
+japanese = "見る"
+readings = Array[String](["みる"])
+meanings = Array[String](["to see", "to look", "to watch", "to view", "to observe", "to examine", "to look over", "to assess", "to check", "to judge", "to look after", "to attend to", "to take care of", "to keep an eye on", "to experience", "to meet with (misfortune, success, etc.)", "to try ...", "to have a go at ...", "to give ... a try", "to see (that) ...", "to find (that) ..."])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_f4841"]
+script = ExtResource("5_umj5q")
+raw_text = "見"
+vocab = SubResource("Resource_p71wm")
+reading = "み"
+
+[sub_resource type="Resource" id="Resource_25d8w"]
+script = ExtResource("5_umj5q")
+raw_text = "て"
+reading = "て"
+
+[sub_resource type="Resource" id="Resource_unnb4"]
+script = ExtResource("5_umj5q")
+raw_text = "ごらん"
+reading = "ごらん"
+
+[sub_resource type="Resource" id="Resource_3p1wd"]
+script = ExtResource("5_umj5q")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_od808"]
+script = ExtResource("4_snoud")
+japanese = "真っ直ぐ前方を見てごらん。"
+native = "Look straight ahead."
+parsed = Array[ExtResource("5_umj5q")]([SubResource("Resource_ym7le"), SubResource("Resource_o8lim"), SubResource("Resource_dvcwk"), SubResource("Resource_f4841"), SubResource("Resource_25d8w"), SubResource("Resource_unnb4"), SubResource("Resource_3p1wd")])
+_difficulty = 406
+_used_kanji = Array[String](["真", "直", "前", "方", "見"])
+
+[sub_resource type="Resource" id="Resource_ibqa7"]
+script = ExtResource("8_ldt4d")
+japanese = "彼"
+readings = Array[String](["かれ"])
+meanings = Array[String](["he", "him", "boyfriend"])
+jlpt_level = 4
+_difficulty = 31
+
+[sub_resource type="Resource" id="Resource_ns4ou"]
+script = ExtResource("5_umj5q")
+raw_text = "彼"
+vocab = SubResource("Resource_ibqa7")
+reading = "かれ"
+
+[sub_resource type="Resource" id="Resource_lgkjx"]
+script = ExtResource("5_umj5q")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_0yffv"]
+script = ExtResource("5_umj5q")
+raw_text = "真実"
+vocab = SubResource("Resource_aq0c2")
+reading = "しんじつ"
+
+[sub_resource type="Resource" id="Resource_2abct"]
+script = ExtResource("5_umj5q")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_wuq5g"]
+script = ExtResource("8_ldt4d")
+japanese = "言う"
+readings = Array[String](["いう", "ゆう"])
+meanings = Array[String](["to say", "to utter", "to declare", "to name", "to call"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_wx82h"]
+script = ExtResource("5_umj5q")
+raw_text = "言っ"
+vocab = SubResource("Resource_wuq5g")
+reading = "いっ"
+
+[sub_resource type="Resource" id="Resource_pxdbt"]
+script = ExtResource("5_umj5q")
+raw_text = "て"
+reading = "て"
+
+[sub_resource type="Resource" id="Resource_4dfsy"]
+script = ExtResource("5_umj5q")
+raw_text = "い"
+reading = "い"
+
+[sub_resource type="Resource" id="Resource_k4m14"]
+script = ExtResource("5_umj5q")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_k7a0v"]
+script = ExtResource("5_umj5q")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_8hswo"]
+script = ExtResource("4_snoud")
+japanese = "彼は真実を言っていた。"
+native = "He spoke truth."
+parsed = Array[ExtResource("5_umj5q")]([SubResource("Resource_ns4ou"), SubResource("Resource_lgkjx"), SubResource("Resource_0yffv"), SubResource("Resource_2abct"), SubResource("Resource_wx82h"), SubResource("Resource_pxdbt"), SubResource("Resource_4dfsy"), SubResource("Resource_k4m14"), SubResource("Resource_k7a0v")])
+_difficulty = 500
+_used_kanji = Array[String](["彼", "真", "実", "言"])
+
+[sub_resource type="Resource" id="Resource_uccf3"]
+script = ExtResource("8_ldt4d")
+japanese = "彼女"
+readings = Array[String](["かのじょ"])
+meanings = Array[String](["she", "her", "girlfriend"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_ukwbf"]
+script = ExtResource("5_umj5q")
+raw_text = "彼女"
+vocab = SubResource("Resource_uccf3")
+reading = "かのじょ"
+
+[sub_resource type="Resource" id="Resource_7e6gr"]
+script = ExtResource("5_umj5q")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_gr5xa"]
+script = ExtResource("8_ldt4d")
+japanese = "顔"
+readings = Array[String](["かお"])
+meanings = Array[String](["face", "visage", "looks", "(facial) features", "look", "(facial) expression", "countenance", "honor (honour)", "dignity", "influence", "notoriety", "trust", "pull", "clout", "representative", "(the) face (of something)", "trademark", "example", "members", "attendees", "lineup", "participants", "everyone involved", "makeup", "cosmetics"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_vo8dj"]
+script = ExtResource("5_umj5q")
+raw_text = "顔"
+vocab = SubResource("Resource_gr5xa")
+reading = "かお"
+
+[sub_resource type="Resource" id="Resource_fihd8"]
+script = ExtResource("5_umj5q")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_h5rly"]
+script = ExtResource("8_ldt4d")
+japanese = "真っ赤"
+readings = Array[String](["まっか"])
+meanings = Array[String](["bright red", "deep red", "flushed (of face)", "downright (e.g. lie)", "complete", "utter"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_w7wbw"]
+script = ExtResource("5_umj5q")
+raw_text = "真っ赤"
+vocab = SubResource("Resource_h5rly")
+reading = "まっか"
+
+[sub_resource type="Resource" id="Resource_otbau"]
+script = ExtResource("5_umj5q")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_hnjcx"]
+script = ExtResource("5_umj5q")
+raw_text = "なっ"
+reading = "なっ"
+
+[sub_resource type="Resource" id="Resource_7wgys"]
+script = ExtResource("5_umj5q")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_wj448"]
+script = ExtResource("5_umj5q")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_yjblh"]
+script = ExtResource("4_snoud")
+japanese = "彼女の顔は真っ赤になった。"
+native = "Her face turned completely red."
+parsed = Array[ExtResource("5_umj5q")]([SubResource("Resource_ukwbf"), SubResource("Resource_7e6gr"), SubResource("Resource_vo8dj"), SubResource("Resource_fihd8"), SubResource("Resource_w7wbw"), SubResource("Resource_otbau"), SubResource("Resource_hnjcx"), SubResource("Resource_7wgys"), SubResource("Resource_wj448")])
+_difficulty = 572
+_used_kanji = Array[String](["彼", "女", "顔", "真", "赤"])
+
+[sub_resource type="Resource" id="Resource_5l78k"]
+script = ExtResource("6_umj5q")
+points = Array[Vector2]([Vector2(23.63, 23.92), Vector2(28.96, 24.18), Vector2(33.57, 23.86), Vector2(38.26, 23.4), Vector2(43.43, 22.92), Vector2(48.91, 22.43), Vector2(54.52, 21.96), Vector2(60.09, 21.52), Vector2(65.44, 21.14), Vector2(70.41, 20.82), Vector2(74.82, 20.59), Vector2(79.57, 20.5), Vector2(84.63, 21.12)])
+
+[sub_resource type="Resource" id="Resource_p3oxc"]
+script = ExtResource("6_umj5q")
+points = Array[Vector2]([Vector2(51.96, 9), Vector2(53.07, 14.67), Vector2(52.3, 20.84), Vector2(51.48, 26.88), Vector2(50.7, 32.5)])
+
+[sub_resource type="Resource" id="Resource_hhdyn"]
+script = ExtResource("6_umj5q")
+points = Array[Vector2]([Vector2(31.5, 34.33), Vector2(32.9, 38.49), Vector2(33.27, 42.68), Vector2(33.78, 48.48), Vector2(34.37, 55.07), Vector2(34.95, 61.61), Vector2(35.45, 67.25), Vector2(35.89, 72.49)])
+
+[sub_resource type="Resource" id="Resource_nkcyx"]
+script = ExtResource("6_umj5q")
+points = Array[Vector2]([Vector2(33.88, 35.7), Vector2(37.69, 35.32), Vector2(43.22, 34.71), Vector2(49.73, 33.98), Vector2(56.45, 33.23), Vector2(62.65, 32.54), Vector2(67.56, 32.01), Vector2(70.45, 31.75), Vector2(74.48, 33.61), Vector2(74.87, 38.29), Vector2(74.61, 42.43), Vector2(74.33, 47.01), Vector2(74.03, 52.13), Vector2(73.7, 57.88), Vector2(73.32, 64.37), Vector2(72.98, 70.16)])
+
+[sub_resource type="Resource" id="Resource_jx71v"]
+script = ExtResource("6_umj5q")
+points = Array[Vector2]([Vector2(34.82, 46.58), Vector2(40.82, 46.04), Vector2(46.99, 45.49), Vector2(53.13, 44.94), Vector2(59.06, 44.43), Vector2(64.59, 44), Vector2(69.55, 43.66), Vector2(73.74, 43.46)])
+
+[sub_resource type="Resource" id="Resource_uh4ky"]
+script = ExtResource("6_umj5q")
+points = Array[Vector2]([Vector2(35.62, 57.69), Vector2(40.42, 57.29), Vector2(45.63, 56.89), Vector2(51.1, 56.51), Vector2(56.71, 56.16), Vector2(62.34, 55.85), Vector2(67.83, 55.61), Vector2(73.07, 55.43)])
+
+[sub_resource type="Resource" id="Resource_7gl12"]
+script = ExtResource("6_umj5q")
+points = Array[Vector2]([Vector2(36.76, 69.46), Vector2(42.58, 68.95), Vector2(47.92, 68.48), Vector2(52.91, 68.03), Vector2(57.69, 67.63), Vector2(62.38, 67.25), Vector2(67.11, 66.92), Vector2(72.03, 66.64)])
+
+[sub_resource type="Resource" id="Resource_k67jr"]
+script = ExtResource("6_umj5q")
+points = Array[Vector2]([Vector2(16.25, 80.12), Vector2(21.58, 80.76), Vector2(26.01, 80.65), Vector2(29.9, 80.39), Vector2(34.29, 80.08), Vector2(39.1, 79.74), Vector2(44.25, 79.38), Vector2(49.69, 79), Vector2(55.33, 78.63), Vector2(61.12, 78.26), Vector2(66.98, 77.92), Vector2(72.83, 77.6), Vector2(78.62, 77.33), Vector2(84.27, 77.11), Vector2(90.27, 77.06), Vector2(94.87, 77.63)])
+
+[sub_resource type="Resource" id="Resource_xjkv0"]
+script = ExtResource("6_umj5q")
+points = Array[Vector2]([Vector2(42, 82.89), Vector2(40.43, 86.91), Vector2(37.52, 90.07), Vector2(33.63, 93.6), Vector2(28.79, 97.3), Vector2(23.06, 100.97)])
+
+[sub_resource type="Resource" id="Resource_w3etc"]
+script = ExtResource("6_umj5q")
+points = Array[Vector2]([Vector2(67.88, 83.75), Vector2(73.06, 86.67), Vector2(78.47, 90.8), Vector2(83.02, 95.21), Vector2(85.56, 98.97)])
+
+[sub_resource type="Resource" id="Resource_5mhe3"]
+script = ExtResource("5_k3exg")
+stroke_shapes = Array[ExtResource("6_umj5q")]([SubResource("Resource_5l78k"), SubResource("Resource_p3oxc"), SubResource("Resource_hhdyn"), SubResource("Resource_nkcyx"), SubResource("Resource_jx71v"), SubResource("Resource_uh4ky"), SubResource("Resource_7gl12"), SubResource("Resource_k67jr"), SubResource("Resource_xjkv0"), SubResource("Resource_w3etc")])
+
+[sub_resource type="Resource" id="Resource_3wifo"]
+script = ExtResource("8_ldt4d")
+japanese = "真理"
+readings = Array[String](["しんり"])
+meanings = Array[String](["truth"])
+jlpt_level = 3
+_difficulty = 62
+_used_kanji = Array[String](["真", "理"])
+
+[sub_resource type="Resource" id="Resource_kspid"]
+script = ExtResource("8_ldt4d")
+japanese = "真似"
+readings = Array[String](["まね"])
+meanings = Array[String](["imitating", "copying", "mimicry"])
+jlpt_level = 3
+_difficulty = 62
+_used_kanji = Array[String](["真", "似"])
+
+[sub_resource type="Resource" id="Resource_b7eg0"]
+script = ExtResource("8_ldt4d")
+japanese = "真っ赤"
+readings = Array[String](["まっか"])
+meanings = Array[String](["bright red", "deep red", "flushed of face"])
+jlpt_level = 3
+_difficulty = 63
+_used_kanji = Array[String](["真", "赤"])
+
+[sub_resource type="Resource" id="Resource_ny8hu"]
+script = ExtResource("8_ldt4d")
+japanese = "真っ直ぐ"
+readings = Array[String](["まっすぐ"])
+meanings = Array[String](["straight ahead", "direct", "upright", "straightforward", "honest", "frank"])
+jlpt_level = 3
+_difficulty = 64
+_used_kanji = Array[String](["真", "直"])
+
+[sub_resource type="Resource" id="Resource_22afn"]
+script = ExtResource("8_ldt4d")
+japanese = "真似る"
+readings = Array[String](["まねる"])
+meanings = Array[String](["to mimic", "to imitate"])
+jlpt_level = 2
+_difficulty = 93
+_used_kanji = Array[String](["真", "似"])
+
+[sub_resource type="Resource" id="Resource_y6vky"]
+script = ExtResource("8_ldt4d")
+japanese = "真っ白"
+readings = Array[String](["まっしろ"])
+meanings = Array[String](["pure white", "completely blank"])
+jlpt_level = 2
+_difficulty = 93
+_used_kanji = Array[String](["真", "白"])
+
+[sub_resource type="Resource" id="Resource_nib1t"]
+script = ExtResource("8_ldt4d")
+japanese = "真っ黒"
+readings = Array[String](["まっくろ"])
+meanings = Array[String](["pitch black"])
+jlpt_level = 2
+_difficulty = 93
+_used_kanji = Array[String](["真", "黒"])
+
+[sub_resource type="Resource" id="Resource_tybas"]
+script = ExtResource("8_ldt4d")
+japanese = "真っ青"
+readings = Array[String](["まっさお"])
+meanings = Array[String](["deep blue", "bright blue", "ghastly pale", "pallid"])
+jlpt_level = 2
+_difficulty = 93
+_used_kanji = Array[String](["真", "青"])
+
+[sub_resource type="Resource" id="Resource_6tysr"]
+script = ExtResource("8_ldt4d")
+japanese = "真っ暗"
+readings = Array[String](["まっくら"])
+meanings = Array[String](["pitch-dark", "pitch-black", "completely dark", "utterly hopeless"])
+jlpt_level = 2
+_difficulty = 93
+_used_kanji = Array[String](["真", "暗"])
+
+[sub_resource type="Resource" id="Resource_hsgla"]
+script = ExtResource("8_ldt4d")
+japanese = "真実"
+readings = Array[String](["しんじつ"])
+meanings = Array[String](["truth", "reality", "truly", "absolute truth"])
+jlpt_level = 1
+_difficulty = 122
+_used_kanji = Array[String](["真", "実"])
+
+[sub_resource type="Resource" id="Resource_0dus6"]
+script = ExtResource("8_ldt4d")
+japanese = "真ん中"
+readings = Array[String](["まんなか"])
+meanings = Array[String](["middle", "centre", "center", "midpoint"])
+jlpt_level = 1
+_difficulty = 123
+_used_kanji = Array[String](["真", "中"])
+
+[sub_resource type="Resource" id="Resource_6q47i"]
+script = ExtResource("8_ldt4d")
+japanese = "真っ二つ"
+readings = Array[String](["まっぷたつ"])
+meanings = Array[String](["in two equal parts"])
+jlpt_level = 1
+_difficulty = 124
+_used_kanji = Array[String](["真", "二"])
+
+[sub_resource type="Resource" id="Resource_fgbth"]
+script = ExtResource("8_ldt4d")
+japanese = "真"
+readings = Array[String](["しん"])
+meanings = Array[String](["truth", "reality", "genuineness", "seriousness", "truth"])
+_difficulty = 217
+_used_kanji = Array[String](["真"])
+
+[sub_resource type="Resource" id="Resource_derrx"]
+script = ExtResource("8_ldt4d")
+japanese = "真冬"
+readings = Array[String](["まふゆ"])
+meanings = Array[String](["midwinter", "dead of winter"])
+_difficulty = 647
+_used_kanji = Array[String](["真", "冬"])
+
+[sub_resource type="Resource" id="Resource_yge3j"]
+script = ExtResource("8_ldt4d")
+japanese = "真摯"
+readings = Array[String](["しんし"])
+meanings = Array[String](["sincere", "earnest", "serious"])
+_difficulty = 682
+_used_kanji = Array[String](["真", "摯"])
+
+[sub_resource type="Resource" id="Resource_1ubqw"]
+script = ExtResource("8_ldt4d")
+japanese = "真夜中"
+readings = Array[String](["まよなか"])
+meanings = Array[String](["dead of night", "midnight"])
+_difficulty = 761
+_used_kanji = Array[String](["真", "夜", "中"])
+
+[sub_resource type="Resource" id="Resource_sk0pf"]
+script = ExtResource("8_ldt4d")
+japanese = "真ん丸"
+readings = Array[String](["まんまる"])
+meanings = Array[String](["perfect circle"])
+_difficulty = 939
+_used_kanji = Array[String](["真", "丸"])
+
+[sub_resource type="Resource" id="Resource_ako3h"]
+script = ExtResource("8_ldt4d")
+japanese = "真の"
+readings = Array[String](["しんの"])
+meanings = Array[String](["true", "real", "genuine", "proper", "utter"])
+_difficulty = 1000
+_used_kanji = Array[String](["真"])
+
+[resource]
+script = ExtResource("1_o30dy")
+symbol = "真"
+card_name = "Reality"
+rarity = 2
+abilities = Array[ExtResource("1_oht2v")]([SubResource("Resource_snoud")])
+tags = Array[int]([13, 17])
+vocabulary = Array[ExtResource("8_ldt4d")]([SubResource("Resource_3wifo"), SubResource("Resource_kspid"), SubResource("Resource_b7eg0"), SubResource("Resource_ny8hu"), SubResource("Resource_22afn"), SubResource("Resource_y6vky"), SubResource("Resource_nib1t"), SubResource("Resource_tybas"), SubResource("Resource_6tysr"), SubResource("Resource_hsgla"), SubResource("Resource_0dus6"), SubResource("Resource_6q47i"), SubResource("Resource_fgbth"), SubResource("Resource_derrx"), SubResource("Resource_yge3j"), SubResource("Resource_1ubqw"), SubResource("Resource_sk0pf"), SubResource("Resource_ako3h")])
+example_sentences = Array[ExtResource("4_snoud")]([SubResource("Resource_10c7e"), SubResource("Resource_k3exg"), SubResource("Resource_umj5q"), SubResource("Resource_ldt4d"), SubResource("Resource_wc2n5"), SubResource("Resource_c3c0c"), SubResource("Resource_n6txa"), SubResource("Resource_ndy1b"), SubResource("Resource_od808"), SubResource("Resource_8hswo"), SubResource("Resource_yjblh")])
+kanji_shape = SubResource("Resource_5mhe3")
+init_aspects = 68
+term_categories = Array[ExtResource("3_1y5sw")]([ExtResource("4_0xau4")])

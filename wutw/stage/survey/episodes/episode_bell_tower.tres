@@ -1,0 +1,121 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://cker1rncy1d1b"]
+
+[ext_resource type="Resource" uid="uid://cr3ogjxpskttl" path="res://art/pieces/piece_kouhou_temple_bell.tres" id="1_cfqu8"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_or5qf"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_cfqu8"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_88jhc"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="4_4ydiw"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="5_cmf2a"]
+[ext_resource type="Script" uid="uid://cbnw4a13y5x8c" path="res://events/system/outcomes/random/event_outcome_random.gd" id="6_xedcr"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_3xulp"]
+[ext_resource type="Resource" uid="uid://bvgcg02q1xghq" path="res://relics/uncommon/wisdom_bell/relic_wisdom_bell.tres" id="8_e8c38"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="9_blm3d"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="10_clyt4"]
+[ext_resource type="Script" uid="uid://yxgaymbbt8tk" path="res://events/system/outcomes/override_next_step/event_outcome_override_next_step.gd" id="11_44i3v"]
+[ext_resource type="Resource" uid="uid://dhal843mubr37" path="res://cards/tier6/card_wound.tres" id="12_82lhs"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="13_vjuds"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="14_f8h3x"]
+[ext_resource type="Script" uid="uid://gu7gcielbwdr" path="res://events/system/outcomes/choose_card/event_outcome_choose_card.gd" id="15_ip0yj"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="16_6mdii"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="17_ljxc7"]
+[ext_resource type="Resource" uid="uid://vx6x7hoid2pq" path="res://cards/tier2/card_bell.tres" id="18_e8vs4"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="19_pl6sh"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="20_2rn40"]
+
+[sub_resource type="Resource" id="Resource_ndshu"]
+script = ExtResource("1_or5qf")
+_texture_path = "uid://w8j7m0x15w18"
+_is_horizontal = true
+
+[sub_resource type="Resource" id="Resource_oia5e"]
+script = ExtResource("9_blm3d")
+relic = ExtResource("8_e8c38")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_nl734"]
+script = ExtResource("11_44i3v")
+result_text = "The scouts cut through the corroded ring attaching the bell to the roof of the tower, but it turns out to be heavier than they had expected.
+
+It falls on their feet and rolls down the stairs before disappearing into the forest.
+
+They take it as a sign to leave it alone."
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_tlt0l"]
+script = ExtResource("13_vjuds")
+card_type = ExtResource("12_82lhs")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_wtjw5"]
+script = ExtResource("10_clyt4")
+suboutcomes = Array[ExtResource("7_3xulp")]([SubResource("Resource_nl734"), SubResource("Resource_tlt0l")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_2furn"]
+script = ExtResource("6_xedcr")
+suboutcomes = Dictionary[ExtResource("7_3xulp"), float]({
+SubResource("Resource_oia5e"): 0.5,
+SubResource("Resource_wtjw5"): 0.5
+})
+description = "<term:relic.wisdom_bell> or <term:card.wound>"
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_0tstc"]
+script = ExtResource("2_cfqu8")
+label = "Detach the bell."
+aspects = Array[ExtResource("3_88jhc")]([ExtResource("4_4ydiw"), ExtResource("5_cmf2a")])
+aspects_per_season = Array[ExtResource("3_88jhc")]([null])
+outcome = SubResource("Resource_2furn")
+outcome_text = "The scouts cut through the corroded ring attaching the bell to the roof of the tower and safely detach it.
+
+They bring it with them, intending to leave it at a museum."
+
+[sub_resource type="Resource" id="Resource_p84bk"]
+script = ExtResource("15_ip0yj")
+card_tag = 3
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_4453n"]
+script = ExtResource("2_cfqu8")
+label = "Ring the bell."
+aspects = Array[ExtResource("3_88jhc")]([ExtResource("14_f8h3x")])
+aspects_per_season = Array[ExtResource("3_88jhc")]([null])
+outcome = SubResource("Resource_p84bk")
+outcome_text = "The scouts hit the bell with a staff and watch as the forest explodes with birds.
+
+Even after the bell falls silent, rustling can be heard from every direction as animals hurry to flee the frightening sound.
+"
+
+[sub_resource type="Resource" id="Resource_x3nos"]
+script = ExtResource("13_vjuds")
+card_type = ExtResource("18_e8vs4")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_6m2el"]
+script = ExtResource("2_cfqu8")
+label = "Study the bell."
+aspects = Array[ExtResource("3_88jhc")]([ExtResource("17_ljxc7")])
+aspects_per_season = Array[ExtResource("3_88jhc")]([null])
+outcome = SubResource("Resource_x3nos")
+outcome_text = "One of the scouts sketches the bell and copies the designs decorating its surface.
+  
+She also marks the tower's location on the map before the team departs.
+"
+
+[sub_resource type="Resource" id="Resource_bji3o"]
+script = ExtResource("2_cfqu8")
+label = "Leave the tower alone."
+aspects = Array[ExtResource("3_88jhc")]([null])
+outcome_text = "The scouts move on, not wanting to disturb the ancient tower."
+
+[resource]
+script = ExtResource("19_pl6sh")
+episode_id = "bell_tower"
+title = "The Bell Tower"
+biome_types = Array[int]([9])
+text = "Deep in the forest the survey team finds an ancient bell tower, its bronze bell still hanging at the top.
+
+On closer inspection, the scouts realize that the bell is barely attached, and may soon fall."
+background_image = SubResource("Resource_ndshu")
+background_credit = ExtResource("1_cfqu8")
+choices = Array[ExtResource("2_cfqu8")]([SubResource("Resource_0tstc"), SubResource("Resource_4453n"), SubResource("Resource_6m2el"), SubResource("Resource_bji3o")])

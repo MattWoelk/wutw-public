@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Skill" format=3 uid="uid://bk7efsgnfgn6n"]
+
+[ext_resource type="Texture2D" uid="uid://d2qglswly4vrk" path="res://skills/settlement/skill_settlement_ignore_unique.png" id="1_i1m2j"]
+[ext_resource type="Resource" uid="uid://6tda23vu6k5n" path="res://skills/settlement/skill_settlement_create_spot_large_building.tres" id="2_pqjss"]
+[ext_resource type="Script" uid="uid://bbk0qffsme200" path="res://skills/skill.gd" id="3_rpcqw"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="4_38ne5"]
+[ext_resource type="Resource" uid="uid://b7x5e3q02vwqw" path="res://glossary/categories/termcategory_skill.tres" id="5_kd7ha"]
+
+[resource]
+script = ExtResource("3_rpcqw")
+skill_id = "settlement_ignore_unique"
+skill_name = "Everything is Unique"
+description = "Allows you to activate multiple unique <term_lower:spot_upgrade>s within each <term_lower:run>."
+icon = ExtResource("1_i1m2j")
+unlock_cost = 900
+var_type = 65
+var_amount = 1
+requirement = ExtResource("2_pqjss")
+min_main_quest_progress = 500
+term_categories = Array[ExtResource("4_38ne5")]([ExtResource("5_kd7ha")])
+metadata/_custom_type_script = "uid://bbk0qffsme200"

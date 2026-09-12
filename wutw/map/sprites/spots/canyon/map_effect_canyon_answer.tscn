@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjmk15ldusegd"]
+
+[ext_resource type="PackedScene" uid="uid://d0oh6sdpa5m65" path="res://map/sprites/spots/canyon/map_effect_canyon_question.tscn" id="1_ca1wa"]
+[ext_resource type="Texture2D" uid="uid://nbvkhxcn5hyl" path="res://map/sprites/spots/canyon/canyon_answers.png" id="2_dqomj"]
+[ext_resource type="Shader" uid="uid://cnmomsn2f1oel" path="res://map/sprites/spots/canyon/canyon_text.gdshader" id="2_vhqko"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dqomj"]
+shader = ExtResource("2_vhqko")
+shader_parameter/frame = 7
+shader_parameter/frames_x = 3
+shader_parameter/frames_y = 4
+shader_parameter/fadein_range = Vector2(0.15, -0.15)
+shader_parameter/fadeout_range = Vector2(0.15, -0.15)
+shader_parameter/t = 0.999999977648
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vhqko"]
+shader = ExtResource("2_vhqko")
+shader_parameter/frame = 8
+shader_parameter/frames_x = 3
+shader_parameter/frames_y = 4
+shader_parameter/fadein_range = Vector2(0.15, -0.15)
+shader_parameter/fadeout_range = Vector2(0.15, -0.15)
+shader_parameter/t = 0.999999977648
+
+[node name="MapEffectCanyonAnswer" instance=ExtResource("1_ca1wa")]
+material = SubResource("ShaderMaterial_dqomj")
+max_initial_delay = 3.5
+fadein_duration = 1.5
+hold_duration = 3.0
+vframes = 4
+
+[node name="TextureRect" parent="." index="0"]
+material = SubResource("ShaderMaterial_vhqko")
+texture = ExtResource("2_dqomj")

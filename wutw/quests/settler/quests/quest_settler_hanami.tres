@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="Quest_Settler" format=3 uid="uid://dt1ssc4t4221p"]
+
+[ext_resource type="Script" uid="uid://cjloydxgrv8oa" path="res://quests/settler/settler_quest_challenge.gd" id="1_2108h"]
+[ext_resource type="Script" uid="uid://4wq52c05i2oa" path="res://quests/settler/challenges/settler_quest_challenge_run_var.gd" id="2_tgy5h"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="3_vuar4"]
+[ext_resource type="Resource" uid="uid://b4qqtx3lej7me" path="res://relics/common/hanami_mat/relic_hanami_mat.tres" id="4_huap8"]
+[ext_resource type="Script" uid="uid://0k12wwnmq50h" path="res://quests/settler/rewards/settler_quest_reward_add_relic.gd" id="5_ay2j2"]
+[ext_resource type="Script" uid="uid://cd4swbq3t72je" path="res://quests/settler/settler_quest_reward.gd" id="5_lm28p"]
+[ext_resource type="Script" uid="uid://1na7ymvvvbby" path="res://quests/settler/quest_settler.gd" id="7_yij2r"]
+[ext_resource type="Script" uid="uid://bxua8gxfjp2wy" path="res://quests/settler/settler_quest_goal.gd" id="8_0uwp3"]
+[ext_resource type="Script" uid="uid://ku752yv8p8ur" path="res://quests/settler/goals/settler_quest_goal_settlement_upgrades.gd" id="8_yij2r"]
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="9_0uwp3"]
+[ext_resource type="Resource" uid="uid://hohy7ifwvu0x" path="res://stage/spots/river/upgrade_river_2_sakura_riverbank.tres" id="10_nor5h"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="11_b43hx"]
+[ext_resource type="Script" uid="uid://b47segbdx24bm" path="res://quests/settler/goals/settler_quest_goal_run_bonus.gd" id="12_m7ak5"]
+
+[sub_resource type="Resource" id="Resource_lm28p"]
+script = ExtResource("2_tgy5h")
+var_type = 44
+delta = 10
+description = "Event <term_lower:bonus> requirements are increased by 10%."
+metadata/_custom_type_script = "uid://4wq52c05i2oa"
+
+[sub_resource type="Resource" id="Resource_ab6ny"]
+script = ExtResource("5_ay2j2")
+relic = ExtResource("4_huap8")
+metadata/_custom_type_script = "uid://0k12wwnmq50h"
+
+[sub_resource type="Resource" id="Resource_alfqs"]
+script = ExtResource("8_yij2r")
+upgrades = Array[ExtResource("9_0uwp3")]([ExtResource("10_nor5h")])
+metadata/_custom_type_script = "uid://ku752yv8p8ur"
+
+[sub_resource type="Resource" id="Resource_cjoy2"]
+script = ExtResource("12_m7ak5")
+bonus_type = ExtResource("11_b43hx")
+metadata/_custom_type_script = "uid://b47segbdx24bm"
+
+[resource]
+script = ExtResource("7_yij2r")
+intro_text = "I come from a desert shard, and I've always wanted to live by a river. I want to spend my days listening to the rustling of the stream and having picnics beneath the sakura trees."
+challenges = Array[ExtResource("1_2108h")]([SubResource("Resource_lm28p")])
+settler_goals = Array[ExtResource("8_0uwp3")]([SubResource("Resource_alfqs"), SubResource("Resource_cjoy2")])
+rewards = Array[ExtResource("5_lm28p")]([SubResource("Resource_ab6ny")])
+restrict_to_ages = Array[int]([1, 2])
+quest_id = "settler_hanami"
+category = 2
+name = "A Sakura Dream"
+metadata/_custom_type_script = "uid://1na7ymvvvbby"

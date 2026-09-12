@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://dnhhvetp8rmye"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_s484s"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_3mbfa"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="3_s484s"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="4_o2ywr"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="5_xid1m"]
+[ext_resource type="Resource" uid="uid://w8n0bwomyvod" path="res://stage/spots/building_small/spot_building_small.tres" id="6_xid1m"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="7_o2ywr"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://klancofkidol" path="res://map/sprites/spots/small_building/mst_small_building_bakery.tres" id="8_6cc6p"]
+[ext_resource type="MapSpriteType_Building" uid="uid://ce7bjb6dy0x5q" path="res://map/sprites/spots/small_building/mst_small_building_granary.tres" id="9_k78lo"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="10_gi85e"]
+
+[sub_resource type="Resource" id="Resource_6v284"]
+script = ExtResource("10_gi85e")
+old_sprite_type = ExtResource("9_k78lo")
+new_sprite_type = ExtResource("8_6cc6p")
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_s484s")
+spot_upgrade_id = "building_small_bakery"
+name = "Steamed Bun Shop"
+description = "Flour rises in clouds as industrious hands shape and fill intricate buns."
+required_aspects = Array[ExtResource("4_o2ywr")]([ExtResource("5_xid1m")])
+granted_bonuses = Dictionary[ExtResource("2_3mbfa"), int]({
+ExtResource("3_s484s"): 10
+})
+spot = ExtResource("6_xid1m")
+visuals = Array[ExtResource("7_o2ywr")]([SubResource("Resource_6v284")])

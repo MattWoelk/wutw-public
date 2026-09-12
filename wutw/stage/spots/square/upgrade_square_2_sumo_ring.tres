@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://c4dopletfq7k2"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_t1nsh"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_qxxia"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_mw8k8"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="3_q7aeb"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="5_8jgda"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="6_igkdm"]
+[ext_resource type="Resource" uid="uid://ctiwrqhub05ib" path="res://stage/spots/square/spot_square.tres" id="7_g7l80"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="8_byku0"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://bu0jgxdmw132w" path="res://map/sprites/spots/square/mst_square_sumo_ring.tres" id="9_gyl8m"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://cip1q4rdlnkyd" path="res://map/sprites/spots/square/mst_square_festival_ground.tres" id="10_toy0v"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="11_77eoh"]
+
+[sub_resource type="Resource" id="Resource_yaxj2"]
+script = ExtResource("11_77eoh")
+old_sprite_type = ExtResource("10_toy0v")
+new_sprite_type = ExtResource("9_gyl8m")
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_t1nsh")
+spot_upgrade_id = "square_sumo"
+name = "Sumo Ring"
+description = "A contest of strength and balance, fueled by many a hearty stew."
+required_aspects = Array[ExtResource("3_mw8k8")]([ExtResource("5_8jgda"), ExtResource("6_igkdm")])
+granted_bonuses = Dictionary[ExtResource("2_qxxia"), int]({
+ExtResource("3_q7aeb"): 20
+})
+spot = ExtResource("7_g7l80")
+visuals = Array[ExtResource("8_byku0")]([SubResource("Resource_yaxj2")])

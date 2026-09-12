@@ -1,0 +1,1878 @@
+[gd_scene format=3 uid="uid://c5bcaa4j5168v"]
+
+[ext_resource type="Script" uid="uid://dq5ujpdeclo5d" path="res://settings/settings_dialog.gd" id="1_prbw2"]
+[ext_resource type="PackedScene" uid="uid://b5k16hpo8080v" path="res://theme/faded_background/faded_background.tscn" id="2_1t1vw"]
+[ext_resource type="PackedScene" uid="uid://b6ob53b0vla40" path="res://theme/scroll_panel/scroll_panel_big.tscn" id="3_kouge"]
+[ext_resource type="Shader" uid="uid://bbe7ginxustev" path="res://theme/scroll_panel/scroll_panel_dowel.gdshader" id="4_04bl0"]
+[ext_resource type="Texture2D" uid="uid://b0cvn7ev1bwut" path="res://theme/scroll_panel/dowel_wood.png" id="5_42yaw"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="6_xh06r"]
+[ext_resource type="Shader" uid="uid://ygmrqrvg5hpm" path="res://theme/button/ukiyoe_button.gdshader" id="9_yt2nj"]
+[ext_resource type="Texture2D" uid="uid://ctgl61r3xxsqv" path="res://theme/button/button_fill.png" id="10_17upk"]
+[ext_resource type="Texture2D" uid="uid://blje81yu8734p" path="res://theme/button/button_shape.png" id="11_q0tyw"]
+[ext_resource type="Texture2D" uid="uid://doe4603a6ngco" path="res://theme/button/button_outline.png" id="12_p7niq"]
+[ext_resource type="Texture2D" uid="uid://cwubixgc8n0yr" path="res://theme/button/button_swish_left.png" id="13_sccfd"]
+[ext_resource type="Texture2D" uid="uid://n6l17h4ysayj" path="res://theme/button/button_swish_right.png" id="14_pns1l"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="15_f0s7r"]
+[ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="16_0e6m1"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="17_px7v0"]
+[ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="18_afi5r"]
+[ext_resource type="Theme" uid="uid://bneu0powe6n80" path="res://theme/theme_ukiyoe.tres" id="19_jmlkd"]
+[ext_resource type="Script" uid="uid://dbh5bpr5jdgyr" path="res://theme/slider/ukiyoe_slider.gd" id="20_prbw2"]
+[ext_resource type="Texture2D" uid="uid://go64cbx1ohwd" path="res://theme/button/white_1x1px.png" id="21_xh06r"]
+[ext_resource type="Script" uid="uid://dm63mtrlfj005" path="res://theme/faded_scroll_container/faded_scroll_container.gd" id="22_1t1vw"]
+[ext_resource type="PackedScene" uid="uid://c7axy1ns0jhvy" path="res://settings/control_binding_setting.tscn" id="22_6tqbi"]
+[ext_resource type="Texture2D" uid="uid://dhdjuasb6b8xj" path="res://settings/aspect_icons_normal.png" id="22_prbw2"]
+[ext_resource type="Texture2D" uid="uid://b8k8pqqukkr3u" path="res://settings/aspect_icons_accessible.png" id="23_1t1vw"]
+[ext_resource type="Material" uid="uid://dm0coidukcc6" path="res://theme/button/ukiyoe_button_material.tres" id="24_kouge"]
+[ext_resource type="PackedScene" uid="uid://cvtwogaio38ov" path="res://theme/dropdown/dropdown.tscn" id="25_04bl0"]
+[ext_resource type="Texture2D" uid="uid://de8aorv52yo4t" path="res://settings/aspect_icons_super_accessible.png" id="25_42yaw"]
+[ext_resource type="Script" uid="uid://bmw3vmo4pm0wc" path="res://theme/dropdown/dropdown_item.gd" id="26_42yaw"]
+
+[sub_resource type="Gradient" id="Gradient_j1t3h"]
+offsets = PackedFloat32Array(0, 0.196721, 0.460041, 0.525615, 0.603484, 0.732582, 1)
+colors = PackedColorArray(0.59, 0.43424, 0.3068, 0.796078, 0.48, 0.35328, 0.2496, 0.294118, 0.48, 0.35328, 0.2496, 0.0116377, 0.48, 0.35328, 0.2496, 0, 0.48, 0.35328, 0.2496, 0.0431956, 0.48, 0.35328, 0.2496, 0.34902, 0.4, 0.2944, 0.208, 0.929412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g5dkl"]
+gradient = SubResource("Gradient_j1t3h")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_0qwwn"]
+colors = PackedColorArray(0.331639, 0.33164, 0.331639, 1, 0.961814, 0.961814, 0.961814, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hojyv"]
+frequency = 0.0035
+domain_warp_amplitude = 100.0
+domain_warp_frequency = -0.01
+domain_warp_fractal_lacunarity = 8.69
+domain_warp_fractal_gain = 0.19
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jijvn"]
+width = 2048
+noise = SubResource("FastNoiseLite_hojyv")
+color_ramp = SubResource("Gradient_0qwwn")
+seamless = true
+seamless_blend_skirt = 0.27
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pynmp"]
+shader = ExtResource("4_04bl0")
+shader_parameter/size = Vector2(572, 49)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("5_42yaw")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[sub_resource type="Gradient" id="Gradient_a8706"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yt2nj"]
+gradient = SubResource("Gradient_a8706")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_42yaw"]
+shader = ExtResource("9_yt2nj")
+shader_parameter/mask_tex = ExtResource("11_q0tyw")
+shader_parameter/background = ExtResource("10_17upk")
+shader_parameter/gradient = SubResource("GradientTexture2D_yt2nj")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_p7niq")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_pns1l")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_sccfd")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_xh06r"]
+
+[sub_resource type="Gradient" id="Gradient_yapwg"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wqpyw"]
+gradient = SubResource("Gradient_yapwg")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f66kp"]
+shader = ExtResource("9_yt2nj")
+shader_parameter/mask_tex = ExtResource("11_q0tyw")
+shader_parameter/background = ExtResource("10_17upk")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_p7niq")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_pns1l")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_sccfd")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cjiuu"]
+shader = ExtResource("9_yt2nj")
+shader_parameter/mask_tex = ExtResource("11_q0tyw")
+shader_parameter/background = ExtResource("10_17upk")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_p7niq")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_pns1l")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_sccfd")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="Gradient" id="Gradient_xsq2j"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g4pi8"]
+gradient = SubResource("Gradient_xsq2j")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yt2nj"]
+shader = ExtResource("9_yt2nj")
+shader_parameter/mask_tex = ExtResource("11_q0tyw")
+shader_parameter/background = ExtResource("10_17upk")
+shader_parameter/gradient = SubResource("GradientTexture2D_g4pi8")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_p7niq")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_pns1l")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_sccfd")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6tqbi"]
+content_margin_left = 20.0
+content_margin_top = 4.0
+content_margin_right = 20.0
+content_margin_bottom = 4.0
+texture = ExtResource("21_xh06r")
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_17upk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q0tyw"]
+shader = ExtResource("9_yt2nj")
+shader_parameter/mask_tex = ExtResource("11_q0tyw")
+shader_parameter/background = ExtResource("10_17upk")
+shader_parameter/gradient = SubResource("GradientTexture2D_g4pi8")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_p7niq")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_pns1l")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_sccfd")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pns1l"]
+shader = ExtResource("9_yt2nj")
+shader_parameter/mask_tex = ExtResource("11_q0tyw")
+shader_parameter/background = ExtResource("10_17upk")
+shader_parameter/gradient = SubResource("GradientTexture2D_g4pi8")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_p7niq")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_pns1l")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_sccfd")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p7niq"]
+shader = ExtResource("9_yt2nj")
+shader_parameter/mask_tex = ExtResource("11_q0tyw")
+shader_parameter/background = ExtResource("10_17upk")
+shader_parameter/gradient = SubResource("GradientTexture2D_g4pi8")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_p7niq")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_pns1l")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_sccfd")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="Resource" id="Resource_bx70w"]
+script = ExtResource("26_42yaw")
+text = "30"
+value = 29
+metadata/_custom_type_script = "uid://bmw3vmo4pm0wc"
+
+[sub_resource type="Resource" id="Resource_cnyvt"]
+script = ExtResource("26_42yaw")
+text = "60"
+value = 59
+metadata/_custom_type_script = "uid://bmw3vmo4pm0wc"
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("26_42yaw")
+text = "90"
+value = 89
+metadata/_custom_type_script = "uid://bmw3vmo4pm0wc"
+
+[sub_resource type="Resource" id="Resource_42yaw"]
+script = ExtResource("26_42yaw")
+text = "120"
+value = 119
+metadata/_custom_type_script = "uid://bmw3vmo4pm0wc"
+
+[sub_resource type="Resource" id="Resource_0eiya"]
+script = ExtResource("26_42yaw")
+text = "144"
+value = 143
+metadata/_custom_type_script = "uid://bmw3vmo4pm0wc"
+
+[sub_resource type="Resource" id="Resource_d174p"]
+script = ExtResource("26_42yaw")
+text = "240"
+value = 239
+metadata/_custom_type_script = "uid://bmw3vmo4pm0wc"
+
+[sub_resource type="Resource" id="Resource_a6ufw"]
+script = ExtResource("26_42yaw")
+text = "None"
+value = 0
+metadata/_custom_type_script = "uid://bmw3vmo4pm0wc"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sccfd"]
+shader = ExtResource("9_yt2nj")
+shader_parameter/mask_tex = ExtResource("11_q0tyw")
+shader_parameter/background = ExtResource("10_17upk")
+shader_parameter/gradient = SubResource("GradientTexture2D_g4pi8")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_p7niq")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_pns1l")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_sccfd")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="Gradient" id="Gradient_j5apj"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2pn66"]
+gradient = SubResource("Gradient_j5apj")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f0s7r"]
+shader = ExtResource("9_yt2nj")
+shader_parameter/mask_tex = ExtResource("11_q0tyw")
+shader_parameter/background = ExtResource("10_17upk")
+shader_parameter/gradient = SubResource("GradientTexture2D_2pn66")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_p7niq")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_pns1l")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_sccfd")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_17upk"]
+shader = ExtResource("4_04bl0")
+shader_parameter/size = Vector2(570, 49)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("5_42yaw")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[node name="SettingsDialog" type="Node2D" unique_id=741553590]
+script = ExtResource("1_prbw2")
+
+[node name="BG" parent="." unique_id=49980734 instance=ExtResource("2_1t1vw")]
+unique_name_in_owner = true
+
+[node name="Control" type="CenterContainer" parent="." unique_id=1505477322]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="ScrollPanel" parent="Control" unique_id=1323522886 instance=ExtResource("3_kouge")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(672, 0)
+layout_mode = 2
+default_roll_duration = 0.4
+default_unroll_duration = 0.8
+
+[node name="TopDowelWood" parent="Control/ScrollPanel/TopDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_pynmp")
+
+[node name="Scroller" parent="Control/ScrollPanel" index="1"]
+custom_minimum_size = Vector2(0, 630)
+
+[node name="ScrollMargin" parent="Control/ScrollPanel/Scroller" index="0"]
+offset_bottom = 921.969
+
+[node name="ContentPanel" parent="Control/ScrollPanel/Scroller/ScrollMargin" index="0"]
+material = ExtResource("6_xh06r")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer" index="0" unique_id=163311823]
+custom_minimum_size = Vector2(470, 580)
+layout_mode = 2
+theme_override_constants/separation = -5
+
+[node name="Label" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=910121514]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=747453383]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="TabBar" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=1748645368]
+unique_name_in_owner = true
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 3)
+offset_transform_visual_only = false
+theme_override_constants/separation = -5
+
+[node name="TabButton_Interface" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabBar" unique_id=176516817]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_42yaw")
+instance_shader_parameters/background_offset = Vector2(0.54081863, 0.077413306)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("15_f0s7r")
+theme_override_styles/pressed = ExtResource("15_f0s7r")
+theme_override_styles/hover = ExtResource("15_f0s7r")
+theme_override_styles/hover_pressed = ExtResource("15_f0s7r")
+theme_override_styles/disabled = ExtResource("15_f0s7r")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_xh06r")
+text = "Game"
+script = ExtResource("16_0e6m1")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="TabButton_Video" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabBar" unique_id=671451698]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_f66kp")
+instance_shader_parameters/background_offset = Vector2(0.20279284, 0.6648142)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("15_f0s7r")
+theme_override_styles/pressed = ExtResource("15_f0s7r")
+theme_override_styles/hover = ExtResource("15_f0s7r")
+theme_override_styles/hover_pressed = ExtResource("15_f0s7r")
+theme_override_styles/disabled = ExtResource("15_f0s7r")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_xh06r")
+text = "Video
+"
+script = ExtResource("16_0e6m1")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="TabButton_Audio" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabBar" unique_id=897331286]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_cjiuu")
+instance_shader_parameters/background_offset = Vector2(0.6445563, 0.5651028)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("15_f0s7r")
+theme_override_styles/pressed = ExtResource("15_f0s7r")
+theme_override_styles/hover = ExtResource("15_f0s7r")
+theme_override_styles/hover_pressed = ExtResource("15_f0s7r")
+theme_override_styles/disabled = ExtResource("15_f0s7r")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_xh06r")
+text = "Audio"
+script = ExtResource("16_0e6m1")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="TabButton_Controls" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabBar" unique_id=1502740885]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_cjiuu")
+instance_shader_parameters/background_offset = Vector2(0.9883478, 0.2573814)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("15_f0s7r")
+theme_override_styles/pressed = ExtResource("15_f0s7r")
+theme_override_styles/hover = ExtResource("15_f0s7r")
+theme_override_styles/hover_pressed = ExtResource("15_f0s7r")
+theme_override_styles/disabled = ExtResource("15_f0s7r")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_xh06r")
+text = "Controls"
+script = ExtResource("16_0e6m1")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="TabButton_Japanese" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabBar" unique_id=1847736418]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_cjiuu")
+instance_shader_parameters/background_offset = Vector2(0.8961194, 0.43558106)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("15_f0s7r")
+theme_override_styles/pressed = ExtResource("15_f0s7r")
+theme_override_styles/hover = ExtResource("15_f0s7r")
+theme_override_styles/hover_pressed = ExtResource("15_f0s7r")
+theme_override_styles/disabled = ExtResource("15_f0s7r")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_xh06r")
+text = "Japanese"
+script = ExtResource("16_0e6m1")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="TabContent" type="PanelContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=1247982376]
+material = ExtResource("6_xh06r")
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("17_px7v0")
+script = ExtResource("18_afi5r")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent" unique_id=943769831]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox_Interface" type="VBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer" unique_id=1796806943]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="FadedScrollContainer" type="ScrollContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface" unique_id=11421774]
+clip_children = 1
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("22_1t1vw")
+metadata/_custom_type_script = "uid://dm63mtrlfj005"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer" unique_id=1874459199]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBox_AnimSpeed" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer" unique_id=2005585347]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_AnimSpeed" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_AnimSpeed" unique_id=1440093703]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Animation Speed"
+horizontal_alignment = 1
+
+[node name="Label_AnimSpeedValue" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_AnimSpeed" unique_id=1502098649]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("19_jmlkd")
+text = "1x"
+horizontal_alignment = 2
+
+[node name="Slider_AnimSpeed" type="HSlider" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_AnimSpeed" unique_id=1596360274]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+min_value = 1.0
+max_value = 7.0
+value = 3.0
+script = ExtResource("20_prbw2")
+metadata/_custom_type_script = "uid://dbh5bpr5jdgyr"
+
+[node name="HBox_TooltipDelay" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer" unique_id=496269455]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_TooltipDelay" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_TooltipDelay" unique_id=226192614]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Tooltip Delay"
+horizontal_alignment = 1
+
+[node name="Label_TooltipDelayValue" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_TooltipDelay" unique_id=564171366]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("19_jmlkd")
+text = "1x"
+horizontal_alignment = 2
+
+[node name="Slider_TooltipDelay" type="HSlider" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_TooltipDelay" unique_id=57443099]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+min_value = 1.0
+max_value = 5.0
+value = 3.0
+script = ExtResource("20_prbw2")
+metadata/_custom_type_script = "uid://dbh5bpr5jdgyr"
+
+[node name="HBox_TooltipFontScale" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer" unique_id=491047697]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_TooltipFontScale" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_TooltipFontScale" unique_id=1492166732]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Tooltip Font Size"
+horizontal_alignment = 1
+
+[node name="Label_TooltipFontScaleValue" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_TooltipFontScale" unique_id=1081464772]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("19_jmlkd")
+text = "1.0x"
+horizontal_alignment = 2
+
+[node name="Slider_TooltipFontScale" type="HSlider" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_TooltipFontScale" unique_id=563443218]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+min_value = 1.0
+max_value = 1.5
+step = 0.1
+value = 1.0
+script = ExtResource("20_prbw2")
+metadata/_custom_type_script = "uid://dbh5bpr5jdgyr"
+
+[node name="HBox_ParagraphFontScale" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer" unique_id=1839680453]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_ParagraphFontScale" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_ParagraphFontScale" unique_id=1803312744]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Paragraph Font Size"
+horizontal_alignment = 1
+
+[node name="Label_ParagraphFontScaleValue" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_ParagraphFontScale" unique_id=1364073584]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("19_jmlkd")
+text = "1.0x"
+horizontal_alignment = 2
+
+[node name="Slider_ParagraphFontScale" type="HSlider" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_ParagraphFontScale" unique_id=1926848419]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+min_value = 1.0
+max_value = 1.5
+step = 0.1
+value = 1.0
+script = ExtResource("20_prbw2")
+metadata/_custom_type_script = "uid://dbh5bpr5jdgyr"
+
+[node name="HBox_ZoomOnHover" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer" unique_id=523421952]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_ZoomOnHover" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_ZoomOnHover" unique_id=1639168343]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Zoom UI on Hover"
+horizontal_alignment = 1
+
+[node name="Dropdown_ZoomOnHover" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_ZoomOnHover" unique_id=2079276916 instance=ExtResource("25_04bl0")]
+unique_name_in_owner = true
+instance_shader_parameters/background_offset = Vector2(0.581838, 0.8530631)
+custom_minimum_size = Vector2(165, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+initial_items = Array[ExtResource("26_42yaw")]([])
+
+[node name="Spacer3" type="Control" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer" unique_id=345597888]
+visible = false
+custom_minimum_size = Vector2(0, 7.775)
+layout_mode = 2
+
+[node name="HBox_AccessibleIcons" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer" unique_id=473619087]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_AccessibleIcons" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_AccessibleIcons" unique_id=868852300]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("19_jmlkd")
+text = "Essence Icons"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_AccessibleIcons" unique_id=849126488]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="Button_Icons_Normal" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_AccessibleIcons/VBoxContainer" unique_id=534805732]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_yt2nj")
+instance_shader_parameters/background_offset = Vector2(0.5148642, 0.20438801)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6tqbi")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_17upk")
+text = "Classic      "
+icon = ExtResource("22_prbw2")
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+script = ExtResource("16_0e6m1")
+stylebox_override = SubResource("StyleBoxTexture_6tqbi")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="Button_Icons_Accessible" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_AccessibleIcons/VBoxContainer" unique_id=55382153]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_q0tyw")
+instance_shader_parameters/background_offset = Vector2(0.6780586, 0.77713567)
+instance_shader_parameters/state = 2.0
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/h_separation = 10
+theme_override_styles/normal = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6tqbi")
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_17upk")
+text = "Standard  "
+icon = ExtResource("23_1t1vw")
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+script = ExtResource("16_0e6m1")
+stylebox_override = SubResource("StyleBoxTexture_6tqbi")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="Button_Icons_SuperAccessible" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_AccessibleIcons/VBoxContainer" unique_id=1568950673]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_yt2nj")
+instance_shader_parameters/background_offset = Vector2(0.71157265, 0.8488793)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6tqbi")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_17upk")
+text = "Accessible  "
+icon = ExtResource("25_42yaw")
+alignment = 0
+icon_alignment = 2
+expand_icon = true
+script = ExtResource("16_0e6m1")
+stylebox_override = SubResource("StyleBoxTexture_6tqbi")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="Spacer4" type="Control" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer" unique_id=1470695527]
+custom_minimum_size = Vector2(0, 7.775)
+layout_mode = 2
+
+[node name="HBox_AlwaysShowCardName" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer" unique_id=901380056]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_AlwaysShowCardName" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_AlwaysShowCardName" unique_id=1801782660]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Show Glyph Names"
+horizontal_alignment = 1
+
+[node name="Button_AlwaysShowCardName" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_AlwaysShowCardName" unique_id=1910804506]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_pns1l")
+instance_shader_parameters/background_offset = Vector2(0.008013358, 0.03108392)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6tqbi")
+toggle_mode = true
+text = "OFF"
+script = ExtResource("16_0e6m1")
+stylebox_override = SubResource("StyleBoxTexture_6tqbi")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="HBox_VaryRoofColor" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer" unique_id=1038896033]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_VaryRoofColor" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_VaryRoofColor" unique_id=1870148969]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Vary Roof Color"
+horizontal_alignment = 1
+
+[node name="Button_VaryRoofColor" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_VaryRoofColor" unique_id=649706011]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_pns1l")
+instance_shader_parameters/background_offset = Vector2(0.38534787, 0.45504373)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6tqbi")
+toggle_mode = true
+text = "OFF"
+script = ExtResource("16_0e6m1")
+stylebox_override = SubResource("StyleBoxTexture_6tqbi")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="Spacer2" type="Control" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer" unique_id=1250231792]
+visible = false
+custom_minimum_size = Vector2(0, 7.775)
+layout_mode = 2
+
+[node name="HBox_ShowSettlementBorder" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer" unique_id=1970227502]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_ShowSettlementBorder" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_ShowSettlementBorder" unique_id=1099249786]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Show Settlement Borders"
+horizontal_alignment = 1
+
+[node name="Button_ShowSettlementBorder" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_ShowSettlementBorder" unique_id=1830444442]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_pns1l")
+instance_shader_parameters/background_offset = Vector2(0.63077044, 0.3821231)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6tqbi")
+toggle_mode = true
+text = "OFF"
+script = ExtResource("16_0e6m1")
+stylebox_override = SubResource("StyleBoxTexture_6tqbi")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="HBox_ShowStageBonuses" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer" unique_id=474706275]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_ShowStageBonuses" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_ShowStageBonuses" unique_id=1321224225]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Show Foray Yields"
+horizontal_alignment = 1
+
+[node name="Button_ShowStageBonuses" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_ShowStageBonuses" unique_id=1092226051]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_pns1l")
+instance_shader_parameters/background_offset = Vector2(0.29039353, 0.27540734)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6tqbi")
+toggle_mode = true
+text = "OFF"
+script = ExtResource("16_0e6m1")
+stylebox_override = SubResource("StyleBoxTexture_6tqbi")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="HBox_SortPredictedYields" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer" unique_id=324108215]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_SortPredictedYields" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_SortPredictedYields" unique_id=395290876]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Sort Predicted Yields"
+horizontal_alignment = 1
+
+[node name="Button_SortPredictedYields" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_SortPredictedYields" unique_id=163564091]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_pns1l")
+instance_shader_parameters/background_offset = Vector2(0.4408079, 0.701275)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6tqbi")
+toggle_mode = true
+text = "OFF"
+script = ExtResource("16_0e6m1")
+stylebox_override = SubResource("StyleBoxTexture_6tqbi")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="HBox_ShowPauseButton" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer" unique_id=824612506]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_ShowPauseButton" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_ShowPauseButton" unique_id=193108685]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Show Pause Button"
+horizontal_alignment = 1
+
+[node name="Button_ShowPauseButton" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_ShowPauseButton" unique_id=1834767624]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_pns1l")
+instance_shader_parameters/background_offset = Vector2(0.32579365, 0.48883992)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6tqbi")
+toggle_mode = true
+text = "OFF"
+script = ExtResource("16_0e6m1")
+stylebox_override = SubResource("StyleBoxTexture_6tqbi")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="HBox_ShowVersionWatermark" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer" unique_id=293188250]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_ShowVersionWatermark" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_ShowVersionWatermark" unique_id=1581310564]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Show Version Label"
+horizontal_alignment = 1
+
+[node name="Button_ShowVersionWatermark" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_ShowVersionWatermark" unique_id=75075157]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_pns1l")
+instance_shader_parameters/background_offset = Vector2(0.8891148, 0.47623077)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6tqbi")
+toggle_mode = true
+text = "OFF"
+script = ExtResource("16_0e6m1")
+stylebox_override = SubResource("StyleBoxTexture_6tqbi")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="Spacer" type="Control" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer" unique_id=173500564]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="ResetTutorialsButton" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer" unique_id=979733740]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_p7niq")
+instance_shader_parameters/background_offset = Vector2(0.9206002, 0.8199705)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_styles/normal = ExtResource("15_f0s7r")
+theme_override_styles/pressed = ExtResource("15_f0s7r")
+theme_override_styles/hover = ExtResource("15_f0s7r")
+theme_override_styles/hover_pressed = ExtResource("15_f0s7r")
+theme_override_styles/disabled = ExtResource("15_f0s7r")
+text = "Reset Tutorials"
+script = ExtResource("16_0e6m1")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="VBox_Video" type="VBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer" unique_id=2060045114]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="HBox_Fullscreen" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Video" unique_id=347449766]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_Fullscreen" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Video/HBox_Fullscreen" unique_id=38156689]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Fullscreen Mode"
+horizontal_alignment = 1
+
+[node name="Dropdown_Fullscreen" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Video/HBox_Fullscreen" unique_id=1286164416 instance=ExtResource("25_04bl0")]
+unique_name_in_owner = true
+instance_shader_parameters/background_offset = Vector2(0.7840278, 0.39481238)
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+initial_items = Array[ExtResource("26_42yaw")]([])
+
+[node name="HBox_VSync" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Video" unique_id=1180458017]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_VSync" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Video/HBox_VSync" unique_id=1732636800]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "VSync"
+horizontal_alignment = 1
+
+[node name="Button_VSync" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Video/HBox_VSync" unique_id=759378277]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_pns1l")
+instance_shader_parameters/background_offset = Vector2(0.04834877, 0.72130847)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6tqbi")
+toggle_mode = true
+text = "OFF"
+script = ExtResource("16_0e6m1")
+stylebox_override = SubResource("StyleBoxTexture_6tqbi")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="HBox_FPSCap" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Video" unique_id=1672122093]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_FPSCap" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Video/HBox_FPSCap" unique_id=274640320]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "FPS Cap"
+horizontal_alignment = 1
+
+[node name="Dropdown_FPSCap" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Video/HBox_FPSCap" unique_id=998942493 instance=ExtResource("25_04bl0")]
+unique_name_in_owner = true
+instance_shader_parameters/background_offset = Vector2(0.28495556, 0.81703156)
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+initial_items = Array[ExtResource("26_42yaw")]([SubResource("Resource_bx70w"), SubResource("Resource_cnyvt"), SubResource("Resource_trtbi"), SubResource("Resource_42yaw"), SubResource("Resource_0eiya"), SubResource("Resource_d174p"), SubResource("Resource_a6ufw")])
+
+[node name="Spacer" type="Control" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Video" unique_id=1140153025]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="HBox_AnimateSpriteChanges" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Video" unique_id=447632524]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_AnimateSpriteChanges" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Video/HBox_AnimateSpriteChanges" unique_id=1145649815]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Animate Map Changes"
+horizontal_alignment = 1
+
+[node name="Button_AnimateSpriteChanges" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Video/HBox_AnimateSpriteChanges" unique_id=659532108]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_pns1l")
+instance_shader_parameters/background_offset = Vector2(0.12508427, 0.6287054)
+instance_shader_parameters/state = 2.0
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6tqbi")
+toggle_mode = true
+button_pressed = true
+text = "OFF"
+script = ExtResource("16_0e6m1")
+stylebox_override = SubResource("StyleBoxTexture_6tqbi")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="HBox_MapClouds" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Video" unique_id=1411106547]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_MapClouds" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Video/HBox_MapClouds" unique_id=579976275]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Map Clouds"
+horizontal_alignment = 1
+
+[node name="Button_MapClouds" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Video/HBox_MapClouds" unique_id=1199093861]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_pns1l")
+instance_shader_parameters/background_offset = Vector2(0.4510799, 0.21458554)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6tqbi")
+toggle_mode = true
+text = "OFF"
+script = ExtResource("16_0e6m1")
+stylebox_override = SubResource("StyleBoxTexture_6tqbi")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="HBox_MapVFX" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Video" unique_id=1480999670]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_MapVFX" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Video/HBox_MapVFX" unique_id=1359349030]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Map Particle Effects"
+horizontal_alignment = 1
+
+[node name="Button_MapVFX" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Video/HBox_MapVFX" unique_id=449933854]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_pns1l")
+instance_shader_parameters/background_offset = Vector2(0.3118934, 0.14598005)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6tqbi")
+toggle_mode = true
+text = "OFF"
+script = ExtResource("16_0e6m1")
+stylebox_override = SubResource("StyleBoxTexture_6tqbi")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="VBox_Audio" type="VBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer" unique_id=102413436]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBox_MasterVolume" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio" unique_id=2018648601]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_MasterVolume" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio/HBox_MasterVolume" unique_id=1443319636]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Master"
+horizontal_alignment = 1
+
+[node name="Label_MasterVolumeValue" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio/HBox_MasterVolume" unique_id=1926728000]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("19_jmlkd")
+text = "75"
+horizontal_alignment = 2
+
+[node name="Slider_MasterVolume" type="HSlider" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio/HBox_MasterVolume" unique_id=1905032203]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 0.75
+script = ExtResource("20_prbw2")
+metadata/_custom_type_script = "uid://dbh5bpr5jdgyr"
+
+[node name="HBox_MusicVolume" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio" unique_id=1266577370]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_MusicVolume" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio/HBox_MusicVolume" unique_id=1855928726]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Music"
+horizontal_alignment = 1
+
+[node name="Label_MusicVolumeValue" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio/HBox_MusicVolume" unique_id=968078039]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("19_jmlkd")
+text = "75"
+horizontal_alignment = 2
+
+[node name="Slider_MusicVolume" type="HSlider" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio/HBox_MusicVolume" unique_id=875682307]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 0.75
+script = ExtResource("20_prbw2")
+metadata/_custom_type_script = "uid://dbh5bpr5jdgyr"
+
+[node name="HBox_AmbienceVolume" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio" unique_id=1120323072]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_AmbienceVolume" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio/HBox_AmbienceVolume" unique_id=698840749]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Ambience"
+horizontal_alignment = 1
+
+[node name="Label_AmbienceVolumeValue" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio/HBox_AmbienceVolume" unique_id=419497526]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("19_jmlkd")
+text = "75"
+horizontal_alignment = 2
+
+[node name="Slider_AmbienceVolume" type="HSlider" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio/HBox_AmbienceVolume" unique_id=1100548451]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 0.75
+script = ExtResource("20_prbw2")
+metadata/_custom_type_script = "uid://dbh5bpr5jdgyr"
+
+[node name="HBox_EffectsVolume" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio" unique_id=1928266633]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_EffectsVolume" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio/HBox_EffectsVolume" unique_id=1981207622]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Effects"
+horizontal_alignment = 1
+
+[node name="Label_EffectsVolumeValue" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio/HBox_EffectsVolume" unique_id=685474472]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("19_jmlkd")
+text = "75"
+horizontal_alignment = 2
+
+[node name="Slider_EffectsVolume" type="HSlider" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio/HBox_EffectsVolume" unique_id=1816610345]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 0.75
+script = ExtResource("20_prbw2")
+metadata/_custom_type_script = "uid://dbh5bpr5jdgyr"
+
+[node name="HBox_VoiceVolume" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio" unique_id=379942895]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_VoiceVolume" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio/HBox_VoiceVolume" unique_id=1588485389]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Voice"
+horizontal_alignment = 1
+
+[node name="Label_VoiceVolumeValue" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio/HBox_VoiceVolume" unique_id=1583937954]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("19_jmlkd")
+text = "75"
+horizontal_alignment = 2
+
+[node name="Slider_VoiceVolume" type="HSlider" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio/HBox_VoiceVolume" unique_id=366021475]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 0.75
+script = ExtResource("20_prbw2")
+metadata/_custom_type_script = "uid://dbh5bpr5jdgyr"
+
+[node name="HBox_MuteUnfocused" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio" unique_id=1846457950]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_MuteUnfocused" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio/HBox_MuteUnfocused" unique_id=927795553]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Mute in Background"
+horizontal_alignment = 1
+
+[node name="Button_MuteUnfocused" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio/HBox_MuteUnfocused" unique_id=498336146]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_sccfd")
+instance_shader_parameters/background_offset = Vector2(0.23045859, 0.014627552)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6tqbi")
+toggle_mode = true
+text = "OFF"
+script = ExtResource("16_0e6m1")
+stylebox_override = SubResource("StyleBoxTexture_6tqbi")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="HBox_SkipClaimedMusic" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio" unique_id=2139062103]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_SkipClaimedMusic" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio/HBox_SkipClaimedMusic" unique_id=669409077]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Streamer Mode"
+horizontal_alignment = 1
+
+[node name="Button_SkipClaimedMusic" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio/HBox_SkipClaimedMusic" unique_id=565477886]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_sccfd")
+instance_shader_parameters/background_offset = Vector2(0.5184818, 0.95850533)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6tqbi")
+toggle_mode = true
+text = "OFF"
+script = ExtResource("16_0e6m1")
+stylebox_override = SubResource("StyleBoxTexture_6tqbi")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="ResetAudioButton" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio" unique_id=94464878]
+material = SubResource("ShaderMaterial_p7niq")
+instance_shader_parameters/background_offset = Vector2(0.8434352, 0.8680283)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_styles/normal = ExtResource("15_f0s7r")
+theme_override_styles/pressed = ExtResource("15_f0s7r")
+theme_override_styles/hover = ExtResource("15_f0s7r")
+theme_override_styles/hover_pressed = ExtResource("15_f0s7r")
+theme_override_styles/disabled = ExtResource("15_f0s7r")
+text = "Reset to Default"
+script = ExtResource("16_0e6m1")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="VBox_Controls" type="VBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer" unique_id=607837659]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label_DeckControls" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Controls" unique_id=1835744855]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Steam Deck controls are managed through Steam. Below are the defaults for the official layout."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="FadedScrollContainer" type="ScrollContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Controls" unique_id=1578631041]
+clip_children = 1
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("22_1t1vw")
+metadata/_custom_type_script = "uid://dm63mtrlfj005"
+
+[node name="ControlsList" type="VBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Controls/FadedScrollContainer" unique_id=566799431]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ControlBindingSetting" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Controls/FadedScrollContainer/ControlsList" unique_id=2072893920 instance=ExtResource("22_6tqbi")]
+layout_mode = 2
+action_name = "map_pan_up"
+action_label = "Map: Pan Up"
+steam_deck_default = "[img=48x48]res://utils/input_icons/shared_lstick_up_md.png[/img] "
+
+[node name="ControlBindingSetting2" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Controls/FadedScrollContainer/ControlsList" unique_id=995312577 instance=ExtResource("22_6tqbi")]
+layout_mode = 2
+action_name = "map_pan_left"
+action_label = "Map: Pan Left"
+steam_deck_default = "[img=48x48]res://utils/input_icons/shared_lstick_left_md.png[/img] "
+
+[node name="ControlBindingSetting4" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Controls/FadedScrollContainer/ControlsList" unique_id=1399990681 instance=ExtResource("22_6tqbi")]
+layout_mode = 2
+action_name = "map_pan_down"
+action_label = "Map: Pan Down"
+steam_deck_default = "[img=48x48]res://utils/input_icons/shared_lstick_down_md.png[/img] "
+
+[node name="ControlBindingSetting5" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Controls/FadedScrollContainer/ControlsList" unique_id=2086335544 instance=ExtResource("22_6tqbi")]
+layout_mode = 2
+action_name = "map_pan_right"
+action_label = "Map: Pan Right"
+steam_deck_default = "[img=48x48]res://utils/input_icons/shared_lstick_right_md.png[/img] "
+
+[node name="ControlBindingSetting6" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Controls/FadedScrollContainer/ControlsList" unique_id=712158420 instance=ExtResource("22_6tqbi")]
+layout_mode = 2
+action_name = "map_zoom_in"
+action_label = "Map: Zoom In"
+steam_deck_default = "[img=48x48]res://utils/input_icons/sd_ltrackpad_up_md.png[/img] "
+
+[node name="ControlBindingSetting7" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Controls/FadedScrollContainer/ControlsList" unique_id=181521994 instance=ExtResource("22_6tqbi")]
+layout_mode = 2
+action_name = "map_zoom_out"
+action_label = "Map: Zoom Out"
+steam_deck_default = "[img=48x48]res://utils/input_icons/sd_ltrackpad_down_md.png[/img] "
+
+[node name="ControlBindingSetting10" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Controls/FadedScrollContainer/ControlsList" unique_id=2111460254 instance=ExtResource("22_6tqbi")]
+layout_mode = 2
+action_name = "end_turn"
+action_label = "End Turn"
+steam_deck_default = "[img=48x48]res://utils/input_icons/shared_button_y_md.png[/img] "
+
+[node name="ControlBindingSetting3" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Controls/FadedScrollContainer/ControlsList" unique_id=1196039613 instance=ExtResource("22_6tqbi")]
+layout_mode = 2
+action_name = "view_draw_deck"
+action_label = "View Draw Stack"
+steam_deck_default = "[img=48x48]res://utils/input_icons/shared_button_x_md.png[/img] "
+
+[node name="ControlBindingSetting9" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Controls/FadedScrollContainer/ControlsList" unique_id=49840843 instance=ExtResource("22_6tqbi")]
+layout_mode = 2
+action_name = "view_discard_deck"
+action_label = "View Discards"
+steam_deck_default = "[img=48x48]res://utils/input_icons/sd_r1_md.png[/img]+[img=48x48]res://utils/input_icons/shared_button_x_md.png[/img] "
+
+[node name="ControlBindingSetting8" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Controls/FadedScrollContainer/ControlsList" unique_id=1391044122 instance=ExtResource("22_6tqbi")]
+layout_mode = 2
+action_name = "view_quests"
+action_label = "View Quests"
+steam_deck_default = "[img=48x48]res://utils/input_icons/sd_r4_md.png[/img] "
+
+[node name="ControlBindingSetting11" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Controls/FadedScrollContainer/ControlsList" unique_id=2070166041 instance=ExtResource("22_6tqbi")]
+layout_mode = 2
+action_name = "minimize"
+action_label = "Hide Event / Invocation UI"
+steam_deck_default = "[img=48x48]res://utils/input_icons/shared_button_x_md.png[/img] "
+
+[node name="ControlBindingSetting12" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Controls/FadedScrollContainer/ControlsList" unique_id=773764487 instance=ExtResource("22_6tqbi")]
+layout_mode = 2
+action_name = "scroll_spots_left"
+action_label = "Sites: Scroll Left"
+steam_deck_default = "[img=48x48]res://utils/input_icons/shared_lstick_left_md.png[/img] "
+
+[node name="ControlBindingSetting13" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Controls/FadedScrollContainer/ControlsList" unique_id=1728014395 instance=ExtResource("22_6tqbi")]
+layout_mode = 2
+action_name = "scroll_spots_right"
+action_label = "Sites: Scroll Right"
+steam_deck_default = "[img=48x48]res://utils/input_icons/shared_lstick_right_md.png[/img] "
+
+[node name="ControlBindingSetting14" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Controls/FadedScrollContainer/ControlsList" unique_id=1700746915 instance=ExtResource("22_6tqbi")]
+layout_mode = 2
+action_name = "toggle_ui_visiblity"
+action_label = "Hide/Show UI"
+steam_deck_default = "[img=48x48]res://utils/input_icons/sd_r1_md.png[/img]+[img=48x48]res://utils/input_icons/sd_l5_md.png[/img] "
+
+[node name="Button_ResetControls" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Controls" unique_id=656237281]
+unique_name_in_owner = true
+material = ExtResource("24_kouge")
+instance_shader_parameters/background_offset = Vector2(0.68678236, 0.2575306)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+theme_override_styles/normal = ExtResource("15_f0s7r")
+theme_override_styles/pressed = ExtResource("15_f0s7r")
+theme_override_styles/hover = ExtResource("15_f0s7r")
+theme_override_styles/hover_pressed = ExtResource("15_f0s7r")
+theme_override_styles/disabled = ExtResource("15_f0s7r")
+text = "Reset Controls"
+script = ExtResource("16_0e6m1")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="VBox_Japanese" type="VBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer" unique_id=1481182219]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="FadedScrollContainer" type="ScrollContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese" unique_id=1219684204]
+clip_children = 1
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("22_1t1vw")
+metadata/_custom_type_script = "uid://dm63mtrlfj005"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer" unique_id=1113668457]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBox_KanjiPractice" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer" unique_id=1878556424]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_KanjiPractice" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_KanjiPractice" unique_id=1260831922]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Enable Kanji Practice Minigame"
+horizontal_alignment = 1
+
+[node name="Button_KanjiPractice" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_KanjiPractice" unique_id=1758051628]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_sccfd")
+instance_shader_parameters/background_offset = Vector2(0.93539447, 0.934671)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6tqbi")
+toggle_mode = true
+text = "OFF"
+script = ExtResource("16_0e6m1")
+stylebox_override = SubResource("StyleBoxTexture_6tqbi")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="HBox_KanjiDrawing" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer" unique_id=1512897716]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_KanjiDrawing" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_KanjiDrawing" unique_id=418704822]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Enable Kanji Drawing Minigame"
+horizontal_alignment = 1
+
+[node name="Button_KanjiDrawing" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_KanjiDrawing" unique_id=891860491]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_sccfd")
+instance_shader_parameters/background_offset = Vector2(0.64442575, 0.26243427)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6tqbi")
+toggle_mode = true
+text = "OFF"
+script = ExtResource("16_0e6m1")
+stylebox_override = SubResource("StyleBoxTexture_6tqbi")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="HBox_UseDrawnKanji" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer" unique_id=873738886]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_UseDrawnKanji" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_UseDrawnKanji" unique_id=821985577]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Use Drawn Kanji on Cards"
+horizontal_alignment = 1
+
+[node name="Button_UseDrawnKanji" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_UseDrawnKanji" unique_id=491847568]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_sccfd")
+instance_shader_parameters/background_offset = Vector2(0.63249516, 0.62632656)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6tqbi")
+toggle_mode = true
+text = "OFF"
+script = ExtResource("16_0e6m1")
+stylebox_override = SubResource("StyleBoxTexture_6tqbi")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="HBox_CardNames" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer" unique_id=1001297156]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_CardNames" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_CardNames" unique_id=2121861481]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Card Names"
+horizontal_alignment = 1
+
+[node name="Dropdown_CardNames" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_CardNames" unique_id=492389095 instance=ExtResource("25_04bl0")]
+unique_name_in_owner = true
+instance_shader_parameters/background_offset = Vector2(0.19778204, 0.56770885)
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+initial_items = Array[ExtResource("26_42yaw")]([])
+
+[node name="HBox_SettlementNames" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer" unique_id=1366459438]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_SettlementNames" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_SettlementNames" unique_id=882082404]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Settlement Names"
+horizontal_alignment = 1
+
+[node name="Dropdown_SettlementNames" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_SettlementNames" unique_id=33145236 instance=ExtResource("25_04bl0")]
+unique_name_in_owner = true
+instance_shader_parameters/background_offset = Vector2(0.5651362, 0.5933875)
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+initial_items = Array[ExtResource("26_42yaw")]([])
+
+[node name="HBox_ShardNames" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer" unique_id=361525512]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_ShardNames" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_ShardNames" unique_id=451561116]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Shard Names"
+horizontal_alignment = 1
+
+[node name="Dropdown_ShardNames" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_ShardNames" unique_id=1542342193 instance=ExtResource("25_04bl0")]
+unique_name_in_owner = true
+instance_shader_parameters/background_offset = Vector2(0.30289966, 0.9041403)
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+initial_items = Array[ExtResource("26_42yaw")]([])
+
+[node name="HBox_HauntingNames" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer" unique_id=630981562]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_HauntingNames" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_HauntingNames" unique_id=33321765]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Haunting Names"
+horizontal_alignment = 1
+
+[node name="Dropdown_HauntingNames" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_HauntingNames" unique_id=275635629 instance=ExtResource("25_04bl0")]
+unique_name_in_owner = true
+instance_shader_parameters/background_offset = Vector2(0.76563376, 0.50582385)
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+initial_items = Array[ExtResource("26_42yaw")]([])
+
+[node name="HBox_Dictionary" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer" unique_id=2132997518]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_Dictionary" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_Dictionary" unique_id=1327042313]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Dictionary Details in Tooltips"
+horizontal_alignment = 1
+
+[node name="Dropdown_Dictionary" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_Dictionary" unique_id=646855108 instance=ExtResource("25_04bl0")]
+unique_name_in_owner = true
+instance_shader_parameters/background_offset = Vector2(0.30289966, 0.9041403)
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+initial_items = Array[ExtResource("26_42yaw")]([])
+
+[node name="HBox_EmbedJapanese" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer" unique_id=715657039]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_EmbedJapanese" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_EmbedJapanese" unique_id=807006210]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Allow Kanji in English Sentences"
+horizontal_alignment = 1
+
+[node name="Button_EmbedJapanese" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_EmbedJapanese" unique_id=1528573761]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_sccfd")
+instance_shader_parameters/background_offset = Vector2(0.94084406, 0.97303325)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6tqbi")
+toggle_mode = true
+text = "OFF"
+script = ExtResource("16_0e6m1")
+stylebox_override = SubResource("StyleBoxTexture_6tqbi")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="HBox_RomajiFurgana" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer" unique_id=238580522]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+
+[node name="Label_RomajiFurgana" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_RomajiFurgana" unique_id=1228057809]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("19_jmlkd")
+text = "Romaji Furigana"
+horizontal_alignment = 1
+
+[node name="Button_RomajiFurgana" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_RomajiFurgana" unique_id=1420250540]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_sccfd")
+instance_shader_parameters/background_offset = Vector2(0.77360886, 0.9689313)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6tqbi")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6tqbi")
+toggle_mode = true
+text = "OFF"
+script = ExtResource("16_0e6m1")
+stylebox_override = SubResource("StyleBoxTexture_6tqbi")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="Label_Optional" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer" unique_id=2077808077]
+custom_minimum_size = Vector2(300, 0)
+custom_maximum_size = Vector2(500, -1)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 10
+theme = ExtResource("19_jmlkd")
+text = "These Japanese practice features are completely optional."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Spacer2" type="Control" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=1549958824]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=418326746]
+material = SubResource("ShaderMaterial_f0s7r")
+instance_shader_parameters/background_offset = Vector2(0.40933868, 0.6330813)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = ExtResource("15_f0s7r")
+theme_override_styles/pressed = ExtResource("15_f0s7r")
+theme_override_styles/hover = ExtResource("15_f0s7r")
+theme_override_styles/hover_pressed = ExtResource("15_f0s7r")
+theme_override_styles/disabled = ExtResource("15_f0s7r")
+text = "Close"
+script = ExtResource("16_0e6m1")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="BottomDowelWood" parent="Control/ScrollPanel/BottomDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_17upk")
+
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabBar/TabButton_Interface" to="." method="_on_tab_button_interface_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabBar/TabButton_Video" to="." method="_on_tab_button_video_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabBar/TabButton_Audio" to="." method="_on_tab_button_audio_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabBar/TabButton_Controls" to="." method="_on_tab_button_controls_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabBar/TabButton_Japanese" to="." method="_on_tab_button_japanese_pressed"]
+[connection signal="value_changed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_AnimSpeed/Slider_AnimSpeed" to="." method="_on_slider_anim_speed_value_changed"]
+[connection signal="value_changed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_TooltipDelay/Slider_TooltipDelay" to="." method="_on_slider_tooltip_delay_value_changed"]
+[connection signal="value_changed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_TooltipFontScale/Slider_TooltipFontScale" to="." method="_on_slider_tooltip_font_scale_value_changed"]
+[connection signal="value_changed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_ParagraphFontScale/Slider_ParagraphFontScale" to="." method="_on_slider_paragraph_font_scale_value_changed"]
+[connection signal="selected" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_ZoomOnHover/Dropdown_ZoomOnHover" to="." method="_on_dropdown_zoom_on_hover_selected"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_AlwaysShowCardName/Button_AlwaysShowCardName" to="." method="_on_button_always_show_card_name_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_VaryRoofColor/Button_VaryRoofColor" to="." method="_on_button_vary_roof_color_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_ShowSettlementBorder/Button_ShowSettlementBorder" to="." method="_on_button_show_settlement_border_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_ShowStageBonuses/Button_ShowStageBonuses" to="." method="_on_button_show_stage_bonuses_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_SortPredictedYields/Button_SortPredictedYields" to="." method="_on_button_sort_predicted_yields_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_ShowPauseButton/Button_ShowPauseButton" to="." method="_on_button_show_pause_button_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/HBox_ShowVersionWatermark/Button_ShowVersionWatermark" to="." method="_on_button_show_version_watermark_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Interface/FadedScrollContainer/VBoxContainer/ResetTutorialsButton" to="." method="_on_reset_tutorials_button_pressed"]
+[connection signal="selected" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Video/HBox_Fullscreen/Dropdown_Fullscreen" to="." method="_on_dropdown_fullscreen_selected"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Video/HBox_VSync/Button_VSync" to="." method="_on_button_v_sync_pressed"]
+[connection signal="selected" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Video/HBox_FPSCap/Dropdown_FPSCap" to="." method="_on_dropdown_fps_cap_selected"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Video/HBox_AnimateSpriteChanges/Button_AnimateSpriteChanges" to="." method="_on_button_animate_sprite_changes_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Video/HBox_MapClouds/Button_MapClouds" to="." method="_on_button_map_clouds_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Video/HBox_MapVFX/Button_MapVFX" to="." method="_on_button_map_vfx_pressed"]
+[connection signal="value_changed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio/HBox_MasterVolume/Slider_MasterVolume" to="." method="_on_master_volume_slider_value_changed"]
+[connection signal="value_changed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio/HBox_MusicVolume/Slider_MusicVolume" to="." method="_on_slider_music_volume_value_changed"]
+[connection signal="value_changed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio/HBox_AmbienceVolume/Slider_AmbienceVolume" to="." method="_on_slider_ambience_volume_value_changed"]
+[connection signal="value_changed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio/HBox_EffectsVolume/Slider_EffectsVolume" to="." method="_on_slider_effects_volume_value_changed"]
+[connection signal="value_changed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio/HBox_VoiceVolume/Slider_VoiceVolume" to="." method="_on_slider_voice_volume_value_changed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio/HBox_MuteUnfocused/Button_MuteUnfocused" to="." method="_on_button_mute_unfocused_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio/HBox_SkipClaimedMusic/Button_SkipClaimedMusic" to="." method="_on_button_skip_claimed_music_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Audio/ResetAudioButton" to="." method="_on_reset_audio_button_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Controls/Button_ResetControls" to="." method="_on_button_reset_controls_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_KanjiPractice/Button_KanjiPractice" to="." method="_on_button_kanji_practice_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_KanjiDrawing/Button_KanjiDrawing" to="." method="_on_button_kanji_drawing_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_UseDrawnKanji/Button_UseDrawnKanji" to="." method="_on_button_use_drawn_kanji_pressed"]
+[connection signal="selected" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_CardNames/Dropdown_CardNames" to="." method="_on_dropdown_card_names_selected"]
+[connection signal="selected" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_SettlementNames/Dropdown_SettlementNames" to="." method="_on_dropdown_settlement_names_selected"]
+[connection signal="selected" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_ShardNames/Dropdown_ShardNames" to="." method="_on_dropdown_shard_names_selected"]
+[connection signal="selected" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_HauntingNames/Dropdown_HauntingNames" to="." method="_on_dropdown_haunting_names_selected"]
+[connection signal="selected" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_Dictionary/Dropdown_Dictionary" to="." method="_on_dropdown_dictionary_selected"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_EmbedJapanese/Button_EmbedJapanese" to="." method="_on_button_embed_japanese_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TabContent/MarginContainer/VBox_Japanese/FadedScrollContainer/VBoxContainer/HBox_RomajiFurgana/Button_RomajiFurgana" to="." method="_on_button_romaji_furgana_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
+
+[editable path="Control/ScrollPanel"]

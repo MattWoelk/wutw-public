@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0oh6sdpa5m65"]
+
+[ext_resource type="Shader" uid="uid://cnmomsn2f1oel" path="res://map/sprites/spots/canyon/canyon_text.gdshader" id="1_s5aor"]
+[ext_resource type="Texture2D" uid="uid://cmxnin3vxfplr" path="res://map/sprites/spots/canyon/canyon_questions.png" id="2_3qabi"]
+[ext_resource type="Script" uid="uid://cayk4aj5u0am5" path="res://map/sprites/spots/canyon/map_effect_canyon_question.gd" id="3_3qabi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3qabi"]
+shader = ExtResource("1_s5aor")
+shader_parameter/frame = 8
+shader_parameter/frames_x = 3
+shader_parameter/frames_y = 3
+shader_parameter/fadein_range = Vector2(0.15, -0.15)
+shader_parameter/fadeout_range = Vector2(0.15, -0.15)
+shader_parameter/t = 0.999999977648
+
+[node name="MapEffectCanyonQuestion" type="Node2D"]
+script = ExtResource("3_3qabi")
+max_initial_delay = 0.0
+fadein_duration = 0.01
+hold_duration = 99999.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_3qabi")
+custom_minimum_size = Vector2(100, 150)
+texture = ExtResource("2_3qabi")
+expand_mode = 1

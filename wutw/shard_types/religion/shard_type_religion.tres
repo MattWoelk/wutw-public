@@ -1,0 +1,66 @@
+[gd_resource type="Resource" script_class="ShardType_Religion" format=3 uid="uid://c7kpts541cxsc"]
+
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="1_qxhdd"]
+[ext_resource type="Script" uid="uid://d231dqen3mqy4" path="res://shard_types/religion/shard_type_religion.gd" id="2_3ah6c"]
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="2_hf61o"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="2_q2a52"]
+[ext_resource type="Texture2D" uid="uid://butuepd8cndpq" path="res://shard_types/religion/shard_type_religion.png" id="2_t66so"]
+[ext_resource type="Resource" uid="uid://b7buevbafdsbu" path="res://art/pieces/piece_gekkou_shinto_dancer.tres" id="3_3q1lv"]
+[ext_resource type="Resource" uid="uid://cqo4wx824aeep" path="res://stage/spots/forest/upgrade_forest_1_shrine.tres" id="3_ngqwx"]
+[ext_resource type="Resource" uid="uid://dlecugxwnhc15" path="res://stage/spots/lake/upgrade_lake_2_island_shrine.tres" id="4_t66so"]
+[ext_resource type="Resource" uid="uid://dw1f10v3jwhkx" path="res://stage/spots/seashore/upgrade_seashore_3_shipwreck_shrine.tres" id="5_3q1lv"]
+[ext_resource type="Resource" uid="uid://cl8h0b8goemjr" path="res://stage/spots/seashore/upgrade_seashore_3_whale_caller_shrine.tres" id="6_jrr43"]
+[ext_resource type="Resource" uid="uid://c56dxbu1pjfbl" path="res://stage/spots/forest/upgrade_forest_3_monastery.tres" id="7_fm1np"]
+[ext_resource type="Resource" uid="uid://dhsu0y2nvmlf4" path="res://stage/spots/canyon/upgrade_canyon_3_hanging_monastery.tres" id="8_vl1u8"]
+[ext_resource type="Resource" uid="uid://bi3q0q8mk0b41" path="res://stage/spots/mountain/upgrade_mountain_2_ember_monastery.tres" id="9_q2a52"]
+[ext_resource type="Resource" uid="uid://bhli4xwx0vayp" path="res://stage/spots/brushland/upgrade_brushland_3_monastery_of_the_wilds.tres" id="10_sy1ar"]
+[ext_resource type="Resource" uid="uid://ditqjpugd51gg" path="res://debate/arguments/argument_theocracy.tres" id="15_sy1ar"]
+[ext_resource type="Resource" uid="uid://bj550hqcppw13" path="res://skills/relics/skill_relics_starting_selected.tres" id="16_k6jjp"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="17_edayv"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="18_sy1ar"]
+
+[sub_resource type="Resource" id="Resource_42s6q"]
+script = ExtResource("1_qxhdd")
+text = "The settlements of $shard_name function less like independent towns and more like the scattered dormitories of a single, shard-wide monastery. To walk down a street here is to navigate an obstacle course of roadside shrines, spirit statues, and incense burners. It is a place of profound peace, mostly because everyone is too busy praying."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_7c60o"]
+script = ExtResource("1_qxhdd")
+text = "Construction on $shard_name is a test of piety, not engineering. Thick walls are considered offensive to earth spirits, a sign of distrust in the land's benevolence. As a result, roofs here are undeniably holy, but when the rains come, they also tend to become holey. Furthermore, moving into a new home requires a priest's blessing, a ceremony so lengthy and costly that many families spend more on the blessing than on the construction itself."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_nw6pk"]
+script = ExtResource("1_qxhdd")
+text = "Commerce here is viewed with pity. Production and trade are disdained as obsessions with transient things that distract from the eternal. The temples collect weekly dues to relieve the citizens of this spiritual burden. Consequently, the granaries are often empty, but the temples are filled with gilded relics and rare incense."
+time_taken = 2
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_v7pj1"]
+script = ExtResource("1_qxhdd")
+text = "Social friction on $shard_name is non-existent. Disagreement is considered a \"spiritual impurity\", a sickness of the soul. The prescribed cure is a week of fasting, so consensus is usually achieved by lunchtime. The faith so widespread among $shard_name's inhabitants does have benefits, though. When a contagious fever arrived in $town1, the people did not panic. They simply stayed inside and chanted for weeks, accidentally inventing quarantine."
+time_taken = 2
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_phn6i"]
+script = ExtResource("17_edayv")
+text = "Almost everyone on this shard is a monk or nun. They don't all dress in robes, but that makes little difference. Anytime I tried to strike up a conversation, we somehow ended up talking about the transience of this floating world or the blessings of the local spirits.
+
+Every little village has several shrines, each dedicated to a different spirit, and filled with holy relics which they rotate regularly depending on the phase of the moon. Many people I've met keep little books of all the relics they've seen, and go on regular pilgrimages all over the shard to add stamps to these books."
+revealed_skill = ExtResource("16_k6jjp")
+gained_argument = ExtResource("15_sy1ar")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[resource]
+script = ExtResource("2_3ah6c")
+religious_buildings = Array[ExtResource("2_hf61o")]([ExtResource("3_ngqwx"), ExtResource("4_t66so"), ExtResource("5_3q1lv"), ExtResource("6_jrr43"), ExtResource("7_fm1np"), ExtResource("8_vl1u8"), ExtResource("9_q2a52"), ExtResource("10_sy1ar")])
+shard_type_id = "religion"
+name = "The Hallowed Lands"
+shard_name_override = "Junrei no Hayashi"
+shard_name_override_jp = "巡礼林"
+shard_name_override_meaning = "Pilgrimage Grove"
+tier = 2
+illustration = ExtResource("2_t66so")
+illustration_credit = ExtResource("3_3q1lv")
+history = Array[ExtResource("1_qxhdd")]([SubResource("Resource_42s6q"), SubResource("Resource_7c60o"), SubResource("Resource_nw6pk"), SubResource("Resource_v7pj1")])
+trip_reward = SubResource("Resource_phn6i")
+metadata/_custom_type_script = "uid://c6vrs2bxrk07c"

@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://buffbajf212d2"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_acpge"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_c8nda"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_4x4d4"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="3_c3t67"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="4_8bhfu"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="6_vk5hq"]
+[ext_resource type="Resource" uid="uid://b2nwnsbdieg27" path="res://stage/spots/brushland/spot_brushland.tres" id="7_vk5hq"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="8_7n4j2"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://dc7s2dn0q2t6u" path="res://map/sprites/spots/brushland/mst_brushland_silk_weaver.tres" id="9_iadf5"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://cle56q4pwkyf1" path="res://map/sprites/spots/brushland/mst_brushland_mulberry_patch.tres" id="10_ib3p8"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="11_ntqfo"]
+
+[sub_resource type="Resource" id="Resource_r6w38"]
+script = ExtResource("11_ntqfo")
+old_sprite_type = ExtResource("10_ib3p8")
+new_sprite_type = ExtResource("9_iadf5")
+biome = 8
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_acpge")
+spot_upgrade_id = "brushland_weaver"
+name = "Silk Weaver's Hut"
+description = "Once the moths emerge, discarded cocoons are put to use. Not as shiny as the silk of yore, but spares the residents."
+required_aspects = Array[ExtResource("3_4x4d4")]([ExtResource("6_vk5hq")])
+granted_bonuses = Dictionary[ExtResource("2_c8nda"), int]({
+ExtResource("3_c3t67"): 10,
+ExtResource("4_8bhfu"): 5
+})
+spot = ExtResource("7_vk5hq")
+visuals = Array[ExtResource("8_7n4j2")]([SubResource("Resource_r6w38")])
+tags = Array[int]([2])

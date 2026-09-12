@@ -1,0 +1,103 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://77lnr4tl77p7"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_j7oyw"]
+[ext_resource type="Resource" uid="uid://qe2j2ipa7fk5" path="res://art/pieces/piece_hokusai_bunya_asayasu.tres" id="1_ub7bw"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_ub7bw"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_kpvou"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="4_wpoju"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="5_3w21n"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="6_v53mj"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="7_s3ilw"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="8_3p7a5"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="9_ntqf7"]
+[ext_resource type="Resource" uid="uid://cadvrri1eebkf" path="res://cards/tier2/card_swim.tres" id="10_7hqdi"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="11_jsga1"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="12_amuut"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="13_s2o21"]
+[ext_resource type="Resource" uid="uid://bb65d05uw68x1" path="res://stage/spots/lake/spot_lake.tres" id="14_lg4sq"]
+
+[sub_resource type="Resource" id="Resource_s1v1t"]
+script = ExtResource("1_j7oyw")
+_texture_path = "uid://7salpx0on08u"
+_is_horizontal = true
+
+[sub_resource type="Resource" id="Resource_7fqu2"]
+script = ExtResource("6_v53mj")
+bonus_type = ExtResource("5_3w21n")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_e0awx"]
+script = ExtResource("2_ub7bw")
+label = "Dive in after her."
+aspects = Array[ExtResource("3_kpvou")]([ExtResource("4_wpoju")])
+aspects_per_season = Array[ExtResource("3_kpvou")]([null])
+outcome = SubResource("Resource_7fqu2")
+outcome_text = "The strongest swimmer jumps into the lake and helps guide her to shore.
+
+As they wade through the mud, they discover a large cluster of edible lotus roots beneath their feet."
+
+[sub_resource type="Resource" id="Resource_e8sa8"]
+script = ExtResource("6_v53mj")
+bonus_type = ExtResource("8_3p7a5")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_11shq"]
+script = ExtResource("2_ub7bw")
+label = "Offer her a bamboo pole."
+aspects = Array[ExtResource("3_kpvou")]([ExtResource("7_s3ilw")])
+aspects_per_season = Array[ExtResource("3_kpvou")]([null])
+outcome = SubResource("Resource_e8sa8")
+outcome_text = "One of the surveyors extends her pole to the struggling woman.
+
+She grasps it thankfully as the group rows towards shore."
+
+[sub_resource type="Resource" id="Resource_e48wx"]
+script = ExtResource("11_jsga1")
+card_type = ExtResource("10_7hqdi")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_of8cr"]
+script = ExtResource("2_ub7bw")
+label = "Try to calm her."
+aspects = Array[ExtResource("3_kpvou")]([ExtResource("9_ntqf7")])
+aspects_per_season = Array[ExtResource("3_kpvou")]([null])
+outcome = SubResource("Resource_e48wx")
+outcome_text = "One of the group members speaks calmly to the drowning woman.
+
+She instructs her to stop flailing, float on her back, and breathe in and out.
+
+They are able to rescue her, and she learns a valuable new skill."
+
+[sub_resource type="Resource" id="Resource_cia4w"]
+script = ExtResource("6_v53mj")
+bonus_type = ExtResource("5_3w21n")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_t36ua"]
+script = ExtResource("2_ub7bw")
+label = "Drag her back onto the boat."
+aspects = Array[ExtResource("3_kpvou")]([null, null])
+outcome = SubResource("Resource_cia4w")
+outcome_text = "The group quickly rows the boat close to the struggling woman.
+
+The strongest among them reaches into the water to grab her arm, but their combined weight tips the boat to one side, spilling baskets of supplies and the freshly gathered leaves."
+
+[resource]
+script = ExtResource("12_amuut")
+episode_id = "lotus_pond"
+title = "The Lotus Pond"
+spot_types = Array[ExtResource("13_s2o21")]([ExtResource("14_lg4sq")])
+text = "The surveyors are slowly paddling through a lake, their long bamboo poles touching the ground, disturbing the silt below.
+
+They carefully bend over the water, plucking the broad, green lotus leaves. They will be used for food wrappings and medicine later.
+
+As one gatherer reaches for a leaf, she falls into the water with a sudden splash. She cannot swim well, and begins flailing wildly."
+background_image = SubResource("Resource_s1v1t")
+background_credit = ExtResource("1_ub7bw")
+choices = Array[ExtResource("2_ub7bw")]([SubResource("Resource_e0awx"), SubResource("Resource_11shq"), SubResource("Resource_of8cr"), SubResource("Resource_t36ua")])

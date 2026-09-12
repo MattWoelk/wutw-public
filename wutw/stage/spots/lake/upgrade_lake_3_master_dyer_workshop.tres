@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://vmqir3bk0osf"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_p2kpn"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_8ugv6"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_81un7"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="3_syg7f"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="4_3lfx7"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="6_l48uv"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="7_4c14s"]
+[ext_resource type="Resource" uid="uid://bb65d05uw68x1" path="res://stage/spots/lake/spot_lake.tres" id="8_l48uv"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_4c14s"]
+[ext_resource type="MapSpriteType_Lake" uid="uid://dcopgy017tsji" path="res://map/sprites/water_features/lake/mst_lake_1.tres" id="10_lpgb4"]
+[ext_resource type="MapSpriteType_Lake" uid="uid://gwbeal8t070v" path="res://map/sprites/water_features/lake/mst_lake_2.tres" id="11_54yxk"]
+[ext_resource type="MapSpriteType_Lake" uid="uid://dhue4qeqrdlxe" path="res://map/sprites/water_features/lake/mst_lake_3.tres" id="12_pcr57"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://ghbqby6ai7ir" path="res://map/sprites/spots/lake/mst_lake_indigo_fermenters.tres" id="13_4h12i"]
+[ext_resource type="Script" uid="uid://den3krl2s3y0b" path="res://stage/spots/spot_upgrade_visual_attach_to_river.gd" id="14_ufcsu"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://dya24edvi2uoe" path="res://map/sprites/spots/lake/mst_lake_dyer_workshop.tres" id="15_3mhtp"]
+
+[sub_resource type="Resource" id="Resource_alc8e"]
+script = ExtResource("14_ufcsu")
+sprite_type = ExtResource("15_3mhtp")
+replaced_sprite_type = ExtResource("13_4h12i")
+keep_replaced = true
+ignored_colliders = Array[MapSpriteType]([ExtResource("10_lpgb4"), ExtResource("11_54yxk"), ExtResource("12_pcr57")])
+metadata/_custom_type_script = "uid://den3krl2s3y0b"
+
+[resource]
+script = ExtResource("1_p2kpn")
+spot_upgrade_id = "lake_master_dyer"
+name = "Master Dyer's Workshop"
+description = "The traditional indigo is joined here by crimson, safflower, and dyes of every shade."
+required_aspects = Array[ExtResource("3_81un7")]([ExtResource("6_l48uv"), ExtResource("7_4c14s")])
+granted_bonuses = Dictionary[ExtResource("2_8ugv6"), int]({
+ExtResource("3_syg7f"): 25,
+ExtResource("4_3lfx7"): 15
+})
+spot = ExtResource("8_l48uv")
+visuals = Array[ExtResource("9_4c14s")]([SubResource("Resource_alc8e")])
+tags = Array[int]([2])
+min_main_quest_progress = 110

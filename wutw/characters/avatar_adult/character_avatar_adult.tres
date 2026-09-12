@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://cod2cu35nso6x"]
+
+[ext_resource type="Script" uid="uid://dqpgr2ouh8rfm" path="res://characters/hub_character_spec.gd" id="1_8v7wy"]
+[ext_resource type="Texture2D" uid="uid://dsg1kk02vpw7w" path="res://characters/avatar_adult/portrait_avatar_adult.png" id="1_h1wkb"]
+[ext_resource type="PackedScene" uid="uid://3tx3de86xk83" path="res://characters/avatar_adult/dialogue_portrait_avatar_adult.tscn" id="1_x8gmi"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="2_1tpnl"]
+[ext_resource type="Script" uid="uid://dgmvrqp5auq50" path="res://characters/character.gd" id="3_6b3wy"]
+[ext_resource type="PackedScene" uid="uid://cnbuueogxcbwh" path="res://characters/avatar_adult/hub_character_avatar_adult.tscn" id="4_1m06x"]
+
+[sub_resource type="Resource" id="Resource_pcw5t"]
+script = ExtResource("1_8v7wy")
+scene = ExtResource("4_1m06x")
+gender = 2
+main_character = true
+allowed_sockets_mask = 16777218
+metadata/_custom_type_script = "uid://dqpgr2ouh8rfm"
+
+[resource]
+script = ExtResource("3_6b3wy")
+character_id = "avatar_adult"
+character_name = "The Avatar"
+dialogue_scene = ExtResource("1_x8gmi")
+dialogue_portrait = ExtResource("1_h1wkb")
+hub_specs = Array[ExtResource("1_8v7wy")]([SubResource("Resource_pcw5t")])
+metadata/_custom_type_script = "uid://dgmvrqp5auq50"

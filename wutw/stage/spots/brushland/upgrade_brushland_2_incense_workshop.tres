@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://cgnttpxl266fx"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_j2nk2"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_ry7a7"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_f7ntp"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="3_yuhum"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="4_ww3dm"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="6_r7w4h"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="7_fsafs"]
+[ext_resource type="Resource" uid="uid://b2nwnsbdieg27" path="res://stage/spots/brushland/spot_brushland.tres" id="8_r7w4h"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_fsafs"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://qemcwoa8cfyp" path="res://map/sprites/spots/brushland/mst_brushland_incense_workshop.tres" id="10_rtc3t"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://bsmeyrmri04w1" path="res://map/sprites/spots/brushland/mst_brushland_bramble_patch.tres" id="11_477xf"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="12_ljv1j"]
+
+[sub_resource type="Resource" id="Resource_rc1nd"]
+script = ExtResource("12_ljv1j")
+old_sprite_type = ExtResource("11_477xf")
+new_sprite_type = ExtResource("10_rtc3t")
+biome = 8
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_j2nk2")
+spot_upgrade_id = "brushland_incense"
+name = "Incense Workshop"
+description = "The scents crafted here carry the spirits of the wilds into every home."
+required_aspects = Array[ExtResource("3_f7ntp")]([ExtResource("6_r7w4h"), ExtResource("7_fsafs")])
+granted_bonuses = Dictionary[ExtResource("2_ry7a7"), int]({
+ExtResource("3_yuhum"): 10,
+ExtResource("4_ww3dm"): 10
+})
+spot = ExtResource("8_r7w4h")
+visuals = Array[ExtResource("9_fsafs")]([SubResource("Resource_rc1nd")])
+tags = Array[int]([2, 3])

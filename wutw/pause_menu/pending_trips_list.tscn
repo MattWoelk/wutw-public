@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://c8atsmuee3oic"]
+
+[ext_resource type="Script" uid="uid://h74httmiodw8" path="res://pause_menu/pending_trips_list.gd" id="1_2gkrn"]
+[ext_resource type="PackedScene" uid="uid://byk0q0ccedhx0" path="res://theme/scroll_panel/scroll_panel.tscn" id="2_bxqug"]
+[ext_resource type="Shader" uid="uid://bbe7ginxustev" path="res://theme/scroll_panel/scroll_panel_dowel.gdshader" id="3_l5v38"]
+[ext_resource type="Texture2D" uid="uid://b0cvn7ev1bwut" path="res://theme/scroll_panel/dowel_wood.png" id="4_kbn6b"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="5_wujdw"]
+[ext_resource type="FontFile" uid="uid://4akk8wkhg56y" path="res://theme/fonts/Merienda/static/Merienda-ExtraBold.ttf" id="6_uxw28"]
+[ext_resource type="Script" uid="uid://dm63mtrlfj005" path="res://theme/faded_scroll_container/faded_scroll_container.gd" id="7_fy2qb"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="7_vphis"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rgtuo"]
+
+[sub_resource type="Gradient" id="Gradient_ofyuc"]
+offsets = PackedFloat32Array(0, 0.196721, 0.460041, 0.525615, 0.603484, 0.732582, 1)
+colors = PackedColorArray(0.59, 0.43424, 0.3068, 0.796078, 0.48, 0.35328, 0.2496, 0.294118, 0.48, 0.35328, 0.2496, 0.0116377, 0.48, 0.35328, 0.2496, 0, 0.48, 0.35328, 0.2496, 0.0431956, 0.48, 0.35328, 0.2496, 0.34902, 0.4, 0.2944, 0.208, 0.929412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g5dkl"]
+gradient = SubResource("Gradient_ofyuc")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_0fvof"]
+colors = PackedColorArray(0.331639, 0.33164, 0.331639, 1, 0.961814, 0.961814, 0.961814, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0fvof"]
+frequency = 0.0035
+domain_warp_amplitude = 100.0
+domain_warp_frequency = -0.01
+domain_warp_fractal_lacunarity = 8.69
+domain_warp_fractal_gain = 0.19
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jijvn"]
+width = 2048
+noise = SubResource("FastNoiseLite_0fvof")
+color_ramp = SubResource("Gradient_0fvof")
+seamless = true
+seamless_blend_skirt = 0.27
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_usdaf"]
+shader = ExtResource("3_l5v38")
+shader_parameter/size = Vector2(453, 25)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("4_kbn6b")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fd6kq"]
+shader = ExtResource("3_l5v38")
+shader_parameter/size = Vector2(451, 25)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("4_kbn6b")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[node name="PendingTripsList" type="PanelContainer" unique_id=796824552]
+custom_minimum_size = Vector2(504, 0)
+offset_right = 504.0
+offset_bottom = 111.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rgtuo")
+script = ExtResource("1_2gkrn")
+
+[node name="ScrollPanel" parent="." unique_id=1750323991 instance=ExtResource("2_bxqug")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(503, 0)
+layout_mode = 2
+
+[node name="TopDowelWood" parent="ScrollPanel/TopDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_usdaf")
+
+[node name="Scroller" parent="ScrollPanel" index="1"]
+custom_minimum_size = Vector2(0, 242)
+
+[node name="ScrollMargin" parent="ScrollPanel/Scroller" index="0"]
+offset_right = -1.0
+offset_bottom = 256.0
+
+[node name="ContentPanel" parent="ScrollPanel/Scroller/ScrollMargin" index="0"]
+material = ExtResource("5_wujdw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer" index="0" unique_id=1247731313]
+custom_minimum_size = Vector2(432, 0)
+custom_maximum_size = Vector2(-1, 220)
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="TitleLabel" type="Label" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=1337792165]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("6_uxw28")
+theme_override_font_sizes/font_size = 18
+text = "Pending Explorer Trips"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scroller" type="ScrollContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=1827558588]
+unique_name_in_owner = true
+clip_children = 1
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 5
+script = ExtResource("7_fy2qb")
+metadata/_custom_type_script = "uid://dm63mtrlfj005"
+
+[node name="MarkedUpLabel" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/Scroller" unique_id=1627404269 instance=ExtResource("7_vphis")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+text = "[img color=#0a0 width=1em height=1em]res://quests/list/checkmark.png[/img] Takama ga Hara (A Tight-Knit Community)
+[img color=#000 width=1em height=1em]res://quests/list/dashmark.png[/img] Takama ga Hara (A Tight-Knit Community)
+[img color=#000 width=1em height=1em]res://quests/list/dashmark.png[/img] Takama ga Hara (A Tight-Knit Community)
+[img color=#000 width=1em height=1em]res://quests/list/dashmark.png[/img] Takama ga Hara
+[img color=#000 width=1em height=1em]res://quests/list/dashmark.png[/img] Takama ga Hara
+[i]It takes one <term_lower:season> to finished each trip.[/i]"
+fit_content = true
+scroll_active = true
+tooltip_directions = Array[int]([5])
+
+[node name="BottomDowelWood" parent="ScrollPanel/BottomDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_fd6kq")
+
+[editable path="ScrollPanel"]

@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="RunScaling" format=3 uid="uid://ch8p1nv7ivsy1"]
+
+[ext_resource type="Script" uid="uid://bjknrkh0imenj" path="res://run/scaling/run_scaling.gd" id="1_2q8g8"]
+[ext_resource type="Script" uid="uid://cocdm5ulvrs8m" path="res://relics/relic.gd" id="2_ka7iy"]
+[ext_resource type="Resource" uid="uid://osq5evwru38y" path="res://relics/season_reward/threadbound_bundle/relic_threadbound_bundle.tres" id="3_35kas"]
+[ext_resource type="Resource" uid="uid://bvjcjelphv3c1" path="res://relics/season_reward/reed_case/relic_reed_case.tres" id="4_hnw43"]
+[ext_resource type="Resource" uid="uid://bh2cfvs5araog" path="res://relics/season_reward/commemorative_tapestry/relic_commemorative_tapestry.tres" id="5_22sqc"]
+[ext_resource type="Resource" uid="uid://blf4pbxl5dj72" path="res://relics/season_reward/field_scroll/relic_field_scroll.tres" id="6_3yys7"]
+[ext_resource type="Resource" uid="uid://bl1ikyn47dhtu" path="res://relics/season_reward/tiny_abacus/relic_tiny_abacus.tres" id="7_35weu"]
+
+[sub_resource type="Curve" id="Curve_n0kst"]
+_limits = [0.0, 1.5, 0.0, 30.0]
+_data = [Vector2(0, 0.162506), 0.0, 0.0, 0, 0, Vector2(14, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_3ejx5"]
+_limits = [0.0, 1.5, 0.0, 30.0]
+_data = [Vector2(0, 0.65), 0.0, 0.0, 0, 0, Vector2(8.92405, 0.171958), -0.0413572, -0.0413572, 0, 0, Vector2(22, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_nrhan"]
+_limits = [0.0, 1.5, 0.0, 30.0]
+_data = [Vector2(0.0949367, 0.429532), 0.0, 0.054198, 0, 0, Vector2(7, 1.1), 0.0, 0.0, 0, 0, Vector2(13.9873, 0.435849), -0.105978, -0.105978, 0, 0, Vector2(24.9051, 0.013633), -0.00135763, -0.00135763, 0, 0, Vector2(30, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Curve" id="Curve_6uvb1"]
+_limits = [0.0, 1.5, 0.0, 30.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(13.3851, 0.480271), 0.103104, 0.103104, 0, 0, Vector2(19.8734, 0.774539), -0.0418897, -0.0418897, 0, 0, Vector2(29.8734, 0.247576), -0.00253124, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_k1rol"]
+_limits = [0.0, 1.5, 0.0, 30.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(6, 0), 0.00470612, 0.00470612, 0, 0, Vector2(11, 0.15), 0.0159313, 0.0, 0, 0, Vector2(18, 0.25), 0.0159313, 0.0, 0, 0, Vector2(30, 0.4), 0.0262198, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Curve" id="Curve_b6g4r"]
+_limits = [0.0, 1.5, 0.0, 30.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(16, 0), 0.0, 0.0, 0, 0, Vector2(30, 0.2), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_2q8g8"]
+
+[sub_resource type="Curve" id="Curve_pouar"]
+_limits = [0.0, 30.0, 0.0, 30.0]
+_data = [Vector2(0, 2), 0.0, 1.92513, 0, 0, Vector2(6, 8), 0.677705, 0.677705, 0, 0, Vector2(12, 15), 0.668272, 0.668272, 0, 0, Vector2(18, 20), 0.472474, 0.472474, 0, 0, Vector2(24, 25), 1.21328, 1.21328, 0, 0, Vector2(30, 30), 0.62012, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="Curve" id="Curve_mktcr"]
+_limits = [0.0, 30.0, 0.0, 30.0]
+_data = [Vector2(0, 14), 0.0, 0.4, 0, 1, Vector2(25, 24), 0.4, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_mscpb"]
+_limits = [0.0, 300.0, 0.0, 50.0]
+_data = [Vector2(0, 10), 0.0, 5.22847, 0, 0, Vector2(1, 14), 0.0, 0.0, 0, 0, Vector2(5, 40), 8.39772, 8.39772, 0, 0, Vector2(19.9811, 171.466), 8.5179, 8.5179, 0, 0, Vector2(50, 300), 4.6509, 0.0, 0, 0]
+point_count = 5
+
+[resource]
+script = ExtResource("1_2q8g8")
+stage_goal_amounts = SubResource("Curve_mscpb")
+stages_per_season = 100
+haunting_probability = SubResource("Curve_2q8g8")
+card_tier_weights = Array[Curve]([SubResource("Curve_n0kst"), SubResource("Curve_3ejx5"), SubResource("Curve_nrhan"), SubResource("Curve_6uvb1"), SubResource("Curve_k1rol"), SubResource("Curve_b6g4r")])
+insights_per_stage = SubResource("Curve_pouar")
+insights_harmonization_multilier = 6
+season_relic_reward_pool = Array[ExtResource("2_ka7iy")]([ExtResource("3_35kas"), ExtResource("4_hnw43"), ExtResource("5_22sqc"), ExtResource("6_3yys7"), ExtResource("7_35weu")])
+settlement_radius = SubResource("Curve_mktcr")
+metadata/_custom_type_script = "uid://bjknrkh0imenj"

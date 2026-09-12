@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://57a7846tn4a3"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_xmd2y"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_7mb6q"]
+[ext_resource type="Resource" uid="uid://cfb354e7i6h13" path="res://stage/spots/building_small/upgrade_building_small_3_weaver.tres" id="2_tlxsr"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="4_j06yx"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="4_n3oee"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="6_2r7xv"]
+[ext_resource type="Resource" uid="uid://w8n0bwomyvod" path="res://stage/spots/building_small/spot_building_small.tres" id="7_c0fpq"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="8_x5kxe"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://ujvkbsjl0pk" path="res://map/sprites/spots/small_building/mst_small_building_workshop.tres" id="9_uswgj"]
+[ext_resource type="MapSpriteType_Building" uid="uid://ce7bjb6dy0x5q" path="res://map/sprites/spots/small_building/mst_small_building_granary.tres" id="10_1tvcq"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="11_d6gja"]
+
+[sub_resource type="Resource" id="Resource_4iekn"]
+script = ExtResource("11_d6gja")
+old_sprite_type = ExtResource("10_1tvcq")
+new_sprite_type = ExtResource("9_uswgj")
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_xmd2y")
+spot_upgrade_id = "building_small_workshop"
+name = "Workshop"
+description = "Anyone can use the tools stored here, for the whole community benefits."
+required_aspects = Array[ExtResource("4_n3oee")]([ExtResource("6_2r7xv")])
+granted_bonuses = Dictionary[ExtResource("2_7mb6q"), int]({
+ExtResource("4_j06yx"): 10
+})
+child_upgrades = Array[ExtResource("1_xmd2y")]([ExtResource("2_tlxsr")])
+spot = ExtResource("7_c0fpq")
+visuals = Array[ExtResource("8_x5kxe")]([SubResource("Resource_4iekn")])
+tags = Array[int]([2])

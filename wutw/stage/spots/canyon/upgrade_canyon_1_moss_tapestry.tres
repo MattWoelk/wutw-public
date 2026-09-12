@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://iymmciwie4ox"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_waoqr"]
+[ext_resource type="Resource" uid="uid://m14si4c0ytap" path="res://stage/spots/canyon/upgrade_canyon_2_goats_on_the_wall.tres" id="2_h55us"]
+[ext_resource type="Resource" uid="uid://b4kyua8cytabb" path="res://stage/spots/canyon/upgrade_canyon_2_vine_lattice.tres" id="3_r6tt3"]
+[ext_resource type="Resource" uid="uid://cuqgqrgv35vnc" path="res://stage/spots/canyon/upgrade_canyon_2_moss_ball_nursery.tres" id="4_p6gby"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="5_14vpl"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="6_5rw4b"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="7_4gueo"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="8_s7wk6"]
+[ext_resource type="Resource" uid="uid://d1c7ny2xs7pwo" path="res://stage/spots/canyon/spot_canyon.tres" id="9_r6tt3"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="10_p6gby"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://yi6r4d10vn2d" path="res://map/sprites/mountains/mst_mountain_1_medium.tres" id="11_vvar7"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://desakgu6q3yov" path="res://map/sprites/mountains/mst_mountain_2_large.tres" id="12_bcuee"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://c3u877m1spx0" path="res://map/sprites/mountains/mst_mountain_3_large.tres" id="13_5p72y"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://doqqvl0x3b3g4" path="res://map/sprites/mountains/mst_mountain_4_small.tres" id="14_ihwr1"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bxr2aj680eaqd" path="res://map/sprites/mountains/mst_mountain_5_small.tres" id="15_bgpa2"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cekrboxmhdmhk" path="res://map/sprites/mountains/mst_mountain_6_tiny.tres" id="16_qeogy"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cjbrxida4odnk" path="res://map/sprites/mountains/mst_mountain_7_tiny.tres" id="17_cvoap"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://56t2rh2pg58y" path="res://map/sprites/mountains/mst_mountain_8_medium.tres" id="18_4axre"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://csjeschaiy5ct" path="res://map/sprites/mountains/mst_mountain_9_large.tres" id="19_61ru5"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bctu7rlwqc3o7" path="res://map/sprites/mountains/mst_mountain_10_medium.tres" id="20_w6vvg"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://t2knd16pwuwg" path="res://map/sprites/mountains/mst_mountain_11_medium.tres" id="21_58xce"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dxba886xk8sch" path="res://map/sprites/mountains/mst_mountain_12_pair.tres" id="22_skc25"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://8tdjmwgmq8ou" path="res://map/sprites/spots/canyon/mst_canyon_moss_tapestry.tres" id="23_cr5ec"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://du7ijeojv2ho6" path="res://map/sprites/canyons/mst_canyon_1.tres" id="24_f1umw"]
+[ext_resource type="Script" uid="uid://cm6qovq4s06ky" path="res://stage/spots/spot_upgrade_visual_replace.gd" id="25_2p61r"]
+
+[sub_resource type="Resource" id="Resource_a26s4"]
+script = ExtResource("25_2p61r")
+old_sprite_types = Array[MapSpriteType]([ExtResource("24_f1umw")])
+new_sprite_type = ExtResource("23_cr5ec")
+extra_removables = Array[MapSpriteType]([ExtResource("11_vvar7"), ExtResource("12_bcuee"), ExtResource("13_5p72y"), ExtResource("14_ihwr1"), ExtResource("15_bgpa2"), ExtResource("16_qeogy"), ExtResource("17_cvoap"), ExtResource("18_4axre"), ExtResource("19_61ru5"), ExtResource("20_w6vvg"), ExtResource("21_58xce"), ExtResource("22_skc25")])
+metadata/_custom_type_script = "uid://cm6qovq4s06ky"
+
+[resource]
+script = ExtResource("1_waoqr")
+spot_upgrade_id = "canyon_moss"
+name = "Moss Tapestry"
+description = "This quilt is woven by the moisture seeping through the canyon walls."
+required_aspects = Array[ExtResource("7_4gueo")]([ExtResource("8_s7wk6")])
+granted_bonuses = Dictionary[ExtResource("5_14vpl"), int]({
+ExtResource("6_5rw4b"): 10
+})
+child_upgrades = Array[ExtResource("1_waoqr")]([ExtResource("2_h55us"), ExtResource("3_r6tt3"), ExtResource("4_p6gby")])
+spot = ExtResource("9_r6tt3")
+visuals = Array[ExtResource("10_p6gby")]([SubResource("Resource_a26s4")])
+tags = Array[int]([0])

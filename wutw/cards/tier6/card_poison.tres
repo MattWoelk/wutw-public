@@ -1,0 +1,475 @@
+[gd_resource type="Resource" script_class="CardType" format=3 uid="uid://b102hmkc4f48k"]
+
+[ext_resource type="Script" uid="uid://b56kytec5oqcb" path="res://cards/abilities/card_ability.gd" id="1_mafaf"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="2_mi46t"]
+[ext_resource type="Script" uid="uid://ckufokw5lk1yq" path="res://cards/abilities/card_ability_draw.gd" id="3_5i1yo"]
+[ext_resource type="Resource" uid="uid://d3m1xh5q3vjl3" path="res://cards/tier6/card_disease.tres" id="4_mafaf"]
+[ext_resource type="Script" uid="uid://bl5b1rm7x8b36" path="res://cards/abilities/card_ability_topdeck.gd" id="5_2u11v"]
+[ext_resource type="Script" uid="uid://xc73x4t7ckxm" path="res://japanese/example_sentence.gd" id="6_omlsp"]
+[ext_resource type="Script" uid="uid://bl2eelwkj800o" path="res://japanese/japanese_token.gd" id="7_06vh3"]
+[ext_resource type="Script" uid="uid://b6rw4ldrj6wch" path="res://japanese/vocab.gd" id="8_5f24h"]
+[ext_resource type="Script" uid="uid://du4k150pcdjs6" path="res://japanese/kanji_shape.gd" id="9_phher"]
+[ext_resource type="Script" uid="uid://dc15txdqjanlf" path="res://japanese/stroke_shape.gd" id="10_i0561"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="11_wwflo"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="12_3er32"]
+[ext_resource type="Resource" uid="uid://d1k7vakhjcq5g" path="res://glossary/categories/termcategory_card.tres" id="13_286t2"]
+
+[sub_resource type="Resource" id="Resource_f2crf"]
+script = ExtResource("3_5i1yo")
+count = 2
+aspect = ExtResource("2_mi46t")
+metadata/_custom_type_script = "uid://ckufokw5lk1yq"
+
+[sub_resource type="Resource" id="Resource_lnfi8"]
+script = ExtResource("5_2u11v")
+card_type = ExtResource("4_mafaf")
+count = 2
+metadata/_custom_type_script = "uid://bl5b1rm7x8b36"
+
+[sub_resource type="Resource" id="Resource_p5t8m"]
+script = ExtResource("7_06vh3")
+raw_text = "お"
+reading = "お"
+
+[sub_resource type="Resource" id="Resource_wluok"]
+script = ExtResource("8_5f24h")
+japanese = "気の毒"
+readings = Array[String](["きのどく"])
+meanings = Array[String](["pitiful", "unfortunate", "poor", "miserable", "wretched", "unpardonable", "regrettable"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_mvblw"]
+script = ExtResource("7_06vh3")
+raw_text = "気の毒"
+vocab = SubResource("Resource_wluok")
+reading = "きのどく"
+
+[sub_resource type="Resource" id="Resource_erb1h"]
+script = ExtResource("7_06vh3")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_pgk76"]
+script = ExtResource("7_06vh3")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_4xcpw"]
+script = ExtResource("6_omlsp")
+japanese = "お気の毒に。"
+native = "That is too bad."
+parsed = Array[ExtResource("7_06vh3")]([SubResource("Resource_p5t8m"), SubResource("Resource_mvblw"), SubResource("Resource_erb1h"), SubResource("Resource_pgk76")])
+_difficulty = 272
+
+[sub_resource type="Resource" id="Resource_mb5p8"]
+script = ExtResource("7_06vh3")
+raw_text = "あれ"
+reading = "あれ"
+
+[sub_resource type="Resource" id="Resource_pcoxl"]
+script = ExtResource("7_06vh3")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_i8yyq"]
+script = ExtResource("8_5f24h")
+japanese = "毒"
+readings = Array[String](["どく"])
+meanings = Array[String](["poison", "toxicant", "harm", "evil influence", "ill will", "spite", "malice", "abusive language"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_hbywb"]
+script = ExtResource("7_06vh3")
+raw_text = "毒"
+vocab = SubResource("Resource_i8yyq")
+reading = "どく"
+
+[sub_resource type="Resource" id="Resource_8edoq"]
+script = ExtResource("7_06vh3")
+raw_text = "だ"
+reading = "だ"
+
+[sub_resource type="Resource" id="Resource_7ih3q"]
+script = ExtResource("7_06vh3")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_j0mc7"]
+script = ExtResource("6_omlsp")
+japanese = "あれは毒だ。"
+native = "That stuff is poison."
+parsed = Array[ExtResource("7_06vh3")]([SubResource("Resource_mb5p8"), SubResource("Resource_pcoxl"), SubResource("Resource_hbywb"), SubResource("Resource_8edoq"), SubResource("Resource_7ih3q")])
+_difficulty = 311
+
+[sub_resource type="Resource" id="Resource_d7pjb"]
+script = ExtResource("7_06vh3")
+raw_text = "これ"
+reading = "これ"
+
+[sub_resource type="Resource" id="Resource_s8pm8"]
+script = ExtResource("7_06vh3")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_n8tgf"]
+script = ExtResource("8_5f24h")
+japanese = "体"
+readings = Array[String](["からだ"])
+meanings = Array[String](["body", "torso", "trunk", "build", "physique", "frame", "figure", "health", "constitution"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_wqqhh"]
+script = ExtResource("7_06vh3")
+raw_text = "体"
+vocab = SubResource("Resource_n8tgf")
+reading = "からだ"
+
+[sub_resource type="Resource" id="Resource_won6w"]
+script = ExtResource("7_06vh3")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_4wqe0"]
+script = ExtResource("7_06vh3")
+raw_text = "毒"
+vocab = SubResource("Resource_i8yyq")
+reading = "どく"
+
+[sub_resource type="Resource" id="Resource_68mky"]
+script = ExtResource("7_06vh3")
+raw_text = "だ"
+reading = "だ"
+
+[sub_resource type="Resource" id="Resource_ln7qh"]
+script = ExtResource("7_06vh3")
+raw_text = "よ"
+reading = "よ"
+
+[sub_resource type="Resource" id="Resource_mrs2w"]
+script = ExtResource("7_06vh3")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_atjyc"]
+script = ExtResource("6_omlsp")
+japanese = "これは体に毒だよ。"
+native = "This is a hazard to your health."
+parsed = Array[ExtResource("7_06vh3")]([SubResource("Resource_d7pjb"), SubResource("Resource_s8pm8"), SubResource("Resource_wqqhh"), SubResource("Resource_won6w"), SubResource("Resource_4wqe0"), SubResource("Resource_68mky"), SubResource("Resource_ln7qh"), SubResource("Resource_mrs2w")])
+_difficulty = 336
+
+[sub_resource type="Resource" id="Resource_7dhvg"]
+script = ExtResource("8_5f24h")
+japanese = "舌"
+readings = Array[String](["した"])
+meanings = Array[String](["tongue", "tongue-like object", "clapper (of a bell)", "talon (of a lock)", "reed (of a musical instrument)"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_vg0a3"]
+script = ExtResource("7_06vh3")
+raw_text = "舌"
+vocab = SubResource("Resource_7dhvg")
+reading = "した"
+
+[sub_resource type="Resource" id="Resource_gi63e"]
+script = ExtResource("7_06vh3")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_okq84"]
+script = ExtResource("7_06vh3")
+raw_text = "毒"
+vocab = SubResource("Resource_i8yyq")
+reading = "どく"
+
+[sub_resource type="Resource" id="Resource_g0bfu"]
+script = ExtResource("7_06vh3")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_hho07"]
+script = ExtResource("7_06vh3")
+raw_text = "まさる"
+reading = "まさる"
+
+[sub_resource type="Resource" id="Resource_7vlcx"]
+script = ExtResource("7_06vh3")
+raw_text = "毒"
+vocab = SubResource("Resource_i8yyq")
+reading = "どく"
+
+[sub_resource type="Resource" id="Resource_r063j"]
+script = ExtResource("7_06vh3")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_7qjlb"]
+script = ExtResource("7_06vh3")
+raw_text = "ない"
+reading = "ない"
+
+[sub_resource type="Resource" id="Resource_0ro7a"]
+script = ExtResource("7_06vh3")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_v2reg"]
+script = ExtResource("6_omlsp")
+japanese = "舌の毒にまさる毒はない。"
+native = "A tongue is the most venomous thing of all."
+parsed = Array[ExtResource("7_06vh3")]([SubResource("Resource_vg0a3"), SubResource("Resource_gi63e"), SubResource("Resource_okq84"), SubResource("Resource_g0bfu"), SubResource("Resource_hho07"), SubResource("Resource_7vlcx"), SubResource("Resource_r063j"), SubResource("Resource_7qjlb"), SubResource("Resource_0ro7a")])
+_difficulty = 481
+
+[sub_resource type="Resource" id="Resource_gn7uw"]
+script = ExtResource("8_5f24h")
+japanese = "食中毒"
+readings = Array[String](["しょくちゅうどく"])
+meanings = Array[String](["food poisoning"])
+
+[sub_resource type="Resource" id="Resource_0hkmv"]
+script = ExtResource("7_06vh3")
+raw_text = "食中毒"
+vocab = SubResource("Resource_gn7uw")
+reading = "しょくちゅうどく"
+
+[sub_resource type="Resource" id="Resource_3g2hn"]
+script = ExtResource("7_06vh3")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_7ifwc"]
+script = ExtResource("8_5f24h")
+japanese = "経験"
+readings = Array[String](["けいけん"])
+meanings = Array[String](["experience"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_ns44m"]
+script = ExtResource("7_06vh3")
+raw_text = "経験"
+vocab = SubResource("Resource_7ifwc")
+reading = "けいけん"
+
+[sub_resource type="Resource" id="Resource_fe4ls"]
+script = ExtResource("7_06vh3")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_gabar"]
+script = ExtResource("7_06vh3")
+raw_text = "あり"
+reading = "あり"
+
+[sub_resource type="Resource" id="Resource_llb8h"]
+script = ExtResource("7_06vh3")
+raw_text = "ます"
+reading = "ます"
+
+[sub_resource type="Resource" id="Resource_xpr6u"]
+script = ExtResource("7_06vh3")
+raw_text = "か"
+reading = "か"
+
+[sub_resource type="Resource" id="Resource_jm4mt"]
+script = ExtResource("7_06vh3")
+raw_text = "？"
+reading = "？"
+
+[sub_resource type="Resource" id="Resource_2oc4o"]
+script = ExtResource("6_omlsp")
+japanese = "食中毒の経験はありますか？"
+native = "Have you ever gotten food poisoning?"
+parsed = Array[ExtResource("7_06vh3")]([SubResource("Resource_0hkmv"), SubResource("Resource_3g2hn"), SubResource("Resource_ns44m"), SubResource("Resource_fe4ls"), SubResource("Resource_gabar"), SubResource("Resource_llb8h"), SubResource("Resource_xpr6u"), SubResource("Resource_jm4mt")])
+_difficulty = 500
+
+[sub_resource type="Resource" id="Resource_5a0ab"]
+script = ExtResource("8_5f24h")
+japanese = "甲"
+readings = Array[String](["かぶと"])
+meanings = Array[String](["helmet (of a warrior)", "headpiece"])
+jlpt_level = 1
+
+[sub_resource type="Resource" id="Resource_2pjbu"]
+script = ExtResource("7_06vh3")
+raw_text = "甲"
+vocab = SubResource("Resource_5a0ab")
+reading = "かぶと"
+
+[sub_resource type="Resource" id="Resource_up5bu"]
+script = ExtResource("7_06vh3")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_vjsra"]
+script = ExtResource("8_5f24h")
+japanese = "薬"
+readings = Array[String](["くすり"])
+meanings = Array[String](["medicine", "pharmaceuticals", "(legal) drugs", "pill", "ointment", "salve", "efficacious chemical (gunpowder, pesticide, etc.)", "(pottery) glaze", "(illegal) drug", "narcotic", "small bribe"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_xtb44"]
+script = ExtResource("7_06vh3")
+raw_text = "薬"
+vocab = SubResource("Resource_vjsra")
+reading = "くすり"
+
+[sub_resource type="Resource" id="Resource_bdc7v"]
+script = ExtResource("7_06vh3")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_rt021"]
+script = ExtResource("8_5f24h")
+japanese = "乙"
+readings = Array[String](["おつ"])
+meanings = Array[String](["(the) second (party, rank, etc.)", "B (grade)", "the latter", "stylish", "chic", "smart", "witty", "tasty", "strange", "quaint", "queer", "thank you", "good job", "see you", "goodbye", "goodnight"])
+jlpt_level = 1
+
+[sub_resource type="Resource" id="Resource_sbd8h"]
+script = ExtResource("7_06vh3")
+raw_text = "乙"
+vocab = SubResource("Resource_rt021")
+reading = "おつ"
+
+[sub_resource type="Resource" id="Resource_t0fpr"]
+script = ExtResource("7_06vh3")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_i2ouh"]
+script = ExtResource("7_06vh3")
+raw_text = "毒"
+vocab = SubResource("Resource_i8yyq")
+reading = "どく"
+
+[sub_resource type="Resource" id="Resource_1gsiv"]
+script = ExtResource("7_06vh3")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_inr26"]
+script = ExtResource("6_omlsp")
+japanese = "甲の薬は乙の毒。"
+native = "One person's medicine is another person's poison."
+parsed = Array[ExtResource("7_06vh3")]([SubResource("Resource_2pjbu"), SubResource("Resource_up5bu"), SubResource("Resource_xtb44"), SubResource("Resource_bdc7v"), SubResource("Resource_sbd8h"), SubResource("Resource_t0fpr"), SubResource("Resource_i2ouh"), SubResource("Resource_1gsiv")])
+_difficulty = 506
+
+[sub_resource type="Resource" id="Resource_k45s2"]
+script = ExtResource("10_i0561")
+points = Array[Vector2]([Vector2(36.05, 21.97), Vector2(40.95, 22.45), Vector2(45.44, 21.92), Vector2(50.37, 21.33), Vector2(55.79, 20.72), Vector2(61.32, 20.15), Vector2(66.58, 19.69), Vector2(71.36, 19.38), Vector2(76.42, 19.53)])
+
+[sub_resource type="Resource" id="Resource_miqbv"]
+script = ExtResource("10_i0561")
+points = Array[Vector2]([Vector2(53.67, 10.22), Vector2(55.38, 15.09), Vector2(55.35, 20.18), Vector2(55.31, 26.38), Vector2(55.27, 32.95), Vector2(55.24, 39.16), Vector2(55.25, 44.25)])
+
+[sub_resource type="Resource" id="Resource_ck4fs"]
+script = ExtResource("10_i0561")
+points = Array[Vector2]([Vector2(34.09, 33.55), Vector2(39.15, 33.96), Vector2(43.73, 33.5), Vector2(48.93, 32.93), Vector2(54.52, 32.31), Vector2(60.05, 31.71), Vector2(65.09, 31.2), Vector2(69.56, 30.81), Vector2(74.64, 30.88)])
+
+[sub_resource type="Resource" id="Resource_lhejq"]
+script = ExtResource("10_i0561")
+points = Array[Vector2]([Vector2(19.13, 47.77), Vector2(24.15, 48.34), Vector2(29.19, 48.12), Vector2(33.65, 47.69), Vector2(38.48, 47.2), Vector2(43.64, 46.68), Vector2(49, 46.14), Vector2(54.47, 45.6), Vector2(59.94, 45.07), Vector2(65.3, 44.56), Vector2(70.44, 44.11), Vector2(75.25, 43.71), Vector2(79.63, 43.39), Vector2(84.75, 43.34), Vector2(89.63, 43.79)])
+
+[sub_resource type="Resource" id="Resource_64eu0"]
+script = ExtResource("10_i0561")
+points = Array[Vector2]([Vector2(39.44, 55.23), Vector2(40.04, 60.1), Vector2(38.49, 65.4), Vector2(36.53, 70.21), Vector2(34.23, 74.6), Vector2(31.61, 78.67), Vector2(29.98, 83.15), Vector2(34.68, 83.67), Vector2(39.69, 83.67), Vector2(44.76, 83.97), Vector2(49.83, 84.61), Vector2(54.87, 85.6), Vector2(59.83, 86.97), Vector2(64.69, 88.76), Vector2(69.4, 90.98), Vector2(73.76, 93.56), Vector2(77.87, 96.56), Vector2(81.75, 100.03)])
+
+[sub_resource type="Resource" id="Resource_rmt4m"]
+script = ExtResource("10_i0561")
+points = Array[Vector2]([Vector2(41.15, 56.67), Vector2(46.48, 56.55), Vector2(52.68, 55.42), Vector2(58.5, 54.52), Vector2(63.61, 53.84), Vector2(67.67, 53.4), Vector2(71.64, 53.38), Vector2(74.45, 56.63), Vector2(73.91, 61.36), Vector2(73.25, 66.26), Vector2(72.43, 71.27), Vector2(71.41, 76.33), Vector2(70.15, 81.38), Vector2(68.61, 86.34), Vector2(66.73, 91.15), Vector2(64.44, 95.83), Vector2(60.37, 98.02), Vector2(56.03, 95.47)])
+
+[sub_resource type="Resource" id="Resource_wvkhh"]
+script = ExtResource("10_i0561")
+points = Array[Vector2]([Vector2(55.97, 58.57), Vector2(55.96, 63.26), Vector2(54.8, 67.58), Vector2(53.34, 72.51), Vector2(51.65, 77.87), Vector2(49.82, 83.46)])
+
+[sub_resource type="Resource" id="Resource_j21gp"]
+script = ExtResource("10_i0561")
+points = Array[Vector2]([Vector2(10.63, 72.58), Vector2(15.59, 73.25), Vector2(20.6, 73.11), Vector2(24.73, 72.82), Vector2(28.9, 72.52), Vector2(33.47, 72.19), Vector2(38.36, 71.83), Vector2(43.51, 71.47), Vector2(48.84, 71.1), Vector2(54.28, 70.74), Vector2(59.78, 70.4), Vector2(65.25, 70.07), Vector2(70.63, 69.79), Vector2(75.85, 69.54), Vector2(80.85, 69.34), Vector2(85.78, 69.2), Vector2(91.07, 69.33), Vector2(95.63, 69.99)])
+
+[sub_resource type="Resource" id="Resource_st51n"]
+script = ExtResource("9_phher")
+stroke_shapes = Array[ExtResource("10_i0561")]([SubResource("Resource_k45s2"), SubResource("Resource_miqbv"), SubResource("Resource_ck4fs"), SubResource("Resource_lhejq"), SubResource("Resource_64eu0"), SubResource("Resource_rmt4m"), SubResource("Resource_wvkhh"), SubResource("Resource_j21gp")])
+
+[sub_resource type="Resource" id="Resource_b4ety"]
+script = ExtResource("8_5f24h")
+japanese = "毒"
+readings = Array[String](["どく"])
+meanings = Array[String](["poison", "toxicant", "harm", "evil influence", "ill will", "spite", "malice"])
+jlpt_level = 3
+_difficulty = 61
+
+[sub_resource type="Resource" id="Resource_ao00p"]
+script = ExtResource("8_5f24h")
+japanese = "気の毒"
+readings = Array[String](["きのどく"])
+meanings = Array[String](["pitiful", "unfortunate", "poor", "miserable", "wretched", "unpardonable", "regrettable"])
+jlpt_level = 3
+_difficulty = 63
+
+[sub_resource type="Resource" id="Resource_brxdp"]
+script = ExtResource("8_5f24h")
+japanese = "消毒"
+readings = Array[String](["しょうどく"])
+meanings = Array[String](["disinfection", "sterilization", "sterilisation"])
+jlpt_level = 2
+_difficulty = 92
+
+[sub_resource type="Resource" id="Resource_e158u"]
+script = ExtResource("8_5f24h")
+japanese = "中毒"
+readings = Array[String](["ちゅうどく"])
+meanings = Array[String](["poisoning", "addiction"])
+jlpt_level = 1
+_difficulty = 122
+
+[sub_resource type="Resource" id="Resource_q6a8x"]
+script = ExtResource("8_5f24h")
+japanese = "毒性"
+readings = Array[String](["どくせい"])
+meanings = Array[String](["toxicity", "virulence", "toxic", "virulent", "poisonous"])
+_difficulty = 768
+
+[sub_resource type="Resource" id="Resource_0tlyv"]
+script = ExtResource("8_5f24h")
+japanese = "毒殺"
+readings = Array[String](["どくさつ"])
+meanings = Array[String](["killing by poisoning", "killing with poison"])
+_difficulty = 823
+
+[sub_resource type="Resource" id="Resource_wri05"]
+script = ExtResource("8_5f24h")
+japanese = "毒舌"
+readings = Array[String](["どくぜつ"])
+meanings = Array[String](["wicked tongue", "sharp tongue", "abusive language"])
+_difficulty = 839
+
+[sub_resource type="Resource" id="Resource_cc5yo"]
+script = ExtResource("8_5f24h")
+japanese = "有毒"
+readings = Array[String](["ゆうどく"])
+meanings = Array[String](["poisonous", "toxic"])
+_difficulty = 854
+
+[sub_resource type="Resource" id="Resource_3oc5p"]
+script = ExtResource("8_5f24h")
+japanese = "毒薬"
+readings = Array[String](["どくやく"])
+meanings = Array[String](["poison"])
+_difficulty = 862
+
+[sub_resource type="Resource" id="Resource_xqf43"]
+script = ExtResource("8_5f24h")
+japanese = "食中毒"
+readings = Array[String](["しょくちゅうどく"])
+meanings = Array[String](["food poisoning"])
+_difficulty = 868
+
+[resource]
+script = ExtResource("11_wwflo")
+symbol = "毒"
+card_name = "Poison"
+rarity = 6
+abilities = Array[ExtResource("1_mafaf")]([SubResource("Resource_f2crf"), SubResource("Resource_lnfi8")])
+vocabulary = Array[ExtResource("8_5f24h")]([SubResource("Resource_b4ety"), SubResource("Resource_ao00p"), SubResource("Resource_brxdp"), SubResource("Resource_e158u"), SubResource("Resource_q6a8x"), SubResource("Resource_0tlyv"), SubResource("Resource_wri05"), SubResource("Resource_cc5yo"), SubResource("Resource_3oc5p"), SubResource("Resource_xqf43")])
+example_sentences = Array[ExtResource("6_omlsp")]([SubResource("Resource_4xcpw"), SubResource("Resource_j0mc7"), SubResource("Resource_atjyc"), SubResource("Resource_v2reg"), SubResource("Resource_2oc4o"), SubResource("Resource_inr26")])
+kanji_shape = SubResource("Resource_st51n")
+term_categories = Array[ExtResource("12_3er32")]([ExtResource("13_286t2")])

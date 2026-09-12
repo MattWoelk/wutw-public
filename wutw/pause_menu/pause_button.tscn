@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://if8t46q48gc2"]
+
+[ext_resource type="Script" uid="uid://1l38g4x2ouk4" path="res://pause_menu/pause_button.gd" id="1_a4baj"]
+[ext_resource type="FontFile" uid="uid://dwycufv0f21v2" path="res://theme/fonts/Yuji_Mai/YujiMai-Regular.ttf" id="3_i7kkb"]
+[ext_resource type="Material" uid="uid://dm0coidukcc6" path="res://theme/button/ukiyoe_button_material.tres" id="4_i2y2l"]
+[ext_resource type="Texture2D" uid="uid://go64cbx1ohwd" path="res://theme/button/white_1x1px.png" id="7_sbq8i"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6442s"]
+content_margin_left = 5.0
+content_margin_top = 3.0
+content_margin_right = 5.0
+content_margin_bottom = 8.0
+texture = ExtResource("7_sbq8i")
+
+[node name="PauseButton" type="Button" unique_id=201892789]
+material = ExtResource("4_i2y2l")
+instance_shader_parameters/background_offset = Vector2(0.43157163, 0.5662109)
+instance_shader_parameters/size = Vector2(70.56006, 70.56)
+instance_shader_parameters/state = 0.0
+custom_minimum_size = Vector2(60, 60)
+custom_maximum_size = Vector2(60, 60)
+offset_right = 48.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(0.3128471, 0.21406123, 0.06483421, 1)
+theme_override_fonts/font = ExtResource("3_i7kkb")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = SubResource("StyleBoxTexture_6442s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6442s")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6442s")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6442s")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6442s")
+text = "止"
+script = ExtResource("1_a4baj")
+stylebox_override = SubResource("StyleBoxTexture_6442s")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

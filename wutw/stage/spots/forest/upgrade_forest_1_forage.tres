@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://cnk8qcthoxlj7"]
+
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="1_3l7om"]
+[ext_resource type="Resource" uid="uid://cem57n26te6mg" path="res://stage/spots/forest/upgrade_forest_2_fruit_grove.tres" id="2_n1ujv"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="2_wnixw"]
+[ext_resource type="Resource" uid="uid://bphp08b0lalpe" path="res://stage/spots/forest/upgrade_forest_2_wildlife_sanctuary.tres" id="3_356n3"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_fcvkr"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="4_twf0x"]
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="5_em2st"]
+[ext_resource type="Resource" uid="uid://ucnbpdhw8mob" path="res://stage/spots/forest/spot_forest.tres" id="8_mooce"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_8nx21"]
+[ext_resource type="Script" uid="uid://dvrtuqbmx4v30" path="res://stage/spots/spot_upgrade_visual_add.gd" id="10_74do1"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://bryu745m44dyi" path="res://map/sprites/spots/forest/mst_forest_foraging_glade.tres" id="11_lkrul"]
+
+[sub_resource type="Resource" id="Resource_ves11"]
+script = ExtResource("10_74do1")
+sprite_type = ExtResource("11_lkrul")
+biome = 9
+metadata/_custom_type_script = "uid://dvrtuqbmx4v30"
+
+[resource]
+script = ExtResource("5_em2st")
+spot_upgrade_id = "forest_forage"
+name = "Foraging Glade"
+description = "Thickets full of juicy berries and delicious mushrooms fill empty hands and hungry bellies."
+required_aspects = Array[ExtResource("3_fcvkr")]([ExtResource("4_twf0x")])
+granted_bonuses = Dictionary[ExtResource("1_3l7om"), int]({
+ExtResource("2_wnixw"): 10
+})
+child_upgrades = Array[ExtResource("5_em2st")]([ExtResource("2_n1ujv"), ExtResource("3_356n3")])
+spot = ExtResource("8_mooce")
+visuals = Array[ExtResource("9_8nx21")]([SubResource("Resource_ves11")])
+tags = Array[int]([0, 1])

@@ -1,0 +1,39 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://dul0nvq8ejihp"]
+
+[ext_resource type="MapSpriteType_Generic" uid="uid://bonk70v3vay2a" path="res://map/sprites/spots/seashore/mst_seashore_driftwood_shoal.tres" id="1_l4yby"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://b548ltw41s15m" path="res://map/sprites/hills/mst_hill_6.tres" id="2_kva1h"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://baotrqn7v278y" path="res://map/sprites/spots/forest/mst_forest_shrine_statue.tres" id="3_qvpw0"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://bpbbhqidl8377" path="res://map/sprites/spots/seashore/mst_seashore_shipwreck.tres" id="4_c6ofg"]
+[ext_resource type="WwiseEvent" uid="uid://clsvvfb3wx4sd" path="res://Wwise/resources/Event/{A3D014E4-C7CD-4F02-8279-A98BFF04D0C3}.tres" id="5_kva1h"]
+
+[sub_resource type="MapSpriteCollision_Rect" id="MapSpriteCollision_Rect_l4yby"]
+rect = Rect2(-3.915, -2.82, 7.9, 1.505)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Rect" id="MapSpriteCollision_Rect_kva1h"]
+rect = Rect2(-2.6, -1.73, 5.55, 3.14)
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_ug2t1"]
+sprite_type = ExtResource("4_c6ofg")
+offset = Vector2(1.03, -4.51)
+scale = 0.765
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_js8xt"]
+sprite_type = ExtResource("2_kva1h")
+offset = Vector2(-1.51, -2.14)
+scale = 0.415
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_rek8g"]
+sprite_type = ExtResource("3_qvpw0")
+offset = Vector2(2.005, -2.645)
+scale = 0.625
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_5jinl"]
+sprite_type = ExtResource("1_l4yby")
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_ug2t1"), SubResource("MapSpriteComponent_js8xt"), SubResource("MapSpriteComponent_rek8g"), SubResource("MapSpriteComponent_5jinl")])
+footprint_radius = 4.4
+sound = ExtResource("5_kva1h")
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Rect_l4yby"), SubResource("MapSpriteCollision_Rect_kva1h")])

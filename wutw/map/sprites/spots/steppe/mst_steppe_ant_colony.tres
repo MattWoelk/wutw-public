@@ -1,0 +1,30 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://cyq7l3b8a8ul5"]
+
+[ext_resource type="MapSpriteType_Generic" uid="uid://djlxfy7k51uw7" path="res://map/sprites/spots/steppe/mst_steppe_ant_colony_mounds.tres" id="1_2ur1c"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://hfhwouwbnimb" path="res://map/sprites/spots/steppe/mst_steppe_thistle_field.tres" id="2_4bixs"]
+[ext_resource type="PackedScene" uid="uid://kuohh10fojmo" path="res://map/sprites/spots/steppe/map_effect_ants.tscn" id="3_y0i0n"]
+
+[sub_resource type="MapSpriteCollision_Circle" id="MapSpriteCollision_Circle_hs851"]
+center = Vector2(-0.03, 0.61)
+radius = 2.135
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_3vajm"]
+sprite_type = ExtResource("1_2ur1c")
+offset = Vector2(0.08, 0.565)
+scale = 0.68
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_gnkn2"]
+sprite_type = ExtResource("2_4bixs")
+
+[sub_resource type="MapEffectAttachment" id="MapEffectAttachment_16j74"]
+scene = ExtResource("3_y0i0n")
+offset = Vector2(0.035999175, 0.5040752)
+scale = 0.05
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_3vajm"), SubResource("MapSpriteComponent_gnkn2")])
+footprint_radius = 1.475
+must_be_fully_within_clip = true
+effects = Array[MapEffectAttachment]([SubResource("MapEffectAttachment_16j74")])
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Circle_hs851")])

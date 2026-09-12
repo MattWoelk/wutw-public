@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://ftcy5t5l6bl0"]
+
+[ext_resource type="Script" uid="uid://bemmmpb2gvqjx" path="res://hub/museum/museum_detail_companion.gd" id="1_oclir"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="2_yp1m7"]
+[ext_resource type="Texture2D" uid="uid://cmsy0hu4cfv5p" path="res://companions/fox/fox.png" id="4_6v0bd"]
+
+[node name="MuseumDetail_Companion" type="MarginContainer" unique_id=2113469635]
+offset_right = 660.0
+offset_bottom = 1013.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+script = ExtResource("1_oclir")
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=276715387]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TitleLabel" type="Label" parent="VBox" unique_id=232846599]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "The Fox"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBox" unique_id=209357354]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = -6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBox/MarginContainer2" unique_id=1282210296]
+layout_mode = 2
+
+[node name="MainText" parent="VBox/MarginContainer2/HBoxContainer" unique_id=1631566008 instance=ExtResource("2_yp1m7")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+text = "Warehouses in this settlement turn up empty overnight. Households run out of food twice as fast.
+
+Whispers speak of people with mouths hiding behind people's heads, covered by locks of hair. The most common story is of the Futakuchi Onna, a lady who smiles sweetly while her hair stirs behind her like a nest of living threads, feeding a hidden mouth that demands its share of every harvest. Some claim she was once a leader who hoarded plenty while others starved, and that her second mouth is of those she wronged, forever consuming what she once denied."
+fit_content = true
+tooltip_directions = Array[int]([5, 1, 3])
+
+[node name="Illustration" type="TextureRect" parent="VBox/MarginContainer2/HBoxContainer" unique_id=785605765]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 400)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -50)
+texture = ExtResource("4_6v0bd")
+expand_mode = 1
+stretch_mode = 5

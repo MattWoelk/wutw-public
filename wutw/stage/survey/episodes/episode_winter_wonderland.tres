@@ -1,0 +1,102 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://bevtjyrioe1pp"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_1a58a"]
+[ext_resource type="Resource" uid="uid://d0v3ugd8nhwi0" path="res://art/pieces/piece_hiroshige_kiso_mountain_snow.tres" id="1_xk5i1"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_xk5i1"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_b33sg"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="4_v3fpp"]
+[ext_resource type="Resource" uid="uid://cbpcuddnx7ugg" path="res://cards/tier2/card_play.tres" id="5_ochg8"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="6_u8qsa"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="7_35vpx"]
+[ext_resource type="Resource" uid="uid://00qsql8js4ef" path="res://cards/tier0/card_ice.tres" id="8_8d7kt"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="9_cv8bf"]
+[ext_resource type="Script" uid="uid://dadces6knf8fj" path="res://events/system/outcomes/run_var/event_outcome_run_var.gd" id="10_n0383"]
+[ext_resource type="Resource" uid="uid://bikiqnrtha0a1" path="res://cards/tier2/card_snow.tres" id="11_2rysl"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="12_ksh3u"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="13_iyx1y"]
+
+[sub_resource type="Resource" id="Resource_sglgl"]
+script = ExtResource("1_1a58a")
+_texture_path = "res://stage/survey/episodes/episode_winter_wonderland.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_wpc33"]
+script = ExtResource("6_u8qsa")
+card_type = ExtResource("5_ochg8")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_tjnww"]
+script = ExtResource("2_xk5i1")
+label = "Throw snowballs."
+aspects = Array[ExtResource("3_b33sg")]([ExtResource("4_v3fpp")])
+outcome = SubResource("Resource_wpc33")
+outcome_text = "A scout cups some snow into her hands and hurls it towards one of her teammates.
+
+The retaliation is swift, and others are quick to join in.
+
+Soon the entire survey team is covered in snow as their laughter echoes through the valley below."
+
+[sub_resource type="Resource" id="Resource_wdnic"]
+script = ExtResource("6_u8qsa")
+card_type = ExtResource("8_8d7kt")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_np4uc"]
+script = ExtResource("2_xk5i1")
+label = "Go sledding."
+aspects = Array[ExtResource("3_b33sg")]([ExtResource("7_35vpx")])
+outcome = SubResource("Resource_wdnic")
+outcome_text = "The scouts gather their straw hats.
+
+Each of them plants themself in the center of their hat and slides down the little icy slope leading down to their camp.
+
+A few crash into trees or each other, but it isn't enough to stop them from going back up the slope again and again."
+
+[sub_resource type="Resource" id="Resource_nnrwb"]
+script = ExtResource("10_n0383")
+run_var = 6
+delta = 3
+preview_description = "Gain 3 maximum <term:inspiration>"
+outcome_description = "Gained 3 maximum <term:inspiration>."
+metadata/_custom_type_script = "uid://dadces6knf8fj"
+
+[sub_resource type="Resource" id="Resource_76f81"]
+script = ExtResource("2_xk5i1")
+label = "Make a snow fort."
+aspects = Array[ExtResource("3_b33sg")]([ExtResource("9_cv8bf")])
+outcome = SubResource("Resource_nnrwb")
+outcome_text = "One of the surveyors suggests that they build a little fort out of the snow.
+
+\"It's practice for when we need emergency shelter,\" she declares. The others are happy enough with this excuse, and set to work.
+
+By noon they have transformed a pile of snow into a miniature castle, complete with several tunnels and a central hall.
+
+It is surprisingly cozy."
+
+[sub_resource type="Resource" id="Resource_evnkl"]
+script = ExtResource("6_u8qsa")
+card_type = ExtResource("11_2rysl")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_it7ig"]
+script = ExtResource("2_xk5i1")
+label = "Admire the snow."
+aspects = Array[ExtResource("3_b33sg")]([null])
+outcome = SubResource("Resource_evnkl")
+outcome_text = "The group decides to sit by the fire and admire the wonderful view around them.
+
+They stay until the embers turn to ash."
+
+[resource]
+script = ExtResource("12_ksh3u")
+episode_id = "winter_wonderland"
+title = "Playing in the Snow"
+biome_types = Array[int]([7])
+text = "Waking up before dawn high in the mountains, the explorers blink as they look at the landscape stretching before them.
+
+The entire mountain range has gained a thick blanket of fresh snow overnight.
+
+Standing in front of the campfire, they warm their hands and discuss how to spend the morning."
+background_image = SubResource("Resource_sglgl")
+background_credit = ExtResource("1_xk5i1")
+choices = Array[ExtResource("2_xk5i1")]([SubResource("Resource_tjnww"), SubResource("Resource_np4uc"), SubResource("Resource_76f81"), SubResource("Resource_it7ig")])

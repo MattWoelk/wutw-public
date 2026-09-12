@@ -1,0 +1,83 @@
+[gd_resource type="MapSpriteType_Lake" format=3 uid="uid://dcopgy017tsji"]
+
+[ext_resource type="Resource" uid="uid://bb65d05uw68x1" path="res://stage/spots/lake/spot_lake.tres" id="1_to22u"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://cwy0ijmv184wn" path="res://map/sprites/spots/lake/mst_lake_ferry_1.tres" id="2_pli7h"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://btkmn0op6854s" path="res://map/sprites/spots/lake/mst_lake_market_1.tres" id="3_gyh5n"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://dnvive6xepqpi" path="res://map/sprites/spots/lake/mst_lake_retting_station.tres" id="4_426dr"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://ghbqby6ai7ir" path="res://map/sprites/spots/lake/mst_lake_indigo_fermenters.tres" id="5_456cm"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://c46nahaq685up" path="res://map/sprites/spots/lake/mst_lake_rinsing_station.tres" id="6_sg60t"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://dya24edvi2uoe" path="res://map/sprites/spots/lake/mst_lake_dyer_workshop.tres" id="7_p2gej"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://b7mf2mm8ttjr" path="res://map/sprites/spots/lake/mst_lake_lotus_pond.tres" id="8_bwmnr"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://vmk8eaj4kpca" path="res://map/sprites/spots/lake/mst_lake_silk_farm.tres" id="9_ae8ex"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://d4k0cisnt48jx" path="res://map/sprites/spots/lake/mst_lake_island_shrine.tres" id="10_muex6"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://5ffws7hmqwex" path="res://map/sprites/spots/lake/mst_lake_boat_festival_1.tres" id="11_pli7h"]
+[ext_resource type="WwiseEvent" uid="uid://xdxied6bknu3" path="res://Wwise/resources/Event/{1E8B7240-DE0F-4D2B-B8E1-DEAADCBE8FA2}.tres" id="12_k2skg"]
+
+[sub_resource type="MapSpriteCollision_Circle" id="MapSpriteCollision_Circle_vpvr4"]
+center = Vector2(-2.701, 0.129)
+radius = 3.673
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Circle" id="MapSpriteCollision_Circle_to22u"]
+center = Vector2(2.869, -0.0375)
+radius = 3.369
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Rect" id="MapSpriteCollision_Rect_mxt7e"]
+rect = Rect2(-3.0925, -3.003, 5, 6.604)
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_xu372"]
+sprite_type = ExtResource("2_pli7h")
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_426dr"]
+sprite_type = ExtResource("3_gyh5n")
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_456cm"]
+sprite_type = ExtResource("4_426dr")
+offset = Vector2(-2.155, 2.595)
+scale = 0.31
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_sg60t"]
+sprite_type = ExtResource("5_456cm")
+offset = Vector2(-2.155, 2.595)
+scale = 0.31
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_p2gej"]
+sprite_type = ExtResource("6_sg60t")
+offset = Vector2(-2.155, 2.595)
+scale = 0.31
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_bwmnr"]
+sprite_type = ExtResource("7_p2gej")
+offset = Vector2(-2.155, 2.595)
+scale = 0.31
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_ae8ex"]
+sprite_type = ExtResource("8_bwmnr")
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_muex6"]
+sprite_type = ExtResource("9_ae8ex")
+offset = Vector2(3.615, 1.94)
+scale = 0.87
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_54475"]
+sprite_type = ExtResource("10_muex6")
+offset = Vector2(1, 0.837)
+scale = 0.85
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_k2skg"]
+sprite_type = ExtResource("11_pli7h")
+
+[resource]
+atlas_rect = Rect2i(1467, 12, 55, 35)
+slots = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_xu372"), SubResource("MapSpriteComponent_426dr"), SubResource("MapSpriteComponent_456cm"), SubResource("MapSpriteComponent_sg60t"), SubResource("MapSpriteComponent_p2gej"), SubResource("MapSpriteComponent_bwmnr"), SubResource("MapSpriteComponent_ae8ex"), SubResource("MapSpriteComponent_muex6"), SubResource("MapSpriteComponent_54475"), SubResource("MapSpriteComponent_k2skg")])
+map_rect = Rect2(0.165, 0.248, 14.025, 8.925)
+footprint_radius = 6.619
+default_scale = 1.5
+min_scale = 1.5
+must_be_fully_within_clip = true
+z_index = -1
+sound = ExtResource("12_k2skg")
+provided_spot_type = ExtResource("1_to22u")
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Circle_vpvr4"), SubResource("MapSpriteCollision_Circle_to22u"), SubResource("MapSpriteCollision_Rect_mxt7e")])

@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://j412und37p6m"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_ouuhj"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_8sfp0"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="3_877mj"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_uwnf5"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="4_3n2c6"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="6_icctj"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="7_e0nhc"]
+[ext_resource type="Resource" uid="uid://dxoxvtquc3hu2" path="res://stage/spots/mountain/spot_mountain.tres" id="8_icctj"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_e0nhc"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://yi6r4d10vn2d" path="res://map/sprites/mountains/mst_mountain_1_medium.tres" id="10_anuq2"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://ch4crcvn6cov8" path="res://map/sprites/spots/mountain/mst_mountain_verdant_hollow.tres" id="10_l53a4"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://cpmm5kdehu4ys" path="res://map/sprites/spots/mountain/mst_mountain_snowcapped_peaks.tres" id="11_3jo5e"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://desakgu6q3yov" path="res://map/sprites/mountains/mst_mountain_2_large.tres" id="11_ktw75"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://c3u877m1spx0" path="res://map/sprites/mountains/mst_mountain_3_large.tres" id="12_llgia"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="12_ykd4i"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://doqqvl0x3b3g4" path="res://map/sprites/mountains/mst_mountain_4_small.tres" id="13_wc628"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bxr2aj680eaqd" path="res://map/sprites/mountains/mst_mountain_5_small.tres" id="14_b01yl"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cekrboxmhdmhk" path="res://map/sprites/mountains/mst_mountain_6_tiny.tres" id="15_s4bc8"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cjbrxida4odnk" path="res://map/sprites/mountains/mst_mountain_7_tiny.tres" id="16_ad2nh"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://56t2rh2pg58y" path="res://map/sprites/mountains/mst_mountain_8_medium.tres" id="17_klugp"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://csjeschaiy5ct" path="res://map/sprites/mountains/mst_mountain_9_large.tres" id="18_w6rp6"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bctu7rlwqc3o7" path="res://map/sprites/mountains/mst_mountain_10_medium.tres" id="19_hleog"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://t2knd16pwuwg" path="res://map/sprites/mountains/mst_mountain_11_medium.tres" id="20_mopjq"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dxba886xk8sch" path="res://map/sprites/mountains/mst_mountain_12_pair.tres" id="21_ruga7"]
+
+[sub_resource type="Resource" id="Resource_ygey0"]
+script = ExtResource("12_ykd4i")
+old_sprite_type = ExtResource("11_3jo5e")
+new_sprite_type = ExtResource("10_l53a4")
+biome = 7
+extra_removables = Array[MapSpriteType]([ExtResource("10_anuq2"), ExtResource("11_ktw75"), ExtResource("12_llgia"), ExtResource("13_wc628"), ExtResource("14_b01yl"), ExtResource("15_s4bc8"), ExtResource("16_ad2nh"), ExtResource("17_klugp"), ExtResource("18_w6rp6"), ExtResource("19_hleog"), ExtResource("20_mopjq"), ExtResource("21_ruga7")])
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_ouuhj")
+spot_upgrade_id = "mountain_green_hollow"
+name = "Verdant Hollow"
+description = "Greenery nestled among the rocks, all the more precious for the challenges it had to overcome."
+required_aspects = Array[ExtResource("3_uwnf5")]([ExtResource("6_icctj"), ExtResource("7_e0nhc")])
+granted_bonuses = Dictionary[ExtResource("2_8sfp0"), int]({
+ExtResource("3_877mj"): 10,
+ExtResource("4_3n2c6"): 10
+})
+spot = ExtResource("8_icctj")
+visuals = Array[ExtResource("9_e0nhc")]([SubResource("Resource_ygey0")])
+tags = Array[int]([0])

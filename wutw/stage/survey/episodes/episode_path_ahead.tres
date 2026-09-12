@@ -1,0 +1,107 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://b877e5eeacsir"]
+
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="1_0iu5d"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_781ap"]
+[ext_resource type="Resource" uid="uid://b1epmgfax11yr" path="res://art/pieces/piece_hiroshige_sakanoshita.tres" id="1_ev615"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="2_781ap"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="3_ev615"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="4_tqyxw"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="5_tvg86"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="6_drefl"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="7_odxdo"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="8_h1kel"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="9_uhdrf"]
+[ext_resource type="Script" uid="uid://ccdhemnw1w5pf" path="res://events/system/outcomes/insights/event_outcome_insights.gd" id="10_wvnns"]
+[ext_resource type="Resource" uid="uid://dwenwgtkmwkog" path="res://cards/tier2/card_correct.tres" id="11_kdp7v"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="12_n854o"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="13_8kybt"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="14_70uha"]
+[ext_resource type="Resource" uid="uid://cfuqwl06ioxwd" path="res://stage/spots/hill/spot_hill.tres" id="17_tvg86"]
+[ext_resource type="Resource" uid="uid://cmbyg0gub8sum" path="res://stage/spots/river/spot_river.tres" id="18_drefl"]
+
+[sub_resource type="Resource" id="Resource_uv8j5"]
+script = ExtResource("1_781ap")
+_texture_path = "uid://cofigmu6y15ui"
+_is_horizontal = true
+metadata/_custom_type_script = "uid://c7u2t141hgkj5"
+
+[sub_resource type="Resource" id="Resource_ely10"]
+script = ExtResource("5_tvg86")
+bonus_type = ExtResource("4_tqyxw")
+min_count = 30
+max_count = -1
+extra_per_season = 40
+metadata/_custom_type_script = "uid://dfaio0ey0wbra"
+
+[sub_resource type="Resource" id="Resource_qpf3j"]
+script = ExtResource("1_0iu5d")
+label = "Appeal to their camaraderie."
+requirement = SubResource("Resource_ely10")
+aspects = Array[ExtResource("2_781ap")]([ExtResource("3_ev615")])
+outcome_text = "The other scouts convince the arguers that harmony among the team is more important than choosing an optimal path, and eventually two of them back down."
+metadata/_custom_type_script = "uid://dlmpygdk2j680"
+
+[sub_resource type="Resource" id="Resource_0ljig"]
+script = ExtResource("7_odxdo")
+delta = 2
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_xmgs8"]
+script = ExtResource("5_tvg86")
+bonus_type = ExtResource("8_h1kel")
+min_count = 20
+max_count = -1
+extra_per_season = 30
+metadata/_custom_type_script = "uid://dfaio0ey0wbra"
+
+[sub_resource type="Resource" id="Resource_w5g06"]
+script = ExtResource("1_0iu5d")
+label = "Resolve it over a meal."
+requirement = SubResource("Resource_xmgs8")
+aspects = Array[ExtResource("2_781ap")]([ExtResource("6_drefl")])
+aspects_per_season = Array[ExtResource("2_781ap")]([null])
+outcome = SubResource("Resource_0ljig")
+outcome_text = "The team decides that arguments are best resolved over a meal and a drink. With their bellies full, the three scouts are a lot less prone to arguments."
+metadata/_custom_type_script = "uid://dlmpygdk2j680"
+
+[sub_resource type="Resource" id="Resource_b66rm"]
+script = ExtResource("10_wvnns")
+amount = 10
+metadata/_custom_type_script = "uid://ccdhemnw1w5pf"
+
+[sub_resource type="Resource" id="Resource_qar7k"]
+script = ExtResource("1_0iu5d")
+label = "Resolve it with logic."
+aspects = Array[ExtResource("2_781ap")]([ExtResource("9_uhdrf")])
+aspects_per_season = Array[ExtResource("2_781ap")]([null])
+outcome = SubResource("Resource_b66rm")
+outcome_text = "The team asks each of the scouts to outline their reasons, and after a brief debate, they end up finding a new choice that they all agree on."
+metadata/_custom_type_script = "uid://dlmpygdk2j680"
+
+[sub_resource type="Resource" id="Resource_yyvn4"]
+script = ExtResource("12_n854o")
+card_type = ExtResource("11_kdp7v")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ntqyf"]
+script = ExtResource("1_0iu5d")
+label = "Leave it up to chance."
+aspects = Array[ExtResource("2_781ap")]([null])
+aspects_per_season = Array[ExtResource("2_781ap")]([null])
+outcome = SubResource("Resource_yyvn4")
+outcome_text = "The team convinces the scouts to draw lots. They follow the path of the one who drew the 正 glyph."
+metadata/_custom_type_script = "uid://dlmpygdk2j680"
+
+[resource]
+script = ExtResource("13_8kybt")
+episode_id = "path_ahead"
+title = "The Path Ahead"
+biome_types = Array[int]([7])
+spot_types = Array[ExtResource("14_70uha")]([ExtResource("17_tvg86"), ExtResource("18_drefl")])
+text = "The team has gotten into an argument trying to decide where to go next.
+
+Three of the scouts disagree, each pointing in a different direction and completely refusing to budge."
+background_image = SubResource("Resource_uv8j5")
+background_credit = ExtResource("1_ev615")
+choices = Array[ExtResource("1_0iu5d")]([SubResource("Resource_qpf3j"), SubResource("Resource_w5g06"), SubResource("Resource_qar7k"), SubResource("Resource_ntqyf")])
+metadata/_custom_type_script = "uid://xa1k8k6o7j78"

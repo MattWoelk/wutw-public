@@ -1,0 +1,35 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://chbfh2oc362kc"]
+
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dqwbcw27m1m3" path="res://map/sprites/spots/hills/mst_hills_base_1.tres" id="1_5k7x4"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://wa4o0sir0qu2" path="res://map/sprites/spots/hills/mst_hills_beacon.tres" id="2_5k7x4"]
+[ext_resource type="PackedScene" uid="uid://c4v3rpw46jdvq" path="res://map/sprites/spots/steppe/map_effect_kiln_smoke.tscn" id="3_011ty"]
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_5k7x4"]
+p1 = Vector2(12.92, 1.25)
+p2 = Vector2(7.685, -0.45)
+p3 = Vector2(2.035, 0.15)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_011ty"]
+p1 = Vector2(-5.61, 0.265)
+p2 = Vector2(0, -1.33)
+p3 = Vector2(4.495, -0.07)
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_54475"]
+sprite_type = ExtResource("1_5k7x4")
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_4ltnf"]
+sprite_type = ExtResource("2_5k7x4")
+offset = Vector2(-0.525, -2.455)
+scale = 1.075
+
+[sub_resource type="MapEffectAttachment" id="MapEffectAttachment_g7hl0"]
+scene = ExtResource("3_011ty")
+offset = Vector2(-0.497, -3.915)
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_54475"), SubResource("MapSpriteComponent_4ltnf")])
+footprint_radius = 2.0
+effects = Array[MapEffectAttachment]([SubResource("MapEffectAttachment_g7hl0")])
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Triangle_5k7x4"), SubResource("MapSpriteCollision_Triangle_011ty")])

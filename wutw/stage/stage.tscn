@@ -1,0 +1,253 @@
+[gd_scene format=3 uid="uid://dp1f00av3ivgs"]
+
+[ext_resource type="Script" uid="uid://dpelpq6qvose" path="res://stage/stage.gd" id="1_xa1vo"]
+[ext_resource type="WwiseEvent" uid="uid://ca6hrbbbxks5n" path="res://Wwise/resources/Event/{7576EA81-69E2-4D02-A478-06CDDB6F52CC}.tres" id="2_2c823"]
+[ext_resource type="PackedScene" uid="uid://b5k03f5wr13rr" path="res://cards/deck/card_deck.tscn" id="2_pu45d"]
+[ext_resource type="Shader" uid="uid://ygmrqrvg5hpm" path="res://theme/button/ukiyoe_button.gdshader" id="3_mleil"]
+[ext_resource type="WwiseEvent" uid="uid://igpucieu8cm" path="res://Wwise/resources/Event/{6B390DD5-1452-4F5F-8A38-E028FB7F617A}.tres" id="3_qrooq"]
+[ext_resource type="Texture2D" uid="uid://ctgl61r3xxsqv" path="res://theme/button/button_fill.png" id="4_mit7y"]
+[ext_resource type="WwiseEvent" uid="uid://csu83gxdekrih" path="res://Wwise/resources/Event/{6334122C-BDDD-4FFD-B633-3F6129AAD651}.tres" id="4_mleil"]
+[ext_resource type="PackedScene" uid="uid://duhgfqb3rnmyk" path="res://stage/targeting/brushstroke_arrow.tscn" id="5_cxybx"]
+[ext_resource type="Texture2D" uid="uid://blje81yu8734p" path="res://theme/button/button_shape.png" id="5_sauut"]
+[ext_resource type="Theme" uid="uid://bneu0powe6n80" path="res://theme/theme_ukiyoe.tres" id="6_au0sk"]
+[ext_resource type="Texture2D" uid="uid://doe4603a6ngco" path="res://theme/button/button_outline.png" id="6_ibwyk"]
+[ext_resource type="Texture2D" uid="uid://cwubixgc8n0yr" path="res://theme/button/button_swish_left.png" id="7_mg53l"]
+[ext_resource type="Texture2D" uid="uid://n6l17h4ysayj" path="res://theme/button/button_swish_right.png" id="8_t3urm"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="10_xtv6y"]
+[ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="11_vi4xo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_au0sk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u7g2e"]
+
+[sub_resource type="Gradient" id="Gradient_j5apj"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wqpyw"]
+gradient = SubResource("Gradient_j5apj")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2c823"]
+shader = ExtResource("3_mleil")
+shader_parameter/mask_tex = ExtResource("5_sauut")
+shader_parameter/background = ExtResource("4_mit7y")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/outline_tex = ExtResource("6_ibwyk")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("8_t3urm")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("7_mg53l")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="Gradient" id="Gradient_ibwyk"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mg53l"]
+gradient = SubResource("Gradient_ibwyk")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qrooq"]
+shader = ExtResource("3_mleil")
+shader_parameter/mask_tex = ExtResource("5_sauut")
+shader_parameter/background = ExtResource("4_mit7y")
+shader_parameter/gradient = SubResource("GradientTexture2D_mg53l")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/outline_tex = ExtResource("6_ibwyk")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("8_t3urm")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("7_mg53l")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mleil"]
+shader = ExtResource("3_mleil")
+shader_parameter/mask_tex = ExtResource("5_sauut")
+shader_parameter/background = ExtResource("4_mit7y")
+shader_parameter/gradient = SubResource("GradientTexture2D_mg53l")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/outline_tex = ExtResource("6_ibwyk")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("8_t3urm")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("7_mg53l")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[node name="Stage" type="Node2D" unique_id=780232252]
+script = ExtResource("1_xa1vo")
+arrow_start_sound = ExtResource("2_2c823")
+arrow_confirm_sound = ExtResource("3_qrooq")
+arrow_cancel_sound = ExtResource("4_mleil")
+
+[node name="SpotsScroller" type="ScrollContainer" parent="." unique_id=1781130826]
+unique_name_in_owner = true
+clip_children = 1
+z_index = 1
+clip_contents = false
+offset_top = 88.0
+offset_right = 1920.0
+offset_bottom = 828.0
+vertical_scroll_mode = 0
+
+[node name="SpotsList" type="HBoxContainer" parent="SpotsScroller" unique_id=448411896]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SpotsScroller/SpotsList" unique_id=1998392859]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Spot" parent="SpotsScroller/SpotsList/HBoxContainer" unique_id=2130780965 instance_placeholder="res://stage/spots/spot.tscn"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Haunting" parent="SpotsScroller/SpotsList/HBoxContainer" unique_id=703018328 node_paths=PackedStringArray("attached_to_spot") instance_placeholder="res://stage/hauntings/haunting.tscn"]
+layout_mode = 2
+size_flags_horizontal = 0
+attached_to_spot = NodePath("../Spot")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="SpotsScroller/SpotsList" unique_id=49288075]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Spot2" parent="SpotsScroller/SpotsList/HBoxContainer2" unique_id=1761475227 instance_placeholder="res://stage/spots/spot.tscn"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="SpotsScroller/SpotsList" unique_id=6178441]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Spot3" parent="SpotsScroller/SpotsList/HBoxContainer3" unique_id=1168351775 instance_placeholder="res://stage/spots/spot.tscn"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+
+[node name="Survey" parent="SpotsScroller/SpotsList" unique_id=1232933605 instance_placeholder="res://stage/survey/survey.tscn"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="CardDeck" parent="." unique_id=305677524 instance=ExtResource("2_pu45d")]
+unique_name_in_owner = true
+z_index = 1
+custom_minimum_size = Vector2(500, 200)
+offset_left = 0.0
+offset_top = 648.0
+offset_right = 1714.0
+offset_bottom = 1080.0
+
+[node name="CornerButtonsBox" type="PanelContainer" parent="." unique_id=1938033978]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1737.0
+offset_top = 863.0
+offset_right = 1910.0
+offset_bottom = 1068.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(1, 1)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_au0sk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CornerButtonsBox" unique_id=1811264154]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="CompanionPanel" type="PanelContainer" parent="CornerButtonsBox/VBoxContainer" unique_id=705655981]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_u7g2e")
+
+[node name="ShowAllToggle" type="Button" parent="CornerButtonsBox/VBoxContainer" unique_id=969461277]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_2c823")
+instance_shader_parameters/background_offset = Vector2(0.166282, 0.36414728)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+theme_override_styles/normal = ExtResource("10_xtv6y")
+theme_override_styles/pressed = ExtResource("10_xtv6y")
+theme_override_styles/hover = ExtResource("10_xtv6y")
+theme_override_styles/hover_pressed = ExtResource("10_xtv6y")
+theme_override_styles/disabled = ExtResource("10_xtv6y")
+toggle_mode = true
+text = "Show Non-Goal"
+script = ExtResource("11_vi4xo")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="MulliganButton" type="Button" parent="CornerButtonsBox/VBoxContainer" unique_id=1149037610]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_qrooq")
+instance_shader_parameters/background_offset = Vector2(0.2579923, 0.921733)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 6
+mouse_default_cursor_shape = 2
+theme = ExtResource("6_au0sk")
+theme_override_styles/normal = ExtResource("10_xtv6y")
+theme_override_styles/pressed = ExtResource("10_xtv6y")
+theme_override_styles/hover = ExtResource("10_xtv6y")
+theme_override_styles/hover_pressed = ExtResource("10_xtv6y")
+theme_override_styles/disabled = ExtResource("10_xtv6y")
+text = "Replan (1)"
+script = ExtResource("11_vi4xo")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="FinishButton" type="Button" parent="CornerButtonsBox/VBoxContainer" unique_id=837528998]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_mleil")
+instance_shader_parameters/background_offset = Vector2(0.092585854, 0.16086292)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 6
+mouse_default_cursor_shape = 2
+theme = ExtResource("6_au0sk")
+theme_override_styles/normal = ExtResource("10_xtv6y")
+theme_override_styles/pressed = ExtResource("10_xtv6y")
+theme_override_styles/hover = ExtResource("10_xtv6y")
+theme_override_styles/hover_pressed = ExtResource("10_xtv6y")
+theme_override_styles/disabled = ExtResource("10_xtv6y")
+text = "End Foray"
+script = ExtResource("11_vi4xo")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="CardArrow" parent="." unique_id=1215532847 instance=ExtResource("5_cxybx")]
+unique_name_in_owner = true
+visible = false
+z_index = 200
+
+[node name="ReferenceRect" type="ReferenceRect" parent="." unique_id=1512325500]
+offset_left = 2.0
+offset_top = 7.0
+offset_right = 1918.0
+offset_bottom = 79.0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[connection signal="card_drag_ended" from="CardDeck" to="." method="_on_card_deck_card_drag_ended"]
+[connection signal="card_drag_started" from="CardDeck" to="." method="_on_card_deck_card_drag_started"]
+[connection signal="card_right_clicked" from="CardDeck" to="." method="_on_card_deck_card_right_clicked"]
+[connection signal="pressed" from="CornerButtonsBox/VBoxContainer/ShowAllToggle" to="." method="_on_show_all_toggle_pressed"]
+[connection signal="pressed" from="CornerButtonsBox/VBoxContainer/MulliganButton" to="." method="_on_mulligan_button_pressed"]
+[connection signal="pressed" from="CornerButtonsBox/VBoxContainer/FinishButton" to="." method="_on_finish_button_pressed"]

@@ -1,0 +1,278 @@
+[gd_scene format=3 uid="uid://cst68n220q8dc"]
+
+[ext_resource type="PackedScene" uid="uid://bl780vhdwft4i" path="res://hub/contents/hub_facility.tscn" id="1_5r5j2"]
+[ext_resource type="Script" uid="uid://cs1kt3nsldvbj" path="res://hub/contents/museum/hub_museum.gd" id="2_b6jfn"]
+[ext_resource type="Texture2D" uid="uid://ckvsfmgtjcn34" path="res://hub/contents/museum/museum_wall_front_endcap.png" id="2_kn44u"]
+[ext_resource type="Texture2D" uid="uid://bqujgch2v86i6" path="res://hub/contents/museum/museum_wall_front.png" id="2_lmdh0"]
+[ext_resource type="Texture2D" uid="uid://c2xfpu8qmcpqr" path="res://hub/contents/museum/museum_label.png" id="3_jdqlr"]
+[ext_resource type="Texture2D" uid="uid://mhfs0pgm8bty" path="res://hub/contents/museum/museum_gatehouse.png" id="3_kn44u"]
+[ext_resource type="PackedScene" uid="uid://y5b545dj8g2o" path="res://hub/contents/museum/museum_exhibit_1.tscn" id="3_ys7fo"]
+[ext_resource type="PackedScene" uid="uid://c56bsvtaexjpk" path="res://hub/contents/museum/museum_exhibit_3.tscn" id="4_b6jfn"]
+[ext_resource type="Texture2D" uid="uid://cb7vyj4novbtm" path="res://hub/contents/museum/museum_wall_side.png" id="4_l0423"]
+[ext_resource type="PackedScene" uid="uid://us16ch8gfroc" path="res://hub/contents/museum/museum_exhibit_2.tscn" id="4_t6ffs"]
+[ext_resource type="PackedScene" uid="uid://ux41linfm4bl" path="res://hub/contents/museum/museum_exhibit_4.tscn" id="5_jdqlr"]
+
+[node name="HubMuseum" unique_id=657546943 instance=ExtResource("1_5r5j2")]
+y_sort_enabled = true
+script = ExtResource("2_b6jfn")
+tooltip_text = "[center]<header_font_size>[b]Explore Museum[/b][/font_size][/center]
+
+Browse accumulated historical exhibits and other discoveries."
+
+[node name="Panel" parent="." index="0" unique_id=1465047343]
+offset_left = -135.455
+offset_top = -390.046
+offset_right = 124.545
+offset_bottom = 355.954
+scale = Vector2(0.24884, 0.24884)
+
+[node name="Label" parent="Panel" index="1" unique_id=541126649]
+visible = false
+text = "文
+化
+苑"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" index="2" unique_id=165492434]
+layout_mode = 2
+theme_override_constants/margin_left = 37
+theme_override_constants/margin_top = 55
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 70
+
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer" index="0" unique_id=500872430]
+texture_filter = 6
+layout_mode = 2
+texture = ExtResource("3_jdqlr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CollisionPolygon2D" parent="Area2D" parent_id_path=PackedInt32Array(2019498285) index="0" unique_id=521856771]
+position = Vector2(-118.62, -323.734)
+polygon = PackedVector2Array(51.32972, 321.8947, 176.26624, 379.48267, 256.432, 372.968, 535.0895, 510.80902, 1570.1107, 269.23248, 1570.1107, 155.4231, 540.3391, 396.07593, 296.18604, 277.883, 306.4527, 131.94968, 224.3194, 73.28302, 148.78604, 35.14969, 60.05271, 81.34967, 64.6214, 163.0474, -13.294548, 124.88049, -263.226, -3.78418, -256.117, 117.505, 48.5686, 269.036)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D" parent_id_path=PackedInt32Array(2019498285) index="1" unique_id=1366769015]
+visible = false
+position = Vector2(-118.62, -323.734)
+polygon = PackedVector2Array(45.33622, -66.95087, -15.163811, -64.53085, -18.390465, 116.162476, 46.94953, 117.77582)
+
+[node name="TooltipAnchor" parent="." index="2" unique_id=278453014]
+offset_left = -141.12244
+offset_top = -396.0952
+offset_right = 223.75507
+offset_bottom = 81.01361
+
+[node name="MuseumGroup" type="Node2D" parent="." index="3" unique_id=261216099]
+y_sort_enabled = true
+position = Vector2(-283.219, -241.444)
+scale = Vector2(0.260712, 0.260712)
+
+[node name="Exhibits" type="Node2D" parent="MuseumGroup" index="0" unique_id=2140899059]
+unique_name_in_owner = true
+y_sort_enabled = true
+position = Vector2(1086.329, 926.09467)
+scale = Vector2(3.83565, 3.83565)
+
+[node name="MuseumExhibit1" parent="MuseumGroup/Exhibits" index="0" unique_id=1290563988 instance=ExtResource("3_ys7fo")]
+position = Vector2(387.59653, -314.15363)
+
+[node name="MuseumExhibit2" parent="MuseumGroup/Exhibits" index="1" unique_id=40016693 instance=ExtResource("3_ys7fo")]
+position = Vector2(751.631, -12.690277)
+
+[node name="MuseumExhibit3" parent="MuseumGroup/Exhibits" index="2" unique_id=1459131114 instance=ExtResource("3_ys7fo")]
+position = Vector2(900.481, -244.32991)
+
+[node name="MuseumExhibit25" parent="MuseumGroup/Exhibits" index="3" unique_id=400590676 instance=ExtResource("3_ys7fo")]
+position = Vector2(635.85803, -76.75165)
+
+[node name="MuseumExhibit26" parent="MuseumGroup/Exhibits" index="4" unique_id=1667478721 instance=ExtResource("3_ys7fo")]
+position = Vector2(253.03897, -75.05524)
+
+[node name="MuseumExhibit27" parent="MuseumGroup/Exhibits" index="5" unique_id=1461915389 instance=ExtResource("3_ys7fo")]
+position = Vector2(350.05835, 66.63253)
+
+[node name="MuseumExhibit4" parent="MuseumGroup/Exhibits" index="6" unique_id=1137798223 instance=ExtResource("4_b6jfn")]
+position = Vector2(343.91794, -232.43237)
+
+[node name="MuseumExhibit5" parent="MuseumGroup/Exhibits" index="7" unique_id=1006659625 instance=ExtResource("4_b6jfn")]
+position = Vector2(-170.61345, -236.00638)
+
+[node name="MuseumExhibit6" parent="MuseumGroup/Exhibits" index="8" unique_id=1789215380 instance=ExtResource("4_b6jfn")]
+position = Vector2(95.11407, -300.28204)
+
+[node name="MuseumExhibit7" parent="MuseumGroup/Exhibits" index="9" unique_id=1987248918 instance=ExtResource("4_b6jfn")]
+position = Vector2(294.52963, -344.9577)
+
+[node name="MuseumExhibit8" parent="MuseumGroup/Exhibits" index="10" unique_id=211326582 instance=ExtResource("4_b6jfn")]
+position = Vector2(824.5618, -138.56544)
+
+[node name="MuseumExhibit10" parent="MuseumGroup/Exhibits" index="11" unique_id=1420046881 instance=ExtResource("4_b6jfn")]
+position = Vector2(984.588, -41.30568)
+
+[node name="MuseumExhibit9" parent="MuseumGroup/Exhibits" index="12" unique_id=1056218620 instance=ExtResource("4_b6jfn")]
+position = Vector2(754.44434, -122.16693)
+
+[node name="MuseumExhibit13" parent="MuseumGroup/Exhibits" index="13" unique_id=708056781 instance=ExtResource("4_b6jfn")]
+position = Vector2(346.17987, -60.5205)
+
+[node name="MuseumExhibit14" parent="MuseumGroup/Exhibits" index="14" unique_id=971679962 instance=ExtResource("4_b6jfn")]
+position = Vector2(414.03564, -76.353455)
+
+[node name="MuseumExhibit11" parent="MuseumGroup/Exhibits" index="15" unique_id=545918995 instance=ExtResource("5_jdqlr")]
+position = Vector2(612.6034, -302.45926)
+
+[node name="MuseumExhibit12" parent="MuseumGroup/Exhibits" index="16" unique_id=731592837 instance=ExtResource("5_jdqlr")]
+position = Vector2(678.76263, -266.26953)
+
+[node name="MuseumExhibit28" parent="MuseumGroup/Exhibits" index="17" unique_id=1615931429 instance=ExtResource("5_jdqlr")]
+position = Vector2(894.1505, -123.106186)
+
+[node name="MuseumExhibit15" parent="MuseumGroup/Exhibits" index="18" unique_id=1456735648 instance=ExtResource("5_jdqlr")]
+position = Vector2(466.21246, -191.72473)
+
+[node name="MuseumExhibit16" parent="MuseumGroup/Exhibits" index="19" unique_id=363587016 instance=ExtResource("4_t6ffs")]
+position = Vector2(241.46783, -211.79031)
+
+[node name="MuseumExhibit17" parent="MuseumGroup/Exhibits" index="20" unique_id=1728889776 instance=ExtResource("4_t6ffs")]
+position = Vector2(-7.4175944, -279.79892)
+
+[node name="MuseumExhibit18" parent="MuseumGroup/Exhibits" index="21" unique_id=1238033753 instance=ExtResource("4_t6ffs")]
+position = Vector2(194.73355, -325.32645)
+
+[node name="MuseumExhibit19" parent="MuseumGroup/Exhibits" index="22" unique_id=161480451 instance=ExtResource("4_t6ffs")]
+position = Vector2(512.42126, -310.41873)
+
+[node name="MuseumExhibit20" parent="MuseumGroup/Exhibits" index="23" unique_id=1638545244 instance=ExtResource("4_t6ffs")]
+position = Vector2(776.647, -266.20972)
+
+[node name="MuseumExhibit21" parent="MuseumGroup/Exhibits" index="24" unique_id=1012094511 instance=ExtResource("4_t6ffs")]
+position = Vector2(1027.6721, -245.2539)
+
+[node name="MuseumExhibit22" parent="MuseumGroup/Exhibits" index="25" unique_id=529342270 instance=ExtResource("4_t6ffs")]
+position = Vector2(1198.768, -96.433525)
+
+[node name="MuseumExhibit23" parent="MuseumGroup/Exhibits" index="26" unique_id=672767574 instance=ExtResource("4_t6ffs")]
+position = Vector2(878.4307, -20.490036)
+
+[node name="MuseumExhibit24" parent="MuseumGroup/Exhibits" index="27" unique_id=741292685 instance=ExtResource("4_t6ffs")]
+position = Vector2(512.9354, -103.25333)
+
+[node name="MuseumFront" type="Node2D" parent="MuseumGroup" index="1" unique_id=1143379028]
+y_sort_enabled = true
+
+[node name="MuseumWall1" type="Sprite2D" parent="MuseumGroup/MuseumFront" index="0" unique_id=1891359201]
+modulate = Color(1, 0.965167, 0.89, 1)
+texture_filter = 6
+position = Vector2(7.70722, 236.452)
+scale = Vector2(1.00533, 1.00533)
+texture = ExtResource("2_kn44u")
+offset = Vector2(-148.669, -236.057)
+
+[node name="MuseumWall2" type="Sprite2D" parent="MuseumGroup/MuseumFront" index="1" unique_id=1932645377]
+modulate = Color(1, 0.965167, 0.89, 1)
+texture_filter = 6
+position = Vector2(389.976, 430.298)
+texture = ExtResource("2_lmdh0")
+offset = Vector2(-148.669, -236.057)
+
+[node name="MuseumWall3" type="Sprite2D" parent="MuseumGroup/MuseumFront" index="2" unique_id=1037519242]
+modulate = Color(1, 0.965167, 0.89, 1)
+texture_filter = 6
+position = Vector2(761.444, 616.067)
+texture = ExtResource("2_lmdh0")
+offset = Vector2(-148.669, -236.057)
+
+[node name="MuseumWall4" type="Sprite2D" parent="MuseumGroup/MuseumFront" index="3" unique_id=1353222739]
+modulate = Color(1, 0.965167, 0.89, 1)
+texture_filter = 6
+position = Vector2(1096.32, 905.307)
+scale = Vector2(0.986394, 0.986394)
+texture = ExtResource("3_kn44u")
+offset = Vector2(238.781, -430.775)
+
+[node name="MuseumWall5" type="Sprite2D" parent="MuseumGroup/MuseumFront" index="4" unique_id=1627715407]
+modulate = Color(1, 0.965167, 0.89, 1)
+texture_filter = 6
+position = Vector2(1131.98, 800.551)
+texture = ExtResource("2_lmdh0")
+offset = Vector2(-148.669, -236.057)
+
+[node name="MuseumWall6" type="Sprite2D" parent="MuseumGroup/MuseumFront" index="5" unique_id=706715725]
+modulate = Color(1, 0.965167, 0.89, 1)
+texture_filter = 6
+position = Vector2(1864.11, 1162.58)
+texture = ExtResource("2_kn44u")
+offset = Vector2(-148.669, -236.057)
+
+[node name="MuseumWall7" type="Sprite2D" parent="MuseumGroup/MuseumFront" index="6" unique_id=1516875081]
+modulate = Color(1, 0.965167, 0.89, 1)
+texture_filter = 6
+position = Vector2(2246.35, 1357.8)
+texture = ExtResource("2_lmdh0")
+offset = Vector2(-148.669, -236.057)
+
+[node name="MuseumWall8" type="Sprite2D" parent="MuseumGroup/MuseumFront" index="7" unique_id=32165087]
+modulate = Color(1, 0.965167, 0.89, 1)
+texture_filter = 6
+position = Vector2(2617.59, 1543.26)
+texture = ExtResource("2_lmdh0")
+offset = Vector2(-148.669, -236.057)
+
+[node name="MuseumSide" type="Node2D" parent="MuseumGroup" index="2" unique_id=1762603709]
+y_sort_enabled = true
+position = Vector2(5.08673, -19.8621)
+
+[node name="MuseumWall1" type="Sprite2D" parent="MuseumGroup/MuseumSide" index="0" unique_id=323812635]
+modulate = Color(1, 0.965167, 0.89, 1)
+texture_filter = 6
+position = Vector2(3114.02, 1600.5)
+texture = ExtResource("4_l0423")
+offset = Vector2(-148.669, -236.057)
+
+[node name="MuseumWall2" type="Sprite2D" parent="MuseumGroup/MuseumSide" index="1" unique_id=636186152]
+modulate = Color(1, 0.965167, 0.89, 1)
+texture_filter = 6
+position = Vector2(3599.85, 1488.66)
+texture = ExtResource("4_l0423")
+offset = Vector2(-148.669, -236.057)
+
+[node name="MuseumWall3" type="Sprite2D" parent="MuseumGroup/MuseumSide" index="2" unique_id=712423287]
+modulate = Color(1, 0.965167, 0.89, 1)
+texture_filter = 6
+position = Vector2(4084.73, 1376.73)
+texture = ExtResource("4_l0423")
+offset = Vector2(-148.669, -236.057)
+
+[node name="MuseumWall4" type="Sprite2D" parent="MuseumGroup/MuseumSide" index="3" unique_id=934353615]
+modulate = Color(1, 0.965167, 0.89, 1)
+texture_filter = 6
+position = Vector2(4570.58, 1264.9)
+texture = ExtResource("4_l0423")
+offset = Vector2(-148.669, -236.057)
+
+[node name="MuseumWall5" type="Sprite2D" parent="MuseumGroup/MuseumSide" index="4" unique_id=2115704957]
+modulate = Color(1, 0.965167, 0.89, 1)
+texture_filter = 6
+position = Vector2(5055.88, 1152.92)
+texture = ExtResource("4_l0423")
+offset = Vector2(-148.669, -236.057)
+
+[node name="MuseumWall6" type="Sprite2D" parent="MuseumGroup/MuseumSide" index="5" unique_id=1261701255]
+modulate = Color(1, 0.965167, 0.89, 1)
+texture_filter = 6
+position = Vector2(5541.09, 1041.21)
+texture = ExtResource("4_l0423")
+offset = Vector2(-148.669, -236.057)
+
+[node name="MuseumWall7" type="Sprite2D" parent="MuseumGroup/MuseumSide" index="6" unique_id=1136442167]
+modulate = Color(1, 0.965167, 0.89, 1)
+texture_filter = 6
+position = Vector2(6025.98, 929.282)
+texture = ExtResource("4_l0423")
+offset = Vector2(-148.669, -236.057)
+
+[node name="MuseumWall8" type="Sprite2D" parent="MuseumGroup/MuseumSide" index="7" unique_id=2103970261]
+modulate = Color(1, 0.965167, 0.89, 1)
+texture_filter = 6
+position = Vector2(6510.91, 817.672)
+texture = ExtResource("4_l0423")
+offset = Vector2(-148.669, -236.057)

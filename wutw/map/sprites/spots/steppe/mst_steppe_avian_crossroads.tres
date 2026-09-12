@@ -1,0 +1,37 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://dvmo4cskrny5e"]
+
+[ext_resource type="MapSpriteType_Generic" uid="uid://djlxfy7k51uw7" path="res://map/sprites/spots/steppe/mst_steppe_ant_colony_mounds.tres" id="1_1dnsg"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://dxid1708enhf2" path="res://map/sprites/spots/steppe/mst_steppe_avian_crossroads_birds.tres" id="2_1dnsg"]
+[ext_resource type="PackedScene" uid="uid://cbhxm12fwox1t" path="res://map/sprites/spots/steppe/map_effect_crickets.tscn" id="3_1dnsg"]
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_3phr5"]
+p1 = Vector2(-4.54, -0.05)
+p2 = Vector2(-0.685, -2.51)
+p3 = Vector2(4.875, -1.505)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_166da"]
+p1 = Vector2(-3.95, 0.29)
+p2 = Vector2(4.41, -1.5)
+p3 = Vector2(1.8, 1.925)
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_gnkn2"]
+sprite_type = ExtResource("1_1dnsg")
+offset = Vector2(0.105, -0.155)
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_hmnbm"]
+sprite_type = ExtResource("2_1dnsg")
+offset = Vector2(0.215, -0.285)
+
+[sub_resource type="MapEffectAttachment" id="MapEffectAttachment_tsq64"]
+scene = ExtResource("3_1dnsg")
+offset = Vector2(0.09237715, 0.31409967)
+scale = 0.03
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_gnkn2"), SubResource("MapSpriteComponent_hmnbm")])
+footprint_radius = 2.525
+must_be_fully_within_clip = true
+effects = Array[MapEffectAttachment]([SubResource("MapEffectAttachment_tsq64")])
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Triangle_3phr5"), SubResource("MapSpriteCollision_Triangle_166da")])

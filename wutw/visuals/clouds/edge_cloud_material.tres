@@ -1,0 +1,35 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://wllheo8waxdo"]
+
+[ext_resource type="Shader" uid="uid://k8mkd7yon4d0" path="res://visuals/clouds/edge_cloud.gdshader" id="1_p5kyb"]
+
+[sub_resource type="Gradient" id="Gradient_gmosp"]
+offsets = PackedFloat32Array(0.00102459, 0.260246, 0.510246, 0.535861, 0.554672, 0.596421)
+colors = PackedColorArray(1, 1, 1, 1, 0.99, 0.98604, 0.9801, 1, 0.96, 0.96, 0.96, 0.996078, 0.99, 0.98142, 0.9702, 0.956863, 0.979671, 0.973674, 0.965711, 0.823513, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fu4dc"]
+gradient = SubResource("Gradient_gmosp")
+
+[sub_resource type="Gradient" id="Gradient_dfclm"]
+offsets = PackedFloat32Array(0.00409836, 0.160861, 0.306352, 0.441598, 0.516393, 0.571721, 0.597336, 0.607356, 0.625248, 0.897614)
+colors = PackedColorArray(1, 1, 1, 1, 0.999838, 0.999791, 0.999727, 0.999699, 1, 1, 1, 1, 0.98, 0.971507, 0.9604, 1, 0.95, 0.933533, 0.912, 1, 0.89, 0.85529, 0.8099, 1, 0.121569, 0.113725, 0.109804, 1, 0.121569, 0.113725, 0.109804, 1, 0, 0, 0, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8tmo4"]
+gradient = SubResource("Gradient_dfclm")
+
+[resource]
+shader = ExtResource("1_p5kyb")
+shader_parameter/landmass_edge_threshold = 0.512
+shader_parameter/landmass_edge_distance = 0.037
+shader_parameter/distance_to_color_range = 0.119
+shader_parameter/gradient = SubResource("GradientTexture1D_fu4dc")
+shader_parameter/gradient_near_land = SubResource("GradientTexture1D_8tmo4")
+shader_parameter/noise_scale = 158.562
+shader_parameter/noise_strength = 0.119
+shader_parameter/noise_smoothness = 1.0
+shader_parameter/noise_color = Color(0.85, 0.657758, 0.3485, 1)
+shader_parameter/edge_noise_scale = 325.0
+shader_parameter/edge_noise_strength = 1.235
+shader_parameter/edge_noise_smoothness = 1.0
+shader_parameter/cloud_merge_k = 0.004
+shader_parameter/distortion_amplitude = 0.0101
+shader_parameter/distortion_speed = 1.0

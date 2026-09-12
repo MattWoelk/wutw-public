@@ -1,0 +1,514 @@
+[gd_scene format=3 uid="uid://ilqt2xpxh2jc"]
+
+[ext_resource type="Script" uid="uid://cbv5wg04lfqap" path="res://stage/selector/stage_selector.gd" id="1_03hip"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="2_461wv"]
+[ext_resource type="FontFile" uid="uid://ctwx1483jbir0" path="res://theme/fonts/Merienda/static/Merienda-Bold.ttf" id="2_k68ur"]
+[ext_resource type="Theme" uid="uid://bneu0powe6n80" path="res://theme/theme_ukiyoe.tres" id="3_mtac5"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="6_0nuvs"]
+[ext_resource type="Shader" uid="uid://ygmrqrvg5hpm" path="res://theme/button/ukiyoe_button.gdshader" id="6_h0ehm"]
+[ext_resource type="Texture2D" uid="uid://ctgl61r3xxsqv" path="res://theme/button/button_fill.png" id="7_a4x7y"]
+[ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="7_wc5v0"]
+[ext_resource type="Texture2D" uid="uid://blje81yu8734p" path="res://theme/button/button_shape.png" id="8_hoct1"]
+[ext_resource type="Texture2D" uid="uid://doe4603a6ngco" path="res://theme/button/button_outline.png" id="9_k68ur"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="10_4qknn"]
+[ext_resource type="Texture2D" uid="uid://cwubixgc8n0yr" path="res://theme/button/button_swish_left.png" id="10_pnw1h"]
+[ext_resource type="Texture2D" uid="uid://n6l17h4ysayj" path="res://theme/button/button_swish_right.png" id="11_461wv"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="12_4qknn"]
+[ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="13_8flt8"]
+[ext_resource type="Script" uid="uid://dm63mtrlfj005" path="res://theme/faded_scroll_container/faded_scroll_container.gd" id="15_6owpa"]
+[ext_resource type="FontVariation" uid="uid://bgj6xpyildt4k" path="res://theme/fonts/presets/font_normal_semibold.tres" id="15_461wv"]
+[ext_resource type="PackedScene" uid="uid://c6x5mcsvqxvh7" path="res://stage/selector/survey_preview_entry.tscn" id="16_pnw1h"]
+[ext_resource type="PackedScene" uid="uid://su68xhh44c4g" path="res://stage/selector/spot_placement_button.tscn" id="18_uw1ci"]
+[ext_resource type="MapSpriteType_Lake" uid="uid://dcopgy017tsji" path="res://map/sprites/water_features/lake/mst_lake_1.tres" id="19_51mog"]
+[ext_resource type="Resource" uid="uid://bb65d05uw68x1" path="res://stage/spots/lake/spot_lake.tres" id="19_ifkrs"]
+[ext_resource type="MapSpriteType_Lake" uid="uid://gwbeal8t070v" path="res://map/sprites/water_features/lake/mst_lake_2.tres" id="20_rkkjq"]
+[ext_resource type="MapSpriteType_Lake" uid="uid://dhue4qeqrdlxe" path="res://map/sprites/water_features/lake/mst_lake_3.tres" id="21_udstk"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://c7bph6udtgt3c" path="res://map/sprites/buildings/ruined_square/mst_town_square_1.tres" id="22_ifkrs"]
+[ext_resource type="Resource" uid="uid://ctiwrqhub05ib" path="res://stage/spots/square/spot_square.tres" id="23_6owpa"]
+[ext_resource type="MapSpriteType_Building" uid="uid://7q50hlx03foq" path="res://map/sprites/buildings/ruin_small/mst_ruin_small_1.tres" id="23_q5yg7"]
+[ext_resource type="MapSpriteType_Building" uid="uid://b124qaw5m2hp7" path="res://map/sprites/buildings/ruin_small/mst_ruin_small_2.tres" id="24_6owpa"]
+[ext_resource type="Resource" uid="uid://w8n0bwomyvod" path="res://stage/spots/building_small/spot_building_small.tres" id="25_fptuq"]
+[ext_resource type="MapSpriteType_Building" uid="uid://kraldgu2aycc" path="res://map/sprites/buildings/ruin_small/mst_ruin_small_3.tres" id="25_u6c7h"]
+[ext_resource type="MapSpriteType_Building" uid="uid://cju1uubaywiky" path="res://map/sprites/buildings/ruin_large/mst_ruin_large_1.tres" id="26_fptuq"]
+[ext_resource type="MapSpriteType_Building" uid="uid://qhxgbecxfj81" path="res://map/sprites/buildings/ruin_large/mst_ruin_large_2.tres" id="27_6wnkg"]
+[ext_resource type="MapSpriteType_Building" uid="uid://gveso63csvo" path="res://map/sprites/buildings/ruin_large/mst_ruin_large_3.tres" id="28_c1424"]
+[ext_resource type="MapSpriteType_Building" uid="uid://d4bms8nvv6iy2" path="res://map/sprites/buildings/ruin_large/mst_ruin_large_4.tres" id="29_fths2"]
+[ext_resource type="MapSpriteType_Building" uid="uid://cqlp5im050llq" path="res://map/sprites/buildings/ruin_small/mst_ruin_small_4.tres" id="29_q5yg7"]
+[ext_resource type="Resource" uid="uid://b85k7x2ec04xc" path="res://stage/spots/building_large/spot_building_large.tres" id="30_6wnkg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pnw1h"]
+font = ExtResource("2_k68ur")
+font_size = 36
+font_color = Color(0, 0, 0, 1)
+outline_size = 12
+outline_color = Color(0.97, 0.84778005, 0.6984, 1)
+
+[sub_resource type="Gradient" id="Gradient_8flt8"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wqpyw"]
+gradient = SubResource("Gradient_8flt8")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0nuvs"]
+shader = ExtResource("6_h0ehm")
+shader_parameter/mask_tex = ExtResource("8_hoct1")
+shader_parameter/background = ExtResource("7_a4x7y")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("9_k68ur")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("11_461wv")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("10_pnw1h")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wc5v0"]
+shader = ExtResource("6_h0ehm")
+shader_parameter/mask_tex = ExtResource("8_hoct1")
+shader_parameter/background = ExtResource("7_a4x7y")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("9_k68ur")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("11_461wv")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("10_pnw1h")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eax16"]
+shader = ExtResource("6_h0ehm")
+shader_parameter/mask_tex = ExtResource("8_hoct1")
+shader_parameter/background = ExtResource("7_a4x7y")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("9_k68ur")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("11_461wv")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("10_pnw1h")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4k18x"]
+shader = ExtResource("6_h0ehm")
+shader_parameter/mask_tex = ExtResource("8_hoct1")
+shader_parameter/background = ExtResource("7_a4x7y")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("9_k68ur")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("11_461wv")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("10_pnw1h")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tyq77"]
+shader = ExtResource("6_h0ehm")
+shader_parameter/mask_tex = ExtResource("8_hoct1")
+shader_parameter/background = ExtResource("7_a4x7y")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("9_k68ur")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("11_461wv")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("10_pnw1h")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="Gradient" id="Gradient_j5apj"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nutbc"]
+gradient = SubResource("Gradient_j5apj")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_22a8h"]
+shader = ExtResource("6_h0ehm")
+shader_parameter/mask_tex = ExtResource("8_hoct1")
+shader_parameter/background = ExtResource("7_a4x7y")
+shader_parameter/gradient = SubResource("GradientTexture2D_nutbc")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("9_k68ur")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("11_461wv")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("10_pnw1h")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[node name="StageSelector" type="Node2D" unique_id=619002547]
+script = ExtResource("1_03hip")
+metadata/_edit_vertical_guides_ = [960.0]
+
+[node name="CenterContainer2" type="CenterContainer" parent="." unique_id=388724444]
+offset_top = 81.0
+offset_right = 1920.0
+offset_bottom = 142.0
+
+[node name="TitleLabel" type="Label" parent="CenterContainer2" unique_id=1944840014]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+text = "Season 1 - Foray 3"
+label_settings = SubResource("LabelSettings_pnw1h")
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=639431916]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 977.0
+offset_right = 1918.0
+offset_bottom = 1079.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="CenterContainer" unique_id=1129711994]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 50
+
+[node name="CancelButton" type="Button" parent="CenterContainer/ButtonsContainer" unique_id=824868751]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_0nuvs")
+instance_shader_parameters/background_offset = Vector2(0.63885266, 0.45064744)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_styles/normal = ExtResource("12_4qknn")
+theme_override_styles/pressed = ExtResource("12_4qknn")
+theme_override_styles/hover = ExtResource("12_4qknn")
+theme_override_styles/hover_pressed = ExtResource("12_4qknn")
+theme_override_styles/disabled = ExtResource("12_4qknn")
+action_mode = 0
+text = "Cancel"
+script = ExtResource("13_8flt8")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="SelectButton" type="Button" parent="CenterContainer/ButtonsContainer" unique_id=522302600]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_wc5v0")
+instance_shader_parameters/background_offset = Vector2(0.81405795, 0.23466508)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_styles/normal = ExtResource("12_4qknn")
+theme_override_styles/pressed = ExtResource("12_4qknn")
+theme_override_styles/hover = ExtResource("12_4qknn")
+theme_override_styles/hover_pressed = ExtResource("12_4qknn")
+theme_override_styles/disabled = ExtResource("12_4qknn")
+text = "Choose Foray Location"
+script = ExtResource("13_8flt8")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="StartButton_ConfirmOnly" type="Button" parent="CenterContainer/ButtonsContainer" unique_id=2080904953]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_eax16")
+instance_shader_parameters/background_offset = Vector2(0.31680354, 0.18347043)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_styles/normal = ExtResource("12_4qknn")
+theme_override_styles/pressed = ExtResource("12_4qknn")
+theme_override_styles/hover = ExtResource("12_4qknn")
+theme_override_styles/hover_pressed = ExtResource("12_4qknn")
+theme_override_styles/disabled = ExtResource("12_4qknn")
+text = "Start Convergence"
+script = ExtResource("13_8flt8")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="NewStageOffset" type="Control" parent="." unique_id=1796530174]
+unique_name_in_owner = true
+z_index = 5
+layout_mode = 3
+anchors_preset = 0
+offset_left = 814.0
+offset_top = 395.0
+offset_right = 1114.0
+offset_bottom = 666.0
+pivot_offset = Vector2(250, 50)
+mouse_filter = 2
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="NewStageContainer" type="PanelContainer" parent="NewStageOffset" unique_id=193531988]
+unique_name_in_owner = true
+material = ExtResource("2_461wv")
+layout_mode = 0
+offset_left = 7.0
+offset_right = 343.0
+offset_bottom = 444.0
+mouse_filter = 2
+theme = ExtResource("3_mtac5")
+theme_override_styles/panel = ExtResource("6_0nuvs")
+script = ExtResource("7_wc5v0")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="MarginContainer" type="MarginContainer" parent="NewStageOffset/NewStageContainer" unique_id=492437325]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="FadedScrollContainer" type="ScrollContainer" parent="NewStageOffset/NewStageContainer/MarginContainer" unique_id=463768901]
+clip_children = 1
+custom_maximum_size = Vector2(-1, 750)
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 5
+script = ExtResource("15_6owpa")
+metadata/_custom_type_script = "uid://dm63mtrlfj005"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NewStageOffset/NewStageContainer/MarginContainer/FadedScrollContainer" unique_id=820737380]
+layout_mode = 2
+
+[node name="StageList" type="VBoxContainer" parent="NewStageOffset/NewStageContainer/MarginContainer/FadedScrollContainer/VBoxContainer" unique_id=1185374732]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="HeaderLabel" type="Label" parent="NewStageOffset/NewStageContainer/MarginContainer/FadedScrollContainer/VBoxContainer/StageList" unique_id=284671557]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_fonts/font = ExtResource("15_461wv")
+theme_override_font_sizes/font_size = 24
+text = "Plains"
+horizontal_alignment = 1
+
+[node name="ErrorLabel" type="Label" parent="NewStageOffset/NewStageContainer/MarginContainer/FadedScrollContainer/VBoxContainer/StageList" unique_id=1545366308]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Invalid foray location."
+horizontal_alignment = 1
+
+[node name="SpotTypeEntry" parent="NewStageOffset/NewStageContainer/MarginContainer/FadedScrollContainer/VBoxContainer/StageList" unique_id=1552119347 instance_placeholder="res://stage/selector/spot_type_entry.tscn"]
+layout_mode = 2
+
+[node name="SpotTypeEntry2" parent="NewStageOffset/NewStageContainer/MarginContainer/FadedScrollContainer/VBoxContainer/StageList" unique_id=518602491 instance_placeholder="res://stage/selector/spot_type_entry.tscn"]
+layout_mode = 2
+
+[node name="EventsList" type="VBoxContainer" parent="NewStageOffset/NewStageContainer/MarginContainer/FadedScrollContainer/VBoxContainer" unique_id=467254576]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="EventsLabel" type="Label" parent="NewStageOffset/NewStageContainer/MarginContainer/FadedScrollContainer/VBoxContainer/EventsList" unique_id=509865011]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_fonts/font = ExtResource("15_461wv")
+theme_override_font_sizes/font_size = 22
+text = "Events"
+horizontal_alignment = 1
+
+[node name="HauntingsList" type="VBoxContainer" parent="NewStageOffset/NewStageContainer/MarginContainer/FadedScrollContainer/VBoxContainer" unique_id=1420698566]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HauntingsLabel" type="Label" parent="NewStageOffset/NewStageContainer/MarginContainer/FadedScrollContainer/VBoxContainer/HauntingsList" unique_id=1234525631]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_fonts/font = ExtResource("15_461wv")
+theme_override_font_sizes/font_size = 22
+text = "Hauntings"
+horizontal_alignment = 1
+
+[node name="CapitalLabel" type="Label" parent="NewStageOffset/NewStageContainer/MarginContainer/FadedScrollContainer/VBoxContainer" unique_id=284647742]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Valid capital location!"
+horizontal_alignment = 1
+
+[node name="SurveyPreviewEntry" parent="NewStageOffset/NewStageContainer/MarginContainer/FadedScrollContainer/VBoxContainer" unique_id=601620528 instance=ExtResource("16_pnw1h")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CtrlHintLabel" parent="NewStageOffset/NewStageContainer/MarginContainer/FadedScrollContainer/VBoxContainer" unique_id=1098359776 instance=ExtResource("10_4qknn")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+size_flags_horizontal = 1
+text = "
+[i]Hold [b]Ctrl[/b] for details.[/i]"
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NewStageOffset/NewStageContainer/MarginContainer/FadedScrollContainer/VBoxContainer" unique_id=1527822099]
+layout_mode = 2
+
+[node name="CancelForayButton" type="Button" parent="NewStageOffset/NewStageContainer/MarginContainer/FadedScrollContainer/VBoxContainer/HBoxContainer" unique_id=451100328]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_4k18x")
+instance_shader_parameters/background_offset = Vector2(0.74244696, 0.44939741)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 0.64705884)
+theme_override_styles/normal = ExtResource("12_4qknn")
+theme_override_styles/pressed = ExtResource("12_4qknn")
+theme_override_styles/hover = ExtResource("12_4qknn")
+theme_override_styles/hover_pressed = ExtResource("12_4qknn")
+theme_override_styles/disabled = ExtResource("12_4qknn")
+text = "Cancel"
+script = ExtResource("13_8flt8")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="StartButton" type="Button" parent="NewStageOffset/NewStageContainer/MarginContainer/FadedScrollContainer/VBoxContainer/HBoxContainer" unique_id=1901359178]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_tyq77")
+instance_shader_parameters/background_offset = Vector2(0.97932833, 0.91354364)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_fonts/font = ExtResource("15_461wv")
+theme_override_styles/normal = ExtResource("12_4qknn")
+theme_override_styles/pressed = ExtResource("12_4qknn")
+theme_override_styles/hover = ExtResource("12_4qknn")
+theme_override_styles/hover_pressed = ExtResource("12_4qknn")
+theme_override_styles/disabled = ExtResource("12_4qknn")
+text = "Start Foray"
+script = ExtResource("13_8flt8")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="EndRunButton" type="Button" parent="." unique_id=759720715]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_22a8h")
+instance_shader_parameters/background_offset = Vector2(0.030905763, 0.44971883)
+instance_shader_parameters/state = 0.0
+offset_left = 35.0
+offset_top = 1007.0
+offset_right = 212.0
+offset_bottom = 1048.0
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_styles/normal = ExtResource("12_4qknn")
+theme_override_styles/pressed = ExtResource("12_4qknn")
+theme_override_styles/hover = ExtResource("12_4qknn")
+theme_override_styles/hover_pressed = ExtResource("12_4qknn")
+theme_override_styles/disabled = ExtResource("12_4qknn")
+text = "Finish Expedition"
+script = ExtResource("13_8flt8")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="PlacementButtonContainer" type="VBoxContainer" parent="." unique_id=2064163772]
+unique_name_in_owner = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1816.0
+offset_top = 1064.0
+offset_right = 1916.0
+offset_bottom = 1076.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset_ratio = Vector2(1, 1)
+mouse_filter = 2
+
+[node name="SpotPlacementButton_Lake" parent="PlacementButtonContainer" unique_id=544881798 instance=ExtResource("18_uw1ci")]
+instance_shader_parameters/background_offset = Vector2(0.07198336, 0.21965446)
+layout_mode = 2
+focus_mode = 0
+spot_type = ExtResource("19_ifkrs")
+sprites = Array[MapSpriteType]([ExtResource("19_51mog"), ExtResource("20_rkkjq"), ExtResource("21_udstk")])
+run_var = 38
+
+[node name="SpotPlacementButton_Square" parent="PlacementButtonContainer" unique_id=1991396337 instance=ExtResource("18_uw1ci")]
+instance_shader_parameters/background_offset = Vector2(0.4529772, 0.64415085)
+layout_mode = 2
+focus_mode = 0
+spot_type = ExtResource("23_6owpa")
+sprites = Array[MapSpriteType]([ExtResource("22_ifkrs")])
+run_var = 37
+
+[node name="SpotPlacementButton_SmallBuilding" parent="PlacementButtonContainer" unique_id=555967642 instance=ExtResource("18_uw1ci")]
+instance_shader_parameters/background_offset = Vector2(0.31133008, 0.283024)
+layout_mode = 2
+focus_mode = 0
+spot_type = ExtResource("25_fptuq")
+sprites = Array[MapSpriteType]([ExtResource("23_q5yg7"), ExtResource("24_6owpa"), ExtResource("25_u6c7h"), ExtResource("29_q5yg7")])
+run_var = 35
+inset_factor = 0.75
+
+[node name="SpotPlacementButton_LargeBuilding2" parent="PlacementButtonContainer" unique_id=1777828462 instance=ExtResource("18_uw1ci")]
+instance_shader_parameters/background_offset = Vector2(0.6164714, 0.09611909)
+layout_mode = 2
+focus_mode = 0
+spot_type = ExtResource("30_6wnkg")
+sprites = Array[MapSpriteType]([ExtResource("26_fptuq"), ExtResource("27_6wnkg"), ExtResource("28_c1424"), ExtResource("29_fths2")])
+run_var = 36
+
+[node name="ReferenceRect" type="ReferenceRect" parent="." unique_id=1452711953]
+offset_left = 2.0
+offset_top = 7.0
+offset_right = 1918.0
+offset_bottom = 79.0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="CenterContainer/ButtonsContainer/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="CenterContainer/ButtonsContainer/SelectButton" to="." method="_on_select_button_pressed"]
+[connection signal="pressed" from="CenterContainer/ButtonsContainer/StartButton_ConfirmOnly" to="." method="_on_start_button_confirm_only_pressed"]
+[connection signal="pressed" from="NewStageOffset/NewStageContainer/MarginContainer/FadedScrollContainer/VBoxContainer/HBoxContainer/CancelForayButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="NewStageOffset/NewStageContainer/MarginContainer/FadedScrollContainer/VBoxContainer/HBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="EndRunButton" to="." method="_on_end_run_button_pressed"]
+[connection signal="placement_finished" from="PlacementButtonContainer/SpotPlacementButton_Lake" to="." method="_on_spot_placement_button_finished"]
+[connection signal="placement_started" from="PlacementButtonContainer/SpotPlacementButton_Lake" to="." method="_on_spot_placement_button_started"]
+[connection signal="placement_finished" from="PlacementButtonContainer/SpotPlacementButton_Square" to="." method="_on_spot_placement_button_finished"]
+[connection signal="placement_started" from="PlacementButtonContainer/SpotPlacementButton_Square" to="." method="_on_spot_placement_button_started"]
+[connection signal="placement_finished" from="PlacementButtonContainer/SpotPlacementButton_SmallBuilding" to="." method="_on_spot_placement_button_finished"]
+[connection signal="placement_started" from="PlacementButtonContainer/SpotPlacementButton_SmallBuilding" to="." method="_on_spot_placement_button_started"]
+[connection signal="placement_finished" from="PlacementButtonContainer/SpotPlacementButton_LargeBuilding2" to="." method="_on_spot_placement_button_finished"]
+[connection signal="placement_started" from="PlacementButtonContainer/SpotPlacementButton_LargeBuilding2" to="." method="_on_spot_placement_button_started"]

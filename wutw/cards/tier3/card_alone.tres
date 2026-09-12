@@ -1,0 +1,1804 @@
+[gd_resource type="Resource" script_class="CardType" format=3 uid="uid://di2dsmgsdvaax"]
+
+[ext_resource type="Script" uid="uid://b56kytec5oqcb" path="res://cards/abilities/card_ability.gd" id="1_jdf57"]
+[ext_resource type="Script" uid="uid://be305pd33nph1" path="res://cards/abilities/card_ability_inspire.gd" id="2_254uh"]
+[ext_resource type="Resource" uid="uid://d6d62exol8mf" path="res://cards/tier6/card_isolate.tres" id="3_eaolr"]
+[ext_resource type="Script" uid="uid://c176jrcyakipx" path="res://cards/abilities/card_ability_add_card.gd" id="4_wsdqo"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="5_juhtb"]
+[ext_resource type="Script" uid="uid://xc73x4t7ckxm" path="res://japanese/example_sentence.gd" id="5_rellr"]
+[ext_resource type="Script" uid="uid://du4k150pcdjs6" path="res://japanese/kanji_shape.gd" id="6_eaolr"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="6_kbka4"]
+[ext_resource type="Script" uid="uid://bl2eelwkj800o" path="res://japanese/japanese_token.gd" id="6_wsdqo"]
+[ext_resource type="Script" uid="uid://dc15txdqjanlf" path="res://japanese/stroke_shape.gd" id="7_wsdqo"]
+[ext_resource type="Resource" uid="uid://d1k7vakhjcq5g" path="res://glossary/categories/termcategory_card.tres" id="7_xnits"]
+[ext_resource type="Script" uid="uid://b6rw4ldrj6wch" path="res://japanese/vocab.gd" id="9_eaolr"]
+
+[sub_resource type="Resource" id="Resource_rellr"]
+script = ExtResource("2_254uh")
+points = 6
+metadata/_custom_type_script = "uid://be305pd33nph1"
+
+[sub_resource type="Resource" id="Resource_0eiya"]
+script = ExtResource("4_wsdqo")
+card_type = ExtResource("3_eaolr")
+metadata/_custom_type_script = "uid://c176jrcyakipx"
+
+[sub_resource type="Resource" id="Resource_2eu0k"]
+script = ExtResource("9_eaolr")
+japanese = "独り言"
+readings = Array[String](["ひとりごと"])
+meanings = Array[String](["soliloquy", "monologue", "speaking to oneself"])
+jlpt_level = 2
+
+[sub_resource type="Resource" id="Resource_rv2ij"]
+script = ExtResource("6_wsdqo")
+raw_text = "独り言"
+vocab = SubResource("Resource_2eu0k")
+reading = "ひとりごと"
+
+[sub_resource type="Resource" id="Resource_3bxss"]
+script = ExtResource("6_wsdqo")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_wuq5g"]
+script = ExtResource("9_eaolr")
+japanese = "言う"
+readings = Array[String](["いう", "ゆう"])
+meanings = Array[String](["to say", "to utter", "to declare", "to name", "to call"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_mrw20"]
+script = ExtResource("6_wsdqo")
+raw_text = "言っ"
+vocab = SubResource("Resource_wuq5g")
+reading = "いっ"
+
+[sub_resource type="Resource" id="Resource_3hi6k"]
+script = ExtResource("6_wsdqo")
+raw_text = "てる"
+reading = "てる"
+
+[sub_resource type="Resource" id="Resource_f7s1j"]
+script = ExtResource("6_wsdqo")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_u3cll"]
+script = ExtResource("6_wsdqo")
+raw_text = "？"
+reading = "？"
+
+[sub_resource type="Resource" id="Resource_3p7ey"]
+script = ExtResource("5_rellr")
+japanese = "独り言を言ってるの？"
+native = "Are you talking to yourself?"
+parsed = Array[ExtResource("6_wsdqo")]([SubResource("Resource_rv2ij"), SubResource("Resource_3bxss"), SubResource("Resource_mrw20"), SubResource("Resource_3hi6k"), SubResource("Resource_f7s1j"), SubResource("Resource_u3cll")])
+_difficulty = 356
+_used_kanji = Array[String](["独", "言"])
+
+[sub_resource type="Resource" id="Resource_obljs"]
+script = ExtResource("6_wsdqo")
+raw_text = "ここ"
+reading = "ここ"
+
+[sub_resource type="Resource" id="Resource_hfb4j"]
+script = ExtResource("6_wsdqo")
+raw_text = "で"
+reading = "で"
+
+[sub_resource type="Resource" id="Resource_3dq0u"]
+script = ExtResource("6_wsdqo")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_li1hg"]
+script = ExtResource("9_eaolr")
+japanese = "独りぼっち"
+readings = Array[String](["ひとりぼっち", "ひとりぽっち"])
+meanings = Array[String](["aloneness", "loneliness", "solitude"])
+
+[sub_resource type="Resource" id="Resource_my3fo"]
+script = ExtResource("6_wsdqo")
+raw_text = "独りぼっち"
+vocab = SubResource("Resource_li1hg")
+reading = "ひとりぼっち"
+
+[sub_resource type="Resource" id="Resource_4s0e3"]
+script = ExtResource("6_wsdqo")
+raw_text = "だ"
+reading = "だ"
+
+[sub_resource type="Resource" id="Resource_ccqhq"]
+script = ExtResource("6_wsdqo")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_eaolr"]
+script = ExtResource("5_rellr")
+japanese = "ここでは独りぼっちだ。"
+native = "I'm alone here."
+parsed = Array[ExtResource("6_wsdqo")]([SubResource("Resource_obljs"), SubResource("Resource_hfb4j"), SubResource("Resource_3dq0u"), SubResource("Resource_my3fo"), SubResource("Resource_4s0e3"), SubResource("Resource_ccqhq")])
+_difficulty = 394
+_used_kanji = Array[String](["独"])
+
+[sub_resource type="Resource" id="Resource_aq821"]
+script = ExtResource("9_eaolr")
+japanese = "私"
+readings = Array[String](["わたし"])
+meanings = Array[String](["I", "me"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_kwp7p"]
+script = ExtResource("6_wsdqo")
+raw_text = "私"
+vocab = SubResource("Resource_aq821")
+reading = "わたし"
+
+[sub_resource type="Resource" id="Resource_ememo"]
+script = ExtResource("6_wsdqo")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_28v27"]
+script = ExtResource("9_eaolr")
+japanese = "独り"
+readings = Array[String](["ひとり", "いちにん"])
+meanings = Array[String](["one person", "being alone", "being by oneself", "being single", "being unmarried", "by oneself", "alone", "just", "only", "simply"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_4c1c5"]
+script = ExtResource("6_wsdqo")
+raw_text = "独り"
+vocab = SubResource("Resource_28v27")
+reading = "ひとり"
+
+[sub_resource type="Resource" id="Resource_sdslb"]
+script = ExtResource("6_wsdqo")
+raw_text = "で"
+reading = "で"
+
+[sub_resource type="Resource" id="Resource_ifxpm"]
+script = ExtResource("9_eaolr")
+japanese = "歩く"
+readings = Array[String](["あるく"])
+meanings = Array[String](["to walk"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_6mdtn"]
+script = ExtResource("6_wsdqo")
+raw_text = "歩い"
+vocab = SubResource("Resource_ifxpm")
+reading = "あるい"
+
+[sub_resource type="Resource" id="Resource_di3ff"]
+script = ExtResource("6_wsdqo")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_noq8u"]
+script = ExtResource("6_wsdqo")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_wsdqo"]
+script = ExtResource("5_rellr")
+japanese = "私は独りで歩いた。"
+native = "I walked alone."
+parsed = Array[ExtResource("6_wsdqo")]([SubResource("Resource_kwp7p"), SubResource("Resource_ememo"), SubResource("Resource_4c1c5"), SubResource("Resource_sdslb"), SubResource("Resource_6mdtn"), SubResource("Resource_di3ff"), SubResource("Resource_noq8u")])
+_difficulty = 404
+_used_kanji = Array[String](["私", "独", "歩"])
+
+[sub_resource type="Resource" id="Resource_6qoge"]
+script = ExtResource("6_wsdqo")
+raw_text = "独り"
+vocab = SubResource("Resource_28v27")
+reading = "ひとり"
+
+[sub_resource type="Resource" id="Resource_7qnpo"]
+script = ExtResource("6_wsdqo")
+raw_text = "で"
+reading = "で"
+
+[sub_resource type="Resource" id="Resource_rlb3o"]
+script = ExtResource("9_eaolr")
+japanese = "旅"
+readings = Array[String](["たび"])
+meanings = Array[String](["travel", "trip", "journey"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_y7t43"]
+script = ExtResource("6_wsdqo")
+raw_text = "旅"
+vocab = SubResource("Resource_rlb3o")
+reading = "たび"
+
+[sub_resource type="Resource" id="Resource_2p5hu"]
+script = ExtResource("6_wsdqo")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_nf4nf"]
+script = ExtResource("6_wsdqo")
+raw_text = "し"
+reading = "し"
+
+[sub_resource type="Resource" id="Resource_nvp88"]
+script = ExtResource("6_wsdqo")
+raw_text = "てる"
+reading = "てる"
+
+[sub_resource type="Resource" id="Resource_byo25"]
+script = ExtResource("6_wsdqo")
+raw_text = "ん"
+reading = "ん"
+
+[sub_resource type="Resource" id="Resource_kbea4"]
+script = ExtResource("6_wsdqo")
+raw_text = "です"
+reading = "です"
+
+[sub_resource type="Resource" id="Resource_2w2pg"]
+script = ExtResource("6_wsdqo")
+raw_text = "か"
+reading = "か"
+
+[sub_resource type="Resource" id="Resource_algfp"]
+script = ExtResource("6_wsdqo")
+raw_text = "？"
+reading = "？"
+
+[sub_resource type="Resource" id="Resource_kj8jn"]
+script = ExtResource("5_rellr")
+japanese = "独りで旅をしてるんですか？"
+native = "Are you traveling by yourself?"
+parsed = Array[ExtResource("6_wsdqo")]([SubResource("Resource_6qoge"), SubResource("Resource_7qnpo"), SubResource("Resource_y7t43"), SubResource("Resource_2p5hu"), SubResource("Resource_nf4nf"), SubResource("Resource_nvp88"), SubResource("Resource_byo25"), SubResource("Resource_kbea4"), SubResource("Resource_2w2pg"), SubResource("Resource_algfp")])
+_difficulty = 417
+_used_kanji = Array[String](["独", "旅"])
+
+[sub_resource type="Resource" id="Resource_72la4"]
+script = ExtResource("9_eaolr")
+japanese = "孤独"
+readings = Array[String](["こどく"])
+meanings = Array[String](["solitude", "loneliness", "isolation"])
+jlpt_level = 1
+
+[sub_resource type="Resource" id="Resource_cfvtw"]
+script = ExtResource("6_wsdqo")
+raw_text = "孤独"
+vocab = SubResource("Resource_72la4")
+reading = "こどく"
+
+[sub_resource type="Resource" id="Resource_6jocf"]
+script = ExtResource("6_wsdqo")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_vmuhw"]
+script = ExtResource("9_eaolr")
+japanese = "楽しむ"
+readings = Array[String](["たのしむ"])
+meanings = Array[String](["to enjoy", "to take pleasure in", "to have a good time", "to have fun", "to amuse oneself", "to look forward to"])
+jlpt_level = 1
+
+[sub_resource type="Resource" id="Resource_8wycb"]
+script = ExtResource("6_wsdqo")
+raw_text = "楽しむ"
+vocab = SubResource("Resource_vmuhw")
+reading = "たのしむ"
+
+[sub_resource type="Resource" id="Resource_61gn3"]
+script = ExtResource("9_eaolr")
+japanese = "人"
+readings = Array[String](["ひと"])
+meanings = Array[String](["person", "someone", "somebody", "human beings", "mankind", "man", "people", "humans", "human (Homo sapiens)", "(other) people", "others", "character", "personality", "nature", "capable person", "competent person", "suitable person", "right person", "adult", "grown-up", "I", "me", "one"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_krg6w"]
+script = ExtResource("6_wsdqo")
+raw_text = "人"
+vocab = SubResource("Resource_61gn3")
+reading = "ひと"
+
+[sub_resource type="Resource" id="Resource_6632q"]
+script = ExtResource("6_wsdqo")
+raw_text = "も"
+reading = "も"
+
+[sub_resource type="Resource" id="Resource_tng3g"]
+script = ExtResource("6_wsdqo")
+raw_text = "いる"
+reading = "いる"
+
+[sub_resource type="Resource" id="Resource_6xtvv"]
+script = ExtResource("6_wsdqo")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_mg7xe"]
+script = ExtResource("5_rellr")
+japanese = "孤独を楽しむ人もいる。"
+native = "Some people enjoy solitude."
+parsed = Array[ExtResource("6_wsdqo")]([SubResource("Resource_cfvtw"), SubResource("Resource_6jocf"), SubResource("Resource_8wycb"), SubResource("Resource_krg6w"), SubResource("Resource_6632q"), SubResource("Resource_tng3g"), SubResource("Resource_6xtvv")])
+_difficulty = 500
+_used_kanji = Array[String](["孤", "独", "楽", "人"])
+
+[sub_resource type="Resource" id="Resource_2tpn3"]
+script = ExtResource("6_wsdqo")
+raw_text = "私"
+vocab = SubResource("Resource_aq821")
+reading = "わたし"
+
+[sub_resource type="Resource" id="Resource_vrp1o"]
+script = ExtResource("6_wsdqo")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_ri7uu"]
+script = ExtResource("6_wsdqo")
+raw_text = "孤独"
+vocab = SubResource("Resource_72la4")
+reading = "こどく"
+
+[sub_resource type="Resource" id="Resource_b3mx4"]
+script = ExtResource("6_wsdqo")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_7vrse"]
+script = ExtResource("9_eaolr")
+japanese = "感じる"
+readings = Array[String](["かんじる"])
+meanings = Array[String](["to feel", "to sense", "to experience", "to be moved (by)", "to be touched (by)", "to be impressed (by)", "to respond (to)", "to become infected with (an illness)", "to catch"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_00vkg"]
+script = ExtResource("6_wsdqo")
+raw_text = "感じ"
+vocab = SubResource("Resource_7vrse")
+reading = "かんじ"
+
+[sub_resource type="Resource" id="Resource_jlggh"]
+script = ExtResource("6_wsdqo")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_s1nky"]
+script = ExtResource("6_wsdqo")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_juhtb"]
+script = ExtResource("5_rellr")
+japanese = "私は孤独を感じた。"
+native = "I felt lonely."
+parsed = Array[ExtResource("6_wsdqo")]([SubResource("Resource_2tpn3"), SubResource("Resource_vrp1o"), SubResource("Resource_ri7uu"), SubResource("Resource_b3mx4"), SubResource("Resource_00vkg"), SubResource("Resource_jlggh"), SubResource("Resource_s1nky")])
+_difficulty = 508
+_used_kanji = Array[String](["私", "孤", "独", "感"])
+
+[sub_resource type="Resource" id="Resource_tufoj"]
+script = ExtResource("6_wsdqo")
+raw_text = "あなた"
+reading = "あなた"
+
+[sub_resource type="Resource" id="Resource_f1ysa"]
+script = ExtResource("9_eaolr")
+japanese = "方"
+readings = Array[String](["かた"])
+meanings = Array[String](["direction", "way", "person", "lady", "gentleman", "method of", "manner of", "way of", "care of ...", "person in charge of ...", "side (e.g. \"on my mother's side\")"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_lptag"]
+script = ExtResource("6_wsdqo")
+raw_text = "方"
+vocab = SubResource("Resource_f1ysa")
+reading = "かた"
+
+[sub_resource type="Resource" id="Resource_4wuk4"]
+script = ExtResource("6_wsdqo")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_3qwu0"]
+script = ExtResource("9_eaolr")
+japanese = "独力"
+readings = Array[String](["どくりょく"])
+meanings = Array[String](["one's own effort"])
+
+[sub_resource type="Resource" id="Resource_8f62p"]
+script = ExtResource("6_wsdqo")
+raw_text = "独力"
+vocab = SubResource("Resource_3qwu0")
+reading = "どくりょく"
+
+[sub_resource type="Resource" id="Resource_r8aqk"]
+script = ExtResource("6_wsdqo")
+raw_text = "で"
+reading = "で"
+
+[sub_resource type="Resource" id="Resource_k0gwh"]
+script = ExtResource("9_eaolr")
+japanese = "考える"
+readings = Array[String](["かんがえる"])
+meanings = Array[String](["to think (about, of)", "to think over", "to ponder", "to contemplate", "to reflect (on)", "to meditate (on)", "to consider", "to bear in mind", "to allow for", "to take into consideration", "to think (that)", "to believe", "to hold (a view)", "to judge", "to conclude", "to suspect", "to intend (to do)", "to think of (doing)", "to plan", "to predict", "to anticipate", "to expect", "to imagine", "to come up with", "to think up", "to contrive", "to devise", "to consider (as)", "to regard (as)", "to look on (as)", "to take", "to view"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_a2agm"]
+script = ExtResource("6_wsdqo")
+raw_text = "考え"
+vocab = SubResource("Resource_k0gwh")
+reading = "かんがえ"
+
+[sub_resource type="Resource" id="Resource_wbioj"]
+script = ExtResource("6_wsdqo")
+raw_text = "なく"
+reading = "なく"
+
+[sub_resource type="Resource" id="Resource_bm18j"]
+script = ExtResource("6_wsdqo")
+raw_text = "て"
+reading = "て"
+
+[sub_resource type="Resource" id="Resource_bb3g1"]
+script = ExtResource("6_wsdqo")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_11avd"]
+script = ExtResource("6_wsdqo")
+raw_text = "いけ"
+reading = "いけ"
+
+[sub_resource type="Resource" id="Resource_51phs"]
+script = ExtResource("6_wsdqo")
+raw_text = "ない"
+reading = "ない"
+
+[sub_resource type="Resource" id="Resource_5vqw3"]
+script = ExtResource("6_wsdqo")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_jww11"]
+script = ExtResource("5_rellr")
+japanese = "あなた方は独力で考えなくてはいけない。"
+native = "You must think by yourselves."
+parsed = Array[ExtResource("6_wsdqo")]([SubResource("Resource_tufoj"), SubResource("Resource_lptag"), SubResource("Resource_4wuk4"), SubResource("Resource_8f62p"), SubResource("Resource_r8aqk"), SubResource("Resource_a2agm"), SubResource("Resource_wbioj"), SubResource("Resource_bm18j"), SubResource("Resource_bb3g1"), SubResource("Resource_11avd"), SubResource("Resource_51phs"), SubResource("Resource_5vqw3")])
+_difficulty = 508
+_used_kanji = Array[String](["方", "独", "力", "考"])
+
+[sub_resource type="Resource" id="Resource_b3uno"]
+script = ExtResource("6_wsdqo")
+raw_text = "その"
+reading = "その"
+
+[sub_resource type="Resource" id="Resource_onhtg"]
+script = ExtResource("9_eaolr")
+japanese = "老人"
+readings = Array[String](["ろうじん"])
+meanings = Array[String](["old person", "senior citizen", "the aged", "the elderly"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_pjsuf"]
+script = ExtResource("6_wsdqo")
+raw_text = "老人"
+vocab = SubResource("Resource_onhtg")
+reading = "ろうじん"
+
+[sub_resource type="Resource" id="Resource_p3lhx"]
+script = ExtResource("6_wsdqo")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_7dfq7"]
+script = ExtResource("6_wsdqo")
+raw_text = "独り"
+vocab = SubResource("Resource_28v27")
+reading = "ひとり"
+
+[sub_resource type="Resource" id="Resource_qhvjf"]
+script = ExtResource("6_wsdqo")
+raw_text = "で"
+reading = "で"
+
+[sub_resource type="Resource" id="Resource_6oeal"]
+script = ExtResource("9_eaolr")
+japanese = "暮らす"
+readings = Array[String](["くらす"])
+meanings = Array[String](["to live (on, by, etc.)", "to lead a life", "to get along", "to get by", "to make a living", "to earn a livelihood", "to spend one's time (doing)", "to pass one's days (doing)", "to live", "to get on (doing)", "to do daily", "to do all day long", "to continue doing"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_htkev"]
+script = ExtResource("6_wsdqo")
+raw_text = "暮らし"
+vocab = SubResource("Resource_6oeal")
+reading = "くらし"
+
+[sub_resource type="Resource" id="Resource_vy5s3"]
+script = ExtResource("6_wsdqo")
+raw_text = "て"
+reading = "て"
+
+[sub_resource type="Resource" id="Resource_gcpk6"]
+script = ExtResource("6_wsdqo")
+raw_text = "い"
+reading = "い"
+
+[sub_resource type="Resource" id="Resource_0mv8n"]
+script = ExtResource("6_wsdqo")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_xolhv"]
+script = ExtResource("6_wsdqo")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_1mk64"]
+script = ExtResource("5_rellr")
+japanese = "その老人は独りで暮らしていた。"
+native = "The old man lived by himself."
+parsed = Array[ExtResource("6_wsdqo")]([SubResource("Resource_b3uno"), SubResource("Resource_pjsuf"), SubResource("Resource_p3lhx"), SubResource("Resource_7dfq7"), SubResource("Resource_qhvjf"), SubResource("Resource_htkev"), SubResource("Resource_vy5s3"), SubResource("Resource_gcpk6"), SubResource("Resource_0mv8n"), SubResource("Resource_xolhv")])
+_difficulty = 511
+_used_kanji = Array[String](["老", "人", "独", "暮"])
+
+[sub_resource type="Resource" id="Resource_uccf3"]
+script = ExtResource("9_eaolr")
+japanese = "彼女"
+readings = Array[String](["かのじょ"])
+meanings = Array[String](["she", "her", "girlfriend"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_vq8rt"]
+script = ExtResource("6_wsdqo")
+raw_text = "彼女"
+vocab = SubResource("Resource_uccf3")
+reading = "かのじょ"
+
+[sub_resource type="Resource" id="Resource_uusmp"]
+script = ExtResource("6_wsdqo")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_6p0cd"]
+script = ExtResource("9_eaolr")
+japanese = "独学"
+readings = Array[String](["どくがく"])
+meanings = Array[String](["self-education", "self-instruction", "self-study"])
+
+[sub_resource type="Resource" id="Resource_k13bs"]
+script = ExtResource("6_wsdqo")
+raw_text = "独学"
+vocab = SubResource("Resource_6p0cd")
+reading = "どくがく"
+
+[sub_resource type="Resource" id="Resource_eyv37"]
+script = ExtResource("6_wsdqo")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_e6phu"]
+script = ExtResource("6_wsdqo")
+raw_text = "人"
+vocab = SubResource("Resource_61gn3")
+reading = "ひと"
+
+[sub_resource type="Resource" id="Resource_f07iy"]
+script = ExtResource("6_wsdqo")
+raw_text = "です"
+reading = "です"
+
+[sub_resource type="Resource" id="Resource_so7hl"]
+script = ExtResource("6_wsdqo")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_w8gvi"]
+script = ExtResource("5_rellr")
+japanese = "彼女は独学の人です。"
+native = "She is a self-educated woman."
+parsed = Array[ExtResource("6_wsdqo")]([SubResource("Resource_vq8rt"), SubResource("Resource_uusmp"), SubResource("Resource_k13bs"), SubResource("Resource_eyv37"), SubResource("Resource_e6phu"), SubResource("Resource_f07iy"), SubResource("Resource_so7hl")])
+_difficulty = 528
+_used_kanji = Array[String](["彼", "女", "独", "学", "人"])
+
+[sub_resource type="Resource" id="Resource_pnea6"]
+script = ExtResource("6_wsdqo")
+raw_text = "独り"
+vocab = SubResource("Resource_28v27")
+reading = "ひとり"
+
+[sub_resource type="Resource" id="Resource_b0rgy"]
+script = ExtResource("6_wsdqo")
+raw_text = "で"
+reading = "で"
+
+[sub_resource type="Resource" id="Resource_ul6d8"]
+script = ExtResource("6_wsdqo")
+raw_text = "その"
+reading = "その"
+
+[sub_resource type="Resource" id="Resource_vpsqm"]
+script = ExtResource("9_eaolr")
+japanese = "問題"
+readings = Array[String](["もんだい"])
+meanings = Array[String](["question (e.g. on a test)", "problem", "problem (e.g. societal, political)", "question", "issue", "subject (e.g. of research)", "case", "matter", "question (i.e. doubt)", "public discussion", "controversy", "trouble", "inconvenience", "difficulty"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_47ju0"]
+script = ExtResource("6_wsdqo")
+raw_text = "問題"
+vocab = SubResource("Resource_vpsqm")
+reading = "もんだい"
+
+[sub_resource type="Resource" id="Resource_nubdu"]
+script = ExtResource("6_wsdqo")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_lwcuw"]
+script = ExtResource("9_eaolr")
+japanese = "解決"
+readings = Array[String](["かいけつ"])
+meanings = Array[String](["settlement", "solution", "resolution"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_0ft42"]
+script = ExtResource("6_wsdqo")
+raw_text = "解決"
+vocab = SubResource("Resource_lwcuw")
+reading = "かいけつ"
+
+[sub_resource type="Resource" id="Resource_agnhq"]
+script = ExtResource("6_wsdqo")
+raw_text = "できる"
+reading = "できる"
+
+[sub_resource type="Resource" id="Resource_ty2gt"]
+script = ExtResource("6_wsdqo")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_wchbn"]
+script = ExtResource("6_wsdqo")
+raw_text = "？"
+reading = "？"
+
+[sub_resource type="Resource" id="Resource_kc8we"]
+script = ExtResource("5_rellr")
+japanese = "独りでその問題を解決できるの？"
+native = "Can you solve the problem by yourself?"
+parsed = Array[ExtResource("6_wsdqo")]([SubResource("Resource_pnea6"), SubResource("Resource_b0rgy"), SubResource("Resource_ul6d8"), SubResource("Resource_47ju0"), SubResource("Resource_nubdu"), SubResource("Resource_0ft42"), SubResource("Resource_agnhq"), SubResource("Resource_ty2gt"), SubResource("Resource_wchbn")])
+_difficulty = 544
+_used_kanji = Array[String](["独", "問", "題", "解", "決"])
+
+[sub_resource type="Resource" id="Resource_tnenx"]
+script = ExtResource("6_wsdqo")
+raw_text = "私"
+vocab = SubResource("Resource_aq821")
+reading = "わたし"
+
+[sub_resource type="Resource" id="Resource_hppeh"]
+script = ExtResource("6_wsdqo")
+raw_text = "独り"
+vocab = SubResource("Resource_28v27")
+reading = "ひとり"
+
+[sub_resource type="Resource" id="Resource_0swbh"]
+script = ExtResource("6_wsdqo")
+raw_text = "で"
+reading = "で"
+
+[sub_resource type="Resource" id="Resource_3o5qm"]
+script = ExtResource("6_wsdqo")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_dsl4u"]
+script = ExtResource("6_wsdqo")
+raw_text = "でき"
+reading = "でき"
+
+[sub_resource type="Resource" id="Resource_fxww1"]
+script = ExtResource("6_wsdqo")
+raw_text = "ない"
+reading = "ない"
+
+[sub_resource type="Resource" id="Resource_ghawq"]
+script = ExtResource("6_wsdqo")
+raw_text = "かも"
+reading = "かも"
+
+[sub_resource type="Resource" id="Resource_80xak"]
+script = ExtResource("6_wsdqo")
+raw_text = "しれ"
+reading = "しれ"
+
+[sub_resource type="Resource" id="Resource_w5w12"]
+script = ExtResource("6_wsdqo")
+raw_text = "ませ"
+reading = "ませ"
+
+[sub_resource type="Resource" id="Resource_oveo3"]
+script = ExtResource("6_wsdqo")
+raw_text = "ん"
+reading = "ん"
+
+[sub_resource type="Resource" id="Resource_uwavb"]
+script = ExtResource("6_wsdqo")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_gfhri"]
+script = ExtResource("5_rellr")
+japanese = "私独りではできないかもしれません。"
+native = "I might not be able to do that alone."
+parsed = Array[ExtResource("6_wsdqo")]([SubResource("Resource_tnenx"), SubResource("Resource_hppeh"), SubResource("Resource_0swbh"), SubResource("Resource_3o5qm"), SubResource("Resource_dsl4u"), SubResource("Resource_fxww1"), SubResource("Resource_ghawq"), SubResource("Resource_80xak"), SubResource("Resource_w5w12"), SubResource("Resource_oveo3"), SubResource("Resource_uwavb")])
+_difficulty = 553
+_used_kanji = Array[String](["私", "独"])
+
+[sub_resource type="Resource" id="Resource_gb6f8"]
+script = ExtResource("6_wsdqo")
+raw_text = "どの"
+reading = "どの"
+
+[sub_resource type="Resource" id="Resource_i7bls"]
+script = ExtResource("9_eaolr")
+japanese = "民族"
+readings = Array[String](["みんぞく"])
+meanings = Array[String](["people", "race", "nation", "ethnic group", "ethnos"])
+jlpt_level = 1
+
+[sub_resource type="Resource" id="Resource_hfi57"]
+script = ExtResource("6_wsdqo")
+raw_text = "民族"
+vocab = SubResource("Resource_i7bls")
+reading = "みんぞく"
+
+[sub_resource type="Resource" id="Resource_7p6ae"]
+script = ExtResource("6_wsdqo")
+raw_text = "も"
+reading = "も"
+
+[sub_resource type="Resource" id="Resource_ic21m"]
+script = ExtResource("9_eaolr")
+japanese = "独自"
+readings = Array[String](["どくじ"])
+meanings = Array[String](["original", "unique", "distinctive", "characteristic", "peculiar", "independent", "one's own", "personal"])
+jlpt_level = 1
+
+[sub_resource type="Resource" id="Resource_1mxu7"]
+script = ExtResource("6_wsdqo")
+raw_text = "独自"
+vocab = SubResource("Resource_ic21m")
+reading = "どくじ"
+
+[sub_resource type="Resource" id="Resource_b8r3c"]
+script = ExtResource("6_wsdqo")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_u6gfj"]
+script = ExtResource("9_eaolr")
+japanese = "神話"
+readings = Array[String](["しんわ"])
+meanings = Array[String](["myth", "mythology"])
+jlpt_level = 2
+
+[sub_resource type="Resource" id="Resource_a4epb"]
+script = ExtResource("6_wsdqo")
+raw_text = "神話"
+vocab = SubResource("Resource_u6gfj")
+reading = "しんわ"
+
+[sub_resource type="Resource" id="Resource_11nbx"]
+script = ExtResource("6_wsdqo")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_j0ch0"]
+script = ExtResource("9_eaolr")
+japanese = "持つ"
+readings = Array[String](["もつ"])
+meanings = Array[String](["to hold (in one's hand)", "to take", "to carry", "to possess", "to have", "to own", "to maintain", "to keep", "to last", "to be durable", "to survive", "to take charge of", "to be in charge of", "to hold (meeting, etc.)", "to have (opportunity, etc.)", "to have \"it\"", "to have that special something", "to be blessed with good luck"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_v2xci"]
+script = ExtResource("6_wsdqo")
+raw_text = "持っ"
+vocab = SubResource("Resource_j0ch0")
+reading = "もっ"
+
+[sub_resource type="Resource" id="Resource_7wdy2"]
+script = ExtResource("6_wsdqo")
+raw_text = "て"
+reading = "て"
+
+[sub_resource type="Resource" id="Resource_g0suj"]
+script = ExtResource("6_wsdqo")
+raw_text = "いる"
+reading = "いる"
+
+[sub_resource type="Resource" id="Resource_ix5i0"]
+script = ExtResource("6_wsdqo")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_5axnw"]
+script = ExtResource("5_rellr")
+japanese = "どの民族も独自の神話を持っている。"
+native = "Every nation has its own myths."
+parsed = Array[ExtResource("6_wsdqo")]([SubResource("Resource_gb6f8"), SubResource("Resource_hfi57"), SubResource("Resource_7p6ae"), SubResource("Resource_1mxu7"), SubResource("Resource_b8r3c"), SubResource("Resource_a4epb"), SubResource("Resource_11nbx"), SubResource("Resource_v2xci"), SubResource("Resource_7wdy2"), SubResource("Resource_g0suj"), SubResource("Resource_ix5i0")])
+_difficulty = 560
+_used_kanji = Array[String](["民", "族", "独", "自", "神", "話", "持"])
+
+[sub_resource type="Resource" id="Resource_uqy01"]
+script = ExtResource("9_eaolr")
+japanese = "独立"
+readings = Array[String](["どくりつ"])
+meanings = Array[String](["independence", "self-reliance", "supporting oneself", "being on one's own", "independence (e.g. of a nation)", "freedom", "separation", "isolation"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_n24po"]
+script = ExtResource("6_wsdqo")
+raw_text = "独立"
+vocab = SubResource("Resource_uqy01")
+reading = "どくりつ"
+
+[sub_resource type="Resource" id="Resource_p4jp4"]
+script = ExtResource("6_wsdqo")
+raw_text = "し"
+reading = "し"
+
+[sub_resource type="Resource" id="Resource_xgq03"]
+script = ExtResource("6_wsdqo")
+raw_text = "て"
+reading = "て"
+
+[sub_resource type="Resource" id="Resource_n7l35"]
+script = ExtResource("9_eaolr")
+japanese = "自分"
+readings = Array[String](["じぶん"])
+meanings = Array[String](["myself", "yourself", "oneself", "himself", "herself", "I", "me", "you"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_naww5"]
+script = ExtResource("6_wsdqo")
+raw_text = "自分"
+vocab = SubResource("Resource_n7l35")
+reading = "じぶん"
+
+[sub_resource type="Resource" id="Resource_2x3nj"]
+script = ExtResource("6_wsdqo")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_s73bn"]
+script = ExtResource("9_eaolr")
+japanese = "力"
+readings = Array[String](["ちから"])
+meanings = Array[String](["force", "strength", "might", "vigour", "vigor", "energy", "capability", "ability", "proficiency", "capacity", "faculty", "efficacy", "effect", "effort", "endeavours", "endeavors", "exertions", "power", "authority", "influence", "good offices", "agency", "support", "help", "aid", "assistance", "stress", "emphasis", "means", "resources"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_tihep"]
+script = ExtResource("6_wsdqo")
+raw_text = "力"
+vocab = SubResource("Resource_s73bn")
+reading = "ちから"
+
+[sub_resource type="Resource" id="Resource_x7xdn"]
+script = ExtResource("6_wsdqo")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_c53yr"]
+script = ExtResource("9_eaolr")
+japanese = "試す"
+readings = Array[String](["ためす"])
+meanings = Array[String](["to try (out)", "to have a try (at)", "to test", "to put to the test"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_lp850"]
+script = ExtResource("6_wsdqo")
+raw_text = "試し"
+vocab = SubResource("Resource_c53yr")
+reading = "ためし"
+
+[sub_resource type="Resource" id="Resource_o1gd7"]
+script = ExtResource("6_wsdqo")
+raw_text = "たら"
+reading = "たら"
+
+[sub_resource type="Resource" id="Resource_jiaas"]
+script = ExtResource("6_wsdqo")
+raw_text = "どう"
+reading = "どう"
+
+[sub_resource type="Resource" id="Resource_c8ohu"]
+script = ExtResource("6_wsdqo")
+raw_text = "です"
+reading = "です"
+
+[sub_resource type="Resource" id="Resource_678h3"]
+script = ExtResource("6_wsdqo")
+raw_text = "か"
+reading = "か"
+
+[sub_resource type="Resource" id="Resource_jjvyp"]
+script = ExtResource("6_wsdqo")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_nes2b"]
+script = ExtResource("5_rellr")
+japanese = "独立して自分の力を試したらどうですか。"
+native = "Why don't you strike out on your own?"
+parsed = Array[ExtResource("6_wsdqo")]([SubResource("Resource_n24po"), SubResource("Resource_p4jp4"), SubResource("Resource_xgq03"), SubResource("Resource_naww5"), SubResource("Resource_2x3nj"), SubResource("Resource_tihep"), SubResource("Resource_x7xdn"), SubResource("Resource_lp850"), SubResource("Resource_o1gd7"), SubResource("Resource_jiaas"), SubResource("Resource_c8ohu"), SubResource("Resource_678h3"), SubResource("Resource_jjvyp")])
+_difficulty = 575
+_used_kanji = Array[String](["独", "立", "自", "分", "力", "試"])
+
+[sub_resource type="Resource" id="Resource_sdk11"]
+script = ExtResource("6_wsdqo")
+raw_text = "彼女"
+vocab = SubResource("Resource_uccf3")
+reading = "かのじょ"
+
+[sub_resource type="Resource" id="Resource_yitae"]
+script = ExtResource("6_wsdqo")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_i7sp0"]
+script = ExtResource("6_wsdqo")
+raw_text = "孤独"
+vocab = SubResource("Resource_72la4")
+reading = "こどく"
+
+[sub_resource type="Resource" id="Resource_diyps"]
+script = ExtResource("6_wsdqo")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_xsu3m"]
+script = ExtResource("6_wsdqo")
+raw_text = "感じ"
+vocab = SubResource("Resource_7vrse")
+reading = "かんじ"
+
+[sub_resource type="Resource" id="Resource_aveoq"]
+script = ExtResource("6_wsdqo")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_lmi5x"]
+script = ExtResource("6_wsdqo")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_u8u1x"]
+script = ExtResource("5_rellr")
+japanese = "彼女は孤独を感じた。"
+native = "She felt lonely."
+parsed = Array[ExtResource("6_wsdqo")]([SubResource("Resource_sdk11"), SubResource("Resource_yitae"), SubResource("Resource_i7sp0"), SubResource("Resource_diyps"), SubResource("Resource_xsu3m"), SubResource("Resource_aveoq"), SubResource("Resource_lmi5x")])
+_difficulty = 578
+_used_kanji = Array[String](["彼", "女", "孤", "独", "感"])
+
+[sub_resource type="Resource" id="Resource_ibqa7"]
+script = ExtResource("9_eaolr")
+japanese = "彼"
+readings = Array[String](["かれ"])
+meanings = Array[String](["he", "him", "boyfriend"])
+jlpt_level = 4
+_difficulty = 31
+
+[sub_resource type="Resource" id="Resource_ysyah"]
+script = ExtResource("6_wsdqo")
+raw_text = "彼"
+vocab = SubResource("Resource_ibqa7")
+reading = "かれ"
+
+[sub_resource type="Resource" id="Resource_0snrf"]
+script = ExtResource("6_wsdqo")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_nvj4u"]
+script = ExtResource("6_wsdqo")
+raw_text = "独力"
+vocab = SubResource("Resource_3qwu0")
+reading = "どくりょく"
+
+[sub_resource type="Resource" id="Resource_tpja3"]
+script = ExtResource("6_wsdqo")
+raw_text = "で"
+reading = "で"
+
+[sub_resource type="Resource" id="Resource_t1d0m"]
+script = ExtResource("9_eaolr")
+japanese = "答"
+readings = Array[String](["こたえ"])
+meanings = Array[String](["answer", "reply", "response", "solution", "result"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_rg0sc"]
+script = ExtResource("6_wsdqo")
+raw_text = "答"
+vocab = SubResource("Resource_t1d0m")
+reading = "こたえ"
+
+[sub_resource type="Resource" id="Resource_tcklk"]
+script = ExtResource("6_wsdqo")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_1y8cy"]
+script = ExtResource("9_eaolr")
+japanese = "見つけだす"
+readings = Array[String](["みつけだす"])
+meanings = Array[String](["to find out", "to discover", "to locate"])
+
+[sub_resource type="Resource" id="Resource_24rsw"]
+script = ExtResource("6_wsdqo")
+raw_text = "見つけだし"
+vocab = SubResource("Resource_1y8cy")
+reading = "みつけだし"
+
+[sub_resource type="Resource" id="Resource_2fx6e"]
+script = ExtResource("6_wsdqo")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_iuagu"]
+script = ExtResource("6_wsdqo")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_bxl7u"]
+script = ExtResource("5_rellr")
+japanese = "彼は独力で答を見つけだした。"
+native = "He found out the answers for himself."
+parsed = Array[ExtResource("6_wsdqo")]([SubResource("Resource_ysyah"), SubResource("Resource_0snrf"), SubResource("Resource_nvj4u"), SubResource("Resource_tpja3"), SubResource("Resource_rg0sc"), SubResource("Resource_tcklk"), SubResource("Resource_24rsw"), SubResource("Resource_2fx6e"), SubResource("Resource_iuagu")])
+_difficulty = 600
+_used_kanji = Array[String](["彼", "独", "力", "答", "見"])
+
+[sub_resource type="Resource" id="Resource_pa0u3"]
+script = ExtResource("6_wsdqo")
+raw_text = "彼"
+vocab = SubResource("Resource_ibqa7")
+reading = "かれ"
+
+[sub_resource type="Resource" id="Resource_t08yy"]
+script = ExtResource("6_wsdqo")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_ru7wj"]
+script = ExtResource("6_wsdqo")
+raw_text = "独力"
+vocab = SubResource("Resource_3qwu0")
+reading = "どくりょく"
+
+[sub_resource type="Resource" id="Resource_arhxe"]
+script = ExtResource("6_wsdqo")
+raw_text = "で"
+reading = "で"
+
+[sub_resource type="Resource" id="Resource_881bq"]
+script = ExtResource("6_wsdqo")
+raw_text = "その"
+reading = "その"
+
+[sub_resource type="Resource" id="Resource_j5amo"]
+script = ExtResource("9_eaolr")
+japanese = "仕事"
+readings = Array[String](["しごと"])
+meanings = Array[String](["work", "job", "labor", "labour", "business", "task", "assignment", "occupation", "employment"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_23xjg"]
+script = ExtResource("6_wsdqo")
+raw_text = "仕事"
+vocab = SubResource("Resource_j5amo")
+reading = "しごと"
+
+[sub_resource type="Resource" id="Resource_tqmup"]
+script = ExtResource("6_wsdqo")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_yb5qq"]
+script = ExtResource("6_wsdqo")
+raw_text = "し"
+reading = "し"
+
+[sub_resource type="Resource" id="Resource_canps"]
+script = ExtResource("6_wsdqo")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_8b8f0"]
+script = ExtResource("6_wsdqo")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_epwpc"]
+script = ExtResource("5_rellr")
+japanese = "彼が独力でその仕事をした。"
+native = "He did the work on his own."
+parsed = Array[ExtResource("6_wsdqo")]([SubResource("Resource_pa0u3"), SubResource("Resource_t08yy"), SubResource("Resource_ru7wj"), SubResource("Resource_arhxe"), SubResource("Resource_881bq"), SubResource("Resource_23xjg"), SubResource("Resource_tqmup"), SubResource("Resource_yb5qq"), SubResource("Resource_canps"), SubResource("Resource_8b8f0")])
+_difficulty = 600
+_used_kanji = Array[String](["彼", "独", "力", "仕", "事"])
+
+[sub_resource type="Resource" id="Resource_exwj8"]
+script = ExtResource("6_wsdqo")
+raw_text = "私"
+vocab = SubResource("Resource_aq821")
+reading = "わたし"
+
+[sub_resource type="Resource" id="Resource_opm5f"]
+script = ExtResource("6_wsdqo")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_s1u5b"]
+script = ExtResource("6_wsdqo")
+raw_text = "いま"
+reading = "いま"
+
+[sub_resource type="Resource" id="Resource_73e4v"]
+script = ExtResource("6_wsdqo")
+raw_text = "彼"
+vocab = SubResource("Resource_ibqa7")
+reading = "かれ"
+
+[sub_resource type="Resource" id="Resource_aif3c"]
+script = ExtResource("6_wsdqo")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_k8ojl"]
+script = ExtResource("9_eaolr")
+japanese = "独奏"
+readings = Array[String](["どくそう"])
+meanings = Array[String](["(instrumental) solo", "recital"])
+
+[sub_resource type="Resource" id="Resource_4ljkc"]
+script = ExtResource("6_wsdqo")
+raw_text = "独奏"
+vocab = SubResource("Resource_k8ojl")
+reading = "どくそう"
+
+[sub_resource type="Resource" id="Resource_27k10"]
+script = ExtResource("6_wsdqo")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_m70bf"]
+script = ExtResource("6_wsdqo")
+raw_text = "きい"
+reading = "きい"
+
+[sub_resource type="Resource" id="Resource_vvtgs"]
+script = ExtResource("6_wsdqo")
+raw_text = "て"
+reading = "て"
+
+[sub_resource type="Resource" id="Resource_13whp"]
+script = ExtResource("6_wsdqo")
+raw_text = "いる"
+reading = "いる"
+
+[sub_resource type="Resource" id="Resource_868ja"]
+script = ExtResource("6_wsdqo")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_1y0kh"]
+script = ExtResource("5_rellr")
+japanese = "私はいま彼の独奏をきいている。"
+native = "I am listening to his recital."
+parsed = Array[ExtResource("6_wsdqo")]([SubResource("Resource_exwj8"), SubResource("Resource_opm5f"), SubResource("Resource_s1u5b"), SubResource("Resource_73e4v"), SubResource("Resource_aif3c"), SubResource("Resource_4ljkc"), SubResource("Resource_27k10"), SubResource("Resource_m70bf"), SubResource("Resource_vvtgs"), SubResource("Resource_13whp"), SubResource("Resource_868ja")])
+_difficulty = 629
+_used_kanji = Array[String](["私", "彼", "独", "奏"])
+
+[sub_resource type="Resource" id="Resource_3ehi1"]
+script = ExtResource("6_wsdqo")
+raw_text = "彼女"
+vocab = SubResource("Resource_uccf3")
+reading = "かのじょ"
+
+[sub_resource type="Resource" id="Resource_2kj1i"]
+script = ExtResource("6_wsdqo")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_bee3d"]
+script = ExtResource("9_eaolr")
+japanese = "考え"
+readings = Array[String](["かんがえ"])
+meanings = Array[String](["thinking", "thought", "view", "opinion", "concept", "idea", "notion", "imagination", "intention", "plan", "design", "consideration", "judgement", "deliberation", "reflection", "wish", "hope", "expectation"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_nu7xq"]
+script = ExtResource("6_wsdqo")
+raw_text = "考え"
+vocab = SubResource("Resource_bee3d")
+reading = "かんがえ"
+
+[sub_resource type="Resource" id="Resource_8hvp7"]
+script = ExtResource("6_wsdqo")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_ysra7"]
+script = ExtResource("6_wsdqo")
+raw_text = "ほんとに"
+reading = "ほんとに"
+
+[sub_resource type="Resource" id="Resource_iufng"]
+script = ExtResource("9_eaolr")
+japanese = "独創"
+readings = Array[String](["どくそう"])
+meanings = Array[String](["originality"])
+jlpt_level = 1
+
+[sub_resource type="Resource" id="Resource_e8dl7"]
+script = ExtResource("6_wsdqo")
+raw_text = "独創"
+vocab = SubResource("Resource_iufng")
+reading = "どくそう"
+
+[sub_resource type="Resource" id="Resource_40fjp"]
+script = ExtResource("9_eaolr")
+japanese = "的"
+readings = Array[String](["てき"])
+meanings = Array[String](["-ical", "-ive", "-al", "-ic", "-y", "-like", "-ish", "-sort of", "-kind of", "(something) like", "along the lines of", "-wise", "in terms of", "for", "from the viewpoint of", "from a ... standpoint", "as far as ... is concerned", "Mr.", "Ms.", "Mrs."])
+jlpt_level = 1
+
+[sub_resource type="Resource" id="Resource_0kkye"]
+script = ExtResource("6_wsdqo")
+raw_text = "的"
+vocab = SubResource("Resource_40fjp")
+reading = "てき"
+
+[sub_resource type="Resource" id="Resource_w25wo"]
+script = ExtResource("6_wsdqo")
+raw_text = "だ"
+reading = "だ"
+
+[sub_resource type="Resource" id="Resource_qexii"]
+script = ExtResource("6_wsdqo")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_m8lmt"]
+script = ExtResource("5_rellr")
+japanese = "彼女の考えはほんとに独創的だ。"
+native = "Her ideas are quite original."
+parsed = Array[ExtResource("6_wsdqo")]([SubResource("Resource_3ehi1"), SubResource("Resource_2kj1i"), SubResource("Resource_nu7xq"), SubResource("Resource_8hvp7"), SubResource("Resource_ysra7"), SubResource("Resource_e8dl7"), SubResource("Resource_0kkye"), SubResource("Resource_w25wo"), SubResource("Resource_qexii")])
+_difficulty = 643
+_used_kanji = Array[String](["彼", "女", "考", "独", "創", "的"])
+
+[sub_resource type="Resource" id="Resource_qlcag"]
+script = ExtResource("6_wsdqo")
+raw_text = "私"
+vocab = SubResource("Resource_aq821")
+reading = "わたし"
+
+[sub_resource type="Resource" id="Resource_ab601"]
+script = ExtResource("6_wsdqo")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_dyi7m"]
+script = ExtResource("9_eaolr")
+japanese = "父"
+readings = Array[String](["ちち", "ちゃん", "てて", "かぞ", "かそ", "しし", "あて"])
+meanings = Array[String](["father"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_p17h3"]
+script = ExtResource("6_wsdqo")
+raw_text = "父"
+vocab = SubResource("Resource_dyi7m")
+reading = "ちち"
+
+[sub_resource type="Resource" id="Resource_kijot"]
+script = ExtResource("6_wsdqo")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_1ccwg"]
+script = ExtResource("6_wsdqo")
+raw_text = "私"
+vocab = SubResource("Resource_aq821")
+reading = "わたし"
+
+[sub_resource type="Resource" id="Resource_iqs6w"]
+script = ExtResource("6_wsdqo")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_aa8td"]
+script = ExtResource("6_wsdqo")
+raw_text = "独力"
+vocab = SubResource("Resource_3qwu0")
+reading = "どくりょく"
+
+[sub_resource type="Resource" id="Resource_tb4w6"]
+script = ExtResource("6_wsdqo")
+raw_text = "で"
+reading = "で"
+
+[sub_resource type="Resource" id="Resource_hjae8"]
+script = ExtResource("6_wsdqo")
+raw_text = "そう"
+reading = "そう"
+
+[sub_resource type="Resource" id="Resource_hsbhc"]
+script = ExtResource("6_wsdqo")
+raw_text = "し"
+reading = "し"
+
+[sub_resource type="Resource" id="Resource_hxa3m"]
+script = ExtResource("6_wsdqo")
+raw_text = "なさい"
+reading = "なさい"
+
+[sub_resource type="Resource" id="Resource_wbc5s"]
+script = ExtResource("6_wsdqo")
+raw_text = "と"
+reading = "と"
+
+[sub_resource type="Resource" id="Resource_qaqfk"]
+script = ExtResource("6_wsdqo")
+raw_text = "言っ"
+vocab = SubResource("Resource_wuq5g")
+reading = "いっ"
+
+[sub_resource type="Resource" id="Resource_jtby7"]
+script = ExtResource("6_wsdqo")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_cpg64"]
+script = ExtResource("6_wsdqo")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_xe605"]
+script = ExtResource("5_rellr")
+japanese = "私の父は私に独力でそうしなさいと言った。"
+native = "My father told me to do so on my own."
+parsed = Array[ExtResource("6_wsdqo")]([SubResource("Resource_qlcag"), SubResource("Resource_ab601"), SubResource("Resource_p17h3"), SubResource("Resource_kijot"), SubResource("Resource_1ccwg"), SubResource("Resource_iqs6w"), SubResource("Resource_aa8td"), SubResource("Resource_tb4w6"), SubResource("Resource_hjae8"), SubResource("Resource_hsbhc"), SubResource("Resource_hxa3m"), SubResource("Resource_wbc5s"), SubResource("Resource_qaqfk"), SubResource("Resource_jtby7"), SubResource("Resource_cpg64")])
+_difficulty = 652
+_used_kanji = Array[String](["私", "父", "独", "力", "言"])
+
+[sub_resource type="Resource" id="Resource_kpbc5"]
+script = ExtResource("9_eaolr")
+japanese = "大衆"
+readings = Array[String](["たいしゅう"])
+meanings = Array[String](["general public", "the masses"])
+jlpt_level = 1
+
+[sub_resource type="Resource" id="Resource_5ggis"]
+script = ExtResource("6_wsdqo")
+raw_text = "大衆"
+vocab = SubResource("Resource_kpbc5")
+reading = "たいしゅう"
+
+[sub_resource type="Resource" id="Resource_6f6pc"]
+script = ExtResource("6_wsdqo")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_ljh4q"]
+script = ExtResource("9_eaolr")
+japanese = "独裁"
+readings = Array[String](["どくさい"])
+meanings = Array[String](["dictatorship", "despotism", "autocracy", "running (a company, etc.) despotically"])
+jlpt_level = 1
+
+[sub_resource type="Resource" id="Resource_7dyg8"]
+script = ExtResource("6_wsdqo")
+raw_text = "独裁"
+vocab = SubResource("Resource_ljh4q")
+reading = "どくさい"
+
+[sub_resource type="Resource" id="Resource_8ufmx"]
+script = ExtResource("9_eaolr")
+japanese = "者"
+readings = Array[String](["しゃ"])
+meanings = Array[String](["person", "-er", "expert", "geisha", "prostitute"])
+jlpt_level = 3
+_difficulty = 61
+
+[sub_resource type="Resource" id="Resource_wspjn"]
+script = ExtResource("6_wsdqo")
+raw_text = "者"
+vocab = SubResource("Resource_8ufmx")
+reading = "しゃ"
+
+[sub_resource type="Resource" id="Resource_ulee1"]
+script = ExtResource("6_wsdqo")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_15gbf"]
+script = ExtResource("9_eaolr")
+japanese = "反抗"
+readings = Array[String](["はんこう"])
+meanings = Array[String](["opposition", "resistance", "insubordination", "defiance", "hostility", "rebellion"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_sdmbh"]
+script = ExtResource("6_wsdqo")
+raw_text = "反抗"
+vocab = SubResource("Resource_15gbf")
+reading = "はんこう"
+
+[sub_resource type="Resource" id="Resource_3ihge"]
+script = ExtResource("6_wsdqo")
+raw_text = "し"
+reading = "し"
+
+[sub_resource type="Resource" id="Resource_aq6ln"]
+script = ExtResource("6_wsdqo")
+raw_text = "て"
+reading = "て"
+
+[sub_resource type="Resource" id="Resource_fvarw"]
+script = ExtResource("9_eaolr")
+japanese = "反乱"
+readings = Array[String](["はんらん"])
+meanings = Array[String](["insurrection", "mutiny", "rebellion", "revolt", "uprising"])
+jlpt_level = 1
+
+[sub_resource type="Resource" id="Resource_ujbuo"]
+script = ExtResource("6_wsdqo")
+raw_text = "反乱"
+vocab = SubResource("Resource_fvarw")
+reading = "はんらん"
+
+[sub_resource type="Resource" id="Resource_5oxnb"]
+script = ExtResource("6_wsdqo")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_efke7"]
+script = ExtResource("9_eaolr")
+japanese = "起こす"
+readings = Array[String](["おこす"])
+meanings = Array[String](["to raise", "to raise up", "to set up", "to pick up", "to wake", "to wake up", "to waken", "to awaken", "to cause", "to bring about", "to lead to", "to trigger", "to give rise to", "to create", "to generate (e.g. heat, electricity)", "to produce", "to start", "to begin", "to launch", "to establish", "to found", "to open", "to plough", "to plow", "to till", "to fall ill with", "to transcribe", "to write down (what is spoken)", "to turn over (a card)"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_w1htv"]
+script = ExtResource("6_wsdqo")
+raw_text = "起こし"
+vocab = SubResource("Resource_efke7")
+reading = "おこし"
+
+[sub_resource type="Resource" id="Resource_oyhml"]
+script = ExtResource("6_wsdqo")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_mr5bw"]
+script = ExtResource("6_wsdqo")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_qkdp0"]
+script = ExtResource("5_rellr")
+japanese = "大衆は独裁者に反抗して反乱を起こした。"
+native = "The masses rose against the dictator."
+parsed = Array[ExtResource("6_wsdqo")]([SubResource("Resource_5ggis"), SubResource("Resource_6f6pc"), SubResource("Resource_7dyg8"), SubResource("Resource_wspjn"), SubResource("Resource_ulee1"), SubResource("Resource_sdmbh"), SubResource("Resource_3ihge"), SubResource("Resource_aq6ln"), SubResource("Resource_ujbuo"), SubResource("Resource_5oxnb"), SubResource("Resource_w1htv"), SubResource("Resource_oyhml"), SubResource("Resource_mr5bw")])
+_difficulty = 711
+_used_kanji = Array[String](["大", "衆", "独", "裁", "者", "反", "抗", "乱", "起"])
+
+[sub_resource type="Resource" id="Resource_pbj8w"]
+script = ExtResource("6_wsdqo")
+raw_text = "私"
+vocab = SubResource("Resource_aq821")
+reading = "わたし"
+
+[sub_resource type="Resource" id="Resource_kvsop"]
+script = ExtResource("6_wsdqo")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_motvp"]
+script = ExtResource("6_wsdqo")
+raw_text = "彼"
+vocab = SubResource("Resource_ibqa7")
+reading = "かれ"
+
+[sub_resource type="Resource" id="Resource_8srj3"]
+script = ExtResource("6_wsdqo")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_olrlq"]
+script = ExtResource("6_wsdqo")
+raw_text = "ぶつぶつ"
+reading = "ぶつぶつ"
+
+[sub_resource type="Resource" id="Resource_glb5x"]
+script = ExtResource("6_wsdqo")
+raw_text = "独り言"
+vocab = SubResource("Resource_2eu0k")
+reading = "ひとりごと"
+
+[sub_resource type="Resource" id="Resource_iwjmt"]
+script = ExtResource("6_wsdqo")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_ud5qr"]
+script = ExtResource("6_wsdqo")
+raw_text = "いう"
+reading = "いう"
+
+[sub_resource type="Resource" id="Resource_4ldp5"]
+script = ExtResource("6_wsdqo")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_mv5mi"]
+script = ExtResource("6_wsdqo")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_hydsd"]
+script = ExtResource("9_eaolr")
+japanese = "聞く"
+readings = Array[String](["きく"])
+meanings = Array[String](["to hear", "to listen (e.g. to music)", "to ask", "to enquire", "to query", "to hear about", "to hear of", "to learn of", "to follow (advice, order, etc.)", "to obey", "to listen to", "to comply with", "to hear (e.g. a plea)", "to grant (a request)", "to accept (e.g. an argument)", "to give consideration to", "to smell (esp. incense)", "to sample (a fragrance)", "to taste (alcohol)", "to try"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_f5y8f"]
+script = ExtResource("6_wsdqo")
+raw_text = "聞い"
+vocab = SubResource("Resource_hydsd")
+reading = "きい"
+
+[sub_resource type="Resource" id="Resource_a1mir"]
+script = ExtResource("6_wsdqo")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_pohrc"]
+script = ExtResource("6_wsdqo")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_d8t13"]
+script = ExtResource("5_rellr")
+japanese = "私は彼がぶつぶつ独り言をいうのを聞いた。"
+native = "I heard him mumble to himself."
+parsed = Array[ExtResource("6_wsdqo")]([SubResource("Resource_pbj8w"), SubResource("Resource_kvsop"), SubResource("Resource_motvp"), SubResource("Resource_8srj3"), SubResource("Resource_olrlq"), SubResource("Resource_glb5x"), SubResource("Resource_iwjmt"), SubResource("Resource_ud5qr"), SubResource("Resource_4ldp5"), SubResource("Resource_mv5mi"), SubResource("Resource_f5y8f"), SubResource("Resource_a1mir"), SubResource("Resource_pohrc")])
+_difficulty = 733
+_used_kanji = Array[String](["私", "彼", "独", "言", "聞"])
+
+[sub_resource type="Resource" id="Resource_6ahvk"]
+script = ExtResource("7_wsdqo")
+points = Array[Vector2]([Vector2(38.56, 21), Vector2(36.67, 25.68), Vector2(33.95, 29.85), Vector2(30.84, 34.09), Vector2(27.31, 38.34), Vector2(23.35, 42.53), Vector2(18.92, 46.62), Vector2(14, 50.54)])
+
+[sub_resource type="Resource" id="Resource_wwhrp"]
+script = ExtResource("7_wsdqo")
+points = Array[Vector2]([Vector2(21.5, 27.5), Vector2(25.9, 31.98), Vector2(29.44, 37.19), Vector2(32.18, 42.95), Vector2(34.18, 49.1), Vector2(35.51, 55.44), Vector2(36.22, 61.79), Vector2(36.37, 67.99), Vector2(36.02, 73.84), Vector2(35.23, 79.18), Vector2(34.07, 83.81), Vector2(32.6, 87.57), Vector2(30.87, 90.28), Vector2(28.94, 91.74), Vector2(26.88, 91.79), Vector2(24.75, 90.25)])
+
+[sub_resource type="Resource" id="Resource_83374"]
+script = ExtResource("7_wsdqo")
+points = Array[Vector2]([Vector2(35.57, 49), Vector2(33.6, 54.06), Vector2(31.04, 58.32), Vector2(28.14, 62.38), Vector2(24.65, 66.45), Vector2(20.36, 70.77), Vector2(15, 75.55)])
+
+[sub_resource type="Resource" id="Resource_h77kq"]
+script = ExtResource("7_wsdqo")
+points = Array[Vector2]([Vector2(48.92, 42.6), Vector2(50.96, 47.05), Vector2(51.71, 51.51), Vector2(52.59, 56.79), Vector2(53.48, 63.14), Vector2(54.13, 68.43)])
+
+[sub_resource type="Resource" id="Resource_w7bu5"]
+script = ExtResource("7_wsdqo")
+points = Array[Vector2]([Vector2(51.04, 43.92), Vector2(55.5, 43.23), Vector2(60.76, 42.46), Vector2(66.51, 41.65), Vector2(72.39, 40.86), Vector2(78.08, 40.1), Vector2(83.24, 39.44), Vector2(87.54, 38.91), Vector2(92.35, 39.36), Vector2(93.22, 43.94), Vector2(92.43, 48.09), Vector2(91.57, 52.74), Vector2(90.22, 59.4)])
+
+[sub_resource type="Resource" id="Resource_guk6j"]
+script = ExtResource("7_wsdqo")
+points = Array[Vector2]([Vector2(55.01, 64.48), Vector2(59.97, 63.86), Vector2(64.83, 63.28), Vector2(69.73, 62.73), Vector2(74.81, 62.18), Vector2(80.21, 61.6), Vector2(86.07, 60.97), Vector2(91.52, 60.37)])
+
+[sub_resource type="Resource" id="Resource_30w41"]
+script = ExtResource("7_wsdqo")
+points = Array[Vector2]([Vector2(69.62, 15), Vector2(71.09, 19.23), Vector2(71.09, 20.91), Vector2(71.09, 24.51), Vector2(71.09, 29.67), Vector2(71.08, 36), Vector2(71.07, 43.15), Vector2(71.06, 50.73), Vector2(71.05, 58.37), Vector2(71.02, 65.71), Vector2(71, 72.37), Vector2(70.96, 77.98), Vector2(70.92, 82.17), Vector2(70.87, 84.57)])
+
+[sub_resource type="Resource" id="Resource_lhb3h"]
+script = ExtResource("7_wsdqo")
+points = Array[Vector2]([Vector2(51.25, 89.88), Vector2(55.96, 90.03), Vector2(60.81, 88.56), Vector2(66.59, 86.78), Vector2(72.77, 84.88), Vector2(78.8, 83.02), Vector2(84.15, 81.39), Vector2(88.3, 80.15)])
+
+[sub_resource type="Resource" id="Resource_if6jj"]
+script = ExtResource("7_wsdqo")
+points = Array[Vector2]([Vector2(82.99, 73.34), Vector2(86.64, 76.45), Vector2(90.46, 80.85), Vector2(93.66, 85.54), Vector2(95.45, 89.55)])
+
+[sub_resource type="Resource" id="Resource_6esu2"]
+script = ExtResource("6_eaolr")
+stroke_shapes = Array[ExtResource("7_wsdqo")]([SubResource("Resource_6ahvk"), SubResource("Resource_wwhrp"), SubResource("Resource_83374"), SubResource("Resource_h77kq"), SubResource("Resource_w7bu5"), SubResource("Resource_guk6j"), SubResource("Resource_30w41"), SubResource("Resource_lhb3h"), SubResource("Resource_if6jj")])
+
+[sub_resource type="Resource" id="Resource_eg15r"]
+script = ExtResource("9_eaolr")
+japanese = "独り"
+readings = Array[String](["ひとり"])
+meanings = Array[String](["one person", "being alone", "being by oneself", "being unmarried", "by oneself", "alone"])
+jlpt_level = 3
+_difficulty = 62
+_used_kanji = Array[String](["独"])
+
+[sub_resource type="Resource" id="Resource_2v6e3"]
+script = ExtResource("9_eaolr")
+japanese = "独立"
+readings = Array[String](["どくりつ"])
+meanings = Array[String](["independence", "self-reliance", "supporting oneself", "being on one's own", "freedom", "separation", "isolation"])
+jlpt_level = 3
+_difficulty = 62
+_used_kanji = Array[String](["独", "立"])
+
+[sub_resource type="Resource" id="Resource_dn106"]
+script = ExtResource("9_eaolr")
+japanese = "独身"
+readings = Array[String](["どくしん"])
+meanings = Array[String](["unmarried"])
+jlpt_level = 3
+_difficulty = 62
+_used_kanji = Array[String](["独", "身"])
+
+[sub_resource type="Resource" id="Resource_t1gu2"]
+script = ExtResource("9_eaolr")
+japanese = "独特"
+readings = Array[String](["どくとく"])
+meanings = Array[String](["peculiarity", "uniqueness", "characteristic"])
+jlpt_level = 3
+_difficulty = 62
+_used_kanji = Array[String](["独", "特"])
+
+[sub_resource type="Resource" id="Resource_kn0cp"]
+script = ExtResource("9_eaolr")
+japanese = "独り言"
+readings = Array[String](["ひとりごと"])
+meanings = Array[String](["monologue", "speaking to oneself"])
+jlpt_level = 2
+_difficulty = 93
+_used_kanji = Array[String](["独", "言"])
+
+[sub_resource type="Resource" id="Resource_3c17p"]
+script = ExtResource("9_eaolr")
+japanese = "独裁"
+readings = Array[String](["どくさい"])
+meanings = Array[String](["dictatorship", "despotism", "autocracy"])
+jlpt_level = 1
+_difficulty = 122
+_used_kanji = Array[String](["独", "裁"])
+
+[sub_resource type="Resource" id="Resource_qepxm"]
+script = ExtResource("9_eaolr")
+japanese = "単独"
+readings = Array[String](["たんどく"])
+meanings = Array[String](["sole", "single", "independence", "singleness", "singularity"])
+jlpt_level = 1
+_difficulty = 122
+_used_kanji = Array[String](["単", "独"])
+
+[sub_resource type="Resource" id="Resource_tkfv3"]
+script = ExtResource("9_eaolr")
+japanese = "独占"
+readings = Array[String](["どくせん"])
+meanings = Array[String](["exclusivity", "hogging", "keeping something to oneself"])
+jlpt_level = 1
+_difficulty = 122
+_used_kanji = Array[String](["独", "占"])
+
+[sub_resource type="Resource" id="Resource_7c27j"]
+script = ExtResource("9_eaolr")
+japanese = "独自"
+readings = Array[String](["どくじ"])
+meanings = Array[String](["original", "unique", "distinctive", "characteristic", "peculiar", "independent", "one's own", "personal"])
+jlpt_level = 1
+_difficulty = 122
+_used_kanji = Array[String](["独", "自"])
+
+[sub_resource type="Resource" id="Resource_ucnd1"]
+script = ExtResource("9_eaolr")
+japanese = "独創"
+readings = Array[String](["どくそう"])
+meanings = Array[String](["originality"])
+jlpt_level = 1
+_difficulty = 122
+_used_kanji = Array[String](["独", "創"])
+
+[sub_resource type="Resource" id="Resource_ixh66"]
+script = ExtResource("9_eaolr")
+japanese = "孤独"
+readings = Array[String](["こどく"])
+meanings = Array[String](["solitude", "loneliness", "isolation"])
+jlpt_level = 1
+_difficulty = 122
+_used_kanji = Array[String](["孤", "独"])
+
+[sub_resource type="Resource" id="Resource_oas7q"]
+script = ExtResource("9_eaolr")
+japanese = "独り占め"
+readings = Array[String](["ひとりじめ"])
+meanings = Array[String](["hogging", "having all to oneself"])
+_difficulty = 594
+_used_kanji = Array[String](["独", "占"])
+
+[sub_resource type="Resource" id="Resource_iuwai"]
+script = ExtResource("9_eaolr")
+japanese = "独断"
+readings = Array[String](["どくだん"])
+meanings = Array[String](["one's own judgement", "decision made without consulting others"])
+_difficulty = 619
+_used_kanji = Array[String](["独", "断"])
+
+[sub_resource type="Resource" id="Resource_mm6qf"]
+script = ExtResource("9_eaolr")
+japanese = "独奏"
+readings = Array[String](["どくそう"])
+meanings = Array[String](["recital"])
+_difficulty = 781
+_used_kanji = Array[String](["独", "奏"])
+
+[sub_resource type="Resource" id="Resource_ggtxr"]
+script = ExtResource("9_eaolr")
+japanese = "独学"
+readings = Array[String](["どくがく"])
+meanings = Array[String](["self-education", "self-instruction", "self-study"])
+_difficulty = 842
+_used_kanji = Array[String](["独", "学"])
+
+[sub_resource type="Resource" id="Resource_0xct6"]
+script = ExtResource("9_eaolr")
+japanese = "独走"
+readings = Array[String](["どくそう"])
+meanings = Array[String](["running alone", "having one's own way", "ignoring others' opinions and acting as one wishes"])
+_difficulty = 878
+_used_kanji = Array[String](["独", "走"])
+
+[sub_resource type="Resource" id="Resource_j413l"]
+script = ExtResource("9_eaolr")
+japanese = "独り歩き"
+readings = Array[String](["ひとりあるき"])
+meanings = Array[String](["walking by oneself", "taking a walk by oneself", "walking unaided", "being able to walk without help", "standing on one's own feet", "being independent", "taking care of oneself"])
+_difficulty = 969
+_used_kanji = Array[String](["独", "歩"])
+
+[sub_resource type="Resource" id="Resource_et6ri"]
+script = ExtResource("9_eaolr")
+japanese = "独創的"
+readings = Array[String](["どくそうてき"])
+meanings = Array[String](["creative", "original"])
+_difficulty = 1000
+_used_kanji = Array[String](["独", "創", "的"])
+
+[sub_resource type="Resource" id="Resource_raa2k"]
+script = ExtResource("9_eaolr")
+japanese = "独りで"
+readings = Array[String](["ひとりで"])
+meanings = Array[String](["alone", "by oneself", "on one's own"])
+_difficulty = 1000
+_used_kanji = Array[String](["独"])
+
+[sub_resource type="Resource" id="Resource_q58sy"]
+script = ExtResource("9_eaolr")
+japanese = "独立国"
+readings = Array[String](["どくりつこく"])
+meanings = Array[String](["independent state", "independent nation"])
+_difficulty = 1000
+_used_kanji = Array[String](["独", "立", "国"])
+
+[resource]
+script = ExtResource("5_juhtb")
+symbol = "独"
+card_name = "Alone"
+rarity = 3
+abilities = Array[ExtResource("1_jdf57")]([SubResource("Resource_rellr"), SubResource("Resource_0eiya")])
+tags = Array[int]([7, 21, 17])
+vocabulary = Array[ExtResource("9_eaolr")]([SubResource("Resource_eg15r"), SubResource("Resource_2v6e3"), SubResource("Resource_dn106"), SubResource("Resource_t1gu2"), SubResource("Resource_kn0cp"), SubResource("Resource_3c17p"), SubResource("Resource_qepxm"), SubResource("Resource_tkfv3"), SubResource("Resource_7c27j"), SubResource("Resource_ucnd1"), SubResource("Resource_ixh66"), SubResource("Resource_oas7q"), SubResource("Resource_iuwai"), SubResource("Resource_mm6qf"), SubResource("Resource_ggtxr"), SubResource("Resource_0xct6"), SubResource("Resource_j413l"), SubResource("Resource_et6ri"), SubResource("Resource_raa2k"), SubResource("Resource_q58sy")])
+example_sentences = Array[ExtResource("5_rellr")]([SubResource("Resource_3p7ey"), SubResource("Resource_eaolr"), SubResource("Resource_wsdqo"), SubResource("Resource_kj8jn"), SubResource("Resource_mg7xe"), SubResource("Resource_juhtb"), SubResource("Resource_jww11"), SubResource("Resource_1mk64"), SubResource("Resource_w8gvi"), SubResource("Resource_kc8we"), SubResource("Resource_gfhri"), SubResource("Resource_5axnw"), SubResource("Resource_nes2b"), SubResource("Resource_u8u1x"), SubResource("Resource_bxl7u"), SubResource("Resource_epwpc"), SubResource("Resource_1y0kh"), SubResource("Resource_m8lmt"), SubResource("Resource_xe605"), SubResource("Resource_qkdp0"), SubResource("Resource_d8t13")])
+kanji_shape = SubResource("Resource_6esu2")
+init_aspects = 70
+term_categories = Array[ExtResource("6_kbka4")]([ExtResource("7_xnits")])

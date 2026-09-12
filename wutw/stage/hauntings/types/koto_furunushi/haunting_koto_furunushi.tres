@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://d4ltmbl8anfnf"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_wpqey"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="2_hdfm4"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="3_6tuty"]
+[ext_resource type="Script" uid="uid://c8r1lojo6hfkm" path="res://stage/hauntings/effects/haunting_effect_lose_inspiration.gd" id="4_na0c8"]
+[ext_resource type="Resource" uid="uid://dirh8v8mjfxjw" path="res://art/pieces/piece_yagyou_furunushi.tres" id="5_7252f"]
+[ext_resource type="Resource" uid="uid://hw8lf75efi42" path="res://art/pieces/piece_hiroshige_asakusa.tres" id="6_wpqey"]
+[ext_resource type="Texture2D" uid="uid://didw2h5xbn573" path="res://stage/hauntings/types/koto_furunushi/haunting_koto_furunushi.png" id="7_erm7o"]
+[ext_resource type="Texture2D" uid="uid://cusech4mdump0" path="res://stage/hauntings/types/koto_furunushi/haunting_koto_furunushi_realistic_melancholy.png" id="8_cc1q2"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="9_hdfm4"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="9_jtu6j"]
+[ext_resource type="Resource" uid="uid://b85k7x2ec04xc" path="res://stage/spots/building_large/spot_building_large.tres" id="10_mnfpq"]
+[ext_resource type="Script" uid="uid://wcgm3rptcu7x" path="res://stage/hauntings/triggers/haunting_trigger_bonus_gained.gd" id="11_a8p0r"]
+
+[sub_resource type="Resource" id="Resource_i7lxp"]
+script = ExtResource("4_na0c8")
+metadata/_custom_type_script = "uid://c8r1lojo6hfkm"
+
+[sub_resource type="Resource" id="Resource_gidtf"]
+script = ExtResource("11_a8p0r")
+any_spot = false
+metadata/_custom_type_script = "uid://wcgm3rptcu7x"
+
+[resource]
+script = ExtResource("9_jtu6j")
+haunting_id = "koto_furunushi"
+name = "Koto Furunushi"
+name_japanese = "琴古主"
+name_realistic = "Melancholy"
+name_translation = "Old Koto Masters"
+description = "Whispers tell of a koto that plays itself at night, weeping for the songs the world has forgotten."
+description_realistic = "A sense of melancholy grips these buildings; joy fades quickly, and even small successes leave the people weary."
+description_long = "In the empty halls of this settlement, faint music drifts through the rafters, strings trembling with longing, plucked by no visible hand. Some attribute this to the Koto Furunushi, a spirit possessing an old koto, once beloved, now abandoned.
+
+They say it remembers every song once played upon it, and grieves for every joyful gathering it once entertained. When its melodies echo, hearts grow heavy, and even good fortune feels tinged with sorrow."
+image_small = ExtResource("7_erm7o")
+image_credit = ExtResource("5_7252f")
+image_small_realistic = ExtResource("8_cc1q2")
+image_realistic_credit = ExtResource("6_wpqey")
+spot_type = ExtResource("10_mnfpq")
+base_aspect_types = Array[ExtResource("1_wpqey")]([ExtResource("3_6tuty")])
+extra_aspect_type = ExtResource("2_hdfm4")
+scaling_bonus_type = ExtResource("9_hdfm4")
+trigger = SubResource("Resource_gidtf")
+effect = SubResource("Resource_i7lxp")
+spot_attach_mode = 2
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

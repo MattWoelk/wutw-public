@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://w7jc475v63eg"]
+
+[ext_resource type="Script" uid="uid://c2ieh84emt656" path="res://hub/museum/museum_detail_spot.gd" id="1_hgmhm"]
+[ext_resource type="Resource" uid="uid://cmbyg0gub8sum" path="res://stage/spots/river/spot_river.tres" id="2_6jv41"]
+[ext_resource type="Resource" uid="uid://cyu1ho0hy3cku" path="res://skills/capital/skill_capital_initial_provision.tres" id="2_itx7b"]
+[ext_resource type="PackedScene" uid="uid://bmmtrpv8fgtlc" path="res://stage/spots/spot_upgrade_preview.tscn" id="3_krllo"]
+[ext_resource type="Resource" uid="uid://dcxtf7w2eifk6" path="res://stage/spots/river/upgrade_river_1_dock.tres" id="4_hgmhm"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="5_1ueqq"]
+
+[node name="MuseumDetail_Spot" type="MarginContainer" unique_id=269286107]
+offset_right = 660.0
+offset_bottom = 1013.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+script = ExtResource("1_hgmhm")
+capital_provision_skill = ExtResource("2_itx7b")
+spot_type = ExtResource("2_6jv41")
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=179932584]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="TitleLabel" type="Label" parent="VBox" unique_id=740546297]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "River"
+horizontal_alignment = 1
+
+[node name="UpgradesContainer" type="HBoxContainer" parent="VBox" unique_id=1020477795]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="UpgradesList" type="VBoxContainer" parent="VBox/UpgradesContainer" unique_id=2132110316]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+mouse_behavior_recursive = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBox/UpgradesContainer" unique_id=1708332258]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SpotUpgradePreview" parent="VBox/UpgradesContainer/VBoxContainer" unique_id=222601831 instance=ExtResource("3_krllo")]
+unique_name_in_owner = true
+clip_children = 0
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = null
+forced_size = Vector2(250, 250)
+spot_upgrade = ExtResource("4_hgmhm")
+allow_placeholder = false
+
+[node name="UpgradeText" parent="VBox/UpgradesContainer/VBoxContainer" unique_id=1287696099 instance=ExtResource("5_1ueqq")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 2
+mouse_filter = 1
+text = "Upgrade flavor."
+fit_content = true
+horizontal_alignment = 1
+tooltip_directions = Array[int]([5, 1, 3])
+
+[node name="MainText" parent="VBox" unique_id=1569841790 instance=ExtResource("5_1ueqq")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+mouse_filter = 1
+text = "Warehouses in this settlement turn up empty overnight. Households run out of food twice as fast.
+
+Whispers speak of people with mouths hiding behind people's heads, covered by locks of hair. The most common story is of the Futakuchi Onna, a lady who smiles sweetly while her hair stirs behind her like a nest of living threads, feeding a hidden mouth that demands its share of every harvest. Some claim she was once a leader who hoarded plenty while others starved, and that her second mouth is of those she wronged, forever consuming what she once denied."
+fit_content = true
+tooltip_directions = Array[int]([5, 1, 3])

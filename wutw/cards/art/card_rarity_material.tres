@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cbcm1gnrea28r"]
+
+[ext_resource type="Shader" uid="uid://wq2ymrioegbn" path="res://cards/art/card_rarity.gdshader" id="1_yrhb6"]
+
+[sub_resource type="Gradient" id="Gradient_iruc6"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.16291, 0.570312, 0.86373, 1)
+colors = PackedColorArray(1, 1, 1, 0.0705882, 1, 1, 1, 0.297793, 1, 1, 1, 0.564706, 1, 1, 1, 0.32543, 1, 1, 1, 0.0705882)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mpdjx"]
+gradient = SubResource("Gradient_iruc6")
+fill_from = Vector2(1, 1)
+repeat = 1
+
+[resource]
+shader = ExtResource("1_yrhb6")
+shader_parameter/gradient = SubResource("GradientTexture2D_mpdjx")
+shader_parameter/power = 2.2
+shader_parameter/speed = -0.5

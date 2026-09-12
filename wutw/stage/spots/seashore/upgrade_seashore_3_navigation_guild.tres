@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://dbs14erph684p"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_8pb1n"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_df4lh"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="3_2de60"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_b47os"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="4_to5cj"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="6_cjpc3"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="7_jnqmo"]
+[ext_resource type="Resource" uid="uid://skws2o4hx05g" path="res://stage/spots/seashore/spot_seashore.tres" id="8_cjpc3"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_jnqmo"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://ck6u8xumcdjh5" path="res://map/sprites/spots/seashore/mst_seashore_navigation_guild.tres" id="10_v47s8"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://w2ei8jt2smp1" path="res://map/sprites/spots/seashore/mst_seashore_lighthouse.tres" id="11_g5sqm"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="12_elmn8"]
+
+[sub_resource type="Resource" id="Resource_v0cmh"]
+script = ExtResource("12_elmn8")
+old_sprite_type = ExtResource("11_g5sqm")
+new_sprite_type = ExtResource("10_v47s8")
+biome = 1
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_8pb1n")
+spot_upgrade_id = "seashore_guild"
+name = "Navigation Guild"
+description = "Ink-stained fingers trace maps on salt-crusted scrolls, guided by the stars above."
+required_aspects = Array[ExtResource("3_b47os")]([ExtResource("6_cjpc3"), ExtResource("7_jnqmo")])
+granted_bonuses = Dictionary[ExtResource("2_df4lh"), int]({
+ExtResource("3_2de60"): 15,
+ExtResource("4_to5cj"): 10
+})
+spot = ExtResource("8_cjpc3")
+visuals = Array[ExtResource("9_jnqmo")]([SubResource("Resource_v0cmh")])
+min_main_quest_progress = 110

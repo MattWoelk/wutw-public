@@ -1,0 +1,271 @@
+[gd_scene load_steps=23 format=3 uid="uid://ceqx71t7v8xf8"]
+
+[ext_resource type="Script" uid="uid://droe6i883k500" path="res://stage/spots/spot_recipe.gd" id="1_vaai5"]
+[ext_resource type="Shader" uid="uid://cy23kwgtjt4et" path="res://theme/panel/panel.gdshader" id="2_n1qup"]
+[ext_resource type="PackedScene" uid="uid://be8el7dqxmifk" path="res://aspects/slot/aspect_slot.tscn" id="2_usab3"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="3_6nlq7"]
+[ext_resource type="Texture2D" uid="uid://bxvoyajed7cvv" path="res://theme/panel/panel_bg_mini.png" id="3_n1qup"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="4_ny23q"]
+[ext_resource type="Texture2D" uid="uid://bnkoruxi23qsp" path="res://theme/panel/panel_frame.png" id="4_o6g1t"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="5_kkp2d"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="5_nw3ud"]
+[ext_resource type="PackedScene" uid="uid://njdji4l7s1q0" path="res://bonuses/bonus_counter.tscn" id="5_tdnwl"]
+[ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="6_0femc"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="6_nw3ud"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="7_nsyw2"]
+[ext_resource type="Texture2D" uid="uid://bem5majw7g20n" path="res://stage/spots/unique_upgrade.png" id="14_sukoo"]
+[ext_resource type="Texture2D" uid="uid://bif8savn5u3o1" path="res://visuals/sparkle.png" id="16_o6g1t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dla0s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sukoo"]
+shader = ExtResource("2_n1qup")
+shader_parameter/size = Vector2(158.1228, 81.25757)
+shader_parameter/background = ExtResource("3_n1qup")
+shader_parameter/background_tex_size = Vector2(947, 380)
+shader_parameter/background_scale = 2.27
+shader_parameter/frame_tex = ExtResource("4_o6g1t")
+shader_parameter/frame_tex_size = Vector2(1127, 976)
+shader_parameter/frame_margin = Vector4(1, 0, 0, 5.115)
+shader_parameter/frame_scale = 1.125
+shader_parameter/frame_color = Color(0.47, 0.399735, 0.3619, 1)
+shader_parameter/decor_transform = Vector4(0, 0, 100, 100)
+shader_parameter/decor_modulate = Color(1, 1, 1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o6g1t"]
+shader = ExtResource("2_n1qup")
+shader_parameter/size = Vector2(478.76074, 81.25757)
+shader_parameter/background = ExtResource("3_n1qup")
+shader_parameter/background_tex_size = Vector2(947, 380)
+shader_parameter/background_scale = 2.27
+shader_parameter/frame_tex = ExtResource("4_o6g1t")
+shader_parameter/frame_tex_size = Vector2(1127, 976)
+shader_parameter/frame_margin = Vector4(1, 0, 0, 5.115)
+shader_parameter/frame_scale = 1.125
+shader_parameter/frame_color = Color(0.47, 0.399735, 0.3619, 1)
+shader_parameter/decor_transform = Vector4(0, 0, 100, 100)
+shader_parameter/decor_modulate = Color(1, 1, 1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kkp2d"]
+shader = ExtResource("2_n1qup")
+shader_parameter/size = Vector2(377.7379, 81.25757)
+shader_parameter/background = ExtResource("3_n1qup")
+shader_parameter/background_tex_size = Vector2(947, 380)
+shader_parameter/background_scale = 2.27
+shader_parameter/frame_tex = ExtResource("4_o6g1t")
+shader_parameter/frame_tex_size = Vector2(1127, 976)
+shader_parameter/frame_margin = Vector4(1, 1, 6.285, 5.34)
+shader_parameter/frame_scale = 1.125
+shader_parameter/frame_color = Color(0.47, 0.399735, 0.3619, 1)
+shader_parameter/decor_transform = Vector4(0, 0, 100, 100)
+shader_parameter/decor_modulate = Color(1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_mqb1p"]
+_data = [Vector2(0.0010101013, 0), 0.0, 5.0516067, 0, 0, Vector2(0.16161615, 1), 0.0, 0.0, 0, 0, Vector2(0.17575756, 0.9653533), -2.7695727, -2.7695727, 0, 0, Vector2(1, 0), 0.030541155, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_mtwdc"]
+curve = SubResource("Curve_mqb1p")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_h7nao"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(227, 0.1, 0)
+emission_shape = 3
+emission_box_extents = Vector3(227, 0.1, 1)
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+angular_velocity_min = -90.000015
+angular_velocity_max = 89.999985
+gravity = Vector3(0, 0, 0)
+scale_min = 0.049999997
+scale_max = 0.06
+scale_curve = SubResource("CurveTexture_mtwdc")
+hue_variation_min = -2.2351742e-08
+hue_variation_max = 0.06999998
+
+[node name="SpotRecipe" type="PanelContainer"]
+offset_right = 418.0
+offset_bottom = 37.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dla0s")
+script = ExtResource("1_vaai5")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+show_behind_parent = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = -4
+
+[node name="AspectsPanel" type="PanelContainer" parent="HBox"]
+unique_name_in_owner = true
+self_modulate = Color(0.9, 0.9, 0.9, 1)
+material = SubResource("ShaderMaterial_sukoo")
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("5_kkp2d")
+script = ExtResource("6_0femc")
+material_customized = true
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="MarginContainer" type="MarginContainer" parent="HBox/AspectsPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="AspectsList" type="HBoxContainer" parent="HBox/AspectsPanel/MarginContainer"]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="AspectSlot" parent="HBox/AspectsPanel/MarginContainer/AspectsList" instance=ExtResource("2_usab3")]
+layout_mode = 2
+aspect_type = ExtResource("3_6nlq7")
+
+[node name="AspectSlot2" parent="HBox/AspectsPanel/MarginContainer/AspectsList" instance=ExtResource("2_usab3")]
+layout_mode = 2
+aspect_type = ExtResource("4_ny23q")
+
+[node name="BonusesPanel" type="PanelContainer" parent="HBox"]
+unique_name_in_owner = true
+self_modulate = Color(0.9, 0.9, 0.9, 1)
+material = SubResource("ShaderMaterial_o6g1t")
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("5_kkp2d")
+script = ExtResource("6_0femc")
+material_customized = true
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="MarginContainer" type="MarginContainer" parent="HBox/BonusesPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBox/BonusesPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="Bonus1" parent="HBox/BonusesPanel/MarginContainer/HBoxContainer" instance=ExtResource("5_tdnwl")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+mouse_filter = 2
+bonus_type = ExtResource("6_nw3ud")
+current_value = 15
+label_first = true
+
+[node name="Bonus2" parent="HBox/BonusesPanel/MarginContainer/HBoxContainer" instance=ExtResource("5_tdnwl")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+mouse_filter = 2
+bonus_type = ExtResource("5_nw3ud")
+current_value = 10
+label_first = true
+
+[node name="Bonus3" parent="HBox/BonusesPanel/MarginContainer/HBoxContainer" instance=ExtResource("5_tdnwl")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+mouse_filter = 2
+bonus_type = ExtResource("7_nsyw2")
+current_value = 10
+label_first = true
+
+[node name="Bonus4" parent="HBox/BonusesPanel/MarginContainer/HBoxContainer" instance=ExtResource("5_tdnwl")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+mouse_filter = 2
+bonus_type = ExtResource("7_nsyw2")
+current_value = 15
+label_first = true
+
+[node name="NamePanel" type="PanelContainer" parent="HBox"]
+unique_name_in_owner = true
+self_modulate = Color(0.9, 0.9, 0.9, 1)
+material = SubResource("ShaderMaterial_kkp2d")
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("5_kkp2d")
+script = ExtResource("6_0femc")
+material_customized = true
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="MarginContainer" type="MarginContainer" parent="HBox/NamePanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBox/NamePanel/MarginContainer"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="HBox/NamePanel/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Skybound Stair"
+vertical_alignment = 1
+
+[node name="UniqueIcon" type="TextureRect" parent="HBox/NamePanel/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("14_sukoo")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="OutlineContainer" type="Control" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 0.883333, 0, 1)
+z_index = 1
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VFX_Top" type="GPUParticles2D" parent="OutlineContainer"]
+unique_name_in_owner = true
+emitting = false
+amount = 80
+texture = ExtResource("16_o6g1t")
+lifetime = 5.0
+visibility_rect = Rect2(-10, -10, 120, 120)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_h7nao")
+
+[node name="VFX_Bottom" type="GPUParticles2D" parent="OutlineContainer"]
+unique_name_in_owner = true
+emitting = false
+amount = 80
+texture = ExtResource("16_o6g1t")
+lifetime = 5.0
+visibility_rect = Rect2(-10, -10, 120, 120)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_h7nao")
+
+[node name="VFX_Left" type="GPUParticles2D" parent="OutlineContainer"]
+unique_name_in_owner = true
+emitting = false
+amount = 12
+texture = ExtResource("16_o6g1t")
+lifetime = 5.0
+visibility_rect = Rect2(-10, -10, 120, 120)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_h7nao")
+
+[node name="VFX_Right" type="GPUParticles2D" parent="OutlineContainer"]
+unique_name_in_owner = true
+emitting = false
+amount = 12
+texture = ExtResource("16_o6g1t")
+lifetime = 5.0
+visibility_rect = Rect2(-10, -10, 120, 120)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_h7nao")

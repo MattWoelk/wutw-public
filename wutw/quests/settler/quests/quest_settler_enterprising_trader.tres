@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="Quest_Settler" format=3 uid="uid://barl8umrve5yw"]
+
+[ext_resource type="Script" uid="uid://cjloydxgrv8oa" path="res://quests/settler/settler_quest_challenge.gd" id="1_w884k"]
+[ext_resource type="Script" uid="uid://bftb8f7y528m8" path="res://quests/settler/challenges/settler_quest_challenge_damage_on_unconnected.gd" id="2_ds7qw"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="3_r18s7"]
+[ext_resource type="Resource" uid="uid://b7xcctjgthxw7" path="res://characters/jobs/job_merchant.tres" id="4_khfem"]
+[ext_resource type="Script" uid="uid://cd4swbq3t72je" path="res://quests/settler/settler_quest_reward.gd" id="5_0n4f3"]
+[ext_resource type="Resource" uid="uid://bl1ikyn47dhtu" path="res://relics/season_reward/tiny_abacus/relic_tiny_abacus.tres" id="6_op2s4"]
+[ext_resource type="Script" uid="uid://0k12wwnmq50h" path="res://quests/settler/rewards/settler_quest_reward_add_relic.gd" id="7_6m11i"]
+[ext_resource type="Script" uid="uid://1na7ymvvvbby" path="res://quests/settler/quest_settler.gd" id="7_ilfwg"]
+[ext_resource type="Script" uid="uid://bxua8gxfjp2wy" path="res://quests/settler/settler_quest_goal.gd" id="8_ny1sa"]
+[ext_resource type="Script" uid="uid://d2hk654fl454m" path="res://quests/settler/goals/settler_quest_goal_num_connected_settlements.gd" id="10_kr8bv"]
+
+[sub_resource type="Resource" id="Resource_av85q"]
+script = ExtResource("2_ds7qw")
+damage = 10
+metadata/_custom_type_script = "uid://bftb8f7y528m8"
+
+[sub_resource type="Resource" id="Resource_njftj"]
+script = ExtResource("7_6m11i")
+relic = ExtResource("6_op2s4")
+metadata/_custom_type_script = "uid://0k12wwnmq50h"
+
+[sub_resource type="Resource" id="Resource_600mc"]
+script = ExtResource("10_kr8bv")
+num_required = 12
+metadata/_custom_type_script = "uid://d2hk654fl454m"
+
+[resource]
+script = ExtResource("7_ilfwg")
+intro_text = "I come from a small shard where we import most of our goods, but I dream of creating a trading empire that connects large cities all throughout a shard. It will be my life's work!"
+challenges = Array[ExtResource("1_w884k")]([SubResource("Resource_av85q")])
+settler_goals = Array[ExtResource("8_ny1sa")]([SubResource("Resource_600mc")])
+rewards = Array[ExtResource("5_0n4f3")]([SubResource("Resource_njftj")])
+restrict_to_jobs = Array[ExtResource("3_r18s7")]([ExtResource("4_khfem")])
+quest_id = "settler_enterprising_trader"
+category = 2
+name = "An Enterprising Trader"
+metadata/_custom_type_script = "uid://1na7ymvvvbby"

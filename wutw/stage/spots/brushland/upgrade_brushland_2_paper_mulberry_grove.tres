@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://ci8ujr01rbsk1"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_h6s7b"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_d6gd4"]
+[ext_resource type="Resource" uid="uid://dffls1ubwkx6w" path="res://stage/spots/brushland/upgrade_brushland_3_paper_artisan_studio.tres" id="2_ru2l2"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_snh8s"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="4_cnvaa"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="5_wtj0h"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="7_1gaq6"]
+[ext_resource type="Resource" uid="uid://b2nwnsbdieg27" path="res://stage/spots/brushland/spot_brushland.tres" id="8_wtj0h"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_w5r8u"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://dg70dvh8cbu8q" path="res://map/sprites/spots/brushland/mst_brushland_paper_mulberry_grove.tres" id="10_1gaq6"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://cle56q4pwkyf1" path="res://map/sprites/spots/brushland/mst_brushland_mulberry_patch.tres" id="11_uo1a7"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="12_w47s4"]
+
+[sub_resource type="Resource" id="Resource_37e7n"]
+script = ExtResource("12_w47s4")
+old_sprite_type = ExtResource("11_uo1a7")
+new_sprite_type = ExtResource("10_1gaq6")
+biome = 8
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_h6s7b")
+spot_upgrade_id = "brushland_paper_grove"
+name = "Paper Mulberry Grove"
+description = "Once the pulp is pounded and strained, it will be ready to record the lives led in this dry land."
+required_aspects = Array[ExtResource("3_snh8s")]([ExtResource("7_1gaq6")])
+granted_bonuses = Dictionary[ExtResource("2_d6gd4"), int]({
+ExtResource("4_cnvaa"): 5,
+ExtResource("5_wtj0h"): 5
+})
+child_upgrades = Array[ExtResource("1_h6s7b")]([ExtResource("2_ru2l2")])
+spot = ExtResource("8_wtj0h")
+visuals = Array[ExtResource("9_w5r8u")]([SubResource("Resource_37e7n")])
+tags = Array[int]([2, 1])

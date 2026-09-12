@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://dl2w7ublcb0qj"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_w4rkh"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_i7ucr"]
+[ext_resource type="Resource" uid="uid://cn43cpsdfsp3y" path="res://stage/spots/swamp/upgrade_swamp_2_charcoal_burner_camp.tres" id="2_n8363"]
+[ext_resource type="Resource" uid="uid://bfwkd307x4tvc" path="res://stage/spots/swamp/upgrade_swamp_2_mud_brick_works.tres" id="3_kkpuk"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="4_kkpuk"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="5_rnthw"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="7_au5dp"]
+[ext_resource type="Resource" uid="uid://ouecqwnbe2cw" path="res://stage/spots/swamp/spot_swamp.tres" id="8_rnthw"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_au5dp"]
+[ext_resource type="Script" uid="uid://dvrtuqbmx4v30" path="res://stage/spots/spot_upgrade_visual_add.gd" id="10_2iqjh"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://fhw3fmj6sqb0" path="res://map/sprites/spots/swamp/mst_swamp_peat_bog.tres" id="11_dttdx"]
+
+[sub_resource type="Resource" id="Resource_a02rs"]
+script = ExtResource("10_2iqjh")
+sprite_type = ExtResource("11_dttdx")
+biome = 4
+metadata/_custom_type_script = "uid://dvrtuqbmx4v30"
+
+[resource]
+script = ExtResource("1_w4rkh")
+spot_upgrade_id = "swamp_peat_bog"
+name = "Peat Bog"
+description = "The wise cutter knows which ground yields warmth and which swallows feet."
+required_aspects = Array[ExtResource("4_kkpuk")]([ExtResource("7_au5dp")])
+granted_bonuses = Dictionary[ExtResource("2_i7ucr"), int]({
+ExtResource("5_rnthw"): 10
+})
+child_upgrades = Array[ExtResource("1_w4rkh")]([ExtResource("2_n8363"), ExtResource("3_kkpuk")])
+spot = ExtResource("8_rnthw")
+visuals = Array[ExtResource("9_au5dp")]([SubResource("Resource_a02rs")])
+tags = Array[int]([0])

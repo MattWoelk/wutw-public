@@ -1,0 +1,30 @@
+[gd_resource type="MapSpriteType_River" format=3 uid="uid://0s8ojks21u6n"]
+
+[ext_resource type="Resource" uid="uid://cmbyg0gub8sum" path="res://stage/spots/river/spot_river.tres" id="1_fd5ds"]
+[ext_resource type="PackedScene" uid="uid://bg5h7bfa8vs48" path="res://map/sprites/water_features/river/map_effect_waterfall.tscn" id="1_vusf0"]
+[ext_resource type="WwiseEvent" uid="uid://bo4s7qs73q8s8" path="res://Wwise/resources/Event/{D00CB056-D8E3-49D6-BBFB-4225715D564F}.tres" id="2_4weoh"]
+
+[sub_resource type="MapSpriteCollision_Rect" id="MapSpriteCollision_Rect_fvu7x"]
+rect = Rect2(0.795, -4.055, 19.505, 10.015)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Rect" id="MapSpriteCollision_Rect_w20l8"]
+rect = Rect2(-4.775, -20.06, 10.175, 22.345)
+blocking = true
+
+[sub_resource type="MapEffectAttachment" id="MapEffectAttachment_wbkqt"]
+scene = ExtResource("1_vusf0")
+offset = Vector2(0.5, -39.5)
+scale = 0.2
+
+[resource]
+instance_type = 24
+atlas_rect = Rect2i(0, 400, 100, 100)
+map_rect = Rect2(0, 0, 40, 80)
+footprint_radius = 1.0
+default_scale = 0.25
+z_index = -1
+sound = ExtResource("2_4weoh")
+effects = Array[MapEffectAttachment]([SubResource("MapEffectAttachment_wbkqt")])
+provided_spot_type = ExtResource("1_fd5ds")
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Rect_fvu7x"), SubResource("MapSpriteCollision_Rect_w20l8")])

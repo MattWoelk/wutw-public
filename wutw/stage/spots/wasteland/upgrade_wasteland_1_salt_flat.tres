@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://du0yitl7bnm51"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_ktkny"]
+[ext_resource type="Resource" uid="uid://y8uyrqm6nktt" path="res://stage/spots/wasteland/upgrade_wasteland_2_glass_dunes.tres" id="2_g0mfp"]
+[ext_resource type="Resource" uid="uid://ci10ijxi2cwfw" path="res://stage/spots/wasteland/upgrade_wasteland_2_storm_camp.tres" id="3_pi5j0"]
+[ext_resource type="Resource" uid="uid://dga4w1l5u1fnv" path="res://stage/spots/wasteland/upgrade_wasteland_2_wreck.tres" id="4_7l8pg"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="4_m0bk7"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="6_pi5j0"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="6_xwpdm"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="7_m0bk7"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="9_7l8pg"]
+[ext_resource type="Resource" uid="uid://ouecqwnbe55w" path="res://stage/spots/wasteland/spot_wasteland.tres" id="10_ntn6n"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="11_ff7lk"]
+[ext_resource type="Script" uid="uid://dvrtuqbmx4v30" path="res://stage/spots/spot_upgrade_visual_add.gd" id="12_foq7b"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://d27evmqjpejqb" path="res://map/sprites/spots/wasteland/mst_wasteland_salt_flats.tres" id="13_raf0g"]
+
+[sub_resource type="Resource" id="Resource_g4sk6"]
+script = ExtResource("12_foq7b")
+sprite_type = ExtResource("13_raf0g")
+biome = 3
+metadata/_custom_type_script = "uid://dvrtuqbmx4v30"
+
+[resource]
+script = ExtResource("1_ktkny")
+spot_upgrade_id = "wasteland_salt_flats"
+name = "Salt Flats"
+description = "A tasty crystalline mirror sparkling beneath the sun."
+required_aspects = Array[ExtResource("6_xwpdm")]([ExtResource("9_7l8pg")])
+granted_bonuses = Dictionary[ExtResource("4_m0bk7"), int]({
+ExtResource("6_pi5j0"): 5,
+ExtResource("7_m0bk7"): 5
+})
+child_upgrades = Array[ExtResource("1_ktkny")]([ExtResource("2_g0mfp"), ExtResource("3_pi5j0"), ExtResource("4_7l8pg")])
+spot = ExtResource("10_ntn6n")
+visuals = Array[ExtResource("11_ff7lk")]([SubResource("Resource_g4sk6")])
+tags = Array[int]([0])

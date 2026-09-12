@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://c3pppnvtjoj7"]
+
+[ext_resource type="Script" uid="uid://bl5erfth7xvrw" path="res://aspects/aspect.gd" id="1_oyq2h"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="2_oenvh"]
+[ext_resource type="Shader" uid="uid://td5t8lc2dpjv" path="res://aspects/aspect.gdshader" id="3_ir4fs"]
+[ext_resource type="Texture2D" uid="uid://d3xfjehu6o7mu" path="res://aspects/types/life/life.png" id="3_jlwmr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oy1cw"]
+shader = ExtResource("3_ir4fs")
+shader_parameter/noise_scale = 23.189
+shader_parameter/noise_strength = 0.221
+shader_parameter/noise_color = Color(0.242956, 0.245698, 0.048515, 1)
+
+[node name="Aspect" type="Control" unique_id=2022311333]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 3
+anchors_preset = 0
+pivot_offset = Vector2(18, 18)
+mouse_filter = 1
+script = ExtResource("1_oyq2h")
+aspect_type = ExtResource("2_oenvh")
+
+[node name="IconTexture" type="TextureRect" parent="." unique_id=1029942318]
+unique_name_in_owner = true
+texture_filter = 6
+material = SubResource("ShaderMaterial_oy1cw")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(18, 18)
+texture = ExtResource("3_jlwmr")
+expand_mode = 3

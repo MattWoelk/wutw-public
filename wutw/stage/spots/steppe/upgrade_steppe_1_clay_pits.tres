@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://blfuu8su12bw0"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_4sce4"]
+[ext_resource type="Resource" uid="uid://bihb7q846xdxp" path="res://stage/spots/steppe/upgrade_steppe_2_pottery_kiln.tres" id="2_h1lrl"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="4_bjs73"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="5_brwlk"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="6_51spv"]
+[ext_resource type="Resource" uid="uid://cht5gp5i657sg" path="res://stage/spots/steppe/spot_steppe.tres" id="7_csirj"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="7_gnsoy"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="7_qb3tl"]
+[ext_resource type="Script" uid="uid://dvrtuqbmx4v30" path="res://stage/spots/spot_upgrade_visual_add.gd" id="8_csirj"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://ct25exmbqilhw" path="res://map/sprites/spots/steppe/mst_steppe_clay_pits.tres" id="9_0l0f0"]
+
+[sub_resource type="Resource" id="Resource_t8ieu"]
+script = ExtResource("8_csirj")
+sprite_type = ExtResource("9_0l0f0")
+biome = 5
+metadata/_custom_type_script = "uid://dvrtuqbmx4v30"
+
+[resource]
+script = ExtResource("1_4sce4")
+spot_upgrade_id = "steppe_clay_pits"
+name = "Clay Pits"
+description = "The shard's flesh is soft here, waiting for patient hands to shape it."
+required_aspects = Array[ExtResource("7_gnsoy")]([ExtResource("6_51spv")])
+granted_bonuses = Dictionary[ExtResource("5_brwlk"), int]({
+ExtResource("4_bjs73"): 10
+})
+child_upgrades = Array[ExtResource("1_4sce4")]([ExtResource("2_h1lrl")])
+spot = ExtResource("7_csirj")
+visuals = Array[ExtResource("7_qb3tl")]([SubResource("Resource_t8ieu")])
+tags = Array[int]([2])

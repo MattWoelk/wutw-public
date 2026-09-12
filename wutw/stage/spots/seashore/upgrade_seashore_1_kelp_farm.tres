@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://da8fydkwec5g3"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_qgyu4"]
+[ext_resource type="Resource" uid="uid://ca50j0toh3rla" path="res://stage/spots/seashore/upgrade_seashore_2_pearl_sanctuary.tres" id="2_lyyrc"]
+[ext_resource type="Resource" uid="uid://gia5p2avy13r" path="res://stage/spots/seashore/upgrade_seashore_2_coral_garden.tres" id="3_us0oi"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="5_lat25"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="7_asymh"]
+[ext_resource type="Resource" uid="uid://skws2o4hx05g" path="res://stage/spots/seashore/spot_seashore.tres" id="8_lc0tn"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_j7sbk"]
+[ext_resource type="Script" uid="uid://dvrtuqbmx4v30" path="res://stage/spots/spot_upgrade_visual_add.gd" id="10_1s2a0"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="10_60hwx"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://0bc175nwupeo" path="res://map/sprites/spots/seashore/mst_seashore_kelp_farm.tres" id="11_vkfvg"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="11_xakt0"]
+
+[sub_resource type="Resource" id="Resource_ys5v4"]
+script = ExtResource("10_1s2a0")
+sprite_type = ExtResource("11_vkfvg")
+biome = 1
+metadata/_custom_type_script = "uid://dvrtuqbmx4v30"
+
+[resource]
+script = ExtResource("1_qgyu4")
+spot_upgrade_id = "seashore_kelp_farm"
+name = "Seaweed Farm"
+description = "A garden among the waves, delivering the perfect wrapping for rice balls."
+required_aspects = Array[ExtResource("10_60hwx")]([ExtResource("11_xakt0")])
+granted_bonuses = Dictionary[ExtResource("5_lat25"), int]({
+ExtResource("7_asymh"): 10
+})
+child_upgrades = Array[ExtResource("1_qgyu4")]([ExtResource("2_lyyrc"), ExtResource("3_us0oi")])
+spot = ExtResource("8_lc0tn")
+visuals = Array[ExtResource("9_j7sbk")]([SubResource("Resource_ys5v4")])
+tags = Array[int]([1])

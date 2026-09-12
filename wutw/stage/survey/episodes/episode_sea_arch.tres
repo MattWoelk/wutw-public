@@ -1,0 +1,97 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://cabjcbxi3034m"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_660ud"]
+[ext_resource type="Resource" uid="uid://bfgnrjd7v65t2" path="res://art/pieces/piece_hiroshige_izu_seashore.tres" id="1_ryrc3"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_ryrc3"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_r7eoy"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="4_j4s6g"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="5_jjak6"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="6_r0w3e"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="7_2v633"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="8_3rh54"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="9_cibex"]
+[ext_resource type="Resource" uid="uid://dylc6a1ekfdr2" path="res://cards/tier6/card_fall.tres" id="10_feymx"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="11_0vhx7"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="12_s5yt2"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="13_7qfl7"]
+
+[sub_resource type="Resource" id="Resource_b6q84"]
+script = ExtResource("1_660ud")
+_texture_path = "res://stage/survey/episodes/sea_arch.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_d1arc"]
+script = ExtResource("6_r0w3e")
+bonus_type = ExtResource("5_jjak6")
+amount = 10
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_831j0"]
+script = ExtResource("2_ryrc3")
+label = "Use rope."
+aspects = Array[ExtResource("3_r7eoy")]([ExtResource("4_j4s6g")])
+aspects_per_season = Array[ExtResource("3_r7eoy")]([null])
+outcome = SubResource("Resource_d1arc")
+outcome_text = "The whole group works together, tying a long rope into knots, and throwing it up to the stranded scout.
+
+He ties the rope around his waist, secures it to a large boulder, then uses the knots as footholds to descend safely."
+
+[sub_resource type="Resource" id="Resource_xpcdu"]
+script = ExtResource("6_r0w3e")
+bonus_type = ExtResource("5_jjak6")
+amount = 10
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_pjkqs"]
+script = ExtResource("2_ryrc3")
+label = "Use a tree trunk."
+aspects = Array[ExtResource("3_r7eoy")]([ExtResource("7_2v633")])
+aspects_per_season = Array[ExtResource("3_r7eoy")]([null])
+outcome = SubResource("Resource_xpcdu")
+outcome_text = "The group works together, picking up a large dead tree they find lying in the sand and dragging it to the arch.
+
+The stranded scout descends safely, using branches as footholds."
+
+[sub_resource type="Resource" id="Resource_v476b"]
+script = ExtResource("9_cibex")
+delta = 3
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_dxvih"]
+script = ExtResource("2_ryrc3")
+label = "Dare him to jump."
+aspects = Array[ExtResource("3_r7eoy")]([ExtResource("8_3rh54")])
+aspects_per_season = Array[ExtResource("3_r7eoy")]([null])
+outcome = SubResource("Resource_v476b")
+outcome_text = "Knowing their friend to be a strong swimmer, the other scouts encourage him to jump into the water. 
+
+Slightly embarrassed, the stranded scout glances at the smiling faces of his comrades then jumps into the water with a splash, emerging unharmed."
+
+[sub_resource type="Resource" id="Resource_arx8d"]
+script = ExtResource("11_0vhx7")
+card_type = ExtResource("10_feymx")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_7silw"]
+script = ExtResource("2_ryrc3")
+label = "Let him deal with it."
+aspects = Array[ExtResource("3_r7eoy")]([null])
+aspects_per_season = Array[ExtResource("3_r7eoy")]([null])
+outcome = SubResource("Resource_arx8d")
+outcome_text = "The scout makes it two thirds of the way down before his foot slips on the wet rocks and he comes hurtling down.
+
+He is only a little bruised, but he will remember this fall for a while."
+
+[resource]
+script = ExtResource("12_s5yt2")
+episode_id = "sea_arch"
+title = "The Seashore Arch"
+biome_types = Array[int]([1, 10])
+text = "The survey team has stopped under a naturally formed stone arch rising above the seashore. As they are busy mapping the coastline, a voice comes calling from above.
+
+One of the scouts has climbed the arch to win a bet, and is now regretting that decision. His triumphant smile faded the moment he tried to descend. It seems climbing down the slick rocks is proving a lot more difficult than getting to the top."
+background_image = SubResource("Resource_b6q84")
+background_credit = ExtResource("1_ryrc3")
+choices = Array[ExtResource("2_ryrc3")]([SubResource("Resource_831j0"), SubResource("Resource_pjkqs"), SubResource("Resource_dxvih"), SubResource("Resource_7silw")])

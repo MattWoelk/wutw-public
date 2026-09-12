@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://r1dd5t5erbwc"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_wyv2o"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="2_cnp5m"]
+[ext_resource type="Script" uid="uid://do5ygcjgpbgi8" path="res://stage/hauntings/effects/haunting_effect_discard.gd" id="3_80dyj"]
+[ext_resource type="Resource" uid="uid://6e1uhx4d7bl3" path="res://art/pieces/piece_composed_kodama.tres" id="4_wyv2o"]
+[ext_resource type="Resource" uid="uid://dupbahd3a3xcg" path="res://art/pieces/piece_hiroshige_2_enoshima_genji.tres" id="5_o22dc"]
+[ext_resource type="Texture2D" uid="uid://c7pwetknhnd1d" path="res://stage/hauntings/types/kodama/haunting_kodama_realistic_thick_vegetation.png" id="6_j5cu0"]
+[ext_resource type="Texture2D" uid="uid://dhgtes3g2wirb" path="res://stage/hauntings/types/kodama/haunting_kodama.png" id="6_wyv2o"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="8_aoktp"]
+[ext_resource type="Resource" uid="uid://ucnbpdhw8mob" path="res://stage/spots/forest/spot_forest.tres" id="8_cnp5m"]
+[ext_resource type="Script" uid="uid://wcgm3rptcu7x" path="res://stage/hauntings/triggers/haunting_trigger_bonus_gained.gd" id="8_j5cu0"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="8_y428l"]
+
+[sub_resource type="Resource" id="Resource_wyv2o"]
+script = ExtResource("3_80dyj")
+metadata/_custom_type_script = "uid://do5ygcjgpbgi8"
+
+[sub_resource type="Resource" id="Resource_cnp5m"]
+script = ExtResource("8_j5cu0")
+any_spot = false
+metadata/_custom_type_script = "uid://wcgm3rptcu7x"
+
+[resource]
+script = ExtResource("8_aoktp")
+haunting_id = "kodama"
+name = "Kodama"
+name_japanese = "木霊"
+name_realistic = "Thick Vegetation"
+name_translation = "Tree Spirits"
+description = "The forest is said to be guarded by Kodama, tree spirits who punish anyone who fells a tree."
+description_realistic = "The forest's growth has turned uncontrollable. Dense underbrush and creeping vines choke the trails, making work slow and hazardous."
+description_long = "These woods are watched over by mysterious guardians. Settlers speak of glowing lights with faint faces surrounding the ancient trees. Wherever they pass, roots surge from the soil, grasping at ankles, and trails vanish overnight.
+
+Some swear these are Kodama, spirits of ancient trees driven from their trunks to defend the forest against any who dare harm it. Though not malicious, they punish humans who forget that nature is not a plaything to be toyed with."
+image_small = ExtResource("6_wyv2o")
+image_credit = ExtResource("4_wyv2o")
+image_small_realistic = ExtResource("6_j5cu0")
+image_realistic_credit = ExtResource("5_o22dc")
+spot_type = ExtResource("8_cnp5m")
+base_aspect_types = Array[ExtResource("1_wyv2o")]([ExtResource("2_cnp5m")])
+extra_aspect_type = ExtResource("2_cnp5m")
+scaling_bonus_type = ExtResource("8_y428l")
+trigger = SubResource("Resource_cnp5m")
+effect = SubResource("Resource_wyv2o")
+spot_attach_mode = 2
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dqwsqt6dfla73"]
+
+[ext_resource type="PackedScene" uid="uid://bl780vhdwft4i" path="res://hub/contents/hub_facility.tscn" id="1_y40rc"]
+[ext_resource type="Texture2D" uid="uid://b53kbxhn2o2cp" path="res://hub/contents/notice_board/notice_board_label.png" id="2_cf84g"]
+[ext_resource type="Texture2D" uid="uid://djtlu6o167mrj" path="res://hub/contents/notice_board/notice_board.png" id="3_m5daj"]
+
+[node name="NoticeBoard" unique_id=396329370 instance=ExtResource("1_y40rc")]
+y_sort_enabled = true
+tooltip_text = "[center]<header_font_size>[b]Notice Board[/b][/font_size][/center]
+
+Settlers looking to join the expedition post their requests here."
+
+[node name="Panel" parent="." index="0" unique_id=1465047343]
+offset_left = -119.0
+offset_top = -177.0
+offset_right = 210.50354
+offset_bottom = 494.3612
+scale = Vector2(0.24884, 0.24884)
+
+[node name="Label" parent="Panel" index="1" unique_id=541126649]
+visible = false
+text = "立
+札"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" index="2" unique_id=1665278384]
+layout_mode = 2
+theme_override_constants/margin_left = 37
+theme_override_constants/margin_top = 90
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 70
+
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer" index="0" unique_id=816037863]
+texture_filter = 6
+layout_mode = 2
+texture = ExtResource("2_cf84g")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CollisionPolygon2D" parent="Area2D" parent_id_path=PackedInt32Array(2019498285) index="0" unique_id=521856771]
+position = Vector2(7, -7)
+polygon = PackedVector2Array(37, -127, -43, -88, -45, -171, -127, -170, -129, -4, -40, -4, -30, 19, 23, 5)
+
+[node name="Sprite" type="Sprite2D" parent="." index="2" unique_id=966826878]
+y_sort_enabled = true
+position = Vector2(1, -2)
+scale = Vector2(0.5348183, 0.5348183)
+texture = ExtResource("3_m5daj")
+offset = Vector2(0, -110.32)
+
+[node name="TooltipAnchor" parent="." index="3" unique_id=278453014]
+offset_left = -121.0
+offset_top = -271.0
+offset_right = 197.0
+offset_bottom = 82.0

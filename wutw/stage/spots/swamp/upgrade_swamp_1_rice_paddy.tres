@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://df0mbiisjudjg"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_m2tsa"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_2splw"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="4_pq4uo"]
+[ext_resource type="Resource" uid="uid://31smacx21ryj" path="res://stage/spots/swamp/upgrade_swamp_2_fungal_garden.tres" id="4_vs87d"]
+[ext_resource type="Resource" uid="uid://d3l8k6g4pib6c" path="res://stage/spots/swamp/upgrade_swamp_2_reed_weaver_lodge.tres" id="5_ner0i"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="7_6k7rm"]
+[ext_resource type="Resource" uid="uid://ouecqwnbe2cw" path="res://stage/spots/swamp/spot_swamp.tres" id="9_q77qe"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="9_so1yx"]
+[ext_resource type="Script" uid="uid://dvrtuqbmx4v30" path="res://stage/spots/spot_upgrade_visual_add.gd" id="10_ner0i"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="10_vs87d"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://bp26ovrxxbcrl" path="res://map/sprites/spots/swamp/mst_swamp_rice_paddy.tres" id="11_6k7rm"]
+
+[sub_resource type="Resource" id="Resource_so1yx"]
+script = ExtResource("10_ner0i")
+sprite_type = ExtResource("11_6k7rm")
+biome = 4
+metadata/_custom_type_script = "uid://dvrtuqbmx4v30"
+
+[resource]
+script = ExtResource("1_m2tsa")
+spot_upgrade_id = "swamp_rice_paddy"
+name = "Rice Paddy"
+description = "Turns out stagnant puddles can feed a whole town if treated properly."
+required_aspects = Array[ExtResource("4_pq4uo")]([ExtResource("9_so1yx")])
+granted_bonuses = Dictionary[ExtResource("2_2splw"), int]({
+ExtResource("7_6k7rm"): 10
+})
+child_upgrades = Array[ExtResource("1_m2tsa")]([ExtResource("5_ner0i"), ExtResource("4_vs87d")])
+spot = ExtResource("9_q77qe")
+visuals = Array[ExtResource("10_vs87d")]([SubResource("Resource_so1yx")])
+tags = Array[int]([1])

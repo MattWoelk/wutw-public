@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dbkrwj5jf26v1"]
+
+[ext_resource type="Script" uid="uid://hww7snepn2pq" path="res://theme/credits_icon/credits_icon.gd" id="1_opvb0"]
+[ext_resource type="Texture2D" uid="uid://dyut3wrnclsv0" path="res://theme/credits_icon/credits_icon.png" id="2_q1iab"]
+
+[node name="CreditsIcon" type="MarginContainer" unique_id=382726284]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+script = ExtResource("1_opvb0")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=701562566]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+mouse_default_cursor_shape = 2
+texture = ExtResource("2_q1iab")
+expand_mode = 3
+
+[node name="HoverIcon" type="TextureRect" parent="." unique_id=1501762948]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+mouse_filter = 2
+texture = ExtResource("2_q1iab")
+expand_mode = 3
+
+[connection signal="gui_input" from="Icon" to="." method="_on_icon_gui_input"]
+[connection signal="mouse_entered" from="Icon" to="." method="_on_icon_mouse_entered"]
+[connection signal="mouse_exited" from="Icon" to="." method="_on_icon_mouse_exited"]

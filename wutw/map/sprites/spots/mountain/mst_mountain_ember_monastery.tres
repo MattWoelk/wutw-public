@@ -1,0 +1,31 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://bqibjf1qty4ou"]
+
+[ext_resource type="MapSpriteType_Composite" uid="uid://4uknhohkpjxh" path="res://map/sprites/spots/mountain/mst_mountain_smoldering_crater.tres" id="1_rmjdu"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://ihq3fri3qpbu" path="res://map/sprites/spots/mountain/mst_mountain_ember_monastery_path.tres" id="2_6ri1t"]
+[ext_resource type="MapSpriteType_Building" uid="uid://tkv2tw0usxfb" path="res://map/sprites/spots/mountain/mst_mountain_ember_monastery_building.tres" id="2_rubsw"]
+[ext_resource type="WwiseEvent" uid="uid://cos5t3ejwit5y" path="res://Wwise/resources/Event/{1D2DCDA9-35BC-47D6-B2E3-470712A6A157}.tres" id="4_6ri1t"]
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_d7ak4"]
+p1 = Vector2(-7.19, 1.44)
+p2 = Vector2(7.7, 3.14)
+p3 = Vector2(-0.08, -1.845)
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_y5lky"]
+sprite_type = ExtResource("1_rmjdu")
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_jnrfq"]
+sprite_type = ExtResource("2_6ri1t")
+offset = Vector2(-1.2, 0.14)
+scale = 0.96
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_7nm05"]
+sprite_type = ExtResource("2_rubsw")
+offset = Vector2(-1.765, -2.405)
+scale = 1.195
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_y5lky"), SubResource("MapSpriteComponent_jnrfq"), SubResource("MapSpriteComponent_7nm05")])
+footprint_radius = 2.2
+sound = ExtResource("4_6ri1t")
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Triangle_d7ak4")])

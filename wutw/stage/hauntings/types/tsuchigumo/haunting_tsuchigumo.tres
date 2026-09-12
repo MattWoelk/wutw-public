@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://bx0n8wxggyw64"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_8nqd5"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="2_13xe5"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="2_yamqw"]
+[ext_resource type="Script" uid="uid://do5ygcjgpbgi8" path="res://stage/hauntings/effects/haunting_effect_discard.gd" id="3_xkxot"]
+[ext_resource type="Resource" uid="uid://fjgkdkffkf2a" path="res://art/pieces/piece_bakemono_tsuchigumo.tres" id="5_xkxot"]
+[ext_resource type="Texture2D" uid="uid://culjopxvh2wo4" path="res://stage/hauntings/types/tsuchigumo/haunting_tsuchigumo.png" id="6_e0mcg"]
+[ext_resource type="Resource" uid="uid://cmfcp35aqmc4h" path="res://art/pieces/piece_kiyochika_sougou.tres" id="6_xkxot"]
+[ext_resource type="Texture2D" uid="uid://bke7veenykon3" path="res://stage/hauntings/types/tsuchigumo/haunting_tsuchigumo_realistic_dissent.png" id="7_yamqw"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="8_e35qg"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="8_t0stu"]
+[ext_resource type="Script" uid="uid://lh1rleplugp2" path="res://stage/hauntings/triggers/haunting_trigger_card_played.gd" id="10_0bpci"]
+
+[sub_resource type="Resource" id="Resource_o83xs"]
+script = ExtResource("3_xkxot")
+metadata/_custom_type_script = "uid://do5ygcjgpbgi8"
+
+[sub_resource type="Resource" id="Resource_vbpbv"]
+script = ExtResource("10_0bpci")
+required_aspect = ExtResource("2_13xe5")
+metadata/_custom_type_script = "uid://lh1rleplugp2"
+
+[resource]
+script = ExtResource("8_t0stu")
+haunting_id = "tsuchigumo"
+name = "Tsuchigumo"
+name_japanese = "土蜘蛛"
+name_realistic = "Dissent"
+name_translation = "Earth Spiders"
+description = "Multiple leaders in this settlement have gone missing and or have been found poisoned. The prime suspect is the Tsuchigumo, giant spiders that ambush powerful people with poison and trap them in their nets."
+description_realistic = "The people are in open dissent against the leaders of this settlement, constantly sabotaging their efforts."
+description_long = "When people rise to power, they become the target of Tsuchigumo, giant spiders that sleep in tunnels beneath the ground. They come out at night, using illusion to hide their bulk, to challenge people who have obtained too much influence. They ambush their victims with poison that no medicine can heal, and drag them into their underground burrows, to be kept captive in silk cocoons."
+image_small = ExtResource("6_e0mcg")
+image_credit = ExtResource("5_xkxot")
+image_small_realistic = ExtResource("7_yamqw")
+image_realistic_credit = ExtResource("6_xkxot")
+base_aspect_types = Array[ExtResource("1_8nqd5")]([ExtResource("2_13xe5")])
+extra_aspect_type = ExtResource("2_yamqw")
+scaling_bonus_type = ExtResource("8_e35qg")
+trigger = SubResource("Resource_vbpbv")
+effect = SubResource("Resource_o83xs")
+spot_attach_mode = 1
+settlement_attach_mode = 1
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

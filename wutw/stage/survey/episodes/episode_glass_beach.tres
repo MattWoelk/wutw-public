@@ -1,0 +1,113 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://n4s3fp8kuvop"]
+
+[ext_resource type="Resource" uid="uid://d3af3dxx4a4ta" path="res://art/pieces/piece_hiroshige_genji_in_suma.tres" id="1_uakfi"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_w3odh"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_uakfi"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_fi6ru"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="4_cf26e"]
+[ext_resource type="Resource" uid="uid://cmx6glqcrhde" path="res://relics/common/glass_pebble/relic_glass_pebble.tres" id="5_unadb"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="6_4nr1l"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="7_vethu"]
+[ext_resource type="Resource" uid="uid://brgqqv5aset8u" path="res://cards/tier6/card_scorch.tres" id="8_l0bwv"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="9_uefvn"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="10_tcldj"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="11_auoy1"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="12_0pcil"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="13_ivn5m"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="14_2xcs4"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="15_cosrn"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="16_pet3d"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="17_6dbf1"]
+
+[sub_resource type="Resource" id="Resource_ud8l6"]
+script = ExtResource("1_w3odh")
+_texture_path = "res://stage/survey/episodes/episode_glass_beach.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_1qbir"]
+script = ExtResource("6_4nr1l")
+relic = ExtResource("5_unadb")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_lp3ut"]
+script = ExtResource("2_uakfi")
+label = "Rest on the beach."
+aspects = Array[ExtResource("3_fi6ru")]([ExtResource("4_cf26e")])
+aspects_per_season = Array[ExtResource("3_fi6ru")]([null])
+outcome = SubResource("Resource_1qbir")
+outcome_text = "The scouts decide to stay on the beach and relax for a while. They lie on the warm sand and watch the clouds pass.
+
+Once they have time to pay attention, they notice that many of the pebbles are made of glass, a luxury even in the Old World. The edges have been polished perfectly smooth by the sea."
+
+[sub_resource type="Resource" id="Resource_j5dtk"]
+script = ExtResource("9_uefvn")
+card_type = ExtResource("8_l0bwv")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_crfmg"]
+script = ExtResource("2_uakfi")
+label = "Explore the cliffs."
+aspects = Array[ExtResource("3_fi6ru")]([ExtResource("7_vethu")])
+aspects_per_season = Array[ExtResource("3_fi6ru")]([null])
+outcome = SubResource("Resource_j5dtk")
+outcome_text = "The scouts climb the cliffs surrounding the cove. The grass there smells sweet, and bees buzz back and forth among the scattered wildflowers.
+
+At the top of the hill, the group finds a clear pool. One of the surveyors dips her hand into it and instantly recoils as a fierce burning pain spreads across her skin.
+
+Once they take a moment to pay attention, they see that the surrounding stone has been eaten away, and nothing grows within two paces of the pool."
+
+[sub_resource type="Resource" id="Resource_dydnk"]
+script = ExtResource("14_2xcs4")
+bonus_type = ExtResource("13_ivn5m")
+amount = 10
+extra_per_season = 20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_gpq0q"]
+script = ExtResource("14_2xcs4")
+bonus_type = ExtResource("15_cosrn")
+amount = 10
+extra_per_season = 20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_ef40v"]
+script = ExtResource("11_auoy1")
+suboutcomes = Array[ExtResource("12_0pcil")]([SubResource("Resource_dydnk"), SubResource("Resource_gpq0q")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_mvdw0"]
+script = ExtResource("2_uakfi")
+label = "Row along the shore."
+aspects = Array[ExtResource("3_fi6ru")]([ExtResource("10_tcldj")])
+aspects_per_season = Array[ExtResource("3_fi6ru")]([null])
+outcome = SubResource("Resource_ef40v")
+outcome_text = "The surveyors get into their boats and let the current carry them along the shoreline.
+
+As they watch the cliffs drift by, they spot a nearly perfect hole cut into the stone, too regular to be natural. The inside of the hole appears to be covered in rusted, barnacle-clad metal."
+
+[sub_resource type="Resource" id="Resource_b01es"]
+script = ExtResource("14_2xcs4")
+bonus_type = ExtResource("15_cosrn")
+amount = -10
+extra_per_season = -20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_jgsr8"]
+script = ExtResource("2_uakfi")
+label = "Leave the cove."
+aspects = Array[ExtResource("3_fi6ru")]([null])
+aspects_per_season = Array[ExtResource("3_fi6ru")]([null])
+outcome = SubResource("Resource_b01es")
+outcome_text = "The explorers decide to continue their journey elsewhere, leaving the secluded beach unexplored."
+
+[resource]
+script = ExtResource("16_pet3d")
+episode_id = "glass_beach"
+title = "The Secluded Cove"
+biome_types = Array[int]([1, 10])
+text = "A secluded cove surrounded by cliffs opens out onto the vast sea.
+
+Although the open water is too dangerous to cross in tiny boats, the sheltered cove and its surrounding beaches could offer their own discoveries."
+background_image = SubResource("Resource_ud8l6")
+background_credit = ExtResource("1_uakfi")
+choices = Array[ExtResource("2_uakfi")]([SubResource("Resource_lp3ut"), SubResource("Resource_crfmg"), SubResource("Resource_mvdw0"), SubResource("Resource_jgsr8")])

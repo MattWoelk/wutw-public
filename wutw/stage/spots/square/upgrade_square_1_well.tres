@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://bci0m8iwowwhw"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_q0ek0"]
+[ext_resource type="Resource" uid="uid://75bddpshmqai" path="res://stage/spots/square/upgrade_square_2_bathhouse.tres" id="2_1xws4"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_lsuny"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="4_6fa27"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="4_bkolj"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="5_bkolj"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="7_kyu1k"]
+[ext_resource type="Resource" uid="uid://ctiwrqhub05ib" path="res://stage/spots/square/spot_square.tres" id="8_s0lf2"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_jox3f"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://crsxoifsw1y3c" path="res://map/sprites/spots/square/mst_square_public_well.tres" id="10_nlkgh"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://c7bph6udtgt3c" path="res://map/sprites/buildings/ruined_square/mst_town_square_1.tres" id="11_b5lg2"]
+[ext_resource type="Script" uid="uid://cm6qovq4s06ky" path="res://stage/spots/spot_upgrade_visual_replace.gd" id="12_kv4td"]
+
+[sub_resource type="Resource" id="Resource_kipic"]
+script = ExtResource("12_kv4td")
+old_sprite_types = Array[MapSpriteType]([ExtResource("11_b5lg2")])
+new_sprite_type = ExtResource("10_nlkgh")
+metadata/_custom_type_script = "uid://cm6qovq4s06ky"
+
+[resource]
+script = ExtResource("1_q0ek0")
+spot_upgrade_id = "square_well"
+name = "Public Well"
+description = "A hole in the ground becomes the core of the town, once water starts seeping in."
+required_aspects = Array[ExtResource("5_bkolj")]([ExtResource("7_kyu1k")])
+granted_bonuses = Dictionary[ExtResource("2_lsuny"), int]({
+ExtResource("4_bkolj"): 10,
+ExtResource("4_6fa27"): 5
+})
+child_upgrades = Array[ExtResource("1_q0ek0")]([ExtResource("2_1xws4")])
+spot = ExtResource("8_s0lf2")
+visuals = Array[ExtResource("9_jox3f")]([SubResource("Resource_kipic")])

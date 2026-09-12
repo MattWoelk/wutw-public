@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="ShardType_MainQuest_ScholarsHub" format=3 uid="uid://cq87kbqn5lm3q"]
+
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="1_j1as6"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="2_cib88"]
+[ext_resource type="Texture2D" uid="uid://ir2lnlf32dce" path="res://shard_types/mq_scholars_hub/shard_types_mq_scholars_hub.png" id="2_p0jfw"]
+[ext_resource type="Resource" uid="uid://d10cvete8p2fm" path="res://art/pieces/piece_gekkou_masaaki.tres" id="3_cib88"]
+[ext_resource type="Resource" uid="uid://bcyiqb6aoy7gy" path="res://characters/jobs/job_scholar.tres" id="4_ktas5"]
+[ext_resource type="Script" uid="uid://do2o4vap400bp" path="res://shard_types/mq_scholars_hub/shard_types_mq_scholars_hub.gd" id="5_0jhvv"]
+[ext_resource type="Resource" uid="uid://bg26ylrabaa27" path="res://skills/craft/skill_craft_salvage_2.tres" id="7_0jhvv"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="8_h8vc6"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="9_ixwsg"]
+
+[sub_resource type="Resource" id="Resource_ktas5"]
+script = ExtResource("1_j1as6")
+text = "$shard_name was founded with the explicit aim of translating the ancient language of early scripture. One of the first breakthroughs came when a scholar realized that unlike in the modern language, the ancients put verbs before nouns. Another hurdle was cleared when similar passages from different eras were compared, and the evolution of each glyph was traced and extrapolated. This was enough to start understanding the texts, but the scholars went further, and were able to reconstruct the sounds of the language by referencing holy chants preserved over the centuries, which the priests by now considered to be sacred sounds unrelated to human language."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_0jhvv"]
+script = ExtResource("1_j1as6")
+text = "With their translation task accomplished, the scholars of $shard_name gained much prestige and attracted the best minds of the Cloud Sea. These newcomers brought records from their home shards, and soon $shard_name housed the most complete library in recorded history. Aside from holy texts and historical records, the library now houses recipes, blueprints, and even transcriptions of local songs from countless shards."
+min_main_quest = 500
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_h8vc6"]
+script = ExtResource("1_j1as6")
+text = "When the scholars ran out of things to record, they turned their intellect towards studying unexplained phenomena. The most notable of these is the humble gate. Since time immemorial, gates have been taken for granted, but no one has ever been able to explain how they worked. Now, with modern scientific methods, scholars are studying the mechanics of teleportation. So far the most significant finding is that objects passing through a gate always come out colder, which may suggest that thermal energy is consumed to facilitate the movement. While this remains an active topic of research, there's little hope of being able to construct new gates in the foreseeable future."
+min_main_quest = 500
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_3ln78"]
+script = ExtResource("8_h8vc6")
+text = "I stayed at the research complex, where they usually host visiting scholars. One of the deans took me under her wing and showed me all around the campus.
+
+When she took me to the library, I couldn't even see where the rows of shelves ended. They have the writings all organized, and the librarian taught me how to use the index to find things by topic, date, author, or shard in minutes. I found several atlases with maps of shards I'd never heard of, and the scribes were kind enough to make copies of them for me to take home.
+
+With the dean's encouragement, I attended a seminar to see the kind of things they teach. This one was taught by a printer who explained that their studio had invented a way of printing text that uses many small woodblocks, with a single glyph each, which they move around to create different texts.
+
+Finally, as I was about to leave I saw a group of scholars doing experiments on gates. They dug one up and turned it horizontally, supported by four pillars. Then they dropped iron weights through it and recorded how fast they were going when they popped out of the other gate. They seemed sure that they'll figure out how gates work pretty soon."
+revealed_skill = ExtResource("7_0jhvv")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[resource]
+script = ExtResource("5_0jhvv")
+required_job = ExtResource("4_ktas5")
+shard_type_id = "mq_scholars_hub"
+name = "The Scholastic Hub"
+shard_name_override = "Chiejima"
+shard_name_override_jp = "知恵島"
+shard_name_override_meaning = "Sagacity Island"
+tier = 3
+illustration = ExtResource("2_p0jfw")
+illustration_credit = ExtResource("3_cib88")
+history = Array[ExtResource("1_j1as6")]([SubResource("Resource_ktas5"), SubResource("Resource_0jhvv"), SubResource("Resource_h8vc6")])
+trip_reward = SubResource("Resource_3ln78")
+min_main_quest_progress = 420
+metadata/_custom_type_script = "uid://cqieoragbyo0b"

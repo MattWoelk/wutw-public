@@ -1,0 +1,396 @@
+[gd_scene format=3 uid="uid://idwkc0jljivo"]
+
+[ext_resource type="Script" uid="uid://8ls4yym150tq" path="res://shops/accord_monument/shop_accord_monument.gd" id="1_24bxj"]
+[ext_resource type="PackedScene" uid="uid://b5k16hpo8080v" path="res://theme/faded_background/faded_background.tscn" id="2_bbs1k"]
+[ext_resource type="PackedScene" uid="uid://b6ob53b0vla40" path="res://theme/scroll_panel/scroll_panel_big.tscn" id="3_jdta6"]
+[ext_resource type="Shader" uid="uid://bbe7ginxustev" path="res://theme/scroll_panel/scroll_panel_dowel.gdshader" id="4_82u6h"]
+[ext_resource type="Texture2D" uid="uid://b0cvn7ev1bwut" path="res://theme/scroll_panel/dowel_wood.png" id="5_tdb4e"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="6_g5xrt"]
+[ext_resource type="Texture2D" uid="uid://8teky13j638o" path="res://shops/accord_monument/accord_base.png" id="8_46c6x"]
+[ext_resource type="Texture2D" uid="uid://dficvjinca55b" path="res://events/system/scenes/event_frame_edge.png" id="9_0ja3t"]
+[ext_resource type="Texture2D" uid="uid://k4t338khua5c" path="res://shops/accord_monument/accord_shrine.png" id="9_yhv76"]
+[ext_resource type="Texture2D" uid="uid://c6t6lk7qritxp" path="res://shops/accord_monument/accord_temple.png" id="10_u27qp"]
+[ext_resource type="PackedScene" uid="uid://dbkrwj5jf26v1" path="res://theme/credits_icon/credits_icon.tscn" id="11_10npl"]
+[ext_resource type="Texture2D" uid="uid://bm8qwhlys1u45" path="res://shops/accord_monument/accord_pagoda.png" id="11_y1qve"]
+[ext_resource type="Texture2D" uid="uid://qji680rbgcr6" path="res://shops/accord_monument/accord_crowd.png" id="12_ugm0f"]
+[ext_resource type="Resource" uid="uid://bxxrkffhb6goc" path="res://art/pieces/piece_hiroshige_asakusa_market.tres" id="14_ns4d5"]
+[ext_resource type="Shader" uid="uid://ygmrqrvg5hpm" path="res://theme/button/ukiyoe_button.gdshader" id="14_whnua"]
+[ext_resource type="Texture2D" uid="uid://ctgl61r3xxsqv" path="res://theme/button/button_fill.png" id="15_1t220"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="15_rsqh0"]
+[ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="16_4h4cj"]
+[ext_resource type="Texture2D" uid="uid://blje81yu8734p" path="res://theme/button/button_shape.png" id="16_5v67g"]
+[ext_resource type="PackedScene" uid="uid://4e4bwjdkmj2y" path="res://shops/accord_monument/accord_button.tscn" id="17_4h4cj"]
+[ext_resource type="Texture2D" uid="uid://doe4603a6ngco" path="res://theme/button/button_outline.png" id="17_dfqor"]
+[ext_resource type="Texture2D" uid="uid://cwubixgc8n0yr" path="res://theme/button/button_swish_left.png" id="18_2l20e"]
+[ext_resource type="Texture2D" uid="uid://n6l17h4ysayj" path="res://theme/button/button_swish_right.png" id="19_5jfxd"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="20_tw5rw"]
+[ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="21_0ht0c"]
+
+[sub_resource type="Gradient" id="Gradient_ofyuc"]
+offsets = PackedFloat32Array(0, 0.196721, 0.460041, 0.525615, 0.603484, 0.732582, 1)
+colors = PackedColorArray(0.59, 0.43424, 0.3068, 0.796078, 0.48, 0.35328, 0.2496, 0.294118, 0.48, 0.35328, 0.2496, 0.0116377, 0.48, 0.35328, 0.2496, 0, 0.48, 0.35328, 0.2496, 0.0431956, 0.48, 0.35328, 0.2496, 0.34902, 0.4, 0.2944, 0.208, 0.929412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g5dkl"]
+gradient = SubResource("Gradient_ofyuc")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_0fvof"]
+colors = PackedColorArray(0.331639, 0.33164, 0.331639, 1, 0.961814, 0.961814, 0.961814, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0fvof"]
+frequency = 0.0035
+domain_warp_amplitude = 100.0
+domain_warp_frequency = -0.01
+domain_warp_fractal_lacunarity = 8.69
+domain_warp_fractal_gain = 0.19
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jijvn"]
+width = 2048
+noise = SubResource("FastNoiseLite_0fvof")
+color_ramp = SubResource("Gradient_0fvof")
+seamless = true
+seamless_blend_skirt = 0.27
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rsqh0"]
+shader = ExtResource("4_82u6h")
+shader_parameter/size = Vector2(1305, 49)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("5_tdb4e")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[sub_resource type="Gradient" id="Gradient_j5apj"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wqpyw"]
+gradient = SubResource("Gradient_j5apj")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kq36v"]
+shader = ExtResource("14_whnua")
+shader_parameter/mask_tex = ExtResource("16_5v67g")
+shader_parameter/background = ExtResource("15_1t220")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("17_dfqor")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("19_5jfxd")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("18_2l20e")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4h4cj"]
+shader = ExtResource("4_82u6h")
+shader_parameter/size = Vector2(1303, 49)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("5_tdb4e")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[node name="ShopAccordMonument" type="Node2D" unique_id=1155113474]
+script = ExtResource("1_24bxj")
+
+[node name="BG" parent="." unique_id=1844463682 instance=ExtResource("2_bbs1k")]
+unique_name_in_owner = true
+
+[node name="Control" type="CenterContainer" parent="." unique_id=453681060]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="ScrollPanel" parent="Control" unique_id=296971032 instance=ExtResource("3_jdta6")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1405, 0)
+layout_mode = 2
+default_roll_duration = 0.75
+default_unroll_duration = 1.0
+
+[node name="TopDowelWood" parent="Control/ScrollPanel/TopDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_rsqh0")
+
+[node name="Scroller" parent="Control/ScrollPanel" index="1"]
+custom_minimum_size = Vector2(0, 854)
+
+[node name="ScrollMargin" parent="Control/ScrollPanel/Scroller" index="0"]
+offset_bottom = 824.0
+
+[node name="ContentPanel" parent="Control/ScrollPanel/Scroller/ScrollMargin" index="0"]
+material = ExtResource("6_g5xrt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer" index="0" unique_id=777602457]
+custom_minimum_size = Vector2(1260, 800)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=2137133577]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer" unique_id=406111966]
+custom_minimum_size = Vector2(566, 714)
+layout_mode = 2
+theme_override_constants/margin_left = -15
+theme_override_constants/margin_top = -22
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = -20
+
+[node name="BGMask" type="TextureRect" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer2" unique_id=288841066]
+clip_children = 1
+custom_minimum_size = Vector2(520, 714)
+layout_mode = 2
+texture = ExtResource("9_0ja3t")
+
+[node name="BG_Base" type="TextureRect" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer2/BGMask" unique_id=951816039]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_46c6x")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BG_Shrine" type="TextureRect" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer2/BGMask" unique_id=1512614195]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_yhv76")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BG_Temple" type="TextureRect" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer2/BGMask" unique_id=987155040]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_u27qp")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BG_Pagoda" type="TextureRect" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer2/BGMask" unique_id=1130163794]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_y1qve")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BG_Crowd" type="TextureRect" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer2/BGMask" unique_id=334959550]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_ugm0f")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="CreditsIcon" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer2/BGMask" unique_id=1770621554 instance=ExtResource("11_10npl")]
+unique_name_in_owner = true
+layout_mode = 1
+art_piece = ExtResource("14_ns4d5")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer" unique_id=534786128]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer" unique_id=298237348]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="TitleLabel" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=716656923]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "The Accord Monument"
+horizontal_alignment = 1
+
+[node name="IntroLabel" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1706183739]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "This town square is perfect for setting up the Accord Monument. We will need to build up a temple complex grand enough to support the monumental role it will play in our history."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Panel_Shrine" type="PanelContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=516701005]
+material = ExtResource("6_g5xrt")
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("15_rsqh0")
+script = ExtResource("16_4h4cj")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/Panel_Shrine" unique_id=289409380]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 4
+
+[node name="ActionLabel" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/Panel_Shrine/VBoxContainer" unique_id=1329562459]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Establish the Main Temple"
+horizontal_alignment = 1
+
+[node name="Button_Knowledge" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/Panel_Shrine/VBoxContainer" unique_id=2044183942 instance=ExtResource("17_4h4cj")]
+unique_name_in_owner = true
+layout_mode = 2
+markedup_text = "Contribute 100 <term:bonus.knowledge>"
+save_data_var_name = "knowledge"
+
+[node name="Button_Productivity" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/Panel_Shrine/VBoxContainer" unique_id=56699193 instance=ExtResource("17_4h4cj")]
+unique_name_in_owner = true
+layout_mode = 2
+markedup_text = "Contribute 200 <term:bonus.productivity>"
+save_data_var_name = "productivity"
+
+[node name="Spacer" type="Control" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/Panel_Shrine/VBoxContainer" unique_id=422844756]
+layout_mode = 2
+
+[node name="Panel_Temple" type="PanelContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1777396109]
+material = ExtResource("6_g5xrt")
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("15_rsqh0")
+script = ExtResource("16_4h4cj")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/Panel_Temple" unique_id=499971953]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 4
+
+[node name="ActionLabel" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/Panel_Temple/VBoxContainer" unique_id=46259816]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Dedicate the Glyph Gallery"
+horizontal_alignment = 1
+
+[node name="Button_Spirit" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/Panel_Temple/VBoxContainer" unique_id=1939956821 instance=ExtResource("17_4h4cj")]
+unique_name_in_owner = true
+layout_mode = 2
+markedup_text = "Dedicate a Rare <term:aspect.spirit> <term:glyph>"
+save_data_var_name = "spirit"
+
+[node name="Button_Illumination" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/Panel_Temple/VBoxContainer" unique_id=2115874470 instance=ExtResource("17_4h4cj")]
+unique_name_in_owner = true
+layout_mode = 2
+markedup_text = "Dedicate a Rare <term:aspect.illumination> <term:glyph>"
+save_data_var_name = "illumination"
+
+[node name="Button_Connection" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/Panel_Temple/VBoxContainer" unique_id=57155927 instance=ExtResource("17_4h4cj")]
+unique_name_in_owner = true
+layout_mode = 2
+markedup_text = "Dedicate a Rare <term:aspect.connection> <term:glyph>"
+save_data_var_name = "connection"
+
+[node name="Spacer" type="Control" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/Panel_Temple/VBoxContainer" unique_id=1106144849]
+layout_mode = 2
+
+[node name="Panel_Pagoda" type="PanelContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1203155534]
+material = ExtResource("6_g5xrt")
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("15_rsqh0")
+script = ExtResource("16_4h4cj")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/Panel_Pagoda" unique_id=1571767776]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 4
+
+[node name="ActionLabel" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/Panel_Pagoda/VBoxContainer" unique_id=195710888]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Enshrine Relics in the Pagoda"
+horizontal_alignment = 1
+
+[node name="Button_Relic1" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/Panel_Pagoda/VBoxContainer" unique_id=419677485 instance=ExtResource("17_4h4cj")]
+unique_name_in_owner = true
+layout_mode = 2
+markedup_text = "Enshrine the First Relic"
+save_data_var_name = "relic1"
+
+[node name="Button_Relic2" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/Panel_Pagoda/VBoxContainer" unique_id=1929534622 instance=ExtResource("17_4h4cj")]
+unique_name_in_owner = true
+layout_mode = 2
+markedup_text = "Enshrine the Second Relic"
+save_data_var_name = "relic2"
+
+[node name="Spacer" type="Control" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/Panel_Pagoda/VBoxContainer" unique_id=1703932536]
+layout_mode = 2
+
+[node name="Button_Crowd" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1036931478 instance=ExtResource("17_4h4cj")]
+unique_name_in_owner = true
+layout_mode = 2
+markedup_text = "Begin the Ceremony"
+save_data_var_name = "ceremony"
+
+[node name="CloseButton" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1918037820]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_kq36v")
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = ExtResource("20_tw5rw")
+theme_override_styles/pressed = ExtResource("20_tw5rw")
+theme_override_styles/hover = ExtResource("20_tw5rw")
+theme_override_styles/hover_pressed = ExtResource("20_tw5rw")
+theme_override_styles/disabled = ExtResource("20_tw5rw")
+text = "Leave"
+script = ExtResource("21_0ht0c")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="BottomDowelWood" parent="Control/ScrollPanel/BottomDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_4h4cj")
+
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/Panel_Shrine/VBoxContainer/Button_Knowledge" to="." method="_on_button_knowledge_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/Panel_Shrine/VBoxContainer/Button_Productivity" to="." method="_on_button_productivity_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/Panel_Temple/VBoxContainer/Button_Spirit" to="." method="_on_button_spirit_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/Panel_Temple/VBoxContainer/Button_Illumination" to="." method="_on_button_illumination_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/Panel_Temple/VBoxContainer/Button_Connection" to="." method="_on_button_connection_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/Panel_Pagoda/VBoxContainer/Button_Relic1" to="." method="_on_button_relic_1_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/Panel_Pagoda/VBoxContainer/Button_Relic2" to="." method="_on_button_relic_2_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/Button_Crowd" to="." method="_on_button_crowd_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/CloseButton" to="." method="_close"]
+
+[editable path="Control/ScrollPanel"]

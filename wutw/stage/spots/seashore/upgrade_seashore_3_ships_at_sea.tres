@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://b16ulpudeu2xl"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_lw5s8"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_1dmnq"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="3_y87o3"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="4_3nfqd"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="5_ndxf1"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="6_ou72k"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="7_h0uar"]
+[ext_resource type="Resource" uid="uid://skws2o4hx05g" path="res://stage/spots/seashore/spot_seashore.tres" id="8_22im0"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_guh5c"]
+[ext_resource type="Script" uid="uid://dvrtuqbmx4v30" path="res://stage/spots/spot_upgrade_visual_add.gd" id="10_y87o3"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://d0sriddx6x6ym" path="res://map/sprites/spots/seashore/mst_seashore_ships.tres" id="11_3nfqd"]
+
+[sub_resource type="Resource" id="Resource_ndxf1"]
+script = ExtResource("10_y87o3")
+sprite_type = ExtResource("11_3nfqd")
+biome = 1
+metadata/_custom_type_script = "uid://dvrtuqbmx4v30"
+
+[resource]
+script = ExtResource("1_lw5s8")
+spot_upgrade_id = "seashore_ships"
+name = "Ships at Sea"
+description = "Masts crowd the horizon, carrying the promise of distant shores."
+required_aspects = Array[ExtResource("5_ndxf1")]([ExtResource("6_ou72k"), ExtResource("7_h0uar")])
+granted_bonuses = Dictionary[ExtResource("2_1dmnq"), int]({
+ExtResource("3_y87o3"): 15,
+ExtResource("4_3nfqd"): 10
+})
+spot = ExtResource("8_22im0")
+visuals = Array[ExtResource("9_guh5c")]([SubResource("Resource_ndxf1")])
+min_main_quest_progress = 110

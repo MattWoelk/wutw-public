@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://bueftp2m1lkkg"]
+
+[ext_resource type="PackedScene" uid="uid://b1gwljqmwjqes" path="res://cards/viewer/card_deck_viewer.tscn" id="1_2o36h"]
+[ext_resource type="Script" uid="uid://dm0mqjsmc86mf" path="res://cards/abilities/divine_ability_dialog.gd" id="2_4lupg"]
+[ext_resource type="Shader" uid="uid://bbe7ginxustev" path="res://theme/scroll_panel/scroll_panel_dowel.gdshader" id="2_btr16"]
+[ext_resource type="Texture2D" uid="uid://b0cvn7ev1bwut" path="res://theme/scroll_panel/dowel_wood.png" id="3_wni5x"]
+[ext_resource type="Shader" uid="uid://ygmrqrvg5hpm" path="res://theme/button/ukiyoe_button.gdshader" id="7_minne"]
+[ext_resource type="Texture2D" uid="uid://ctgl61r3xxsqv" path="res://theme/button/button_fill.png" id="8_3v4cw"]
+[ext_resource type="Texture2D" uid="uid://blje81yu8734p" path="res://theme/button/button_shape.png" id="9_lp1ai"]
+[ext_resource type="Texture2D" uid="uid://doe4603a6ngco" path="res://theme/button/button_outline.png" id="10_11ojh"]
+[ext_resource type="Texture2D" uid="uid://cwubixgc8n0yr" path="res://theme/button/button_swish_left.png" id="11_hiq7a"]
+[ext_resource type="Texture2D" uid="uid://n6l17h4ysayj" path="res://theme/button/button_swish_right.png" id="12_njckx"]
+
+[sub_resource type="Gradient" id="Gradient_ofyuc"]
+offsets = PackedFloat32Array(0, 0.196721, 0.460041, 0.525615, 0.603484, 0.732582, 1)
+colors = PackedColorArray(0.59, 0.43424, 0.3068, 0.796078, 0.48, 0.35328, 0.2496, 0.294118, 0.48, 0.35328, 0.2496, 0.0116377, 0.48, 0.35328, 0.2496, 0, 0.48, 0.35328, 0.2496, 0.0431956, 0.48, 0.35328, 0.2496, 0.34902, 0.4, 0.2944, 0.208, 0.929412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g5dkl"]
+gradient = SubResource("Gradient_ofyuc")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_0fvof"]
+colors = PackedColorArray(0.331639, 0.33164, 0.331639, 1, 0.961814, 0.961814, 0.961814, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0fvof"]
+frequency = 0.0035
+domain_warp_amplitude = 100.0
+domain_warp_frequency = -0.01
+domain_warp_fractal_lacunarity = 8.69
+domain_warp_fractal_gain = 0.19
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jijvn"]
+width = 2048
+noise = SubResource("FastNoiseLite_0fvof")
+color_ramp = SubResource("Gradient_0fvof")
+seamless = true
+seamless_blend_skirt = 0.27
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mdcxv"]
+shader = ExtResource("2_btr16")
+shader_parameter/size = Vector2(1004, 49)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("3_wni5x")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[sub_resource type="Gradient" id="Gradient_j5apj"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wqpyw"]
+gradient = SubResource("Gradient_j5apj")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y0ugt"]
+shader = ExtResource("7_minne")
+shader_parameter/mask_tex = ExtResource("9_lp1ai")
+shader_parameter/background = ExtResource("8_3v4cw")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("10_11ojh")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("12_njckx")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("11_hiq7a")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ocuq"]
+shader = ExtResource("2_btr16")
+shader_parameter/size = Vector2(1002, 49)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("3_wni5x")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[node name="DivineAbilityDialog" unique_id=581954640 instance=ExtResource("1_2o36h")]
+script = ExtResource("2_4lupg")
+title = "Next Drawn Glyphs"
+allow_quick_dismiss = false
+
+[node name="MinimizeButton" parent="." index="1" unique_id=1220774066]
+instance_shader_parameters/background_offset = Vector2(0.0024423306, 0.7333618)
+
+[node name="TopDowelWood" parent="CenterContainer/ScrollPanel/TopDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_mdcxv")
+
+[node name="Scroller" parent="CenterContainer/ScrollPanel" parent_id_path=PackedInt32Array(903750977) index="1"]
+custom_minimum_size = Vector2(0, 631)
+
+[node name="TitleLabel" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer" parent_id_path=PackedInt32Array(1850857577) index="0" unique_id=1477032721]
+text = "Next Drawn Glyphs"
+
+[node name="SearchInput" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer" parent_id_path=PackedInt32Array(1850857577) index="1" unique_id=1276302389]
+visible = false
+
+[node name="AspectFilterDropdown" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer" parent_id_path=PackedInt32Array(1850857577) index="2" unique_id=2079276916]
+visible = false
+instance_shader_parameters/background_offset = Vector2(0.49995562, 0.9911506)
+
+[node name="PromptLabel" type="Label" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/BottomRack" parent_id_path=PackedInt32Array(374210605) index="0" unique_id=414665914]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "  Drawn left to right.              Select glyphs to discard."
+
+[node name="AspectCountersPanel" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/BottomRack" parent_id_path=PackedInt32Array(374210605) index="1" unique_id=879356396]
+visible = false
+
+[node name="TotalCountLabel" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/BottomRack" parent_id_path=PackedInt32Array(374210605) index="2" unique_id=894695028]
+visible = false
+
+[node name="CloseButton" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/BottomRack" parent_id_path=PackedInt32Array(374210605) index="4" unique_id=272340750]
+material = SubResource("ShaderMaterial_y0ugt")
+instance_shader_parameters/background_offset = Vector2(0.11843641, 0.74830425)
+size_flags_horizontal = 8
+text = "Keep All"
+
+[node name="BottomDowelWood" parent="CenterContainer/ScrollPanel/BottomDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_8ocuq")
+
+[editable path="CenterContainer/ScrollPanel"]

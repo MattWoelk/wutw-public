@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="Quest_Settler" format=3 uid="uid://safb8q0k75oj"]
+
+[ext_resource type="Script" uid="uid://cjloydxgrv8oa" path="res://quests/settler/settler_quest_challenge.gd" id="1_fph1l"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="2_0pcgx"]
+[ext_resource type="Resource" uid="uid://drkja0ls4sk6" path="res://cards/tier6/card_clumsy.tres" id="3_tgwxf"]
+[ext_resource type="Script" uid="uid://rn2jydwomyr2" path="res://quests/settler/challenges/settler_quest_challenge_starting_cards.gd" id="4_bsskt"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="5_6dq2w"]
+[ext_resource type="Resource" uid="uid://bcyiqb6aoy7gy" path="res://characters/jobs/job_scholar.tres" id="6_1og48"]
+[ext_resource type="Script" uid="uid://cd4swbq3t72je" path="res://quests/settler/settler_quest_reward.gd" id="7_volia"]
+[ext_resource type="Script" uid="uid://ds2hjxeyoq2jy" path="res://quests/settler/rewards/settler_quest_reward_recall_card.gd" id="8_lfwbk"]
+[ext_resource type="Script" uid="uid://1na7ymvvvbby" path="res://quests/settler/quest_settler.gd" id="9_5fg2n"]
+[ext_resource type="Script" uid="uid://bxua8gxfjp2wy" path="res://quests/settler/settler_quest_goal.gd" id="10_uxdmu"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="11_a1l38"]
+[ext_resource type="Script" uid="uid://blls67bcrlaat" path="res://quests/settler/goals/settler_quest_goal_stage_bonus.gd" id="12_fcn4u"]
+[ext_resource type="Script" uid="uid://c0f31c6uvr016" path="res://quests/settler/goals/settler_quest_goal_any_upgrade.gd" id="13_nmoaf"]
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="14_luwup"]
+[ext_resource type="Resource" uid="uid://c4geqaow8tvvd" path="res://stage/spots/building_large/upgrade_building_large_2_library.tres" id="15_3ju3b"]
+
+[sub_resource type="Resource" id="Resource_7ufah"]
+script = ExtResource("4_bsskt")
+card_types = Array[ExtResource("2_0pcgx")]([ExtResource("3_tgwxf"), ExtResource("3_tgwxf")])
+metadata/_custom_type_script = "uid://rn2jydwomyr2"
+
+[sub_resource type="Resource" id="Resource_gpj2d"]
+script = ExtResource("8_lfwbk")
+metadata/_custom_type_script = "uid://ds2hjxeyoq2jy"
+
+[sub_resource type="Resource" id="Resource_5yod2"]
+script = ExtResource("12_fcn4u")
+bonus_type = ExtResource("11_a1l38")
+bonus_amount = 120
+metadata/_custom_type_script = "uid://blls67bcrlaat"
+
+[sub_resource type="Resource" id="Resource_cjx8r"]
+script = ExtResource("13_nmoaf")
+upgrades = Array[ExtResource("14_luwup")]([ExtResource("15_3ju3b")])
+metadata/_custom_type_script = "uid://c0f31c6uvr016"
+
+[resource]
+script = ExtResource("9_5fg2n")
+intro_text = "I've always wanted to found a library, but every time I try to join an expedition, they say there's no space because I can't fit all my books and scrolls into a single bag. I can't just leave them behind!"
+challenges = Array[ExtResource("1_fph1l")]([SubResource("Resource_7ufah")])
+settler_goals = Array[ExtResource("10_uxdmu")]([SubResource("Resource_5yod2"), SubResource("Resource_cjx8r")])
+rewards = Array[ExtResource("7_volia")]([SubResource("Resource_gpj2d")])
+restrict_to_jobs = Array[ExtResource("5_6dq2w")]([ExtResource("6_1og48")])
+quest_id = "settler_scholar"
+category = 2
+name = "A Clumsy Librarian"
+metadata/_custom_type_script = "uid://1na7ymvvvbby"

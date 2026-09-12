@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://dwnmdwt8vlw6x"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_gxkh3"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_ekned"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="3_yi17o"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="5_iyyjn"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="6_eh6nt"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="6_iyyjn"]
+[ext_resource type="Resource" uid="uid://cfuqwl06ioxwd" path="res://stage/spots/hill/spot_hill.tres" id="7_m2ppo"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="8_gxkh3"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://b548ltw41s15m" path="res://map/sprites/hills/mst_hill_6.tres" id="9_nbilb"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://chlfcnqbpau20" path="res://map/sprites/hills/mst_hill_3.tres" id="10_dmpmg"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://c23xw6irwc0ik" path="res://map/sprites/hills/mst_hill_2.tres" id="11_lqpku"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dgsucgxy4wy2k" path="res://map/sprites/hills/mst_hill_4.tres" id="12_rvctu"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dqbot5dm01cko" path="res://map/sprites/hills/mst_hill_5.tres" id="13_xwyfd"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://difbd6y0w4ell" path="res://map/sprites/hills/mst_hill_1.tres" id="14_lowud"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://c1qyjr5xjxho0" path="res://map/sprites/spots/hills/mst_hills_rice_drying_racks.tres" id="15_kgkol"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://cpqmycr3lndya" path="res://map/sprites/spots/hills/mst_hills_rice_terraces.tres" id="16_4doe7"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="17_rkr76"]
+
+[sub_resource type="Resource" id="Resource_h660h"]
+script = ExtResource("17_rkr76")
+old_sprite_type = ExtResource("16_4doe7")
+new_sprite_type = ExtResource("15_kgkol")
+extra_removables = Array[MapSpriteType]([ExtResource("9_nbilb"), ExtResource("10_dmpmg"), ExtResource("11_lqpku"), ExtResource("12_rvctu"), ExtResource("13_xwyfd"), ExtResource("14_lowud")])
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_gxkh3")
+spot_upgrade_id = "hill_rice_dryer"
+name = "Rice Drying Racks"
+description = "One more stop before the grain meets the millstone, weather permitting."
+required_aspects = Array[ExtResource("6_eh6nt")]([ExtResource("5_iyyjn"), ExtResource("6_iyyjn")])
+granted_bonuses = Dictionary[ExtResource("2_ekned"), int]({
+ExtResource("3_yi17o"): 25
+})
+spot = ExtResource("7_m2ppo")
+visuals = Array[ExtResource("8_gxkh3")]([SubResource("Resource_h660h")])
+tags = Array[int]([1])
+min_main_quest_progress = 110

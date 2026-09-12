@@ -1,0 +1,82 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://bcrh7nyniitew"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_d14bg"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="1_fmvhx"]
+[ext_resource type="Resource" uid="uid://x4iqex7fwyjk" path="res://art/pieces/piece_hiroshige_tsuchiyama.tres" id="1_pijum"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="2_kxd5k"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="3_d14bg"]
+[ext_resource type="Script" uid="uid://cbnw4a13y5x8c" path="res://events/system/outcomes/random/event_outcome_random.gd" id="4_pijum"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="5_08vb5"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="6_cfpsk"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="7_oc4rf"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="8_5kkdk"]
+[ext_resource type="Resource" uid="uid://cfuqwl06ioxwd" path="res://stage/spots/hill/spot_hill.tres" id="9_4dd1j"]
+[ext_resource type="Script" uid="uid://yxgaymbbt8tk" path="res://events/system/outcomes/override_next_step/event_outcome_override_next_step.gd" id="9_08vb5"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="10_kxd5k"]
+
+[sub_resource type="Resource" id="Resource_2kcba"]
+script = ExtResource("1_d14bg")
+_texture_path = "uid://b0247vo25pn8r"
+_is_horizontal = true
+metadata/_custom_type_script = "uid://c7u2t141hgkj5"
+
+[sub_resource type="Resource" id="Resource_ialou"]
+script = ExtResource("6_cfpsk")
+delta = -5
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("9_08vb5")
+result_text = "The team takes shelter in the hollows. They spend the whole night there, waiting for the rain to stop. Whatever had left the bones and hides fails to show up, and the scouts safely continue on their way."
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_nlc8n"]
+script = ExtResource("4_pijum")
+suboutcomes = Dictionary[ExtResource("5_08vb5"), float]({
+SubResource("Resource_ialou"): 0.5,
+SubResource("Resource_trtbi"): 0.5
+})
+description = "Chance of <term:inspiration> loss"
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_a3prj"]
+script = ExtResource("1_fmvhx")
+label = "Shelter in the hollows."
+aspects = Array[ExtResource("2_kxd5k")]([ExtResource("3_d14bg")])
+outcome = SubResource("Resource_nlc8n")
+outcome_text = "Soon after the team takes shelter, several wolves show up. The scouts raise a racket and posture wildly, roaring and jumping. The wolves observe the display for some time, but eventually decide that the strange creatures are not worth attacking. Nonetheless, the entire team is shaken by the experience."
+
+[sub_resource type="Resource" id="Resource_g8duj"]
+script = ExtResource("1_fmvhx")
+label = "Construct lean-tos."
+aspects = Array[ExtResource("2_kxd5k")]([ExtResource("7_oc4rf")])
+aspects_per_season = Array[ExtResource("2_kxd5k")]([null])
+outcome_text = "Instead of sheltering in what are clearly animal dens, the scouts construct simple lean-tos. Enough to shelter from the rain, even if they won't last much longer."
+
+[sub_resource type="Resource" id="Resource_rvtxy"]
+script = ExtResource("6_cfpsk")
+delta = -4
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_g1ano"]
+script = ExtResource("1_fmvhx")
+label = "Brave the rain."
+aspects = Array[ExtResource("2_kxd5k")]([null])
+aspects_per_season = Array[ExtResource("2_kxd5k")]([null])
+outcome = SubResource("Resource_rvtxy")
+outcome_text = "The scouts press on through the miserable weather. At least they are safe from the wildlife."
+
+[resource]
+script = ExtResource("8_5kkdk")
+episode_id = "rain_shelter"
+title = "Caught in the Rain"
+biome_types = Array[int]([7, 9])
+spot_types = Array[ExtResource("10_kxd5k")]([ExtResource("9_4dd1j")])
+text = "A sudden downpour catches the survey team on an exposed ridge.
+
+Just ahead is a small pine grove, full of natural hollows.
+
+They seem perfect for sheltering a small group, but the ground is strewn with animal bones and bits of hide."
+background_image = SubResource("Resource_2kcba")
+background_credit = ExtResource("1_pijum")
+choices = Array[ExtResource("1_fmvhx")]([SubResource("Resource_a3prj"), SubResource("Resource_g8duj"), SubResource("Resource_g1ano")])

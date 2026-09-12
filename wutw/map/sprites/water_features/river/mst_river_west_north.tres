@@ -1,0 +1,75 @@
+[gd_resource type="MapSpriteType_River" format=3 uid="uid://b2rwai7asei8"]
+
+[ext_resource type="Resource" uid="uid://cmbyg0gub8sum" path="res://stage/spots/river/spot_river.tres" id="1_wbyiy"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://68w7insq72on" path="res://map/sprites/spots/river/mst_river_dock.tres" id="2_bkkaq"]
+[ext_resource type="WwiseEvent" uid="uid://bo4s7qs73q8s8" path="res://Wwise/resources/Event/{D00CB056-D8E3-49D6-BBFB-4225715D564F}.tres" id="2_uggyb"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://bo3pdvan0e5dt" path="res://map/sprites/spots/river/mst_river_pontoon_bridge.tres" id="3_r8ygr"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://d2lk6v5u4mudq" path="res://map/sprites/spots/river/mst_river_waterwheel_side.tres" id="4_6w4a8"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://vadtl2lbr1ov" path="res://map/sprites/spots/river/mst_river_rice_mill.tres" id="5_fmkkr"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://dewtc8w6c84wc" path="res://map/sprites/spots/river/mst_river_textile_mill.tres" id="6_y7f7s"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://bwlymfjtsrbpd" path="res://map/sprites/spots/river/mst_river_oil_press.tres" id="7_kim5d"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://csvaa1gxm8ctc" path="res://map/sprites/spots/river/mst_river_willows_nw.tres" id="8_4f80e"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://d2xjb4wr7himh" path="res://map/sprites/spots/river/mst_river_sakuras_nw.tres" id="9_4omvc"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://dcaaqv0ccac0q" path="res://map/sprites/spots/river/mst_river_floating_lanterns.tres" id="10_7u0i5"]
+
+[sub_resource type="MapSpriteCollision_Rect" id="MapSpriteCollision_Rect_wbyiy"]
+rect = Rect2(-4.65, -20.735, 10.44, 20.725)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Rect" id="MapSpriteCollision_Rect_k3x7j"]
+rect = Rect2(-20.7, -4.975, 21.035, 10)
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_r8ygr"]
+sprite_type = ExtResource("2_bkkaq")
+offset = Vector2(-0.545, -4.045)
+scale = 1.485
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_6w4a8"]
+sprite_type = ExtResource("3_r8ygr")
+offset = Vector2(-1.08, -1.395)
+scale = 1.935
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_fmkkr"]
+sprite_type = ExtResource("4_6w4a8")
+offset = Vector2(-2.355, 0.1)
+scale = 0.97
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_y7f7s"]
+sprite_type = ExtResource("5_fmkkr")
+offset = Vector2(-4.02, 1.44)
+scale = 1.415
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_kim5d"]
+sprite_type = ExtResource("6_y7f7s")
+offset = Vector2(-3.795, 1.5)
+scale = 1.325
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_4f80e"]
+sprite_type = ExtResource("7_kim5d")
+offset = Vector2(-4.02, 1.44)
+scale = 1.415
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_4omvc"]
+sprite_type = ExtResource("8_4f80e")
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_7u0i5"]
+sprite_type = ExtResource("9_4omvc")
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_7cbgn"]
+sprite_type = ExtResource("10_7u0i5")
+offset = Vector2(-2.47, 0.21)
+scale = 0.88
+
+[resource]
+atlas_rect = Rect2i(300, 300, 100, 100)
+direction_type = 2
+slots = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_r8ygr"), SubResource("MapSpriteComponent_6w4a8"), SubResource("MapSpriteComponent_fmkkr"), SubResource("MapSpriteComponent_y7f7s"), SubResource("MapSpriteComponent_kim5d"), SubResource("MapSpriteComponent_4f80e"), SubResource("MapSpriteComponent_4omvc"), SubResource("MapSpriteComponent_7u0i5"), SubResource("MapSpriteComponent_7cbgn")])
+map_rect = Rect2(0, 0, 40, 40)
+footprint_radius = 5.0
+default_scale = 0.25
+must_be_fully_within_clip = true
+z_index = -1
+sound = ExtResource("2_uggyb")
+provided_spot_type = ExtResource("1_wbyiy")
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Rect_wbyiy"), SubResource("MapSpriteCollision_Rect_k3x7j")])

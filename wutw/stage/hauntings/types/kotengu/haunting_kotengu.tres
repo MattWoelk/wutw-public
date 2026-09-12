@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://dy7mudltwxbru"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_ckgeo"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="2_5qkcs"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="3_b3vwb"]
+[ext_resource type="Resource" uid="uid://c2mj2fplq2xp5" path="res://cards/tier6/card_collapse.tres" id="4_urpd8"]
+[ext_resource type="Script" uid="uid://777usfqcjmox" path="res://stage/hauntings/effects/haunting_effect_add_card.gd" id="5_blc88"]
+[ext_resource type="Resource" uid="uid://dc0wrxl1anrh8" path="res://art/pieces/piece_yagyou_kotengu.tres" id="6_b3vwb"]
+[ext_resource type="Texture2D" uid="uid://bqft0bycp31xg" path="res://stage/hauntings/types/kotengu/haunting_kotengu.png" id="6_mxkt8"]
+[ext_resource type="Texture2D" uid="uid://decujcgf5rpjm" path="res://stage/hauntings/types/kotengu/haunting_kotengu_realistic_rockfalls.png" id="7_ohu6v"]
+[ext_resource type="Resource" uid="uid://dd0lw7dvjlh5g" path="res://art/pieces/piece_kuniyoshi_rock_gazing.tres" id="7_urpd8"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="8_ngdxc"]
+[ext_resource type="Resource" uid="uid://bom6dwl3t2obc" path="res://stage/spots/cliff/spot_cliff.tres" id="9_3b6un"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="10_mxkt8"]
+[ext_resource type="Script" uid="uid://6xguje0707l2" path="res://stage/hauntings/triggers/haunting_trigger_upgrade_activated.gd" id="10_v65dw"]
+
+[sub_resource type="Resource" id="Resource_uurmi"]
+script = ExtResource("5_blc88")
+card_type = ExtResource("4_urpd8")
+metadata/_custom_type_script = "uid://777usfqcjmox"
+
+[sub_resource type="Resource" id="Resource_dkh2t"]
+script = ExtResource("10_v65dw")
+any_spot = false
+metadata/_custom_type_script = "uid://6xguje0707l2"
+
+[resource]
+script = ExtResource("8_ngdxc")
+haunting_id = "kotengu"
+name = "Kotengu"
+name_japanese = "小天狗"
+name_realistic = "Rockfalls"
+name_translation = "Lesser Heavenly Hounds"
+description = "Travelers claim the Kotengu are dropping rocks from the cliffs above, punishing anyone who disturbs their mountain domain."
+description_realistic = "Loose stones and unstable cliffs are causing frequent rockfalls."
+description_long = "The cliffs shower passers-by with loose stones, followed by mocking laughter from the clifftops.
+
+Folks say it is the work of Kotengu, the lesser bird-like spirits of the peaks. They fiercely guard their domain from the growing village, viewing every new building as an insult. They perch where human eyes cannot reach, waiting for careless settlers to pass beneath the cliff before sending boulders down to crush their efforts."
+image_small = ExtResource("6_mxkt8")
+image_credit = ExtResource("6_b3vwb")
+image_small_realistic = ExtResource("7_ohu6v")
+image_realistic_credit = ExtResource("7_urpd8")
+spot_type = ExtResource("9_3b6un")
+base_aspect_types = Array[ExtResource("1_ckgeo")]([ExtResource("3_b3vwb")])
+extra_aspect_type = ExtResource("2_5qkcs")
+scaling_bonus_type = ExtResource("10_mxkt8")
+trigger = SubResource("Resource_dkh2t")
+effect = SubResource("Resource_uurmi")
+spot_attach_mode = 2
+settlement_attach_mode = 2
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://g7kkyf8uir6n"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_txqf3"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="3_ujd5t"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="4_wgqgo"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="5_wgqgo"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="6_wv7rj"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="7_fkf4s"]
+[ext_resource type="Resource" uid="uid://ouecqwnbe55w" path="res://stage/spots/wasteland/spot_wasteland.tres" id="8_4okf5"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="8_wv7rj"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_v7rt6"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://dwb51jru2m5lh" path="res://map/sprites/spots/wasteland/mst_wasteland_ruined_outpost.tres" id="10_n7bgy"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://cj8ftb0jt8ife" path="res://map/sprites/spots/wasteland/mst_wasteland_rock_garden.tres" id="11_qc0pb"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="12_w1bhg"]
+
+[sub_resource type="Resource" id="Resource_4pyl1"]
+script = ExtResource("12_w1bhg")
+old_sprite_type = ExtResource("11_qc0pb")
+new_sprite_type = ExtResource("10_n7bgy")
+biome = 3
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_txqf3")
+spot_upgrade_id = "wasteland_outpost"
+name = "Ruined Outpost"
+description = "Half-collapsed ramparts bristle with new scaffolds, making for a charming mess of a shelter."
+required_aspects = Array[ExtResource("6_wv7rj")]([ExtResource("7_fkf4s"), ExtResource("8_wv7rj")])
+granted_bonuses = Dictionary[ExtResource("4_wgqgo"), int]({
+ExtResource("3_ujd5t"): 20,
+ExtResource("5_wgqgo"): 5
+})
+spot = ExtResource("8_4okf5")
+visuals = Array[ExtResource("9_v7rt6")]([SubResource("Resource_4pyl1")])

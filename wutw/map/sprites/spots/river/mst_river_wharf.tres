@@ -1,0 +1,47 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://7ergumwu4y68"]
+
+[ext_resource type="MapSpriteType_Building" uid="uid://djeiaoi52fo0k" path="res://map/sprites/buildings/houses/mst_house_8.tres" id="2_6h3oq"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://b5kinh0flabs2" path="res://map/sprites/spots/river/mst_river_boat.tres" id="2_dt2er"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://bv6t0we6mplxp" path="res://map/sprites/spots/river/mst_river_yard_fence.tres" id="3_rkpcj"]
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_6h3oq"]
+p1 = Vector2(-5.64, 0.42)
+p2 = Vector2(-3.525, 3.945)
+p3 = Vector2(1.905, -0.495)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_dt2er"]
+p1 = Vector2(4.835, 4.18)
+p2 = Vector2(-3.715, 3.815)
+p3 = Vector2(1.475, -0.51)
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_xjn8v"]
+sprite_type = ExtResource("2_dt2er")
+offset = Vector2(-0.11, 0.275)
+scale = 0.42
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_rkpcj"]
+sprite_type = ExtResource("2_dt2er")
+offset = Vector2(-0.255, -0.025)
+scale = 0.395
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_a5qs8"]
+sprite_type = ExtResource("2_6h3oq")
+offset = Vector2(-2.805, 0.93)
+scale = 1.03
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_3jxqb"]
+sprite_type = ExtResource("2_dt2er")
+offset = Vector2(-0.695, 1.89)
+scale = 0.685
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_wqvgy"]
+sprite_type = ExtResource("3_rkpcj")
+offset = Vector2(0.425, 1.69)
+scale = 1.255
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_xjn8v"), SubResource("MapSpriteComponent_rkpcj"), SubResource("MapSpriteComponent_a5qs8"), SubResource("MapSpriteComponent_3jxqb"), SubResource("MapSpriteComponent_wqvgy")])
+footprint_radius = 5.0
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Triangle_6h3oq"), SubResource("MapSpriteCollision_Triangle_dt2er")])

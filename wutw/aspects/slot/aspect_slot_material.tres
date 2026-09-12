@@ -1,0 +1,34 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bb00nixa2etp1"]
+
+[ext_resource type="Shader" uid="uid://ctgqc366pxmk2" path="res://aspects/slot/aspect_slot.gdshader" id="1_5o8bv"]
+[ext_resource type="Texture2D" uid="uid://1ndfd038v2dw" path="res://aspects/types/connection/connection.png" id="2_1cjjp"]
+[ext_resource type="Texture2D" uid="uid://i0lyama67uco" path="res://aspects/slot/dashed_slot_mask.png" id="3_bt66j"]
+
+[sub_resource type="Gradient" id="Gradient_v4fqm"]
+offsets = PackedFloat32Array(0.00614754, 0.0409836, 0.270492, 0.294057)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jhu4u"]
+gradient = SubResource("Gradient_v4fqm")
+
+[resource]
+shader = ExtResource("1_5o8bv")
+shader_parameter/aspect_tex = ExtResource("2_1cjjp")
+shader_parameter/fade_blend = 0.132
+shader_parameter/frame_shape = 1
+shader_parameter/frame_gradient = SubResource("GradientTexture1D_jhu4u")
+shader_parameter/frame_size = Vector2(0.3, 0.3)
+shader_parameter/frame_color = Color(0.87451, 0.505882, 0.564706, 1)
+shader_parameter/frame_gradient_scale = 1.566
+shader_parameter/frame_gradient_highlight_scale = 0.731
+shader_parameter/frame_size_highlight_scale = 0.781
+shader_parameter/star_params = Vector2(0.53, 0.575)
+shader_parameter/dashed_mask = ExtResource("3_bt66j")
+shader_parameter/is_accessible = false
+shader_parameter/is_super_accessible = false
+shader_parameter/noise_scale = 23.189
+shader_parameter/noise_strength = 0.221
+shader_parameter/noise_color = Color(0.242956, 0.245698, 0.048515, 1)
+shader_parameter/fade_progress = 0.0
+shader_parameter/highlight = 0.0
+shader_parameter/dashed = false

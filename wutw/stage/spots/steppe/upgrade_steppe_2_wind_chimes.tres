@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://idrql5d4sw2j"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_d8k5p"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_p04y3"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="3_hxaep"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_s0o7b"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="4_pdg0m"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="6_5iy83"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="7_5r21f"]
+[ext_resource type="Resource" uid="uid://cht5gp5i657sg" path="res://stage/spots/steppe/spot_steppe.tres" id="7_triqv"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://b0oobaenb4huj" path="res://map/sprites/spots/steppe/mst_steppe_wind_chimes.tres" id="8_triqv"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://b1kweontelvfg" path="res://map/sprites/spots/steppe/mst_steppe_painted_pillars.tres" id="9_faypd"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="10_j5jc7"]
+
+[sub_resource type="Resource" id="Resource_g2tq2"]
+script = ExtResource("10_j5jc7")
+old_sprite_type = ExtResource("9_faypd")
+new_sprite_type = ExtResource("8_triqv")
+biome = 5
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_d8k5p")
+spot_upgrade_id = "steppe_chimes"
+name = "Wind Chimes"
+description = "Simple devices to turn wind into music. Somehow always in tune."
+required_aspects = Array[ExtResource("3_s0o7b")]([ExtResource("6_5iy83")])
+granted_bonuses = Dictionary[ExtResource("2_p04y3"), int]({
+ExtResource("3_hxaep"): 5,
+ExtResource("4_pdg0m"): 5
+})
+spot = ExtResource("7_triqv")
+visuals = Array[ExtResource("7_5r21f")]([SubResource("Resource_g2tq2")])

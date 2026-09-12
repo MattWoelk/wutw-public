@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://cgp5r3snudilt"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_15id2"]
+[ext_resource type="Resource" uid="uid://c4geqaow8tvvd" path="res://stage/spots/building_large/upgrade_building_large_2_library.tres" id="2_ea2bk"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_es08e"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_nmt6a"]
+[ext_resource type="Resource" uid="uid://3jck4mxc8uj8" path="res://stage/spots/building_large/upgrade_building_large_2_hospital.tres" id="3_tk45y"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="5_1pd5u"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="7_axw0n"]
+[ext_resource type="Resource" uid="uid://b85k7x2ec04xc" path="res://stage/spots/building_large/spot_building_large.tres" id="8_6882i"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_wwoom"]
+[ext_resource type="MapSpriteType_Building" uid="uid://cju1uubaywiky" path="res://map/sprites/buildings/ruin_large/mst_ruin_large_1.tres" id="10_2nan2"]
+[ext_resource type="MapSpriteType_Building" uid="uid://qhxgbecxfj81" path="res://map/sprites/buildings/ruin_large/mst_ruin_large_2.tres" id="11_h14ge"]
+[ext_resource type="MapSpriteType_Building" uid="uid://gveso63csvo" path="res://map/sprites/buildings/ruin_large/mst_ruin_large_3.tres" id="12_qfhh4"]
+[ext_resource type="MapSpriteType_Building" uid="uid://d4bms8nvv6iy2" path="res://map/sprites/buildings/ruin_large/mst_ruin_large_4.tres" id="13_sckoe"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://dnwpmiumphuqb" path="res://map/sprites/spots/large_building/mst_large_building_school.tres" id="14_i7ohv"]
+[ext_resource type="Script" uid="uid://cm6qovq4s06ky" path="res://stage/spots/spot_upgrade_visual_replace.gd" id="15_wae4y"]
+
+[sub_resource type="Resource" id="Resource_0fvgn"]
+script = ExtResource("15_wae4y")
+old_sprite_types = Array[MapSpriteType]([ExtResource("13_sckoe"), ExtResource("10_2nan2"), ExtResource("11_h14ge"), ExtResource("12_qfhh4")])
+new_sprite_type = ExtResource("14_i7ohv")
+extra_removables = Array[MapSpriteType]([ExtResource("10_2nan2"), ExtResource("11_h14ge"), ExtResource("12_qfhh4"), ExtResource("13_sckoe")])
+metadata/_custom_type_script = "uid://cm6qovq4s06ky"
+
+[resource]
+script = ExtResource("1_15id2")
+spot_upgrade_id = "building_large_school"
+name = "Public School"
+description = "A new world requires a new mindset, so young and old alike gather here to share their knowledge."
+required_aspects = Array[ExtResource("3_nmt6a")]([ExtResource("7_axw0n")])
+granted_bonuses = Dictionary[ExtResource("2_es08e"), int]({
+ExtResource("5_1pd5u"): 15
+})
+child_upgrades = Array[ExtResource("1_15id2")]([ExtResource("2_ea2bk"), ExtResource("3_tk45y")])
+spot = ExtResource("8_6882i")
+visuals = Array[ExtResource("9_wwoom")]([SubResource("Resource_0fvgn")])

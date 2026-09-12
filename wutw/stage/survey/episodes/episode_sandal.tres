@@ -1,0 +1,93 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://8jxrlgitpi1y"]
+
+[ext_resource type="Resource" uid="uid://djt3l6dngla2v" path="res://art/pieces/piece_hiroshige_ronin_act8.tres" id="1_ba3g1"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_g5s4i"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_ba3g1"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_q5ceg"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="4_y0hr7"]
+[ext_resource type="Resource" uid="uid://cepoh3udvvb6v" path="res://relics/common/repaired_sandal/relic_repaired_sandal.tres" id="5_ks86a"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="6_x24da"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="7_uwa3t"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="8_3vquq"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="9_41ap5"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="10_kaety"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="11_27v63"]
+[ext_resource type="Resource" uid="uid://dhal843mubr37" path="res://cards/tier6/card_wound.tres" id="12_42aec"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="13_v8whc"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="14_87lxg"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="15_jpk45"]
+[ext_resource type="Resource" uid="uid://cfuqwl06ioxwd" path="res://stage/spots/hill/spot_hill.tres" id="17_q5ceg"]
+
+[sub_resource type="Resource" id="Resource_118v1"]
+script = ExtResource("1_g5s4i")
+_texture_path = "res://stage/survey/episodes/episode_sandal.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_74718"]
+script = ExtResource("6_x24da")
+relic = ExtResource("5_ks86a")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_dpncf"]
+script = ExtResource("2_ba3g1")
+label = "Repair the sandal."
+aspects = Array[ExtResource("3_q5ceg")]([ExtResource("4_y0hr7"), ExtResource("4_y0hr7")])
+aspects_per_season = Array[ExtResource("3_q5ceg")]([null])
+outcome = SubResource("Resource_74718")
+outcome_text = "One of the other scouts uses some thread to repair the sandal, leaving it as good as new. The injury could have been easily avoided if the problem hadn't been hidden."
+
+[sub_resource type="Resource" id="Resource_l4wex"]
+script = ExtResource("8_3vquq")
+delta = 5
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_8kgsa"]
+script = ExtResource("2_ba3g1")
+label = "Take turns with the good sandals."
+aspects = Array[ExtResource("3_q5ceg")]([ExtResource("7_uwa3t")])
+aspects_per_season = Array[ExtResource("3_q5ceg")]([null])
+outcome = SubResource("Resource_l4wex")
+outcome_text = "The group decides to take turns walking without sandals, so the pain is distributed more evenly. Although the injured scout is still limping, at least she is no longer ashamed."
+
+[sub_resource type="Resource" id="Resource_cbqry"]
+script = ExtResource("11_27v63")
+bonus_type = ExtResource("10_kaety")
+amount = 15
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_ey0yn"]
+script = ExtResource("2_ba3g1")
+label = "Use an ointment."
+aspects = Array[ExtResource("3_q5ceg")]([ExtResource("9_41ap5")])
+aspects_per_season = Array[ExtResource("3_q5ceg")]([null])
+outcome = SubResource("Resource_cbqry")
+outcome_text = "One of the scouts digs out an ointment from her pack, and helps her injured teammate apply it. The medicine doesn't heal the sprain outright, but it certainly eases the pain."
+
+[sub_resource type="Resource" id="Resource_gav2p"]
+script = ExtResource("13_v8whc")
+card_type = ExtResource("12_42aec")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_b6yab"]
+script = ExtResource("2_ba3g1")
+label = "Let the injured woman rest."
+aspects = Array[ExtResource("3_q5ceg")]([null])
+aspects_per_season = Array[ExtResource("3_q5ceg")]([null])
+outcome = SubResource("Resource_gav2p")
+outcome_text = "The group halts to let their teammate rest her feet. Unfortunately she had already pushed herself too hard, and she will probably keep limping until she visits a healer and takes proper rest at home."
+
+[resource]
+script = ExtResource("14_87lxg")
+episode_id = "sandal"
+title = "The Broken Sandal"
+biome_types = Array[int]([4, 6, 7, 9])
+spot_types = Array[ExtResource("15_jpk45")]([ExtResource("17_q5ceg")])
+text = "One of the scouts had accidentally torn the strap of her sandal and, out of embarrassment, tried to hide it.
+
+Now she is limping and slowing the pace of the group.
+
+The team is frustrated that the scout hid the problem, while the scout is defensive about not wanting to be seen as a burden."
+background_image = SubResource("Resource_118v1")
+background_credit = ExtResource("1_ba3g1")
+choices = Array[ExtResource("2_ba3g1")]([SubResource("Resource_dpncf"), SubResource("Resource_8kgsa"), SubResource("Resource_ey0yn"), SubResource("Resource_b6yab")])

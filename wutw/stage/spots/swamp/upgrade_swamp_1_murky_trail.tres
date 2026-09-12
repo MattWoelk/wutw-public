@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://d07vn6xcgf3aj"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_cakro"]
+[ext_resource type="Resource" uid="uid://wshj2f4ifaju" path="res://stage/spots/swamp/upgrade_swamp_2_footbridge_network.tres" id="2_fgspq"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_kl8ms"]
+[ext_resource type="Resource" uid="uid://brjya5088ruvq" path="res://stage/spots/swamp/upgrade_swamp_2_glowing_lantern_path.tres" id="3_m6poi"]
+[ext_resource type="Resource" uid="uid://gpnysm72dhii" path="res://stage/spots/swamp/upgrade_swamp_2_apothecary_hut.tres" id="4_53www"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="4_fgspq"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="5_8lrny"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="6_53www"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="8_nv22y"]
+[ext_resource type="Resource" uid="uid://ouecqwnbe2cw" path="res://stage/spots/swamp/spot_swamp.tres" id="9_8lrny"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="10_53www"]
+[ext_resource type="Script" uid="uid://dvrtuqbmx4v30" path="res://stage/spots/spot_upgrade_visual_add.gd" id="12_q4v0f"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://b8xwu6w7isior" path="res://map/sprites/spots/swamp/mst_swamp_murky_trail.tres" id="13_msw8t"]
+
+[sub_resource type="Resource" id="Resource_5b1lv"]
+script = ExtResource("12_q4v0f")
+sprite_type = ExtResource("13_msw8t")
+biome = 4
+metadata/_custom_type_script = "uid://dvrtuqbmx4v30"
+
+[resource]
+script = ExtResource("1_cakro")
+spot_upgrade_id = "swamp_trail"
+name = "Murky Trail"
+description = "A path barely worthy of the name, guaranteed to leave your sandals full of mud."
+required_aspects = Array[ExtResource("4_fgspq")]([ExtResource("8_nv22y")])
+granted_bonuses = Dictionary[ExtResource("2_kl8ms"), int]({
+ExtResource("5_8lrny"): 10,
+ExtResource("6_53www"): -5
+})
+child_upgrades = Array[ExtResource("1_cakro")]([ExtResource("2_fgspq"), ExtResource("3_m6poi"), ExtResource("4_53www")])
+spot = ExtResource("9_8lrny")
+visuals = Array[ExtResource("10_53www")]([SubResource("Resource_5b1lv")])

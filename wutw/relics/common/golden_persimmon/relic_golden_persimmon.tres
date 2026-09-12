@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Relic_GoldenPersimmon" format=3 uid="uid://ckucj0goj7dbd"]
+
+[ext_resource type="Texture2D" uid="uid://soyurgxrgxtn" path="res://relics/common/golden_persimmon/golden_persimmon.png" id="1_xuk44"]
+[ext_resource type="Script" uid="uid://bnahfp7c1ktc7" path="res://relics/common/golden_persimmon/golden_persimmon.gd" id="3_afrib"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="4_h3gmg"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="5_06q58"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="5_f71l7"]
+
+[resource]
+script = ExtResource("3_afrib")
+triggering_bonus_type = ExtResource("5_06q58")
+penalty_bonus_type = ExtResource("5_f71l7")
+relic_id = "golden_persimmon"
+default_name = "Golden Persimmon"
+default_description = "Whenever you gain %s, %d%% chance of losing as much %s."
+flavor_text = "The rot seems to spread a little more every time you look."
+icon = ExtResource("1_xuk44")
+var_modifiers = Dictionary[int, int]({
+14: -20
+})
+default_starting_state = 1
+metadata/_custom_type_script = "uid://cocdm5ulvrs8m"

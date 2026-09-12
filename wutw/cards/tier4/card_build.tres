@@ -1,0 +1,833 @@
+[gd_resource type="Resource" script_class="CardType" format=3 uid="uid://qtyubr14tntm"]
+
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="1_1agyi"]
+[ext_resource type="Script" uid="uid://b56kytec5oqcb" path="res://cards/abilities/card_ability.gd" id="1_i0e2k"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="2_dm2fw"]
+[ext_resource type="Script" uid="uid://crau1da5gy0n8" path="res://cards/abilities/card_ability_target.gd" id="3_hfgbh"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="4_ytavq"]
+[ext_resource type="Script" uid="uid://xc73x4t7ckxm" path="res://japanese/example_sentence.gd" id="5_chhic"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="6_hfgbh"]
+[ext_resource type="Script" uid="uid://bl2eelwkj800o" path="res://japanese/japanese_token.gd" id="6_pw0ma"]
+[ext_resource type="Script" uid="uid://du4k150pcdjs6" path="res://japanese/kanji_shape.gd" id="6_uuh3l"]
+[ext_resource type="Script" uid="uid://dc15txdqjanlf" path="res://japanese/stroke_shape.gd" id="7_pw0ma"]
+[ext_resource type="Resource" uid="uid://d1k7vakhjcq5g" path="res://glossary/categories/termcategory_card.tres" id="7_ytavq"]
+[ext_resource type="Script" uid="uid://b6rw4ldrj6wch" path="res://japanese/vocab.gd" id="9_6gslg"]
+
+[sub_resource type="Resource" id="Resource_ytavq"]
+script = ExtResource("3_hfgbh")
+bonus_type = ExtResource("4_ytavq")
+count = 2
+metadata/_custom_type_script = "uid://crau1da5gy0n8"
+
+[sub_resource type="Resource" id="Resource_chhic"]
+script = ExtResource("3_hfgbh")
+bonus_type = ExtResource("2_dm2fw")
+metadata/_custom_type_script = "uid://crau1da5gy0n8"
+
+[sub_resource type="Resource" id="Resource_lhl8m"]
+script = ExtResource("6_pw0ma")
+raw_text = "その"
+reading = "その"
+
+[sub_resource type="Resource" id="Resource_4osgs"]
+script = ExtResource("9_6gslg")
+japanese = "橋"
+readings = Array[String](["はし"])
+meanings = Array[String](["bridge"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_hjhft"]
+script = ExtResource("6_pw0ma")
+raw_text = "橋"
+vocab = SubResource("Resource_4osgs")
+reading = "はし"
+
+[sub_resource type="Resource" id="Resource_ba5l3"]
+script = ExtResource("6_pw0ma")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_3mmu7"]
+script = ExtResource("9_6gslg")
+japanese = "建築"
+readings = Array[String](["けんちく"])
+meanings = Array[String](["construction", "architecture (of buildings)"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_urt14"]
+script = ExtResource("6_pw0ma")
+raw_text = "建築"
+vocab = SubResource("Resource_3mmu7")
+reading = "けんちく"
+
+[sub_resource type="Resource" id="Resource_gqns4"]
+script = ExtResource("9_6gslg")
+japanese = "中"
+readings = Array[String](["ちゅう"])
+meanings = Array[String](["medium (size)", "average (grade, level, etc.)", "middle", "in", "within", "out of (e.g. ten people)", "among", "during", "while", "in (the course of)", "within (a period)", "throughout", "currently (doing)", "in the process of", "in the middle of", "under (e.g. construction, investigation)", "middle way", "moderation", "second volume (of three)", "junior high school", "middle school", "China"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_cexk0"]
+script = ExtResource("6_pw0ma")
+raw_text = "中"
+vocab = SubResource("Resource_gqns4")
+reading = "ちゅう"
+
+[sub_resource type="Resource" id="Resource_an745"]
+script = ExtResource("6_pw0ma")
+raw_text = "です"
+reading = "です"
+
+[sub_resource type="Resource" id="Resource_q8h63"]
+script = ExtResource("6_pw0ma")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_xtwr5"]
+script = ExtResource("5_chhic")
+japanese = "その橋は建築中です。"
+native = "The bridge is under construction."
+parsed = Array[ExtResource("6_pw0ma")]([SubResource("Resource_lhl8m"), SubResource("Resource_hjhft"), SubResource("Resource_ba5l3"), SubResource("Resource_urt14"), SubResource("Resource_cexk0"), SubResource("Resource_an745"), SubResource("Resource_q8h63")])
+_difficulty = 379
+_used_kanji = Array[String](["橋", "建", "築", "中"])
+
+[sub_resource type="Resource" id="Resource_vd5pd"]
+script = ExtResource("9_6gslg")
+japanese = "部屋"
+readings = Array[String](["へや"])
+meanings = Array[String](["room", "chamber", "apartment", "flat", "pad", "stable"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_yrtkm"]
+script = ExtResource("6_pw0ma")
+raw_text = "部屋"
+vocab = SubResource("Resource_vd5pd")
+reading = "へや"
+
+[sub_resource type="Resource" id="Resource_dfbyn"]
+script = ExtResource("6_pw0ma")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_a3j5w"]
+script = ExtResource("9_6gslg")
+japanese = "増築"
+readings = Array[String](["ぞうちく"])
+meanings = Array[String](["addition to a building"])
+
+[sub_resource type="Resource" id="Resource_517s2"]
+script = ExtResource("6_pw0ma")
+raw_text = "増築"
+vocab = SubResource("Resource_a3j5w")
+reading = "ぞうちく"
+
+[sub_resource type="Resource" id="Resource_45cx5"]
+script = ExtResource("6_pw0ma")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_17q5w"]
+script = ExtResource("6_pw0ma")
+raw_text = "し"
+reading = "し"
+
+[sub_resource type="Resource" id="Resource_f6yhk"]
+script = ExtResource("6_pw0ma")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_iwvcv"]
+script = ExtResource("6_pw0ma")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_6gslg"]
+script = ExtResource("5_chhic")
+japanese = "部屋の増築をした。"
+native = "I added a room to my house."
+parsed = Array[ExtResource("6_pw0ma")]([SubResource("Resource_yrtkm"), SubResource("Resource_dfbyn"), SubResource("Resource_517s2"), SubResource("Resource_45cx5"), SubResource("Resource_17q5w"), SubResource("Resource_f6yhk"), SubResource("Resource_iwvcv")])
+_difficulty = 383
+_used_kanji = Array[String](["部", "屋", "増", "築"])
+
+[sub_resource type="Resource" id="Resource_5r0kd"]
+script = ExtResource("6_pw0ma")
+raw_text = "建築"
+vocab = SubResource("Resource_3mmu7")
+reading = "けんちく"
+
+[sub_resource type="Resource" id="Resource_2n7g0"]
+script = ExtResource("9_6gslg")
+japanese = "資材"
+readings = Array[String](["しざい"])
+meanings = Array[String](["(raw) material"])
+
+[sub_resource type="Resource" id="Resource_42s5r"]
+script = ExtResource("6_pw0ma")
+raw_text = "資材"
+vocab = SubResource("Resource_2n7g0")
+reading = "しざい"
+
+[sub_resource type="Resource" id="Resource_vnx04"]
+script = ExtResource("6_pw0ma")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_1wj1k"]
+script = ExtResource("9_6gslg")
+japanese = "今"
+readings = Array[String](["いま"])
+meanings = Array[String](["now", "the present time", "just now", "soon", "immediately", "another", "more"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_t0oov"]
+script = ExtResource("6_pw0ma")
+raw_text = "今"
+vocab = SubResource("Resource_1wj1k")
+reading = "いま"
+
+[sub_resource type="Resource" id="Resource_2thyw"]
+script = ExtResource("9_6gslg")
+japanese = "高い"
+readings = Array[String](["たかい", "たかーい", "たっけー", "たっかーい"])
+meanings = Array[String](["high", "tall", "expensive", "high-priced", "high (level)", "above average (in degree, quality, etc.)", "loud", "high-pitched", "shrill"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_a6ex2"]
+script = ExtResource("6_pw0ma")
+raw_text = "高い"
+vocab = SubResource("Resource_2thyw")
+reading = "たかい"
+
+[sub_resource type="Resource" id="Resource_j70dq"]
+script = ExtResource("6_pw0ma")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_kvat5"]
+script = ExtResource("5_chhic")
+japanese = "建築資材は今高い。"
+native = "Building materials are expensive now."
+parsed = Array[ExtResource("6_pw0ma")]([SubResource("Resource_5r0kd"), SubResource("Resource_42s5r"), SubResource("Resource_vnx04"), SubResource("Resource_t0oov"), SubResource("Resource_a6ex2"), SubResource("Resource_j70dq")])
+_difficulty = 441
+_used_kanji = Array[String](["建", "築", "資", "材", "今", "高"])
+
+[sub_resource type="Resource" id="Resource_xfepd"]
+script = ExtResource("6_pw0ma")
+raw_text = "その"
+reading = "その"
+
+[sub_resource type="Resource" id="Resource_57yki"]
+script = ExtResource("9_6gslg")
+japanese = "家"
+readings = Array[String](["いえ"])
+meanings = Array[String](["house", "residence", "dwelling", "home", "family", "household", "lineage", "family name"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_75l2o"]
+script = ExtResource("6_pw0ma")
+raw_text = "家"
+vocab = SubResource("Resource_57yki")
+reading = "いえ"
+
+[sub_resource type="Resource" id="Resource_gc55i"]
+script = ExtResource("6_pw0ma")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_ml5hj"]
+script = ExtResource("9_6gslg")
+japanese = "今"
+readings = Array[String](["こん"])
+meanings = Array[String](["the current ...", "this", "today's ..."])
+jlpt_level = 5
+_difficulty = 1
+
+[sub_resource type="Resource" id="Resource_5dgjm"]
+script = ExtResource("6_pw0ma")
+raw_text = "今"
+vocab = SubResource("Resource_ml5hj")
+reading = "こん"
+
+[sub_resource type="Resource" id="Resource_ypkdp"]
+script = ExtResource("6_pw0ma")
+raw_text = "建築"
+vocab = SubResource("Resource_3mmu7")
+reading = "けんちく"
+
+[sub_resource type="Resource" id="Resource_giyma"]
+script = ExtResource("6_pw0ma")
+raw_text = "中"
+vocab = SubResource("Resource_gqns4")
+reading = "ちゅう"
+
+[sub_resource type="Resource" id="Resource_o6bh6"]
+script = ExtResource("6_pw0ma")
+raw_text = "で"
+reading = "で"
+
+[sub_resource type="Resource" id="Resource_qohbk"]
+script = ExtResource("6_pw0ma")
+raw_text = "ある"
+reading = "ある"
+
+[sub_resource type="Resource" id="Resource_w7gam"]
+script = ExtResource("6_pw0ma")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_pw0ma"]
+script = ExtResource("5_chhic")
+japanese = "その家は今建築中である。"
+native = "The house is being built now."
+parsed = Array[ExtResource("6_pw0ma")]([SubResource("Resource_xfepd"), SubResource("Resource_75l2o"), SubResource("Resource_gc55i"), SubResource("Resource_5dgjm"), SubResource("Resource_ypkdp"), SubResource("Resource_giyma"), SubResource("Resource_o6bh6"), SubResource("Resource_qohbk"), SubResource("Resource_w7gam")])
+_difficulty = 467
+_used_kanji = Array[String](["家", "今", "建", "築", "中"])
+
+[sub_resource type="Resource" id="Resource_em722"]
+script = ExtResource("9_6gslg")
+japanese = "息子"
+readings = Array[String](["むすこ"])
+meanings = Array[String](["son", "penis"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_ct62v"]
+script = ExtResource("6_pw0ma")
+raw_text = "息子"
+vocab = SubResource("Resource_em722")
+reading = "むすこ"
+
+[sub_resource type="Resource" id="Resource_x1va8"]
+script = ExtResource("6_pw0ma")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_7fpua"]
+script = ExtResource("6_pw0ma")
+raw_text = "家"
+vocab = SubResource("Resource_57yki")
+reading = "いえ"
+
+[sub_resource type="Resource" id="Resource_6mvhx"]
+script = ExtResource("6_pw0ma")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_of4u4"]
+script = ExtResource("9_6gslg")
+japanese = "新築"
+readings = Array[String](["しんちく"])
+meanings = Array[String](["new building", "new construction"])
+jlpt_level = 1
+
+[sub_resource type="Resource" id="Resource_5ljr7"]
+script = ExtResource("6_pw0ma")
+raw_text = "新築"
+vocab = SubResource("Resource_of4u4")
+reading = "しんちく"
+
+[sub_resource type="Resource" id="Resource_n2wfw"]
+script = ExtResource("6_pw0ma")
+raw_text = "し"
+reading = "し"
+
+[sub_resource type="Resource" id="Resource_5eq4q"]
+script = ExtResource("6_pw0ma")
+raw_text = "て"
+reading = "て"
+
+[sub_resource type="Resource" id="Resource_rlk8t"]
+script = ExtResource("6_pw0ma")
+raw_text = "あげ"
+reading = "あげ"
+
+[sub_resource type="Resource" id="Resource_pxcuh"]
+script = ExtResource("6_pw0ma")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_6i6ii"]
+script = ExtResource("6_pw0ma")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_uuh3l"]
+script = ExtResource("5_chhic")
+japanese = "息子に家を新築してあげた。"
+native = "I built my son a new house."
+parsed = Array[ExtResource("6_pw0ma")]([SubResource("Resource_ct62v"), SubResource("Resource_x1va8"), SubResource("Resource_7fpua"), SubResource("Resource_6mvhx"), SubResource("Resource_5ljr7"), SubResource("Resource_n2wfw"), SubResource("Resource_5eq4q"), SubResource("Resource_rlk8t"), SubResource("Resource_pxcuh"), SubResource("Resource_6i6ii")])
+_difficulty = 478
+_used_kanji = Array[String](["息", "子", "家", "新", "築"])
+
+[sub_resource type="Resource" id="Resource_pdy5i"]
+script = ExtResource("9_6gslg")
+japanese = "わが家"
+readings = Array[String](["わがや", "わがいえ"])
+meanings = Array[String](["one's house", "one's home", "one's family"])
+
+[sub_resource type="Resource" id="Resource_fig2e"]
+script = ExtResource("6_pw0ma")
+raw_text = "わが家"
+vocab = SubResource("Resource_pdy5i")
+reading = "わがや"
+
+[sub_resource type="Resource" id="Resource_cb5a7"]
+script = ExtResource("6_pw0ma")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_yiban"]
+script = ExtResource("9_6gslg")
+japanese = "全面"
+readings = Array[String](["ぜんめん"])
+meanings = Array[String](["whole surface", "entire"])
+
+[sub_resource type="Resource" id="Resource_7lvmo"]
+script = ExtResource("6_pw0ma")
+raw_text = "全面"
+vocab = SubResource("Resource_yiban")
+reading = "ぜんめん"
+
+[sub_resource type="Resource" id="Resource_40fjp"]
+script = ExtResource("9_6gslg")
+japanese = "的"
+readings = Array[String](["てき"])
+meanings = Array[String](["-ical", "-ive", "-al", "-ic", "-y", "-like", "-ish", "-sort of", "-kind of", "(something) like", "along the lines of", "-wise", "in terms of", "for", "from the viewpoint of", "from a ... standpoint", "as far as ... is concerned", "Mr.", "Ms.", "Mrs."])
+jlpt_level = 1
+
+[sub_resource type="Resource" id="Resource_sy5lt"]
+script = ExtResource("6_pw0ma")
+raw_text = "的"
+vocab = SubResource("Resource_40fjp")
+reading = "てき"
+
+[sub_resource type="Resource" id="Resource_cvhbe"]
+script = ExtResource("6_pw0ma")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_vwyqw"]
+script = ExtResource("9_6gslg")
+japanese = "改築"
+readings = Array[String](["かいちく"])
+meanings = Array[String](["structural alteration (of a building)", "reconstruction", "rebuilding", "remodelling", "remodeling"])
+
+[sub_resource type="Resource" id="Resource_kc8mt"]
+script = ExtResource("6_pw0ma")
+raw_text = "改築"
+vocab = SubResource("Resource_vwyqw")
+reading = "かいちく"
+
+[sub_resource type="Resource" id="Resource_bt06d"]
+script = ExtResource("6_pw0ma")
+raw_text = "さ"
+reading = "さ"
+
+[sub_resource type="Resource" id="Resource_xsx3j"]
+script = ExtResource("6_pw0ma")
+raw_text = "れ"
+reading = "れ"
+
+[sub_resource type="Resource" id="Resource_2k28n"]
+script = ExtResource("6_pw0ma")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_raon0"]
+script = ExtResource("6_pw0ma")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_1wf4f"]
+script = ExtResource("5_chhic")
+japanese = "わが家は全面的に改築された。"
+native = "Our house was entirely rebuilt."
+parsed = Array[ExtResource("6_pw0ma")]([SubResource("Resource_fig2e"), SubResource("Resource_cb5a7"), SubResource("Resource_7lvmo"), SubResource("Resource_sy5lt"), SubResource("Resource_cvhbe"), SubResource("Resource_kc8mt"), SubResource("Resource_bt06d"), SubResource("Resource_xsx3j"), SubResource("Resource_2k28n"), SubResource("Resource_raon0")])
+_difficulty = 519
+_used_kanji = Array[String](["家", "全", "面", "的", "改", "築"])
+
+[sub_resource type="Resource" id="Resource_61yqg"]
+script = ExtResource("9_6gslg")
+japanese = "彼ら"
+readings = Array[String](["かれら"])
+meanings = Array[String](["they", "them"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_gi566"]
+script = ExtResource("6_pw0ma")
+raw_text = "彼ら"
+vocab = SubResource("Resource_61yqg")
+reading = "かれら"
+
+[sub_resource type="Resource" id="Resource_71djv"]
+script = ExtResource("6_pw0ma")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_kxa5g"]
+script = ExtResource("6_pw0ma")
+raw_text = "家"
+vocab = SubResource("Resource_57yki")
+reading = "いえ"
+
+[sub_resource type="Resource" id="Resource_7547b"]
+script = ExtResource("6_pw0ma")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_wynab"]
+script = ExtResource("6_pw0ma")
+raw_text = "建築"
+vocab = SubResource("Resource_3mmu7")
+reading = "けんちく"
+
+[sub_resource type="Resource" id="Resource_qeg45"]
+script = ExtResource("6_pw0ma")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_dc1q5"]
+script = ExtResource("6_pw0ma")
+raw_text = "とり"
+reading = "とり"
+
+[sub_resource type="Resource" id="Resource_sjig3"]
+script = ExtResource("6_pw0ma")
+raw_text = "かかっ"
+reading = "かかっ"
+
+[sub_resource type="Resource" id="Resource_4kvuf"]
+script = ExtResource("6_pw0ma")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_uf0yb"]
+script = ExtResource("6_pw0ma")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_fnd64"]
+script = ExtResource("5_chhic")
+japanese = "彼らは家の建築にとりかかった。"
+native = "They set about building a house."
+parsed = Array[ExtResource("6_pw0ma")]([SubResource("Resource_gi566"), SubResource("Resource_71djv"), SubResource("Resource_kxa5g"), SubResource("Resource_7547b"), SubResource("Resource_wynab"), SubResource("Resource_qeg45"), SubResource("Resource_dc1q5"), SubResource("Resource_sjig3"), SubResource("Resource_4kvuf"), SubResource("Resource_uf0yb")])
+_difficulty = 588
+_used_kanji = Array[String](["彼", "家", "建", "築"])
+
+[sub_resource type="Resource" id="Resource_f5pow"]
+script = ExtResource("6_pw0ma")
+raw_text = "それ"
+reading = "それ"
+
+[sub_resource type="Resource" id="Resource_1onlu"]
+script = ExtResource("6_pw0ma")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_68v7r"]
+script = ExtResource("9_6gslg")
+japanese = "現存"
+readings = Array[String](["げんぞん", "げんそん"])
+meanings = Array[String](["existing", "living", "extant"])
+
+[sub_resource type="Resource" id="Resource_vcymb"]
+script = ExtResource("6_pw0ma")
+raw_text = "現存"
+vocab = SubResource("Resource_68v7r")
+reading = "げんそん"
+
+[sub_resource type="Resource" id="Resource_1huvw"]
+script = ExtResource("6_pw0ma")
+raw_text = "する"
+reading = "する"
+
+[sub_resource type="Resource" id="Resource_qg76a"]
+script = ExtResource("9_6gslg")
+japanese = "最古"
+readings = Array[String](["さいこ"])
+meanings = Array[String](["the oldest", "the earliest"])
+
+[sub_resource type="Resource" id="Resource_k6d3t"]
+script = ExtResource("6_pw0ma")
+raw_text = "最古"
+vocab = SubResource("Resource_qg76a")
+reading = "さいこ"
+
+[sub_resource type="Resource" id="Resource_20nj4"]
+script = ExtResource("6_pw0ma")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_sji3n"]
+script = ExtResource("9_6gslg")
+japanese = "木造"
+readings = Array[String](["もくぞう"])
+meanings = Array[String](["wooden", "made of wood", "wooden construction"])
+
+[sub_resource type="Resource" id="Resource_ecj7d"]
+script = ExtResource("6_pw0ma")
+raw_text = "木造"
+vocab = SubResource("Resource_sji3n")
+reading = "もくぞう"
+
+[sub_resource type="Resource" id="Resource_1hbf3"]
+script = ExtResource("6_pw0ma")
+raw_text = "建築"
+vocab = SubResource("Resource_3mmu7")
+reading = "けんちく"
+
+[sub_resource type="Resource" id="Resource_1xbd6"]
+script = ExtResource("6_pw0ma")
+raw_text = "で"
+reading = "で"
+
+[sub_resource type="Resource" id="Resource_13n6g"]
+script = ExtResource("6_pw0ma")
+raw_text = "ある"
+reading = "ある"
+
+[sub_resource type="Resource" id="Resource_flbli"]
+script = ExtResource("6_pw0ma")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_0o3n3"]
+script = ExtResource("5_chhic")
+japanese = "それは現存する最古の木造建築である。"
+native = "It's the oldest wooden building in existence."
+parsed = Array[ExtResource("6_pw0ma")]([SubResource("Resource_f5pow"), SubResource("Resource_1onlu"), SubResource("Resource_vcymb"), SubResource("Resource_1huvw"), SubResource("Resource_k6d3t"), SubResource("Resource_20nj4"), SubResource("Resource_ecj7d"), SubResource("Resource_1hbf3"), SubResource("Resource_1xbd6"), SubResource("Resource_13n6g"), SubResource("Resource_flbli")])
+_difficulty = 628
+_used_kanji = Array[String](["現", "存", "最", "古", "木", "造", "建", "築"])
+
+[sub_resource type="Resource" id="Resource_ibqa7"]
+script = ExtResource("9_6gslg")
+japanese = "彼"
+readings = Array[String](["かれ"])
+meanings = Array[String](["he", "him", "boyfriend"])
+jlpt_level = 4
+_difficulty = 31
+
+[sub_resource type="Resource" id="Resource_72p4s"]
+script = ExtResource("6_pw0ma")
+raw_text = "彼"
+vocab = SubResource("Resource_ibqa7")
+reading = "かれ"
+
+[sub_resource type="Resource" id="Resource_b3wdm"]
+script = ExtResource("6_pw0ma")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_u5b03"]
+script = ExtResource("9_6gslg")
+japanese = "莫大"
+readings = Array[String](["ばくだい"])
+meanings = Array[String](["vast", "huge", "immense", "enormous", "colossal", "malva nut (Scaphium affine)"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_qkajc"]
+script = ExtResource("6_pw0ma")
+raw_text = "莫大"
+vocab = SubResource("Resource_u5b03")
+reading = "ばくだい"
+
+[sub_resource type="Resource" id="Resource_7lnee"]
+script = ExtResource("6_pw0ma")
+raw_text = "な"
+reading = "な"
+
+[sub_resource type="Resource" id="Resource_1v8ee"]
+script = ExtResource("9_6gslg")
+japanese = "財産"
+readings = Array[String](["ざいさん"])
+meanings = Array[String](["property", "fortune", "assets"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_4f73n"]
+script = ExtResource("6_pw0ma")
+raw_text = "財産"
+vocab = SubResource("Resource_1v8ee")
+reading = "ざいさん"
+
+[sub_resource type="Resource" id="Resource_bbs5o"]
+script = ExtResource("6_pw0ma")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_mlcvq"]
+script = ExtResource("9_6gslg")
+japanese = "築く"
+readings = Array[String](["きずく"])
+meanings = Array[String](["to build", "to construct", "to erect", "to build up (a reputation, position, fortune, etc.)", "to establish (a relationship, household, tradition, etc.)", "to lay (a foundation)"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_hlo0k"]
+script = ExtResource("6_pw0ma")
+raw_text = "築い"
+vocab = SubResource("Resource_mlcvq")
+reading = "きずい"
+
+[sub_resource type="Resource" id="Resource_pwlnj"]
+script = ExtResource("6_pw0ma")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_dunyx"]
+script = ExtResource("6_pw0ma")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_a1upc"]
+script = ExtResource("5_chhic")
+japanese = "彼は莫大な財産を築いた。"
+native = "He accumulated a large fortune."
+parsed = Array[ExtResource("6_pw0ma")]([SubResource("Resource_72p4s"), SubResource("Resource_b3wdm"), SubResource("Resource_qkajc"), SubResource("Resource_7lnee"), SubResource("Resource_4f73n"), SubResource("Resource_bbs5o"), SubResource("Resource_hlo0k"), SubResource("Resource_pwlnj"), SubResource("Resource_dunyx")])
+_difficulty = 648
+_used_kanji = Array[String](["彼", "莫", "大", "財", "産", "築"])
+
+[sub_resource type="Resource" id="Resource_cmr0g"]
+script = ExtResource("7_pw0ma")
+points = Array[Vector2]([Vector2(29.28, 12.75), Vector2(28.37, 17.23), Vector2(26.57, 21.22), Vector2(24.14, 25.65), Vector2(21.13, 30.27), Vector2(17.58, 34.84)])
+
+[sub_resource type="Resource" id="Resource_4glgk"]
+script = ExtResource("7_pw0ma")
+points = Array[Vector2]([Vector2(28.29, 23.13), Vector2(35.27, 22.37), Vector2(41.19, 21.03), Vector2(47.15, 20.22)])
+
+[sub_resource type="Resource" id="Resource_h6si8"]
+script = ExtResource("7_pw0ma")
+points = Array[Vector2]([Vector2(34.88, 25.38), Vector2(37.78, 28.91), Vector2(39.71, 33)])
+
+[sub_resource type="Resource" id="Resource_m7bvl"]
+script = ExtResource("7_pw0ma")
+points = Array[Vector2]([Vector2(61.35, 10.5), Vector2(60.4, 15.26), Vector2(58.45, 19.66), Vector2(55.78, 24.31), Vector2(52.44, 29.15)])
+
+[sub_resource type="Resource" id="Resource_ba5od"]
+script = ExtResource("7_pw0ma")
+points = Array[Vector2]([Vector2(61.67, 19.81), Vector2(65.14, 19.52), Vector2(70.14, 18.74), Vector2(75.89, 17.61), Vector2(81.57, 16.26), Vector2(86.66, 15.87)])
+
+[sub_resource type="Resource" id="Resource_0dujp"]
+script = ExtResource("7_pw0ma")
+points = Array[Vector2]([Vector2(73.44, 21.44), Vector2(70.59, 26.47), Vector2(64.7, 31.03)])
+
+[sub_resource type="Resource" id="Resource_gtn8a"]
+script = ExtResource("7_pw0ma")
+points = Array[Vector2]([Vector2(21.56, 42.32), Vector2(27.44, 42.33), Vector2(33.91, 41.6), Vector2(40.28, 40.78), Vector2(46.12, 40.14)])
+
+[sub_resource type="Resource" id="Resource_gcgwf"]
+script = ExtResource("7_pw0ma")
+points = Array[Vector2]([Vector2(32.94, 42.76), Vector2(33.93, 48.82), Vector2(33.85, 55.21)])
+
+[sub_resource type="Resource" id="Resource_xvx86"]
+script = ExtResource("7_pw0ma")
+points = Array[Vector2]([Vector2(20.28, 60.71), Vector2(25.1, 60.45), Vector2(29.83, 58.31), Vector2(35.17, 55.91), Vector2(40.44, 53.54), Vector2(44.94, 51.49)])
+
+[sub_resource type="Resource" id="Resource_riwi4"]
+script = ExtResource("7_pw0ma")
+points = Array[Vector2]([Vector2(56.81, 36.06), Vector2(57.08, 42.71), Vector2(55.89, 49.12), Vector2(53.71, 54.48), Vector2(50.35, 58.51)])
+
+[sub_resource type="Resource" id="Resource_64ea3"]
+script = ExtResource("7_pw0ma")
+points = Array[Vector2]([Vector2(58.63, 37.51), Vector2(63.82, 36.75), Vector2(69.64, 35.72), Vector2(73.64, 35.04), Vector2(75.64, 39), Vector2(75.08, 44.76), Vector2(74.95, 49.27), Vector2(76.01, 53.92), Vector2(79.64, 55.74), Vector2(86.9, 55.73), Vector2(90.53, 53.8), Vector2(90.94, 49.47)])
+
+[sub_resource type="Resource" id="Resource_yl28p"]
+script = ExtResource("7_pw0ma")
+points = Array[Vector2]([Vector2(59.88, 44.38), Vector2(65.17, 47.98), Vector2(68.18, 51.46)])
+
+[sub_resource type="Resource" id="Resource_r5lyn"]
+script = ExtResource("7_pw0ma")
+points = Array[Vector2]([Vector2(18.25, 73), Vector2(23.43, 73.43), Vector2(28.55, 73), Vector2(32.66, 72.48), Vector2(37.29, 71.9), Vector2(42.35, 71.29), Vector2(47.72, 70.66), Vector2(53.32, 70.03), Vector2(59.05, 69.43), Vector2(64.81, 68.87), Vector2(70.51, 68.37), Vector2(76.05, 67.94), Vector2(81.34, 67.62), Vector2(86.48, 67.4), Vector2(91.75, 67.75)])
+
+[sub_resource type="Resource" id="Resource_m7x3x"]
+script = ExtResource("7_pw0ma")
+points = Array[Vector2]([Vector2(54, 60.25), Vector2(55.25, 64.11), Vector2(55.26, 67.36), Vector2(55.27, 73.03), Vector2(55.26, 80.07), Vector2(55.22, 87.44), Vector2(55.14, 94.09), Vector2(55, 99.75)])
+
+[sub_resource type="Resource" id="Resource_t3pl1"]
+script = ExtResource("7_pw0ma")
+points = Array[Vector2]([Vector2(51.75, 70.75), Vector2(49.19, 75.19), Vector2(45.8, 78.93), Vector2(41.92, 82.71), Vector2(37.65, 86.41), Vector2(33.09, 89.93), Vector2(28.31, 93.15), Vector2(23.42, 95.96), Vector2(18.5, 98.25)])
+
+[sub_resource type="Resource" id="Resource_n3jgo"]
+script = ExtResource("7_pw0ma")
+points = Array[Vector2]([Vector2(56, 71), Vector2(58.57, 72.89), Vector2(62.34, 75.74), Vector2(66.9, 79.18), Vector2(71.8, 82.89), Vector2(76.62, 86.5), Vector2(80.92, 89.68), Vector2(85.11, 92.53), Vector2(89.5, 95.25)])
+
+[sub_resource type="Resource" id="Resource_tqyf5"]
+script = ExtResource("6_uuh3l")
+stroke_shapes = Array[ExtResource("7_pw0ma")]([SubResource("Resource_cmr0g"), SubResource("Resource_4glgk"), SubResource("Resource_h6si8"), SubResource("Resource_m7bvl"), SubResource("Resource_ba5od"), SubResource("Resource_0dujp"), SubResource("Resource_gtn8a"), SubResource("Resource_gcgwf"), SubResource("Resource_xvx86"), SubResource("Resource_riwi4"), SubResource("Resource_64ea3"), SubResource("Resource_yl28p"), SubResource("Resource_r5lyn"), SubResource("Resource_m7x3x"), SubResource("Resource_t3pl1"), SubResource("Resource_n3jgo")])
+
+[sub_resource type="Resource" id="Resource_fc066"]
+script = ExtResource("9_6gslg")
+japanese = "築く"
+readings = Array[String](["きずく"])
+meanings = Array[String](["to build", "to construct", "to erect", "to build up", "to establish", "to lay a foundation"])
+jlpt_level = 3
+_difficulty = 62
+_used_kanji = Array[String](["築"])
+
+[sub_resource type="Resource" id="Resource_oubv6"]
+script = ExtResource("9_6gslg")
+japanese = "建築"
+readings = Array[String](["けんちく"])
+meanings = Array[String](["construction", "architecture of buildings"])
+jlpt_level = 3
+_difficulty = 62
+_used_kanji = Array[String](["建", "築"])
+
+[sub_resource type="Resource" id="Resource_udwq4"]
+script = ExtResource("9_6gslg")
+japanese = "新築"
+readings = Array[String](["しんちく"])
+meanings = Array[String](["new building", "new construction"])
+jlpt_level = 1
+_difficulty = 122
+_used_kanji = Array[String](["新", "築"])
+
+[sub_resource type="Resource" id="Resource_upngw"]
+script = ExtResource("9_6gslg")
+japanese = "構築"
+readings = Array[String](["こうちく"])
+meanings = Array[String](["construction", "building", "putting up", "creation", "formulation", "architecture"])
+_difficulty = 594
+_used_kanji = Array[String](["構", "築"])
+
+[sub_resource type="Resource" id="Resource_sqsj1"]
+script = ExtResource("9_6gslg")
+japanese = "改築"
+readings = Array[String](["かいちく"])
+meanings = Array[String](["reconstruction", "rebuilding"])
+_difficulty = 721
+_used_kanji = Array[String](["改", "築"])
+
+[sub_resource type="Resource" id="Resource_o3hk1"]
+script = ExtResource("9_6gslg")
+japanese = "築き上げる"
+readings = Array[String](["きずきあげる"])
+meanings = Array[String](["to build", "to construct", "to put up", "to establish", "to create"])
+_difficulty = 833
+_used_kanji = Array[String](["築", "上"])
+
+[sub_resource type="Resource" id="Resource_tggio"]
+script = ExtResource("9_6gslg")
+japanese = "建築家"
+readings = Array[String](["けんちくか"])
+meanings = Array[String](["architect"])
+_difficulty = 1000
+_used_kanji = Array[String](["建", "築", "家"])
+
+[sub_resource type="Resource" id="Resource_3klad"]
+script = ExtResource("9_6gslg")
+japanese = "建築物"
+readings = Array[String](["けんちくぶつ"])
+meanings = Array[String](["building", "structure"])
+_difficulty = 1000
+_used_kanji = Array[String](["建", "築", "物"])
+
+[resource]
+script = ExtResource("1_1agyi")
+symbol = "築"
+card_name = "Build"
+rarity = 4
+abilities = Array[ExtResource("1_i0e2k")]([SubResource("Resource_ytavq"), SubResource("Resource_chhic")])
+tags = Array[int]([9, 15])
+vocabulary = Array[ExtResource("9_6gslg")]([SubResource("Resource_fc066"), SubResource("Resource_oubv6"), SubResource("Resource_udwq4"), SubResource("Resource_upngw"), SubResource("Resource_sqsj1"), SubResource("Resource_o3hk1"), SubResource("Resource_tggio"), SubResource("Resource_3klad")])
+example_sentences = Array[ExtResource("5_chhic")]([SubResource("Resource_xtwr5"), SubResource("Resource_6gslg"), SubResource("Resource_kvat5"), SubResource("Resource_pw0ma"), SubResource("Resource_uuh3l"), SubResource("Resource_1wf4f"), SubResource("Resource_fnd64"), SubResource("Resource_0o3n3"), SubResource("Resource_a1upc")])
+kanji_shape = SubResource("Resource_tqyf5")
+init_aspects = 29
+term_categories = Array[ExtResource("6_hfgbh")]([ExtResource("7_ytavq")])

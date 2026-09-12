@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="Quest_Settler" format=3 uid="uid://tx0keypphxfk"]
+
+[ext_resource type="Script" uid="uid://cjloydxgrv8oa" path="res://quests/settler/settler_quest_challenge.gd" id="1_1jdu3"]
+[ext_resource type="Script" uid="uid://4wq52c05i2oa" path="res://quests/settler/challenges/settler_quest_challenge_run_var.gd" id="2_4qupe"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="5_qhwo7"]
+[ext_resource type="Resource" uid="uid://co3g6h6pf13ta" path="res://characters/jobs/job_porter.tres" id="5_v4vog"]
+[ext_resource type="Resource" uid="uid://dli7oi3la1ubv" path="res://characters/jobs/job_guard.tres" id="6_1jdu3"]
+[ext_resource type="Resource" uid="uid://gb2hon6q3l08" path="res://characters/jobs/job_adventurer.tres" id="7_gg6ra"]
+[ext_resource type="Script" uid="uid://cd4swbq3t72je" path="res://quests/settler/settler_quest_reward.gd" id="8_ip8an"]
+[ext_resource type="Resource" uid="uid://dmbx4ruvg6ls1" path="res://cards/tier5/card_diligence.tres" id="8_q6se4"]
+[ext_resource type="Script" uid="uid://fw1i6f5bcbx0" path="res://quests/settler/rewards/settler_quest_reward_add_card.gd" id="9_1nka6"]
+[ext_resource type="Script" uid="uid://1na7ymvvvbby" path="res://quests/settler/quest_settler.gd" id="10_06gde"]
+[ext_resource type="Script" uid="uid://bxua8gxfjp2wy" path="res://quests/settler/settler_quest_goal.gd" id="11_3orgu"]
+[ext_resource type="Script" uid="uid://20pniory7ov5" path="res://quests/settler/goals/settler_quest_goal_no_loss_survey.gd" id="12_hh5cr"]
+
+[sub_resource type="Resource" id="Resource_3ybpa"]
+script = ExtResource("2_4qupe")
+var_type = 54
+delta = 1
+description = "<term:survey> <term_lower:task>s have extra <term_lower:aspect_slot>s."
+metadata/_custom_type_script = "uid://4wq52c05i2oa"
+
+[sub_resource type="Resource" id="Resource_bjh0l"]
+script = ExtResource("9_1nka6")
+card_type = ExtResource("8_q6se4")
+metadata/_custom_type_script = "uid://fw1i6f5bcbx0"
+
+[sub_resource type="Resource" id="Resource_pm4ck"]
+script = ExtResource("12_hh5cr")
+metadata/_custom_type_script = "uid://20pniory7ov5"
+
+[resource]
+script = ExtResource("10_06gde")
+intro_text = "My shard has perfected the art of safe exploration. We always pack extra supplies and take our time to plan out every step. I'm looking to teach other surveyors these skills."
+challenges = Array[ExtResource("1_1jdu3")]([SubResource("Resource_3ybpa")])
+settler_goals = Array[ExtResource("11_3orgu")]([SubResource("Resource_pm4ck")])
+rewards = Array[ExtResource("8_ip8an")]([SubResource("Resource_bjh0l")])
+restrict_to_jobs = Array[ExtResource("5_qhwo7")]([ExtResource("7_gg6ra"), ExtResource("5_v4vog"), ExtResource("6_1jdu3")])
+quest_id = "settler_diligent_surveyor"
+category = 2
+name = "A Diligent Surveyor"
+metadata/_custom_type_script = "uid://1na7ymvvvbby"

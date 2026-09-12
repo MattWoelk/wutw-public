@@ -1,0 +1,374 @@
+[gd_scene format=3 uid="uid://b5k03f5wr13rr"]
+
+[ext_resource type="Script" uid="uid://c1tbf1bd5ckvu" path="res://cards/deck/card_deck.gd" id="1_yw0n1"]
+[ext_resource type="PackedScene" uid="uid://dxt64nbe0h86f" path="res://aspects/aspect_counter.tscn" id="2_gpwxx"]
+[ext_resource type="Texture2D" uid="uid://dnh8nnyi3kap1" path="res://cards/deck/card_deck_box.png" id="2_oa078"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="3_nc11e"]
+[ext_resource type="Texture2D" uid="uid://btl3skn4s0e1t" path="res://cards/deck/card_deck_label.png" id="3_oym08"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="4_p8fiv"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="5_t0vt2"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="6_4mpcl"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="7_546av"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="8_smpqb"]
+[ext_resource type="Material" uid="uid://dm0coidukcc6" path="res://theme/button/ukiyoe_button_material.tres" id="12_5m22j"]
+[ext_resource type="Script" uid="uid://dm63mtrlfj005" path="res://theme/faded_scroll_container/faded_scroll_container.gd" id="12_8hyvm"]
+[ext_resource type="PackedScene" uid="uid://dgmyeosmc67d7" path="res://cards/card.tscn" id="12_oym08"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="13_mptih"]
+[ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="14_68jvc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oa078"]
+content_margin_top = 11.0
+content_margin_bottom = 6.0
+texture = ExtResource("2_oa078")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa078"]
+bg_color = Color(1, 0.80913, 0.573744, 0.270588)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oa078"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qahrj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cnyvt"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+draw_center = false
+border_width_left = 9
+border_width_top = 9
+border_width_right = 9
+border_width_bottom = 9
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 1.0
+expand_margin_top = 12.0
+expand_margin_bottom = 8.0
+
+[node name="CardDeck" type="Control" unique_id=1530711462]
+custom_minimum_size = Vector2(0, 244)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 7.0
+offset_right = 1886.0
+offset_bottom = 307.0
+mouse_filter = 2
+script = ExtResource("1_yw0n1")
+
+[node name="AddedAnimCard" parent="." unique_id=2002622966 instance=ExtResource("12_oym08")]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -467.0
+offset_right = 185.0
+offset_bottom = -234.99997
+grow_vertical = 0
+scale = Vector2(0.655, 0.655)
+mouse_filter = 2
+mouse_behavior_recursive = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=506575613]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 8
+
+[node name="HBox" type="HBoxContainer" parent="MarginContainer" unique_id=2050300735]
+custom_minimum_size = Vector2(0, 230)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 30
+
+[node name="DrawDeckBox" type="PanelContainer" parent="MarginContainer/HBox" unique_id=1765481229]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 210)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxTexture_oa078")
+
+[node name="Offset" type="Control" parent="MarginContainer/HBox/DrawDeckBox" unique_id=1693699075]
+layout_mode = 2
+
+[node name="LabelTexture_Draw" type="TextureRect" parent="MarginContainer/HBox/DrawDeckBox/Offset" unique_id=1858469477]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 70.0
+offset_right = 122.0
+offset_bottom = 125.0
+texture = ExtResource("3_oym08")
+expand_mode = 1
+metadata/_edit_group_ = true
+
+[node name="DrawPileCount" type="Label" parent="MarginContainer/HBox/DrawDeckBox/Offset/LabelTexture_Draw" unique_id=2006323650]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -9.0
+offset_right = -1.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.15, 0.136825, 0.1035, 0.847059)
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelTexture_Discard" type="TextureRect" parent="MarginContainer/HBox/DrawDeckBox/Offset" unique_id=1445583072]
+self_modulate = Color(0.85, 0.85, 0.85, 1)
+layout_mode = 0
+offset_left = 43.0
+offset_top = 162.0
+offset_right = 105.0
+offset_bottom = 194.0
+texture = ExtResource("3_oym08")
+expand_mode = 1
+metadata/_edit_group_ = true
+
+[node name="DiscardPileCount" type="Label" parent="MarginContainer/HBox/DrawDeckBox/Offset/LabelTexture_Discard" unique_id=412629224]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -19.0
+offset_right = 15.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.15, 0.136825, 0.1035, 0.847059)
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ViewDeckButton" type="Button" parent="MarginContainer/HBox/DrawDeckBox/Offset" unique_id=896744429]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 3.0
+offset_top = -9.0
+offset_right = 147.0
+offset_bottom = 149.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_oa078")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oa078")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oa078")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_oa078")
+theme_override_styles/focus = SubResource("StyleBoxFlat_oa078")
+
+[node name="ViewDiscardButton" type="Button" parent="MarginContainer/HBox/DrawDeckBox/Offset" unique_id=891514129]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 3.0
+offset_top = 151.0
+offset_right = 146.0
+offset_bottom = 196.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oa078")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qahrj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oa078")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_qahrj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qahrj")
+
+[node name="AspectCountersBox" type="VBoxContainer" parent="MarginContainer/HBox/DrawDeckBox/Offset" unique_id=1942771053]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 4.0
+offset_top = -3.0
+offset_right = 146.0
+offset_bottom = 49.0
+size_flags_vertical = 8
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox" unique_id=656581335]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_filter = 2
+
+[node name="AspectCounter_Life" parent="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer" unique_id=990195557 instance=ExtResource("2_gpwxx")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+aspect_type = ExtResource("3_nc11e")
+count = 0
+tooltip_directions = Array[int]([2])
+
+[node name="AspectCounter_Stability" parent="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer" unique_id=787256631 instance=ExtResource("2_gpwxx")]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+aspect_type = ExtResource("4_p8fiv")
+count = 0
+tooltip_directions = Array[int]([2])
+
+[node name="AspectCounter_Change" parent="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer" unique_id=1889443395 instance=ExtResource("2_gpwxx")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+aspect_type = ExtResource("5_t0vt2")
+count = 0
+tooltip_directions = Array[int]([2])
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox" unique_id=1885023906]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_filter = 2
+
+[node name="AspectCounter_Craft" parent="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer2" unique_id=2116088635 instance=ExtResource("2_gpwxx")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+count = 0
+tooltip_directions = Array[int]([2])
+
+[node name="AspectCounter_Connection" parent="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer2" unique_id=873281822 instance=ExtResource("2_gpwxx")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+aspect_type = ExtResource("6_4mpcl")
+count = 0
+tooltip_directions = Array[int]([2])
+
+[node name="AspectCounter_Illumination" parent="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer2" unique_id=965574270 instance=ExtResource("2_gpwxx")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+aspect_type = ExtResource("7_546av")
+count = 0
+tooltip_directions = Array[int]([2])
+
+[node name="AspectCounter_Spirit" parent="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer2" unique_id=468133739 instance=ExtResource("2_gpwxx")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+aspect_type = ExtResource("8_smpqb")
+count = 0
+tooltip_directions = Array[int]([2])
+
+[node name="SortButton" type="Button" parent="MarginContainer/HBox/DrawDeckBox/Offset" unique_id=1207710535]
+unique_name_in_owner = true
+visible = false
+material = ExtResource("12_5m22j")
+instance_shader_parameters/state = 0.0
+custom_maximum_size = Vector2(-1, 32.475)
+layout_mode = 0
+offset_left = 13.0
+offset_top = 127.0
+offset_right = 135.0
+offset_bottom = 159.475
+focus_mode = 0
+theme_override_styles/normal = ExtResource("13_mptih")
+theme_override_styles/pressed = ExtResource("13_mptih")
+theme_override_styles/hover = ExtResource("13_mptih")
+theme_override_styles/hover_pressed = ExtResource("13_mptih")
+theme_override_styles/disabled = ExtResource("13_mptih")
+text = "Sort Hand"
+script = ExtResource("14_68jvc")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="HandSizeAnimationOverlay" type="Panel" parent="MarginContainer/HBox/DrawDeckBox" unique_id=515719476]
+unique_name_in_owner = true
+modulate = Color(0.11399998, 0.76, 0.1570666, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cnyvt")
+metadata/_edit_lock_ = true
+
+[node name="HandScroller" type="ScrollContainer" parent="MarginContainer/HBox" unique_id=226334574]
+unique_name_in_owner = true
+clip_children = 1
+custom_minimum_size = Vector2(0, 295)
+custom_maximum_size = Vector2(-1, 295)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+mouse_filter = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+script = ExtResource("12_8hyvm")
+
+[node name="HandList" type="HBoxContainer" parent="MarginContainer/HBox/HandScroller" unique_id=239392511]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 10
+theme_override_constants/separation = 0
+
+[node name="Card" parent="MarginContainer/HBox/HandScroller/HandList" unique_id=1967489341 instance_placeholder="res://cards/card.tscn"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Card2" parent="MarginContainer/HBox/HandScroller/HandList" unique_id=1141818044 instance_placeholder="res://cards/card.tscn"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Card3" parent="MarginContainer/HBox/HandScroller/HandList" unique_id=50742045 instance_placeholder="res://cards/card.tscn"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[connection signal="mouse_entered" from="MarginContainer/HBox/DrawDeckBox/Offset/ViewDeckButton" to="." method="_on_view_deck_button_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/HBox/DrawDeckBox/Offset/ViewDeckButton" to="." method="_on_view_deck_button_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/HBox/DrawDeckBox/Offset/ViewDeckButton" to="." method="_on_view_deck_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/HBox/DrawDeckBox/Offset/ViewDiscardButton" to="." method="_on_view_discard_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/HBox/DrawDeckBox/Offset/ViewDiscardButton" to="." method="_on_view_discard_button_pressed"]
+[connection signal="clicked" from="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer/AspectCounter_Life" to="." method="_on_view_deck_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer/AspectCounter_Life" to="." method="_on_aspect_counter_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer/AspectCounter_Life" to="." method="_on_aspect_counter_mouse_exited"]
+[connection signal="clicked" from="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer/AspectCounter_Stability" to="." method="_on_view_deck_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer/AspectCounter_Stability" to="." method="_on_aspect_counter_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer/AspectCounter_Stability" to="." method="_on_aspect_counter_mouse_exited"]
+[connection signal="clicked" from="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer/AspectCounter_Change" to="." method="_on_view_deck_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer/AspectCounter_Change" to="." method="_on_aspect_counter_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer/AspectCounter_Change" to="." method="_on_aspect_counter_mouse_exited"]
+[connection signal="clicked" from="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer2/AspectCounter_Craft" to="." method="_on_view_deck_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer2/AspectCounter_Craft" to="." method="_on_aspect_counter_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer2/AspectCounter_Craft" to="." method="_on_aspect_counter_mouse_exited"]
+[connection signal="clicked" from="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer2/AspectCounter_Connection" to="." method="_on_view_deck_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer2/AspectCounter_Connection" to="." method="_on_aspect_counter_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer2/AspectCounter_Connection" to="." method="_on_aspect_counter_mouse_exited"]
+[connection signal="clicked" from="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer2/AspectCounter_Illumination" to="." method="_on_view_deck_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer2/AspectCounter_Illumination" to="." method="_on_aspect_counter_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer2/AspectCounter_Illumination" to="." method="_on_aspect_counter_mouse_exited"]
+[connection signal="clicked" from="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer2/AspectCounter_Spirit" to="." method="_on_view_deck_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer2/AspectCounter_Spirit" to="." method="_on_aspect_counter_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/HBox/DrawDeckBox/Offset/AspectCountersBox/HBoxContainer2/AspectCounter_Spirit" to="." method="_on_aspect_counter_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/HBox/DrawDeckBox/Offset/SortButton" to="." method="_on_sort_button_pressed"]

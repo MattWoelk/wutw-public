@@ -1,0 +1,102 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://b34ql81flrg7e"]
+
+[ext_resource type="Resource" uid="uid://b6wfg75ryyyq6" path="res://art/pieces/piece_hiroshige_noda_river.tres" id="1_u0sbo"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_yo8pj"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_u0sbo"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_rfb12"]
+[ext_resource type="Script" uid="uid://dadces6knf8fj" path="res://events/system/outcomes/run_var/event_outcome_run_var.gd" id="4_fpeab"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="5_afu03"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="6_c7ebe"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="7_rs2vb"]
+[ext_resource type="Resource" uid="uid://g5qj3jyhfqyf" path="res://cards/tier3/card_thousand.tres" id="8_7lb58"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="9_kjrrs"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="10_7rwri"]
+[ext_resource type="Resource" uid="uid://qs0ah5lwmnkn" path="res://cards/tier2/card_chirp.tres" id="11_tkx6c"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="12_34jx3"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="13_dax5y"]
+[ext_resource type="Resource" uid="uid://cmbyg0gub8sum" path="res://stage/spots/river/spot_river.tres" id="14_5uf0k"]
+[ext_resource type="Resource" uid="uid://bb65d05uw68x1" path="res://stage/spots/lake/spot_lake.tres" id="15_jhfu6"]
+
+[sub_resource type="Resource" id="Resource_4tqvn"]
+script = ExtResource("1_yo8pj")
+_texture_path = "res://stage/survey/episodes/episode_many_birds.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_r0p81"]
+script = ExtResource("4_fpeab")
+run_var = 6
+delta = 2
+preview_description = "Gain 2 maximum <term:inspiration>"
+outcome_description = "Gained 2 maximum <term:inspiration>."
+metadata/_custom_type_script = "uid://dadces6knf8fj"
+
+[sub_resource type="Resource" id="Resource_05f3c"]
+script = ExtResource("6_c7ebe")
+bonus_type = ExtResource("5_afu03")
+min_count = 20
+max_count = -1
+extra_per_season = 40
+
+[sub_resource type="Resource" id="Resource_wwjba"]
+script = ExtResource("2_u0sbo")
+label = "Identify the birds."
+requirement = SubResource("Resource_05f3c")
+aspects = Array[ExtResource("3_rfb12")]([null])
+outcome = SubResource("Resource_r0p81")
+outcome_text = "The scouts watch carefully as the birds fly around them.
+
+From their white breasts, black head markings, and sharp calls, they recognize the little birds as plovers. An auspicious omen."
+
+[sub_resource type="Resource" id="Resource_wbt5a"]
+script = ExtResource("9_kjrrs")
+card_type = ExtResource("8_7lb58")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_r2yuo"]
+script = ExtResource("2_u0sbo")
+label = "Count the birds."
+aspects = Array[ExtResource("3_rfb12")]([ExtResource("7_rs2vb")])
+aspects_per_season = Array[ExtResource("3_rfb12")]([null])
+outcome = SubResource("Resource_wbt5a")
+outcome_text = "The scouts try to count the birds surrounding them.
+
+After losing count again and again, they finally give up.
+
+There must be at least a thousand."
+
+[sub_resource type="Resource" id="Resource_ew2v8"]
+script = ExtResource("9_kjrrs")
+card_type = ExtResource("11_tkx6c")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_04b1v"]
+script = ExtResource("2_u0sbo")
+label = "Listen to their calls."
+aspects = Array[ExtResource("3_rfb12")]([ExtResource("10_7rwri")])
+aspects_per_season = Array[ExtResource("3_rfb12")]([null])
+outcome = SubResource("Resource_ew2v8")
+outcome_text = "The scouts stay silent, listening to the birds crying over the water.
+
+Their voices seem chaotic at first, but in time they merge into a strangely soothing cacophony."
+
+[sub_resource type="Resource" id="Resource_r2lln"]
+script = ExtResource("2_u0sbo")
+label = "Flee."
+aspects = Array[ExtResource("3_rfb12")]([null])
+aspects_per_season = Array[ExtResource("3_rfb12")]([null])
+outcome_text = "The scouts run away, disoriented by the seemingly endless number of birds erupting from their surroundings."
+
+[resource]
+script = ExtResource("12_34jx3")
+episode_id = "many_birds"
+title = "The Uncountable Flock"
+biome_types = Array[int]([4])
+spot_types = Array[ExtResource("13_dax5y")]([ExtResource("14_5uf0k"), ExtResource("15_jhfu6")])
+text = "A few scouts break away from the group to examine the banks of a stream.
+
+As they approach the water, a flock of tiny white birds flies up from the reeds.
+
+Before they can react, more and more birds emerge, filling the air with sharp, piping calls."
+background_image = SubResource("Resource_4tqvn")
+background_credit = ExtResource("1_u0sbo")
+choices = Array[ExtResource("2_u0sbo")]([SubResource("Resource_wwjba"), SubResource("Resource_r2yuo"), SubResource("Resource_04b1v"), SubResource("Resource_r2lln")])

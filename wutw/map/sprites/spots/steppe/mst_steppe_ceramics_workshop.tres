@@ -1,0 +1,42 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://cviwnc32oyhfi"]
+
+[ext_resource type="MapSpriteType_Generic" uid="uid://ct25exmbqilhw" path="res://map/sprites/spots/steppe/mst_steppe_clay_pits.tres" id="1_gb5ki"]
+[ext_resource type="MapSpriteType_Building" uid="uid://bumilmefwd6jp" path="res://map/sprites/spots/steppe/mst_steppe_kiln.tres" id="2_bhuwt"]
+[ext_resource type="MapSpriteType_Building" uid="uid://dfc4afwo8gan6" path="res://map/sprites/buildings/houses/mst_house_4.tres" id="3_bhuwt"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://dbvymjix7xud2" path="res://map/sprites/spots/steppe/mst_steppe_pots_painted.tres" id="4_n6m4u"]
+
+[sub_resource type="MapSpriteCollision_Rect" id="MapSpriteCollision_Rect_bhuwt"]
+rect = Rect2(-2.39, 0.855, 4.26, 0.875)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Rect" id="MapSpriteCollision_Rect_55v6n"]
+rect = Rect2(-3.515, -2.26, 6.955, 3.49)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Rect" id="MapSpriteCollision_Rect_n6m4u"]
+rect = Rect2(-6.435, -3.575, 8.51, 2.39)
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_gnkn2"]
+sprite_type = ExtResource("1_gb5ki")
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_hmnbm"]
+sprite_type = ExtResource("2_bhuwt")
+offset = Vector2(-0.44, -2.615)
+scale = 0.72
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_gb5ki"]
+sprite_type = ExtResource("3_bhuwt")
+offset = Vector2(-3.87, -1.495)
+scale = 0.85
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_1au84"]
+sprite_type = ExtResource("4_n6m4u")
+offset = Vector2(-1.705, -1.485)
+scale = 0.67
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_gnkn2"), SubResource("MapSpriteComponent_hmnbm"), SubResource("MapSpriteComponent_gb5ki"), SubResource("MapSpriteComponent_1au84")])
+footprint_radius = 2.055
+must_be_fully_within_clip = true
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Rect_bhuwt"), SubResource("MapSpriteCollision_Rect_55v6n"), SubResource("MapSpriteCollision_Rect_n6m4u")])

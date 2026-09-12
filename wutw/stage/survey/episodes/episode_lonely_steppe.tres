@@ -1,0 +1,112 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://bi2rugancinqf"]
+
+[ext_resource type="Resource" uid="uid://cxxr2hrut8wyw" path="res://art/pieces/piece_hiroshige_otsukihara.tres" id="1_hs4nh"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_qaxut"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_hs4nh"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_yj6tt"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="4_bomnh"]
+[ext_resource type="Script" uid="uid://gu7gcielbwdr" path="res://events/system/outcomes/choose_card/event_outcome_choose_card.gd" id="5_vnddq"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="6_tjrmv"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="7_7uu2k"]
+[ext_resource type="Resource" uid="uid://bm2bwav37g1li" path="res://cards/tier6/card_grief.tres" id="8_nvvnj"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="9_jj7ud"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="10_um53a"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="11_2qpdf"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="12_vjmn2"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="13_iybng"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="14_imud2"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="15_ledtb"]
+
+[sub_resource type="Resource" id="Resource_pmwi5"]
+script = ExtResource("1_qaxut")
+_texture_path = "uid://dptvbqvw3n2lv"
+_is_horizontal = true
+
+[sub_resource type="Resource" id="Resource_bbps8"]
+script = ExtResource("5_vnddq")
+card_tag = 7
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_ieqcu"]
+script = ExtResource("2_hs4nh")
+label = "Keep him company."
+aspects = Array[ExtResource("3_yj6tt")]([ExtResource("4_bomnh")])
+aspects_per_season = Array[ExtResource("3_yj6tt")]([null])
+outcome = SubResource("Resource_bbps8")
+outcome_text = "One scout walks beside the gloomy teammate, offering a friendly ear.
+
+Soon, the lonely man begins to talk of the family he left behind, and of his fear that he will never return home.
+
+The two become close over the next few days."
+
+[sub_resource type="Resource" id="Resource_x4xkc"]
+script = ExtResource("9_jj7ud")
+card_type = ExtResource("8_nvvnj")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_d4ncq"]
+script = ExtResource("2_hs4nh")
+label = "Confront him."
+aspects = Array[ExtResource("3_yj6tt")]([ExtResource("7_7uu2k")])
+outcome = SubResource("Resource_x4xkc")
+outcome_text = "The group forms a circle around the downcast man.
+
+A few scouts demand to know why he keeps such a slow pace. Embarrassed, the man apologizes and rejoins the group.
+
+The next morning, they find his mat empty. After calling for him for hours, they realize that he isn't returning."
+
+[sub_resource type="Resource" id="Resource_w0hxf"]
+script = ExtResource("11_2qpdf")
+delta = 4
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_he10p"]
+script = ExtResource("13_iybng")
+bonus_type = ExtResource("12_vjmn2")
+min_count = 20
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_3e2ia"]
+script = ExtResource("2_hs4nh")
+label = "Sing to raise morale."
+requirement = SubResource("Resource_he10p")
+aspects = Array[ExtResource("3_yj6tt")]([ExtResource("10_um53a")])
+outcome = SubResource("Resource_w0hxf")
+outcome_text = "The group begins to sing a cheerful walking song.
+
+The happy tune sounds hollow at first, lost in the wide expanse, but soon verses are interspersed with bouts of laughter and faces begin to brighten.
+
+The lagging scout can't help but join in when he recognizes a song from his childhood.
+"
+
+[sub_resource type="Resource" id="Resource_1ktv4"]
+script = ExtResource("9_jj7ud")
+card_type = ExtResource("8_nvvnj")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_i4uxt"]
+script = ExtResource("2_hs4nh")
+label = "Let him be."
+aspects = Array[ExtResource("3_yj6tt")]([null])
+aspects_per_season = Array[ExtResource("3_yj6tt")]([null])
+outcome = SubResource("Resource_1ktv4")
+outcome_text = "Not wanting to pry and thinking it best to leave the man in peace, the group continues on without stopping.
+
+As the day wears on and the shadows grow longer, the scouts realize that the familiar lonely figure is nowhere to be seen.
+
+The explorers make camp for the night and wait for him, but he does not return."
+
+[resource]
+script = ExtResource("14_imud2")
+episode_id = "lonely_steppe"
+title = "The Lonely Steppe"
+biome_types = Array[int]([5])
+text = "The surveyors make their way through a lonely steppe. The wind howls mournfully in the tall grasses, rustling the leaves of the few scattered trees.
+
+The days pass with no sign of the bleak landscape ending, and melancholy spreads among the group.
+
+One of the explorers has grown increasingly withdrawn. He begins lagging behind, walking with his head down."
+background_image = SubResource("Resource_pmwi5")
+background_credit = ExtResource("1_hs4nh")
+choices = Array[ExtResource("2_hs4nh")]([SubResource("Resource_ieqcu"), SubResource("Resource_d4ncq"), SubResource("Resource_3e2ia"), SubResource("Resource_i4uxt")])

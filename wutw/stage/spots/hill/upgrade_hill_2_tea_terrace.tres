@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://byoyp2ag51nm6"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_8is3r"]
+[ext_resource type="Resource" uid="uid://hrw4byexrnrj" path="res://stage/spots/hill/upgrade_hill_3_teahouse_pavilion.tres" id="2_704t3"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_usyod"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_rb730"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="4_lyr84"]
+[ext_resource type="Resource" uid="uid://cfuqwl06ioxwd" path="res://stage/spots/hill/spot_hill.tres" id="7_lyr84"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="7_va5sa"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="8_xcxfe"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://b548ltw41s15m" path="res://map/sprites/hills/mst_hill_6.tres" id="9_it3os"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://chlfcnqbpau20" path="res://map/sprites/hills/mst_hill_3.tres" id="10_bw01h"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://c23xw6irwc0ik" path="res://map/sprites/hills/mst_hill_2.tres" id="11_axjna"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dgsucgxy4wy2k" path="res://map/sprites/hills/mst_hill_4.tres" id="12_1tcvr"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dqbot5dm01cko" path="res://map/sprites/hills/mst_hill_5.tres" id="13_vk64u"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://difbd6y0w4ell" path="res://map/sprites/hills/mst_hill_1.tres" id="14_spvxh"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://bsy1amhvftcd4" path="res://map/sprites/spots/hills/mst_hills_tea_terraces.tres" id="15_4brf1"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://bvhima0yuqcu3" path="res://map/sprites/spots/hills/mst_hills_bamboo_grove.tres" id="16_3x6qh"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="17_w43dk"]
+
+[sub_resource type="Resource" id="Resource_c8io4"]
+script = ExtResource("17_w43dk")
+old_sprite_type = ExtResource("16_3x6qh")
+new_sprite_type = ExtResource("15_4brf1")
+extra_removables = Array[MapSpriteType]([ExtResource("9_it3os"), ExtResource("10_bw01h"), ExtResource("11_axjna"), ExtResource("12_1tcvr"), ExtResource("13_vk64u"), ExtResource("14_spvxh")])
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_8is3r")
+spot_upgrade_id = "hill_tea_terrace"
+name = "Tea Terrace"
+description = "Long before these leaves meet a cup, they spend their youth looking down from the ledges."
+required_aspects = Array[ExtResource("3_rb730")]([ExtResource("7_va5sa")])
+granted_bonuses = Dictionary[ExtResource("2_usyod"), int]({
+ExtResource("4_lyr84"): 15
+})
+child_upgrades = Array[ExtResource("1_8is3r")]([ExtResource("2_704t3")])
+spot = ExtResource("7_lyr84")
+visuals = Array[ExtResource("8_xcxfe")]([SubResource("Resource_c8io4")])
+tags = Array[int]([1])

@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://b7v0xymh0kmyw"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_p7rxx"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_2wj2c"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="3_x60le"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="4_rbecg"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="4_x60le"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="5_apm4w"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="7_y6imy"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="8_20jrm"]
+[ext_resource type="Resource" uid="uid://bom6dwl3t2obc" path="res://stage/spots/cliff/spot_cliff.tres" id="9_1le4a"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="10_cuys2"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://y23kbkxcmjwa" path="res://map/sprites/spots/cliff/mst_cliff_skybound_stair.tres" id="11_t15r1"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://djerja2u1qwfd" path="res://map/sprites/spots/cliff/mst_cliff_climbing_trial.tres" id="12_3vir4"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="13_djny5"]
+
+[sub_resource type="Resource" id="Resource_83vt8"]
+script = ExtResource("13_djny5")
+old_sprite_type = ExtResource("12_3vir4")
+new_sprite_type = ExtResource("11_t15r1")
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_p7rxx")
+spot_upgrade_id = "cliff_giant_stair"
+name = "Skybound Stair"
+description = "These steps look like they have been carved for, or perhaps by, giants, yet most can climb them with enough effort."
+required_aspects = Array[ExtResource("4_x60le")]([ExtResource("7_y6imy"), ExtResource("8_20jrm")])
+granted_bonuses = Dictionary[ExtResource("2_2wj2c"), int]({
+ExtResource("3_x60le"): 20,
+ExtResource("4_rbecg"): 10,
+ExtResource("5_apm4w"): 20
+})
+spot = ExtResource("9_1le4a")
+visuals = Array[ExtResource("10_cuys2")]([SubResource("Resource_83vt8")])
+unique_per_run = true
+min_main_quest_progress = 110

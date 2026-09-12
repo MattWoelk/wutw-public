@@ -1,0 +1,34 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://ch4crcvn6cov8"]
+
+[ext_resource type="MapSpriteType_Composite" uid="uid://cpmm5kdehu4ys" path="res://map/sprites/spots/mountain/mst_mountain_snowcapped_peaks.tres" id="1_uq1s5"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://bpcvr54gbo0cw" path="res://map/sprites/spots/mountain/mst_mountain_verdant_hollow_cave.tres" id="2_s3hp0"]
+[ext_resource type="MapSpriteType_Tree" uid="uid://ko4kxb2rhd1i" path="res://map/sprites/trees/deciduous/mst_tree_deciduous_5_noprepass.tres" id="3_s3hp0"]
+[ext_resource type="MapSpriteType_Tree" uid="uid://b0n4gg4dwbq8s" path="res://map/sprites/trees/deciduous/mst_tree_deciduous_2.tres" id="4_s2qsu"]
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_ubdba"]
+p1 = Vector2(-5.925, -0.415)
+p2 = Vector2(5.44, 0.41)
+p3 = Vector2(0.55, -2.725)
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_y5lky"]
+sprite_type = ExtResource("1_uq1s5")
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_g7pe5"]
+sprite_type = ExtResource("2_s3hp0")
+offset = Vector2(4.155, -0.385)
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_62hwl"]
+sprite_type = ExtResource("3_s3hp0")
+offset = Vector2(3.065, 0.265)
+scale = 0.48
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_2to82"]
+sprite_type = ExtResource("4_s2qsu")
+offset = Vector2(5.1, -0.145)
+scale = 0.6
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_y5lky"), SubResource("MapSpriteComponent_g7pe5"), SubResource("MapSpriteComponent_62hwl"), SubResource("MapSpriteComponent_2to82")])
+footprint_radius = 2.2
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Triangle_ubdba")])

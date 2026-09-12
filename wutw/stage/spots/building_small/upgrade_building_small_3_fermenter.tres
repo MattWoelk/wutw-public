@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://c0511h8unpsdb"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_befe3"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_6c6j3"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="3_6c6j3"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="4_rsxqt"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="5_3npfr"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="6_rsxqt"]
+[ext_resource type="Resource" uid="uid://w8n0bwomyvod" path="res://stage/spots/building_small/spot_building_small.tres" id="7_i771r"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="8_uxblw"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://c0i0fodphvut1" path="res://map/sprites/spots/small_building/mst_small_building_fermenter.tres" id="9_bdip6"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://d4nj2286tk0h5" path="res://map/sprites/spots/small_building/mst_small_building_noodle_stall.tres" id="10_wro05"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="11_su1e7"]
+
+[sub_resource type="Resource" id="Resource_quifj"]
+script = ExtResource("11_su1e7")
+old_sprite_type = ExtResource("10_wro05")
+new_sprite_type = ExtResource("9_bdip6")
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_befe3")
+spot_upgrade_id = "building_small_fermenter"
+name = "Fermentation Lodge"
+description = "A moss-stained hut smelling of soy and brine, with cellars full of earthen crocks cradling slumbering radishes."
+required_aspects = Array[ExtResource("4_rsxqt")]([ExtResource("5_3npfr"), ExtResource("6_rsxqt")])
+granted_bonuses = Dictionary[ExtResource("2_6c6j3"), int]({
+ExtResource("3_6c6j3"): 25
+})
+spot = ExtResource("7_i771r")
+visuals = Array[ExtResource("8_uxblw")]([SubResource("Resource_quifj")])
+min_main_quest_progress = 110

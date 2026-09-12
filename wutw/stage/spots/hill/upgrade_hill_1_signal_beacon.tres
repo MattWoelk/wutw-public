@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://cv742rumu87mh"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_uhdbx"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_majnr"]
+[ext_resource type="Resource" uid="uid://46l0ke5bwh6l" path="res://stage/spots/hill/upgrade_hill_2_messenger_tower.tres" id="2_w414l"]
+[ext_resource type="Resource" uid="uid://bl4vvxak4l0i1" path="res://stage/spots/hill/upgrade_hill_2_windmill.tres" id="3_he245"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_w414l"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="4_h2cav"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="5_he245"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="7_q7kpf"]
+[ext_resource type="Resource" uid="uid://cfuqwl06ioxwd" path="res://stage/spots/hill/spot_hill.tres" id="9_1ls08"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="10_rxh77"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://b548ltw41s15m" path="res://map/sprites/hills/mst_hill_6.tres" id="11_pfxat"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://chlfcnqbpau20" path="res://map/sprites/hills/mst_hill_3.tres" id="12_wqekm"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://c23xw6irwc0ik" path="res://map/sprites/hills/mst_hill_2.tres" id="13_n0wv6"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dgsucgxy4wy2k" path="res://map/sprites/hills/mst_hill_4.tres" id="14_rg65p"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dqbot5dm01cko" path="res://map/sprites/hills/mst_hill_5.tres" id="15_kes5k"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://difbd6y0w4ell" path="res://map/sprites/hills/mst_hill_1.tres" id="16_naltq"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://chbfh2oc362kc" path="res://map/sprites/spots/hills/mst_hills_signal_beacon.tres" id="17_4lr5e"]
+[ext_resource type="Script" uid="uid://cm6qovq4s06ky" path="res://stage/spots/spot_upgrade_visual_replace.gd" id="18_2o3nb"]
+[ext_resource type="Script" uid="uid://dvrtuqbmx4v30" path="res://stage/spots/spot_upgrade_visual_add.gd" id="19_5m5v0"]
+
+[sub_resource type="Resource" id="Resource_t8luf"]
+script = ExtResource("18_2o3nb")
+old_sprite_types = Array[MapSpriteType]([ExtResource("11_pfxat"), ExtResource("12_wqekm"), ExtResource("13_n0wv6"), ExtResource("14_rg65p"), ExtResource("15_kes5k"), ExtResource("16_naltq")])
+new_sprite_type = ExtResource("17_4lr5e")
+extra_removables = Array[MapSpriteType]([ExtResource("11_pfxat"), ExtResource("12_wqekm"), ExtResource("13_n0wv6"), ExtResource("14_rg65p"), ExtResource("15_kes5k"), ExtResource("16_naltq")])
+metadata/_custom_type_script = "uid://cm6qovq4s06ky"
+
+[sub_resource type="Resource" id="Resource_2kwdd"]
+script = ExtResource("19_5m5v0")
+sprite_type = ExtResource("17_4lr5e")
+extra_removables = Array[MapSpriteType]([ExtResource("11_pfxat"), ExtResource("12_wqekm"), ExtResource("13_n0wv6"), ExtResource("14_rg65p"), ExtResource("15_kes5k"), ExtResource("16_naltq")])
+metadata/_custom_type_script = "uid://dvrtuqbmx4v30"
+
+[resource]
+script = ExtResource("1_uhdbx")
+spot_upgrade_id = "hill_beacon"
+name = "Signal Beacon"
+description = "A bonfire on a pole, enough to alert far-off settlements in an emergency."
+required_aspects = Array[ExtResource("3_w414l")]([ExtResource("7_q7kpf")])
+granted_bonuses = Dictionary[ExtResource("2_majnr"), int]({
+ExtResource("4_h2cav"): 5,
+ExtResource("5_he245"): 5
+})
+child_upgrades = Array[ExtResource("1_uhdbx")]([ExtResource("2_w414l"), ExtResource("3_he245")])
+spot = ExtResource("9_1ls08")
+visuals = Array[ExtResource("10_rxh77")]([SubResource("Resource_t8luf"), SubResource("Resource_2kwdd")])

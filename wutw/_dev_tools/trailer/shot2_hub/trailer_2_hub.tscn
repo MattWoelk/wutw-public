@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://cwcxvbgr22cb7"]
+
+[ext_resource type="PackedScene" uid="uid://bdxi78wdduwfu" path="res://hub/hub_content.scn" id="1_6ebxt"]
+[ext_resource type="Script" uid="uid://dhuxnehxcifvi" path="res://_dev_tools/trailer/shot2_hub/trailer_2_hub.gd" id="1_ux0is"]
+[ext_resource type="PackedScene" uid="uid://b238lww654yyw" path="res://_dev_tools/trailer/shot2_hub/character/teo_trailer.tscn" id="3_oywfe"]
+
+[sub_resource type="Animation" id="Animation_orm4f"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(557.916, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(232.507, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera:zoom:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.835, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera:zoom:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.835, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_oywfe"]
+resource_name = "pan"
+length = 15.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(530, -0.25, 0, 0.25, 0, 558, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 11.02)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(528, -0.25, 0, 2.53333, -52.2531, 233, -0.853333, -5.6364, 0.25, 0),
+"times": PackedFloat32Array(0, 11.02)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera:zoom:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(1.835, -0.25, 0, 0.25, 0, 1.88104, -1.65968, -0.0415905, 2.04146, 0.0511576, 2.6, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 5, 11.04)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera:zoom:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(1.835, -0.25, 0, 0.25, 0, 1.88104, -1.66201, -0.0418151, 2.03333, 0.0511574, 2.6, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 5, 11.04)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n86b7"]
+_data = {
+&"RESET": SubResource("Animation_orm4f"),
+&"pan": SubResource("Animation_oywfe")
+}
+
+[node name="Trailer2_Hub" type="Node2D" unique_id=1819132525]
+script = ExtResource("1_ux0is")
+metadata/movie_file = "C:/Users/max99/rendered_movies/2_hub.avi"
+
+[node name="HubContent" parent="." unique_id=1219285745 instance=ExtResource("1_6ebxt")]
+unique_name_in_owner = true
+
+[node name="MonkCharacterBack" parent="." unique_id=854105509 instance=ExtResource("3_oywfe")]
+unique_name_in_owner = true
+z_index = 1111
+texture_filter = 6
+position = Vector2(582.99994, 248.99998)
+scale = Vector2(0.0589053, 0.0589053)
+
+[node name="Camera" type="Camera2D" parent="." unique_id=1454814876]
+unique_name_in_owner = true
+z_index = 1000
+position = Vector2(557.916, 232.507)
+zoom = Vector2(1.835, 1.835)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1724866048]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_n86b7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1416441141]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.0
+offset_top = -8.0
+offset_right = 1938.0
+offset_bottom = 1092.0

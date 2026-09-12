@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://bg32qkqbt7iyx"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_y6sda"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_kv1r6"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_g4unq"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="3_o5dh7"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="4_ico28"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="6_djkyt"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="7_oq8y0"]
+[ext_resource type="Resource" uid="uid://dxoxvtquc3hu2" path="res://stage/spots/mountain/spot_mountain.tres" id="8_djkyt"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_oq8y0"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://brwjrwyfuhi35" path="res://map/sprites/spots/mountain/mst_mountain_lava_forges.tres" id="10_buy6u"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://yi6r4d10vn2d" path="res://map/sprites/mountains/mst_mountain_1_medium.tres" id="10_gm7dd"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://desakgu6q3yov" path="res://map/sprites/mountains/mst_mountain_2_large.tres" id="11_80na7"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://4uknhohkpjxh" path="res://map/sprites/spots/mountain/mst_mountain_smoldering_crater.tres" id="11_t53m6"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://c3u877m1spx0" path="res://map/sprites/mountains/mst_mountain_3_large.tres" id="12_5e3fe"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="12_6e3kd"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://doqqvl0x3b3g4" path="res://map/sprites/mountains/mst_mountain_4_small.tres" id="13_ge2ds"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bxr2aj680eaqd" path="res://map/sprites/mountains/mst_mountain_5_small.tres" id="14_jd1g2"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cekrboxmhdmhk" path="res://map/sprites/mountains/mst_mountain_6_tiny.tres" id="15_ennv7"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cjbrxida4odnk" path="res://map/sprites/mountains/mst_mountain_7_tiny.tres" id="16_ct2xm"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://56t2rh2pg58y" path="res://map/sprites/mountains/mst_mountain_8_medium.tres" id="17_qtgmj"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://csjeschaiy5ct" path="res://map/sprites/mountains/mst_mountain_9_large.tres" id="18_5sbsr"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bctu7rlwqc3o7" path="res://map/sprites/mountains/mst_mountain_10_medium.tres" id="19_knqib"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://t2knd16pwuwg" path="res://map/sprites/mountains/mst_mountain_11_medium.tres" id="20_pennm"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dxba886xk8sch" path="res://map/sprites/mountains/mst_mountain_12_pair.tres" id="21_eeyx8"]
+
+[sub_resource type="Resource" id="Resource_8ee0r"]
+script = ExtResource("12_6e3kd")
+old_sprite_type = ExtResource("11_t53m6")
+new_sprite_type = ExtResource("10_buy6u")
+biome = 7
+extra_removables = Array[MapSpriteType]([ExtResource("10_gm7dd"), ExtResource("11_80na7"), ExtResource("12_5e3fe"), ExtResource("13_ge2ds"), ExtResource("14_jd1g2"), ExtResource("15_ennv7"), ExtResource("16_ct2xm"), ExtResource("17_qtgmj"), ExtResource("18_5sbsr"), ExtResource("19_knqib"), ExtResource("20_pennm"), ExtResource("21_eeyx8")])
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_y6sda")
+spot_upgrade_id = "mountain_forges"
+name = "Lava-Fed Forges"
+description = "Metal melts like wax in the lava flowing down these slopes."
+required_aspects = Array[ExtResource("3_g4unq")]([ExtResource("6_djkyt"), ExtResource("7_oq8y0")])
+granted_bonuses = Dictionary[ExtResource("2_kv1r6"), int]({
+ExtResource("3_o5dh7"): 15,
+ExtResource("4_ico28"): 5
+})
+spot = ExtResource("8_djkyt")
+visuals = Array[ExtResource("9_oq8y0")]([SubResource("Resource_8ee0r")])
+tags = Array[int]([2])

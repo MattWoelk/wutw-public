@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://c5yke2r3u1qn0"]
+
+[ext_resource type="Script" uid="uid://4v71xg4crckb" path="res://hub/museum/museum_detail_shop.gd" id="1_x6337"]
+[ext_resource type="Resource" uid="uid://b8s8xlkfbc2b7" path="res://shops/accord_monument/shop_accord_monument.tres" id="2_8rm3u"]
+[ext_resource type="Shader" uid="uid://xfg5dy6oupgw" path="res://stage/hauntings/haunting_details.gdshader" id="3_w7fcx"]
+[ext_resource type="Resource" uid="uid://bu7e240ilyfw5" path="res://shops/trade/shop_trade.tres" id="3_x6337"]
+[ext_resource type="Resource" uid="uid://rjtenwhw6upt" path="res://skills/capital/skill_capital_shop_trade.tres" id="4_0n6v4"]
+[ext_resource type="Texture2D" uid="uid://dhjw5ubvrkwx8" path="res://stage/hauntings/haunting_frame_edge.png" id="4_2bww0"]
+[ext_resource type="Texture2D" uid="uid://dugg0wjlnj6tp" path="res://events/landmark/communal_baths/communal_baths.png" id="4_vkuog"]
+[ext_resource type="PackedScene" uid="uid://dbkrwj5jf26v1" path="res://theme/credits_icon/credits_icon.tscn" id="5_vkuog"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="11_cqx84"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vemot"]
+shader = ExtResource("3_w7fcx")
+shader_parameter/mask = ExtResource("4_2bww0")
+
+[node name="MuseumDetail_Shop" type="MarginContainer" unique_id=1965307021]
+offset_right = 660.0
+offset_bottom = 1013.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+script = ExtResource("1_x6337")
+accord_monument_shop_type = ExtResource("2_8rm3u")
+trade_shop_type = ExtResource("3_x6337")
+trade_shop_skill = ExtResource("4_0n6v4")
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=1866367615]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TitleLabel" type="Label" parent="VBox" unique_id=2074372801]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Outdoor Baths"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBox" unique_id=1963327151]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBox/MarginContainer2" unique_id=1395575102]
+layout_mode = 2
+
+[node name="MainText" parent="VBox/MarginContainer2/HBoxContainer" unique_id=1924837856 instance=ExtResource("11_cqx84")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+text = "Warehouses in this settlement turn up empty overnight. Households run out of food twice as fast.
+
+Whispers speak of people with mouths hiding behind people's heads, covered by locks of hair. The most common story is of the Futakuchi Onna, a lady who smiles sweetly while her hair stirs behind her like a nest of living threads, feeding a hidden mouth that demands its share of every harvest. Some claim she was once a leader who hoarded plenty while others starved, and that her second mouth is of those she wronged, forever consuming what she once denied."
+fit_content = true
+tooltip_directions = Array[int]([5, 1, 3])
+
+[node name="Illustration" type="TextureRect" parent="VBox/MarginContainer2/HBoxContainer" unique_id=1930856967]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_vemot")
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("4_vkuog")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="CreditsIcon" parent="VBox/MarginContainer2/HBoxContainer/Illustration" unique_id=1710816106 instance=ExtResource("5_vkuog")]
+unique_name_in_owner = true
+layout_mode = 1

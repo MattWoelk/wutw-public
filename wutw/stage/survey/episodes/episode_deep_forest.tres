@@ -1,0 +1,102 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://ckklexsliovoc"]
+
+[ext_resource type="Resource" uid="uid://cbhp2yggclxfu" path="res://art/pieces/piece_hasui_sanpoji_pond.tres" id="1_2426b"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_ctqc8"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="1_fs755"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="2_ctqc8"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="3_2426b"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="4_2y2xf"]
+[ext_resource type="Script" uid="uid://gu7gcielbwdr" path="res://events/system/outcomes/choose_card/event_outcome_choose_card.gd" id="5_8io4s"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="6_2o3pu"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="7_he6hs"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="8_xcoa0"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="9_61l0w"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="10_n6c7v"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="11_k6wat"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="12_8fn6d"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="13_ij4wj"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="14_mg7t2"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="15_2um5f"]
+
+[sub_resource type="Resource" id="Resource_w2xts"]
+script = ExtResource("1_ctqc8")
+_texture_path = "uid://bufqb645s3gl6"
+_is_horizontal = true
+metadata/_custom_type_script = "uid://c7u2t141hgkj5"
+
+[sub_resource type="Resource" id="Resource_7obml"]
+script = ExtResource("5_8io4s")
+card_tag = 2
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_qpf3j"]
+script = ExtResource("1_fs755")
+label = "Research the plant life."
+aspects = Array[ExtResource("2_ctqc8")]([ExtResource("3_2426b"), ExtResource("4_2y2xf")])
+outcome = SubResource("Resource_7obml")
+outcome_text = "One of the scholars catalogues the local plant life, recording her findings."
+metadata/_custom_type_script = "uid://dlmpygdk2j680"
+
+[sub_resource type="Resource" id="Resource_1quea"]
+script = ExtResource("5_8io4s")
+card_tag = 3
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_w5g06"]
+script = ExtResource("1_fs755")
+label = "Look for local animals."
+aspects = Array[ExtResource("2_ctqc8")]([ExtResource("7_he6hs")])
+outcome = SubResource("Resource_1quea")
+outcome_text = "One of the scouts spends the afternoon walking among the trees and noting every animal she encounters."
+metadata/_custom_type_script = "uid://dlmpygdk2j680"
+
+[sub_resource type="Resource" id="Resource_a678s"]
+script = ExtResource("9_61l0w")
+delta = 5
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_lwfjw"]
+script = ExtResource("11_k6wat")
+bonus_type = ExtResource("10_n6c7v")
+min_count = 30
+max_count = -1
+extra_per_season = 40
+metadata/_custom_type_script = "uid://dfaio0ey0wbra"
+
+[sub_resource type="Resource" id="Resource_qar7k"]
+script = ExtResource("1_fs755")
+label = "Paint the trees."
+requirement = SubResource("Resource_lwfjw")
+aspects = Array[ExtResource("2_ctqc8")]([ExtResource("8_xcoa0")])
+outcome = SubResource("Resource_a678s")
+outcome_text = "A particularly artistic member of the team paints the forest onto a sheet of paper. Someday they will get it printed."
+metadata/_custom_type_script = "uid://dlmpygdk2j680"
+
+[sub_resource type="Resource" id="Resource_i8nrn"]
+script = ExtResource("13_ij4wj")
+bonus_type = ExtResource("12_8fn6d")
+amount = 15
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_vmr3k"]
+script = ExtResource("1_fs755")
+label = "Gather edible plants."
+aspects = Array[ExtResource("2_ctqc8")]([null])
+aspects_per_season = Array[ExtResource("2_ctqc8")]([null])
+outcome = SubResource("Resource_i8nrn")
+outcome_text = "Several members of the team walk the camp perimeter gathering berries and wild roots. Just enough for a humble dinner."
+metadata/_custom_type_script = "uid://dlmpygdk2j680"
+
+[resource]
+script = ExtResource("14_mg7t2")
+episode_id = "deep_forest"
+title = "Deep in the Forest"
+biome_types = Array[int]([9])
+text = "The survey team has found itself deep in the forest. The trees grow close here, the canopy blocking all but a few rays of sunshine.
+
+They decide to rest for a while, but a few of the members want to make better use of their time."
+background_image = SubResource("Resource_w2xts")
+background_credit = ExtResource("1_2426b")
+choices = Array[ExtResource("1_fs755")]([SubResource("Resource_qpf3j"), SubResource("Resource_w5g06"), SubResource("Resource_qar7k"), SubResource("Resource_vmr3k")])
+metadata/_custom_type_script = "uid://xa1k8k6o7j78"

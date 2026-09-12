@@ -1,0 +1,519 @@
+[gd_scene load_steps=43 format=3 uid="uid://baxtkf8ovscfs"]
+
+[ext_resource type="Script" uid="uid://sv3qhsqk33aj" path="res://stage/card_reward_choice.gd" id="1_4rwpr"]
+[ext_resource type="Theme" uid="uid://bneu0powe6n80" path="res://theme/theme_ukiyoe.tres" id="2_57b83"]
+[ext_resource type="PackedScene" uid="uid://b5k16hpo8080v" path="res://theme/faded_background/faded_background.tscn" id="2_75pa7"]
+[ext_resource type="PackedScene" uid="uid://b6ob53b0vla40" path="res://theme/scroll_panel/scroll_panel_big.tscn" id="2_kwfbw"]
+[ext_resource type="Shader" uid="uid://bbe7ginxustev" path="res://theme/scroll_panel/scroll_panel_dowel.gdshader" id="3_75pa7"]
+[ext_resource type="Shader" uid="uid://cy23kwgtjt4et" path="res://theme/panel/panel.gdshader" id="3_ngfg1"]
+[ext_resource type="Texture2D" uid="uid://b0cvn7ev1bwut" path="res://theme/scroll_panel/dowel_wood.png" id="4_ny5j0"]
+[ext_resource type="Texture2D" uid="uid://cgsn7350xgqr5" path="res://theme/panel/panel_bg.png" id="4_uaf8d"]
+[ext_resource type="Shader" uid="uid://ygmrqrvg5hpm" path="res://theme/button/ukiyoe_button.gdshader" id="5_7s4lj"]
+[ext_resource type="Texture2D" uid="uid://bnkoruxi23qsp" path="res://theme/panel/panel_frame.png" id="5_kwfbw"]
+[ext_resource type="PackedScene" uid="uid://i2fmn1y05u5y" path="res://aspects/aspect_counters_panel.tscn" id="5_wn6rg"]
+[ext_resource type="Texture2D" uid="uid://ctgl61r3xxsqv" path="res://theme/button/button_fill.png" id="6_y630m"]
+[ext_resource type="Texture2D" uid="uid://blje81yu8734p" path="res://theme/button/button_shape.png" id="7_ngfg1"]
+[ext_resource type="Texture2D" uid="uid://doe4603a6ngco" path="res://theme/button/button_outline.png" id="8_uaf8d"]
+[ext_resource type="Texture2D" uid="uid://cwubixgc8n0yr" path="res://theme/button/button_swish_left.png" id="9_kwfbw"]
+[ext_resource type="Texture2D" uid="uid://n6l17h4ysayj" path="res://theme/button/button_swish_right.png" id="10_75pa7"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="11_ny5j0"]
+[ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="12_u6cx3"]
+[ext_resource type="WwiseEvent" uid="uid://cb88kcuutpvmt" path="res://Wwise/resources/Event/{158E2442-012A-4822-BC23-73BDEE81C212}.tres" id="18_ny5j0"]
+
+[sub_resource type="Gradient" id="Gradient_ofyuc"]
+offsets = PackedFloat32Array(0, 0.196721, 0.460041, 0.525615, 0.603484, 0.732582, 1)
+colors = PackedColorArray(0.59, 0.43424, 0.3068, 0.796078, 0.48, 0.35328, 0.2496, 0.294118, 0.48, 0.35328, 0.2496, 0.0116377, 0.48, 0.35328, 0.2496, 0, 0.48, 0.35328, 0.2496, 0.0431956, 0.48, 0.35328, 0.2496, 0.34902, 0.4, 0.2944, 0.208, 0.929412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g5dkl"]
+gradient = SubResource("Gradient_ofyuc")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_0fvof"]
+colors = PackedColorArray(0.331639, 0.33164, 0.331639, 1, 0.961814, 0.961814, 0.961814, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0fvof"]
+frequency = 0.0035
+domain_warp_amplitude = 100.0
+domain_warp_frequency = -0.01
+domain_warp_fractal_lacunarity = 8.69
+domain_warp_fractal_gain = 0.19
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jijvn"]
+width = 2048
+noise = SubResource("FastNoiseLite_0fvof")
+color_ramp = SubResource("Gradient_0fvof")
+seamless = true
+seamless_blend_skirt = 0.27
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lr2va"]
+shader = ExtResource("3_75pa7")
+shader_parameter/size = Vector2(1141, 49)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("4_ny5j0")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[sub_resource type="Gradient" id="Gradient_4qknn"]
+offsets = PackedFloat32Array(0.00512295)
+colors = PackedColorArray(0.71, 0.543387, 0.2556, 0.168627)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l7j7v"]
+gradient = SubResource("Gradient_4qknn")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_273lw"]
+shader = ExtResource("3_ngfg1")
+shader_parameter/size = Vector2(1161.8057, 458.98505)
+shader_parameter/background = ExtResource("4_uaf8d")
+shader_parameter/background_shade = SubResource("GradientTexture2D_l7j7v")
+shader_parameter/background_tex_size = Vector2(2291, 3118)
+shader_parameter/background_scale = 2.0
+shader_parameter/frame_tex = ExtResource("5_kwfbw")
+shader_parameter/frame_tex_size = Vector2(1127, 976)
+shader_parameter/frame_margin = Vector4(15, 15, 15, 15)
+shader_parameter/frame_scale = 0.93
+shader_parameter/frame_color = Color(0.24, 0.18848, 0.1056, 1)
+shader_parameter/decor_transform = Vector4(0, 0, 300, 100)
+shader_parameter/decor_modulate = Color(1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_j5apj"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wqpyw"]
+gradient = SubResource("Gradient_j5apj")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l706v"]
+shader = ExtResource("5_7s4lj")
+shader_parameter/size = Vector2(219.24728, 42.00531)
+shader_parameter/state = 0.0
+shader_parameter/mask_tex = ExtResource("7_ngfg1")
+shader_parameter/background = ExtResource("6_y630m")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/outline_tex = ExtResource("8_uaf8d")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("10_75pa7")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("9_kwfbw")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hcia1"]
+shader = ExtResource("5_7s4lj")
+shader_parameter/size = Vector2(103.4765, 42.00531)
+shader_parameter/state = 0.0
+shader_parameter/mask_tex = ExtResource("7_ngfg1")
+shader_parameter/background = ExtResource("6_y630m")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/outline_tex = ExtResource("8_uaf8d")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("10_75pa7")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("9_kwfbw")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p78nv"]
+shader = ExtResource("5_7s4lj")
+shader_parameter/size = Vector2(103.4765, 42.00531)
+shader_parameter/state = 0.0
+shader_parameter/mask_tex = ExtResource("7_ngfg1")
+shader_parameter/background = ExtResource("6_y630m")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/outline_tex = ExtResource("8_uaf8d")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("10_75pa7")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("9_kwfbw")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ebnvu"]
+shader = ExtResource("5_7s4lj")
+shader_parameter/size = Vector2(103.47656, 42.00531)
+shader_parameter/state = 0.0
+shader_parameter/mask_tex = ExtResource("7_ngfg1")
+shader_parameter/background = ExtResource("6_y630m")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/outline_tex = ExtResource("8_uaf8d")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("10_75pa7")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("9_kwfbw")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="Gradient" id="Gradient_lbmmc"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_c7v41"]
+gradient = SubResource("Gradient_lbmmc")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eg4p7"]
+shader = ExtResource("5_7s4lj")
+shader_parameter/size = Vector2(184.41357, 257.15454)
+shader_parameter/state = 0.0
+shader_parameter/mask_tex = ExtResource("7_ngfg1")
+shader_parameter/background = ExtResource("6_y630m")
+shader_parameter/gradient = SubResource("GradientTexture2D_c7v41")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/outline_tex = ExtResource("8_uaf8d")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("10_75pa7")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("9_kwfbw")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bhsi2"]
+shader = ExtResource("5_7s4lj")
+shader_parameter/size = Vector2(175.19293, 42.00531)
+shader_parameter/state = 0.0
+shader_parameter/mask_tex = ExtResource("7_ngfg1")
+shader_parameter/background = ExtResource("6_y630m")
+shader_parameter/gradient = SubResource("GradientTexture2D_c7v41")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/outline_tex = ExtResource("8_uaf8d")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("10_75pa7")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("9_kwfbw")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p3phy"]
+shader = ExtResource("3_ngfg1")
+shader_parameter/size = Vector2(229.49237, 45.078857)
+shader_parameter/background = ExtResource("4_uaf8d")
+shader_parameter/background_shade = SubResource("GradientTexture2D_l7j7v")
+shader_parameter/background_tex_size = Vector2(2291, 3118)
+shader_parameter/background_scale = 2.0
+shader_parameter/frame_tex = ExtResource("5_kwfbw")
+shader_parameter/frame_tex_size = Vector2(1127, 976)
+shader_parameter/frame_margin = Vector4(15, 15, 15, 15)
+shader_parameter/frame_scale = 0.93
+shader_parameter/frame_color = Color(0.24, 0.18848, 0.1056, 1)
+shader_parameter/decor_transform = Vector4(0, 0, 300, 100)
+shader_parameter/decor_modulate = Color(1, 1, 1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tnohv"]
+shader = ExtResource("5_7s4lj")
+shader_parameter/size = Vector2(89.1333, 42.00531)
+shader_parameter/state = 0.0
+shader_parameter/mask_tex = ExtResource("7_ngfg1")
+shader_parameter/background = ExtResource("6_y630m")
+shader_parameter/gradient = SubResource("GradientTexture2D_c7v41")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/outline_tex = ExtResource("8_uaf8d")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("10_75pa7")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("9_kwfbw")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_buphb"]
+shader = ExtResource("5_7s4lj")
+shader_parameter/size = Vector2(76.83899, 42.00531)
+shader_parameter/state = 0.0
+shader_parameter/mask_tex = ExtResource("7_ngfg1")
+shader_parameter/background = ExtResource("6_y630m")
+shader_parameter/gradient = SubResource("GradientTexture2D_c7v41")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/outline_tex = ExtResource("8_uaf8d")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("10_75pa7")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("9_kwfbw")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mfy11"]
+shader = ExtResource("3_75pa7")
+shader_parameter/size = Vector2(1139, 49)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("4_ny5j0")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[node name="CardRewardChoice" type="Node2D"]
+script = ExtResource("1_4rwpr")
+
+[node name="BG" parent="." instance=ExtResource("2_75pa7")]
+unique_name_in_owner = true
+
+[node name="InputBlocker" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_force_pass_scroll_events = false
+
+[node name="ScrollPanel" parent="InputBlocker" instance=ExtResource("2_kwfbw")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1241, 0)
+layout_mode = 2
+default_roll_duration = 0.5
+default_unroll_duration = 0.75
+
+[node name="TopDowelWood" parent="InputBlocker/ScrollPanel/TopDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_lr2va")
+
+[node name="Scroller" parent="InputBlocker/ScrollPanel" index="1"]
+custom_minimum_size = Vector2(0, 448)
+
+[node name="ScrollMargin" parent="InputBlocker/ScrollPanel/Scroller" index="0"]
+offset_bottom = 358.0
+
+[node name="ContentPanel" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin" index="0"]
+material = SubResource("ShaderMaterial_273lw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="HBox_Title" type="HBoxContainer" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBox_Title"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "Choose Glyph to Add"
+horizontal_alignment = 1
+
+[node name="RarityBonusLabel" type="Label" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBox_Title"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "(+20% Rarity)"
+horizontal_alignment = 1
+
+[node name="HBox_Choices" type="HBoxContainer" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Choices" type="HBoxContainer" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBox_Choices"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBox_Choices/Choices"]
+layout_mode = 2
+
+[node name="Card" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBox_Choices/Choices/VBoxContainer" instance_placeholder="res://cards/card.tscn"]
+layout_mode = 2
+
+[node name="UkiyoeButton" type="Button" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBox_Choices/Choices/VBoxContainer"]
+material = SubResource("ShaderMaterial_l706v")
+layout_mode = 2
+theme_override_styles/normal = ExtResource("11_ny5j0")
+theme_override_styles/pressed = ExtResource("11_ny5j0")
+theme_override_styles/hover = ExtResource("11_ny5j0")
+theme_override_styles/hover_pressed = ExtResource("11_ny5j0")
+theme_override_styles/disabled = ExtResource("11_ny5j0")
+text = "Reserve"
+script = ExtResource("12_u6cx3")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBox_Choices/Choices"]
+layout_mode = 2
+
+[node name="Card" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBox_Choices/Choices/VBoxContainer2" instance_placeholder="res://cards/card.tscn"]
+layout_mode = 2
+
+[node name="UkiyoeButton" type="Button" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBox_Choices/Choices/VBoxContainer2"]
+visible = false
+material = SubResource("ShaderMaterial_hcia1")
+layout_mode = 2
+theme_override_styles/normal = ExtResource("11_ny5j0")
+theme_override_styles/pressed = ExtResource("11_ny5j0")
+theme_override_styles/hover = ExtResource("11_ny5j0")
+theme_override_styles/hover_pressed = ExtResource("11_ny5j0")
+theme_override_styles/disabled = ExtResource("11_ny5j0")
+text = "Reserve"
+script = ExtResource("12_u6cx3")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBox_Choices/Choices"]
+layout_mode = 2
+
+[node name="Card" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBox_Choices/Choices/VBoxContainer3" instance_placeholder="res://cards/card.tscn"]
+layout_mode = 2
+
+[node name="UkiyoeButton" type="Button" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBox_Choices/Choices/VBoxContainer3"]
+visible = false
+material = SubResource("ShaderMaterial_p78nv")
+layout_mode = 2
+theme_override_styles/normal = ExtResource("11_ny5j0")
+theme_override_styles/pressed = ExtResource("11_ny5j0")
+theme_override_styles/hover = ExtResource("11_ny5j0")
+theme_override_styles/hover_pressed = ExtResource("11_ny5j0")
+theme_override_styles/disabled = ExtResource("11_ny5j0")
+text = "Reserve"
+script = ExtResource("12_u6cx3")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBox_Choices/Choices"]
+layout_mode = 2
+
+[node name="Card" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBox_Choices/Choices/VBoxContainer4" instance_placeholder="res://cards/card.tscn"]
+layout_mode = 2
+
+[node name="UkiyoeButton" type="Button" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBox_Choices/Choices/VBoxContainer4"]
+visible = false
+material = SubResource("ShaderMaterial_ebnvu")
+layout_mode = 2
+theme_override_styles/normal = ExtResource("11_ny5j0")
+theme_override_styles/pressed = ExtResource("11_ny5j0")
+theme_override_styles/hover = ExtResource("11_ny5j0")
+theme_override_styles/hover_pressed = ExtResource("11_ny5j0")
+theme_override_styles/disabled = ExtResource("11_ny5j0")
+text = "Reserve"
+script = ExtResource("12_u6cx3")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="MarginContainer" type="MarginContainer" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBox_Choices"]
+layout_mode = 2
+theme_override_constants/margin_top = 26
+
+[node name="RemoveButton" type="Button" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBox_Choices/MarginContainer"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_eg4p7")
+custom_minimum_size = Vector2(180, 204)
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("2_57b83")
+theme_override_styles/normal = ExtResource("11_ny5j0")
+theme_override_styles/pressed = ExtResource("11_ny5j0")
+theme_override_styles/hover = ExtResource("11_ny5j0")
+theme_override_styles/hover_pressed = ExtResource("11_ny5j0")
+theme_override_styles/disabled = ExtResource("11_ny5j0")
+text = "Remove
+Glyph
+Instead"
+script = ExtResource("12_u6cx3")
+click_sound = ExtResource("18_ny5j0")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="MarginContainer" type="MarginContainer" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="ViewDeckButton" type="Button" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_bhsi2")
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = ExtResource("2_57b83")
+theme_override_styles/normal = ExtResource("11_ny5j0")
+theme_override_styles/pressed = ExtResource("11_ny5j0")
+theme_override_styles/hover = ExtResource("11_ny5j0")
+theme_override_styles/hover_pressed = ExtResource("11_ny5j0")
+theme_override_styles/disabled = ExtResource("11_ny5j0")
+text = "View Glyph Deck"
+script = ExtResource("12_u6cx3")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="AspectCountersPanel" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/HBoxContainer" instance=ExtResource("5_wn6rg")]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_p3phy")
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="RerollButton" type="Button" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_tnohv")
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme = ExtResource("2_57b83")
+theme_override_styles/normal = ExtResource("11_ny5j0")
+theme_override_styles/pressed = ExtResource("11_ny5j0")
+theme_override_styles/hover = ExtResource("11_ny5j0")
+theme_override_styles/hover_pressed = ExtResource("11_ny5j0")
+theme_override_styles/disabled = ExtResource("11_ny5j0")
+text = "Reroll"
+script = ExtResource("12_u6cx3")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="SkipButton" type="Button" parent="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_buphb")
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme = ExtResource("2_57b83")
+theme_override_styles/normal = ExtResource("11_ny5j0")
+theme_override_styles/pressed = ExtResource("11_ny5j0")
+theme_override_styles/hover = ExtResource("11_ny5j0")
+theme_override_styles/hover_pressed = ExtResource("11_ny5j0")
+theme_override_styles/disabled = ExtResource("11_ny5j0")
+text = "Skip"
+script = ExtResource("12_u6cx3")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="BottomDowelWood" parent="InputBlocker/ScrollPanel/BottomDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_mfy11")
+
+[connection signal="pressed" from="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBox_Choices/MarginContainer/RemoveButton" to="." method="_on_remove_button_pressed"]
+[connection signal="pressed" from="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/HBoxContainer/ViewDeckButton" to="." method="_on_view_deck_button_pressed"]
+[connection signal="pressed" from="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/HBoxContainer/RerollButton" to="." method="_on_reroll_button_pressed"]
+[connection signal="pressed" from="InputBlocker/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/HBoxContainer/SkipButton" to="." method="_on_skipped"]
+
+[editable path="InputBlocker/ScrollPanel"]

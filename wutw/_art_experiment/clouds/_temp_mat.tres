@@ -1,0 +1,33 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=4 uid="uid://j0l146tqr038"]
+
+[ext_resource type="Shader" uid="uid://dart6wj65w6tw" path="res://_art_experiment/clouds/moving_cloud.gdshader" id="1_thcq5"]
+
+[sub_resource type="Gradient" id="Gradient_uwfc6"]
+offsets = PackedFloat32Array(0.00409836, 0.160861, 0.302254, 0.440574, 0.510246, 0.546107, 0.567623, 0.580943)
+colors = PackedColorArray(1, 1, 1, 1, 0.999838, 0.999791, 0.999727, 0.999699, 0.997506, 0.99677, 0.995793, 0.995354, 0.9764, 0.969438, 0.960193, 0.956032, 0.946325, 0.93049, 0.909462, 0.9, 0.886, 0.853, 0.809, 0.65, 0, 0, 0, 0.627451, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8dwxf"]
+gradient = SubResource("Gradient_uwfc6")
+
+[sub_resource type="Gradient" id="Gradient_i26cb"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yba8n"]
+gradient = SubResource("Gradient_i26cb")
+
+[resource]
+shader = ExtResource("1_thcq5")
+shader_parameter/ellipses = PackedVector4Array(0.03, -0.02, 0.11, 0.08)
+shader_parameter/merge_k = 0.008
+shader_parameter/distortion_amplitude = 0.0001
+shader_parameter/distortion_frequency = 0.754
+shader_parameter/distortion_speed = 0.001
+shader_parameter/range = 0.119
+shader_parameter/gradient = SubResource("GradientTexture1D_8dwxf")
+shader_parameter/noise_scale = 72.885
+shader_parameter/noise_strength = 0.063
+shader_parameter/noise_smoothness = 1.0
+shader_parameter/noise_color = Color(0.29499, 0.194805, 0.0301999, 1)
+shader_parameter/variation_random = 0.0
+shader_parameter/debug = false
+shader_parameter/gradient_debug = SubResource("GradientTexture1D_yba8n")

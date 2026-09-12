@@ -1,0 +1,175 @@
+[gd_scene format=3 uid="uid://bwn6xbkvrsrde"]
+
+[ext_resource type="Script" uid="uid://xu5o7116gj62" path="res://relics/status_bar/relic_status_bar.gd" id="1_5i3t7"]
+[ext_resource type="Texture2D" uid="uid://ymi5jdnxi4ip" path="res://theme/button.png" id="2_8a88o"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="2_safyi"]
+[ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="3_8a88o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cnyvt"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tr33x"]
+content_margin_left = 4.0
+content_margin_right = 8.0
+texture = ExtResource("2_8a88o")
+texture_margin_left = 20.0
+texture_margin_top = 16.0
+texture_margin_right = 20.0
+texture_margin_bottom = 16.0
+modulate_color = Color(0.87, 0.80736, 0.7308, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hnlgb"]
+content_margin_left = 4.0
+content_margin_right = 8.0
+texture = ExtResource("2_8a88o")
+texture_margin_left = 20.0
+texture_margin_top = 16.0
+texture_margin_right = 20.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tr33x"]
+content_margin_left = 0.0
+content_margin_top = 5.0
+content_margin_right = 0.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 1)
+expand_margin_left = 6.0
+expand_margin_right = 6.0
+
+[node name="RelicStatusBar" type="PanelContainer" unique_id=939515281]
+offset_right = 294.0
+offset_bottom = 72.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_cnyvt")
+script = ExtResource("1_5i3t7")
+
+[node name="MainList" type="HBoxContainer" parent="." unique_id=1475082037]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 2
+
+[node name="VisibleList" type="HBoxContainer" parent="MainList" unique_id=1951686078]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="RelicIcon" parent="MainList/VisibleList" unique_id=523034159 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+size_flags_vertical = 0
+forced_size = 72
+
+[node name="RelicIcon2" parent="MainList/VisibleList" unique_id=2088547146 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+size_flags_vertical = 0
+forced_size = 72
+
+[node name="RelicIcon3" parent="MainList/VisibleList" unique_id=363793253 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+size_flags_vertical = 0
+forced_size = 72
+
+[node name="MoreRelicsButton" type="Button" parent="MainList" unique_id=1914904229]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(72, 72)
+custom_maximum_size = Vector2(72, 72)
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_tr33x")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hnlgb")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_hnlgb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hnlgb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_hnlgb")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_hnlgb")
+button_mask = 0
+text = "+5"
+
+[node name="HiddenBox" type="MarginContainer" parent="." unique_id=851364573]
+unique_name_in_owner = true
+visible = false
+top_level = true
+z_index = 50
+layout_mode = 2
+offset_transform_position = Vector2(0, 72)
+theme_override_constants/margin_top = 8
+
+[node name="HiddenPanel" type="PanelContainer" parent="HiddenBox" unique_id=123890313]
+material = ExtResource("2_safyi")
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_tr33x")
+script = ExtResource("3_8a88o")
+material_customized = true
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="HiddenList" type="HFlowContainer" parent="HiddenBox/HiddenPanel" unique_id=1676115683]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
+last_wrap_alignment = 1
+
+[node name="RelicIcon3" parent="HiddenBox/HiddenPanel/HiddenList" unique_id=666910124 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+size_flags_vertical = 0
+forced_size = 72
+
+[node name="RelicIcon4" parent="HiddenBox/HiddenPanel/HiddenList" unique_id=1926727021 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+size_flags_vertical = 0
+forced_size = 72
+
+[node name="RelicIcon5" parent="HiddenBox/HiddenPanel/HiddenList" unique_id=1038193886 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+size_flags_vertical = 0
+forced_size = 72
+
+[node name="RelicIcon6" parent="HiddenBox/HiddenPanel/HiddenList" unique_id=1217077020 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+size_flags_vertical = 0
+forced_size = 72
+
+[node name="RelicIcon7" parent="HiddenBox/HiddenPanel/HiddenList" unique_id=1336917534 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+size_flags_vertical = 0
+forced_size = 72
+
+[node name="RelicIcon8" parent="HiddenBox/HiddenPanel/HiddenList" unique_id=1592021775 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+size_flags_vertical = 0
+forced_size = 72
+
+[node name="RelicIcon9" parent="HiddenBox/HiddenPanel/HiddenList" unique_id=358834607 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+size_flags_vertical = 0
+forced_size = 72
+
+[node name="RelicIcon10" parent="HiddenBox/HiddenPanel/HiddenList" unique_id=1270861273 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+size_flags_vertical = 0
+forced_size = 72
+
+[node name="RelicIcon11" parent="HiddenBox/HiddenPanel/HiddenList" unique_id=1886489744 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+size_flags_vertical = 0
+forced_size = 72
+
+[node name="RelicIcon12" parent="HiddenBox/HiddenPanel/HiddenList" unique_id=1325551655 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+size_flags_vertical = 0
+forced_size = 72
+
+[connection signal="mouse_entered" from="MainList/MoreRelicsButton" to="." method="_on_more_relics_button_mouse_entered"]

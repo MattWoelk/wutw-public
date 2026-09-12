@@ -1,0 +1,46 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://rltjpy01hmrr"]
+
+[ext_resource type="MapSpriteType_Building" uid="uid://41q2mu4mqlpw" path="res://map/sprites/spots/large_building/mst_large_building_dining_hall_building.tres" id="1_57x20"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://bx3qxfskagix4" path="res://map/sprites/spots/brushland/mst_brushland_bundle.tres" id="2_5hidc"]
+[ext_resource type="PackedScene" uid="uid://c1xx60ouvowsx" path="res://map/sprites/spots/large_building/map_effect_dining_hall_steam.tscn" id="4_57x20"]
+[ext_resource type="WwiseEvent" uid="uid://hiut5oifqc57" path="res://Wwise/resources/Event/{C5DC03A8-9DC4-4C3C-8285-42C53B9B7871}.tres" id="5_5hidc"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://c4bqswuy8k0k8" path="res://map/sprites/spots/small_building/mst_small_building_steamer.tres" id="5_vsjtp"]
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_id5ja"]
+p1 = Vector2(-4.9, 0.185)
+p2 = Vector2(-1.44, 0.98)
+p3 = Vector2(2.135, -3.21)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_hckx4"]
+p1 = Vector2(5.545, -2.205)
+p2 = Vector2(2.1, -3.265)
+p3 = Vector2(-1.545, 1.04)
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_72hsu"]
+sprite_type = ExtResource("1_57x20")
+offset = Vector2(0.275, -1.58)
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_yysgc"]
+sprite_type = ExtResource("2_5hidc")
+offset = Vector2(-4.29, 0.33)
+scale = 0.525
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_whmsr"]
+sprite_type = ExtResource("5_vsjtp")
+offset = Vector2(-2.075, 0.575)
+scale = 0.41
+
+[sub_resource type="MapEffectAttachment" id="MapEffectAttachment_ofxuf"]
+scene = ExtResource("4_57x20")
+offset = Vector2(0.445, -3.83)
+scale = 0.05
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_72hsu"), SubResource("MapSpriteComponent_yysgc"), SubResource("MapSpriteComponent_whmsr")])
+footprint_radius = 4.87
+must_be_fully_within_clip = true
+sound = ExtResource("5_5hidc")
+effects = Array[MapEffectAttachment]([SubResource("MapEffectAttachment_ofxuf")])
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Triangle_id5ja"), SubResource("MapSpriteCollision_Triangle_hckx4")])

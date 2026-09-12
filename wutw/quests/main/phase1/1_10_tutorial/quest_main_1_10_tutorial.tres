@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="Quest_Main110_Tutorial" format=3 uid="uid://uq7mgik1jsk1"]
+
+[ext_resource type="Script" uid="uid://bum50u2l0duv6" path="res://quests/main/phase1/1_10_tutorial/quest_main_1_10_tutorial.gd" id="1_ohnqx"]
+[ext_resource type="Resource" uid="uid://cq6myg5bgqx0c" path="res://quests/main/phase1/1_10_tutorial/dlg_quest_main_1_10_tutorial_begin.tres" id="1_w38um"]
+[ext_resource type="Resource" uid="uid://dh5jgiwdgav54" path="res://quests/main/phase1/1_10_tutorial/dlg_quest_main_1_10_tutorial_end.tres" id="2_vwgwn"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="3_8g14f"]
+[ext_resource type="Resource" uid="uid://dkqdui7fcpfih" path="res://quests/main/phase1/1_15_relics/quest_main_1_15_relics.tres" id="3_w38um"]
+[ext_resource type="Resource" uid="uid://b6n6jdbf6o4yt" path="res://cards/tier0/card_go.tres" id="4_tbkc8"]
+[ext_resource type="Resource" uid="uid://d00hrbp8hd6tl" path="res://cards/tier2/card_look_at.tres" id="5_7te0w"]
+[ext_resource type="Resource" uid="uid://berx5kwcw5at" path="res://cards/tier1/card_two.tres" id="6_g4y27"]
+
+[resource]
+script = ExtResource("1_ohnqx")
+initial_card_rewards = Array[ExtResource("3_8g14f")]([ExtResource("4_tbkc8"), ExtResource("5_7te0w"), ExtResource("6_g4y27")])
+begin_dialogue = ExtResource("1_w38um")
+end_dialogue = ExtResource("2_vwgwn")
+next_quest = ExtResource("3_w38um")
+first_foray_tutorial_text = "Time to decide how to develop this land. Each <term:spot> offers several <term:spot_upgrade>s, but only one can be active at each level.
+
+Activate some <term_lower:spot_upgrade>s then click Redraw Hand."
+first_foray_tutorial_text_steam_deck = "Time to decide how to develop this land. Each <term:spot> offers several <term:spot_upgrade>s, but only one can be active at each level.
+
+Activate some <term_lower:spot_upgrade>s then choose Redraw Hand."
+end_foray_tutorial_text = "When you are done, click End Foray."
+end_foray_tutorial_text_steam_deck = "When you are done, choose End Foray."
+stage_selector_tutorial_text = "For the next <term_lower:foray>, we'll need to fulfill the <term_lower:stage_goal> of
+%s.
+
+When selecting a place to settle, pay attention to how much of the goal <term_lower:bonus> it can provide.
+
+You can pan the map using the right mouse button or WASD."
+stage_selector_tutorial_text_steam_deck = "For the next <term_lower:foray>, we'll need to fulfill the <term_lower:stage_goal> of
+%s.
+
+When selecting a place to settle, pay attention to how much of the goal <term_lower:bonus> it can provide.
+
+You can pan the map using [img width=1.5em height=1.5em]res://utils/input_icons/shared_lstick_md.png[/img]."
+inspiration_tutorial_text = "This is your <term:inspiration>.
+
+Missing <term_lower:stage_goal>s reduces it.
+
+If you run out, the <term_lower:run>
+ends and you forfeit bonus rewards."
+bonus_listing_tutorial_text = "The <term_lower:bonus>s you gain during
+<term_lower:foray>s are added up here.
+
+These will unlock new options
+later in the <term_lower:run>."
+third_foray_tutorial_text = "Anytime between <term_lower:foray>s, you can finish the <term_lower:run>.
+
+If you do this before running out of <term:inspiration>, you will gain a bonus reward.
+
+[b]Let's finish the current expedition![/b]"
+quest_id = "main_1_10_tutorial"
+name = "The First Step"
+goals = Array[String](["Finish your first <term:run> with at least one <term:settlement> established."])
+metadata/_custom_type_script = "uid://bum50u2l0duv6"

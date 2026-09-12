@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://dqxtaqv4s48xl"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_1o14y"]
+[ext_resource type="Resource" uid="uid://dkm1klnpi62em" path="res://stage/spots/canyon/upgrade_canyon_2_gorge_waystation.tres" id="2_5f2es"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_q7myu"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_cuqyw"]
+[ext_resource type="Resource" uid="uid://dxqwegrdbsn8" path="res://stage/spots/canyon/upgrade_canyon_2_eternal_vault.tres" id="3_y6thm"]
+[ext_resource type="Resource" uid="uid://c7lotky0gdtl6" path="res://stage/spots/canyon/upgrade_canyon_2_cliffside_dwellings.tres" id="4_re5pt"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="6_q2ynl"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="7_n4dti"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="9_qabd1"]
+[ext_resource type="Resource" uid="uid://d1c7ny2xs7pwo" path="res://stage/spots/canyon/spot_canyon.tres" id="10_re5pt"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="11_q2ynl"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://yi6r4d10vn2d" path="res://map/sprites/mountains/mst_mountain_1_medium.tres" id="12_ste5u"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://desakgu6q3yov" path="res://map/sprites/mountains/mst_mountain_2_large.tres" id="13_tj20s"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://c3u877m1spx0" path="res://map/sprites/mountains/mst_mountain_3_large.tres" id="14_uxhdt"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://doqqvl0x3b3g4" path="res://map/sprites/mountains/mst_mountain_4_small.tres" id="15_8cg6d"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bxr2aj680eaqd" path="res://map/sprites/mountains/mst_mountain_5_small.tres" id="16_8uvfu"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cekrboxmhdmhk" path="res://map/sprites/mountains/mst_mountain_6_tiny.tres" id="17_g5enk"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cjbrxida4odnk" path="res://map/sprites/mountains/mst_mountain_7_tiny.tres" id="18_qi3bp"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://56t2rh2pg58y" path="res://map/sprites/mountains/mst_mountain_8_medium.tres" id="19_dsom4"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://csjeschaiy5ct" path="res://map/sprites/mountains/mst_mountain_9_large.tres" id="20_y8wjn"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bctu7rlwqc3o7" path="res://map/sprites/mountains/mst_mountain_10_medium.tres" id="21_fcqjl"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://t2knd16pwuwg" path="res://map/sprites/mountains/mst_mountain_11_medium.tres" id="22_f6gjl"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dxba886xk8sch" path="res://map/sprites/mountains/mst_mountain_12_pair.tres" id="23_mag75"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://dj3v8t4s3gl5l" path="res://map/sprites/spots/canyon/mst_canyon_suspended_bridge.tres" id="24_sqqxm"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://du7ijeojv2ho6" path="res://map/sprites/canyons/mst_canyon_1.tres" id="25_d47sj"]
+[ext_resource type="Script" uid="uid://cm6qovq4s06ky" path="res://stage/spots/spot_upgrade_visual_replace.gd" id="26_wmyec"]
+
+[sub_resource type="Resource" id="Resource_oqpsm"]
+script = ExtResource("26_wmyec")
+old_sprite_types = Array[MapSpriteType]([ExtResource("25_d47sj")])
+new_sprite_type = ExtResource("24_sqqxm")
+extra_removables = Array[MapSpriteType]([ExtResource("12_ste5u"), ExtResource("13_tj20s"), ExtResource("14_uxhdt"), ExtResource("15_8cg6d"), ExtResource("16_8uvfu"), ExtResource("17_g5enk"), ExtResource("18_qi3bp"), ExtResource("19_dsom4"), ExtResource("20_y8wjn"), ExtResource("21_fcqjl"), ExtResource("22_f6gjl"), ExtResource("23_mag75")])
+metadata/_custom_type_script = "uid://cm6qovq4s06ky"
+
+[resource]
+script = ExtResource("1_1o14y")
+spot_upgrade_id = "canyon_bridge"
+name = "Suspended Bridge"
+description = "A test of faith for strangers. A test of balance for the locals. A test of trust for fellow travelers."
+required_aspects = Array[ExtResource("3_cuqyw")]([ExtResource("9_qabd1")])
+granted_bonuses = Dictionary[ExtResource("2_q7myu"), int]({
+ExtResource("6_q2ynl"): 10,
+ExtResource("7_n4dti"): 5
+})
+child_upgrades = Array[ExtResource("1_1o14y")]([ExtResource("2_5f2es"), ExtResource("3_y6thm"), ExtResource("4_re5pt")])
+spot = ExtResource("10_re5pt")
+visuals = Array[ExtResource("11_q2ynl")]([SubResource("Resource_oqpsm")])

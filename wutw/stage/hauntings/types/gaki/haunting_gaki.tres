@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://omrw3lrs2sxa"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_hwo2x"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="2_j2qqi"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="3_k4f5s"]
+[ext_resource type="Script" uid="uid://b2sp10jrl0p1v" path="res://stage/hauntings/effects/haunting_effect_lose_gained_bonus.gd" id="4_y3a0j"]
+[ext_resource type="Resource" uid="uid://drwowyge2n2to" path="res://art/pieces/piece_bakemono_kappa.tres" id="5_j2qqi"]
+[ext_resource type="Resource" uid="uid://chr3oqmhsoiq3" path="res://art/pieces/piece_shunkei_grasshopper.tres" id="6_5hf5w"]
+[ext_resource type="Texture2D" uid="uid://bnfcsvwrnlwcd" path="res://stage/hauntings/types/gaki/haunting_gaki.png" id="6_j2qqi"]
+[ext_resource type="Texture2D" uid="uid://bxmqrnsktbbre" path="res://stage/hauntings/types/gaki/haunting_gaki_realistic_insects.png" id="7_k4f5s"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="8_766aa"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="9_f8fgn"]
+[ext_resource type="Script" uid="uid://wcgm3rptcu7x" path="res://stage/hauntings/triggers/haunting_trigger_bonus_gained.gd" id="10_85fon"]
+
+[sub_resource type="Resource" id="Resource_smjko"]
+script = ExtResource("4_y3a0j")
+metadata/_custom_type_script = "uid://b2sp10jrl0p1v"
+
+[sub_resource type="Resource" id="Resource_766aa"]
+script = ExtResource("10_85fon")
+bonus_type = ExtResource("9_f8fgn")
+metadata/_custom_type_script = "uid://wcgm3rptcu7x"
+
+[resource]
+script = ExtResource("8_766aa")
+haunting_id = "gaki"
+name = "Gaki"
+name_japanese = "餓鬼"
+name_realistic = "Insect Swarms"
+name_translation = "Hungry Ghosts"
+description = "These lands are haunted by the Gaki, hungry ghosts cursed to devour everything yet never be filled."
+description_realistic = "Swarms of insects have infested the area, consuming every trace of food."
+description_long = "Tales abound of ancient sinners from this land returning as Gaki, eternally hungry ghosts devouring every planted seed and stored grain. In life, they were said to have hoarded food from others. In death, their bellies swell while their throats remain narrow, dooming them to eternal hunger.
+
+Some settlers still leave offerings of rice and water in the night, hoping the monsters will turn elsewhere, but they never do."
+image_small = ExtResource("6_j2qqi")
+image_credit = ExtResource("5_j2qqi")
+image_small_realistic = ExtResource("7_k4f5s")
+image_realistic_credit = ExtResource("6_5hf5w")
+base_aspect_types = Array[ExtResource("1_hwo2x")]([ExtResource("3_k4f5s")])
+extra_aspect_type = ExtResource("2_j2qqi")
+scaling_bonus_type = ExtResource("9_f8fgn")
+trigger = SubResource("Resource_766aa")
+effect = SubResource("Resource_smjko")
+spot_attach_mode = 1
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://cj2ytlvvp4wdt"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_lt02u"]
+[ext_resource type="Resource" uid="uid://dw1f10v3jwhkx" path="res://stage/spots/seashore/upgrade_seashore_3_shipwreck_shrine.tres" id="2_scdo1"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_snx57"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_4e3gj"]
+[ext_resource type="Resource" uid="uid://cl8h0b8goemjr" path="res://stage/spots/seashore/upgrade_seashore_3_whale_caller_shrine.tres" id="3_p84ki"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="5_b1cww"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="6_gjvkt"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="7_aiv4e"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="9_llsfn"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="10_h08l8"]
+[ext_resource type="Resource" uid="uid://skws2o4hx05g" path="res://stage/spots/seashore/spot_seashore.tres" id="11_b1cww"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="12_gjvkt"]
+[ext_resource type="Script" uid="uid://dvrtuqbmx4v30" path="res://stage/spots/spot_upgrade_visual_add.gd" id="13_aiv4e"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://bonk70v3vay2a" path="res://map/sprites/spots/seashore/mst_seashore_driftwood_shoal.tres" id="14_llsfn"]
+
+[sub_resource type="Resource" id="Resource_h08l8"]
+script = ExtResource("13_aiv4e")
+sprite_type = ExtResource("14_llsfn")
+biome = 1
+metadata/_custom_type_script = "uid://dvrtuqbmx4v30"
+
+[resource]
+script = ExtResource("1_lt02u")
+spot_upgrade_id = "seashore_driftwood"
+name = "Driftwood Shoal"
+description = "The sea leaves its gifts here, unwilling to stay in debt."
+required_aspects = Array[ExtResource("3_4e3gj")]([ExtResource("9_llsfn"), ExtResource("10_h08l8")])
+granted_bonuses = Dictionary[ExtResource("2_snx57"), int]({
+ExtResource("5_b1cww"): 10,
+ExtResource("6_gjvkt"): 5,
+ExtResource("7_aiv4e"): 5
+})
+child_upgrades = Array[ExtResource("1_lt02u")]([ExtResource("2_scdo1"), ExtResource("3_p84ki")])
+spot = ExtResource("11_b1cww")
+visuals = Array[ExtResource("12_gjvkt")]([SubResource("Resource_h08l8")])
+tags = Array[int]([0])

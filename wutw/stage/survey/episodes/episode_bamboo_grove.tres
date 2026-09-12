@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://8jeyytepqepg"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_4qsgp"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="1_bf8tp"]
+[ext_resource type="Resource" uid="uid://bs162xyvfdrdw" path="res://art/pieces/piece_hokusai_bamboo.tres" id="1_mnkpn"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="2_a5yqn"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="3_4qsgp"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="4_mnkpn"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="5_7ph2s"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="6_xom6t"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="7_66uts"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="8_12u3x"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="9_g8h83"]
+[ext_resource type="Resource" uid="uid://cfuqwl06ioxwd" path="res://stage/spots/hill/spot_hill.tres" id="10_6g5dh"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="11_a5yqn"]
+
+[sub_resource type="Resource" id="Resource_nx2fp"]
+script = ExtResource("1_4qsgp")
+_texture_path = "uid://175l7pm6qy3p"
+_is_horizontal = true
+metadata/_custom_type_script = "uid://c7u2t141hgkj5"
+
+[sub_resource type="Resource" id="Resource_javtj"]
+script = ExtResource("5_7ph2s")
+bonus_type = ExtResource("4_mnkpn")
+amount = 20
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_pa6fy"]
+script = ExtResource("7_66uts")
+bonus_type = ExtResource("6_xom6t")
+min_count = 10
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_ju28k"]
+script = ExtResource("1_bf8tp")
+label = "Cut a straight path."
+requirement = SubResource("Resource_pa6fy")
+aspects = Array[ExtResource("2_a5yqn")]([ExtResource("3_4qsgp")])
+aspects_per_season = Array[ExtResource("2_a5yqn")]([null])
+outcome = SubResource("Resource_javtj")
+outcome_text = "The team decides to use brute force. They spend the day cutting a path through the bamboo, leaving ready building materials for the rest of the expedition."
+
+[sub_resource type="Resource" id="Resource_aed1h"]
+script = ExtResource("1_bf8tp")
+label = "Navigate by the canopy."
+aspects = Array[ExtResource("2_a5yqn")]([ExtResource("8_12u3x")])
+aspects_per_season = Array[ExtResource("2_a5yqn")]([null])
+outcome_text = "By carefully observing which way the stalks lean, the scouts figure out the sunniest direction and manage to find their way out."
+
+[sub_resource type="Resource" id="Resource_ytgis"]
+script = ExtResource("1_bf8tp")
+label = "Backtrack to the edge."
+aspects = Array[ExtResource("2_a5yqn")]([null, null])
+aspects_per_season = Array[ExtResource("2_a5yqn")]([null])
+outcome_text = "The team decides to turn back before they get completely lost. It takes a while to find the way out, and they emerge long after the sun has set."
+
+[resource]
+script = ExtResource("9_g8h83")
+episode_id = "bamboo_grove"
+title = "The Dense Bamboo"
+biome_types = Array[int]([6, 9])
+spot_types = Array[ExtResource("11_a5yqn")]([ExtResource("10_6g5dh")])
+text = "The survey team follows an old path into a bamboo grove, only for it to become fainter and fainter, until they find themselves lost among the stalks."
+background_image = SubResource("Resource_nx2fp")
+background_credit = ExtResource("1_mnkpn")
+choices = Array[ExtResource("1_bf8tp")]([SubResource("Resource_ju28k"), SubResource("Resource_aed1h"), SubResource("Resource_ytgis")])

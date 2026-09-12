@@ -1,0 +1,135 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://b36k7x7t0vbyn"]
+
+[ext_resource type="Resource" uid="uid://c4pqibvgw0kyp" path="res://art/pieces/piece_hasui_tsukumojima.tres" id="1_bbjpt"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_pvs6r"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_bbjpt"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_wwac5"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="4_gm4fm"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="5_l8jrg"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="6_uhdg4"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="7_bddy4"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="8_p2n1s"]
+[ext_resource type="Resource" uid="uid://j7dtcawbtelw" path="res://relics/common/plum_wine/relic_plum_wine.tres" id="9_ta22b"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="10_phwk0"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="11_wyjf2"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="12_lrmfo"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="13_htgda"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="14_q66um"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="15_fcf1b"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="16_vudsb"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="17_dxk3h"]
+
+[sub_resource type="Resource" id="Resource_mpaof"]
+script = ExtResource("1_pvs6r")
+_texture_path = "uid://d2rqosysvaaoj"
+_is_horizontal = true
+
+[sub_resource type="Resource" id="Resource_d174p"]
+script = ExtResource("8_p2n1s")
+bonus_type = ExtResource("7_bddy4")
+amount = -20
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_0eiya"]
+script = ExtResource("10_phwk0")
+relic = ExtResource("9_ta22b")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("5_l8jrg")
+suboutcomes = Array[ExtResource("6_uhdg4")]([SubResource("Resource_d174p"), SubResource("Resource_0eiya")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_4mfl3"]
+script = ExtResource("12_lrmfo")
+bonus_type = ExtResource("11_wyjf2")
+min_count = 20
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_dkqcl"]
+script = ExtResource("2_bbjpt")
+label = "Dig the box out."
+requirement = SubResource("Resource_4mfl3")
+aspects = Array[ExtResource("3_wwac5")]([ExtResource("4_gm4fm")])
+aspects_per_season = Array[ExtResource("3_wwac5")]([null])
+outcome = SubResource("Resource_trtbi")
+outcome_text = "The scouts tear up the earth, slashing at the roots with their knives.
+
+They eventually manage to dig the box out from among the tangled mass.
+
+When the lid is pried open, the scouts find jars of a sweet-smelling liquid, which shimmers golden-amber in the setting sun once poured out."
+
+[sub_resource type="Resource" id="Resource_bgisj"]
+script = ExtResource("8_p2n1s")
+bonus_type = ExtResource("13_htgda")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_pakit"]
+script = ExtResource("14_q66um")
+delta = 3
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_a6ufw"]
+script = ExtResource("5_l8jrg")
+suboutcomes = Array[ExtResource("6_uhdg4")]([SubResource("Resource_bgisj"), SubResource("Resource_pakit")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_tox85"]
+script = ExtResource("12_lrmfo")
+bonus_type = ExtResource("13_htgda")
+min_count = 20
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_4njyc"]
+script = ExtResource("2_bbjpt")
+label = "Leave an offering."
+requirement = SubResource("Resource_tox85")
+aspects = Array[ExtResource("3_wwac5")]([null])
+aspects_per_season = Array[ExtResource("3_wwac5")]([null])
+outcome = SubResource("Resource_a6ufw")
+outcome_text = "The surveyors dock their boat and walk onto the islet, their feet sinking into the sand.
+
+As they approach the gate, the woody fragrance of fresh pine fills their nostrils.
+
+The scouts leave a bowl of dried fruit behind the gate, content with the knowledge that they've paid their respects to the local spirits."
+
+[sub_resource type="Resource" id="Resource_e7hfo"]
+script = ExtResource("8_p2n1s")
+bonus_type = ExtResource("7_bddy4")
+amount = -5
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_i0wr6"]
+script = ExtResource("2_bbjpt")
+label = "Smash the box open."
+aspects = Array[ExtResource("3_wwac5")]([ExtResource("15_fcf1b")])
+outcome = SubResource("Resource_e7hfo")
+outcome_text = "Not wanting to disturb the roots of the trees, the surveyors find a large stone and strike the corner of the box.
+
+The wood splinters, followed by the sound of shattering clay. A sweet-smelling golden liquid oozes out, soaking into the sand."
+
+[sub_resource type="Resource" id="Resource_losej"]
+script = ExtResource("2_bbjpt")
+label = "Leave the box."
+aspects = Array[ExtResource("3_wwac5")]([null])
+outcome_text = "The surveyors paddle their boat past the tiny islet, letting the box remain undisturbed."
+
+[resource]
+script = ExtResource("16_vudsb")
+episode_id = "tranquil_bay"
+title = "The Tranquil Bay"
+biome_types = Array[int]([10, 1])
+text = "The scouts find themselves under a sunset sky full of pink clouds. A tranquil bay spreads before their eyes.
+
+Two of the surveyors get into a small boat and row towards a tiny pine-covered tidal islet, where a weathered gate stands solemnly in the cooling sand.
+
+As they draw nearer, they notice a small wooden box hiding among the roots."
+background_image = SubResource("Resource_mpaof")
+background_credit = ExtResource("1_bbjpt")
+choices = Array[ExtResource("2_bbjpt")]([SubResource("Resource_dkqcl"), SubResource("Resource_4njyc"), SubResource("Resource_i0wr6"), SubResource("Resource_losej")])

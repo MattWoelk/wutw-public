@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bp0efl2yehig8"]
+
+[ext_resource type="Texture2D" uid="uid://dbqg00f4jh4vw" path="res://hub/contents/museum/museum_scroll.png" id="1_y42y8"]
+[ext_resource type="Script" uid="uid://kvrmxi7guqq3" path="res://hub/contents/hub_facility.gd" id="2_7w6wi"]
+
+[node name="MuseumScroll" type="Sprite2D" unique_id=587143628]
+scale = Vector2(0.292252, 0.292252)
+texture = ExtResource("1_y42y8")
+offset = Vector2(-236.757, -444.514)
+script = ExtResource("2_7w6wi")
+tooltip_text = "[center]<header_font_size>[b]The Scroll[/b][/font_size][/center]
+
+This is the scroll on which the original survivors had inscribed their names."
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1228894995]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=281128444]
+visible = false
+position = Vector2(-126.56945, -328.5036)
+polygon = PackedVector2Array(303.49463, 449.87698, 303.4194, -280.32605, -512.88794, -676.22577, -544.937, 30.737946)
+
+[node name="TooltipAnchor" type="Control" parent="." unique_id=1268268137]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -658.31464
+offset_top = -989.5623
+offset_right = 195.53436
+offset_bottom = 102.43707
+mouse_filter = 2
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

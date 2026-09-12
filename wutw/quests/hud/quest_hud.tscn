@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://2ts6fufc7wli"]
+
+[ext_resource type="Script" uid="uid://h01i46p5e5vg" path="res://quests/hud/quest_hud.gd" id="1_38u0q"]
+[ext_resource type="Texture2D" uid="uid://b1ykdich4mpd8" path="res://quests/hud/quest_icon.png" id="1_y7btj"]
+[ext_resource type="Texture2D" uid="uid://bcu8fnpwh1nu2" path="res://quests/hud/quest_icon_glow.png" id="3_oxjyn"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wvko7"]
+blend_mode = 1
+light_mode = 1
+
+[sub_resource type="Animation" id="Animation_oxjyn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wvko7"]
+resource_name = "trigger"
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(2, 2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1.4, 1.4, 1.4, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(2, 2, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_my6xs"]
+_data = {
+&"RESET": SubResource("Animation_oxjyn"),
+&"trigger": SubResource("Animation_wvko7")
+}
+
+[node name="QuestHud" type="Button" unique_id=1165934622]
+custom_minimum_size = Vector2(75, 69)
+custom_maximum_size = Vector2(75, 69)
+offset_right = 75.0
+offset_bottom = 69.0
+pivot_offset = Vector2(36, 60)
+flat = true
+script = ExtResource("1_38u0q")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=1092757157]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 75.0
+offset_bottom = 75.0
+pivot_offset_ratio = Vector2(0.5, 0)
+mouse_filter = 2
+texture = ExtResource("1_y7btj")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Icon" unique_id=927571597]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.3, 0.21500002, 0.15, 1)
+theme_override_font_sizes/font_size = 16
+text = "Quests"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Glow" type="TextureRect" parent="Icon" unique_id=1767913815]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+material = SubResource("CanvasItemMaterial_wvko7")
+layout_mode = 0
+offset_right = 75.0
+offset_bottom = 75.0
+mouse_filter = 2
+texture = ExtResource("3_oxjyn")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=782437329]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_my6xs")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

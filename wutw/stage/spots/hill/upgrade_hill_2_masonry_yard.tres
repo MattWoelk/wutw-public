@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://du7oheplc8jb3"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_nmuxe"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_13imr"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="3_6dkss"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_whquh"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="4_y327l"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="6_vymeg"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="7_ufg7a"]
+[ext_resource type="Resource" uid="uid://cfuqwl06ioxwd" path="res://stage/spots/hill/spot_hill.tres" id="8_vymeg"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_ufg7a"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://b548ltw41s15m" path="res://map/sprites/hills/mst_hill_6.tres" id="10_24c1u"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://chlfcnqbpau20" path="res://map/sprites/hills/mst_hill_3.tres" id="11_ir66g"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://c23xw6irwc0ik" path="res://map/sprites/hills/mst_hill_2.tres" id="12_g6qtr"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dgsucgxy4wy2k" path="res://map/sprites/hills/mst_hill_4.tres" id="13_v3hrt"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dqbot5dm01cko" path="res://map/sprites/hills/mst_hill_5.tres" id="14_tvxt3"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://difbd6y0w4ell" path="res://map/sprites/hills/mst_hill_1.tres" id="15_rt7ha"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://dlw5wwvs6gvyr" path="res://map/sprites/spots/hills/mst_hills_masonry_yard.tres" id="16_keedh"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://b33lkus5gfdjm" path="res://map/sprites/spots/hills/mst_hills_stone_quarry.tres" id="17_pxpd4"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="18_yrcnm"]
+
+[sub_resource type="Resource" id="Resource_cbo65"]
+script = ExtResource("18_yrcnm")
+old_sprite_type = ExtResource("17_pxpd4")
+new_sprite_type = ExtResource("16_keedh")
+extra_removables = Array[MapSpriteType]([ExtResource("10_24c1u"), ExtResource("11_ir66g"), ExtResource("12_g6qtr"), ExtResource("13_v3hrt"), ExtResource("14_tvxt3"), ExtResource("15_rt7ha")])
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_nmuxe")
+spot_upgrade_id = "hill_mason"
+name = "Masonry Yard"
+description = "Stones of all shapes and sizes are taught here to fit in and avoid standing out."
+required_aspects = Array[ExtResource("3_whquh")]([ExtResource("6_vymeg"), ExtResource("7_ufg7a")])
+granted_bonuses = Dictionary[ExtResource("2_13imr"), int]({
+ExtResource("3_6dkss"): 10,
+ExtResource("4_y327l"): 10
+})
+spot = ExtResource("8_vymeg")
+visuals = Array[ExtResource("9_ufg7a")]([SubResource("Resource_cbo65")])
+tags = Array[int]([2])

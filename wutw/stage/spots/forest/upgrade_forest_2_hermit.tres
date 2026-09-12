@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://bxfsnqpj2fir0"]
+
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="1_1rork"]
+[ext_resource type="Resource" uid="uid://c56dxbu1pjfbl" path="res://stage/spots/forest/upgrade_forest_3_monastery.tres" id="2_1rork"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="2_hpdbx"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="4_ianwq"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="5_ecqp0"]
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="6_pji5v"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="7_hijwm"]
+[ext_resource type="Resource" uid="uid://ucnbpdhw8mob" path="res://stage/spots/forest/spot_forest.tres" id="7_q54he"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://bwrrdahjn16jb" path="res://map/sprites/spots/forest/mst_forest_hermits_hut.tres" id="9_ake04"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://be3lyf7ut4ovc" path="res://map/sprites/spots/forest/mst_forest_hidden_shrine.tres" id="10_f0kk4"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="11_7fuh7"]
+
+[sub_resource type="Resource" id="Resource_1rewa"]
+script = ExtResource("11_7fuh7")
+old_sprite_type = ExtResource("10_f0kk4")
+new_sprite_type = ExtResource("9_ake04")
+biome = 9
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("6_pji5v")
+spot_upgrade_id = "forest_hermit"
+name = "Hermit's Hut"
+description = "A lone recluse has built a hut here to care for this ancient shrine, and read prophecies into birdcalls."
+required_aspects = Array[ExtResource("4_ianwq")]([ExtResource("5_ecqp0")])
+granted_bonuses = Dictionary[ExtResource("1_1rork"), int]({
+ExtResource("2_hpdbx"): 10
+})
+child_upgrades = Array[ExtResource("6_pji5v")]([ExtResource("2_1rork")])
+spot = ExtResource("7_q54he")
+visuals = Array[ExtResource("7_hijwm")]([SubResource("Resource_1rewa")])

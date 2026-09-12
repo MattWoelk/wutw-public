@@ -1,0 +1,36 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://chs0n1x3sy8vo"]
+
+[ext_resource type="Shader" uid="uid://dqbnau6g5wrah" path="res://theme/button/ukiyoe_button_compatibility.gdshader" id="1_2c4oa"]
+[ext_resource type="Texture2D" uid="uid://ctgl61r3xxsqv" path="res://theme/button/button_fill.png" id="2_8qm3h"]
+[ext_resource type="Texture2D" uid="uid://blje81yu8734p" path="res://theme/button/button_shape.png" id="3_gkvk2"]
+[ext_resource type="Texture2D" uid="uid://doe4603a6ngco" path="res://theme/button/button_outline.png" id="4_qfrlw"]
+[ext_resource type="Texture2D" uid="uid://cwubixgc8n0yr" path="res://theme/button/button_swish_left.png" id="5_cgnec"]
+[ext_resource type="Texture2D" uid="uid://n6l17h4ysayj" path="res://theme/button/button_swish_right.png" id="6_ik0hj"]
+
+[sub_resource type="Gradient" id="Gradient_5qlr5"]
+colors = PackedColorArray(0, 0.26874793, 0.40856788, 0.6039216, 0.112477146, 0.27659705, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o30ui"]
+gradient = SubResource("Gradient_5qlr5")
+fill_from = Vector2(0.48326054, 1)
+fill_to = Vector2(0.48908296, 0.45123726)
+
+[resource]
+shader = ExtResource("1_2c4oa")
+shader_parameter/state = 0.0
+shader_parameter/background_offset = Vector2(0, 0)
+shader_parameter/mask_tex = ExtResource("3_gkvk2")
+shader_parameter/background = ExtResource("2_8qm3h")
+shader_parameter/gradient = SubResource("GradientTexture2D_o30ui")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("4_qfrlw")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("6_ik0hj")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("5_cgnec")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://c486xx01esukm"]
+
+[ext_resource type="Shader" uid="uid://td5t8lc2dpjv" path="res://aspects/aspect.gdshader" id="1_h8twh"]
+[ext_resource type="Texture2D" uid="uid://dhahrckxpa52w" path="res://theme/new_icon.png" id="2_v7gf1"]
+[ext_resource type="Script" uid="uid://bfacodm7r02i6" path="res://theme/new_indicator.gd" id="3_v7gf1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1wco4"]
+shader = ExtResource("1_h8twh")
+shader_parameter/noise_scale = 53.922
+shader_parameter/noise_strength = 0.242
+shader_parameter/noise_color = Color(0, 0, 0, 1)
+
+[node name="NewIndicator" type="TextureRect"]
+material = SubResource("ShaderMaterial_1wco4")
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1920.0
+offset_right = -1888.0
+offset_bottom = 32.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("2_v7gf1")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("3_v7gf1")

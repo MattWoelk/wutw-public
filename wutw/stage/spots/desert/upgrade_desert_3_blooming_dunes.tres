@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://1h5xk0ef254j"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_jb0sh"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_lwx56"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_60ifw"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="3_cudq3"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="4_xye2p"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="6_tfryc"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="7_887a0"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="8_wxc3x"]
+[ext_resource type="Resource" uid="uid://coqtbomfb4xc" path="res://stage/spots/desert/spot_desert.tres" id="9_tfryc"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="10_887a0"]
+[ext_resource type="Script" uid="uid://dvrtuqbmx4v30" path="res://stage/spots/spot_upgrade_visual_add.gd" id="11_wxc3x"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://dy4kpbix4kix5" path="res://map/sprites/spots/desert/mst_desert_blooming_dunes.tres" id="12_do3pe"]
+
+[sub_resource type="Resource" id="Resource_3bipi"]
+script = ExtResource("11_wxc3x")
+sprite_type = ExtResource("12_do3pe")
+biome = 2
+metadata/_custom_type_script = "uid://dvrtuqbmx4v30"
+
+[resource]
+script = ExtResource("1_jb0sh")
+spot_upgrade_id = "desert_blooming_dunes"
+name = "Blooming Dunes"
+description = "Blink and you'll miss it: the sand erupting in flowers, a miracle gone by morning."
+required_aspects = Array[ExtResource("3_60ifw")]([ExtResource("6_tfryc"), ExtResource("7_887a0"), ExtResource("8_wxc3x")])
+granted_bonuses = Dictionary[ExtResource("2_lwx56"), int]({
+ExtResource("3_cudq3"): 20,
+ExtResource("4_xye2p"): 10
+})
+spot = ExtResource("9_tfryc")
+visuals = Array[ExtResource("10_887a0")]([SubResource("Resource_3bipi")])
+tags = Array[int]([0])
+unique_per_run = true
+min_main_quest_progress = 110

@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://chusul08ry52r"]
+
+[ext_resource type="PackedScene" uid="uid://bl780vhdwft4i" path="res://hub/contents/hub_facility.tscn" id="1_2s52w"]
+[ext_resource type="Texture2D" uid="uid://dx60ups3wtjn" path="res://hub/contents/tower/tower.png" id="2_ahmgk"]
+[ext_resource type="Script" uid="uid://djh5yqsxyx7te" path="res://hub/contents/tower/hub_tower.gd" id="2_o3jib"]
+[ext_resource type="Texture2D" uid="uid://c5gi6iov7naf7" path="res://hub/contents/tower/tower_label.png" id="3_7m7ff"]
+[ext_resource type="Texture2D" uid="uid://yeogqnlrkiqm" path="res://hub/contents/land/stones/stone_2.png" id="3_dl14a"]
+[ext_resource type="Texture2D" uid="uid://dacwgkcf3552o" path="res://hub/contents/land/stones/stone_3.png" id="4_8bbef"]
+[ext_resource type="Texture2D" uid="uid://cug3cu28vubqx" path="res://hub/contents/land/stones/stone_4.png" id="5_42n56"]
+[ext_resource type="Texture2D" uid="uid://fj1ic63xmk0u" path="res://hub/contents/land/stones/stone_1.png" id="6_8bbef"]
+[ext_resource type="FontFile" uid="uid://dwycufv0f21v2" path="res://theme/fonts/Yuji_Mai/YujiMai-Regular.ttf" id="7_42n56"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o3jib"]
+font = ExtResource("7_42n56")
+font_size = 76
+font_color = Color(1, 0.85600007, 0.27999997, 1)
+outline_size = 12
+outline_color = Color(0.23, 0.18016666, 0, 1)
+
+[node name="HubTower" unique_id=1634232019 instance=ExtResource("1_2s52w")]
+script = ExtResource("2_o3jib")
+tooltip_text = "[center]<header_font_size>[b]Peer Out[/b][/font_size][/center]
+
+Observe previously resettled <term:world_shard>s and potential <term_lower:shard_type>s."
+
+[node name="Panel" parent="." index="0" unique_id=1465047343]
+offset_left = 88.1492
+offset_top = -233.963
+offset_right = 348.149
+offset_bottom = 340.037
+scale = Vector2(0.24884, 0.24884)
+
+[node name="Label" parent="Panel" index="1" unique_id=541126649]
+visible = false
+text = "望
+楼"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" index="2" unique_id=2113822992]
+layout_mode = 2
+theme_override_constants/margin_left = 37
+theme_override_constants/margin_top = 89
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 70
+
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer" index="0" unique_id=602632147]
+texture_filter = 6
+layout_mode = 2
+texture = ExtResource("3_7m7ff")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CollisionPolygon2D" parent="Area2D" parent_id_path=PackedInt32Array(2019498285) index="0" unique_id=521856771]
+position = Vector2(7, -7)
+polygon = PackedVector2Array(151.436, 14.094, 150.31, -277.43, 1.44342, -315.564, -143.023, -259.83, -147.423, -0.230255, 17.9696, 74.9606)
+
+[node name="Sprite" type="Sprite2D" parent="." index="2" unique_id=1390201406]
+y_sort_enabled = true
+position = Vector2(-0.16983, 0.001297)
+scale = Vector2(0.131535, 0.131535)
+texture = ExtResource("2_ahmgk")
+offset = Vector2(-26.3549, -1016.06)
+
+[node name="Stone7" type="Sprite2D" parent="Sprite" index="0" unique_id=2039898324]
+y_sort_enabled = true
+position = Vector2(831.016, -46.8155)
+scale = Vector2(2.32659, 2.32659)
+texture = ExtResource("3_dl14a")
+
+[node name="Stone8" type="Sprite2D" parent="Sprite" index="1" unique_id=1209461023]
+y_sort_enabled = true
+position = Vector2(765.054, 95.2835)
+scale = Vector2(2.32659, 2.32659)
+texture = ExtResource("4_8bbef")
+offset = Vector2(-1.52441, -14.8005)
+
+[node name="Stone9" type="Sprite2D" parent="Sprite" index="2" unique_id=448314704]
+y_sort_enabled = true
+position = Vector2(533.893, 108.739)
+scale = Vector2(2.32659, 2.32659)
+texture = ExtResource("5_42n56")
+offset = Vector2(-0.743408, -1.44357)
+
+[node name="Stone10" type="Sprite2D" parent="Sprite" index="3" unique_id=1510498430]
+y_sort_enabled = true
+position = Vector2(798.152, 55.9953)
+rotation = -0.197954
+scale = Vector2(2.32659, 2.32659)
+texture = ExtResource("6_8bbef")
+offset = Vector2(-1.52441, -14.8005)
+
+[node name="Stone11" type="Sprite2D" parent="Sprite" index="4" unique_id=282977691]
+y_sort_enabled = true
+position = Vector2(831.016, -46.8155)
+scale = Vector2(2.32659, 2.32659)
+texture = ExtResource("3_dl14a")
+
+[node name="Stone12" type="Sprite2D" parent="Sprite" index="5" unique_id=651242515]
+y_sort_enabled = true
+position = Vector2(765.054, 95.2835)
+scale = Vector2(2.32659, 2.32659)
+texture = ExtResource("4_8bbef")
+offset = Vector2(-1.52441, -14.8005)
+
+[node name="Stone13" type="Sprite2D" parent="Sprite" index="6" unique_id=1590289930]
+y_sort_enabled = true
+position = Vector2(533.893, 108.739)
+scale = Vector2(2.32659, 2.32659)
+texture = ExtResource("5_42n56")
+offset = Vector2(-0.743408, -1.44357)
+
+[node name="Stone14" type="Sprite2D" parent="Sprite" index="7" unique_id=1994515315]
+y_sort_enabled = true
+position = Vector2(798.152, 55.9953)
+rotation = -0.197954
+scale = Vector2(2.32659, 2.32659)
+texture = ExtResource("6_8bbef")
+offset = Vector2(-1.52441, -14.8005)
+
+[node name="TooltipAnchor" parent="." index="3" unique_id=278453014]
+offset_left = -116.0
+offset_top = -297.0
+offset_right = 133.0
+offset_bottom = 39.0
+
+[node name="NewShardTypeLabel" type="Label" parent="." index="4" unique_id=987930986]
+unique_name_in_owner = true
+offset_left = -22.871124
+offset_top = -411.32928
+offset_right = 8.128876
+offset_bottom = -300.32928
+text = "!"
+label_settings = SubResource("LabelSettings_o3jib")
+horizontal_alignment = 1
+vertical_alignment = 1

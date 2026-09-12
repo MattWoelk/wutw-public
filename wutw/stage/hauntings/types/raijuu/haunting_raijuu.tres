@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://bdom3l0kplsoy"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_2u8if"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="2_ycetp"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="3_j7hij"]
+[ext_resource type="Resource" uid="uid://brgqqv5aset8u" path="res://cards/tier6/card_scorch.tres" id="4_hdf16"]
+[ext_resource type="Script" uid="uid://bqbixmm42f6mm" path="res://stage/hauntings/effects/haunting_effect_top_card.gd" id="5_hdf16"]
+[ext_resource type="Resource" uid="uid://b4cssqay50abx" path="res://art/pieces/piece_yagyou_raijuu.tres" id="6_j7hij"]
+[ext_resource type="Texture2D" uid="uid://b7n7jrk24nwgu" path="res://stage/hauntings/types/raijuu/haunting_raijuu.png" id="6_ycetp"]
+[ext_resource type="Resource" uid="uid://cmuugnfoon106" path="res://art/pieces/piece_hiroshige_noji_river.tres" id="7_hdf16"]
+[ext_resource type="Texture2D" uid="uid://bcxh2dwmteylq" path="res://stage/hauntings/types/raijuu/haunting_raijuu_realistic_thunderstorms.png" id="7_j7hij"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="8_hqp67"]
+[ext_resource type="Resource" uid="uid://ouecqwnbe55w" path="res://stage/spots/wasteland/spot_wasteland.tres" id="9_hdf16"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="10_tnybj"]
+[ext_resource type="Script" uid="uid://bwspyvycvlqtc" path="res://stage/hauntings/triggers/haunting_trigger_card_cast.gd" id="12_tnybj"]
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("5_hdf16")
+card_type = ExtResource("4_hdf16")
+metadata/_custom_type_script = "uid://bqbixmm42f6mm"
+
+[sub_resource type="Resource" id="Resource_0eiya"]
+script = ExtResource("12_tnybj")
+metadata/_custom_type_script = "uid://bwspyvycvlqtc"
+
+[resource]
+script = ExtResource("8_hqp67")
+haunting_id = "raijuu"
+name = "Raijū"
+name_japanese = "雷獣"
+name_realistic = "Thunderstorms"
+name_translation = "Thunder Beasts"
+description = "Settlers warn of beasts made of lightning that ride the storm clouds, striking the earth wherever a ritual is held."
+description_realistic = "Severe thunderstorms frequently pass over the region, bringing lightning strikes that ignite sudden fires."
+description_long = "The air grows heavy and smells of burning before the storms hit. Lightning strikes with an uncanny precision, targeting high temple spires where the most holy rituals are performed.
+
+In the Old World, they spoke of the Raijū. These beasts of thunder sleep in the bellies of dark clouds, taking the shapes of wild dogs or badgers wrapped in crackling energy. When divine powers are invoked, these creatures are drawn to strike, leaving a trail of fire in their wake."
+image_small = ExtResource("6_ycetp")
+image_credit = ExtResource("6_j7hij")
+image_small_realistic = ExtResource("7_j7hij")
+image_realistic_credit = ExtResource("7_hdf16")
+spot_type = ExtResource("9_hdf16")
+base_aspect_types = Array[ExtResource("1_2u8if")]([ExtResource("3_j7hij")])
+extra_aspect_type = ExtResource("2_ycetp")
+scaling_bonus_type = ExtResource("10_tnybj")
+trigger = SubResource("Resource_0eiya")
+effect = SubResource("Resource_trtbi")
+spot_attach_mode = 1
+settlement_attach_mode = 1
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

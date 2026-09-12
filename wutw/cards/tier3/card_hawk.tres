@@ -1,0 +1,290 @@
+[gd_resource type="Resource" script_class="CardType" format=3 uid="uid://4ehjm1o76x8c"]
+
+[ext_resource type="Script" uid="uid://b56kytec5oqcb" path="res://cards/abilities/card_ability.gd" id="1_h8uc4"]
+[ext_resource type="Script" uid="uid://cmjqtjdbm36e8" path="res://cards/abilities/card_ability_pick.gd" id="2_4br4r"]
+[ext_resource type="Script" uid="uid://xc73x4t7ckxm" path="res://japanese/example_sentence.gd" id="3_ehfsb"]
+[ext_resource type="Script" uid="uid://bl2eelwkj800o" path="res://japanese/japanese_token.gd" id="4_6r5qe"]
+[ext_resource type="Script" uid="uid://b6rw4ldrj6wch" path="res://japanese/vocab.gd" id="5_6jlk6"]
+[ext_resource type="Script" uid="uid://du4k150pcdjs6" path="res://japanese/kanji_shape.gd" id="6_87p81"]
+[ext_resource type="Script" uid="uid://dc15txdqjanlf" path="res://japanese/stroke_shape.gd" id="7_8vlaw"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="8_6s6lk"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="9_35aw1"]
+[ext_resource type="Resource" uid="uid://d1k7vakhjcq5g" path="res://glossary/categories/termcategory_card.tres" id="10_7i51q"]
+
+[sub_resource type="Resource" id="Resource_dhgwj"]
+script = ExtResource("2_4br4r")
+metadata/_custom_type_script = "uid://cmjqtjdbm36e8"
+
+[sub_resource type="Resource" id="Resource_1wvtu"]
+script = ExtResource("5_6jlk6")
+japanese = "鷹"
+readings = Array[String](["たか"])
+meanings = Array[String](["hawk", "falcon"])
+
+[sub_resource type="Resource" id="Resource_pmytd"]
+script = ExtResource("4_6r5qe")
+raw_text = "鷹"
+vocab = SubResource("Resource_1wvtu")
+reading = "たか"
+
+[sub_resource type="Resource" id="Resource_u5o32"]
+script = ExtResource("4_6r5qe")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_qjbyo"]
+script = ExtResource("5_6jlk6")
+japanese = "鋭い"
+readings = Array[String](["するどい"])
+meanings = Array[String](["sharp (knife, claws, etc.)", "pointed", "sharp (pain, tone, etc.)", "acute", "stabbing", "cutting (remark, criticism, etc.)", "stinging", "biting", "fierce (attack)", "pointed (question, look, etc.)", "piercing (gaze)", "shrill (sound)", "keen (intuition, sense of smell, etc.)", "sharp (eye, mind, etc.)", "astute", "shrewd", "discerning", "penetrating (insight, question, etc.)", "perceptive"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_kjlus"]
+script = ExtResource("4_6r5qe")
+raw_text = "鋭い"
+vocab = SubResource("Resource_qjbyo")
+reading = "するどい"
+
+[sub_resource type="Resource" id="Resource_4c6oh"]
+script = ExtResource("5_6jlk6")
+japanese = "目"
+readings = Array[String](["め"])
+meanings = Array[String](["eye", "eyeball", "eyesight", "sight", "vision", "look", "stare", "gaze", "glance", "notice", "attention", "observation", "eyes (of the world, public, etc.)", "an experience", "viewpoint", "discrimination", "discernment", "judgement", "eye (e.g. for quality)", "(an) appearance", "chance (of success)", "possibility (of a good result)", "spacing (between crossed strands of a net, mesh, etc.)", "opening", "stitch", "texture", "weave", "grain (of wood, paper)", "eye (of a storm, needle, etc.)", "intersection (on a go board)", "square (on a chessboard)", "dot (on a dice)", "pip", "rolled number", "graduation", "division (of a scale)", "tooth (of a saw, comb, etc.)", "ordinal number suffix", "somewhat", "-ish", "point (e.g. of change)"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_qut7d"]
+script = ExtResource("4_6r5qe")
+raw_text = "目"
+vocab = SubResource("Resource_4c6oh")
+reading = "め"
+
+[sub_resource type="Resource" id="Resource_pavci"]
+script = ExtResource("4_6r5qe")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_agbr3"]
+script = ExtResource("5_6jlk6")
+japanese = "持つ"
+readings = Array[String](["もつ"])
+meanings = Array[String](["to hold (in one's hand)", "to take", "to carry", "to possess", "to have", "to own", "to maintain", "to keep", "to last", "to be durable", "to survive", "to take charge of", "to be in charge of", "to hold (meeting, etc.)", "to have (opportunity, etc.)", "to have \"it\"", "to have that special something", "to be blessed with good luck"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_ma4l7"]
+script = ExtResource("4_6r5qe")
+raw_text = "持っ"
+vocab = SubResource("Resource_agbr3")
+reading = "もっ"
+
+[sub_resource type="Resource" id="Resource_mq7xt"]
+script = ExtResource("4_6r5qe")
+raw_text = "て"
+reading = "て"
+
+[sub_resource type="Resource" id="Resource_5js47"]
+script = ExtResource("4_6r5qe")
+raw_text = "いる"
+reading = "いる"
+
+[sub_resource type="Resource" id="Resource_p1glt"]
+script = ExtResource("4_6r5qe")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_dtg7h"]
+script = ExtResource("3_ehfsb")
+japanese = "鷹は鋭い目を持っている。"
+native = "The hawk has piercing eyes."
+parsed = Array[ExtResource("4_6r5qe")]([SubResource("Resource_pmytd"), SubResource("Resource_u5o32"), SubResource("Resource_kjlus"), SubResource("Resource_qut7d"), SubResource("Resource_pavci"), SubResource("Resource_ma4l7"), SubResource("Resource_mq7xt"), SubResource("Resource_5js47"), SubResource("Resource_p1glt")])
+_difficulty = 579
+
+[sub_resource type="Resource" id="Resource_6linc"]
+script = ExtResource("5_6jlk6")
+japanese = "能"
+readings = Array[String](["のう"])
+meanings = Array[String](["talent", "gift", "function", "noh (theatre)"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_n2j85"]
+script = ExtResource("4_6r5qe")
+raw_text = "能"
+vocab = SubResource("Resource_6linc")
+reading = "のう"
+
+[sub_resource type="Resource" id="Resource_wx843"]
+script = ExtResource("4_6r5qe")
+raw_text = "ある"
+reading = "ある"
+
+[sub_resource type="Resource" id="Resource_d2k3y"]
+script = ExtResource("4_6r5qe")
+raw_text = "鷹"
+vocab = SubResource("Resource_1wvtu")
+reading = "たか"
+
+[sub_resource type="Resource" id="Resource_y2ju8"]
+script = ExtResource("4_6r5qe")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_gvp6w"]
+script = ExtResource("5_6jlk6")
+japanese = "爪"
+readings = Array[String](["つめ"])
+meanings = Array[String](["nail (e.g. fingernail, toenail)", "claw", "talon", "hoof", "plectrum", "pick", "hook", "clasp"])
+jlpt_level = 2
+
+[sub_resource type="Resource" id="Resource_i8elj"]
+script = ExtResource("4_6r5qe")
+raw_text = "爪"
+vocab = SubResource("Resource_gvp6w")
+reading = "つめ"
+
+[sub_resource type="Resource" id="Resource_rue4l"]
+script = ExtResource("4_6r5qe")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_2qf3i"]
+script = ExtResource("5_6jlk6")
+japanese = "隠す"
+readings = Array[String](["かくす"])
+meanings = Array[String](["to hide", "to conceal"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_xo0ho"]
+script = ExtResource("4_6r5qe")
+raw_text = "隠す"
+vocab = SubResource("Resource_2qf3i")
+reading = "かくす"
+
+[sub_resource type="Resource" id="Resource_5517s"]
+script = ExtResource("4_6r5qe")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_b24ng"]
+script = ExtResource("3_ehfsb")
+japanese = "能ある鷹は爪を隠す。"
+native = "A smart falcon hides its talons."
+parsed = Array[ExtResource("4_6r5qe")]([SubResource("Resource_n2j85"), SubResource("Resource_wx843"), SubResource("Resource_d2k3y"), SubResource("Resource_y2ju8"), SubResource("Resource_i8elj"), SubResource("Resource_rue4l"), SubResource("Resource_xo0ho"), SubResource("Resource_5517s")])
+_difficulty = 608
+
+[sub_resource type="Resource" id="Resource_kwnal"]
+script = ExtResource("7_8vlaw")
+points = Array[Vector2]([Vector2(52.45, 9.13), Vector2(53.74, 12.71), Vector2(53.67, 16.65)])
+
+[sub_resource type="Resource" id="Resource_g6rsx"]
+script = ExtResource("7_8vlaw")
+points = Array[Vector2]([Vector2(23.47, 19.78), Vector2(28.47, 20.24), Vector2(33.54, 19.65), Vector2(38.34, 19.16), Vector2(43.18, 18.66), Vector2(48.08, 18.16), Vector2(53.03, 17.66), Vector2(58.05, 17.16), Vector2(63.14, 16.68), Vector2(68.31, 16.21), Vector2(73.57, 15.76), Vector2(78.92, 15.32), Vector2(84.08, 15.07), Vector2(89.13, 15.57)])
+
+[sub_resource type="Resource" id="Resource_ln1lv"]
+script = ExtResource("7_8vlaw")
+points = Array[Vector2]([Vector2(25.4, 20.92), Vector2(26.28, 26.19), Vector2(26.03, 31.86), Vector2(25.59, 37.4), Vector2(24.93, 42.82), Vector2(24, 48.1), Vector2(22.77, 53.26), Vector2(21.2, 58.28), Vector2(19.25, 63.16), Vector2(16.9, 67.9), Vector2(14.1, 72.51), Vector2(10.81, 76.97)])
+
+[sub_resource type="Resource" id="Resource_s03ya"]
+script = ExtResource("7_8vlaw")
+points = Array[Vector2]([Vector2(44.22, 22.6), Vector2(42.77, 26.84), Vector2(39.75, 30.82), Vector2(35.59, 35.1), Vector2(30.56, 39.25)])
+
+[sub_resource type="Resource" id="Resource_7vah1"]
+script = ExtResource("7_8vlaw")
+points = Array[Vector2]([Vector2(39.77, 32.89), Vector2(40.74, 38.62), Vector2(40.73, 45.3), Vector2(40.71, 51.7)])
+
+[sub_resource type="Resource" id="Resource_vcyad"]
+script = ExtResource("7_8vlaw")
+points = Array[Vector2]([Vector2(59.07, 20.33), Vector2(56.99, 24.83), Vector2(53.76, 28.7), Vector2(49.13, 33.16)])
+
+[sub_resource type="Resource" id="Resource_4s15l"]
+script = ExtResource("7_8vlaw")
+points = Array[Vector2]([Vector2(56.29, 28.53), Vector2(57.19, 33.07), Vector2(57.17, 38.29), Vector2(57.14, 43.82), Vector2(57.13, 49)])
+
+[sub_resource type="Resource" id="Resource_ywom0"]
+script = ExtResource("7_8vlaw")
+points = Array[Vector2]([Vector2(74.73, 18.67), Vector2(73.56, 22.05), Vector2(71.23, 25.32)])
+
+[sub_resource type="Resource" id="Resource_redkn"]
+script = ExtResource("7_8vlaw")
+points = Array[Vector2]([Vector2(58.05, 28.65), Vector2(61.61, 28.13), Vector2(66.68, 27.41), Vector2(72.52, 26.58), Vector2(78.4, 25.74), Vector2(83.85, 24.96), Vector2(88.73, 24.23)])
+
+[sub_resource type="Resource" id="Resource_fok76"]
+script = ExtResource("7_8vlaw")
+points = Array[Vector2]([Vector2(70.44, 28.44), Vector2(71.18, 34.3), Vector2(71.15, 40.94), Vector2(71.13, 45.5)])
+
+[sub_resource type="Resource" id="Resource_lcr1y"]
+script = ExtResource("7_8vlaw")
+points = Array[Vector2]([Vector2(58.07, 34.62), Vector2(62.2, 34.07), Vector2(68.02, 33.32), Vector2(74.42, 32.5), Vector2(80.28, 31.74), Vector2(85.73, 31.01)])
+
+[sub_resource type="Resource" id="Resource_w18ho"]
+script = ExtResource("7_8vlaw")
+points = Array[Vector2]([Vector2(57.42, 40.96), Vector2(61.8, 40.47), Vector2(67.98, 39.81), Vector2(74.79, 39.11), Vector2(81.03, 38.47), Vector2(86.82, 37.84)])
+
+[sub_resource type="Resource" id="Resource_044r8"]
+script = ExtResource("7_8vlaw")
+points = Array[Vector2]([Vector2(57.42, 48.08), Vector2(61.22, 47.61), Vector2(66.9, 47), Vector2(73.57, 46.33), Vector2(80.33, 45.66), Vector2(86.39, 45.06), Vector2(92.08, 44.42)])
+
+[sub_resource type="Resource" id="Resource_oftux"]
+script = ExtResource("7_8vlaw")
+points = Array[Vector2]([Vector2(52.42, 49.68), Vector2(51.61, 52.48), Vector2(49.38, 55.75)])
+
+[sub_resource type="Resource" id="Resource_xrbn5"]
+script = ExtResource("7_8vlaw")
+points = Array[Vector2]([Vector2(36.83, 57.65), Vector2(37.59, 62.01), Vector2(37.57, 67), Vector2(37.54, 73.45), Vector2(37.51, 79.9), Vector2(37.49, 85.37)])
+
+[sub_resource type="Resource" id="Resource_76a6g"]
+script = ExtResource("7_8vlaw")
+points = Array[Vector2]([Vector2(38.37, 58.79), Vector2(41.81, 58.37), Vector2(47.06, 57.78), Vector2(53.39, 57.1), Vector2(60.07, 56.41), Vector2(66.39, 55.77), Vector2(71.61, 55.27), Vector2(75.88, 55.2), Vector2(77.67, 58.75), Vector2(76.09, 63.73), Vector2(73.86, 69.71)])
+
+[sub_resource type="Resource" id="Resource_85kaq"]
+script = ExtResource("7_8vlaw")
+points = Array[Vector2]([Vector2(38.93, 64.58), Vector2(41.97, 64.31), Vector2(47.31, 63.86), Vector2(53.99, 63.29), Vector2(61.09, 62.71), Vector2(67.66, 62.18), Vector2(72.76, 61.8), Vector2(75.45, 61.66)])
+
+[sub_resource type="Resource" id="Resource_v8hyv"]
+script = ExtResource("7_8vlaw")
+points = Array[Vector2]([Vector2(38.82, 70.99), Vector2(42.64, 70.74), Vector2(48.53, 70.27), Vector2(55.5, 69.69), Vector2(62.58, 69.12), Vector2(68.77, 68.66), Vector2(73.09, 68.42)])
+
+[sub_resource type="Resource" id="Resource_ifomk"]
+script = ExtResource("7_8vlaw")
+points = Array[Vector2]([Vector2(38.85, 77.5), Vector2(43.56, 77.07), Vector2(49.05, 76.58), Vector2(55, 76.05), Vector2(61.09, 75.5), Vector2(66.99, 74.98), Vector2(72.39, 74.5), Vector2(76.95, 74.09), Vector2(81.36, 73.64), Vector2(86.68, 73.45)])
+
+[sub_resource type="Resource" id="Resource_1ktf0"]
+script = ExtResource("7_8vlaw")
+points = Array[Vector2]([Vector2(38.65, 84.65), Vector2(44.45, 83.96), Vector2(50.03, 83.33), Vector2(55.42, 82.75), Vector2(60.64, 82.21), Vector2(65.71, 81.73), Vector2(70.65, 81.29), Vector2(75.49, 80.89), Vector2(80.24, 80.53), Vector2(84.96, 80.21), Vector2(89.45, 82.18), Vector2(88.26, 86.91), Vector2(85.85, 91.17), Vector2(82.98, 95.57), Vector2(78.85, 99.11), Vector2(75.2, 96.13)])
+
+[sub_resource type="Resource" id="Resource_huglc"]
+script = ExtResource("7_8vlaw")
+points = Array[Vector2]([Vector2(28.2, 89.76), Vector2(28.06, 94.98), Vector2(26.72, 99.25)])
+
+[sub_resource type="Resource" id="Resource_88frj"]
+script = ExtResource("7_8vlaw")
+points = Array[Vector2]([Vector2(41.93, 87.78), Vector2(45.1, 91.72), Vector2(47.08, 96.31)])
+
+[sub_resource type="Resource" id="Resource_bk83q"]
+script = ExtResource("7_8vlaw")
+points = Array[Vector2]([Vector2(55.04, 85.5), Vector2(57.63, 89.42), Vector2(59.37, 93.97)])
+
+[sub_resource type="Resource" id="Resource_3c4v3"]
+script = ExtResource("7_8vlaw")
+points = Array[Vector2]([Vector2(68.02, 83.82), Vector2(70.56, 86.43), Vector2(72.26, 89.45)])
+
+[sub_resource type="Resource" id="Resource_twrx4"]
+script = ExtResource("6_87p81")
+stroke_shapes = Array[ExtResource("7_8vlaw")]([SubResource("Resource_kwnal"), SubResource("Resource_g6rsx"), SubResource("Resource_ln1lv"), SubResource("Resource_s03ya"), SubResource("Resource_7vah1"), SubResource("Resource_vcyad"), SubResource("Resource_4s15l"), SubResource("Resource_ywom0"), SubResource("Resource_redkn"), SubResource("Resource_fok76"), SubResource("Resource_lcr1y"), SubResource("Resource_w18ho"), SubResource("Resource_044r8"), SubResource("Resource_oftux"), SubResource("Resource_xrbn5"), SubResource("Resource_76a6g"), SubResource("Resource_85kaq"), SubResource("Resource_v8hyv"), SubResource("Resource_ifomk"), SubResource("Resource_1ktf0"), SubResource("Resource_huglc"), SubResource("Resource_88frj"), SubResource("Resource_bk83q"), SubResource("Resource_3c4v3")])
+
+[sub_resource type="Resource" id="Resource_e810b"]
+script = ExtResource("5_6jlk6")
+japanese = "鷹"
+readings = Array[String](["たか"])
+meanings = Array[String](["hawk", "falcon"])
+
+[resource]
+script = ExtResource("8_6s6lk")
+symbol = "鷹"
+card_name = "Hawk"
+rarity = 3
+abilities = Array[ExtResource("1_h8uc4")]([SubResource("Resource_dhgwj")])
+tags = Array[int]([3])
+vocabulary = Array[ExtResource("5_6jlk6")]([SubResource("Resource_e810b")])
+example_sentences = Array[ExtResource("3_ehfsb")]([SubResource("Resource_dtg7h"), SubResource("Resource_b24ng")])
+kanji_shape = SubResource("Resource_twrx4")
+init_aspects = 67
+term_categories = Array[ExtResource("9_35aw1")]([ExtResource("10_7i51q")])

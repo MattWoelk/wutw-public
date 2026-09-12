@@ -1,0 +1,601 @@
+[gd_resource type="Resource" script_class="CardType" format=3 uid="uid://l8khp5fux5e4"]
+
+[ext_resource type="Script" uid="uid://b56kytec5oqcb" path="res://cards/abilities/card_ability.gd" id="1_l5i68"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="2_n2xp0"]
+[ext_resource type="Script" uid="uid://crau1da5gy0n8" path="res://cards/abilities/card_ability_target.gd" id="3_8frq8"]
+[ext_resource type="Script" uid="uid://uued7mxh0g4q" path="res://cards/abilities/card_ability_adapt.gd" id="4_uugis"]
+[ext_resource type="Script" uid="uid://xc73x4t7ckxm" path="res://japanese/example_sentence.gd" id="5_kshte"]
+[ext_resource type="Script" uid="uid://bl2eelwkj800o" path="res://japanese/japanese_token.gd" id="6_jqom8"]
+[ext_resource type="Script" uid="uid://b6rw4ldrj6wch" path="res://japanese/vocab.gd" id="7_3xy4u"]
+[ext_resource type="Script" uid="uid://du4k150pcdjs6" path="res://japanese/kanji_shape.gd" id="8_50o3p"]
+[ext_resource type="Script" uid="uid://dc15txdqjanlf" path="res://japanese/stroke_shape.gd" id="9_dg7u5"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="10_irdu3"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="11_hvd70"]
+[ext_resource type="Resource" uid="uid://d1k7vakhjcq5g" path="res://glossary/categories/termcategory_card.tres" id="12_8vaco"]
+
+[sub_resource type="Resource" id="Resource_oq0k3"]
+script = ExtResource("3_8frq8")
+bonus_type = ExtResource("2_n2xp0")
+metadata/_custom_type_script = "uid://crau1da5gy0n8"
+
+[sub_resource type="Resource" id="Resource_iu75n"]
+script = ExtResource("4_uugis")
+metadata/_custom_type_script = "uid://uued7mxh0g4q"
+
+[sub_resource type="Resource" id="Resource_py48n"]
+script = ExtResource("7_3xy4u")
+japanese = "成功"
+readings = Array[String](["せいこう"])
+meanings = Array[String](["success", "achievement", "succeeding (in life)", "(worldly) success", "prosperity"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_pl8fc"]
+script = ExtResource("6_jqom8")
+raw_text = "成功"
+vocab = SubResource("Resource_py48n")
+reading = "せいこう"
+
+[sub_resource type="Resource" id="Resource_28hc4"]
+script = ExtResource("6_jqom8")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_vhbib"]
+script = ExtResource("7_3xy4u")
+japanese = "鍛練"
+readings = Array[String](["たんれん"])
+meanings = Array[String](["tempering (metal)", "annealing", "forging", "toughening", "disciplining", "training"])
+
+[sub_resource type="Resource" id="Resource_phve4"]
+script = ExtResource("6_jqom8")
+raw_text = "鍛練"
+vocab = SubResource("Resource_vhbib")
+reading = "たんれん"
+
+[sub_resource type="Resource" id="Resource_7kvo3"]
+script = ExtResource("6_jqom8")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_usucm"]
+script = ExtResource("6_jqom8")
+raw_text = "ある"
+reading = "ある"
+
+[sub_resource type="Resource" id="Resource_tahox"]
+script = ExtResource("6_jqom8")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_nj0rn"]
+script = ExtResource("5_kshte")
+japanese = "成功は鍛練にある。"
+native = "Success consists of discipline."
+parsed = Array[ExtResource("6_jqom8")]([SubResource("Resource_pl8fc"), SubResource("Resource_28hc4"), SubResource("Resource_phve4"), SubResource("Resource_7kvo3"), SubResource("Resource_usucm"), SubResource("Resource_tahox")])
+_difficulty = 488
+
+[sub_resource type="Resource" id="Resource_ojal1"]
+script = ExtResource("7_3xy4u")
+japanese = "体"
+readings = Array[String](["からだ"])
+meanings = Array[String](["body", "torso", "trunk", "build", "physique", "frame", "figure", "health", "constitution"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_3ag32"]
+script = ExtResource("6_jqom8")
+raw_text = "体"
+vocab = SubResource("Resource_ojal1")
+reading = "からだ"
+
+[sub_resource type="Resource" id="Resource_clc1a"]
+script = ExtResource("6_jqom8")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_hc062"]
+script = ExtResource("7_3xy4u")
+japanese = "鍛える"
+readings = Array[String](["きたえる"])
+meanings = Array[String](["to forge", "to temper", "to drill", "to train", "to discipline"])
+jlpt_level = 1
+
+[sub_resource type="Resource" id="Resource_qx82u"]
+script = ExtResource("6_jqom8")
+raw_text = "鍛える"
+vocab = SubResource("Resource_hc062")
+reading = "きたえる"
+
+[sub_resource type="Resource" id="Resource_w7va4"]
+script = ExtResource("6_jqom8")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_focdm"]
+script = ExtResource("6_jqom8")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_8ynbt"]
+script = ExtResource("7_3xy4u")
+japanese = "好き"
+readings = Array[String](["すき"])
+meanings = Array[String](["liking", "being fond of", "to one's liking", "to one's taste", "preferred", "favourite", "liking (romantically)", "being in love with", "beloved", "faddism", "eccentricity", "as one likes", "as it suits one", "lecherous", "lustful", "salacious"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_wtlto"]
+script = ExtResource("6_jqom8")
+raw_text = "好き"
+vocab = SubResource("Resource_8ynbt")
+reading = "すき"
+
+[sub_resource type="Resource" id="Resource_nyl3u"]
+script = ExtResource("6_jqom8")
+raw_text = "な"
+reading = "な"
+
+[sub_resource type="Resource" id="Resource_735kt"]
+script = ExtResource("6_jqom8")
+raw_text = "ん"
+reading = "ん"
+
+[sub_resource type="Resource" id="Resource_l1cse"]
+script = ExtResource("6_jqom8")
+raw_text = "です"
+reading = "です"
+
+[sub_resource type="Resource" id="Resource_xhh7q"]
+script = ExtResource("6_jqom8")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_3obte"]
+script = ExtResource("5_kshte")
+japanese = "体を鍛えるのが好きなんです。"
+native = "I like working out."
+parsed = Array[ExtResource("6_jqom8")]([SubResource("Resource_3ag32"), SubResource("Resource_clc1a"), SubResource("Resource_qx82u"), SubResource("Resource_w7va4"), SubResource("Resource_focdm"), SubResource("Resource_wtlto"), SubResource("Resource_nyl3u"), SubResource("Resource_735kt"), SubResource("Resource_l1cse"), SubResource("Resource_xhh7q")])
+_difficulty = 552
+
+[sub_resource type="Resource" id="Resource_skmio"]
+script = ExtResource("7_3xy4u")
+japanese = "若い"
+readings = Array[String](["わかい"])
+meanings = Array[String](["young", "youthful", "immature", "green", "low (number)", "small"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_hyer3"]
+script = ExtResource("6_jqom8")
+raw_text = "若い"
+vocab = SubResource("Resource_skmio")
+reading = "わかい"
+
+[sub_resource type="Resource" id="Resource_cxn7o"]
+script = ExtResource("6_jqom8")
+raw_text = "うち"
+reading = "うち"
+
+[sub_resource type="Resource" id="Resource_5gqdk"]
+script = ExtResource("6_jqom8")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_d3s4g"]
+script = ExtResource("6_jqom8")
+raw_text = "体"
+vocab = SubResource("Resource_ojal1")
+reading = "からだ"
+
+[sub_resource type="Resource" id="Resource_56xav"]
+script = ExtResource("6_jqom8")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_pjgqo"]
+script = ExtResource("6_jqom8")
+raw_text = "鍛え"
+vocab = SubResource("Resource_hc062")
+reading = "きたえ"
+
+[sub_resource type="Resource" id="Resource_kk4kh"]
+script = ExtResource("6_jqom8")
+raw_text = "なさい"
+reading = "なさい"
+
+[sub_resource type="Resource" id="Resource_m10kw"]
+script = ExtResource("6_jqom8")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_7dc81"]
+script = ExtResource("5_kshte")
+japanese = "若いうちに体を鍛えなさい。"
+native = "Build up your body while young."
+parsed = Array[ExtResource("6_jqom8")]([SubResource("Resource_hyer3"), SubResource("Resource_cxn7o"), SubResource("Resource_5gqdk"), SubResource("Resource_d3s4g"), SubResource("Resource_56xav"), SubResource("Resource_pjgqo"), SubResource("Resource_kk4kh"), SubResource("Resource_m10kw")])
+_difficulty = 554
+
+[sub_resource type="Resource" id="Resource_iwgtj"]
+script = ExtResource("7_3xy4u")
+japanese = "運動"
+readings = Array[String](["うんどう"])
+meanings = Array[String](["exercise", "physical training", "workout", "sports", "athletics", "appeal", "campaign", "drive", "crusade", "movement", "lobbying", "motion"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_vasg7"]
+script = ExtResource("6_jqom8")
+raw_text = "運動"
+vocab = SubResource("Resource_iwgtj")
+reading = "うんどう"
+
+[sub_resource type="Resource" id="Resource_isaik"]
+script = ExtResource("6_jqom8")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_q3l33"]
+script = ExtResource("7_3xy4u")
+japanese = "筋肉"
+readings = Array[String](["きんにく"])
+meanings = Array[String](["muscle"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_6wde8"]
+script = ExtResource("6_jqom8")
+raw_text = "筋肉"
+vocab = SubResource("Resource_q3l33")
+reading = "きんにく"
+
+[sub_resource type="Resource" id="Resource_eitj7"]
+script = ExtResource("6_jqom8")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_adypv"]
+script = ExtResource("6_jqom8")
+raw_text = "鍛える"
+vocab = SubResource("Resource_hc062")
+reading = "きたえる"
+
+[sub_resource type="Resource" id="Resource_44c1t"]
+script = ExtResource("6_jqom8")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_ilwmh"]
+script = ExtResource("5_kshte")
+japanese = "運動が筋肉を鍛える。"
+native = "Exercise trains the muscles."
+parsed = Array[ExtResource("6_jqom8")]([SubResource("Resource_vasg7"), SubResource("Resource_isaik"), SubResource("Resource_6wde8"), SubResource("Resource_eitj7"), SubResource("Resource_adypv"), SubResource("Resource_44c1t")])
+_difficulty = 561
+
+[sub_resource type="Resource" id="Resource_rq0wc"]
+script = ExtResource("6_jqom8")
+raw_text = "まずは"
+reading = "まずは"
+
+[sub_resource type="Resource" id="Resource_iias3"]
+script = ExtResource("7_3xy4u")
+japanese = "語彙"
+readings = Array[String](["ごい"])
+meanings = Array[String](["vocabulary", "lexicon", "lexis", "terminology"])
+jlpt_level = 1
+
+[sub_resource type="Resource" id="Resource_l1bio"]
+script = ExtResource("6_jqom8")
+raw_text = "語彙"
+vocab = SubResource("Resource_iias3")
+reading = "ごい"
+
+[sub_resource type="Resource" id="Resource_w6a1x"]
+script = ExtResource("7_3xy4u")
+japanese = "力"
+readings = Array[String](["りょく"])
+meanings = Array[String](["strength", "power", "proficiency", "ability"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_dapbs"]
+script = ExtResource("6_jqom8")
+raw_text = "力"
+vocab = SubResource("Resource_w6a1x")
+reading = "りょく"
+
+[sub_resource type="Resource" id="Resource_widfo"]
+script = ExtResource("6_jqom8")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_nfp2y"]
+script = ExtResource("6_jqom8")
+raw_text = "鍛え"
+vocab = SubResource("Resource_hc062")
+reading = "きたえ"
+
+[sub_resource type="Resource" id="Resource_nxkbk"]
+script = ExtResource("6_jqom8")
+raw_text = "ない"
+reading = "ない"
+
+[sub_resource type="Resource" id="Resource_noadk"]
+script = ExtResource("6_jqom8")
+raw_text = "と"
+reading = "と"
+
+[sub_resource type="Resource" id="Resource_enqw6"]
+script = ExtResource("6_jqom8")
+raw_text = "ね"
+reading = "ね"
+
+[sub_resource type="Resource" id="Resource_y5o00"]
+script = ExtResource("6_jqom8")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_uctmh"]
+script = ExtResource("5_kshte")
+japanese = "まずは語彙力を鍛えないとね。"
+native = "First you have to build up your vocabulary."
+parsed = Array[ExtResource("6_jqom8")]([SubResource("Resource_rq0wc"), SubResource("Resource_l1bio"), SubResource("Resource_dapbs"), SubResource("Resource_widfo"), SubResource("Resource_nfp2y"), SubResource("Resource_nxkbk"), SubResource("Resource_noadk"), SubResource("Resource_enqw6"), SubResource("Resource_y5o00")])
+_difficulty = 571
+
+[sub_resource type="Resource" id="Resource_5clfi"]
+script = ExtResource("6_jqom8")
+raw_text = "体"
+vocab = SubResource("Resource_ojal1")
+reading = "からだ"
+
+[sub_resource type="Resource" id="Resource_1tasg"]
+script = ExtResource("6_jqom8")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_c8r26"]
+script = ExtResource("7_3xy4u")
+japanese = "動かす"
+readings = Array[String](["うごかす"])
+meanings = Array[String](["to move", "to shift", "to stir", "to budge", "to change position", "to inspire", "to rouse", "to move (e.g. feeling)", "to influence", "to change", "to alter", "to deny", "to operate", "to set in motion", "to get going", "to mobilize (e.g. troops)", "to mobilise", "to deploy", "to manage (e.g. funds)"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_0cqad"]
+script = ExtResource("6_jqom8")
+raw_text = "動かす"
+vocab = SubResource("Resource_c8r26")
+reading = "うごかす"
+
+[sub_resource type="Resource" id="Resource_e4rjr"]
+script = ExtResource("6_jqom8")
+raw_text = "と"
+reading = "と"
+
+[sub_resource type="Resource" id="Resource_7umm8"]
+script = ExtResource("6_jqom8")
+raw_text = "筋肉"
+vocab = SubResource("Resource_q3l33")
+reading = "きんにく"
+
+[sub_resource type="Resource" id="Resource_78lsr"]
+script = ExtResource("6_jqom8")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_hrkdl"]
+script = ExtResource("6_jqom8")
+raw_text = "鍛え"
+vocab = SubResource("Resource_hc062")
+reading = "きたえ"
+
+[sub_resource type="Resource" id="Resource_ufy6t"]
+script = ExtResource("6_jqom8")
+raw_text = "られ"
+reading = "られ"
+
+[sub_resource type="Resource" id="Resource_rkggl"]
+script = ExtResource("6_jqom8")
+raw_text = "ます"
+reading = "ます"
+
+[sub_resource type="Resource" id="Resource_1r8gs"]
+script = ExtResource("6_jqom8")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_wmuxt"]
+script = ExtResource("5_kshte")
+japanese = "体を動かすと筋肉が鍛えられます。"
+native = "Physical exercise trains the muscles."
+parsed = Array[ExtResource("6_jqom8")]([SubResource("Resource_5clfi"), SubResource("Resource_1tasg"), SubResource("Resource_0cqad"), SubResource("Resource_e4rjr"), SubResource("Resource_7umm8"), SubResource("Resource_78lsr"), SubResource("Resource_hrkdl"), SubResource("Resource_ufy6t"), SubResource("Resource_rkggl"), SubResource("Resource_1r8gs")])
+_difficulty = 656
+
+[sub_resource type="Resource" id="Resource_bpcqd"]
+script = ExtResource("7_3xy4u")
+japanese = "禅"
+readings = Array[String](["ぜん"])
+meanings = Array[String](["dhyana (profound meditation)", "Zen (Buddhism)"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_nu1fg"]
+script = ExtResource("6_jqom8")
+raw_text = "禅"
+vocab = SubResource("Resource_bpcqd")
+reading = "ぜん"
+
+[sub_resource type="Resource" id="Resource_fefbd"]
+script = ExtResource("6_jqom8")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_ei3xl"]
+script = ExtResource("7_3xy4u")
+japanese = "私"
+readings = Array[String](["わたし"])
+meanings = Array[String](["I", "me"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_tocw2"]
+script = ExtResource("6_jqom8")
+raw_text = "私"
+vocab = SubResource("Resource_ei3xl")
+reading = "わたし"
+
+[sub_resource type="Resource" id="Resource_mt738"]
+script = ExtResource("6_jqom8")
+raw_text = "たち"
+reading = "たち"
+
+[sub_resource type="Resource" id="Resource_6i2gc"]
+script = ExtResource("6_jqom8")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_1ci4s"]
+script = ExtResource("7_3xy4u")
+japanese = "心"
+readings = Array[String](["こころ"])
+meanings = Array[String](["mind", "heart", "spirit", "the meaning of a phrase (riddle, etc.)"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_rgyyr"]
+script = ExtResource("6_jqom8")
+raw_text = "心"
+vocab = SubResource("Resource_1ci4s")
+reading = "こころ"
+
+[sub_resource type="Resource" id="Resource_5b8n3"]
+script = ExtResource("6_jqom8")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_itv3a"]
+script = ExtResource("6_jqom8")
+raw_text = "鍛練"
+vocab = SubResource("Resource_vhbib")
+reading = "たんれん"
+
+[sub_resource type="Resource" id="Resource_41eof"]
+script = ExtResource("6_jqom8")
+raw_text = "する"
+reading = "する"
+
+[sub_resource type="Resource" id="Resource_gdl8j"]
+script = ExtResource("6_jqom8")
+raw_text = "と"
+reading = "と"
+
+[sub_resource type="Resource" id="Resource_48neg"]
+script = ExtResource("6_jqom8")
+raw_text = "いわ"
+reading = "いわ"
+
+[sub_resource type="Resource" id="Resource_sgdot"]
+script = ExtResource("6_jqom8")
+raw_text = "れる"
+reading = "れる"
+
+[sub_resource type="Resource" id="Resource_gos7u"]
+script = ExtResource("6_jqom8")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_xk5fr"]
+script = ExtResource("5_kshte")
+japanese = "禅は私たちの心を鍛練するといわれる。"
+native = "They say that Zen strengthens our mind."
+parsed = Array[ExtResource("6_jqom8")]([SubResource("Resource_nu1fg"), SubResource("Resource_fefbd"), SubResource("Resource_tocw2"), SubResource("Resource_mt738"), SubResource("Resource_6i2gc"), SubResource("Resource_rgyyr"), SubResource("Resource_5b8n3"), SubResource("Resource_itv3a"), SubResource("Resource_41eof"), SubResource("Resource_gdl8j"), SubResource("Resource_48neg"), SubResource("Resource_sgdot"), SubResource("Resource_gos7u")])
+_difficulty = 722
+
+[sub_resource type="Resource" id="Resource_owsvp"]
+script = ExtResource("9_dg7u5")
+points = Array[Vector2]([Vector2(29.5, 15.99), Vector2(28.75, 20.07), Vector2(26.69, 24.36), Vector2(23.58, 29.64), Vector2(19.75, 35.25), Vector2(15.52, 40.54), Vector2(11.22, 44.87)])
+
+[sub_resource type="Resource" id="Resource_aoknt"]
+script = ExtResource("9_dg7u5")
+points = Array[Vector2]([Vector2(31.12, 22.5), Vector2(36.32, 26.78), Vector2(40.24, 33)])
+
+[sub_resource type="Resource" id="Resource_6l5v6"]
+script = ExtResource("9_dg7u5")
+points = Array[Vector2]([Vector2(19.25, 40.5), Vector2(25.42, 40.05), Vector2(31.46, 39.19), Vector2(38.01, 38.51)])
+
+[sub_resource type="Resource" id="Resource_jiqlt"]
+script = ExtResource("9_dg7u5")
+points = Array[Vector2]([Vector2(13.84, 54.31), Vector2(19.05, 54.51), Vector2(24.1, 53.65), Vector2(29.41, 52.52), Vector2(34.5, 51.4), Vector2(39.53, 50.98)])
+
+[sub_resource type="Resource" id="Resource_g3vl5"]
+script = ExtResource("9_dg7u5")
+points = Array[Vector2]([Vector2(26.7, 42.94), Vector2(27.94, 47.07), Vector2(27.95, 51.3), Vector2(27.96, 57.27), Vector2(27.97, 64.17), Vector2(27.99, 71.18), Vector2(28, 77.5), Vector2(28, 82.31)])
+
+[sub_resource type="Resource" id="Resource_5qy8q"]
+script = ExtResource("9_dg7u5")
+points = Array[Vector2]([Vector2(14.62, 65), Vector2(18.62, 72.24), Vector2(20.54, 77.95)])
+
+[sub_resource type="Resource" id="Resource_m6qr1"]
+script = ExtResource("9_dg7u5")
+points = Array[Vector2]([Vector2(39.04, 58.55), Vector2(37.73, 63.65), Vector2(34.42, 69.78)])
+
+[sub_resource type="Resource" id="Resource_nlnlc"]
+script = ExtResource("9_dg7u5")
+points = Array[Vector2]([Vector2(14.75, 90.44), Vector2(19.48, 89.7), Vector2(22.73, 87.24), Vector2(26.54, 84.39), Vector2(31.51, 80.65), Vector2(38.25, 75.5)])
+
+[sub_resource type="Resource" id="Resource_7uy2r"]
+script = ExtResource("9_dg7u5")
+points = Array[Vector2]([Vector2(61.06, 15.5), Vector2(58.98, 19.86), Vector2(55.29, 23.75), Vector2(50.12, 28)])
+
+[sub_resource type="Resource" id="Resource_xko17"]
+script = ExtResource("9_dg7u5")
+points = Array[Vector2]([Vector2(47.03, 28.5), Vector2(48.13, 32.11), Vector2(48.13, 33.63), Vector2(48.14, 36.71), Vector2(48.15, 41.07), Vector2(48.16, 46.43), Vector2(48.17, 52.51), Vector2(48.18, 59.04), Vector2(48.2, 65.73), Vector2(48.21, 72.31), Vector2(48.22, 78.5), Vector2(48.23, 84.01), Vector2(48.23, 90.19), Vector2(48.23, 94)])
+
+[sub_resource type="Resource" id="Resource_fk46c"]
+script = ExtResource("9_dg7u5")
+points = Array[Vector2]([Vector2(49.52, 42.47), Vector2(57.69, 40.84), Vector2(62.96, 40.53)])
+
+[sub_resource type="Resource" id="Resource_f7ji8"]
+script = ExtResource("9_dg7u5")
+points = Array[Vector2]([Vector2(49.25, 57), Vector2(57.11, 55.81), Vector2(62.14, 55.55)])
+
+[sub_resource type="Resource" id="Resource_0nqla"]
+script = ExtResource("9_dg7u5")
+points = Array[Vector2]([Vector2(41.25, 79.37), Vector2(44.95, 79.38), Vector2(49.68, 76.99), Vector2(56.04, 73.73), Vector2(60.69, 71.23)])
+
+[sub_resource type="Resource" id="Resource_d3c15"]
+script = ExtResource("9_dg7u5")
+points = Array[Vector2]([Vector2(70.37, 22.37), Vector2(70.94, 28.14), Vector2(70.26, 34.1), Vector2(69.23, 39.29), Vector2(67.62, 43.92), Vector2(65.2, 48.21)])
+
+[sub_resource type="Resource" id="Resource_637kr"]
+script = ExtResource("9_dg7u5")
+points = Array[Vector2]([Vector2(71.95, 23.09), Vector2(76.88, 22.2), Vector2(82.44, 21.14), Vector2(84.04, 24.97), Vector2(83.57, 30.4), Vector2(83.34, 35.61), Vector2(84.37, 40.98), Vector2(88.54, 42.6), Vector2(93.52, 41.69), Vector2(94.78, 36.45)])
+
+[sub_resource type="Resource" id="Resource_yav65"]
+script = ExtResource("9_dg7u5")
+points = Array[Vector2]([Vector2(66.81, 53.74), Vector2(71.98, 53.54), Vector2(76.95, 52.36), Vector2(82.65, 51.02), Vector2(87.23, 51.12), Vector2(86.8, 56.13), Vector2(84.64, 61.05), Vector2(82.18, 65.8), Vector2(79.44, 70.35), Vector2(76.43, 74.68), Vector2(73.15, 78.78), Vector2(69.62, 82.62), Vector2(65.84, 86.19), Vector2(61.83, 89.46), Vector2(57.6, 92.42)])
+
+[sub_resource type="Resource" id="Resource_e4xoy"]
+script = ExtResource("9_dg7u5")
+points = Array[Vector2]([Vector2(66.29, 60.03), Vector2(68.1, 61.23), Vector2(70.89, 63.97), Vector2(74.48, 67.94), Vector2(78.68, 72.85), Vector2(83.34, 78.37), Vector2(88.26, 84.21), Vector2(92.31, 88.49), Vector2(97.15, 91.66)])
+
+[sub_resource type="Resource" id="Resource_i4853"]
+script = ExtResource("8_50o3p")
+stroke_shapes = Array[ExtResource("9_dg7u5")]([SubResource("Resource_owsvp"), SubResource("Resource_aoknt"), SubResource("Resource_6l5v6"), SubResource("Resource_jiqlt"), SubResource("Resource_g3vl5"), SubResource("Resource_5qy8q"), SubResource("Resource_m6qr1"), SubResource("Resource_nlnlc"), SubResource("Resource_7uy2r"), SubResource("Resource_xko17"), SubResource("Resource_fk46c"), SubResource("Resource_f7ji8"), SubResource("Resource_0nqla"), SubResource("Resource_d3c15"), SubResource("Resource_637kr"), SubResource("Resource_yav65"), SubResource("Resource_e4xoy")])
+
+[sub_resource type="Resource" id="Resource_38a0p"]
+script = ExtResource("7_3xy4u")
+japanese = "鍛える"
+readings = Array[String](["きたえる"])
+meanings = Array[String](["to forge", "to temper", "to drill", "to train", "to discipline"])
+jlpt_level = 1
+_difficulty = 123
+
+[sub_resource type="Resource" id="Resource_moauu"]
+script = ExtResource("7_3xy4u")
+japanese = "鍛錬"
+readings = Array[String](["たんれん"])
+meanings = Array[String](["tempering metal", "annealing", "forging", "toughening", "disciplining", "training"])
+_difficulty = 601
+
+[resource]
+script = ExtResource("10_irdu3")
+symbol = "鍛"
+card_name = "Forge"
+rarity = 3
+abilities = Array[ExtResource("1_l5i68")]([SubResource("Resource_oq0k3"), SubResource("Resource_iu75n")])
+tags = Array[int]([9, 15])
+vocabulary = Array[ExtResource("7_3xy4u")]([SubResource("Resource_38a0p"), SubResource("Resource_moauu")])
+example_sentences = Array[ExtResource("5_kshte")]([SubResource("Resource_nj0rn"), SubResource("Resource_3obte"), SubResource("Resource_7dc81"), SubResource("Resource_ilwmh"), SubResource("Resource_uctmh"), SubResource("Resource_wmuxt"), SubResource("Resource_xk5fr")])
+kanji_shape = SubResource("Resource_i4853")
+init_aspects = 28
+term_categories = Array[ExtResource("11_hvd70")]([ExtResource("12_8vaco")])

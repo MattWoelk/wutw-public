@@ -1,0 +1,93 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://bd50o78vgjyg3"]
+
+[ext_resource type="Resource" uid="uid://oxdhbqto603l" path="res://art/pieces/piece_hasui_asahi_peak.tres" id="1_sqech"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_uuaax"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_sqech"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_tuvg0"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="4_g58no"]
+[ext_resource type="Script" uid="uid://dn8pkjcp04brm" path="res://events/system/outcomes/reveal_map/event_outcome_reveal_map.gd" id="5_a4126"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="6_ptac1"]
+[ext_resource type="Script" uid="uid://cbnw4a13y5x8c" path="res://events/system/outcomes/random/event_outcome_random.gd" id="7_cokjt"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="8_kn6vk"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="9_o85k1"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="10_2it8h"]
+[ext_resource type="Script" uid="uid://yxgaymbbt8tk" path="res://events/system/outcomes/override_next_step/event_outcome_override_next_step.gd" id="10_tuvg0"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="11_jkila"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="12_gacio"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="13_oua46"]
+
+[sub_resource type="Resource" id="Resource_4gkwy"]
+script = ExtResource("1_uuaax")
+_texture_path = "res://stage/survey/episodes/episode_frozen_pack.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("5_a4126")
+metadata/_custom_type_script = "uid://dn8pkjcp04brm"
+
+[sub_resource type="Resource" id="Resource_74enk"]
+script = ExtResource("2_sqech")
+label = "Dig the pack out with chisels."
+aspects = Array[ExtResource("3_tuvg0")]([ExtResource("4_g58no"), ExtResource("4_g58no")])
+aspects_per_season = Array[ExtResource("3_tuvg0")]([null])
+outcome = SubResource("Resource_trtbi")
+outcome_text = "The scouts use mallets to hammer in chisels and free the pack from the ice. It takes some time for the pack itself to thaw, but when it's finally warm enough to unpack, they find inside an ancient map of the whole region that used to include this shard."
+
+[sub_resource type="Resource" id="Resource_d174p"]
+script = ExtResource("5_a4126")
+metadata/_custom_type_script = "uid://dn8pkjcp04brm"
+
+[sub_resource type="Resource" id="Resource_g58no"]
+script = ExtResource("10_tuvg0")
+result_text = "The fire has to be refueled several times until its heat is enough to melt the ice. Eventually, the scouts get distracted with dinner preparations. When they finally remember to check the pack, they find it burned to ashes."
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_0eiya"]
+script = ExtResource("7_cokjt")
+suboutcomes = Dictionary[ExtResource("8_kn6vk"), float]({
+SubResource("Resource_d174p"): 0.5,
+SubResource("Resource_g58no"): 0.5
+})
+description = "Chance of finding a map"
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_pideu"]
+script = ExtResource("2_sqech")
+label = "Melt the ice with fire."
+aspects = Array[ExtResource("3_tuvg0")]([ExtResource("6_ptac1"), ExtResource("6_ptac1")])
+aspects_per_season = Array[ExtResource("3_tuvg0")]([null])
+outcome = SubResource("Resource_0eiya")
+outcome_text = "The fire has to be refueled several times until its heat is enough to melt the ice, but eventually the pack is freed. Inside the scouts find an ancient map of the whole region that used to include this shard."
+
+[sub_resource type="Resource" id="Resource_bgisj"]
+script = ExtResource("11_jkila")
+bonus_type = ExtResource("10_2it8h")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_bmmv2"]
+script = ExtResource("2_sqech")
+label = "Mark the location on a map."
+aspects = Array[ExtResource("3_tuvg0")]([ExtResource("9_o85k1")])
+outcome = SubResource("Resource_bgisj")
+outcome_text = "The scouts mark the location of the pack on their maps and move on. Let this be a quest for some future adventurer."
+
+[sub_resource type="Resource" id="Resource_v1c6y"]
+script = ExtResource("2_sqech")
+label = "Ignore the pack."
+aspects = Array[ExtResource("3_tuvg0")]([null])
+aspects_per_season = Array[ExtResource("3_tuvg0")]([null])
+outcome_text = "The survey team decides not to waste time on forgotten luggage, and moves on."
+
+[resource]
+script = ExtResource("12_gacio")
+episode_id = "frozen_pack"
+title = "The Frozen Pack"
+biome_types = Array[int]([7])
+text = "As the survey team is climbing a steep ridge high among the icy peaks, they notice a traveler's pack, frozen solid to the rock.
+
+The design suggests that the pack was made before the Shattering."
+background_image = SubResource("Resource_4gkwy")
+background_credit = ExtResource("1_sqech")
+choices = Array[ExtResource("2_sqech")]([SubResource("Resource_74enk"), SubResource("Resource_pideu"), SubResource("Resource_bmmv2"), SubResource("Resource_v1c6y")])

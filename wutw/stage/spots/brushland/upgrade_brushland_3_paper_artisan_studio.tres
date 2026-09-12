@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://dffls1ubwkx6w"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_nqy7y"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_ry7ag"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_4cpos"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="3_i2iyy"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="4_qw38t"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="6_82d81"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="6_qw38t"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="7_tsi6u"]
+[ext_resource type="Resource" uid="uid://b2nwnsbdieg27" path="res://stage/spots/brushland/spot_brushland.tres" id="9_tsi6u"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="10_isd08"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://crv1ud27w53qj" path="res://map/sprites/spots/brushland/mst_brushland_paper_studio.tres" id="11_3c86d"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://dg70dvh8cbu8q" path="res://map/sprites/spots/brushland/mst_brushland_paper_mulberry_grove.tres" id="12_n08x5"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="13_1di53"]
+
+[sub_resource type="Resource" id="Resource_yhqra"]
+script = ExtResource("13_1di53")
+old_sprite_type = ExtResource("12_n08x5")
+new_sprite_type = ExtResource("11_3c86d")
+biome = 8
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_nqy7y")
+spot_upgrade_id = "brushland_paper_workshop"
+name = "Paper Studio"
+description = "These trees are special. The bark they shed will last generations."
+required_aspects = Array[ExtResource("3_4cpos")]([ExtResource("6_qw38t"), ExtResource("6_82d81"), ExtResource("7_tsi6u")])
+granted_bonuses = Dictionary[ExtResource("2_ry7ag"), int]({
+ExtResource("3_i2iyy"): 15,
+ExtResource("4_qw38t"): 25
+})
+spot = ExtResource("9_tsi6u")
+visuals = Array[ExtResource("10_isd08")]([SubResource("Resource_yhqra")])
+tags = Array[int]([2])
+min_main_quest_progress = 110

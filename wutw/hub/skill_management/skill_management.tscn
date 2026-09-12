@@ -1,0 +1,1356 @@
+[gd_scene format=3 uid="uid://cg2kros0jxmd2"]
+
+[ext_resource type="Script" uid="uid://b8nqbyegqg36y" path="res://hub/skill_management/skill_management.gd" id="1_irmb3"]
+[ext_resource type="PackedScene" uid="uid://b5k16hpo8080v" path="res://theme/faded_background/faded_background.tscn" id="2_gyvxu"]
+[ext_resource type="Resource" uid="uid://c5fuyetul8e2f" path="res://skills/cards/skill_cards_reroll_1.tres" id="2_irmb3"]
+[ext_resource type="PackedScene" uid="uid://b6ob53b0vla40" path="res://theme/scroll_panel/scroll_panel_big.tscn" id="2_o0ux5"]
+[ext_resource type="Shader" uid="uid://bbe7ginxustev" path="res://theme/scroll_panel/scroll_panel_dowel.gdshader" id="3_gyvxu"]
+[ext_resource type="Resource" uid="uid://d2yokdymmd7ip" path="res://skills/cards/skill_cards_reroll_2.tres" id="3_r6jwf"]
+[ext_resource type="Texture2D" uid="uid://b0cvn7ev1bwut" path="res://theme/scroll_panel/dowel_wood.png" id="4_87i1b"]
+[ext_resource type="Resource" uid="uid://ci0wqxxjgh57f" path="res://skills/cards/skill_cards_reroll_3.tres" id="4_fcoaq"]
+[ext_resource type="Resource" uid="uid://cy8d7wr2t7o41" path="res://skills/cards/skill_cards_reroll_4.tres" id="5_njuvh"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="6_li1nv"]
+[ext_resource type="Resource" uid="uid://dlmcy6raiq6k1" path="res://skills/craft/skill_craft_signature_1.tres" id="6_q87ml"]
+[ext_resource type="Resource" uid="uid://c6txs1gv4j04x" path="res://skills/craft/skill_craft_signature_2.tres" id="7_kdqey"]
+[ext_resource type="Resource" uid="uid://br8piskbog03" path="res://skills/craft/skill_craft_1_common.tres" id="8_uyjl3"]
+[ext_resource type="Resource" uid="uid://bgkwelxpq8ntq" path="res://skills/craft/skill_craft_2_uncommon.tres" id="9_6w6yi"]
+[ext_resource type="PackedScene" uid="uid://b5b4w1emxneov" path="res://hub/skill_management/skill_node.tscn" id="9_uleh4"]
+[ext_resource type="Resource" uid="uid://bej3fq2xi8r3t" path="res://skills/craft/skill_craft_3_rare.tres" id="10_0u0rt"]
+[ext_resource type="Resource" uid="uid://cohtv8agt15tr" path="res://skills/inspiration/skill_inspiration_root.tres" id="10_colqy"]
+[ext_resource type="Resource" uid="uid://bxu7ciewwyw14" path="res://skills/craft/skill_craft_4_epic.tres" id="11_xp3ck"]
+[ext_resource type="Resource" uid="uid://btg3iwee87j5j" path="res://skills/inspiration/skill_inspiration_shop.tres" id="12_24cw7"]
+[ext_resource type="Resource" uid="uid://bfobwh7ii7v78" path="res://skills/cards/skill_cards_hand_size_start.tres" id="12_c2j5c"]
+[ext_resource type="Resource" uid="uid://cjam8gy0sdm36" path="res://skills/inspiration/skill_inspiration_heal_1.tres" id="13_e4857"]
+[ext_resource type="Resource" uid="uid://nukle5v4qfsh" path="res://skills/cards/skill_cards_hand_size_all.tres" id="13_waghx"]
+[ext_resource type="Resource" uid="uid://ddg4pxc0c5w33" path="res://skills/relics/skill_relics_reroll.tres" id="14_k4lfo"]
+[ext_resource type="Resource" uid="uid://c67m52yqdejgo" path="res://skills/inspiration/skill_inspiration_heal_2.tres" id="15_2i74d"]
+[ext_resource type="Resource" uid="uid://bxtbep4rb71dx" path="res://skills/relics/skill_relics_starting_common.tres" id="16_njuvh"]
+[ext_resource type="Resource" uid="uid://b8bcw0011212p" path="res://skills/settlement/skill_settlement_nongoal.tres" id="16_r6jwf"]
+[ext_resource type="Resource" uid="uid://x87byg4oppwy" path="res://skills/relics/skill_relics_starting_uncommon.tres" id="17_q87ml"]
+[ext_resource type="Resource" uid="uid://xbm222qykb0o" path="res://skills/inspiration/skill_inspiration_max_1.tres" id="18_c2j5c"]
+[ext_resource type="Resource" uid="uid://dxbw5ycl8pegg" path="res://skills/inspiration/skill_inspiration_max_5.tres" id="18_su1ps"]
+[ext_resource type="Resource" uid="uid://0nq3dgejqw16" path="res://skills/cards/skill_cards_quality_1.tres" id="19_6w6yi"]
+[ext_resource type="Resource" uid="uid://casklniikj6d8" path="res://skills/inspiration/skill_inspiration_max_6.tres" id="19_cr1g4"]
+[ext_resource type="Resource" uid="uid://cg6gdek8rb0eh" path="res://skills/inspiration/skill_inspiration_max_2.tres" id="19_waghx"]
+[ext_resource type="Resource" uid="uid://cil2yn384lxqd" path="res://skills/cards/skill_cards_quality_2.tres" id="20_0u0rt"]
+[ext_resource type="Resource" uid="uid://ksidj6t10354" path="res://skills/cards/skill_cards_root.tres" id="20_3t8pk"]
+[ext_resource type="Resource" uid="uid://bhu1v1sfqlmad" path="res://skills/inspiration/skill_inspiration_max_3.tres" id="20_k4lfo"]
+[ext_resource type="Resource" uid="uid://cgjdsyj8ftqx6" path="res://skills/cards/skill_cards_quality_3.tres" id="21_xp3ck"]
+[ext_resource type="Resource" uid="uid://dfupsc6h45syd" path="res://skills/cards/skill_cards_mulligan_1.tres" id="22_y12sc"]
+[ext_resource type="Resource" uid="uid://cptm4kegfpe78" path="res://skills/cards/skill_cards_reserve.tres" id="23_63am4"]
+[ext_resource type="Resource" uid="uid://dhuy7xvlr3irp" path="res://skills/cards/skill_cards_shop_remove.tres" id="25_4rn83"]
+[ext_resource type="Resource" uid="uid://bpr47aofdln52" path="res://skills/cards/skill_cards_mulligan_2.tres" id="27_7wyey"]
+[ext_resource type="Resource" uid="uid://boylx7l1ul646" path="res://skills/cards/skill_cards_shop_rare.tres" id="28_kkr8r"]
+[ext_resource type="Resource" uid="uid://cifqi0gldh53h" path="res://skills/cards/skill_cards_min_deck_size_1.tres" id="30_nm8my"]
+[ext_resource type="Resource" uid="uid://cevnoaukd8h6h" path="res://skills/cards/skill_cards_shop_innate.tres" id="31_a8v6r"]
+[ext_resource type="Resource" uid="uid://38mlft0idex" path="res://skills/cards/skill_cards_mulligan_3.tres" id="32_x85vm"]
+[ext_resource type="Resource" uid="uid://yrd4d4x5xvh5" path="res://skills/inspiration/skill_inspiration_max_4.tres" id="34_87i1b"]
+[ext_resource type="Resource" uid="uid://c0mi0ibw4c31b" path="res://skills/cards/skill_cards_min_deck_size_2.tres" id="34_kidfd"]
+[ext_resource type="Shader" uid="uid://ygmrqrvg5hpm" path="res://theme/button/ukiyoe_button.gdshader" id="35_a3qf6"]
+[ext_resource type="Resource" uid="uid://bptq1xl7xef" path="res://skills/events/skill_events_root.tres" id="36_atggr"]
+[ext_resource type="Resource" uid="uid://ccby561ojv17p" path="res://skills/cards/skill_cards_reroll_quality.tres" id="36_e4857"]
+[ext_resource type="Resource" uid="uid://0jhdkc0te0ko" path="res://skills/cards/skill_cards_mulligan_4.tres" id="36_qe1ta"]
+[ext_resource type="Texture2D" uid="uid://ctgl61r3xxsqv" path="res://theme/button/button_fill.png" id="36_w12at"]
+[ext_resource type="Texture2D" uid="uid://blje81yu8734p" path="res://theme/button/button_shape.png" id="37_142vv"]
+[ext_resource type="Resource" uid="uid://clowdxasqcgde" path="res://skills/events/skill_events_extra.tres" id="37_tuve0"]
+[ext_resource type="Resource" uid="uid://fhjfxx8bxuut" path="res://skills/events/skill_events_guarantee_1.tres" id="38_8krir"]
+[ext_resource type="Texture2D" uid="uid://doe4603a6ngco" path="res://theme/button/button_outline.png" id="38_sqnyw"]
+[ext_resource type="Texture2D" uid="uid://cwubixgc8n0yr" path="res://theme/button/button_swish_left.png" id="39_jre03"]
+[ext_resource type="Resource" uid="uid://wyki7kviwmno" path="res://skills/events/skill_events_preview.tres" id="39_mcptm"]
+[ext_resource type="Resource" uid="uid://2qdqq6hdt470" path="res://skills/events/skill_events_guarantee_2.tres" id="40_g5tx1"]
+[ext_resource type="Texture2D" uid="uid://n6l17h4ysayj" path="res://theme/button/button_swish_right.png" id="40_rr354"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="41_6yr4c"]
+[ext_resource type="Resource" uid="uid://dsap1sptsl0jb" path="res://skills/events/skill_events_guarantee_3.tres" id="41_amfqy"]
+[ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="42_n7th8"]
+[ext_resource type="Resource" uid="uid://c60064kncqos4" path="res://skills/craft/skill_craft_root.tres" id="42_xi2td"]
+[ext_resource type="Resource" uid="uid://bffgyo1fb8jvv" path="res://skills/craft/skill_craft_inherit.tres" id="44_366tr"]
+[ext_resource type="Resource" uid="uid://bqw60r0x34yg" path="res://skills/craft/skill_craft_replace.tres" id="46_pgauy"]
+[ext_resource type="Resource" uid="uid://cckygspreu2hv" path="res://skills/craft/skill_craft_shop_recall.tres" id="48_ym4u4"]
+[ext_resource type="Resource" uid="uid://cnqmbdol8gfcb" path="res://skills/craft/skill_craft_salvage_1.tres" id="50_x2d6b"]
+[ext_resource type="Resource" uid="uid://b088t0riaj3ok" path="res://skills/craft/skill_craft_buy_cards.tres" id="51_su1ps"]
+[ext_resource type="Resource" uid="uid://bg26ylrabaa27" path="res://skills/craft/skill_craft_salvage_2.tres" id="52_cv6xx"]
+[ext_resource type="Resource" uid="uid://b5s4c2p15beoa" path="res://skills/craft/skill_craft_double_strokes.tres" id="53_2746d"]
+[ext_resource type="Resource" uid="uid://btyvvouka5vko" path="res://skills/craft/skill_craft_buy_strokes.tres" id="54_cr1g4"]
+[ext_resource type="Resource" uid="uid://ddjipmd8umbwe" path="res://skills/capital/skill_capital_root.tres" id="55_71a6u"]
+[ext_resource type="Resource" uid="uid://bbedsrhhss5x6" path="res://skills/capital/skill_capital_connect.tres" id="56_xmk7w"]
+[ext_resource type="Resource" uid="uid://rjtenwhw6upt" path="res://skills/capital/skill_capital_shop_trade.tres" id="57_qc45x"]
+[ext_resource type="Resource" uid="uid://3r4btc6k7vf5" path="res://skills/capital/skill_capital_craft_connection.tres" id="58_ce02l"]
+[ext_resource type="Resource" uid="uid://cyu1ho0hy3cku" path="res://skills/capital/skill_capital_initial_provision.tres" id="59_jn7ql"]
+[ext_resource type="Resource" uid="uid://i5v05keakiv" path="res://skills/capital/skill_capital_trade_discount.tres" id="60_e8cv5"]
+[ext_resource type="Resource" uid="uid://c0wl7rvf5df5c" path="res://skills/capital/skill_capital_shop_connect.tres" id="61_eq7hh"]
+[ext_resource type="Resource" uid="uid://coluxv15fnhut" path="res://skills/capital/skill_capital_activate_provisions.tres" id="62_20btw"]
+[ext_resource type="Resource" uid="uid://d3fsn3wgvrwtm" path="res://skills/relics/skill_relics_root.tres" id="63_o7q3y"]
+[ext_resource type="Resource" uid="uid://c3nswcelfxlu0" path="res://skills/relics/skill_relics_shop.tres" id="65_7ep7h"]
+[ext_resource type="Resource" uid="uid://bj550hqcppw13" path="res://skills/relics/skill_relics_starting_selected.tres" id="66_ugtol"]
+[ext_resource type="Resource" uid="uid://cbpom5ccgsarw" path="res://skills/settlement/skill_settlement_root.tres" id="69_h8n1q"]
+[ext_resource type="Resource" uid="uid://b7ar8xo8jkkqb" path="res://skills/settlement/skill_settlement_preview_bonuses.tres" id="70_7wadr"]
+[ext_resource type="Resource" uid="uid://cpg335kk84if2" path="res://skills/survey/skill_survey_root.tres" id="71_colqy"]
+[ext_resource type="Resource" uid="uid://cnx8wr2njwnlb" path="res://skills/settlement/skill_settlement_spots_per_season.tres" id="71_xiwne"]
+[ext_resource type="Resource" uid="uid://b7uo8tmae57q3" path="res://skills/survey/skill_survey_episodes_1.tres" id="72_24cw7"]
+[ext_resource type="Resource" uid="uid://djyt3pjytmyew" path="res://skills/settlement/skill_settlement_create_spot_small_building.tres" id="72_eunu8"]
+[ext_resource type="Resource" uid="uid://drkpc00xi55pj" path="res://skills/survey/skill_survey_preps_1.tres" id="73_e4857"]
+[ext_resource type="Resource" uid="uid://ckjvfmf3jbglm" path="res://skills/settlement/skill_settlement_insights_per_yield.tres" id="73_i60y0"]
+[ext_resource type="Resource" uid="uid://bpv7ajk0b3niu" path="res://skills/survey/skill_survey_reveal_1.tres" id="74_2i74d"]
+[ext_resource type="Resource" uid="uid://bplyhux02bs2x" path="res://skills/settlement/skill_settlement_reroll_1.tres" id="74_mgsf8"]
+[ext_resource type="Resource" uid="uid://cxw6sob482ko3" path="res://skills/survey/skill_survey_episodes_2.tres" id="75_su1ps"]
+[ext_resource type="Resource" uid="uid://kx5ndelg5glv" path="res://skills/survey/skill_survey_preps_2.tres" id="76_cr1g4"]
+[ext_resource type="Resource" uid="uid://dlhfn8x7y26ht" path="res://skills/settlement/skill_settlement_extra_spot.tres" id="76_kl1ut"]
+[ext_resource type="Resource" uid="uid://dowjdy3wc3b26" path="res://skills/survey/skill_survey_reveal_2.tres" id="77_3t8pk"]
+[ext_resource type="Resource" uid="uid://6tda23vu6k5n" path="res://skills/settlement/skill_settlement_create_spot_large_building.tres" id="77_52qm2"]
+[ext_resource type="Resource" uid="uid://bumwpd4bqokd" path="res://skills/settlement/skill_settlement_reroll_2.tres" id="79_ophip"]
+[ext_resource type="Resource" uid="uid://bg2x3mg8n4d83" path="res://skills/survey/skill_survey_map_preview.tres" id="80_nm8my"]
+[ext_resource type="Resource" uid="uid://ic3ko24t5584" path="res://skills/settlement/skill_settlement_create_spot_lake.tres" id="81_jsapy"]
+[ext_resource type="Resource" uid="uid://eka76mumnxdq" path="res://skills/survey/skill_survey_map_reroll.tres" id="82_a8v6r"]
+[ext_resource type="Resource" uid="uid://dv3uf821qfo0b" path="res://skills/settlement/skill_settlement_create_spot_square.tres" id="82_m6ewc"]
+[ext_resource type="Resource" uid="uid://dt4xnaj6v2h70" path="res://skills/settlement/skill_settlement_reroll_3.tres" id="83_7a0ec"]
+[ext_resource type="Resource" uid="uid://byn6ixxq66tww" path="res://skills/settlement/skill_settlement_overlap.tres" id="85_4rn83"]
+[ext_resource type="Resource" uid="uid://cpqktctevtfxa" path="res://skills/hauntings/skill_hauntings_root.tres" id="85_r0mkw"]
+[ext_resource type="Resource" uid="uid://cac5wyngxswq7" path="res://skills/hauntings/skill_hauntings_pacify_1.tres" id="86_pdokv"]
+[ext_resource type="Resource" uid="uid://co41oaifrjfw" path="res://skills/hauntings/skill_hauntings_preview.tres" id="87_10524"]
+[ext_resource type="Resource" uid="uid://bgxk5xkeddv53" path="res://skills/settlement/skill_settlement_insights_per_discovery.tres" id="88_24cw7"]
+[ext_resource type="Resource" uid="uid://ususasdxyck2" path="res://skills/hauntings/skill_hauntings_ban_1.tres" id="88_47ueb"]
+[ext_resource type="Resource" uid="uid://lj34kr84gl4g" path="res://skills/hauntings/skill_hauntings_pacify_2.tres" id="89_bvfra"]
+[ext_resource type="Resource" uid="uid://rt8s4tk7pte5" path="res://skills/hauntings/skill_hauntings_ban_2.tres" id="90_bqnmj"]
+[ext_resource type="Resource" uid="uid://lypwtbekaxi8" path="res://skills/hauntings/skill_hauntings_pacify_3.tres" id="91_wj13p"]
+[ext_resource type="Resource" uid="uid://dtlibuq60btrc" path="res://skills/settlement/skill_settlement_quests_1.tres" id="92_63am4"]
+[ext_resource type="Resource" uid="uid://bk7efsgnfgn6n" path="res://skills/settlement/skill_settlement_ignore_unique.tres" id="94_4rn83"]
+[ext_resource type="Resource" uid="uid://d0yf86wyk0v60" path="res://skills/settlement/skill_settlement_quests_2.tres" id="97_kkr8r"]
+
+[sub_resource type="Gradient" id="Gradient_ofyuc"]
+offsets = PackedFloat32Array(0, 0.196721, 0.460041, 0.525615, 0.603484, 0.732582, 1)
+colors = PackedColorArray(0.59, 0.43424, 0.3068, 0.796078, 0.48, 0.35328, 0.2496, 0.294118, 0.48, 0.35328, 0.2496, 0.0116377, 0.48, 0.35328, 0.2496, 0, 0.48, 0.35328, 0.2496, 0.0431956, 0.48, 0.35328, 0.2496, 0.34902, 0.4, 0.2944, 0.208, 0.929412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g5dkl"]
+gradient = SubResource("Gradient_ofyuc")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_0fvof"]
+colors = PackedColorArray(0.331639, 0.33164, 0.331639, 1, 0.961814, 0.961814, 0.961814, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0fvof"]
+frequency = 0.0035
+domain_warp_amplitude = 100.0
+domain_warp_frequency = -0.01
+domain_warp_fractal_lacunarity = 8.69
+domain_warp_fractal_gain = 0.19
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jijvn"]
+width = 2048
+noise = SubResource("FastNoiseLite_0fvof")
+color_ramp = SubResource("Gradient_0fvof")
+seamless = true
+seamless_blend_skirt = 0.27
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nm8my"]
+shader = ExtResource("3_gyvxu")
+shader_parameter/size = Vector2(1675, 49)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("4_87i1b")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[sub_resource type="Gradient" id="Gradient_aidgo"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_upvmd"]
+gradient = SubResource("Gradient_aidgo")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qe1ta"]
+shader = ExtResource("35_a3qf6")
+shader_parameter/mask_tex = ExtResource("37_142vv")
+shader_parameter/background = ExtResource("36_w12at")
+shader_parameter/gradient = SubResource("GradientTexture2D_upvmd")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("38_sqnyw")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("40_rr354")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("39_jre03")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a8v6r"]
+shader = ExtResource("3_gyvxu")
+shader_parameter/size = Vector2(1673, 49)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("4_87i1b")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[node name="SkillManagement" type="Node2D" unique_id=1857994019]
+script = ExtResource("1_irmb3")
+
+[node name="BG" parent="." unique_id=890104140 instance=ExtResource("2_gyvxu")]
+unique_name_in_owner = true
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1016570291]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="ScrollPanel" parent="CenterContainer" unique_id=188698070 instance=ExtResource("2_o0ux5")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1775, 0)
+layout_mode = 2
+
+[node name="TopDowelWood" parent="CenterContainer/ScrollPanel/TopDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_nm8my")
+
+[node name="Scroller" parent="CenterContainer/ScrollPanel" index="1"]
+custom_minimum_size = Vector2(0, 835)
+
+[node name="ScrollMargin" parent="CenterContainer/ScrollPanel/Scroller" index="0"]
+offset_bottom = 875.05054
+
+[node name="ContentPanel" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin" index="0"]
+material = ExtResource("6_li1nv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer" index="0" unique_id=76765180]
+custom_minimum_size = Vector2(1630, 785)
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=2065745280]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Skills"
+horizontal_alignment = 1
+
+[node name="TreesList" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=686019152]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="InspirationTree" type="GridContainer" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList" unique_id=1380812016]
+layout_mode = 0
+offset_left = 8.0
+offset_right = 224.0
+offset_bottom = 677.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 3
+
+[node name="Control" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/InspirationTree" unique_id=677906106]
+layout_mode = 2
+
+[node name="SkillNode3" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/InspirationTree" unique_id=1115058117 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+left = false
+right = false
+down_left = true
+down_right = true
+skill = ExtResource("10_colqy")
+
+[node name="Control2" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/InspirationTree" unique_id=1286025151]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode5" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/InspirationTree" unique_id=1262104796 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+left = false
+right = false
+up_right = true
+skill = ExtResource("18_c2j5c")
+
+[node name="SkillNode6" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/InspirationTree" unique_id=1317449944 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("12_24cw7")
+
+[node name="SkillNode7" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/InspirationTree" unique_id=3228803 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+left = false
+right = false
+up_left = true
+skill = ExtResource("13_e4857")
+
+[node name="SkillNode8" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/InspirationTree" unique_id=447118007 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+left = false
+right = false
+skill = ExtResource("19_waghx")
+
+[node name="Control3" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/InspirationTree" unique_id=1462109411]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode10" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/InspirationTree" unique_id=1542675485 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("15_2i74d")
+
+[node name="SkillNode11" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/InspirationTree" unique_id=735860089 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+left = false
+right = false
+skill = ExtResource("20_k4lfo")
+
+[node name="SkillNode12" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/InspirationTree" unique_id=1921437357]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode13" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/InspirationTree" unique_id=1519645769]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode15" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/InspirationTree" unique_id=130866766 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+left = false
+right = false
+skill = ExtResource("34_87i1b")
+
+[node name="SkillNode16" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/InspirationTree" unique_id=2086630748]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode17" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/InspirationTree" unique_id=668711654]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode18" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/InspirationTree" unique_id=117014018 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+left = false
+right = false
+skill = ExtResource("18_su1ps")
+
+[node name="SkillNode19" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/InspirationTree" unique_id=1118659657]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode20" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/InspirationTree" unique_id=77560532]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode21" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/InspirationTree" unique_id=16344291 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("19_cr1g4")
+
+[node name="CardsTree" type="GridContainer" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList" unique_id=1782143049]
+layout_mode = 0
+offset_left = 330.0
+offset_right = 690.0
+offset_bottom = 364.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 5
+
+[node name="SkillNode2" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CardsTree" unique_id=1294560274]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode3" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CardsTree" unique_id=1680293964 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+down = false
+left = false
+down_left = true
+
+[node name="SkillNode4" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CardsTree" unique_id=2044586844 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+down_left = true
+down_right = true
+skill = ExtResource("20_3t8pk")
+
+[node name="SkillNode5" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CardsTree" unique_id=1585315539 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+down = false
+right = false
+down_right = true
+
+[node name="SkillNode6" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CardsTree" unique_id=1095955840]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode9" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CardsTree" unique_id=1796488721 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+left = false
+right = false
+up_right = true
+skill = ExtResource("22_y12sc")
+
+[node name="SkillNode8" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CardsTree" unique_id=1573668967 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+left = false
+right = false
+up_right = true
+skill = ExtResource("19_6w6yi")
+
+[node name="SkillNode7" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CardsTree" unique_id=1845283877 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+left = false
+right = false
+skill = ExtResource("12_c2j5c")
+
+[node name="SkillNode10" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CardsTree" unique_id=2113999008 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+left = false
+right = false
+up_left = true
+skill = ExtResource("2_irmb3")
+
+[node name="SkillNode11" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CardsTree" unique_id=870347930 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+left = false
+right = false
+up_left = true
+skill = ExtResource("25_4rn83")
+
+[node name="SkillNode13" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CardsTree" unique_id=1746566987 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+left = false
+right = false
+skill = ExtResource("27_7wyey")
+
+[node name="SkillNode14" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CardsTree" unique_id=1626517660 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+left = false
+right = false
+skill = ExtResource("28_kkr8r")
+
+[node name="SkillNode12" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CardsTree" unique_id=1154869643 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+left = false
+right = false
+skill = ExtResource("13_waghx")
+
+[node name="SkillNode15" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CardsTree" unique_id=1543338419 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+left = false
+right = false
+skill = ExtResource("3_r6jwf")
+
+[node name="SkillNode16" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CardsTree" unique_id=2109469687 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+left = false
+right = false
+skill = ExtResource("30_nm8my")
+
+[node name="SkillNode19" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CardsTree" unique_id=1591019770 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+left = false
+right = false
+skill = ExtResource("32_x85vm")
+
+[node name="SkillNode18" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CardsTree" unique_id=245648870 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("20_0u0rt")
+
+[node name="SkillNode17" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CardsTree" unique_id=257636212 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("31_a8v6r")
+
+[node name="SkillNode20" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CardsTree" unique_id=169232479 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+left = false
+right = false
+down_left = true
+down_right = true
+skill = ExtResource("4_fcoaq")
+
+[node name="SkillNode21" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CardsTree" unique_id=487712679 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("34_kidfd")
+
+[node name="SkillNode24" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CardsTree" unique_id=161578814 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("36_qe1ta")
+
+[node name="SkillNode23" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CardsTree" unique_id=38524640 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("21_xp3ck")
+
+[node name="SkillNode22" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CardsTree" unique_id=1335433145 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+down = false
+left = false
+right = false
+up_right = true
+skill = ExtResource("36_e4857")
+
+[node name="SkillNode25" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CardsTree" unique_id=744965734 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("5_njuvh")
+
+[node name="SkillNode26" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CardsTree" unique_id=751914294 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+down = false
+left = false
+right = false
+up_left = true
+skill = ExtResource("23_63am4")
+
+[node name="EventTree" type="GridContainer" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList" unique_id=1408808743]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 384.0
+offset_right = 338.0
+offset_bottom = 676.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 3
+
+[node name="SkillNode2" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/EventTree" unique_id=163942751]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode3" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/EventTree" unique_id=108640899 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+left = false
+right = false
+down_left = true
+down_right = true
+skill = ExtResource("36_atggr")
+
+[node name="SkillNode4" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/EventTree" unique_id=1375726805]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode5" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/EventTree" unique_id=2028610396 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+down = false
+left = false
+right = false
+up_right = true
+skill = ExtResource("37_tuve0")
+
+[node name="SkillNode6" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/EventTree" unique_id=799678290 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+left = false
+right = false
+skill = ExtResource("38_8krir")
+
+[node name="SkillNode7" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/EventTree" unique_id=1104971603 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+down = false
+left = false
+right = false
+up_left = true
+skill = ExtResource("39_mcptm")
+
+[node name="SkillNode8" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/EventTree" unique_id=1880226973]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode9" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/EventTree" unique_id=1862426135 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+left = false
+right = false
+skill = ExtResource("40_g5tx1")
+
+[node name="SkillNode10" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/EventTree" unique_id=1706474141]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode11" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/EventTree" unique_id=1363631855]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode12" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/EventTree" unique_id=615004866 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("41_amfqy")
+
+[node name="CraftTree" type="GridContainer" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList" unique_id=1007731246]
+layout_mode = 0
+offset_left = 1256.0
+offset_right = 1616.0
+offset_bottom = 444.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 5
+
+[node name="SkillNode2" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=1673433527]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode3" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=1375724802]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode4" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=928912624 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+down = false
+left = false
+right = false
+down_left = true
+down_right = true
+skill = ExtResource("42_xi2td")
+
+[node name="SkillNode5" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=560963346]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode6" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=707024800]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode7" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=1152821533]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode8" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=802407633 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+down = false
+left = false
+right = false
+up_right = true
+down_left = true
+down_right = true
+skill = ExtResource("6_q87ml")
+
+[node name="SkillNode9" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=505837421]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode10" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=1751704564 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+down = false
+left = false
+right = false
+up_left = true
+skill = ExtResource("44_366tr")
+
+[node name="SkillNode11" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=2103392926]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode12" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=288626893 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+left = false
+right = false
+up_right = true
+skill = ExtResource("7_kdqey")
+
+[node name="SkillNode13" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=1287800850 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("46_pgauy")
+
+[node name="SkillNode14" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=1628728170 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+down = false
+left = false
+right = false
+up_left = true
+down_left = true
+down_right = true
+skill = ExtResource("8_uyjl3")
+
+[node name="SkillNode15" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=368122791]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode16" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=343812113]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode17" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=2047319771 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("51_su1ps")
+
+[node name="SkillNode18" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=1266907247 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+down = false
+left = false
+right = false
+up_right = true
+skill = ExtResource("48_ym4u4")
+
+[node name="SkillNode19" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=359118591 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+left = false
+right = false
+skill = ExtResource("9_6w6yi")
+
+[node name="SkillNode20" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=821866075 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+left = false
+right = false
+up_left = true
+down_right = true
+skill = ExtResource("54_cr1g4")
+
+[node name="SkillNode21" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=1089603906]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode22" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=1067201655]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode23" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=1144408434]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode24" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=426465542 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+left = false
+right = false
+skill = ExtResource("10_0u0rt")
+
+[node name="SkillNode25" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=701814006 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+left = false
+right = false
+skill = ExtResource("50_x2d6b")
+
+[node name="SkillNode26" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=1783456129 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+down = false
+left = false
+right = false
+up_left = true
+skill = ExtResource("53_2746d")
+
+[node name="SkillNode27" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=1372464649]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode28" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=690067081]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode29" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=219538750 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("11_xp3ck")
+
+[node name="SkillNode30" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CraftTree" unique_id=1500045796 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("52_cv6xx")
+
+[node name="CapitalTree" type="GridContainer" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList" unique_id=185469718]
+layout_mode = 0
+offset_left = 931.0
+offset_top = 384.0
+offset_right = 1147.0
+offset_bottom = 712.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 3
+
+[node name="SkillNode2" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CapitalTree" unique_id=801564424]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode3" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CapitalTree" unique_id=1912073451 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+down = false
+left = false
+right = false
+down_left = true
+down_right = true
+skill = ExtResource("55_71a6u")
+
+[node name="SkillNode4" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CapitalTree" unique_id=1419776551]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode5" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CapitalTree" unique_id=1963518454 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+left = false
+right = false
+up_right = true
+down_right = true
+skill = ExtResource("56_xmk7w")
+
+[node name="SkillNode6" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CapitalTree" unique_id=1480707920]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode7" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CapitalTree" unique_id=1554477994 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+left = false
+right = false
+up_left = true
+skill = ExtResource("57_qc45x")
+
+[node name="SkillNode8" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CapitalTree" unique_id=319477486 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+left = false
+right = false
+skill = ExtResource("58_ce02l")
+
+[node name="SkillNode9" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CapitalTree" unique_id=1772191838 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+left = false
+right = false
+up_left = true
+skill = ExtResource("59_jn7ql")
+
+[node name="SkillNode10" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CapitalTree" unique_id=1734930295 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("60_e8cv5")
+
+[node name="SkillNode11" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CapitalTree" unique_id=1344488102 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("61_eq7hh")
+
+[node name="SkillNode12" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/CapitalTree" unique_id=1689354946 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("62_20btw")
+
+[node name="RelicsTree" type="GridContainer" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList" unique_id=844839353]
+layout_mode = 0
+offset_left = 666.0
+offset_top = 384.0
+offset_right = 882.0
+offset_bottom = 712.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 3
+
+[node name="SkillNode2" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/RelicsTree" unique_id=422579025]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode3" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/RelicsTree" unique_id=879794003 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+down = false
+left = false
+right = false
+down_left = true
+down_right = true
+skill = ExtResource("63_o7q3y")
+
+[node name="SkillNode4" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/RelicsTree" unique_id=2129413240]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode5" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/RelicsTree" unique_id=281866303 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+left = false
+right = false
+up_right = true
+down_right = true
+skill = ExtResource("16_njuvh")
+
+[node name="SkillNode6" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/RelicsTree" unique_id=1129639957]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode7" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/RelicsTree" unique_id=2087057720 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+down = false
+left = false
+right = false
+up_left = true
+skill = ExtResource("65_7ep7h")
+
+[node name="SkillNode8" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/RelicsTree" unique_id=1917154426 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+left = false
+right = false
+skill = ExtResource("17_q87ml")
+
+[node name="SkillNode9" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/RelicsTree" unique_id=91671868 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+down = false
+left = false
+right = false
+up_left = true
+skill = ExtResource("14_k4lfo")
+
+[node name="SkillNode10" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/RelicsTree" unique_id=2103479885]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode11" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/RelicsTree" unique_id=1957447621 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("66_ugtol")
+
+[node name="SurveyTree" type="GridContainer" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList" unique_id=773940018]
+layout_mode = 0
+offset_left = 1202.0
+offset_top = 384.0
+offset_right = 1418.0
+offset_bottom = 712.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 4
+
+[node name="SkillNode2" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SurveyTree" unique_id=2106524101]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode3" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SurveyTree" unique_id=1872527948 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+left = false
+right = false
+down_left = true
+down_right = true
+skill = ExtResource("71_colqy")
+
+[node name="SkillNode4" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SurveyTree" unique_id=369191276]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode12" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SurveyTree" unique_id=587563504]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode5" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SurveyTree" unique_id=586290036 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+left = false
+right = false
+up_right = true
+skill = ExtResource("72_24cw7")
+
+[node name="SkillNode6" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SurveyTree" unique_id=1238945739 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+left = false
+right = false
+skill = ExtResource("73_e4857")
+
+[node name="SkillNode7" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SurveyTree" unique_id=443980759 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+left = false
+right = false
+up_left = true
+down_right = true
+skill = ExtResource("74_2i74d")
+
+[node name="SkillNode13" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SurveyTree" unique_id=1614004356]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode8" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SurveyTree" unique_id=1580860862 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("75_su1ps")
+
+[node name="SkillNode9" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SurveyTree" unique_id=1829232756 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("76_cr1g4")
+
+[node name="SkillNode10" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SurveyTree" unique_id=1019453795 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+left = false
+right = false
+skill = ExtResource("80_nm8my")
+
+[node name="SkillNode11" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SurveyTree" unique_id=213045558 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+down = false
+left = false
+right = false
+up_left = true
+skill = ExtResource("77_3t8pk")
+
+[node name="SkillNode15" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SurveyTree" unique_id=1451668903]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode16" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SurveyTree" unique_id=2076094014]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode14" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SurveyTree" unique_id=1977468729 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("82_a8v6r")
+
+[node name="SettlementTree" type="GridContainer" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList" unique_id=1403157635]
+layout_mode = 0
+offset_left = 793.0
+offset_right = 1153.0
+offset_bottom = 364.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 5
+
+[node name="SkillNode2" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SettlementTree" unique_id=1543520279]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode3" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SettlementTree" unique_id=296752940 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+down = false
+left = false
+down_left = true
+
+[node name="SkillNode4" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SettlementTree" unique_id=188994328 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+right = false
+down_left = true
+down_right = true
+skill = ExtResource("69_h8n1q")
+
+[node name="SkillNode5" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SettlementTree" unique_id=1429531583 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+down = false
+right = false
+down_right = true
+
+[node name="SkillNode6" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SettlementTree" unique_id=602627403]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode8" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SettlementTree" unique_id=445840404 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+left = false
+right = false
+up_right = true
+skill = ExtResource("71_xiwne")
+
+[node name="SkillNode7" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SettlementTree" unique_id=709550465 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+left = false
+right = false
+up_right = true
+skill = ExtResource("74_mgsf8")
+
+[node name="SkillNode9" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SettlementTree" unique_id=487542473 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+left = false
+right = false
+skill = ExtResource("70_7wadr")
+
+[node name="SkillNode10" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SettlementTree" unique_id=1840329542 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+left = false
+right = false
+up_left = true
+skill = ExtResource("85_4rn83")
+
+[node name="SkillNode11" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SettlementTree" unique_id=1017550061 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+left = false
+right = false
+up_left = true
+skill = ExtResource("73_i60y0")
+
+[node name="SkillNode12" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SettlementTree" unique_id=1362886213 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("76_kl1ut")
+
+[node name="SkillNode13" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SettlementTree" unique_id=1091801398 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+left = false
+right = false
+down_left = true
+skill = ExtResource("79_ophip")
+
+[node name="SkillNode14" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SettlementTree" unique_id=525057620 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("16_r6jwf")
+
+[node name="SkillNode15" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SettlementTree" unique_id=12071905 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+left = false
+right = false
+skill = ExtResource("72_eunu8")
+
+[node name="SkillNode16" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SettlementTree" unique_id=1141110975 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("88_24cw7")
+
+[node name="SkillNode17" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SettlementTree" unique_id=1231528925 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+left = false
+right = false
+up_right = true
+skill = ExtResource("92_63am4")
+
+[node name="SkillNode18" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SettlementTree" unique_id=1761353435 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("83_7a0ec")
+
+[node name="SkillNode19" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SettlementTree" unique_id=1151140355]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode20" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SettlementTree" unique_id=18493886 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+left = false
+right = false
+down_left = true
+down_right = true
+skill = ExtResource("77_52qm2")
+
+[node name="SkillNode21" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SettlementTree" unique_id=506104036]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode22" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SettlementTree" unique_id=1437807610 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("97_kkr8r")
+
+[node name="SkillNode23" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SettlementTree" unique_id=1906008703]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode24" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SettlementTree" unique_id=721534695 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+down = false
+left = false
+right = false
+up_right = true
+skill = ExtResource("94_4rn83")
+
+[node name="SkillNode25" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SettlementTree" unique_id=1128730890 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("82_m6ewc")
+
+[node name="SkillNode26" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SettlementTree" unique_id=2036146500 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+down = false
+left = false
+right = false
+up_left = true
+skill = ExtResource("81_jsapy")
+
+[node name="HauntingTree" type="GridContainer" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList" unique_id=1600997262]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 384.0
+offset_right = 598.0
+offset_bottom = 676.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 3
+
+[node name="SkillNode2" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/HauntingTree" unique_id=1839180617]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode3" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/HauntingTree" unique_id=1301420321 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+left = false
+right = false
+down_left = true
+down_right = true
+skill = ExtResource("85_r0mkw")
+
+[node name="SkillNode4" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/HauntingTree" unique_id=706905339]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode5" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/HauntingTree" unique_id=1081214997 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+left = false
+right = false
+up_right = true
+skill = ExtResource("86_pdokv")
+
+[node name="SkillNode6" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/HauntingTree" unique_id=344155945 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("87_10524")
+
+[node name="SkillNode7" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/HauntingTree" unique_id=1932975935 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+up = false
+left = false
+right = false
+up_left = true
+skill = ExtResource("88_47ueb")
+
+[node name="SkillNode8" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/HauntingTree" unique_id=1433998100 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+left = false
+right = false
+skill = ExtResource("89_bvfra")
+
+[node name="SkillNode9" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/HauntingTree" unique_id=1596602585]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillNode10" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/HauntingTree" unique_id=1081718998 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("90_bqnmj")
+
+[node name="SkillNode11" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/HauntingTree" unique_id=688210876 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("91_wj13p")
+
+[node name="ReturnButton" type="Button" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=1340841085]
+material = SubResource("ShaderMaterial_qe1ta")
+instance_shader_parameters/background_offset = Vector2(0.19080946, 0.9366366)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_styles/normal = ExtResource("41_6yr4c")
+theme_override_styles/pressed = ExtResource("41_6yr4c")
+theme_override_styles/hover = ExtResource("41_6yr4c")
+theme_override_styles/hover_pressed = ExtResource("41_6yr4c")
+theme_override_styles/disabled = ExtResource("41_6yr4c")
+text = "Return
+"
+script = ExtResource("42_n7th8")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="BottomDowelWood" parent="CenterContainer/ScrollPanel/BottomDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_a8v6r")
+
+[connection signal="pressed" from="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]
+
+[editable path="CenterContainer/ScrollPanel"]

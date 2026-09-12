@@ -1,0 +1,338 @@
+[gd_resource type="Resource" script_class="ShardType_MainQuest_ForestShrine" format=3 uid="uid://bjfqpcylpiaby"]
+
+[ext_resource type="Resource" uid="uid://ej48oykcjcmx" path="res://events/main_quest/1_30_defiled_shrine/event_defiled_shrine.tres" id="1_fvh5w"]
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="1_t5mmo"]
+[ext_resource type="Script" uid="uid://cyub82uiyt375" path="res://shard_types/mq_forest_shrine/shard_type_mq_forest_shrine.gd" id="2_j1no1"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="3_hevnk"]
+[ext_resource type="Texture2D" uid="uid://c2wka7ep2c3eh" path="res://shard_types/mq_forest_shrine/shard_type_mq_forest_shrine.png" id="4_fhisg"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="4_hevnk"]
+[ext_resource type="Resource" uid="uid://dvcb2knwbcct3" path="res://art/pieces/piece_gekkou_shrine_in_forest.tres" id="5_q0ir8"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="8_hyk2i"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="9_3ekxk"]
+[ext_resource type="Resource" uid="uid://bu40s2a6je02i" path="res://debate/arguments/argument_extinction.tres" id="10_4a30k"]
+[ext_resource type="Resource" uid="uid://c6gt0a0dpuoed" path="res://debate/arguments/argument_monk_rulers.tres" id="11_mr4lw"]
+[ext_resource type="Resource" uid="uid://c01qbnw06qrd1" path="res://debate/arguments/argument_inquisition.tres" id="12_f6yff"]
+[ext_resource type="Resource" uid="uid://c7d1mpnxmcimq" path="res://debate/arguments/argument_moral_leadership.tres" id="13_5g2iv"]
+
+[sub_resource type="Resource" id="Resource_kkltr"]
+script = ExtResource("1_t5mmo")
+text = "$shard_name was the site of the first official shrine to the Enlightened One in the New World. Despite an initial incident after the shrine's dedication, the monks have maintained it in perfect condition since."
+time_taken = 0
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_fhisg"]
+script = ExtResource("4_hevnk")
+scope = 1
+event_id = "defiled_shrine"
+var_id = "cull_animals"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_q0ir8"]
+script = ExtResource("3_hevnk")
+text = "After animals were blamed for the defilement of the First Shrine, measures were taken to prevent further harm to the holy site. Moats were dug around shrines, surrounded by spiked fences to keep wildlife away, and ritual hunts are still carried out monthly to thin the local animal population."
+requirement = SubResource("Resource_fhisg")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_pgc02"]
+script = ExtResource("4_hevnk")
+scope = 1
+event_id = "defiled_shrine"
+var_id = "guards"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_tb0uf"]
+script = ExtResource("3_hevnk")
+text = "The early decision to restrict access to the First Shrine to monks has had several consequences since. As the shrine expanded with pavilions, gardens, and prayer halls, more and more of the sacred woods became inaccessible to the common people. Before long, the whole of $shrine_town became a restricted sacred area."
+requirement = SubResource("Resource_pgc02")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_hyk2i"]
+script = ExtResource("4_hevnk")
+scope = 1
+event_id = "defiled_shrine"
+var_id = "questioning"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_3ekxk"]
+script = ExtResource("3_hevnk")
+text = "What began as a brief investigation into broken fences slowly evolved into a permanent system. The monks declared that it is a holy duty of every citizen to report suspicious behavior, and hiding others' misdeeds was just as valid a reason for penance as the misdeeds themselves."
+requirement = SubResource("Resource_hyk2i")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_4a30k"]
+script = ExtResource("4_hevnk")
+scope = 1
+event_id = "defiled_shrine"
+var_id = "forgiven"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_mr4lw"]
+script = ExtResource("3_hevnk")
+text = "Soon after its founding, the First Shrine became the beating heart of $shrine_town. The repaired fences were eventually torn down, to be replaced with food stalls, which became a favored haunt for local children during the long summer evenings. Fueled by the sweet treats sold at these stalls, the children spent many an hour playing hide and seek among the tall trees surrounding the shrine."
+requirement = SubResource("Resource_4a30k")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_f6yff"]
+script = ExtResource("1_t5mmo")
+text = "..."
+min_main_quest = 200
+overrides = Array[ExtResource("3_hevnk")]([SubResource("Resource_q0ir8"), SubResource("Resource_tb0uf"), SubResource("Resource_3ekxk"), SubResource("Resource_mr4lw")])
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_5g2iv"]
+script = ExtResource("4_hevnk")
+scope = 1
+event_id = "defiled_shrine"
+var_id = "cull_animals"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_wh43b"]
+script = ExtResource("3_hevnk")
+text = "As the years passed, priests found more and more fault in animals. They declared them to be evil spirits, abominations against the Enlightened One's natural order, and posted bounties, offering rewards for tails and pelts. This backfired when several residents of $nonshrine_town were found to be secretly raising lizards to harvest their tails."
+requirement = SubResource("Resource_5g2iv")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_sdsiy"]
+script = ExtResource("4_hevnk")
+scope = 1
+event_id = "defiled_shrine"
+var_id = "guards"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_4rr4y"]
+script = ExtResource("3_hevnk")
+text = "As shrines were built in other towns on the shard, they also enforced the ban on laypeople. However, an exception was made for those who wanted to present offerings to the Enlightened One. To make sure no commoner could pretend to be a monk, laws were instituted allowing only monks to wear orange clothing. For unclear reasons, this was later expanded to include all dyed clothing, and eventually required laypeople to dress only in clothing made of rough, undyed hemp."
+requirement = SubResource("Resource_sdsiy")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_i6f8j"]
+script = ExtResource("4_hevnk")
+scope = 1
+event_id = "defiled_shrine"
+var_id = "questioning"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_kbqek"]
+script = ExtResource("3_hevnk")
+text = "To handle the growing number of accusations, the priests established a specialized branch of the order. These magistrates patrol the streets with absolute authority to detain and question anyone, bypassing judges and town councils. They also keep detailed records of all inhabitants, and failure to register is considered a punishable offense."
+requirement = SubResource("Resource_i6f8j")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_se72s"]
+script = ExtResource("4_hevnk")
+scope = 1
+event_id = "defiled_shrine"
+var_id = "forgiven"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_qsk3h"]
+script = ExtResource("3_hevnk")
+text = "With the shrine's many child patrons, the monks decided to start hosting regular sessions to teach the holy glyphs, and the place soon turned into a school that also taught writing, arithmetic, and natural philosophy. Smaller shrines in other towns followed suit, and thanks to these schools, $shard_name has become one of the most literate places in the Cloud Sea."
+requirement = SubResource("Resource_se72s")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_bf1se"]
+script = ExtResource("1_t5mmo")
+text = "..."
+min_main_quest = 200
+overrides = Array[ExtResource("3_hevnk")]([SubResource("Resource_wh43b"), SubResource("Resource_4rr4y"), SubResource("Resource_kbqek"), SubResource("Resource_qsk3h")])
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_1v2om"]
+script = ExtResource("4_hevnk")
+scope = 1
+event_id = "defiled_shrine"
+var_id = "cull_animals"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_lx7x4"]
+script = ExtResource("3_hevnk")
+text = "As the population of predators dwindled due to the monthly hunts, rodents became more and more common, and learned to better hide in the walls and crevices of the towns' buildings. Today, it isn't unusual for half the harvest to end up being destroyed by vermin, leading to a cycle of blame that continues to inflame the hatred of animals prevalent among the locals."
+requirement = SubResource("Resource_1v2om")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_y6kl5"]
+script = ExtResource("4_hevnk")
+scope = 1
+event_id = "defiled_shrine"
+var_id = "guards"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_k3dgc"]
+script = ExtResource("3_hevnk")
+text = "After $nonshrine_town rebelled against the monks' strict rules, the head monk of the First Shrine led a force to pacify the rebels, and the ensuing commotion resulted in more restrictive laws. Today, laypeople are forbidden from learning the Enlightened One's holy glyphs, leaving much of the populace illiterate, and unable to argue with the priesthood."
+requirement = SubResource("Resource_y6kl5")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_xbgnq"]
+script = ExtResource("4_hevnk")
+scope = 1
+event_id = "defiled_shrine"
+var_id = "questioning"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_ntoov"]
+script = ExtResource("3_hevnk")
+text = "Today, $shard_name is an orderly place, with magistrates enforcing strict laws and holding court in austere, windowless tribunal halls. Criminals are punished by imprisonment, and their families are fined heavily. The shard's main event is the Atonement Festival, where citizens gather to confess minor sins in the hope that offering up small transgressions will shield them from more serious accusations."
+requirement = SubResource("Resource_xbgnq")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_dj82y"]
+script = ExtResource("4_hevnk")
+scope = 1
+event_id = "defiled_shrine"
+var_id = "forgiven"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_bd4gv"]
+script = ExtResource("3_hevnk")
+text = "The monks on $shard_name are afforded great respect among the locals. In addition to the shrine maintenance and teaching duties they've performed over generations, they now often serve as mediators whenever conflicts arise. The shrine in $nonshrine_town even serves as a bank, letting people entrust their excess funds to the monks, and take interest-free loans for large projects."
+requirement = SubResource("Resource_dj82y")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_lb61g"]
+script = ExtResource("1_t5mmo")
+text = "..."
+min_main_quest = 300
+overrides = Array[ExtResource("3_hevnk")]([SubResource("Resource_lx7x4"), SubResource("Resource_k3dgc"), SubResource("Resource_ntoov"), SubResource("Resource_bd4gv")])
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_gxi6a"]
+script = ExtResource("8_hyk2i")
+text = "(overridden)"
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[sub_resource type="Resource" id="Resource_5srh6"]
+script = ExtResource("4_hevnk")
+scope = 1
+event_id = "defiled_shrine"
+var_id = "cull_animals"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_wmqk8"]
+script = ExtResource("8_hyk2i")
+text = "As far as I could tell, this shard is no longer inhabited. Perhaps there are people living somewhere, but the town by the gate is nothing but ruins. I traveled along the old paved road for two days before turning back, and saw no people or any signs of recent use. I suppose it would be a miracle if every settled shard survived."
+gained_argument = ExtResource("10_4a30k")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[sub_resource type="Resource" id="Resource_1exqu"]
+script = ExtResource("9_3ekxk")
+trip_reward = SubResource("Resource_wmqk8")
+requirement = SubResource("Resource_5srh6")
+metadata/_custom_type_script = "uid://bt2jv4savcrpl"
+
+[sub_resource type="Resource" id="Resource_md22p"]
+script = ExtResource("4_hevnk")
+scope = 1
+event_id = "defiled_shrine"
+var_id = "guards"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_03385"]
+script = ExtResource("8_hyk2i")
+text = "This was a harrowing trip. The guards at the gate refused to let me keep my clothes, and insisted that I purchase a rough hemp tunic sanctioned by the priesthood.
+
+When I tried to pay for my stay at the inn, I found that the only accepted form of payment were tokens issued by the local shrine. The priest at the shrine demanded that I make a large offering before he would even speak to me, but he did eventually give me a few tokens in return for all the money I brought, just enough to spend two nights at the inn.
+
+I decided to leave the next day. As I was sitting on a bench writing this report, I was mobbed by a patrol of priests accusing me of blasphemy for using holy glyphs, and escorted back to the gate."
+gained_argument = ExtResource("11_mr4lw")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[sub_resource type="Resource" id="Resource_y0gv2"]
+script = ExtResource("9_3ekxk")
+trip_reward = SubResource("Resource_03385")
+requirement = SubResource("Resource_md22p")
+metadata/_custom_type_script = "uid://bt2jv4savcrpl"
+
+[sub_resource type="Resource" id="Resource_n43e8"]
+script = ExtResource("4_hevnk")
+scope = 1
+event_id = "defiled_shrine"
+var_id = "questioning"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_oxam0"]
+script = ExtResource("8_hyk2i")
+text = "When I first stepped out of the gate, I was escorted to a locked room and spent an hour answering questions for the magistrates. I had to list every shard I had visited in the past ten years, every place I intended to visit while on this shard, and the purpose of every item I brought with me. Eventually they let me go, but that left a bad first impression.
+
+The first thing I noticed was that homes had no ground floor windows. I suppose people really value their privacy here. That was supported by how they speak. No one I talked to would share any details of their life, dodging questions and offering platitudes instead. The only genuine interaction I was able to observe was two kids playing by the river. They took turns dunking each other's head in the water while demanding they confess their crimes, then bursting out laughing.
+
+As I was heading back to the gate, I could swear someone was following me, ducking into alleyways whenever I turned around. But perhaps I was just affected by everyone's paranoia."
+gained_argument = ExtResource("12_f6yff")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[sub_resource type="Resource" id="Resource_yjqax"]
+script = ExtResource("9_3ekxk")
+trip_reward = SubResource("Resource_oxam0")
+requirement = SubResource("Resource_n43e8")
+metadata/_custom_type_script = "uid://bt2jv4savcrpl"
+
+[sub_resource type="Resource" id="Resource_s6uyp"]
+script = ExtResource("4_hevnk")
+scope = 1
+event_id = "defiled_shrine"
+var_id = "forgiven"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_ynuvy"]
+script = ExtResource("8_hyk2i")
+text = "When I arrived on the shard, I was immediately welcomed and given a flyer showing the town's map, with local inns and eateries annotated in beautiful calligraphy. Gen, the local head priest, came personally to walk me to the inn. As we were strolling along, people would often come up and ask Gen about various upcoming shrine events. Apparently the shrine also acts as a school, a marketplace, and a party venue.
+
+The next morning I went to visit this unusual shrine, and found a bustling market instead. After a breakfast of sweet buns I made my way to the actual shrine building, barely visible behind the stalls. The little hut was empty, and when I asked around, I learned that Gen and his team were out in the fields helping with the harvest. I left a few coins in the donation box before leaving, and noticed that it was already almost full. It didn't even have a lid. On some shards those donations would've disappeared within a day."
+gained_argument = ExtResource("13_5g2iv")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[sub_resource type="Resource" id="Resource_y2v3f"]
+script = ExtResource("9_3ekxk")
+trip_reward = SubResource("Resource_ynuvy")
+requirement = SubResource("Resource_s6uyp")
+metadata/_custom_type_script = "uid://bt2jv4savcrpl"
+
+[resource]
+script = ExtResource("2_j1no1")
+event = ExtResource("1_fvh5w")
+shard_type_id = "mq_forest_shrine"
+name = "The Site of the First Shrine"
+shard_name_override = "Motojima"
+shard_name_override_jp = "本島"
+shard_name_override_meaning = "Origin Island"
+tier = 3
+illustration = ExtResource("4_fhisg")
+illustration_credit = ExtResource("5_q0ir8")
+history = Array[ExtResource("1_t5mmo")]([SubResource("Resource_kkltr"), SubResource("Resource_f6yff"), SubResource("Resource_bf1se"), SubResource("Resource_lb61g")])
+trip_reward = SubResource("Resource_gxi6a")
+trip_reward_overrides = Array[ExtResource("9_3ekxk")]([SubResource("Resource_1exqu"), SubResource("Resource_y0gv2"), SubResource("Resource_yjqax"), SubResource("Resource_y2v3f")])
+min_main_quest_progress = 125
+metadata/_custom_type_script = "uid://cyub82uiyt375"

@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://dl31bton8ngdc"]
+
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="1_oxat6"]
+[ext_resource type="Resource" uid="uid://rxmafo8gn7ml" path="res://stage/spots/plains/upgrade_plains_2_apiary.tres" id="2_amjx2"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="2_bxh5x"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_4vs3g"]
+[ext_resource type="Resource" uid="uid://6d4qku0kl0mv" path="res://stage/spots/plains/upgrade_plains_2_kudzu_plantation.tres" id="3_yl141"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="4_lrnf7"]
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="5_bnep1"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="8_26ta5"]
+[ext_resource type="Resource" uid="uid://f8guout8235a" path="res://stage/spots/plains/spot_plains.tres" id="8_invck"]
+[ext_resource type="Script" uid="uid://dvrtuqbmx4v30" path="res://stage/spots/spot_upgrade_visual_add.gd" id="9_invck"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://cdowhv53swx83" path="res://map/sprites/spots/plains/mst_plains_buckwheat_field.tres" id="10_ublwj"]
+
+[sub_resource type="Resource" id="Resource_bgi1a"]
+script = ExtResource("9_invck")
+sprite_type = ExtResource("10_ublwj")
+biome = 6
+metadata/_custom_type_script = "uid://dvrtuqbmx4v30"
+
+[resource]
+script = ExtResource("5_bnep1")
+spot_upgrade_id = "plains_grain_farm"
+name = "Buckwheat Field"
+description = "The dream of soba noodle bowls is alive in this field."
+required_aspects = Array[ExtResource("3_4vs3g")]([ExtResource("4_lrnf7")])
+granted_bonuses = Dictionary[ExtResource("1_oxat6"), int]({
+ExtResource("2_bxh5x"): 10
+})
+child_upgrades = Array[ExtResource("5_bnep1")]([ExtResource("2_amjx2"), ExtResource("3_yl141")])
+spot = ExtResource("8_invck")
+visuals = Array[ExtResource("8_26ta5")]([SubResource("Resource_bgi1a")])
+tags = Array[int]([1])

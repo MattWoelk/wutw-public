@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccxgitrv6shry"]
+
+[ext_resource type="Texture2D" uid="uid://b60k11eexnrtr" path="res://dialogue/dialogue_portrait_frame.png" id="1_2biqq"]
+[ext_resource type="Script" uid="uid://cim62jrdqotwp" path="res://dialogue/dialogue_portrait_display.gd" id="2_al5b3"]
+[ext_resource type="Texture2D" uid="uid://bl664706balwv" path="res://dialogue/dialogue_portrait_bg.png" id="2_i1whr"]
+
+[sub_resource type="Gradient" id="Gradient_j6acm"]
+colors = PackedColorArray(1, 0.88100004, 0.58000004, 1, 1, 0.88235295, 0.5803922, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_364we"]
+gradient = SubResource("Gradient_j6acm")
+fill_to = Vector2(0, 1)
+
+[node name="DialoguePortraitDisplay" type="TextureRect"]
+self_modulate = Color(1, 1, 1, 0.47058824)
+texture = ExtResource("1_2biqq")
+script = ExtResource("2_al5b3")
+
+[node name="Container" type="TextureRect" parent="."]
+unique_name_in_owner = true
+clip_children = 1
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 875.0
+texture = ExtResource("2_i1whr")
+
+[node name="Highlight" type="TextureRect" parent="Container"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.19607843)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_364we")

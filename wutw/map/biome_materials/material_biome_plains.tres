@@ -1,0 +1,37 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://djkfffjjnpljl"]
+
+[ext_resource type="Shader" uid="uid://c8nfjoj5qwr8p" path="res://map/shaders/map_layer_sdf_gradient.gdshader" id="1_vdstf"]
+
+[sub_resource type="Gradient" id="Gradient_htakf"]
+offsets = PackedFloat32Array(0, 0.159836, 0.316598, 0.455943, 0.762295, 0.868852, 1)
+colors = PackedColorArray(0.310933, 0.53, 0.106, 0.396078, 0.257476, 0.528301, 0.0065, 0.308651, 0.271575, 0.51, 0.0765, 0.211765, 0.39835, 0.62, 0.217, 0.14902, 0.451796, 0.621952, 0.312577, 0.0631235, 0.63, 0.63, 0.63, 0, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rwh2w"]
+gradient = SubResource("Gradient_htakf")
+
+[sub_resource type="Gradient" id="Gradient_wyt5m"]
+offsets = PackedFloat32Array(0, 0.997951)
+colors = PackedColorArray(0.58775, 0.587751, 0.58775, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5brxw"]
+noise_type = 4
+seed = 360
+frequency = 0.425
+domain_warp_enabled = true
+domain_warp_amplitude = 33.875
+domain_warp_frequency = 0.04
+domain_warp_fractal_octaves = 10
+domain_warp_fractal_lacunarity = 5.385
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_syjyn"]
+noise = SubResource("FastNoiseLite_5brxw")
+color_ramp = SubResource("Gradient_wyt5m")
+
+[resource]
+shader = ExtResource("1_vdstf")
+shader_parameter/base_gradient_range = 0.16
+shader_parameter/base_gradient = SubResource("GradientTexture1D_rwh2w")
+shader_parameter/distortion_amplitude = 0.024
+shader_parameter/distortion_frequency = 110.0
+shader_parameter/distortion_range = Vector2(0.4, 0.205)
+shader_parameter/noise = SubResource("NoiseTexture2D_syjyn")

@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://td606pmc1v1n"]
+
+[ext_resource type="Script" uid="uid://b6m0yytecbwb4" path="res://quests/settler/settler_quest_description.gd" id="1_7wr6n"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="6_pwmwa"]
+[ext_resource type="Texture2D" uid="uid://c0h45t84fmyug" path="res://characters/generic/monk_shattered/monk_hub_lecturing.png" id="7_afbq5"]
+[ext_resource type="Texture2D" uid="uid://cwo7ikoi75thg" path="res://dialogue/bubble/speech_bubble_mask.png" id="8_yuxs2"]
+[ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="9_55ake"]
+[ext_resource type="FontFile" uid="uid://4akk8wkhg56y" path="res://theme/fonts/Merienda/static/Merienda-ExtraBold.ttf" id="10_8rj1a"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="11_13k2i"]
+[ext_resource type="Texture2D" uid="uid://dphebgupobayo" path="res://dialogue/bubble/speech_bubble_frame.png" id="12_k6qvj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cnyvt"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sfta6"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = ExtResource("8_yuxs2")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m1ip8"]
+content_margin_left = 8.0
+content_margin_top = 5.0
+content_margin_right = 8.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 1)
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ms14p"]
+font = ExtResource("10_8rj1a")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y5jp0"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = ExtResource("12_k6qvj")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[node name="SettlerQuestDescription" type="VBoxContainer" unique_id=1649851538]
+custom_minimum_size = Vector2(900, 400)
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 910.0
+offset_bottom = 410.0
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+script = ExtResource("1_7wr6n")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=341199404]
+layout_mode = 2
+theme_override_constants/separation = -20
+
+[node name="NegativeSpacer" type="Control" parent="HBoxContainer2" unique_id=1477394827]
+layout_mode = 2
+
+[node name="CharacterImage" type="TextureRect" parent="HBoxContainer2" unique_id=1153916442]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("7_afbq5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer2" unique_id=1298470683]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="TitleLabel" type="Label" parent="HBoxContainer2/VBoxContainer" unique_id=1592593570]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Settler Quest: Quest Name"
+horizontal_alignment = 1
+
+[node name="SpeechBubble" type="PanelContainer" parent="HBoxContainer2/VBoxContainer" unique_id=2039763414]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_cnyvt")
+
+[node name="ClipPanel" type="PanelContainer" parent="HBoxContainer2/VBoxContainer/SpeechBubble" unique_id=1319282154]
+clip_children = 1
+texture_filter = 6
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_sfta6")
+
+[node name="BG" type="PanelContainer" parent="HBoxContainer2/VBoxContainer/SpeechBubble/ClipPanel" unique_id=976797650]
+material = ExtResource("6_pwmwa")
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_m1ip8")
+script = ExtResource("9_55ake")
+material_customized = true
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="DirectionHBox" type="HBoxContainer" parent="HBoxContainer2/VBoxContainer/SpeechBubble/ClipPanel" unique_id=190354223]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
+theme_override_constants/separation = -14
+
+[node name="TextContainer" type="MarginContainer" parent="HBoxContainer2/VBoxContainer/SpeechBubble/ClipPanel/DirectionHBox" unique_id=1724061992]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 13
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer2/VBoxContainer/SpeechBubble/ClipPanel/DirectionHBox/TextContainer" unique_id=1994061051]
+layout_mode = 2
+theme_override_constants/separation = -12
+
+[node name="NameLabel" type="Label" parent="HBoxContainer2/VBoxContainer/SpeechBubble/ClipPanel/DirectionHBox/TextContainer/VBoxContainer" unique_id=720132285]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_vertical = 0
+text = "Hanako, Poet"
+label_settings = SubResource("LabelSettings_ms14p")
+horizontal_alignment = 1
+
+[node name="SpeechLabel" parent="HBoxContainer2/VBoxContainer/SpeechBubble/ClipPanel/DirectionHBox/TextContainer/VBoxContainer" unique_id=1627404269 instance=ExtResource("11_13k2i")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 20)
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 6
+text = "I come from a desert shard, and I've always wanted to live by a river. I want to spend my days listening to the rustling of the stream and having picnics beneath the sakura trees."
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 3
+justification_flags = 34
+visible_characters_behavior = 1
+
+[node name="BorderPanel" type="Panel" parent="HBoxContainer2/VBoxContainer/SpeechBubble" unique_id=562736594]
+texture_filter = 6
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_y5jp0")
+
+[node name="ReportLabel" parent="HBoxContainer2/VBoxContainer" unique_id=2025629397 instance=ExtResource("11_13k2i")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(350, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+text = "[b]Difficulty Modifier[/b]: Reduce <term_lower:card_rarity_tier> of <term_lower:glyph> rewards by 10%.
+
+[b]Task[/b]: Reach 100 total Knowledge <term_lower:bonus>.
+
+[b]Reward[/b]: Get a choice of rare <term_lower:glyph>s."
+fit_content = true
+scroll_active = true
+visible_characters_behavior = 1
+tooltip_directions = Array[int]([5])
+
+[node name="NoteLabel" parent="." unique_id=1919509992 instance=ExtResource("11_13k2i")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 10
+mouse_filter = 1
+text = "[i]Accepting each settler quest increases total <term_lower:insight> rewards by 10%.[/i]"
+fit_content = true
+scroll_active = true
+horizontal_alignment = 1
+visible_characters_behavior = 1
+tooltip_directions = Array[int]([5])

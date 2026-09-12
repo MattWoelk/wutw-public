@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Relic" format=3 uid="uid://b4cm3bai8y4gd"]
+
+[ext_resource type="Texture2D" uid="uid://lwhw7vvu4p6f" path="res://relics/common/census_tag/census_tag.png" id="1_ybs5h"]
+[ext_resource type="Script" uid="uid://cocdm5ulvrs8m" path="res://relics/relic.gd" id="2_4vsx1"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="3_4vsx1"]
+[ext_resource type="Resource" uid="uid://5q63svcbmx37" path="res://glossary/categories/termcategory_relic.tres" id="4_ibrio"]
+
+[resource]
+script = ExtResource("2_4vsx1")
+relic_id = "census_tag"
+default_name = "Census Tag"
+default_description = "Reduce all <term_lower:stage_goal>s by 10%."
+flavor_text = "This tiny tag once held 9 names. Someone added a 10th, and no one objected."
+icon = ExtResource("1_ybs5h")
+var_modifiers = Dictionary[int, int]({
+15: -10
+})
+default_starting_state = 1
+term_categories = Array[ExtResource("3_4vsx1")]([ExtResource("4_ibrio")])

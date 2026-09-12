@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://dxme0xejljrnm"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_uedh0"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="2_2x350"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="3_iooo0"]
+[ext_resource type="Resource" uid="uid://d3m1xh5q3vjl3" path="res://cards/tier6/card_disease.tres" id="4_wuhe1"]
+[ext_resource type="Script" uid="uid://777usfqcjmox" path="res://stage/hauntings/effects/haunting_effect_add_card.gd" id="5_232hq"]
+[ext_resource type="Resource" uid="uid://c3paj27cvanre" path="res://art/pieces/piece_yagyou_housougami.tres" id="6_iooo0"]
+[ext_resource type="Texture2D" uid="uid://dj26fn2jdyqh8" path="res://stage/hauntings/types/housougami/haunting_housougami.png" id="7_6r77r"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="7_cwp3l"]
+[ext_resource type="Resource" uid="uid://b1danj1u7pmyp" path="res://art/pieces/piece_hiroshige_ushijima.tres" id="7_i8cmt"]
+[ext_resource type="Texture2D" uid="uid://cpeug7msejkll" path="res://stage/hauntings/types/housougami/haunting_housougami_realistic_smallpox.png" id="8_3hr6i"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="10_yjith"]
+[ext_resource type="Script" uid="uid://hbjd7cw7rqr2" path="res://stage/hauntings/triggers/haunting_trigger_card_slotted.gd" id="11_i8cmt"]
+
+[sub_resource type="Resource" id="Resource_uej61"]
+script = ExtResource("5_232hq")
+card_type = ExtResource("4_wuhe1")
+metadata/_custom_type_script = "uid://777usfqcjmox"
+
+[sub_resource type="Resource" id="Resource_jqg6n"]
+script = ExtResource("11_i8cmt")
+metadata/_custom_type_script = "uid://hbjd7cw7rqr2"
+
+[resource]
+script = ExtResource("7_cwp3l")
+haunting_id = "housougami"
+name = "Hōsōgami"
+name_japanese = "疱瘡神"
+name_realistic = "Smallpox"
+name_translation = "Smallpox Demon"
+description = "Settlers whisper that a crimson spirit walks among them, marking the sick with its red touch."
+description_realistic = "A contagious disease is spreading rapidly among the settlers."
+description_long = "When fever sweeps through a camp, the people hang red ribbons and paper charms, hoping to draw away the gaze of the Hōsōgami. Legends tell of small, scarlet demons traveling from home to home, riding on shoulders and carried in hands, marking people with their red touch. They are said to test each household's kindness: those who hoard medicine fall first, while the generous recover.
+
+Yet the drums and prayers that once sent it away no longer bring comfort. Even the toughest begin to tremble at the sight of red skin."
+image_small = ExtResource("7_6r77r")
+image_credit = ExtResource("6_iooo0")
+image_small_realistic = ExtResource("8_3hr6i")
+image_realistic_credit = ExtResource("7_i8cmt")
+base_aspect_types = Array[ExtResource("1_uedh0")]([ExtResource("3_iooo0")])
+extra_aspect_type = ExtResource("2_2x350")
+scaling_bonus_type = ExtResource("10_yjith")
+trigger = SubResource("Resource_jqg6n")
+effect = SubResource("Resource_uej61")
+spot_attach_mode = 1
+settlement_attach_mode = 1
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

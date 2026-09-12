@@ -1,0 +1,89 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://di8lk86dw7ke0"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_2ewqg"]
+[ext_resource type="Resource" uid="uid://b3yrhb7wjn222" path="res://art/pieces/piece_bartlett_taj_mahal.tres" id="1_dfnxa"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_dfnxa"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_hel5c"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="4_8fosc"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="5_58j3a"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="6_nikb8"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="7_vo6sa"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="8_4u3cv"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="9_3grmq"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="10_xwa7j"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="11_kb7j1"]
+
+[sub_resource type="Resource" id="Resource_y7v3x"]
+script = ExtResource("1_2ewqg")
+_texture_path = "res://stage/survey/episodes/episode_empty_desert.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_huibf"]
+script = ExtResource("5_58j3a")
+delta = -4
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_205m6"]
+script = ExtResource("2_dfnxa")
+label = "Follow the visions."
+aspects = Array[ExtResource("3_hel5c")]([ExtResource("4_8fosc")])
+outcome = SubResource("Resource_huibf")
+outcome_text = "The group decides to divert from their original route and investigate the vision instead.
+
+They spend several hours walking in the direction the two scouts indicated, but the visions only seem to fade the closer they get.
+
+By the time they reach the indicated location, the visions are gone, and they find themselves in the same empty desert they had been traversing for days."
+
+[sub_resource type="Resource" id="Resource_tc7qr"]
+script = ExtResource("8_4u3cv")
+bonus_type = ExtResource("7_vo6sa")
+amount = 15
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_a3bkh"]
+script = ExtResource("2_dfnxa")
+label = "Observe the visions."
+aspects = Array[ExtResource("3_hel5c")]([ExtResource("6_nikb8")])
+outcome = SubResource("Resource_tc7qr")
+outcome_text = "Fascinated by the phenomenon, the surveyors decide to take a break and spend an hour observing the mirage.
+
+They see the images shifting and glimmering in the sunlight. A few of the scouts take out paper and sketch what they see, then compare their drawings, finding each of them entirely unlike the others.
+
+By the time the sun sets, the visions fade away."
+
+[sub_resource type="Resource" id="Resource_th04d"]
+script = ExtResource("5_58j3a")
+delta = 5
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_hs3nk"]
+script = ExtResource("2_dfnxa")
+label = "Investigate the dessert."
+aspects = Array[ExtResource("3_hel5c")]([ExtResource("9_3grmq")])
+outcome = SubResource("Resource_th04d")
+outcome_text = "The team leader, who has been sharing her food too freely and has ended up particularly hungry, becomes convinced that the mirage resembles an enormous white mochi.
+
+It takes the efforts of the entire team to convince her to give up on the idea of pursuing the confection. The group spends the next few hours joking about desserts and imagining all the delicious foods awaiting them when they rejoin the expedition."
+
+[sub_resource type="Resource" id="Resource_jfs6m"]
+script = ExtResource("2_dfnxa")
+label = "Ignore the visions."
+aspects = Array[ExtResource("3_hel5c")]([null])
+outcome_text = "Many of the scouts, although tired and thirsty, have seen mirages before and refuse to be distracted.
+
+It proves difficult to persuade the younger teammates to continue their original path, and they lose precious time arguing that finding a glittering castle in the middle of the desert is highly unlikely."
+
+[resource]
+script = ExtResource("10_xwa7j")
+episode_id = "empty_desert"
+title = "Visions in the Desert"
+biome_types = Array[int]([2])
+text = "The surveyors have been traveling the desert for days, the sun beating down on their backs.
+
+One afternoon, a scout suddenly points into the distance and describes what she sees there: a beautiful oasis with glittering water and green trees. Her teammate shakes his head, disagreeing with her vision. He claims to see a tall, snow-white fortress surrounded by a moat instead.
+
+The group can't come to a consensus on what they are looking at, the shapes seeming to shift and shimmer in the sun."
+background_image = SubResource("Resource_y7v3x")
+background_credit = ExtResource("1_dfnxa")
+choices = Array[ExtResource("2_dfnxa")]([SubResource("Resource_205m6"), SubResource("Resource_a3bkh"), SubResource("Resource_hs3nk"), SubResource("Resource_jfs6m")])

@@ -1,0 +1,548 @@
+[gd_scene format=3 uid="uid://dtrd3djyvtm56"]
+
+[ext_resource type="PackedScene" uid="uid://b5k16hpo8080v" path="res://theme/faded_background/faded_background.tscn" id="1_1ps03"]
+[ext_resource type="Script" uid="uid://c6n7ugwa8rj0y" path="res://hub/shard_explorer/shard_explorer.gd" id="1_tfx0u"]
+[ext_resource type="PackedScene" uid="uid://b6ob53b0vla40" path="res://theme/scroll_panel/scroll_panel_big.tscn" id="2_tfx0u"]
+[ext_resource type="Shader" uid="uid://bbe7ginxustev" path="res://theme/scroll_panel/scroll_panel_dowel.gdshader" id="3_llkvd"]
+[ext_resource type="Texture2D" uid="uid://b0cvn7ev1bwut" path="res://theme/scroll_panel/dowel_wood.png" id="4_ookfe"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="6_gse88"]
+[ext_resource type="LabelSettings" uid="uid://bc3l8vvpbl2k" path="res://theme/fonts/presets/label_settings_header.tres" id="7_ok78e"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="8_0it08"]
+[ext_resource type="Script" uid="uid://b67iom4b68hfb" path="res://theme/accessible_line_edit.gd" id="8_gnokc"]
+[ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="9_xkcj1"]
+[ext_resource type="Shader" uid="uid://ygmrqrvg5hpm" path="res://theme/button/ukiyoe_button.gdshader" id="11_8ya12"]
+[ext_resource type="PackedScene" uid="uid://07advtiscju1" path="res://hub/shard_explorer/shard_details.tscn" id="11_f3mgk"]
+[ext_resource type="PackedScene" uid="uid://bjnt7vamai8si" path="res://hub/shard_explorer/shard_type_button.tscn" id="11_gse88"]
+[ext_resource type="Texture2D" uid="uid://ctgl61r3xxsqv" path="res://theme/button/button_fill.png" id="12_f3mgk"]
+[ext_resource type="Texture2D" uid="uid://blje81yu8734p" path="res://theme/button/button_shape.png" id="13_eabfy"]
+[ext_resource type="Texture2D" uid="uid://doe4603a6ngco" path="res://theme/button/button_outline.png" id="14_gse88"]
+[ext_resource type="Texture2D" uid="uid://cwubixgc8n0yr" path="res://theme/button/button_swish_left.png" id="15_qedw3"]
+[ext_resource type="Texture2D" uid="uid://n6l17h4ysayj" path="res://theme/button/button_swish_right.png" id="16_ok78e"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="17_gnokc"]
+[ext_resource type="Material" uid="uid://bu0kvnoxck15w" path="res://hub/shard_explorer/shard_type_button_uncommon_mat.tres" id="18_ok78e"]
+[ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="18_okycc"]
+[ext_resource type="Resource" uid="uid://dvlfoilu86hgr" path="res://shard_types/lightning/shard_type_lightning.tres" id="18_qedw3"]
+[ext_resource type="Script" uid="uid://dm63mtrlfj005" path="res://theme/faded_scroll_container/faded_scroll_container.gd" id="21_qedw3"]
+[ext_resource type="PackedScene" uid="uid://bx46hh2vxbx6n" path="res://hub/shard_explorer/past_run_details.tscn" id="22_qedw3"]
+
+[sub_resource type="Gradient" id="Gradient_8ya12"]
+offsets = PackedFloat32Array(0, 0.196721, 0.460041, 0.525615, 0.603484, 0.732582, 1)
+colors = PackedColorArray(0.59, 0.43424, 0.3068, 0.796078, 0.48, 0.35328, 0.2496, 0.294118, 0.48, 0.35328, 0.2496, 0.0116377, 0.48, 0.35328, 0.2496, 0, 0.48, 0.35328, 0.2496, 0.0431956, 0.48, 0.35328, 0.2496, 0.34902, 0.4, 0.2944, 0.208, 0.929412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g5dkl"]
+gradient = SubResource("Gradient_8ya12")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_f3mgk"]
+colors = PackedColorArray(0.331639, 0.33164, 0.331639, 1, 0.961814, 0.961814, 0.961814, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_eabfy"]
+frequency = 0.0035
+domain_warp_amplitude = 100.0
+domain_warp_frequency = -0.01
+domain_warp_fractal_lacunarity = 8.69
+domain_warp_fractal_gain = 0.19
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jijvn"]
+width = 2048
+noise = SubResource("FastNoiseLite_eabfy")
+color_ramp = SubResource("Gradient_f3mgk")
+seamless = true
+seamless_blend_skirt = 0.27
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ok78e"]
+shader = ExtResource("3_llkvd")
+shader_parameter/size = Vector2(1545, 49)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("4_ookfe")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gnokc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okycc"]
+content_margin_left = 5.0
+content_margin_right = 5.0
+bg_color = Color(0.23, 0.18315667, 0.12189999, 0.26666668)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.19, 0.14655334, 0.09689999, 1)
+expand_margin_right = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1xfa0"]
+content_margin_left = 5.0
+content_margin_right = 5.0
+bg_color = Color(0.3, 0.2389, 0.159, 0.26666668)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.52, 0.40109333, 0.2652, 1)
+expand_margin_right = 1.0
+
+[sub_resource type="Gradient" id="Gradient_gnokc"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_okycc"]
+gradient = SubResource("Gradient_gnokc")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gnokc"]
+shader = ExtResource("11_8ya12")
+shader_parameter/mask_tex = ExtResource("13_eabfy")
+shader_parameter/background = ExtResource("12_f3mgk")
+shader_parameter/gradient = SubResource("GradientTexture2D_okycc")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("14_gse88")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("16_ok78e")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("15_qedw3")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_okycc"]
+shader = ExtResource("11_8ya12")
+shader_parameter/mask_tex = ExtResource("13_eabfy")
+shader_parameter/background = ExtResource("12_f3mgk")
+shader_parameter/gradient = SubResource("GradientTexture2D_okycc")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("14_gse88")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("16_ok78e")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("15_qedw3")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="Gradient" id="Gradient_j5apj"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wqpyw"]
+gradient = SubResource("Gradient_j5apj")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7fi07"]
+shader = ExtResource("11_8ya12")
+shader_parameter/mask_tex = ExtResource("13_eabfy")
+shader_parameter/background = ExtResource("12_f3mgk")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("14_gse88")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("16_ok78e")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("15_qedw3")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0gdm3"]
+shader = ExtResource("11_8ya12")
+shader_parameter/mask_tex = ExtResource("13_eabfy")
+shader_parameter/background = ExtResource("12_f3mgk")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("14_gse88")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("16_ok78e")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("15_qedw3")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_smsdc"]
+shader = ExtResource("11_8ya12")
+shader_parameter/mask_tex = ExtResource("13_eabfy")
+shader_parameter/background = ExtResource("12_f3mgk")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("14_gse88")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("16_ok78e")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("15_qedw3")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="Gradient" id="Gradient_1xfa0"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jnknv"]
+gradient = SubResource("Gradient_1xfa0")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vcp1h"]
+shader = ExtResource("11_8ya12")
+shader_parameter/mask_tex = ExtResource("13_eabfy")
+shader_parameter/background = ExtResource("12_f3mgk")
+shader_parameter/gradient = SubResource("GradientTexture2D_jnknv")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("14_gse88")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("16_ok78e")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("15_qedw3")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1xfa0"]
+shader = ExtResource("3_llkvd")
+shader_parameter/size = Vector2(1543, 49)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("4_ookfe")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[node name="ShardExplorer" type="Node2D" unique_id=239328941]
+script = ExtResource("1_tfx0u")
+
+[node name="BG" parent="." unique_id=1405446200 instance=ExtResource("1_1ps03")]
+unique_name_in_owner = true
+
+[node name="Control" type="CenterContainer" parent="." unique_id=1457973153]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="ScrollPanel" parent="Control" unique_id=704637184 instance=ExtResource("2_tfx0u")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1645, 0)
+layout_mode = 2
+
+[node name="TopDowelWood" parent="Control/ScrollPanel/TopDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_ok78e")
+
+[node name="Scroller" parent="Control/ScrollPanel" index="1"]
+custom_minimum_size = Vector2(0, 850)
+
+[node name="ScrollMargin" parent="Control/ScrollPanel/Scroller" index="0"]
+offset_bottom = 922.0
+
+[node name="ContentPanel" parent="Control/ScrollPanel/Scroller/ScrollMargin" index="0"]
+material = ExtResource("6_gse88")
+
+[node name="ContentContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel" index="0"]
+theme_override_constants/margin_top = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer" index="0" unique_id=1649851538]
+custom_minimum_size = Vector2(1500, 810)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=823304680]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gnokc")
+
+[node name="TitleLabel" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/PanelContainer" unique_id=1592593570]
+layout_mode = 2
+text = "Settled Shards"
+label_settings = ExtResource("7_ok78e")
+horizontal_alignment = 1
+
+[node name="SearchInput" type="LineEdit" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/PanelContainer" unique_id=31198398]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 31.43)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.5372549)
+theme_override_styles/normal = SubResource("StyleBoxFlat_okycc")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1xfa0")
+placeholder_text = "Search..."
+context_menu_enabled = false
+emoji_menu_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+script = ExtResource("8_gnokc")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=642977709]
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_constants/margin_left = -8
+theme_override_constants/margin_top = -6
+theme_override_constants/margin_right = -7
+theme_override_constants/margin_bottom = -8
+
+[node name="TabBar" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer" unique_id=1674971046]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_constants/separation = -5
+
+[node name="TabButton_Types" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/TabBar" unique_id=2067422362]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_gnokc")
+instance_shader_parameters/background_offset = Vector2(0.16536559, 0.12200865)
+instance_shader_parameters/state = 2.0
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("17_gnokc")
+theme_override_styles/pressed = ExtResource("17_gnokc")
+theme_override_styles/hover = ExtResource("17_gnokc")
+theme_override_styles/hover_pressed = ExtResource("17_gnokc")
+theme_override_styles/disabled = ExtResource("17_gnokc")
+toggle_mode = true
+button_pressed = true
+text = "Shard Cultures"
+script = ExtResource("18_okycc")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="TabButton_Runs" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/TabBar" unique_id=1445590255]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_okycc")
+instance_shader_parameters/background_offset = Vector2(0.15495281, 0.4152523)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("17_gnokc")
+theme_override_styles/pressed = ExtResource("17_gnokc")
+theme_override_styles/hover = ExtResource("17_gnokc")
+theme_override_styles/hover_pressed = ExtResource("17_gnokc")
+theme_override_styles/disabled = ExtResource("17_gnokc")
+toggle_mode = true
+text = "Expedition Records"
+script = ExtResource("18_okycc")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=2080704233]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/margin_left = -8
+theme_override_constants/margin_top = -6
+theme_override_constants/margin_right = -7
+theme_override_constants/margin_bottom = -8
+
+[node name="Tab_Types" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer2" unique_id=1182861031]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = -6
+
+[node name="TypesListPanel" type="PanelContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer2/Tab_Types" unique_id=1597448399]
+material = ExtResource("6_gse88")
+custom_minimum_size = Vector2(365, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = ExtResource("8_0it08")
+script = ExtResource("9_xkcj1")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer2/Tab_Types/TypesListPanel" unique_id=699314294]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer2/Tab_Types/TypesListPanel/VBoxContainer" unique_id=1189754146]
+unique_name_in_owner = true
+clip_children = 1
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+script = ExtResource("21_qedw3")
+
+[node name="TypesList" type="VBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer2/Tab_Types/TypesListPanel/VBoxContainer/ScrollContainer" unique_id=1601171972]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ShardTypeButton" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer2/Tab_Types/TypesListPanel/VBoxContainer/ScrollContainer/TypesList" unique_id=1960524235 instance=ExtResource("11_gse88")]
+modulate = Color(0.9, 0.9, 0.9, 0.8)
+material = ExtResource("18_ok78e")
+instance_shader_parameters/background_offset = Vector2(0.72457093, 0.21750538)
+layout_mode = 2
+text = "The Land of Bottled Lightning"
+shard_type = ExtResource("18_qedw3")
+
+[node name="ShardTypeButton2" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer2/Tab_Types/TypesListPanel/VBoxContainer/ScrollContainer/TypesList" unique_id=923872017 instance=ExtResource("11_gse88")]
+modulate = Color(0.9, 0.9, 0.9, 0.8)
+material = ExtResource("18_ok78e")
+instance_shader_parameters/background_offset = Vector2(0.93581873, 0.41606018)
+layout_mode = 2
+text = "The Land of Bottled Lightning"
+shard_type = ExtResource("18_qedw3")
+
+[node name="ShardTypeButton3" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer2/Tab_Types/TypesListPanel/VBoxContainer/ScrollContainer/TypesList" unique_id=915654851 instance=ExtResource("11_gse88")]
+modulate = Color(0.9, 0.9, 0.9, 0.8)
+material = ExtResource("18_ok78e")
+instance_shader_parameters/background_offset = Vector2(0.19439462, 0.7127879)
+layout_mode = 2
+text = "The Land of Bottled Lightning"
+shard_type = ExtResource("18_qedw3")
+
+[node name="EarnedRarityLabel" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer2/Tab_Types/TypesListPanel/VBoxContainer" unique_id=126876326]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+mouse_filter = 1
+text = "Bonus Glyph Rarity: +50%"
+horizontal_alignment = 1
+
+[node name="TypeDetailsPanel" type="PanelContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer2/Tab_Types" unique_id=1498547807]
+material = ExtResource("6_gse88")
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("8_0it08")
+script = ExtResource("9_xkcj1")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="ShardDetails" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer2/Tab_Types/TypeDetailsPanel" unique_id=1060328280 instance=ExtResource("11_f3mgk")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Tab_Runs" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer2" unique_id=584504492]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = -6
+
+[node name="RunsListPanel" type="PanelContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer2/Tab_Runs" unique_id=1840204353]
+material = ExtResource("6_gse88")
+custom_minimum_size = Vector2(365, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = ExtResource("8_0it08")
+script = ExtResource("9_xkcj1")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer2/Tab_Runs/RunsListPanel" unique_id=601027590]
+clip_children = 1
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+script = ExtResource("21_qedw3")
+
+[node name="RunsList" type="VBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer2/Tab_Runs/RunsListPanel/ScrollContainer" unique_id=587585065]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="UkiyoeButton" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer2/Tab_Runs/RunsListPanel/ScrollContainer/RunsList" unique_id=703274665]
+material = SubResource("ShaderMaterial_7fi07")
+instance_shader_parameters/background_offset = Vector2(0.5627038, 0.7099267)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+theme_override_styles/normal = ExtResource("17_gnokc")
+theme_override_styles/pressed = ExtResource("17_gnokc")
+theme_override_styles/hover = ExtResource("17_gnokc")
+theme_override_styles/hover_pressed = ExtResource("17_gnokc")
+theme_override_styles/disabled = ExtResource("17_gnokc")
+text = "Shard Name"
+alignment = 0
+script = ExtResource("18_okycc")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="UkiyoeButton2" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer2/Tab_Runs/RunsListPanel/ScrollContainer/RunsList" unique_id=1849302505]
+material = SubResource("ShaderMaterial_0gdm3")
+instance_shader_parameters/background_offset = Vector2(0.16300699, 0.6640535)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+theme_override_styles/normal = ExtResource("17_gnokc")
+theme_override_styles/pressed = ExtResource("17_gnokc")
+theme_override_styles/hover = ExtResource("17_gnokc")
+theme_override_styles/hover_pressed = ExtResource("17_gnokc")
+theme_override_styles/disabled = ExtResource("17_gnokc")
+text = "Shard Name"
+alignment = 0
+script = ExtResource("18_okycc")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="UkiyoeButton3" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer2/Tab_Runs/RunsListPanel/ScrollContainer/RunsList" unique_id=845535272]
+material = SubResource("ShaderMaterial_smsdc")
+instance_shader_parameters/background_offset = Vector2(0.8301582, 0.45332313)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+theme_override_styles/normal = ExtResource("17_gnokc")
+theme_override_styles/pressed = ExtResource("17_gnokc")
+theme_override_styles/hover = ExtResource("17_gnokc")
+theme_override_styles/hover_pressed = ExtResource("17_gnokc")
+theme_override_styles/disabled = ExtResource("17_gnokc")
+text = "Shard Name"
+alignment = 0
+script = ExtResource("18_okycc")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="RunDetailsPanel" type="PanelContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer2/Tab_Runs" unique_id=744243641]
+material = ExtResource("6_gse88")
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("8_0it08")
+script = ExtResource("9_xkcj1")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="PastRunDetails" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer2/Tab_Runs/RunDetailsPanel" unique_id=8404436 instance=ExtResource("22_qedw3")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=1739868294]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_vcp1h")
+instance_shader_parameters/background_offset = Vector2(0.82693845, 0.36676392)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+theme_override_styles/normal = ExtResource("17_gnokc")
+theme_override_styles/pressed = ExtResource("17_gnokc")
+theme_override_styles/hover = ExtResource("17_gnokc")
+theme_override_styles/hover_pressed = ExtResource("17_gnokc")
+theme_override_styles/disabled = ExtResource("17_gnokc")
+text = "Return"
+script = ExtResource("18_okycc")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="BottomDowelWood" parent="Control/ScrollPanel/BottomDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_1xfa0")
+
+[connection signal="text_changed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/PanelContainer/SearchInput" to="." method="_on_search_input_text_changed"]
+[connection signal="toggled" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/TabBar/TabButton_Types" to="." method="_on_tab_button_types_toggled"]
+[connection signal="toggled" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer/TabBar/TabButton_Runs" to="." method="_on_tab_button_runs_toggled"]
+[connection signal="request_past_run" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer2/Tab_Types/TypeDetailsPanel/ShardDetails" to="." method="_on_shard_details_request_past_run"]
+[connection signal="request_shard_type" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/MarginContainer2/Tab_Runs/RunDetailsPanel/PastRunDetails" to="." method="_on_past_run_details_request_shard_type"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
+
+[editable path="Control/ScrollPanel"]

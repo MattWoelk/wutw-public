@@ -1,0 +1,530 @@
+[gd_scene format=3 uid="uid://cacy7n33uws21"]
+
+[ext_resource type="Script" uid="uid://cbm00rgyn7es1" path="res://map/capital.gd" id="1_smmao"]
+[ext_resource type="Shader" uid="uid://bq5twnqo5j4mv" path="res://map/settlement_radius.gdshader" id="2_6olvl"]
+[ext_resource type="MapSpritePlacerConfig" uid="uid://crg5wew38g64m" path="res://map/sprites/settlement_sprite_config.tres" id="2_bfdak"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://yi6r4d10vn2d" path="res://map/sprites/mountains/mst_mountain_1_medium.tres" id="3_bwqe3"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://desakgu6q3yov" path="res://map/sprites/mountains/mst_mountain_2_large.tres" id="4_ivlfx"]
+[ext_resource type="PackedScene" uid="uid://bd7l8p63kklw4" path="res://harmonization/harmonization_recipe.tscn" id="5_i3coq"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://c3u877m1spx0" path="res://map/sprites/mountains/mst_mountain_3_large.tres" id="5_r4ksf"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="6_3admc"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://doqqvl0x3b3g4" path="res://map/sprites/mountains/mst_mountain_4_small.tres" id="6_c673h"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="6_cmw57"]
+[ext_resource type="Shader" uid="uid://cy23kwgtjt4et" path="res://theme/panel/panel.gdshader" id="6_j7w71"]
+[ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="7_myp5x"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="7_ohwl2"]
+[ext_resource type="Texture2D" uid="uid://cgsn7350xgqr5" path="res://theme/panel/panel_bg.png" id="7_p4cfw"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bxr2aj680eaqd" path="res://map/sprites/mountains/mst_mountain_5_small.tres" id="7_tfp4d"]
+[ext_resource type="FontFile" uid="uid://ctwx1483jbir0" path="res://theme/fonts/Merienda/static/Merienda-Bold.ttf" id="8_0mddx"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="8_71kh7"]
+[ext_resource type="Texture2D" uid="uid://bnkoruxi23qsp" path="res://theme/panel/panel_frame.png" id="8_fw5hf"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cekrboxmhdmhk" path="res://map/sprites/mountains/mst_mountain_6_tiny.tres" id="8_lqdry"]
+[ext_resource type="Shader" uid="uid://b7ms4dx6p63n8" path="res://map/settlement_name.gdshader" id="8_myp5x"]
+[ext_resource type="Texture2D" uid="uid://chxf88ekbq0ie" path="res://visuals/canvas.png" id="9_0mddx"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="9_2jtxh"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cjbrxida4odnk" path="res://map/sprites/mountains/mst_mountain_7_tiny.tres" id="9_adlfk"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="9_ejpvn"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="10_6olvl"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="10_ejpvn"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://56t2rh2pg58y" path="res://map/sprites/mountains/mst_mountain_8_medium.tres" id="10_qxuht"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="11_6olvl"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://csjeschaiy5ct" path="res://map/sprites/mountains/mst_mountain_9_large.tres" id="11_byg2p"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="11_f6dbm"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bctu7rlwqc3o7" path="res://map/sprites/mountains/mst_mountain_10_medium.tres" id="12_7ojco"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="12_8t5hk"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="12_f6dbm"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://t2knd16pwuwg" path="res://map/sprites/mountains/mst_mountain_11_medium.tres" id="13_7fct1"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="14_3ios2"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dxba886xk8sch" path="res://map/sprites/mountains/mst_mountain_12_pair.tres" id="14_ipbnp"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="16_bwqe3"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="17_j7w71"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="18_p4cfw"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="19_fw5hf"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="20_dp8nv"]
+[ext_resource type="Texture2D" uid="uid://d0gt3ri6pvso2" path="res://hub/contents/trees/sakura/petal.png" id="24_umhoh"]
+[ext_resource type="Shader" uid="uid://ygmrqrvg5hpm" path="res://theme/button/ukiyoe_button.gdshader" id="25_m5v64"]
+[ext_resource type="Texture2D" uid="uid://ctgl61r3xxsqv" path="res://theme/button/button_fill.png" id="26_wu6xe"]
+[ext_resource type="Texture2D" uid="uid://blje81yu8734p" path="res://theme/button/button_shape.png" id="27_cmw57"]
+[ext_resource type="Texture2D" uid="uid://doe4603a6ngco" path="res://theme/button/button_outline.png" id="28_myp5x"]
+[ext_resource type="Texture2D" uid="uid://cwubixgc8n0yr" path="res://theme/button/button_swish_left.png" id="29_0mddx"]
+[ext_resource type="Texture2D" uid="uid://n6l17h4ysayj" path="res://theme/button/button_swish_right.png" id="30_s1ejk"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="31_5y5kf"]
+[ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="32_egu6x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r4ksf"]
+shader = ExtResource("2_6olvl")
+shader_parameter/highlight_progress = 0.0
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/radius = 0.98
+shader_parameter/thickness = 0.03200000152
+shader_parameter/thickness_highlighted = 0.02
+shader_parameter/smoothness = 0.0190000009025
+shader_parameter/noise_scale = 412.403019588444
+shader_parameter/noise_strength = 1.1730000557175
+shader_parameter/noise_smoothness = 1.0
+shader_parameter/global_rect = Vector4(0, 0, 0, 0)
+shader_parameter/landmass_threshold = 0.5
+shader_parameter/landmass_edge_distance = 0.001
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jiajr"]
+shader = ExtResource("8_myp5x")
+shader_parameter/overlay_tex = ExtResource("9_0mddx")
+shader_parameter/overlay_scale = 1.42
+shader_parameter/width = 273.0
+shader_parameter/color_add = Color(0.5246, 0.5872267, 0.61, 1)
+shader_parameter/power = 6.775
+shader_parameter/reveal_progress = 1.0
+shader_parameter/reveal_margin = 0.1
+
+[sub_resource type="LabelSettings" id="LabelSettings_jiajr"]
+font = ExtResource("8_0mddx")
+font_size = 36
+font_color = Color(0, 0, 0, 1)
+outline_size = 29
+outline_color = Color(0.85, 0.76585007, 0.6205, 1)
+
+[sub_resource type="Curve" id="Curve_as6kq"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.21010101, 1), 0.0, 0.0, 0, 0, Vector2(0.6616161, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -0.5629278, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_rc7p0"]
+curve = SubResource("Curve_as6kq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wpni1"]
+lifetime_randomness = 0.32
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(54.975, 0, 0)
+emission_shape = 3
+emission_box_extents = Vector3(66.365, 30, 1)
+direction = Vector3(1, 0.1, 0)
+spread = 18.59
+initial_velocity_min = 25.0
+initial_velocity_max = 40.0
+gravity = Vector3(30, 3, 0)
+scale_min = 0.11
+scale_max = 0.17999999
+color = Color(1, 0.85, 0.98, 1)
+alpha_curve = SubResource("CurveTexture_rc7p0")
+
+[sub_resource type="Gradient" id="Gradient_iey1t"]
+offsets = PackedFloat32Array(0.00512295)
+colors = PackedColorArray(0.71, 0.543387, 0.2556, 0.168627)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ak17e"]
+gradient = SubResource("Gradient_iey1t")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m5v64"]
+shader = ExtResource("6_j7w71")
+shader_parameter/background = ExtResource("7_p4cfw")
+shader_parameter/background_shade = SubResource("GradientTexture2D_ak17e")
+shader_parameter/background_tex_size = Vector2(2291, 3118)
+shader_parameter/background_scale = 2.0
+shader_parameter/frame_tex = ExtResource("8_fw5hf")
+shader_parameter/frame_tex_size = Vector2(1127, 976)
+shader_parameter/frame_margin = Vector4(15, 15, 15, 15)
+shader_parameter/frame_scale = 0.93
+shader_parameter/frame_color = Color(0.24, 0.18848, 0.1056, 1)
+shader_parameter/decor_transform = Vector4(0, 0, 300, 100)
+shader_parameter/decor_modulate = Color(1, 1, 1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wu6xe"]
+shader = ExtResource("6_j7w71")
+shader_parameter/background = ExtResource("7_p4cfw")
+shader_parameter/background_shade = SubResource("GradientTexture2D_ak17e")
+shader_parameter/background_tex_size = Vector2(2291, 3118)
+shader_parameter/background_scale = 2.0
+shader_parameter/frame_tex = ExtResource("8_fw5hf")
+shader_parameter/frame_tex_size = Vector2(1127, 976)
+shader_parameter/frame_margin = Vector4(15, 15, 15, 15)
+shader_parameter/frame_scale = 0.93
+shader_parameter/frame_color = Color(0.24, 0.18848, 0.1056, 1)
+shader_parameter/decor_transform = Vector4(0, 0, 300, 100)
+shader_parameter/decor_modulate = Color(1, 1, 1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cmw57"]
+shader = ExtResource("6_j7w71")
+shader_parameter/background = ExtResource("7_p4cfw")
+shader_parameter/background_shade = SubResource("GradientTexture2D_ak17e")
+shader_parameter/background_tex_size = Vector2(2291, 3118)
+shader_parameter/background_scale = 2.0
+shader_parameter/frame_tex = ExtResource("8_fw5hf")
+shader_parameter/frame_tex_size = Vector2(1127, 976)
+shader_parameter/frame_margin = Vector4(15, 15, 15, 15)
+shader_parameter/frame_scale = 0.93
+shader_parameter/frame_color = Color(0.24, 0.18848, 0.1056, 1)
+shader_parameter/decor_transform = Vector4(0, 0, 300, 100)
+shader_parameter/decor_modulate = Color(1, 1, 1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_myp5x"]
+shader = ExtResource("6_j7w71")
+shader_parameter/background = ExtResource("7_p4cfw")
+shader_parameter/background_shade = SubResource("GradientTexture2D_ak17e")
+shader_parameter/background_tex_size = Vector2(2291, 3118)
+shader_parameter/background_scale = 2.0
+shader_parameter/frame_tex = ExtResource("8_fw5hf")
+shader_parameter/frame_tex_size = Vector2(1127, 976)
+shader_parameter/frame_margin = Vector4(15, 15, 15, 15)
+shader_parameter/frame_scale = 0.93
+shader_parameter/frame_color = Color(0.24, 0.18848, 0.1056, 1)
+shader_parameter/decor_transform = Vector4(0, 0, 300, 100)
+shader_parameter/decor_modulate = Color(1, 1, 1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0mddx"]
+shader = ExtResource("6_j7w71")
+shader_parameter/background = ExtResource("7_p4cfw")
+shader_parameter/background_shade = SubResource("GradientTexture2D_ak17e")
+shader_parameter/background_tex_size = Vector2(2291, 3118)
+shader_parameter/background_scale = 2.0
+shader_parameter/frame_tex = ExtResource("8_fw5hf")
+shader_parameter/frame_tex_size = Vector2(1127, 976)
+shader_parameter/frame_margin = Vector4(15, 15, 15, 15)
+shader_parameter/frame_scale = 0.93
+shader_parameter/frame_color = Color(0.24, 0.18848, 0.1056, 1)
+shader_parameter/decor_transform = Vector4(0, 0, 300, 100)
+shader_parameter/decor_modulate = Color(1, 1, 1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s1ejk"]
+shader = ExtResource("6_j7w71")
+shader_parameter/background = ExtResource("7_p4cfw")
+shader_parameter/background_shade = SubResource("GradientTexture2D_ak17e")
+shader_parameter/background_tex_size = Vector2(2291, 3118)
+shader_parameter/background_scale = 2.0
+shader_parameter/frame_tex = ExtResource("8_fw5hf")
+shader_parameter/frame_tex_size = Vector2(1127, 976)
+shader_parameter/frame_margin = Vector4(15, 15, 15, 15)
+shader_parameter/frame_scale = 0.93
+shader_parameter/frame_color = Color(0.24, 0.18848, 0.1056, 1)
+shader_parameter/decor_transform = Vector4(0, 0, 300, 100)
+shader_parameter/decor_modulate = Color(1, 1, 1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5y5kf"]
+shader = ExtResource("6_j7w71")
+shader_parameter/background = ExtResource("7_p4cfw")
+shader_parameter/background_shade = SubResource("GradientTexture2D_ak17e")
+shader_parameter/background_tex_size = Vector2(2291, 3118)
+shader_parameter/background_scale = 2.0
+shader_parameter/frame_tex = ExtResource("8_fw5hf")
+shader_parameter/frame_tex_size = Vector2(1127, 976)
+shader_parameter/frame_margin = Vector4(15, 15, 15, 15)
+shader_parameter/frame_scale = 0.93
+shader_parameter/frame_color = Color(0.24, 0.18848, 0.1056, 1)
+shader_parameter/decor_transform = Vector4(0, 0, 300, 100)
+shader_parameter/decor_modulate = Color(1, 1, 1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_egu6x"]
+shader = ExtResource("6_j7w71")
+shader_parameter/background = ExtResource("7_p4cfw")
+shader_parameter/background_shade = SubResource("GradientTexture2D_ak17e")
+shader_parameter/background_tex_size = Vector2(2291, 3118)
+shader_parameter/background_scale = 2.0
+shader_parameter/frame_tex = ExtResource("8_fw5hf")
+shader_parameter/frame_tex_size = Vector2(1127, 976)
+shader_parameter/frame_margin = Vector4(15, 15, 15, 15)
+shader_parameter/frame_scale = 0.93
+shader_parameter/frame_color = Color(0.24, 0.18848, 0.1056, 1)
+shader_parameter/decor_transform = Vector4(0, 0, 300, 100)
+shader_parameter/decor_modulate = Color(1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_j5apj"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wqpyw"]
+gradient = SubResource("Gradient_j5apj")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ivlfx"]
+shader = ExtResource("25_m5v64")
+shader_parameter/mask_tex = ExtResource("27_cmw57")
+shader_parameter/background = ExtResource("26_wu6xe")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/outline_tex = ExtResource("28_myp5x")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("30_s1ejk")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("29_0mddx")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[node name="Capital" type="Control" unique_id=968560646]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_smmao")
+settlement_sprite_config = ExtResource("2_bfdak")
+fallback_removable_sprites = Array[MapSpriteType]([ExtResource("3_bwqe3"), ExtResource("4_ivlfx"), ExtResource("5_r4ksf"), ExtResource("6_c673h"), ExtResource("7_tfp4d"), ExtResource("8_lqdry"), ExtResource("9_adlfk"), ExtResource("10_qxuht"), ExtResource("11_byg2p"), ExtResource("12_7ojco"), ExtResource("13_7fct1"), ExtResource("14_ipbnp")])
+
+[node name="TooltipTrigger" type="Control" parent="." unique_id=1661164737]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -158.0
+offset_top = -157.00003
+offset_right = 161.40189
+offset_bottom = 161.47855
+rotation = 0.75674987
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 1
+
+[node name="RadiusIndicatorFrame" type="ColorRect" parent="." unique_id=259566678]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_r4ksf")
+layout_mode = 0
+offset_left = -225.0
+offset_top = -225.0
+offset_right = 225.0
+offset_bottom = 225.0
+pivot_offset = Vector2(225, 225)
+mouse_filter = 2
+
+[node name="NameBox" type="VBoxContainer" parent="." unique_id=896305370]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -170.0
+offset_top = -176.0
+offset_right = 179.0
+offset_bottom = -107.0
+pivot_offset = Vector2(168, 0)
+metadata/_edit_group_ = true
+
+[node name="NamePanel" type="PanelContainer" parent="NameBox" unique_id=1245589275]
+self_modulate = Color(1, 1, 1, 0)
+material = ExtResource("16_bwqe3")
+instance_shader_parameters/size = Vector2(386.2091, 84.19092)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("6_cmw57")
+script = ExtResource("7_myp5x")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="NameLabel" type="Label" parent="NameBox/NamePanel" unique_id=1724181858]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_jiajr")
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+text = " Shard Capital "
+label_settings = SubResource("LabelSettings_jiajr")
+horizontal_alignment = 1
+
+[node name="NameRevealFVX" type="GPUParticles2D" parent="NameBox/NamePanel/NameLabel" unique_id=105529150]
+unique_name_in_owner = true
+position = Vector2(7, 27)
+emitting = false
+amount = 45
+texture = ExtResource("24_umhoh")
+lifetime = 2.5
+one_shot = true
+explosiveness = 0.7
+visibility_rect = Rect2(-100, -100, 600, 200)
+process_material = SubResource("ParticleProcessMaterial_wpni1")
+
+[node name="RecipesBox" type="VBoxContainer" parent="." unique_id=808278248]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -284.0
+offset_top = -36.0
+offset_right = 284.0
+offset_bottom = 190.0
+pivot_offset = Vector2(284, -17)
+mouse_filter = 2
+
+[node name="BonusesPanel" type="PanelContainer" parent="RecipesBox" unique_id=1124578120]
+unique_name_in_owner = true
+material = ExtResource("16_bwqe3")
+instance_shader_parameters/size = Vector2(208.47278, 56.12729)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("6_cmw57")
+script = ExtResource("7_myp5x")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="BonusesList" type="HBoxContainer" parent="RecipesBox/BonusesPanel" unique_id=1510831963]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Bonus1" parent="RecipesBox/BonusesPanel/BonusesList" unique_id=792327711 instance_placeholder="res://bonuses/bonus.tscn"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+highlight_type = 1
+
+[node name="Bonus2" parent="RecipesBox/BonusesPanel/BonusesList" unique_id=1285711331 instance_placeholder="res://bonuses/bonus.tscn"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+highlight_type = 1
+
+[node name="Bonus3" parent="RecipesBox/BonusesPanel/BonusesList" unique_id=1237482156 instance_placeholder="res://bonuses/bonus.tscn"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+highlight_type = 1
+
+[node name="Bonus4" parent="RecipesBox/BonusesPanel/BonusesList" unique_id=1362722074 instance_placeholder="res://bonuses/bonus.tscn"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+highlight_type = 1
+
+[node name="Spacer" type="Control" parent="RecipesBox" unique_id=1936189474]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="HBox" type="HBoxContainer" parent="RecipesBox" unique_id=1650107435]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+mouse_filter = 2
+
+[node name="FoodRecipe" parent="RecipesBox/HBox" unique_id=1948287179 instance=ExtResource("5_i3coq")]
+material = SubResource("ShaderMaterial_m5v64")
+layout_mode = 2
+size_flags_horizontal = 8
+title = "Provide"
+description = "Enable the capital to provide Food to connected settlements."
+aspect_types = Array[ExtResource("6_3admc")]([ExtResource("7_ohwl2")])
+bonus_types = Array[ExtResource("8_71kh7")]([ExtResource("9_2jtxh")])
+play_activate_vfx = false
+
+[node name="SafetyRecipe" parent="RecipesBox/HBox" unique_id=1696744118 instance=ExtResource("5_i3coq")]
+material = SubResource("ShaderMaterial_wu6xe")
+layout_mode = 2
+size_flags_horizontal = 8
+title = "Provide"
+description = "Enable the capital to provide Safety to connected settlements."
+aspect_types = Array[ExtResource("6_3admc")]([ExtResource("9_ejpvn")])
+bonus_types = Array[ExtResource("8_71kh7")]([ExtResource("10_6olvl")])
+play_activate_vfx = false
+
+[node name="AdventureRecipe" parent="RecipesBox/HBox" unique_id=443264976 instance=ExtResource("5_i3coq")]
+material = SubResource("ShaderMaterial_cmw57")
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 8
+title = "Provide"
+description = "Enable the capital to provide Adventure to connected settlements."
+aspect_types = Array[ExtResource("6_3admc")]([ExtResource("11_f6dbm")])
+bonus_types = Array[ExtResource("8_71kh7")]([ExtResource("12_8t5hk")])
+play_activate_vfx = false
+
+[node name="HBox2" type="HBoxContainer" parent="RecipesBox" unique_id=1859691546]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+mouse_filter = 2
+
+[node name="BeautyRecipe" parent="RecipesBox/HBox2" unique_id=175787199 instance=ExtResource("5_i3coq")]
+material = SubResource("ShaderMaterial_myp5x")
+layout_mode = 2
+title = "Provide"
+description = "Enable the capital to provide Beauty to connected settlements."
+aspect_types = Array[ExtResource("6_3admc")]([ExtResource("12_f6dbm")])
+bonus_types = Array[ExtResource("8_71kh7")]([ExtResource("14_3ios2")])
+play_activate_vfx = false
+
+[node name="HarmonyRecipe" parent="RecipesBox/HBox2" unique_id=167201250 instance=ExtResource("5_i3coq")]
+material = SubResource("ShaderMaterial_0mddx")
+layout_mode = 2
+title = "Provide"
+description = "Enable the capital to provide Harmony to connected settlements."
+aspect_types = Array[ExtResource("6_3admc")]([ExtResource("10_ejpvn")])
+bonus_types = Array[ExtResource("8_71kh7")]([ExtResource("11_6olvl")])
+play_activate_vfx = false
+
+[node name="HBox3" type="HBoxContainer" parent="RecipesBox" unique_id=686040419]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+mouse_filter = 2
+
+[node name="KnowledgeRecipe" parent="RecipesBox/HBox3" unique_id=1752558941 instance=ExtResource("5_i3coq")]
+material = SubResource("ShaderMaterial_s1ejk")
+layout_direction = 2
+layout_mode = 2
+title = "Provide"
+description = "Enable the capital to provide Knowledge to connected settlements."
+aspect_types = Array[ExtResource("6_3admc")]([ExtResource("17_j7w71")])
+bonus_types = Array[ExtResource("8_71kh7")]([ExtResource("18_p4cfw")])
+play_activate_vfx = false
+
+[node name="ProductivityRecipe" parent="RecipesBox/HBox3" unique_id=849399517 instance=ExtResource("5_i3coq")]
+material = SubResource("ShaderMaterial_5y5kf")
+layout_direction = 2
+layout_mode = 2
+title = "Provide"
+description = "Enable the capital to provide Productivity to connected settlements."
+aspect_types = Array[ExtResource("6_3admc")]([ExtResource("19_fw5hf")])
+bonus_types = Array[ExtResource("8_71kh7")]([ExtResource("20_dp8nv")])
+play_activate_vfx = false
+
+[node name="HBox4" type="HBoxContainer" parent="RecipesBox" unique_id=749640592]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+mouse_filter = 2
+
+[node name="ConnectionRecipe" parent="RecipesBox/HBox4" unique_id=453251277 instance=ExtResource("5_i3coq")]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_egu6x")
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 8
+title = "Craft Connection"
+description = "Add a random <term:glyph> with <term:aspect.connection> <term:aspect> to your <term_lower:hand>."
+aspect_types = Array[ExtResource("6_3admc")]([ExtResource("9_ejpvn"), ExtResource("11_f6dbm"), ExtResource("7_ohwl2")])
+play_activate_vfx = false
+
+[node name="ShopButton" type="Button" parent="." unique_id=1584064492]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_ivlfx")
+instance_shader_parameters/size = Vector2(203.12732, 58.799988)
+instance_shader_parameters/state = 0.0
+layout_mode = 0
+offset_left = -73.0
+offset_top = 161.0
+offset_right = 79.0
+offset_bottom = 205.0
+pivot_offset = Vector2(73, -33)
+theme_override_styles/normal = ExtResource("31_5y5kf")
+theme_override_styles/pressed = ExtResource("31_5y5kf")
+theme_override_styles/hover = ExtResource("31_5y5kf")
+theme_override_styles/hover_pressed = ExtResource("31_5y5kf")
+theme_override_styles/disabled = ExtResource("31_5y5kf")
+text = "Shard Council"
+script = ExtResource("32_egu6x")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="TooltipAnchor" type="Control" parent="." unique_id=1468877730]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -215.0
+offset_right = 211.0
+offset_bottom = 205.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[connection signal="pressed" from="ShopButton" to="." method="_on_shop_button_pressed"]

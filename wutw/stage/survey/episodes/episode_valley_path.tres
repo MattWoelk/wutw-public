@@ -1,0 +1,116 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://1d7c5w14fy5c"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_os4jk"]
+[ext_resource type="Resource" uid="uid://b1yr8gmyncqda" path="res://art/pieces/piece_hiroshige_tsurumaki.tres" id="1_wwp4b"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_wwp4b"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_canpa"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="4_oysoo"]
+[ext_resource type="Script" uid="uid://gu7gcielbwdr" path="res://events/system/outcomes/choose_card/event_outcome_choose_card.gd" id="5_1rfmj"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="6_lac07"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="7_v1y2k"]
+[ext_resource type="Resource" uid="uid://ehkpb8vyjktj" path="res://cards/tier2/card_fountain.tres" id="8_ghb8i"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="9_pjqp4"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="10_dp2qu"]
+[ext_resource type="Resource" uid="uid://b0mpmuk1xer4q" path="res://cards/tier3/card_fox.tres" id="11_hor05"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="12_15r8n"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="13_p20ke"]
+[ext_resource type="Script" uid="uid://dadces6knf8fj" path="res://events/system/outcomes/run_var/event_outcome_run_var.gd" id="14_7o5tt"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="15_vkhm8"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="16_uyw53"]
+[ext_resource type="Resource" uid="uid://bom6dwl3t2obc" path="res://stage/spots/cliff/spot_cliff.tres" id="17_0npf5"]
+[ext_resource type="Resource" uid="uid://d1c7ny2xs7pwo" path="res://stage/spots/canyon/spot_canyon.tres" id="18_pgkmp"]
+[ext_resource type="Resource" uid="uid://cfuqwl06ioxwd" path="res://stage/spots/hill/spot_hill.tres" id="19_6k8l1"]
+
+[sub_resource type="Resource" id="Resource_ddinv"]
+script = ExtResource("1_os4jk")
+_texture_path = "uid://bayw2c2gdsxm"
+_is_horizontal = true
+
+[sub_resource type="Resource" id="Resource_5fdqq"]
+script = ExtResource("5_1rfmj")
+card_tag = 23
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_hhyov"]
+script = ExtResource("2_wwp4b")
+label = "Climb the valley wall."
+aspects = Array[ExtResource("3_canpa")]([ExtResource("4_oysoo")])
+aspects_per_season = Array[ExtResource("3_canpa")]([null])
+outcome = SubResource("Resource_5fdqq")
+outcome_text = "A scout scales the steep valley wall to get a better view of the landscape.
+
+The climb is difficult, but when he makes it to the top, he sees that one path curves toward open grassland, and the others move farther into the hills.
+"
+
+[sub_resource type="Resource" id="Resource_gr2j6"]
+script = ExtResource("9_pjqp4")
+card_type = ExtResource("8_ghb8i")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_r5ivp"]
+script = ExtResource("2_wwp4b")
+label = "Follow the sound of water."
+aspects = Array[ExtResource("3_canpa")]([ExtResource("7_v1y2k")])
+aspects_per_season = Array[ExtResource("3_canpa")]([null])
+outcome = SubResource("Resource_gr2j6")
+outcome_text = "The scouts notice the smell of damp earth and hear the sound of moving water echoing off the walls of the narrowest path.
+
+They decide to follow these clues and soon arrive at a bubbling spring."
+
+[sub_resource type="Resource" id="Resource_gpo22"]
+script = ExtResource("9_pjqp4")
+card_type = ExtResource("11_hor05")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_mo1r5"]
+script = ExtResource("13_p20ke")
+bonus_type = ExtResource("12_15r8n")
+min_count = 20
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_naust"]
+script = ExtResource("2_wwp4b")
+label = "Explore separate paths."
+requirement = SubResource("Resource_mo1r5")
+aspects = Array[ExtResource("3_canpa")]([ExtResource("10_dp2qu")])
+aspects_per_season = Array[ExtResource("3_canpa")]([null])
+outcome = SubResource("Resource_gpo22")
+outcome_text = "The team sends several scouts down two different paths. 
+
+One group finds a route out of the valley.
+
+The other group quickly reaches a dead end, but there they find a burrow. As they approach, an orange tail disappears into its depths."
+
+[sub_resource type="Resource" id="Resource_cnx8y"]
+script = ExtResource("14_7o5tt")
+run_var = 6
+delta = 1
+preview_description = "1 Maximum <term:inspiration>"
+outcome_description = "Gained 1 Maximum <term:inspiration>"
+metadata/_custom_type_script = "uid://dadces6knf8fj"
+
+[sub_resource type="Resource" id="Resource_8pa46"]
+script = ExtResource("2_wwp4b")
+label = "Choose the widest path."
+aspects = Array[ExtResource("3_canpa")]([null, null])
+aspects_per_season = Array[ExtResource("3_canpa")]([null])
+outcome = SubResource("Resource_cnx8y")
+outcome_text = "The explorers decide to follow the widest path. The trail gradually becomes narrower while the walls on either side become steeper.
+
+Soon, the passage becomes so narrow that the sun is only shining through a thin opening in the rock above.
+
+By nightfall, the path finally widens again, revealing a circle of starry clear sky."
+
+[resource]
+script = ExtResource("15_vkhm8")
+episode_id = "valley_path"
+title = "The Valley Path"
+biome_types = Array[int]([7])
+spot_types = Array[ExtResource("16_uyw53")]([ExtResource("17_0npf5"), ExtResource("18_pgkmp"), ExtResource("19_6k8l1")])
+text = "The explorers find themselves in a narrow valley with steep, high walls. The path twists through exposed stone and small groves, occasionally opening onto patches of grass.
+
+The valley branches out into several nearly identical paths. The scouts worry that choosing the wrong path could strand them in a dead end, or leave the group wandering in circles."
+background_image = SubResource("Resource_ddinv")
+background_credit = ExtResource("1_wwp4b")
+choices = Array[ExtResource("2_wwp4b")]([SubResource("Resource_hhyov"), SubResource("Resource_r5ivp"), SubResource("Resource_naust"), SubResource("Resource_8pa46")])

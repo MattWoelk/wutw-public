@@ -1,0 +1,601 @@
+[gd_resource type="Resource" script_class="CardType" format=3 uid="uid://7yw6tw58eefh"]
+
+[ext_resource type="Script" uid="uid://b56kytec5oqcb" path="res://cards/abilities/card_ability.gd" id="1_vbuhq"]
+[ext_resource type="Script" uid="uid://dfxdo8t2tjhcu" path="res://cards/abilities/card_ability_satisfy.gd" id="2_os4q2"]
+[ext_resource type="Script" uid="uid://xc73x4t7ckxm" path="res://japanese/example_sentence.gd" id="3_3ek5a"]
+[ext_resource type="Script" uid="uid://du4k150pcdjs6" path="res://japanese/kanji_shape.gd" id="4_hv86s"]
+[ext_resource type="Script" uid="uid://bl2eelwkj800o" path="res://japanese/japanese_token.gd" id="4_os4q2"]
+[ext_resource type="Script" uid="uid://dc15txdqjanlf" path="res://japanese/stroke_shape.gd" id="5_h7mii"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="6_th68q"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="7_wityp"]
+[ext_resource type="Resource" uid="uid://d1k7vakhjcq5g" path="res://glossary/categories/termcategory_card.tres" id="8_fb67x"]
+[ext_resource type="Script" uid="uid://b6rw4ldrj6wch" path="res://japanese/vocab.gd" id="9_63657"]
+
+[sub_resource type="Resource" id="Resource_1s5lv"]
+script = ExtResource("2_os4q2")
+all = true
+points = -5
+metadata/_custom_type_script = "uid://dfxdo8t2tjhcu"
+
+[sub_resource type="Resource" id="Resource_qbwem"]
+script = ExtResource("9_63657")
+japanese = "水"
+readings = Array[String](["みず"])
+meanings = Array[String](["water (esp. cool or cold)", "fluid (esp. in an animal tissue)", "liquid", "flood", "floodwaters", "water offered to wrestlers just prior to a bout", "break granted to wrestlers engaged in a prolonged bout"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_yanol"]
+script = ExtResource("4_os4q2")
+raw_text = "水"
+vocab = SubResource("Resource_qbwem")
+reading = "みず"
+
+[sub_resource type="Resource" id="Resource_3xelt"]
+script = ExtResource("4_os4q2")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_kw3qw"]
+script = ExtResource("9_63657")
+japanese = "欲しい"
+readings = Array[String](["ほしい"])
+meanings = Array[String](["wanting (to have)", "desiring", "wishing for", "I want (you, them, etc.) to (do)"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_2jpeb"]
+script = ExtResource("4_os4q2")
+raw_text = "欲しい"
+vocab = SubResource("Resource_kw3qw")
+reading = "ほしい"
+
+[sub_resource type="Resource" id="Resource_7s4lb"]
+script = ExtResource("4_os4q2")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_64gft"]
+script = ExtResource("3_3ek5a")
+japanese = "水が欲しい。"
+native = "I want some water."
+parsed = Array[ExtResource("4_os4q2")]([SubResource("Resource_yanol"), SubResource("Resource_3xelt"), SubResource("Resource_2jpeb"), SubResource("Resource_7s4lb")])
+_difficulty = 314
+_used_kanji = Array[String](["水", "欲"])
+
+[sub_resource type="Resource" id="Resource_uw83e"]
+script = ExtResource("9_63657")
+japanese = "お金"
+readings = Array[String](["おかね"])
+meanings = Array[String](["money"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_os4q2"]
+script = ExtResource("4_os4q2")
+raw_text = "お金"
+vocab = SubResource("Resource_uw83e")
+reading = "おかね"
+
+[sub_resource type="Resource" id="Resource_3ek5a"]
+script = ExtResource("4_os4q2")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_hv86s"]
+script = ExtResource("4_os4q2")
+raw_text = "欲しい"
+vocab = SubResource("Resource_kw3qw")
+reading = "ほしい"
+
+[sub_resource type="Resource" id="Resource_h7mii"]
+script = ExtResource("4_os4q2")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_n463b"]
+script = ExtResource("3_3ek5a")
+japanese = "お金が欲しい。"
+native = "I want money."
+parsed = Array[ExtResource("4_os4q2")]([SubResource("Resource_os4q2"), SubResource("Resource_3ek5a"), SubResource("Resource_hv86s"), SubResource("Resource_h7mii")])
+_difficulty = 331
+_used_kanji = Array[String](["金", "欲"])
+
+[sub_resource type="Resource" id="Resource_yvxqi"]
+script = ExtResource("9_63657")
+japanese = "本当に"
+readings = Array[String](["ほんとうに", "ほんとに"])
+meanings = Array[String](["really", "truly"])
+
+[sub_resource type="Resource" id="Resource_th68q"]
+script = ExtResource("4_os4q2")
+raw_text = "本当に"
+vocab = SubResource("Resource_yvxqi")
+reading = "ほんとうに"
+
+[sub_resource type="Resource" id="Resource_wityp"]
+script = ExtResource("4_os4q2")
+raw_text = "欲しい"
+vocab = SubResource("Resource_kw3qw")
+reading = "ほしい"
+
+[sub_resource type="Resource" id="Resource_fb67x"]
+script = ExtResource("4_os4q2")
+raw_text = "？"
+reading = "？"
+
+[sub_resource type="Resource" id="Resource_6cjxl"]
+script = ExtResource("3_3ek5a")
+japanese = "本当に欲しい？"
+native = "Do you really want it?"
+parsed = Array[ExtResource("4_os4q2")]([SubResource("Resource_th68q"), SubResource("Resource_wityp"), SubResource("Resource_fb67x")])
+_difficulty = 333
+_used_kanji = Array[String](["本", "当", "欲"])
+
+[sub_resource type="Resource" id="Resource_63657"]
+script = ExtResource("4_os4q2")
+raw_text = "これ"
+reading = "これ"
+
+[sub_resource type="Resource" id="Resource_bnqaf"]
+script = ExtResource("4_os4q2")
+raw_text = "で"
+reading = "で"
+
+[sub_resource type="Resource" id="Resource_d055q"]
+script = ExtResource("4_os4q2")
+raw_text = "きっと"
+reading = "きっと"
+
+[sub_resource type="Resource" id="Resource_mes06"]
+script = ExtResource("9_63657")
+japanese = "食欲"
+readings = Array[String](["しょくよく"])
+meanings = Array[String](["appetite (for food)"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_arwh6"]
+script = ExtResource("4_os4q2")
+raw_text = "食欲"
+vocab = SubResource("Resource_mes06")
+reading = "しょくよく"
+
+[sub_resource type="Resource" id="Resource_i52vb"]
+script = ExtResource("4_os4q2")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_m0vat"]
+script = ExtResource("9_63657")
+japanese = "増す"
+readings = Array[String](["ます"])
+meanings = Array[String](["to increase", "to grow"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_mygxw"]
+script = ExtResource("4_os4q2")
+raw_text = "増し"
+vocab = SubResource("Resource_m0vat")
+reading = "まし"
+
+[sub_resource type="Resource" id="Resource_56ax6"]
+script = ExtResource("4_os4q2")
+raw_text = "ます"
+reading = "ます"
+
+[sub_resource type="Resource" id="Resource_wled4"]
+script = ExtResource("4_os4q2")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_5fdfa"]
+script = ExtResource("3_3ek5a")
+japanese = "これできっと食欲が増します。"
+native = "This will surely add to you appetite."
+parsed = Array[ExtResource("4_os4q2")]([SubResource("Resource_63657"), SubResource("Resource_bnqaf"), SubResource("Resource_d055q"), SubResource("Resource_arwh6"), SubResource("Resource_i52vb"), SubResource("Resource_mygxw"), SubResource("Resource_56ax6"), SubResource("Resource_wled4")])
+_difficulty = 487
+_used_kanji = Array[String](["食", "欲", "増"])
+
+[sub_resource type="Resource" id="Resource_ibqa7"]
+script = ExtResource("9_63657")
+japanese = "彼"
+readings = Array[String](["かれ"])
+meanings = Array[String](["he", "him", "boyfriend"])
+jlpt_level = 4
+_difficulty = 31
+
+[sub_resource type="Resource" id="Resource_62hw8"]
+script = ExtResource("4_os4q2")
+raw_text = "彼"
+vocab = SubResource("Resource_ibqa7")
+reading = "かれ"
+
+[sub_resource type="Resource" id="Resource_ke7ug"]
+script = ExtResource("4_os4q2")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_qsmfr"]
+script = ExtResource("9_63657")
+japanese = "欲"
+readings = Array[String](["よく"])
+meanings = Array[String](["greed", "craving", "desire", "appetite", "hunger", "avarice", "wants"])
+jlpt_level = 1
+
+[sub_resource type="Resource" id="Resource_tg7e3"]
+script = ExtResource("4_os4q2")
+raw_text = "欲"
+vocab = SubResource("Resource_qsmfr")
+reading = "よく"
+
+[sub_resource type="Resource" id="Resource_8wgn4"]
+script = ExtResource("4_os4q2")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_a17ok"]
+script = ExtResource("9_63657")
+japanese = "少ない"
+readings = Array[String](["すくない"])
+meanings = Array[String](["few", "little", "small (amount)", "low", "scarce", "insufficient", "seldom", "rare"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_i8ppc"]
+script = ExtResource("4_os4q2")
+raw_text = "少ない"
+vocab = SubResource("Resource_a17ok")
+reading = "すくない"
+
+[sub_resource type="Resource" id="Resource_61gn3"]
+script = ExtResource("9_63657")
+japanese = "人"
+readings = Array[String](["ひと"])
+meanings = Array[String](["person", "someone", "somebody", "human beings", "mankind", "man", "people", "humans", "human (Homo sapiens)", "(other) people", "others", "character", "personality", "nature", "capable person", "competent person", "suitable person", "right person", "adult", "grown-up", "I", "me", "one"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_edfsb"]
+script = ExtResource("4_os4q2")
+raw_text = "人"
+vocab = SubResource("Resource_61gn3")
+reading = "ひと"
+
+[sub_resource type="Resource" id="Resource_tc4v8"]
+script = ExtResource("4_os4q2")
+raw_text = "だ"
+reading = "だ"
+
+[sub_resource type="Resource" id="Resource_gyx07"]
+script = ExtResource("4_os4q2")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_2di6k"]
+script = ExtResource("3_3ek5a")
+japanese = "彼は欲の少ない人だ。"
+native = "He is a man of few wants."
+parsed = Array[ExtResource("4_os4q2")]([SubResource("Resource_62hw8"), SubResource("Resource_ke7ug"), SubResource("Resource_tg7e3"), SubResource("Resource_8wgn4"), SubResource("Resource_i8ppc"), SubResource("Resource_edfsb"), SubResource("Resource_tc4v8"), SubResource("Resource_gyx07")])
+_difficulty = 490
+_used_kanji = Array[String](["彼", "欲", "少", "人"])
+
+[sub_resource type="Resource" id="Resource_cknkn"]
+script = ExtResource("4_os4q2")
+raw_text = "その"
+reading = "その"
+
+[sub_resource type="Resource" id="Resource_onhtg"]
+script = ExtResource("9_63657")
+japanese = "老人"
+readings = Array[String](["ろうじん"])
+meanings = Array[String](["old person", "senior citizen", "the aged", "the elderly"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_f4re0"]
+script = ExtResource("4_os4q2")
+raw_text = "老人"
+vocab = SubResource("Resource_onhtg")
+reading = "ろうじん"
+
+[sub_resource type="Resource" id="Resource_s8gnx"]
+script = ExtResource("4_os4q2")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_dmxk6"]
+script = ExtResource("9_63657")
+japanese = "生きる"
+readings = Array[String](["いきる"])
+meanings = Array[String](["to live", "to exist", "to make a living", "to subsist", "to be in effect", "to be in use", "to function", "to come to life", "to be enlivened", "to be safe (in baseball, go, etc.)"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_s453n"]
+script = ExtResource("4_os4q2")
+raw_text = "生きる"
+vocab = SubResource("Resource_dmxk6")
+reading = "いきる"
+
+[sub_resource type="Resource" id="Resource_7ktej"]
+script = ExtResource("9_63657")
+japanese = "意欲"
+readings = Array[String](["いよく"])
+meanings = Array[String](["will", "desire", "eagerness", "interest", "drive", "motivation", "urge", "ambition"])
+jlpt_level = 1
+
+[sub_resource type="Resource" id="Resource_tfiuf"]
+script = ExtResource("4_os4q2")
+raw_text = "意欲"
+vocab = SubResource("Resource_7ktej")
+reading = "いよく"
+
+[sub_resource type="Resource" id="Resource_yluxm"]
+script = ExtResource("4_os4q2")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_kghp3"]
+script = ExtResource("4_os4q2")
+raw_text = "なくし"
+reading = "なくし"
+
+[sub_resource type="Resource" id="Resource_d4ldf"]
+script = ExtResource("4_os4q2")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_lqfde"]
+script = ExtResource("4_os4q2")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_r7ebp"]
+script = ExtResource("3_3ek5a")
+japanese = "その老人は生きる意欲をなくした。"
+native = "The old man lost the will to live."
+parsed = Array[ExtResource("4_os4q2")]([SubResource("Resource_cknkn"), SubResource("Resource_f4re0"), SubResource("Resource_s8gnx"), SubResource("Resource_s453n"), SubResource("Resource_tfiuf"), SubResource("Resource_yluxm"), SubResource("Resource_kghp3"), SubResource("Resource_d4ldf"), SubResource("Resource_lqfde")])
+_difficulty = 567
+_used_kanji = Array[String](["老", "人", "生", "意", "欲"])
+
+[sub_resource type="Resource" id="Resource_gilmu"]
+script = ExtResource("4_os4q2")
+raw_text = "彼"
+vocab = SubResource("Resource_ibqa7")
+reading = "かれ"
+
+[sub_resource type="Resource" id="Resource_fe8kr"]
+script = ExtResource("4_os4q2")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_uhtqo"]
+script = ExtResource("9_63657")
+japanese = "権力"
+readings = Array[String](["けんりょく"])
+meanings = Array[String](["(political) power", "authority", "influence"])
+jlpt_level = 1
+
+[sub_resource type="Resource" id="Resource_1oge8"]
+script = ExtResource("4_os4q2")
+raw_text = "権力"
+vocab = SubResource("Resource_uhtqo")
+reading = "けんりょく"
+
+[sub_resource type="Resource" id="Resource_67i72"]
+script = ExtResource("4_os4q2")
+raw_text = "欲"
+vocab = SubResource("Resource_qsmfr")
+reading = "よく"
+
+[sub_resource type="Resource" id="Resource_dhjr8"]
+script = ExtResource("4_os4q2")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_cn8ov"]
+script = ExtResource("9_63657")
+japanese = "強い"
+readings = Array[String](["つよい"])
+meanings = Array[String](["strong", "potent", "competent", "domineering", "tough", "brawny", "powerful", "healthy", "rugged", "good (at)", "skilled", "knowledgeable", "being able to handle", "know how to deal (with)", "durable (against)", "resistant (to)", "resilient", "firm", "rigid", "solid", "intense", "fierce", "high", "dependable", "trustworthy"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_rnngw"]
+script = ExtResource("4_os4q2")
+raw_text = "強い"
+vocab = SubResource("Resource_cn8ov")
+reading = "つよい"
+
+[sub_resource type="Resource" id="Resource_7laec"]
+script = ExtResource("9_63657")
+japanese = "人間"
+readings = Array[String](["にんげん"])
+meanings = Array[String](["human being", "human", "person", "man", "mankind", "humankind", "character (of a person)"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_2vpuc"]
+script = ExtResource("4_os4q2")
+raw_text = "人間"
+vocab = SubResource("Resource_7laec")
+reading = "にんげん"
+
+[sub_resource type="Resource" id="Resource_c4sn3"]
+script = ExtResource("4_os4q2")
+raw_text = "だ"
+reading = "だ"
+
+[sub_resource type="Resource" id="Resource_2c604"]
+script = ExtResource("4_os4q2")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_bjtux"]
+script = ExtResource("3_3ek5a")
+japanese = "彼は権力欲の強い人間だ。"
+native = "He's power-hungry."
+parsed = Array[ExtResource("4_os4q2")]([SubResource("Resource_gilmu"), SubResource("Resource_fe8kr"), SubResource("Resource_1oge8"), SubResource("Resource_67i72"), SubResource("Resource_dhjr8"), SubResource("Resource_rnngw"), SubResource("Resource_2vpuc"), SubResource("Resource_c4sn3"), SubResource("Resource_2c604")])
+_difficulty = 575
+_used_kanji = Array[String](["彼", "権", "力", "欲", "強", "人", "間"])
+
+[sub_resource type="Resource" id="Resource_e54tc"]
+script = ExtResource("5_h7mii")
+points = Array[Vector2]([Vector2(24.85, 23.98), Vector2(23.25, 28.04), Vector2(20.54, 31.61), Vector2(16.87, 35.44), Vector2(12.32, 39.4)])
+
+[sub_resource type="Resource" id="Resource_oa7ga"]
+script = ExtResource("5_h7mii")
+points = Array[Vector2]([Vector2(40.41, 23.85), Vector2(46.52, 28.58), Vector2(50.54, 33.36)])
+
+[sub_resource type="Resource" id="Resource_8kv33"]
+script = ExtResource("5_h7mii")
+points = Array[Vector2]([Vector2(33.69, 37.99), Vector2(32.31, 42.73), Vector2(29.78, 46.19), Vector2(26.72, 49.82), Vector2(23.18, 53.51), Vector2(19.17, 57.17), Vector2(14.73, 60.68), Vector2(9.88, 63.94)])
+
+[sub_resource type="Resource" id="Resource_885if"]
+script = ExtResource("5_h7mii")
+points = Array[Vector2]([Vector2(35.3, 44.27), Vector2(39.8, 46.83), Vector2(44.26, 49.95), Vector2(48.23, 53.79)])
+
+[sub_resource type="Resource" id="Resource_pkni4"]
+script = ExtResource("5_h7mii")
+points = Array[Vector2]([Vector2(17.48, 66.65), Vector2(19.25, 71.61), Vector2(20.14, 76.99), Vector2(20.96, 82.77), Vector2(21.64, 88.45)])
+
+[sub_resource type="Resource" id="Resource_tlano"]
+script = ExtResource("5_h7mii")
+points = Array[Vector2]([Vector2(19.45, 68.46), Vector2(25.32, 67.28), Vector2(31.25, 66.09), Vector2(36.79, 65.03), Vector2(41.51, 64.19), Vector2(45.88, 65.92), Vector2(44.79, 71.45), Vector2(43.39, 76.58), Vector2(42.07, 82.55)])
+
+[sub_resource type="Resource" id="Resource_fd4dc"]
+script = ExtResource("5_h7mii")
+points = Array[Vector2]([Vector2(22.47, 85.56), Vector2(27.84, 85.1), Vector2(33.41, 84.52), Vector2(39.07, 83.9), Vector2(44.62, 83.3)])
+
+[sub_resource type="Resource" id="Resource_rt1vf"]
+script = ExtResource("5_h7mii")
+points = Array[Vector2]([Vector2(65.92, 20.25), Vector2(65.19, 25.12), Vector2(63.59, 29.35), Vector2(61.8, 33.74), Vector2(59.7, 38.32), Vector2(57.22, 43.15), Vector2(54.25, 48.26)])
+
+[sub_resource type="Resource" id="Resource_07664"]
+script = ExtResource("5_h7mii")
+points = Array[Vector2]([Vector2(62.17, 40.54), Vector2(67.47, 40.05), Vector2(72.11, 38.64), Vector2(78.16, 36.73), Vector2(84.1, 34.83), Vector2(88.67, 34.12), Vector2(88.09, 38.06), Vector2(83.47, 44.3)])
+
+[sub_resource type="Resource" id="Resource_0apog"]
+script = ExtResource("5_h7mii")
+points = Array[Vector2]([Vector2(66.42, 49.91), Vector2(66.88, 54.82), Vector2(66.01, 59.09), Vector2(64.8, 63.76), Vector2(63.15, 68.66), Vector2(60.98, 73.62), Vector2(58.19, 78.5), Vector2(54.69, 83.13), Vector2(50.4, 87.35), Vector2(45.23, 91)])
+
+[sub_resource type="Resource" id="Resource_hfk0o"]
+script = ExtResource("5_h7mii")
+points = Array[Vector2]([Vector2(66.83, 58.93), Vector2(69.55, 62.26), Vector2(72.72, 66.23), Vector2(76.18, 70.58), Vector2(79.79, 75.07), Vector2(83.41, 79.43), Vector2(86.9, 83.41), Vector2(90.67, 87.21), Vector2(94.77, 90.19)])
+
+[sub_resource type="Resource" id="Resource_smowy"]
+script = ExtResource("4_hv86s")
+stroke_shapes = Array[ExtResource("5_h7mii")]([SubResource("Resource_e54tc"), SubResource("Resource_oa7ga"), SubResource("Resource_8kv33"), SubResource("Resource_885if"), SubResource("Resource_pkni4"), SubResource("Resource_tlano"), SubResource("Resource_fd4dc"), SubResource("Resource_rt1vf"), SubResource("Resource_07664"), SubResource("Resource_0apog"), SubResource("Resource_hfk0o")])
+
+[sub_resource type="Resource" id="Resource_6vl11"]
+script = ExtResource("9_63657")
+japanese = "欲しい"
+readings = Array[String](["ほしい"])
+meanings = Array[String](["wanting", "desiring", "wishing for"])
+jlpt_level = 5
+_difficulty = 3
+_used_kanji = Array[String](["欲"])
+
+[sub_resource type="Resource" id="Resource_ljhyj"]
+script = ExtResource("9_63657")
+japanese = "食欲"
+readings = Array[String](["しょくよく"])
+meanings = Array[String](["appetite"])
+jlpt_level = 3
+_difficulty = 62
+_used_kanji = Array[String](["食", "欲"])
+
+[sub_resource type="Resource" id="Resource_pypm7"]
+script = ExtResource("9_63657")
+japanese = "欲張り"
+readings = Array[String](["よくばり"])
+meanings = Array[String](["greed", "avarice", "covetousness", "greedy person"])
+jlpt_level = 2
+_difficulty = 93
+_used_kanji = Array[String](["欲", "張"])
+
+[sub_resource type="Resource" id="Resource_4uey8"]
+script = ExtResource("9_63657")
+japanese = "欲"
+readings = Array[String](["よく"])
+meanings = Array[String](["greed", "craving", "desire", "appetite", "hunger", "avarice", "wants"])
+jlpt_level = 1
+_difficulty = 121
+_used_kanji = Array[String](["欲"])
+
+[sub_resource type="Resource" id="Resource_i0aq8"]
+script = ExtResource("9_63657")
+japanese = "欲望"
+readings = Array[String](["よくぼう"])
+meanings = Array[String](["desire", "appetite", "lust"])
+jlpt_level = 1
+_difficulty = 122
+_used_kanji = Array[String](["欲", "望"])
+
+[sub_resource type="Resource" id="Resource_b0iw7"]
+script = ExtResource("9_63657")
+japanese = "意欲"
+readings = Array[String](["いよく"])
+meanings = Array[String](["will", "desire", "eagerness", "interest", "drive", "motivation", "urge", "ambition"])
+jlpt_level = 1
+_difficulty = 122
+_used_kanji = Array[String](["意", "欲"])
+
+[sub_resource type="Resource" id="Resource_s56xl"]
+script = ExtResource("9_63657")
+japanese = "欲する"
+readings = Array[String](["ほっする"])
+meanings = Array[String](["to want", "to desire"])
+_difficulty = 580
+_used_kanji = Array[String](["欲"])
+
+[sub_resource type="Resource" id="Resource_635mm"]
+script = ExtResource("9_63657")
+japanese = "欲求"
+readings = Array[String](["よっきゅう"])
+meanings = Array[String](["desire", "want", "will", "wish", "urge", "craving"])
+_difficulty = 637
+_used_kanji = Array[String](["欲", "求"])
+
+[sub_resource type="Resource" id="Resource_6j7yh"]
+script = ExtResource("9_63657")
+japanese = "貪欲"
+readings = Array[String](["どんよく"])
+meanings = Array[String](["greedy", "avaricious", "covetous"])
+_difficulty = 686
+_used_kanji = Array[String](["貪", "欲"])
+
+[sub_resource type="Resource" id="Resource_2qv62"]
+script = ExtResource("9_63657")
+japanese = "欲張る"
+readings = Array[String](["よくばる"])
+meanings = Array[String](["to be greedy", "to be avaricious", "to want badly", "to desire intensely", "to covet"])
+_difficulty = 924
+_used_kanji = Array[String](["欲", "張"])
+
+[sub_resource type="Resource" id="Resource_1cmtb"]
+script = ExtResource("9_63657")
+japanese = "無欲"
+readings = Array[String](["むよく"])
+meanings = Array[String](["unselfish", "disinterested", "unavaricious", "free of avarice"])
+_difficulty = 927
+_used_kanji = Array[String](["無", "欲"])
+
+[sub_resource type="Resource" id="Resource_lqapu"]
+script = ExtResource("9_63657")
+japanese = "禁欲的"
+readings = Array[String](["きんよくてき"])
+meanings = Array[String](["abstemious", "austere"])
+_difficulty = 1000
+_used_kanji = Array[String](["禁", "欲", "的"])
+
+[sub_resource type="Resource" id="Resource_b3o6l"]
+script = ExtResource("9_63657")
+japanese = "欲しがる"
+readings = Array[String](["ほしがる"])
+meanings = Array[String](["to appear to want", "to obviously want", "to seem to want", "to indicate a wish for"])
+_difficulty = 1000
+_used_kanji = Array[String](["欲"])
+
+[resource]
+script = ExtResource("6_th68q")
+symbol = "欲"
+card_name = "Want"
+rarity = 6
+abilities = Array[ExtResource("1_vbuhq")]([SubResource("Resource_1s5lv")])
+tags = Array[int]([7, 21, 17, 9])
+vocabulary = Array[ExtResource("9_63657")]([SubResource("Resource_6vl11"), SubResource("Resource_ljhyj"), SubResource("Resource_pypm7"), SubResource("Resource_4uey8"), SubResource("Resource_i0aq8"), SubResource("Resource_b0iw7"), SubResource("Resource_s56xl"), SubResource("Resource_635mm"), SubResource("Resource_6j7yh"), SubResource("Resource_2qv62"), SubResource("Resource_1cmtb"), SubResource("Resource_lqapu"), SubResource("Resource_b3o6l")])
+example_sentences = Array[ExtResource("3_3ek5a")]([SubResource("Resource_64gft"), SubResource("Resource_n463b"), SubResource("Resource_6cjxl"), SubResource("Resource_5fdfa"), SubResource("Resource_2di6k"), SubResource("Resource_r7ebp"), SubResource("Resource_bjtux")])
+kanji_shape = SubResource("Resource_smowy")
+term_categories = Array[ExtResource("7_wityp")]([ExtResource("8_fb67x")])

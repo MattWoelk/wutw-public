@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://cq8nq80am0kjf"]
+
+[ext_resource type="PackedScene" uid="uid://cqjl5okjaxqc8" path="res://characters/historian/dialogue_portrait_historian.tscn" id="1_02ke0"]
+[ext_resource type="Texture2D" uid="uid://dexojdvdtlpo8" path="res://characters/historian/portrait_historian.png" id="1_oan1n"]
+[ext_resource type="Script" uid="uid://dgmvrqp5auq50" path="res://characters/character.gd" id="2_eca0n"]
+[ext_resource type="Script" uid="uid://dqpgr2ouh8rfm" path="res://characters/hub_character_spec.gd" id="2_qs88d"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="3_oan1n"]
+[ext_resource type="PackedScene" uid="uid://ck8am5pq6pr2k" path="res://characters/historian/hub_character_historian.tscn" id="3_x5tqe"]
+
+[sub_resource type="Resource" id="Resource_x5tqe"]
+script = ExtResource("2_qs88d")
+scene = ExtResource("3_x5tqe")
+gender = 1
+main_character = true
+allowed_sockets_mask = 4
+preferred_sockets_mask = 4
+min_main_quest_state = 200
+metadata/_custom_type_script = "uid://dqpgr2ouh8rfm"
+
+[resource]
+script = ExtResource("2_eca0n")
+character_id = "historian"
+character_name = "The Historian"
+dialogue_scene = ExtResource("1_02ke0")
+dialogue_portrait = ExtResource("1_oan1n")
+hub_specs = Array[ExtResource("2_qs88d")]([SubResource("Resource_x5tqe")])
+metadata/_custom_type_script = "uid://dgmvrqp5auq50"

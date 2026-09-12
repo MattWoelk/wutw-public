@@ -1,0 +1,107 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://cu00kat0vam0r"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_bbw6i"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="1_t8n0x"]
+[ext_resource type="Resource" uid="uid://bao0cl6rlvl1w" path="res://art/pieces/piece_hiroshige_odawara.tres" id="1_yatsp"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="2_pv4mf"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="3_d74bj"]
+[ext_resource type="Script" uid="uid://cbnw4a13y5x8c" path="res://events/system/outcomes/random/event_outcome_random.gd" id="4_qv3ot"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="5_jqs0s"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="6_bbw6i"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="7_yatsp"]
+[ext_resource type="Script" uid="uid://yxgaymbbt8tk" path="res://events/system/outcomes/override_next_step/event_outcome_override_next_step.gd" id="8_suc7n"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="9_8ioye"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="10_ckrpi"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="11_ywrdl"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="12_jeau2"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="13_mrwwn"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="14_ocvqi"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="15_jqs0s"]
+[ext_resource type="Resource" uid="uid://cmbyg0gub8sum" path="res://stage/spots/river/spot_river.tres" id="16_bbw6i"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="16_suc7n"]
+[ext_resource type="Resource" uid="uid://bb65d05uw68x1" path="res://stage/spots/lake/spot_lake.tres" id="18_suc7n"]
+
+[sub_resource type="Resource" id="Resource_furot"]
+script = ExtResource("1_bbw6i")
+_texture_path = "uid://b12dwp51om2o7"
+_is_horizontal = true
+metadata/_custom_type_script = "uid://c7u2t141hgkj5"
+
+[sub_resource type="Resource" id="Resource_elnct"]
+script = ExtResource("7_yatsp")
+bonus_type = ExtResource("6_bbw6i")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_eaolr"]
+script = ExtResource("8_suc7n")
+result_text = "With a yell, each of the surveyors jumps into the stream and swims across, emerging safely on the other side."
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_tljcf"]
+script = ExtResource("4_qv3ot")
+suboutcomes = Dictionary[ExtResource("5_jqs0s"), float]({
+SubResource("Resource_elnct"): 0.5,
+SubResource("Resource_eaolr"): 0.5
+})
+description = "Chance of <term:bonus.safety> loss"
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_ncsjl"]
+script = ExtResource("1_t8n0x")
+label = "Swim across."
+aspects = Array[ExtResource("2_pv4mf")]([ExtResource("3_d74bj")])
+aspects_per_season = Array[ExtResource("2_pv4mf")]([null])
+outcome = SubResource("Resource_tljcf")
+outcome_text = "Most of the surveyors manage to swim over the stream, but a few get carried downstream, emerging bruised, soaked and shivering."
+
+[sub_resource type="Resource" id="Resource_jvilg"]
+script = ExtResource("11_ywrdl")
+bonus_type = ExtResource("10_ckrpi")
+min_count = 20
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_syh5a"]
+script = ExtResource("1_t8n0x")
+label = "Scout for a narrow point."
+requirement = SubResource("Resource_jvilg")
+aspects = Array[ExtResource("2_pv4mf")]([ExtResource("9_8ioye")])
+aspects_per_season = Array[ExtResource("2_pv4mf")]([null])
+outcome_text = "It takes an hour of searching, but the scouts find a safe fallen log upstream."
+
+[sub_resource type="Resource" id="Resource_42yaw"]
+script = ExtResource("7_yatsp")
+bonus_type = ExtResource("16_suc7n")
+amount = 10
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_0k84c"]
+script = ExtResource("1_t8n0x")
+label = "Build a makeshift bridge."
+aspects = Array[ExtResource("2_pv4mf")]([ExtResource("12_jeau2"), ExtResource("13_mrwwn")])
+outcome = SubResource("Resource_42yaw")
+outcome_text = "The team lays a few logs across and everyone manages to cross safely. The bridge will serve the rest of the expedition when it reaches the stream."
+
+[sub_resource type="Resource" id="Resource_j63g4"]
+script = ExtResource("1_t8n0x")
+label = "Wade through the current."
+aspects = Array[ExtResource("2_pv4mf")]([null, null])
+aspects_per_season = Array[ExtResource("2_pv4mf")]([null])
+outcome = SubResource("Resource_elnct")
+outcome_text = "The team manages to cross the stream, but now they are soaked and shivering."
+
+[resource]
+script = ExtResource("14_ocvqi")
+episode_id = "stream_crossing"
+title = "Stream Crossing"
+biome_types = Array[int]([6])
+spot_types = Array[ExtResource("15_jqs0s")]([ExtResource("16_bbw6i"), ExtResource("18_suc7n")])
+text = "The team approaches a creek that has swelled into a wide stream rushing across the landscape.
+
+The water is chest-high and moving at a dangerous speed."
+background_image = SubResource("Resource_furot")
+background_credit = ExtResource("1_yatsp")
+choices = Array[ExtResource("1_t8n0x")]([SubResource("Resource_ncsjl"), SubResource("Resource_syh5a"), SubResource("Resource_0k84c"), SubResource("Resource_j63g4")])

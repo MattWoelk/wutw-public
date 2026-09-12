@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://c8w3kklp6b4bt"]
+
+[ext_resource type="Script" uid="uid://g213h7xb12bn" path="res://stage/survey/survey_recipe.gd" id="1_am0kw"]
+[ext_resource type="Shader" uid="uid://cy23kwgtjt4et" path="res://theme/panel/panel.gdshader" id="2_8x8t1"]
+[ext_resource type="Texture2D" uid="uid://bxvoyajed7cvv" path="res://theme/panel/panel_bg_mini.png" id="3_eonuh"]
+[ext_resource type="Texture2D" uid="uid://bnkoruxi23qsp" path="res://theme/panel/panel_frame.png" id="4_n3koh"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="5_k5jri"]
+[ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="6_lpti4"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="6_qlda3"]
+[ext_resource type="PackedScene" uid="uid://be8el7dqxmifk" path="res://aspects/slot/aspect_slot.tscn" id="7_d3nts"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="8_dq7e4"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="9_6mybu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dla0s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kkp2d"]
+shader = ExtResource("2_8x8t1")
+shader_parameter/background = ExtResource("3_eonuh")
+shader_parameter/background_tex_size = Vector2(947, 380)
+shader_parameter/background_scale = 2.27
+shader_parameter/frame_tex = ExtResource("4_n3koh")
+shader_parameter/frame_tex_size = Vector2(1127, 976)
+shader_parameter/frame_margin = Vector4(1, 1, 6.285, 5.34)
+shader_parameter/frame_scale = 1.0
+shader_parameter/frame_color = Color(0.47, 0.399735, 0.3619, 1)
+shader_parameter/decor_transform = Vector4(0, 0, 100, 100)
+shader_parameter/decor_modulate = Color(1, 1, 1, 0)
+
+[node name="SurveyRecipe" type="PanelContainer" unique_id=304402368]
+offset_right = 189.0
+offset_bottom = 128.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dla0s")
+script = ExtResource("1_am0kw")
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=1058881293]
+show_behind_parent = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = -4
+
+[node name="RequirementPanel" type="PanelContainer" parent="VBox" unique_id=1272872171]
+unique_name_in_owner = true
+self_modulate = Color(0.9, 0.9, 0.9, 1)
+material = SubResource("ShaderMaterial_kkp2d")
+instance_shader_parameters/size = Vector2(305.61304, 54.978027)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("5_k5jri")
+script = ExtResource("6_lpti4")
+material_customized = true
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="RequirementLabel" parent="VBox/RequirementPanel" unique_id=1627404269 instance=ExtResource("6_qlda3")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Req: 20 Food"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelPanel" type="PanelContainer" parent="VBox" unique_id=2034055184]
+unique_name_in_owner = true
+self_modulate = Color(0.9, 0.9, 0.9, 1)
+material = SubResource("ShaderMaterial_kkp2d")
+instance_shader_parameters/size = Vector2(305.61304, 56.59497)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("5_k5jri")
+script = ExtResource("6_lpti4")
+material_customized = true
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBox/LabelPanel" unique_id=1113049099]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="AspectsList" type="HBoxContainer" parent="VBox/LabelPanel/HBoxContainer" unique_id=911523401]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="AspectSlot" parent="VBox/LabelPanel/HBoxContainer/AspectsList" unique_id=332957936 instance=ExtResource("7_d3nts")]
+layout_mode = 2
+aspect_type = ExtResource("8_dq7e4")
+
+[node name="AspectSlot2" parent="VBox/LabelPanel/HBoxContainer/AspectsList" unique_id=1857731714 instance=ExtResource("7_d3nts")]
+layout_mode = 2
+aspect_type = ExtResource("9_6mybu")
+
+[node name="NameLabel" type="Label" parent="VBox/LabelPanel/HBoxContainer" unique_id=363575445]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Do the thing."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OutcomesPanel" type="PanelContainer" parent="VBox" unique_id=2072218077]
+unique_name_in_owner = true
+self_modulate = Color(0.9, 0.9, 0.9, 1)
+material = SubResource("ShaderMaterial_kkp2d")
+instance_shader_parameters/size = Vector2(305.61304, 54.977966)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("5_k5jri")
+script = ExtResource("6_lpti4")
+material_customized = true
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="OutcomeLabel" parent="VBox/OutcomesPanel" unique_id=1580309521 instance=ExtResource("6_qlda3")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Get 20 productivity."
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1

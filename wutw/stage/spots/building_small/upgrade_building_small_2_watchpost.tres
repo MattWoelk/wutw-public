@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://dl672t0a8m46g"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_m273l"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_65t7j"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="3_65t7j"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="3_jsvfi"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="4_56um3"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="6_jsvfi"]
+[ext_resource type="Resource" uid="uid://w8n0bwomyvod" path="res://stage/spots/building_small/spot_building_small.tres" id="7_w6urp"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="8_4skns"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://c53wt0l0mk7hc" path="res://map/sprites/spots/small_building/mst_small_building_watchtower.tres" id="9_u6vxw"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://jnrnqn2lrgir" path="res://map/sprites/spots/small_building/mst_small_building_safehouse.tres" id="10_h06gx"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="11_wnjne"]
+
+[sub_resource type="Resource" id="Resource_m0j6w"]
+script = ExtResource("11_wnjne")
+old_sprite_type = ExtResource("10_h06gx")
+new_sprite_type = ExtResource("9_u6vxw")
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_m273l")
+spot_upgrade_id = "building_small_watchpost"
+name = "Watchpost"
+description = "A single guard posted in this tower can do the work of three patrols walking the town perimeter. And sip tea at the same time."
+required_aspects = Array[ExtResource("4_56um3")]([ExtResource("6_jsvfi")])
+granted_bonuses = Dictionary[ExtResource("2_65t7j"), int]({
+ExtResource("3_65t7j"): 10,
+ExtResource("3_jsvfi"): 5
+})
+spot = ExtResource("7_w6urp")
+visuals = Array[ExtResource("8_4skns")]([SubResource("Resource_m0j6w")])

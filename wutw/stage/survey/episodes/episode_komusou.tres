@@ -1,0 +1,93 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://8x4mgwdw7ptj"]
+
+[ext_resource type="Resource" uid="uid://tre4mqpt5qkr" path="res://art/pieces/piece_eisen_kounosu.tres" id="1_gmgv0"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_s2xya"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_gmgv0"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_l1qnd"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="4_q0y7i"]
+[ext_resource type="Resource" uid="uid://8eab3roo5eqj" path="res://cards/tier2/card_nothing.tres" id="5_6hulq"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="6_owa72"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="7_3c7r5"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="8_7oxqr"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="9_qj70s"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="10_61bhn"]
+[ext_resource type="Resource" uid="uid://oqni6hco277k" path="res://cards/tier2/card_flute.tres" id="11_gy5xj"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="12_82g3g"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="13_c0j0o"]
+
+[sub_resource type="Resource" id="Resource_2pltd"]
+script = ExtResource("1_s2xya")
+_texture_path = "uid://ddp337certcvv"
+_is_horizontal = true
+
+[sub_resource type="Resource" id="Resource_bb1jx"]
+script = ExtResource("6_owa72")
+card_type = ExtResource("5_6hulq")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_u7fiu"]
+script = ExtResource("2_gmgv0")
+label = "Ask about his order."
+aspects = Array[ExtResource("3_l1qnd")]([ExtResource("4_q0y7i")])
+aspects_per_season = Array[ExtResource("3_l1qnd")]([null])
+outcome = SubResource("Resource_bb1jx")
+outcome_text = "The man explains that theirs is not an order that follows the Enlightened One, but one that seeks enlightenment in meditating on the void which they believe is the true nature of self.
+
+In pursuit of this goal, they cover their heads to dull their senses, play haunting music on the flute to block out sounds, and travel unexplored shards to escape human contact."
+
+[sub_resource type="Resource" id="Resource_i5hty"]
+script = ExtResource("9_qj70s")
+bonus_type = ExtResource("8_7oxqr")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_op3e0"]
+script = ExtResource("2_gmgv0")
+label = "Invite him along."
+aspects = Array[ExtResource("3_l1qnd")]([ExtResource("7_3c7r5")])
+aspects_per_season = Array[ExtResource("3_l1qnd")]([null])
+outcome = SubResource("Resource_i5hty")
+outcome_text = "The scouts offer to take the man along, as solitary travel on a wild shard is bound to be dangerous.
+
+The man refuses, but takes out a flute and invites everyone to meditate with him on emptiness.
+
+The tune he plays is haunting and loud, but also strangely beautiful."
+
+[sub_resource type="Resource" id="Resource_euma0"]
+script = ExtResource("6_owa72")
+card_type = ExtResource("11_gy5xj")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_54mch"]
+script = ExtResource("2_gmgv0")
+label = "Present an offering."
+aspects = Array[ExtResource("3_l1qnd")]([ExtResource("10_61bhn")])
+aspects_per_season = Array[ExtResource("3_l1qnd")]([null])
+outcome = SubResource("Resource_euma0")
+outcome_text = "The scouts offer the man a share of their supplies, in case it's a spirit testing their generosity, but the man refuses.
+
+Instead, he asks the explorers to take his flute. He claims to have grown beyond needing it as a meditation aid, able now to block out the whole world by mere thought."
+
+[sub_resource type="Resource" id="Resource_0pc3t"]
+script = ExtResource("2_gmgv0")
+label = "Ignore the strange man."
+aspects = Array[ExtResource("3_l1qnd")]([null])
+aspects_per_season = Array[ExtResource("3_l1qnd")]([null])
+outcome_text = "The scouts nod a polite bow and move on.
+
+The man appears to be perfectly content to be left alone."
+
+[resource]
+script = ExtResource("12_82g3g")
+episode_id = "komusou"
+title = "The Monk of Emptiness"
+biome_types = Array[int]([6, 5, 8])
+text = "As the survey team is walking through an ancient, overgrown road, they spot a figure on the horizon.
+
+The figure turns out to be a man wearing a basket as a hat. He introduces himself as a monk of Emptiness, an order none of the scouts had heard of.
+
+A few scouts whisper that it must be a trickster spirit taking human form."
+background_image = SubResource("Resource_2pltd")
+background_credit = ExtResource("1_gmgv0")
+choices = Array[ExtResource("2_gmgv0")]([SubResource("Resource_u7fiu"), SubResource("Resource_op3e0"), SubResource("Resource_54mch"), SubResource("Resource_0pc3t")])

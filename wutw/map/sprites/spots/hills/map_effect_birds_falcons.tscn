@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dgfostvbmxtaj"]
+
+[ext_resource type="Script" uid="uid://dh127xapdb8gc" path="res://map/map_effect_particles.gd" id="1_r6qpj"]
+[ext_resource type="Texture2D" uid="uid://8un2stucsbyp" path="res://map/sprites/animals/bird.png" id="2_ij8ac"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_un4t7"]
+particles_animation = true
+particles_anim_h_frames = 10
+particles_anim_v_frames = 4
+particles_anim_loop = true
+
+[sub_resource type="Curve" id="Curve_u4exd"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.12418237, 1), 0.0, 0.0, 0, 0, Vector2(0.7782923, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_umh8d"]
+curve = SubResource("Curve_u4exd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_03o8l"]
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 85.13
+emission_ring_inner_radius = 28.68
+emission_ring_cone_angle = 90.0
+direction = Vector3(-1, 0, 0)
+spread = 19.188
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+orbit_velocity_min = -0.019999906
+orbit_velocity_max = 0.020000096
+gravity = Vector3(0, 0, 0)
+alpha_curve = SubResource("CurveTexture_umh8d")
+anim_speed_min = 1.5
+anim_speed_max = 1.5
+anim_offset_max = 1.0
+
+[node name="Birds" type="Node2D" unique_id=19583879]
+script = ExtResource("1_r6qpj")
+
+[node name="ParticleSystem" type="GPUParticles2D" parent="." unique_id=1531594862]
+material = SubResource("CanvasItemMaterial_un4t7")
+position = Vector2(0.31305832, -4.081791)
+amount = 4
+texture = ExtResource("2_ij8ac")
+lifetime = 5.0
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_03o8l")

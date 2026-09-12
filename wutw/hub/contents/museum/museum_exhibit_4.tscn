@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://ux41linfm4bl"]
+
+[ext_resource type="Script" uid="uid://b8c7n28a48b6j" path="res://hub/contents/museum/museum_exhibit.gd" id="1_b37al"]
+[ext_resource type="Shader" uid="uid://bwxhld0dc0w0v" path="res://hub/contents/museum/museum_exhibit.gdshader" id="2_0ppq5"]
+[ext_resource type="Texture2D" uid="uid://dc356i2jyhg7n" path="res://visuals/transparent.png" id="3_0ppq5"]
+[ext_resource type="Texture2D" uid="uid://cl6uj1ftjgx10" path="res://hub/contents/museum/curtain4.png" id="3_b37al"]
+[ext_resource type="Texture2D" uid="uid://c2d2kjrptuksa" path="res://hub/contents/museum/curtain4_mask.png" id="4_0ppq5"]
+[ext_resource type="Texture2D" uid="uid://b241hhbyyqcke" path="res://hub/contents/wind_noise.tres" id="5_ofrov"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8asf6"]
+shader = ExtResource("2_0ppq5")
+shader_parameter/image = ExtResource("3_0ppq5")
+shader_parameter/image_size = Vector2(1, 1)
+shader_parameter/mask = ExtResource("4_0ppq5")
+shader_parameter/slot_size = Vector2(44.5, 56)
+shader_parameter/area_uv_offset = Vector2(0.05, 0.135)
+shader_parameter/area_uv_size = Vector2(0.87, 0.56)
+shader_parameter/skew_x = 0.0
+shader_parameter/skew_y = -0.375
+shader_parameter/wind_direction = Vector2(-1.8, 1)
+shader_parameter/wind_strength = 0.0
+shader_parameter/wind_noise = ExtResource("5_ofrov")
+shader_parameter/wind_speed = 0.074
+
+[node name="MuseumExhibit4" type="Sprite2D" unique_id=1290563988]
+scale = Vector2(0.7861327, 0.7861327)
+offset = Vector2(0, -75)
+script = ExtResource("1_b37al")
+tooltip_text = "[center]<header_font_size>[b]Select Exhibit[/b][/font_size][/center]
+
+Select the exhibit to display in this spot."
+
+[node name="ArtCanvas" type="Sprite2D" parent="." unique_id=1306417851]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_8asf6")
+texture = ExtResource("3_b37al")
+offset = Vector2(0, -75)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1947495446]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1653873129]
+visible = false
+position = Vector2(-118.62, -323.734)
+polygon = PackedVector2Array(160.66444, 349.767, 162.14325, 194.7872, 75.18895, 152.78885, 71.639786, 305.99408)
+
+[node name="TooltipAnchor" type="Control" parent="." unique_id=2143155871]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -47.833973
+offset_top = -171.34312
+offset_right = 45.45982
+offset_bottom = 22.188324
+mouse_filter = 2
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

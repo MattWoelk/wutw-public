@@ -1,0 +1,22 @@
+[gd_resource type="MapSpriteType_Generic" format=3 uid="uid://wa4o0sir0qu2"]
+
+[ext_resource type="PackedScene" uid="uid://3x1kuuwxnmn8" path="res://map/sprites/spots/plains/map_effect_fire.tscn" id="1_fs3jf"]
+
+[sub_resource type="MapSpriteCollision_Circle" id="MapSpriteCollision_Circle_6ovxk"]
+center = Vector2(-0.09, 0.205)
+radius = 1.285
+blocking = true
+
+[sub_resource type="MapEffectAttachment" id="MapEffectAttachment_vqp3i"]
+scene = ExtResource("1_fs3jf")
+offset = Vector2(0.021738201, -1.338919)
+scale = 0.07
+
+[resource]
+atlas_type = 1
+atlas_rect = Rect2i(1000, 950, 20, 30)
+map_rect = Rect2(0.03, -0.455, 2, 3)
+footprint_radius = 1.655
+must_be_fully_within_clip = true
+effects = Array[MapEffectAttachment]([SubResource("MapEffectAttachment_vqp3i")])
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Circle_6ovxk")])

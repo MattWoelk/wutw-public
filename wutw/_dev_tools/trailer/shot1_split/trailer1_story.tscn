@@ -1,0 +1,763 @@
+[gd_scene load_steps=44 format=3 uid="uid://85oav62oshha"]
+
+[ext_resource type="Script" uid="uid://dhl5t2e3yrwc6" path="res://_dev_tools/trailer/shot1_split/trailer1_story.gd" id="1_17p8p"]
+[ext_resource type="Texture2D" uid="uid://dfckpgronxi0j" path="res://_dev_tools/trailer/shot1_split/scenes.png" id="2_c0iqj"]
+[ext_resource type="Shader" uid="uid://cyfk2cdonrt72" path="res://_dev_tools/trailer/shot1_split/fire_and_smoke.gdshader" id="3_pt7pq"]
+[ext_resource type="Texture2D" uid="uid://bxn34s4iet1nn" path="res://_dev_tools/trailer/shot1_split/break_under_left.png" id="4_7wrk5"]
+[ext_resource type="Shader" uid="uid://bxpiohobp2nxv" path="res://_dev_tools/trailer/shot1_split/darken.gdshader" id="5_3ofdv"]
+[ext_resource type="Texture2D" uid="uid://4as81nsahepj" path="res://_dev_tools/trailer/shot1_split/break_under_right.png" id="6_opq4w"]
+[ext_resource type="Shader" uid="uid://cbpakgh0uxrip" path="res://_dev_tools/trailer/shot1_split/tear_fade.gdshader" id="7_wcaf7"]
+[ext_resource type="Texture2D" uid="uid://dl5msjl5a3pwr" path="res://_dev_tools/trailer/shot1_split/break_over_left.png" id="8_x15l8"]
+[ext_resource type="Texture2D" uid="uid://cks1dkilpued3" path="res://_dev_tools/trailer/shot1_split/break_over_right.png" id="9_msgvu"]
+[ext_resource type="Texture2D" uid="uid://dwfngfmjjitf4" path="res://theme/scroll_panel/scroll_panel_dowel_container_large.png" id="10_1va01"]
+[ext_resource type="Shader" uid="uid://bbe7ginxustev" path="res://theme/scroll_panel/scroll_panel_dowel.gdshader" id="11_quf86"]
+[ext_resource type="Texture2D" uid="uid://b0cvn7ev1bwut" path="res://theme/scroll_panel/dowel_wood.png" id="12_wn5j6"]
+[ext_resource type="Texture2D" uid="uid://go64cbx1ohwd" path="res://theme/button/white_1x1px.png" id="13_ywehr"]
+[ext_resource type="Shader" uid="uid://gpgadexvoqm8" path="res://visuals/shaders/multiply.gdshader" id="14_jvni3"]
+[ext_resource type="Texture2D" uid="uid://5sok2l1kxkji" path="res://theme/scroll_panel/dowel_paper.png" id="15_4xu8f"]
+
+[sub_resource type="Animation" id="Animation_mlfyn"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RightDowelContainer:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-246.969, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LeftDowelContainer:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1076, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RightDowelContainer/RightDowelWood:material:shader_parameter/scroll_offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Scenes/TearUnderRight:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(5921, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Scenes/TearUnderRight:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-300, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Scenes/TearUnderRight:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Scenes/TearOverRight:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(5921, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Scenes/TearOverRight:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-300, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Scenes/TearOverRight:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Scenes/TearUnderLeft:modulate:a")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Scenes/TearUnderRight:modulate:a")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Scenes/TearOverLeft:material:shader_parameter/progress")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Scenes/TearOverRight:material:shader_parameter/progress")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Scenes:position:x")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-6, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Camera2D:zoom:x")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.905, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Camera2D:zoom:y")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.905, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("LeftDowelContainer/LeftDowelWood:material:shader_parameter/scroll_offset")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_7ypus"]
+resource_name = "break"
+length = 28.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LeftDowelContainer:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(880, -0.25, 0, 0.133333, -400.852, -88.0001, -0.25, 0, 0.25, 0, -88, -0.25, 0, 0.4, 2.4266, 900, -0.233333, -226.754, 0.233333, -186.317, -88, -0.466667, 2.4266, 0.25, 0, -88, -0.25, 0, 0.4, 2.4266, 900, -0.233333, -226.754, 0.233333, -186.317, -88, -0.466667, 2.4266, 0.25, 0, -88, -0.25, 0, 0.4, 2.4266, 900, -0.233333, -226.754, 0.233333, -186.317, -88, -0.466667, 2.4266, 0.25, 0),
+"times": PackedFloat32Array(0, 1.63333, 3.56667, 4.53333, 5.43333, 8.16667, 9.16667, 10.1, 12.8, 13.8333, 14.7333)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightDowelContainer:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(968, -0.25, 0, 0.1, 237.213, 1936, -0.333333, 0, 0.544445, 0, 1936, -0.544445, 0, 0.4, 5.6615, 950, -0.233333, 224.667, 0.233333, 192.317, 1936, -0.366667, -18.6007, 0, 0, 1936, -0.544445, 0, 0.4, 5.6615, 950, -0.233333, 224.667, 0.233333, 192.317, 1936, -0.366667, -18.6007, 0, 0, 1936, -0.544445, 0, 0.4, 5.6615, 950, -0.233333, 224.667, 0.233333, 192.317, 1936, -0.366667, -18.6007, 0, 0),
+"times": PackedFloat32Array(0, 1.63333, 3.56667, 4.53333, 5.43333, 8.16667, 9.16667, 10.1, 12.8, 13.8333, 14.7333)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Scenes:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-709.105, 0, 0, 1.9, 0, -800, -0.25, 0, 0.25, 0, -2902, -0.25, 0, 0.25, 0, -3050.51, -0.25, 0, 0.25, 0, -4320.64, -0.25, 0, 0.25, 0, -4468.67, -0.25, 0, 0.25, 0, -5914.12, -0.25, 0, 0.25, 0, -6041.09, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4.5, 4.53333, 9.13327, 9.16667, 13.8, 13.8667, 20.3)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LeftDowelContainer/LeftDowelWood:material:shader_parameter/scroll_offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-1, -0.25, 0, 0.25, 0, -0.105, -0.25, 0, 0.25, 0, -0.27, -0.25, 0, 0.25, 0, -1, -0.25, 0, 0.25, 0, -0.27, -0.25, 0, 0.25, 0, -0.48, -0.25, 0, 0.25, 0, -1, -0.25, 0, 0.25, 0, -0.27, -0.25, 0, 0.25, 0, -0.48, -0.25, 0, 0.25, 0, -1, -0.25, 0, 0.25, 0, -0.27, -0.25, 0, 0.25, 0, -0.475, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.6, 3.58253, 4.52365, 5.43967, 8.15636, 9.1665, 10.1139, 12.8055, 13.8344, 14.7379, 18.3)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RightDowelContainer/RightDowelWood:material:shader_parameter/scroll_offset")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0, 0, 2, 0, 0, 2, 0, 0, 2, 0),
+"points": PackedFloat32Array(2, -0.25, 0, 0.25, 0, 1, -0.233333, 0.042194, 0.194822, -0.0352299, 0.8, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 1, -0.277444, 0.0576705, 0.267947, -0.0556962, 0.8, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 1, -0.295908, 0.0530104, 0.235531, -0.0421941, 0.8, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 1, -0.279942, 0.0614353, 0.223028, -0.0489451, 0.8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.63333, 3.5723, 4.53478, 5.46025, 8.18111, 9.16211, 10.1246, 12.827, 13.8265, 14.7704, 18.3242)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Scenes/TearUnderRight:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(5921, -0.25, 0, 0.25, 0, 5921, -0.25, 0, 0.25, 0, 5967.15, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(20.7667, 22.3334, 26.6333)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Scenes/TearUnderRight:position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-300, -0.25, 0, 0.25, 0, -300, -0.25, 0, 0.25, 0, -300.999, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(20.7667, 22.3334, 26.6333)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Scenes/TearUnderRight:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.226134, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(20.7667, 26.6333)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Scenes/TearOverRight:position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(5921, -0.25, 0, 0.25, 0, 5921, -0.25, 0, 0.25, 0, 5967.15, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(20.7667, 22.3334, 26.6333)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Scenes/TearOverRight:position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-300, -0.25, 0, 0.25, 0, -300, -0.25, 0, 0.25, 0, -300.999, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(20.7667, 22.3334, 26.6333)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Scenes/TearOverRight:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.226134, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(20.7667, 26.6333)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Scenes/TearUnderLeft:modulate:a")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(20.7334, 20.7667)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Scenes/TearUnderRight:modulate:a")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(20.7334, 20.7667)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Scenes/TearOverLeft:material:shader_parameter/progress")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1.01723e-09, -0.25, 0, 0.25, 0, 1.01723e-09, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(17.0667, 19.8001, 20.7334)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Scenes/TearOverRight:material:shader_parameter/progress")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(17.0667, 19.8001, 20.7334)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Camera2D:zoom:x")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.905, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(16, 19.8333)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Camera2D:zoom:y")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.905, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(16, 19.8333)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tjuuw"]
+_data = {
+&"RESET": SubResource("Animation_mlfyn"),
+&"break": SubResource("Animation_7ypus")
+}
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5ennp"]
+noise_type = 5
+frequency = 1.0
+offset = Vector3(90.09, 408.41, 0)
+domain_warp_enabled = true
+domain_warp_amplitude = 25.0
+domain_warp_frequency = 0.06
+domain_warp_fractal_octaves = 2
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_rxyoq"]
+width = 256
+height = 256
+depth = 16
+noise = SubResource("FastNoiseLite_5ennp")
+seamless = true
+seamless_blend_skirt = 0.5
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_atntp"]
+noise_type = 4
+frequency = 0.0414
+offset = Vector3(414.41, 408.41, 0)
+domain_warp_enabled = true
+domain_warp_amplitude = 29.035
+domain_warp_frequency = 0.06
+domain_warp_fractal_octaves = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4kstg"]
+noise = SubResource("FastNoiseLite_atntp")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_k8ui2"]
+noise_type = 4
+frequency = 0.0414
+offset = Vector3(240.24, 0, 0)
+domain_warp_enabled = true
+domain_warp_amplitude = 29.035
+domain_warp_frequency = 0.06
+domain_warp_fractal_octaves = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dh2y8"]
+noise = SubResource("FastNoiseLite_k8ui2")
+invert = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ayfy4"]
+shader = ExtResource("3_pt7pq")
+shader_parameter/water_noise = SubResource("NoiseTexture2D_4kstg")
+shader_parameter/water_noise2 = SubResource("NoiseTexture2D_dh2y8")
+shader_parameter/water_noise_uv_scale = Vector2(1, 1)
+shader_parameter/anim_speed = 0.5
+shader_parameter/macro_water_noise = SubResource("NoiseTexture3D_rxyoq")
+shader_parameter/macro_anim_speed = 0.2
+shader_parameter/alpha_multiplier = 0.2
+shader_parameter/scale_multiplier = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_atntp"]
+shader = ExtResource("5_3ofdv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1xnat"]
+shader = ExtResource("7_wcaf7")
+shader_parameter/progress = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mnthn"]
+shader = ExtResource("7_wcaf7")
+shader_parameter/progress = 0.0
+
+[sub_resource type="Gradient" id="Gradient_nehbt"]
+offsets = PackedFloat32Array(0, 0.196721, 0.460041, 0.525615, 0.603484, 0.732582, 1)
+colors = PackedColorArray(0.59, 0.43424, 0.3068, 0.796078, 0.48, 0.35328, 0.2496, 0.294118, 0.48, 0.35328, 0.2496, 0.0116377, 0.48, 0.35328, 0.2496, 0, 0.48, 0.35328, 0.2496, 0.0431956, 0.48, 0.35328, 0.2496, 0.34902, 0.4, 0.2944, 0.208, 0.929412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_35omn"]
+gradient = SubResource("Gradient_nehbt")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_6t0vr"]
+colors = PackedColorArray(0.331639, 0.33164, 0.331639, 1, 0.961814, 0.961814, 0.961814, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_073tf"]
+frequency = 0.0035
+domain_warp_amplitude = 100.0
+domain_warp_frequency = -0.01
+domain_warp_fractal_lacunarity = 8.69
+domain_warp_fractal_gain = 0.19
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e4fdl"]
+width = 2048
+noise = SubResource("FastNoiseLite_073tf")
+color_ramp = SubResource("Gradient_6t0vr")
+seamless = true
+seamless_blend_skirt = 0.27
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7au80"]
+shader = ExtResource("11_quf86")
+shader_parameter/size = Vector2(100, 49)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("12_wn5j6")
+shader_parameter/wood_tex_scale = Vector2(2.595, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_35omn")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_e4fdl")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rxyoq"]
+shader = ExtResource("14_jvni3")
+
+[sub_resource type="Gradient" id="Gradient_35omn"]
+offsets = PackedFloat32Array(0, 0.30957, 0.484375)
+colors = PackedColorArray(0.5, 0.43825, 0.405, 1, 0.93, 0.899775, 0.8835, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6t0vr"]
+gradient = SubResource("Gradient_35omn")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_073tf"]
+offsets = PackedFloat32Array(0, 0.196721, 0.460041, 0.525615, 0.603484, 0.732582, 1)
+colors = PackedColorArray(0.59, 0.43424, 0.3068, 0.796078, 0.48, 0.35328, 0.2496, 0.294118, 0.48, 0.35328, 0.2496, 0.0116377, 0.48, 0.35328, 0.2496, 0, 0.48, 0.35328, 0.2496, 0.0431956, 0.48, 0.35328, 0.2496, 0.34902, 0.4, 0.2944, 0.208, 0.929412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e4fdl"]
+gradient = SubResource("Gradient_073tf")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_7au80"]
+colors = PackedColorArray(0.331639, 0.33164, 0.331639, 1, 0.961814, 0.961814, 0.961814, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1xnat"]
+frequency = 0.0035
+domain_warp_amplitude = 100.0
+domain_warp_frequency = -0.01
+domain_warp_fractal_lacunarity = 8.69
+domain_warp_fractal_gain = 0.19
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mnthn"]
+width = 2048
+noise = SubResource("FastNoiseLite_1xnat")
+color_ramp = SubResource("Gradient_7au80")
+seamless = true
+seamless_blend_skirt = 0.27
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5ennp"]
+shader = ExtResource("11_quf86")
+shader_parameter/size = Vector2(100, 50)
+shader_parameter/scroll_offset = 0.0
+shader_parameter/wood_tex = ExtResource("15_4xu8f")
+shader_parameter/wood_tex_scale = Vector2(2.595, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_e4fdl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_mnthn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[node name="TrailerShot1" type="Node2D"]
+texture_filter = 4
+script = ExtResource("1_17p8p")
+metadata/movie_file = "C:/Users/max99/rendered_movies/1_story.avi"
+metadata/_edit_vertical_guides_ = [960.0]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_tjuuw")
+}
+movie_quit_on_finish = true
+
+[node name="BlackBG" type="ColorRect" parent="."]
+z_index = -3
+offset_left = -255.0
+offset_top = -179.0
+offset_right = 8132.0
+offset_bottom = 1291.0
+color = Color(0, 0, 0, 1)
+
+[node name="Scenes" type="TextureRect" parent="."]
+z_index = -2
+offset_left = -6.0
+offset_top = -2.0
+offset_right = 7990.0
+offset_bottom = 1078.0
+texture = ExtResource("2_c0iqj")
+stretch_mode = 2
+
+[node name="TearUnderLeft" type="TextureRect" parent="Scenes"]
+material = SubResource("ShaderMaterial_ayfy4")
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2075.0
+offset_top = -1380.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("4_7wrk5")
+stretch_mode = 2
+
+[node name="TearUnderRight" type="TextureRect" parent="Scenes"]
+material = SubResource("ShaderMaterial_atntp")
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2075.0
+offset_top = -1380.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(1613.31, 1381.71)
+texture = ExtResource("6_opq4w")
+stretch_mode = 2
+
+[node name="TearOverLeft" type="TextureRect" parent="Scenes"]
+material = SubResource("ShaderMaterial_1xnat")
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2075.0
+offset_top = -1380.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("8_x15l8")
+stretch_mode = 2
+
+[node name="TearOverRight" type="TextureRect" parent="Scenes"]
+material = SubResource("ShaderMaterial_mnthn")
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2075.0
+offset_top = -1380.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(1613.31, 1381.71)
+texture = ExtResource("9_msgvu")
+stretch_mode = 2
+
+[node name="LeftDowelContainer" type="NinePatchRect" parent="."]
+texture_filter = 2
+custom_minimum_size = Vector2(0, 72)
+offset_left = -1076.0
+offset_top = 1137.0
+offset_right = 121.0
+offset_bottom = 1209.0
+rotation = -1.57116
+texture = ExtResource("10_1va01")
+patch_margin_left = 72
+patch_margin_right = 72
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="LeftDowelWood" type="TextureRect" parent="LeftDowelContainer"]
+unique_name_in_owner = true
+show_behind_parent = true
+material = SubResource("ShaderMaterial_7au80")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 11.0
+offset_right = -50.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("13_ywehr")
+expand_mode = 1
+
+[node name="LeftShadow" type="TextureRect" parent="LeftDowelContainer"]
+material = SubResource("ShaderMaterial_rxyoq")
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 59.0
+offset_top = 59.0
+offset_right = -57.0
+offset_bottom = 123.0
+grow_horizontal = 2
+size_flags_vertical = 0
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_6t0vr")
+
+[node name="ScrollHider" type="ColorRect" parent="LeftDowelContainer"]
+z_index = -1
+layout_mode = 0
+offset_left = -60.3211
+offset_top = -1867.02
+offset_right = 1285.68
+offset_bottom = 37.978
+color = Color(0, 0, 0, 1)
+
+[node name="RightDowelContainer" type="NinePatchRect" parent="."]
+z_index = 1
+texture_filter = 2
+custom_minimum_size = Vector2(0, 72)
+offset_left = -246.969
+offset_top = 1137.0
+offset_right = 950.031
+offset_bottom = 1209.0
+rotation = -1.5708
+texture = ExtResource("10_1va01")
+patch_margin_left = 72
+patch_margin_right = 72
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="RightDowelWood" type="TextureRect" parent="RightDowelContainer"]
+unique_name_in_owner = true
+show_behind_parent = true
+material = SubResource("ShaderMaterial_5ennp")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 11.0
+offset_right = -50.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("13_ywehr")
+expand_mode = 1
+
+[node name="RightShadow" type="TextureRect" parent="RightDowelContainer"]
+material = SubResource("ShaderMaterial_rxyoq")
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1139.49
+offset_top = 11.2844
+offset_right = 1023.49
+offset_bottom = 75.2844
+grow_horizontal = 2
+scale = Vector2(-1, -1)
+size_flags_vertical = 0
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_6t0vr")
+
+[node name="ScrollHider" type="ColorRect" parent="RightDowelContainer"]
+z_index = -1
+layout_mode = 0
+offset_left = -13.0
+offset_top = 37.0
+offset_right = 1333.0
+offset_bottom = 1942.0
+color = Color(0, 0, 0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+zoom = Vector2(0.905, 0.905)

@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://btpcc1kny4v20"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_2aqfo"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_62dau"]
+[ext_resource type="Resource" uid="uid://bhli4xwx0vayp" path="res://stage/spots/brushland/upgrade_brushland_3_monastery_of_the_wilds.tres" id="2_yogtu"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_gjh37"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="4_bcgf2"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="6_e8bxc"]
+[ext_resource type="Resource" uid="uid://b2nwnsbdieg27" path="res://stage/spots/brushland/spot_brushland.tres" id="7_e8bxc"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="8_if3k0"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://w0jyvx0eh52l" path="res://map/sprites/spots/brushland/mst_brushland_rabbit_warren.tres" id="9_2cjl4"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://bsmeyrmri04w1" path="res://map/sprites/spots/brushland/mst_brushland_bramble_patch.tres" id="10_kpwxx"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="11_6peti"]
+
+[sub_resource type="Resource" id="Resource_jccso"]
+script = ExtResource("11_6peti")
+old_sprite_type = ExtResource("10_kpwxx")
+new_sprite_type = ExtResource("9_2cjl4")
+biome = 8
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_2aqfo")
+spot_upgrade_id = "brushland_rabbits"
+name = "Rabbit Warren"
+description = "Soft paws dig mazes through the earth, hidden just beneath our feet."
+required_aspects = Array[ExtResource("3_gjh37")]([ExtResource("6_e8bxc")])
+granted_bonuses = Dictionary[ExtResource("2_62dau"), int]({
+ExtResource("4_bcgf2"): 10
+})
+child_upgrades = Array[ExtResource("1_2aqfo")]([ExtResource("2_yogtu")])
+spot = ExtResource("7_e8bxc")
+visuals = Array[ExtResource("8_if3k0")]([SubResource("Resource_jccso")])
+tags = Array[int]([0])

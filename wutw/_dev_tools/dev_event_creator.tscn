@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://b81evomq1hibl"]
+
+[ext_resource type="Script" uid="uid://bmndp3v1wq0q1" path="res://_dev_tools/dev_event_creator.gd" id="1_u1adr"]
+[ext_resource type="WwiseBank" uid="uid://bfu0rew0t81oj" path="res://Wwise/resources/SoundBank/{E9E810C1-7603-4795-937B-4E62E1177604}.tres" id="2_4p0wf"]
+
+[node name="DevEventCreator" type="Node2D"]
+script = ExtResource("1_u1adr")
+preview_preamble = "add_card('enlightenment')
+add_card('enlightenment')
+add_card('enlightenment')
+add_card('spirit')
+add_card('spirit')
+add_card('craft')
+add_bonus('adventure', 100)
+add_bonus('beauty', 100)
+add_bonus('safety', 100)"
+
+[node name="AkBank" type="AkBank" parent="."]
+bank = ExtResource("2_4p0wf")
+load_on = 1
+
+[node name="EventScene" parent="." instance_placeholder="res://events/system/scenes/event_scene.tscn"]
+unique_name_in_owner = true
+event = null

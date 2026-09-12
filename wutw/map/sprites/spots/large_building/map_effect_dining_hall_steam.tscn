@@ -1,0 +1,56 @@
+[gd_scene load_steps=11 format=3 uid="uid://c1xx60ouvowsx"]
+
+[ext_resource type="Script" uid="uid://dh127xapdb8gc" path="res://map/map_effect_particles.gd" id="1_7bjsd"]
+[ext_resource type="Shader" uid="uid://d30qlp5r2k2jy" path="res://map/sprites/spots/mountain/volcano_smoke.gdshader" id="2_lrxqt"]
+[ext_resource type="Texture2D" uid="uid://hoyrjynxrxih" path="res://map/sprites/atlases/watercolor_brush_atlas.png" id="3_5hm1d"]
+[ext_resource type="Texture2D" uid="uid://q5me1e8nedxd" path="res://visuals/clouds/white_200x200.png" id="4_a3488"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xu372"]
+shader = ExtResource("2_lrxqt")
+shader_parameter/spritesheet = ExtResource("3_5hm1d")
+shader_parameter/daub_frames_h = 3
+shader_parameter/daub_frames_v = 3
+shader_parameter/daub_color_min = Color(1, 1, 1, 1)
+shader_parameter/daub_color_max = Color(0.84890544, 0.84890544, 0.84890544, 1)
+shader_parameter/opacity_boost = 1.5
+
+[sub_resource type="Curve" id="Curve_x3740"]
+_data = [Vector2(0, 0), 0.0, 2.3548663, 0, 0, Vector2(0.37676764, 0.9487832), 0.0, 0.0, 0, 0, Vector2(0.670707, 0.92468125), -0.54782706, -0.54782706, 0, 0, Vector2(1, 0), -2.3185847, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_ql2q6"]
+curve = SubResource("Curve_x3740")
+
+[sub_resource type="Curve" id="Curve_obd1v"]
+_data = [Vector2(0, 0.046465755), 0.0, 0.112979114, 0, 0, Vector2(0.4636363, 0.32514483), 0.53687096, 0.53687096, 0, 0, Vector2(1, 0.624913), 0.32622406, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_dcyf5"]
+curve = SubResource("Curve_obd1v")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c488d"]
+lifetime_randomness = 0.27
+particle_flag_disable_z = true
+direction = Vector3(0.2, -1, 0)
+spread = 10.0
+initial_velocity_min = 8.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, 0.6, 0)
+scale_min = 0.25
+scale_max = 0.35
+scale_curve = SubResource("CurveTexture_dcyf5")
+alpha_curve = SubResource("CurveTexture_ql2q6")
+
+[node name="BakerySteam" type="Node2D"]
+script = ExtResource("1_7bjsd")
+
+[node name="ParticleSystem" type="GPUParticles2D" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_xu372")
+amount = 20
+texture = ExtResource("4_a3488")
+lifetime = 5.0
+visibility_rect = Rect2(-26.86, -50, 50, 59.275)
+local_coords = true
+draw_order = 2
+process_material = SubResource("ParticleProcessMaterial_c488d")

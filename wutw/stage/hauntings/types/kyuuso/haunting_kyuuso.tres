@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://drwqwsx4hx37i"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_aa7ot"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="2_44obr"]
+[ext_resource type="Script" uid="uid://b2sp10jrl0p1v" path="res://stage/hauntings/effects/haunting_effect_lose_gained_bonus.gd" id="4_25j4d"]
+[ext_resource type="Resource" uid="uid://f1rtcm3wrfny" path="res://art/pieces/piece_yagyou_kyuuso.tres" id="4_44obr"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="4_himsh"]
+[ext_resource type="Resource" uid="uid://brsk0itiivtbh" path="res://art/pieces/piece_koson_rabbits.tres" id="5_8uwno"]
+[ext_resource type="Texture2D" uid="uid://2cqd4rvvbnai" path="res://stage/hauntings/types/kyuuso/haunting_kyuuso.png" id="5_cbr6m"]
+[ext_resource type="Texture2D" uid="uid://dyki781jq2tsi" path="res://stage/hauntings/types/kyuuso/haunting_kyuuso_realistic_vermin.png" id="6_jw4y4"]
+[ext_resource type="Resource" uid="uid://cht5gp5i657sg" path="res://stage/spots/steppe/spot_steppe.tres" id="8_25j4d"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="8_snwus"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="9_0myya"]
+[ext_resource type="Script" uid="uid://wcgm3rptcu7x" path="res://stage/hauntings/triggers/haunting_trigger_bonus_gained.gd" id="10_nt7en"]
+
+[sub_resource type="Resource" id="Resource_0ste1"]
+script = ExtResource("4_25j4d")
+metadata/_custom_type_script = "uid://b2sp10jrl0p1v"
+
+[sub_resource type="Resource" id="Resource_44obr"]
+script = ExtResource("10_nt7en")
+any_spot = false
+metadata/_custom_type_script = "uid://wcgm3rptcu7x"
+
+[resource]
+script = ExtResource("8_snwus")
+haunting_id = "kyuuso"
+name = "Kyūso"
+name_japanese = "旧鼠"
+name_realistic = "Rodent Infestation"
+name_translation = "Giant Rodents"
+description = "An enormous, chubby rat spirit is said to haunt these steppes, devouring everything in its path."
+description_realistic = "A severe rodent infestation is consuming all yields produced in these steppes."
+description_long = "At first, settlers blamed thieves for their vanishing harvests. Then they began finding bite-marks the size of fists and tracks larger than a badger's. The elders remembered the Kyūso, a rat so old it perfected gluttony and forgot fear.
+
+They say it waddles from granary to granary on moonless nights, its stubby tail leaving a trail in the dirt, its mouth wide enough to swallow a rice sack whole. Unafraid of cats or dogs, it will even chase foxes away.
+
+In some tellings it was once a farmer, cursed for hoarding food through a famine."
+image_small = ExtResource("5_cbr6m")
+image_credit = ExtResource("4_44obr")
+image_small_realistic = ExtResource("6_jw4y4")
+image_realistic_credit = ExtResource("5_8uwno")
+spot_type = ExtResource("8_25j4d")
+base_aspect_types = Array[ExtResource("1_aa7ot")]([ExtResource("2_44obr")])
+extra_aspect_type = ExtResource("4_himsh")
+scaling_bonus_type = ExtResource("9_0myya")
+trigger = SubResource("Resource_44obr")
+effect = SubResource("Resource_0ste1")
+spot_attach_mode = 2
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

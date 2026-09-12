@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cpntn0qeo4dq1"]
+
+[ext_resource type="Script" uid="uid://iwo7h58te8bl" path="res://hub/museum/museum_detail_settler_quest.gd" id="1_1okkl"]
+[ext_resource type="LabelSettings" uid="uid://bc3l8vvpbl2k" path="res://theme/fonts/presets/label_settings_header.tres" id="2_d7xfr"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="3_g636q"]
+
+[node name="MuseumDetail_SettlerQuest" type="MarginContainer" unique_id=828365194]
+offset_right = 660.0
+offset_bottom = 1013.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+script = ExtResource("1_1okkl")
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=109705404]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TitleLabel" type="Label" parent="VBox" unique_id=685079238]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Tea Whisk"
+label_settings = ExtResource("2_d7xfr")
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBox" unique_id=860080070]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBox/MarginContainer2" unique_id=370853201]
+layout_mode = 2
+
+[node name="MainText" parent="VBox/MarginContainer2/HBoxContainer" unique_id=1347378636 instance=ExtResource("3_g636q")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+text = "Relic mechanics description."
+fit_content = true
+tooltip_directions = Array[int]([5, 1, 3])

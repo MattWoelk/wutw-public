@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="Quest_Settler" format=3 uid="uid://e8bxl6b851ca"]
+
+[ext_resource type="Script" uid="uid://cjloydxgrv8oa" path="res://quests/settler/settler_quest_challenge.gd" id="1_hnbwf"]
+[ext_resource type="Script" uid="uid://4wq52c05i2oa" path="res://quests/settler/challenges/settler_quest_challenge_run_var.gd" id="2_ixpbf"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="3_4gfkl"]
+[ext_resource type="Resource" uid="uid://bacnbk0nebvks" path="res://characters/jobs/job_bureaucrat.tres" id="4_34uox"]
+[ext_resource type="Script" uid="uid://cd4swbq3t72je" path="res://quests/settler/settler_quest_reward.gd" id="4_mqlt6"]
+[ext_resource type="Script" uid="uid://cvrgydjebg044" path="res://quests/settler/rewards/settler_quest_reward_run_var.gd" id="6_r3g4p"]
+[ext_resource type="Script" uid="uid://1na7ymvvvbby" path="res://quests/settler/quest_settler.gd" id="7_xn0x0"]
+[ext_resource type="Script" uid="uid://bxua8gxfjp2wy" path="res://quests/settler/settler_quest_goal.gd" id="8_m4mjm"]
+[ext_resource type="Script" uid="uid://3xshfa7eyl6i" path="res://quests/settler/goals/settler_quest_goal_num_settlements.gd" id="9_6m413"]
+
+[sub_resource type="Resource" id="Resource_mpdjo"]
+script = ExtResource("2_ixpbf")
+var_type = 16
+delta = -999
+description = "<term:card_ability.divine> <term_lower:card_ability>s do not work."
+metadata/_custom_type_script = "uid://4wq52c05i2oa"
+
+[sub_resource type="Resource" id="Resource_hnbwf"]
+script = ExtResource("6_r3g4p")
+run_var = 20
+delta = 1
+preview_description = "The <term:draw_pile> will appear in draw order."
+outcome_description = "The <term:draw_pile> will now appear in draw order."
+metadata/_custom_type_script = "uid://cvrgydjebg044"
+
+[sub_resource type="Resource" id="Resource_ixpbf"]
+script = ExtResource("9_6m413")
+metadata/_custom_type_script = "uid://3xshfa7eyl6i"
+
+[resource]
+script = ExtResource("7_xn0x0")
+intro_text = "I am developing a revolutionary city planning technique. It will allow us to plan exactly how to order our tasks for maximum efficiency, as long as no one tries to guess. I still need a few more cities to perfect it though."
+challenges = Array[ExtResource("1_hnbwf")]([SubResource("Resource_mpdjo")])
+settler_goals = Array[ExtResource("8_m4mjm")]([SubResource("Resource_ixpbf")])
+rewards = Array[ExtResource("4_mqlt6")]([SubResource("Resource_hnbwf")])
+restrict_to_jobs = Array[ExtResource("3_4gfkl")]([ExtResource("4_34uox")])
+quest_id = "settler_planner"
+category = 2
+name = "A Meticulous Planner"
+metadata/_custom_type_script = "uid://1na7ymvvvbby"

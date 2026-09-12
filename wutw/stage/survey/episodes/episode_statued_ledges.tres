@@ -1,0 +1,120 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://yi4alm31mi62"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_3opy0"]
+[ext_resource type="Resource" uid="uid://brf65sj541phn" path="res://art/pieces/piece_hiroshige_houraiji.tres" id="1_of6db"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_of6db"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_csoou"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="4_edomy"]
+[ext_resource type="Script" uid="uid://cbnw4a13y5x8c" path="res://events/system/outcomes/random/event_outcome_random.gd" id="5_bkcbh"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="6_24tja"]
+[ext_resource type="Resource" uid="uid://d3s0d81ihlcm8" path="res://cards/tier6/card_guilt.tres" id="7_aqbkf"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="8_yivto"]
+[ext_resource type="Script" uid="uid://yxgaymbbt8tk" path="res://events/system/outcomes/override_next_step/event_outcome_override_next_step.gd" id="9_7meq2"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="10_3oybk"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="11_3hi7t"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="12_bs2el"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="13_gvhnv"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="14_c7qku"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="15_73mm5"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="16_y2xe3"]
+[ext_resource type="Resource" uid="uid://bom6dwl3t2obc" path="res://stage/spots/cliff/spot_cliff.tres" id="17_7xxwg"]
+[ext_resource type="Resource" uid="uid://d1c7ny2xs7pwo" path="res://stage/spots/canyon/spot_canyon.tres" id="18_4qy4t"]
+
+[sub_resource type="Resource" id="Resource_cm5im"]
+script = ExtResource("1_3opy0")
+_texture_path = "uid://dlh4ptibgl6tl"
+_is_horizontal = true
+
+[sub_resource type="Resource" id="Resource_efmcj"]
+script = ExtResource("8_yivto")
+card_type = ExtResource("7_aqbkf")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_h64kb"]
+script = ExtResource("9_7meq2")
+result_text = "The scouts scramble up the cliff, the ledges acting as convenient hand-holds.
+
+Luckily, they make it to the top without disturbing any of the statues."
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_qrug4"]
+script = ExtResource("5_bkcbh")
+suboutcomes = Dictionary[ExtResource("6_24tja"), float]({
+SubResource("Resource_efmcj"): 0.5,
+SubResource("Resource_h64kb"): 0.5
+})
+description = "Chance of <term:card.guilt>"
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_jh1ib"]
+script = ExtResource("2_of6db")
+label = "Scramble up together."
+aspects = Array[ExtResource("3_csoou")]([ExtResource("4_edomy")])
+aspects_per_season = Array[ExtResource("3_csoou")]([null])
+outcome = SubResource("Resource_qrug4")
+outcome_text = "The scouts scramble up the cliff, the ledges acting as convenient hand-holds.
+
+Before they are halfway up, one of them knocks a statue off its ledge and watches as it shatters at the bottom.
+
+He is now wracked with guilt for not listening to his teammate."
+
+[sub_resource type="Resource" id="Resource_x008f"]
+script = ExtResource("12_bs2el")
+bonus_type = ExtResource("11_3hi7t")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_xxtvd"]
+script = ExtResource("2_of6db")
+label = "Send a scout to secure a rope."
+aspects = Array[ExtResource("3_csoou")]([ExtResource("10_3oybk")])
+aspects_per_season = Array[ExtResource("3_csoou")]([null])
+outcome = SubResource("Resource_x008f")
+outcome_text = "To minimize the chance of damaging the statues, the team sends only one person up, equipped with a long rope.
+
+Once at the top, she ties the rope to a boulder and dangles it down, letting the rest of the team climb up safely."
+
+[sub_resource type="Resource" id="Resource_xxqqx"]
+script = ExtResource("12_bs2el")
+bonus_type = ExtResource("13_gvhnv")
+amount = -20
+extra_per_season = -20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_mr1a0"]
+script = ExtResource("2_of6db")
+label = "Split the party."
+aspects = Array[ExtResource("3_csoou")]([null])
+aspects_per_season = Array[ExtResource("3_csoou")]([null])
+outcome = SubResource("Resource_xxqqx")
+outcome_text = "The majority refuses to budge, and suggests that the objector make his own way.
+
+He catches up days later. He is safe, but trust among the group has been seriously eroded."
+
+[sub_resource type="Resource" id="Resource_fj4q1"]
+script = ExtResource("12_bs2el")
+bonus_type = ExtResource("14_c7qku")
+amount = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_nvjth"]
+script = ExtResource("2_of6db")
+label = "Find another route."
+aspects = Array[ExtResource("3_csoou")]([null])
+aspects_per_season = Array[ExtResource("3_csoou")]([null])
+outcome = SubResource("Resource_fj4q1")
+outcome_text = "The team spends days finding a path that bypasses the cliff, dipping dangerously low into their supplies."
+
+[resource]
+script = ExtResource("15_73mm5")
+episode_id = "statued_ledges"
+title = "The Statued Ledges"
+biome_types = Array[int]([7])
+spot_types = Array[ExtResource("16_y2xe3")]([ExtResource("17_7xxwg"), ExtResource("18_4qy4t")])
+text = "The team comes up to a jagged cliff. On its ledges are dozens of little statues, their features worn smooth by time.
+
+Most of the scouts agree that this part of the cliff face is by far the easiest to climb, but one objects, afraid to disturb the spirits that surely inhabit these statues."
+background_image = SubResource("Resource_cm5im")
+background_credit = ExtResource("1_of6db")
+choices = Array[ExtResource("2_of6db")]([SubResource("Resource_jh1ib"), SubResource("Resource_xxtvd"), SubResource("Resource_mr1a0"), SubResource("Resource_nvjth")])

@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="ShardType_AccordMonument" format=3 uid="uid://dahietrrjtscg"]
+
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="1_5qfy4"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="2_3f4fo"]
+[ext_resource type="Texture2D" uid="uid://460ykrytxh0g" path="res://shard_types/mq_accord_monument/shard_type_mq_accord_monument.png" id="3_voxa5"]
+[ext_resource type="Resource" uid="uid://dooghvxrt5uxx" path="res://art/pieces/piece_gekkou_rainbow.tres" id="4_e5lis"]
+[ext_resource type="Script" uid="uid://cqtoikwrsqvcx" path="res://shard_types/mq_accord_monument/shard_type_mq_accord_monument.gd" id="5_8g7sq"]
+[ext_resource type="Resource" uid="uid://casklniikj6d8" path="res://skills/inspiration/skill_inspiration_max_6.tres" id="6_e5lis"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="7_8g7sq"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="8_ixgr8"]
+
+[sub_resource type="Resource" id="Resource_5crxa"]
+script = ExtResource("1_5qfy4")
+text = "Soon after the Accord Monument was established, it became the favorite destination for pilgrims from across the Cloud Sea. People would come to pay their respects to the divine wisdom inscribed here, and consult the priests on ways to connect with the Enlightened One on their own shards. Many visitors brought fragments of divinity with them: sacred plants revered in their culture for their curative effects, or animals that seemed to act with more insight than common beasts."
+time_taken = 0
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_tqtco"]
+script = ExtResource("1_5qfy4")
+text = "During the long centuries, as people lost faith in the promised salvation, the number of pilgrims dwindled, and so did the number of priests. Still, those that did remain took their duties seriously. They followed the vows set down in the Accord, caring for the surrounding environment and preserving ancient wisdom. The temple garden is still filled with the sacred plants collected through the ages, and the archives bear records of all the petitions the pilgrims have brought before the priests in centuries past."
+min_main_quest = 400
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_hirge"]
+script = ExtResource("1_5qfy4")
+text = "As the new age dawned, the role of the Accord Monument has evolved. The priests now serve as scholars of environmentalism. Farmers from other shards come here to learn how to best care for their crops, and engineers hold conferences on techniques to prevent soil erosion. The archives have since been analyzed through a different lens, mapping out a history of challenges that various shards have faced in the past. The sacred plants planted and replanted over centuries have also proven useful, as the monument now has a great underground vault filled with seeds from all across the Cloud Sea, in case any of them go extinct in the future."
+min_main_quest = 500
+time_taken = 2
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_gnb5i"]
+script = ExtResource("7_8g7sq")
+text = "This wasn't my first trip to the Accord Monument. I went with my parents once when I was a child. The place is much like how I remembered it, full of scholars and off-shard researchers.
+
+During my visit they were hosting an exhibit on soil types. The old reliquary hall was filled with various core samples and plates of dirt and clay of various colors. There was even an interactive station where you could pour water into glass tubs full of different soils and see how quickly it would start dripping from the holes in the base. None of it was particularly useful to me, but I couldn't help but be inspired by how much work and study has gone into making the food we eat every day."
+revealed_skill = ExtResource("6_e5lis")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[resource]
+script = ExtResource("5_8g7sq")
+shard_type_id = "mq_accord_monument"
+name = "The Accord Monument"
+shard_name_override = "Chikai no Iwa"
+shard_name_override_jp = "誓岩"
+shard_name_override_meaning = "Oath Rock"
+tier = 3
+illustration = ExtResource("3_voxa5")
+illustration_credit = ExtResource("4_e5lis")
+history = Array[ExtResource("1_5qfy4")]([SubResource("Resource_5crxa"), SubResource("Resource_tqtco"), SubResource("Resource_hirge")])
+trip_reward = SubResource("Resource_gnb5i")
+min_main_quest_progress = 340
+metadata/_custom_type_script = "uid://cqtoikwrsqvcx"

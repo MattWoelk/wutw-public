@@ -1,0 +1,289 @@
+[gd_resource type="Resource" script_class="CardType" format=3 uid="uid://ctp8hrsr6fbfx"]
+
+[ext_resource type="Script" uid="uid://b56kytec5oqcb" path="res://cards/abilities/card_ability.gd" id="1_e3o2o"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="2_c03mf"]
+[ext_resource type="Script" uid="uid://7y26eumsxbnb" path="res://cards/abilities/card_ability_support.gd" id="3_xlk4q"]
+[ext_resource type="Script" uid="uid://d233js52jh550" path="res://cards/abilities/card_ability_imitate.gd" id="4_j23bv"]
+[ext_resource type="Script" uid="uid://xc73x4t7ckxm" path="res://japanese/example_sentence.gd" id="5_matra"]
+[ext_resource type="Script" uid="uid://bl2eelwkj800o" path="res://japanese/japanese_token.gd" id="6_5ia5f"]
+[ext_resource type="Script" uid="uid://b6rw4ldrj6wch" path="res://japanese/vocab.gd" id="7_o03sh"]
+[ext_resource type="Script" uid="uid://du4k150pcdjs6" path="res://japanese/kanji_shape.gd" id="8_06hlk"]
+[ext_resource type="Script" uid="uid://dc15txdqjanlf" path="res://japanese/stroke_shape.gd" id="9_oho4a"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="10_gou6p"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="11_jty37"]
+[ext_resource type="Resource" uid="uid://d1k7vakhjcq5g" path="res://glossary/categories/termcategory_card.tres" id="12_sm13m"]
+
+[sub_resource type="Resource" id="Resource_ri80b"]
+script = ExtResource("3_xlk4q")
+bonus_type = ExtResource("2_c03mf")
+metadata/_custom_type_script = "uid://7y26eumsxbnb"
+
+[sub_resource type="Resource" id="Resource_0687k"]
+script = ExtResource("4_j23bv")
+metadata/_custom_type_script = "uid://d233js52jh550"
+
+[sub_resource type="Resource" id="Resource_6ukcu"]
+script = ExtResource("6_5ia5f")
+raw_text = "すぐ"
+reading = "すぐ"
+
+[sub_resource type="Resource" id="Resource_syyvf"]
+script = ExtResource("7_o03sh")
+japanese = "印刷"
+readings = Array[String](["いんさつ"])
+meanings = Array[String](["printing"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_lwdhf"]
+script = ExtResource("6_5ia5f")
+raw_text = "印刷"
+vocab = SubResource("Resource_syyvf")
+reading = "いんさつ"
+
+[sub_resource type="Resource" id="Resource_65uxh"]
+script = ExtResource("6_5ia5f")
+raw_text = "し"
+reading = "し"
+
+[sub_resource type="Resource" id="Resource_w8dpn"]
+script = ExtResource("6_5ia5f")
+raw_text = "ます"
+reading = "ます"
+
+[sub_resource type="Resource" id="Resource_ht77i"]
+script = ExtResource("6_5ia5f")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_xbmay"]
+script = ExtResource("5_matra")
+japanese = "すぐ印刷します。"
+native = "I'll print it quickly."
+parsed = Array[ExtResource("6_5ia5f")]([SubResource("Resource_6ukcu"), SubResource("Resource_lwdhf"), SubResource("Resource_65uxh"), SubResource("Resource_w8dpn"), SubResource("Resource_ht77i")])
+_difficulty = 306
+
+[sub_resource type="Resource" id="Resource_0v5im"]
+script = ExtResource("7_o03sh")
+japanese = "縮刷"
+readings = Array[String](["しゅくさつ"])
+meanings = Array[String](["reduced-size printing", "printing in a compact format"])
+
+[sub_resource type="Resource" id="Resource_m4lnq"]
+script = ExtResource("6_5ia5f")
+raw_text = "縮刷"
+vocab = SubResource("Resource_0v5im")
+reading = "しゅくさつ"
+
+[sub_resource type="Resource" id="Resource_v5wkt"]
+script = ExtResource("7_o03sh")
+japanese = "版"
+readings = Array[String](["はん", "ばん"])
+meanings = Array[String](["edition", "version", "printing", "impression", "implementation (of software)", "plate", "block", "cast", "counter for editions of a publication"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_xiioc"]
+script = ExtResource("6_5ia5f")
+raw_text = "版"
+vocab = SubResource("Resource_v5wkt")
+reading = "ばん"
+
+[sub_resource type="Resource" id="Resource_pfbkn"]
+script = ExtResource("6_5ia5f")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_1yth6"]
+script = ExtResource("7_o03sh")
+japanese = "安価"
+readings = Array[String](["あんか"])
+meanings = Array[String](["low-priced", "cheap", "inexpensive", "shallow (e.g. sympathy)", "superficial", "cheap (e.g. government)", "link back to discussion group, bulletin board, etc. posting"])
+
+[sub_resource type="Resource" id="Resource_nf6ev"]
+script = ExtResource("6_5ia5f")
+raw_text = "安価"
+vocab = SubResource("Resource_1yth6")
+reading = "あんか"
+
+[sub_resource type="Resource" id="Resource_65yj8"]
+script = ExtResource("6_5ia5f")
+raw_text = "だ"
+reading = "だ"
+
+[sub_resource type="Resource" id="Resource_erykv"]
+script = ExtResource("6_5ia5f")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_7xot2"]
+script = ExtResource("5_matra")
+japanese = "縮刷版は安価だ。"
+native = "The compact edition costs less."
+parsed = Array[ExtResource("6_5ia5f")]([SubResource("Resource_m4lnq"), SubResource("Resource_xiioc"), SubResource("Resource_pfbkn"), SubResource("Resource_nf6ev"), SubResource("Resource_65yj8"), SubResource("Resource_erykv")])
+_difficulty = 478
+
+[sub_resource type="Resource" id="Resource_om3tq"]
+script = ExtResource("7_o03sh")
+japanese = "白黒"
+readings = Array[String](["しろくろ"])
+meanings = Array[String](["black and white", "monochrome", "good and evil", "right and wrong", "guilt and innocence"])
+
+[sub_resource type="Resource" id="Resource_hsj7a"]
+script = ExtResource("6_5ia5f")
+raw_text = "白黒"
+vocab = SubResource("Resource_om3tq")
+reading = "しろくろ"
+
+[sub_resource type="Resource" id="Resource_ge4km"]
+script = ExtResource("6_5ia5f")
+raw_text = "印刷"
+vocab = SubResource("Resource_syyvf")
+reading = "いんさつ"
+
+[sub_resource type="Resource" id="Resource_odoqs"]
+script = ExtResource("6_5ia5f")
+raw_text = "より"
+reading = "より"
+
+[sub_resource type="Resource" id="Resource_vtgox"]
+script = ExtResource("7_o03sh")
+japanese = "色"
+readings = Array[String](["いろ"])
+meanings = Array[String](["colour", "color", "hue", "tint", "tinge", "shade", "complexion", "skin colour", "skin color", "look (on one's face)", "expression", "appearance", "air", "feeling", "personality", "character", "tone (of one's voice, etc.)", "tune", "sound", "ring", "love", "lust", "sensuality", "love affair", "lover", "paramour", "beauty", "sexiness", "physical appeal", "kind", "type", "variety"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_4vddj"]
+script = ExtResource("6_5ia5f")
+raw_text = "色"
+vocab = SubResource("Resource_vtgox")
+reading = "いろ"
+
+[sub_resource type="Resource" id="Resource_er2en"]
+script = ExtResource("6_5ia5f")
+raw_text = "刷り"
+reading = "ずり"
+
+[sub_resource type="Resource" id="Resource_ky1q5"]
+script = ExtResource("6_5ia5f")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_dt6nb"]
+script = ExtResource("6_5ia5f")
+raw_text = "ほう"
+reading = "ほう"
+
+[sub_resource type="Resource" id="Resource_005ne"]
+script = ExtResource("6_5ia5f")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_og2qr"]
+script = ExtResource("7_o03sh")
+japanese = "高い"
+readings = Array[String](["たかい", "たかーい", "たっけー", "たっかーい"])
+meanings = Array[String](["high", "tall", "expensive", "high-priced", "high (level)", "above average (in degree, quality, etc.)", "loud", "high-pitched", "shrill"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_ukpus"]
+script = ExtResource("6_5ia5f")
+raw_text = "高い"
+vocab = SubResource("Resource_og2qr")
+reading = "たかい"
+
+[sub_resource type="Resource" id="Resource_5h2e8"]
+script = ExtResource("6_5ia5f")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_aglss"]
+script = ExtResource("5_matra")
+japanese = "白黒印刷より色刷りのほうが高い。"
+native = "A black and white print is cheaper than a color print."
+parsed = Array[ExtResource("6_5ia5f")]([SubResource("Resource_hsj7a"), SubResource("Resource_ge4km"), SubResource("Resource_odoqs"), SubResource("Resource_4vddj"), SubResource("Resource_er2en"), SubResource("Resource_ky1q5"), SubResource("Resource_dt6nb"), SubResource("Resource_005ne"), SubResource("Resource_ukpus"), SubResource("Resource_5h2e8")])
+_difficulty = 503
+
+[sub_resource type="Resource" id="Resource_vxqab"]
+script = ExtResource("9_oho4a")
+points = Array[Vector2]([Vector2(19.52, 18.18), Vector2(24.77, 18.89), Vector2(30.23, 18.3), Vector2(36.36, 17.5), Vector2(42.48, 16.64), Vector2(47.87, 15.86), Vector2(52.25, 15.45), Vector2(53.85, 19.83), Vector2(53.03, 24.29), Vector2(51.88, 31.08)])
+
+[sub_resource type="Resource" id="Resource_0iokq"]
+script = ExtResource("9_oho4a")
+points = Array[Vector2]([Vector2(23.75, 35.3), Vector2(26.49, 35.03), Vector2(31.26, 34.51), Vector2(37.18, 33.84), Vector2(43.33, 33.14), Vector2(48.84, 32.53), Vector2(53.83, 32.03)])
+
+[sub_resource type="Resource" id="Resource_vx5m2"]
+script = ExtResource("9_oho4a")
+points = Array[Vector2]([Vector2(22.53, 19.28), Vector2(23.61, 25.15), Vector2(23.2, 32.01), Vector2(22.65, 38.35), Vector2(21.93, 44.22), Vector2(21.02, 49.66), Vector2(19.9, 54.71), Vector2(18.56, 59.42), Vector2(16.97, 63.84), Vector2(15.11, 68), Vector2(12.96, 71.96), Vector2(10.5, 75.76)])
+
+[sub_resource type="Resource" id="Resource_nsylw"]
+script = ExtResource("9_oho4a")
+points = Array[Vector2]([Vector2(23.81, 52.78), Vector2(25.35, 58.72), Vector2(25.69, 65.21), Vector2(25.97, 70.18), Vector2(26.21, 74.16), Vector2(26.43, 77.68), Vector2(26.76, 82.75)])
+
+[sub_resource type="Resource" id="Resource_l1hi6"]
+script = ExtResource("9_oho4a")
+points = Array[Vector2]([Vector2(26.02, 54.28), Vector2(30.16, 53.59), Vector2(35.86, 52.72), Vector2(42.17, 51.85), Vector2(48.13, 51.13), Vector2(52.8, 50.73), Vector2(56.01, 53.95), Vector2(55.98, 58.72), Vector2(55.84, 64.32), Vector2(55.57, 70.19), Vector2(55.14, 75.79), Vector2(53.75, 81.13), Vector2(50.14, 78.15)])
+
+[sub_resource type="Resource" id="Resource_s4dwa"]
+script = ExtResource("9_oho4a")
+points = Array[Vector2]([Vector2(38.8, 39.13), Vector2(40.15, 43.33), Vector2(40.15, 46.23), Vector2(40.14, 50.4), Vector2(40.13, 55.54), Vector2(40.12, 61.34), Vector2(40.11, 67.49), Vector2(40.09, 73.68), Vector2(40.08, 79.61), Vector2(40.06, 84.95), Vector2(40.05, 90.01), Vector2(40.02, 94.64)])
+
+[sub_resource type="Resource" id="Resource_dbqel"]
+script = ExtResource("9_oho4a")
+points = Array[Vector2]([Vector2(71.27, 26.33), Vector2(73.03, 31.41), Vector2(73.03, 37.88), Vector2(73.03, 44.06), Vector2(73.02, 49.8), Vector2(73.02, 54.94), Vector2(73.01, 59.33), Vector2(73.01, 64.5)])
+
+[sub_resource type="Resource" id="Resource_fk1oc"]
+script = ExtResource("9_oho4a")
+points = Array[Vector2]([Vector2(91.27, 12.83), Vector2(93.03, 17.61), Vector2(93.03, 21.72), Vector2(93.03, 26.64), Vector2(93.03, 32.3), Vector2(93.03, 38.51), Vector2(93.03, 45.1), Vector2(93.03, 51.88), Vector2(93.02, 58.67), Vector2(93.02, 65.29), Vector2(93.02, 71.55), Vector2(93.02, 77.26), Vector2(93.02, 82.25), Vector2(93.02, 86.33), Vector2(93.02, 89.33), Vector2(93.01, 91.72), Vector2(91.28, 96.61), Vector2(87.61, 94.66), Vector2(83.56, 90.72)])
+
+[sub_resource type="Resource" id="Resource_tn2nl"]
+script = ExtResource("8_06hlk")
+stroke_shapes = Array[ExtResource("9_oho4a")]([SubResource("Resource_vxqab"), SubResource("Resource_0iokq"), SubResource("Resource_vx5m2"), SubResource("Resource_nsylw"), SubResource("Resource_l1hi6"), SubResource("Resource_s4dwa"), SubResource("Resource_dbqel"), SubResource("Resource_fk1oc")])
+
+[sub_resource type="Resource" id="Resource_5utwi"]
+script = ExtResource("7_o03sh")
+japanese = "印刷"
+readings = Array[String](["いんさつ"])
+meanings = Array[String](["printing"])
+jlpt_level = 3
+_difficulty = 62
+
+[sub_resource type="Resource" id="Resource_47qum"]
+script = ExtResource("7_o03sh")
+japanese = "刷る"
+readings = Array[String](["する"])
+meanings = Array[String](["to print", "to color or pattern fabric using a wooden mold"])
+jlpt_level = 3
+_difficulty = 62
+
+[sub_resource type="Resource" id="Resource_ro6ol"]
+script = ExtResource("7_o03sh")
+japanese = "刷新"
+readings = Array[String](["さっしん"])
+meanings = Array[String](["reform", "renovation"])
+_difficulty = 791
+
+[sub_resource type="Resource" id="Resource_uhhap"]
+script = ExtResource("7_o03sh")
+japanese = "凸版印刷"
+readings = Array[String](["とっぱんいんさつ"])
+meanings = Array[String](["letterpress", "relief printing"])
+_difficulty = 946
+
+[sub_resource type="Resource" id="Resource_b4omc"]
+script = ExtResource("7_o03sh")
+japanese = "増刷"
+readings = Array[String](["ぞうさつ"])
+meanings = Array[String](["additional printing", "additional print run", "reprint"])
+_difficulty = 949
+
+[resource]
+script = ExtResource("10_gou6p")
+symbol = "刷"
+card_name = "Print"
+rarity = 3
+abilities = Array[ExtResource("1_e3o2o")]([SubResource("Resource_ri80b"), SubResource("Resource_0687k")])
+tags = Array[int]([1, 9, 13, 15])
+vocabulary = Array[ExtResource("7_o03sh")]([SubResource("Resource_5utwi"), SubResource("Resource_47qum"), SubResource("Resource_ro6ol"), SubResource("Resource_uhhap"), SubResource("Resource_b4omc")])
+example_sentences = Array[ExtResource("5_matra")]([SubResource("Resource_xbmay"), SubResource("Resource_7xot2"), SubResource("Resource_aglss")])
+kanji_shape = SubResource("Resource_tn2nl")
+init_aspects = 56
+term_categories = Array[ExtResource("11_jty37")]([ExtResource("12_sm13m")])

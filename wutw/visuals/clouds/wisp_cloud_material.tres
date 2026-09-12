@@ -1,0 +1,56 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://ceeglhq51d2if"]
+
+[ext_resource type="Shader" uid="uid://cv23iurmc0m8l" path="res://visuals/clouds/wisp_cloud.gdshader" id="1_gapxa"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wd4hr"]
+noise_type = 5
+frequency = 0.0657
+offset = Vector3(90.09, 408.41, 0)
+domain_warp_enabled = true
+domain_warp_amplitude = 25.0
+domain_warp_frequency = 0.06
+domain_warp_fractal_octaves = 2
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_gapxa"]
+width = 256
+height = 256
+depth = 16
+noise = SubResource("FastNoiseLite_wd4hr")
+seamless = true
+seamless_blend_skirt = 0.5
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_20w2m"]
+noise_type = 4
+frequency = 0.0414
+offset = Vector3(414.41, 408.41, 0)
+domain_warp_enabled = true
+domain_warp_amplitude = 29.035
+domain_warp_frequency = 0.06
+domain_warp_fractal_octaves = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nf33p"]
+noise = SubResource("FastNoiseLite_20w2m")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_583h8"]
+noise_type = 4
+frequency = 0.0414
+offset = Vector3(240.24, 0, 0)
+domain_warp_enabled = true
+domain_warp_amplitude = 29.035
+domain_warp_frequency = 0.06
+domain_warp_fractal_octaves = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_y0ps4"]
+noise = SubResource("FastNoiseLite_583h8")
+invert = true
+
+[resource]
+shader = ExtResource("1_gapxa")
+shader_parameter/water_noise = SubResource("NoiseTexture2D_nf33p")
+shader_parameter/water_noise2 = SubResource("NoiseTexture2D_y0ps4")
+shader_parameter/water_noise_uv_scale = Vector2(1, 1)
+shader_parameter/anim_speed = 2.0
+shader_parameter/macro_water_noise = SubResource("NoiseTexture3D_gapxa")
+shader_parameter/macro_anim_speed = 0.3
+shader_parameter/alpha_multiplier = 2.0
+shader_parameter/distance_cutoff = Vector2(0, 120)

@@ -1,0 +1,34 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bu0kvnoxck15w"]
+
+[ext_resource type="Shader" uid="uid://ygmrqrvg5hpm" path="res://theme/button/ukiyoe_button.gdshader" id="1_y5r0t"]
+[ext_resource type="Texture2D" uid="uid://ctgl61r3xxsqv" path="res://theme/button/button_fill.png" id="2_vbwps"]
+[ext_resource type="Texture2D" uid="uid://blje81yu8734p" path="res://theme/button/button_shape.png" id="3_t7qnh"]
+[ext_resource type="Texture2D" uid="uid://doe4603a6ngco" path="res://theme/button/button_outline.png" id="4_yfdnc"]
+[ext_resource type="Texture2D" uid="uid://cwubixgc8n0yr" path="res://theme/button/button_swish_left.png" id="5_84kal"]
+[ext_resource type="Texture2D" uid="uid://n6l17h4ysayj" path="res://theme/button/button_swish_right.png" id="6_amf0b"]
+
+[sub_resource type="Gradient" id="Gradient_ci11e"]
+colors = PackedColorArray(0.14381546, 0.29570168, 9.62615e-08, 0.6039216, 0.04953625, 0.4932313, 9.62615e-08, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_f63px"]
+gradient = SubResource("Gradient_ci11e")
+fill_from = Vector2(0.48326054, 1)
+fill_to = Vector2(0.48908296, 0.45123726)
+
+[resource]
+shader = ExtResource("1_y5r0t")
+shader_parameter/mask_tex = ExtResource("3_t7qnh")
+shader_parameter/background = ExtResource("2_vbwps")
+shader_parameter/gradient = SubResource("GradientTexture2D_f63px")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("4_yfdnc")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("6_amf0b")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("5_84kal")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0

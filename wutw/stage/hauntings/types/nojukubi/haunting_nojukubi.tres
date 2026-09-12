@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://cddpvrm68ow8"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_qadr8"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="2_5nea1"]
+[ext_resource type="Script" uid="uid://c6grs6vlx8uwh" path="res://stage/hauntings/effects/haunting_effect_lock_spot.gd" id="3_3r5cu"]
+[ext_resource type="Resource" uid="uid://bnmrjbja8grr2" path="res://art/pieces/piece_composed_nojukubi.tres" id="4_8wmwd"]
+[ext_resource type="Texture2D" uid="uid://cyn2wr0mo4n46" path="res://stage/hauntings/types/nojukubi/haunting_nojukubi.png" id="5_0j0cl"]
+[ext_resource type="Resource" uid="uid://dsey6fpoen3dc" path="res://art/pieces/piece_yoshitoshi_guns.tres" id="5_3r5cu"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="6_1hk06"]
+[ext_resource type="Texture2D" uid="uid://qqx0eaw4vi1m" path="res://stage/hauntings/types/nojukubi/haunting_nojukubi_realistic_wildfire.png" id="7_8wmwd"]
+[ext_resource type="Resource" uid="uid://f8guout8235a" path="res://stage/spots/plains/spot_plains.tres" id="7_ut6lj"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="8_8wmwd"]
+[ext_resource type="Script" uid="uid://snb1oejxu24y" path="res://stage/hauntings/triggers/haunting_trigger_start.gd" id="8_ybjd2"]
+
+[sub_resource type="Resource" id="Resource_afel3"]
+script = ExtResource("3_3r5cu")
+metadata/_custom_type_script = "uid://c6grs6vlx8uwh"
+
+[sub_resource type="Resource" id="Resource_7ok57"]
+script = ExtResource("8_ybjd2")
+metadata/_custom_type_script = "uid://snb1oejxu24y"
+
+[resource]
+script = ExtResource("6_1hk06")
+haunting_id = "nojukubi"
+name = "Nojukubi"
+name_japanese = "野宿火"
+name_realistic = "Wildfires"
+name_translation = "Wild Living Fires"
+description = "These plains are haunted by Nojukubi, fiery spirits of ancient inhabitants."
+description_realistic = "Wildfires are ravaging these plains."
+description_long = "In the stillness of lands long abandoned, faint streaks of fire begin to wander the grass, reliving the warmth of the people who once lived there. Settlers say these flickering embers murmur snatches of poetry and laughter, the voices of past gatherings echoing through the air.
+
+Legends call them Nojukubi, fires born of memory, igniting even damp ground in flames. They need no fuel, feeding on the restless traces of joy left behind."
+image_small = ExtResource("5_0j0cl")
+image_credit = ExtResource("4_8wmwd")
+image_small_realistic = ExtResource("7_8wmwd")
+image_realistic_credit = ExtResource("5_3r5cu")
+spot_type = ExtResource("7_ut6lj")
+base_aspect_types = Array[ExtResource("1_qadr8")]([ExtResource("2_5nea1")])
+extra_aspect_type = ExtResource("2_5nea1")
+scaling_bonus_type = ExtResource("8_8wmwd")
+trigger = SubResource("Resource_7ok57")
+effect = SubResource("Resource_afel3")
+mechanics_description_override = "Prevents any <term_lower:spot_upgrade> in this <term_lower:spot> from being activated."
+spot_attach_mode = 2
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

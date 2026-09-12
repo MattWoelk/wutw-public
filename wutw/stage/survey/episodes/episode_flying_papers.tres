@@ -1,0 +1,99 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://dtrydoewkytyv"]
+
+[ext_resource type="Resource" uid="uid://b4wa0iu6dmcx4" path="res://art/pieces/piece_hokusai_ejiri.tres" id="1_dhstj"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_rkw4o"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_dhstj"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_8keyg"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="4_drfrk"]
+[ext_resource type="Resource" uid="uid://cfhxsukalslbu" path="res://cards/tier6/card_pierce.tres" id="5_jkc1t"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="6_38buv"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="7_domf0"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="8_6xb4w"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="9_7100y"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="10_kexhg"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="11_3id1o"]
+[ext_resource type="Script" uid="uid://foju0o4i75rv" path="res://events/system/outcomes/choose_remove_card/event_outcome_choose_remove_card.gd" id="12_bufuf"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="13_qjhec"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="14_hs00h"]
+
+[sub_resource type="Resource" id="Resource_b8t53"]
+script = ExtResource("1_rkw4o")
+_texture_path = "res://stage/survey/episodes/episode_flying_papers.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_ex82j"]
+script = ExtResource("6_38buv")
+card_type = ExtResource("5_jkc1t")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_rq5d3"]
+script = ExtResource("2_dhstj")
+label = "Chase the papers."
+aspects = Array[ExtResource("3_8keyg")]([ExtResource("4_drfrk")])
+aspects_per_season = Array[ExtResource("3_8keyg")]([null])
+outcome = SubResource("Resource_ex82j")
+outcome_text = "The scouts drop their packs and break into a run, dodging trees and vaulting over ditches, their eyes never leaving the flying sheets.
+
+They would surely have recovered their collection, if it weren't for the nest of hornets they dislodged in their wake."
+
+[sub_resource type="Resource" id="Resource_m0wug"]
+script = ExtResource("9_7100y")
+bonus_type = ExtResource("8_6xb4w")
+amount = 15
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_7kagh"]
+script = ExtResource("2_dhstj")
+label = "Follow the wind."
+aspects = Array[ExtResource("3_8keyg")]([ExtResource("7_domf0")])
+aspects_per_season = Array[ExtResource("3_8keyg")]([null])
+outcome = SubResource("Resource_m0wug")
+outcome_text = "The group decides not to chase each paper individually, but to follow the direction the wind is blowing.
+
+Their restraint is rewarded when they reach a line of bushes whose branches have gathered most of the papers."
+
+[sub_resource type="Resource" id="Resource_i2640"]
+script = ExtResource("9_7100y")
+bonus_type = ExtResource("11_3id1o")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_wl03k"]
+script = ExtResource("2_dhstj")
+label = "Follow the hat."
+aspects = Array[ExtResource("3_8keyg")]([ExtResource("10_kexhg")])
+aspects_per_season = Array[ExtResource("3_8keyg")]([null])
+outcome = SubResource("Resource_i2640")
+outcome_text = "The surveyors give up on the papers, but chase the straw hat as it vanishes over a hill.
+
+The hat leads them to a sheltered hollow, the ground completely covered in wildflowers."
+
+[sub_resource type="Resource" id="Resource_q50qq"]
+script = ExtResource("12_bufuf")
+metadata/_custom_type_script = "uid://foju0o4i75rv"
+
+[sub_resource type="Resource" id="Resource_ir2pq"]
+script = ExtResource("2_dhstj")
+label = "Let the papers go."
+aspects = Array[ExtResource("3_8keyg")]([null])
+aspects_per_season = Array[ExtResource("3_8keyg")]([null])
+outcome = SubResource("Resource_q50qq")
+outcome_text = "The surveyors accept that the wind has taken their records.
+
+They will have to let the past go."
+
+[resource]
+script = ExtResource("13_qjhec")
+episode_id = "flying_papers"
+title = "A Thieving Wind"
+biome_types = Array[int]([6, 5, 8])
+text = "A fierce gust of wind sweeps across the field, bending the long grasses wildly.
+
+Suddenly, the survey team's logs and maps fly from the note-keeper's satchel and scatter into the sky.
+
+Loose pages tumble through the air, chasing a scout's lost hat."
+background_image = SubResource("Resource_b8t53")
+background_credit = ExtResource("1_dhstj")
+choices = Array[ExtResource("2_dhstj")]([SubResource("Resource_rq5d3"), SubResource("Resource_7kagh"), SubResource("Resource_wl03k"), SubResource("Resource_ir2pq")])

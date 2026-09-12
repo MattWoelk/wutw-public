@@ -1,0 +1,95 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://cgnpsdvoafjtg"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_28u3f"]
+[ext_resource type="Resource" uid="uid://bppib6bndt2yn" path="res://art/pieces/piece_hiroshige_hara.tres" id="1_mdb36"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_mdb36"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_q0boh"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="4_r27g4"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="5_r0ixb"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="6_nmb2j"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="7_5ra75"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="8_knq5u"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="9_5iin3"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="10_ef3ro"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="11_7coy2"]
+[ext_resource type="Resource" uid="uid://bdr6lka5y51g3" path="res://cards/tier6/card_burdensome.tres" id="12_26o36"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="13_5l7p1"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="14_vda1f"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="15_00uvh"]
+
+[sub_resource type="Resource" id="Resource_nmpc8"]
+script = ExtResource("1_28u3f")
+_texture_path = "res://stage/survey/episodes/episode_burden.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_hh7nf"]
+script = ExtResource("6_nmb2j")
+bonus_type = ExtResource("5_r0ixb")
+amount = -10
+extra_per_season = -20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_cxusv"]
+script = ExtResource("2_mdb36")
+label = "Leave the extra rations."
+aspects = Array[ExtResource("3_q0boh")]([ExtResource("4_r27g4")])
+outcome = SubResource("Resource_hh7nf")
+outcome_text = "The overburdened scout finally submits to the social pressure and leaves behind his box of rice balls and pickled burdock root. Perhaps the wildlife will find it appetizing."
+
+[sub_resource type="Resource" id="Resource_h4y18"]
+script = ExtResource("6_nmb2j")
+bonus_type = ExtResource("7_5ra75")
+amount = -10
+extra_per_season = -15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_fj2ee"]
+script = ExtResource("2_mdb36")
+label = "Leave the first aid supplies."
+aspects = Array[ExtResource("3_q0boh")]([ExtResource("4_r27g4")])
+outcome = SubResource("Resource_h4y18")
+outcome_text = "The overburdened scout finally submits to the social pressure and leaves behind his box of bandages and ointments. He's sure the team will regret it the next time someone is injured."
+
+[sub_resource type="Resource" id="Resource_ov8qh"]
+script = ExtResource("9_5iin3")
+delta = 4
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_7vghb"]
+script = ExtResource("11_7coy2")
+bonus_type = ExtResource("10_ef3ro")
+min_count = 20
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_fr5nf"]
+script = ExtResource("2_mdb36")
+label = "Split the load."
+requirement = SubResource("Resource_7vghb")
+aspects = Array[ExtResource("3_q0boh")]([ExtResource("8_knq5u")])
+outcome = SubResource("Resource_ov8qh")
+outcome_text = "The surveyors decide to repack the load, splitting it evenly among the team. The burden is much lighter when split among many shoulders."
+
+[sub_resource type="Resource" id="Resource_q3epx"]
+script = ExtResource("13_5l7p1")
+card_type = ExtResource("12_26o36")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_tnfir"]
+script = ExtResource("2_mdb36")
+label = "Insist on keeping everything."
+aspects = Array[ExtResource("3_q0boh")]([null])
+outcome = SubResource("Resource_q3epx")
+outcome_text = "The overburdened scout stubbornly insists that he will need every item in both of his boxes, and refuses to budge. The rest of the team heaves heavy sighs and carries on."
+
+[resource]
+script = ExtResource("14_vda1f")
+episode_id = "burden"
+title = "The Heavy Burden"
+biome_types = Array[int]([5, 6])
+text = "One of the surveyors is lagging behind, having filled two large boxes with extra rations and first aid supplies to deal with every possible eventuality.
+
+The rest of the team is growing impatient, demanding that their slow teammate leave some of his load behind."
+background_image = SubResource("Resource_nmpc8")
+background_credit = ExtResource("1_mdb36")
+choices = Array[ExtResource("2_mdb36")]([SubResource("Resource_cxusv"), SubResource("Resource_fj2ee"), SubResource("Resource_fr5nf"), SubResource("Resource_tnfir")])

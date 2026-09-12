@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://dqog7poa8dptf"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_rwoky"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="2_obuyw"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="3_ea8ov"]
+[ext_resource type="Script" uid="uid://777usfqcjmox" path="res://stage/hauntings/effects/haunting_effect_add_card.gd" id="4_7itt6"]
+[ext_resource type="Resource" uid="uid://dmpipbyugg6kw" path="res://cards/tier6/card_mud.tres" id="4_508kr"]
+[ext_resource type="Resource" uid="uid://b5vlymdc8cn5b" path="res://art/pieces/piece_unknown_namazu.tres" id="6_508kr"]
+[ext_resource type="Texture2D" uid="uid://dkjwxsgghq1fa" path="res://stage/hauntings/types/oonamazu/haunting_oonamazu.png" id="6_peyhq"]
+[ext_resource type="Resource" uid="uid://jt2641tqs320" path="res://art/pieces/piece_hokusai_yamabe.tres" id="7_508kr"]
+[ext_resource type="Texture2D" uid="uid://brm4n8iqpkbq0" path="res://stage/hauntings/types/oonamazu/haunting_oonamazu_realistic_floods.png" id="7_fj62k"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="7_qrlfc"]
+[ext_resource type="Resource" uid="uid://bb65d05uw68x1" path="res://stage/spots/lake/spot_lake.tres" id="9_tecdx"]
+[ext_resource type="Script" uid="uid://6xguje0707l2" path="res://stage/hauntings/triggers/haunting_trigger_upgrade_activated.gd" id="10_0jkfs"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="10_peyhq"]
+
+[sub_resource type="Resource" id="Resource_uurmi"]
+script = ExtResource("4_7itt6")
+card_type = ExtResource("4_508kr")
+metadata/_custom_type_script = "uid://777usfqcjmox"
+
+[sub_resource type="Resource" id="Resource_x62ro"]
+script = ExtResource("10_0jkfs")
+any_spot = false
+metadata/_custom_type_script = "uid://6xguje0707l2"
+
+[resource]
+script = ExtResource("7_qrlfc")
+haunting_id = "oonamazu"
+name = "Ōnamazu"
+name_japanese = "大鯰"
+name_realistic = "Floods"
+name_translation = "Giant Catfish"
+description = "Settlers warn of a monstrous catfish sleeping beneath the mud, whose restless thrashing turns the shores into an endless expanse of mud."
+description_realistic = "The lake is subject to flash floods that turn the whole area into a muddy mess."
+description_long = "The clear waters of the lake have turned a thick, churning brown. Settlers who live on the shores claim to feel a deep thumping through the soles of their feet.
+
+This is the work of Ōnamazu, a catfish of impossible size sleeping beneath the waves. When humans grow arrogant and build their homes too close to the water, the beast wakes to remind them of their proper place. Its angry thrashing stirs up the lake, sending its waters out across the plains."
+image_small = ExtResource("6_peyhq")
+image_credit = ExtResource("6_508kr")
+image_small_realistic = ExtResource("7_fj62k")
+image_realistic_credit = ExtResource("7_508kr")
+spot_type = ExtResource("9_tecdx")
+base_aspect_types = Array[ExtResource("1_rwoky")]([ExtResource("3_ea8ov")])
+extra_aspect_type = ExtResource("2_obuyw")
+scaling_bonus_type = ExtResource("10_peyhq")
+trigger = SubResource("Resource_x62ro")
+effect = SubResource("Resource_uurmi")
+spot_attach_mode = 2
+settlement_attach_mode = 2
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

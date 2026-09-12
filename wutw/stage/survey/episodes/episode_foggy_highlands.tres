@@ -1,0 +1,110 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://1rlw78j30myw"]
+
+[ext_resource type="Resource" uid="uid://cb0bxcwh14ojq" path="res://art/pieces/piece_hiroshige_tsumago.tres" id="1_r0p81"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_x24cp"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_r0p81"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_wbt5a"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="4_ew2v8"]
+[ext_resource type="Resource" uid="uid://m6eew5nwdkrk" path="res://cards/tier6/card_entangle.tres" id="5_p72vh"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="6_qf2a5"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="7_punbs"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="8_gldtv"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="9_804xw"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="10_1wn00"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="11_3le0g"]
+[ext_resource type="Resource" uid="uid://dyktfy0ghd0fu" path="res://relics/common/spider_web/relic_spider_web.tres" id="12_j8vlu"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="13_ehgis"]
+[ext_resource type="Resource" uid="uid://dmfsflijcgrtr" path="res://cards/tier6/card_blind.tres" id="14_llkqh"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="15_ncdnm"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="16_r52oc"]
+[ext_resource type="Resource" uid="uid://cfuqwl06ioxwd" path="res://stage/spots/hill/spot_hill.tres" id="17_dspvr"]
+[ext_resource type="Resource" uid="uid://bom6dwl3t2obc" path="res://stage/spots/cliff/spot_cliff.tres" id="18_ikgao"]
+
+[sub_resource type="Resource" id="Resource_hdks5"]
+script = ExtResource("1_x24cp")
+_texture_path = "res://stage/survey/episodes/episode_foggy_highlands.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_d1arc"]
+script = ExtResource("6_qf2a5")
+card_type = ExtResource("5_p72vh")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_6odqe"]
+script = ExtResource("2_r0p81")
+label = "Tie everyone together."
+aspects = Array[ExtResource("3_wbt5a")]([ExtResource("4_ew2v8")])
+aspects_per_season = Array[ExtResource("3_wbt5a")]([null])
+outcome = SubResource("Resource_d1arc")
+outcome_text = "The scouts tie themselves together with a long rope before the fog reaches them. This way, no one can become separated from the group.
+
+The plan goes awry when one of the scouts stumbles off the path and starts sliding down the slope, pulling the rest of the group behind her.
+
+Crisis is averted when her teammates manage to pull her back up, but everyone is left shaken by the mishap.
+"
+
+[sub_resource type="Resource" id="Resource_1a7fo"]
+script = ExtResource("9_804xw")
+bonus_type = ExtResource("8_gldtv")
+amount = 20
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_o2x1j"]
+script = ExtResource("2_r0p81")
+label = "Camp right here."
+aspects = Array[ExtResource("3_wbt5a")]([ExtResource("7_punbs")])
+aspects_per_season = Array[ExtResource("3_wbt5a")]([null])
+outcome = SubResource("Resource_1a7fo")
+outcome_text = "The scouts decide to camp right where they are before the fog catches up to them.
+
+Mist gathers on their eyelashes and on the brims of their hats as they wait.
+
+They are uncomfortable and chilly, but at least they are at no risk of tumbling down the slopes."
+
+[sub_resource type="Resource" id="Resource_x1gg7"]
+script = ExtResource("13_ehgis")
+relic = ExtResource("12_j8vlu")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_sqnib"]
+script = ExtResource("2_r0p81")
+label = "Look for shelter."
+aspects = Array[ExtResource("3_wbt5a")]([ExtResource("10_1wn00"), ExtResource("11_3le0g")])
+aspects_per_season = Array[ExtResource("3_wbt5a")]([null])
+outcome = SubResource("Resource_x1gg7")
+outcome_text = "The scouts scatter, looking for places to shelter. One gasps and points at the ground.
+
+Hundreds of spiderwebs glitter with dewdrops among the grass.
+
+Following the webs leads the scouts to the mouth of a cave, empty but for the skittering of thousands of tiny legs."
+
+[sub_resource type="Resource" id="Resource_s13el"]
+script = ExtResource("6_qf2a5")
+card_type = ExtResource("14_llkqh")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_2l4ft"]
+script = ExtResource("2_r0p81")
+label = "Continue walking."
+aspects = Array[ExtResource("3_wbt5a")]([null])
+aspects_per_season = Array[ExtResource("3_wbt5a")]([null])
+outcome = SubResource("Resource_s13el")
+outcome_text = "The scouts decide to stay on the path.
+
+Soon, the fog becomes so dense that they can only see a few paces ahead, making the path indistinguishable from its surroundings.
+
+When the fog finally lifts, they find themselves right where they started."
+
+[resource]
+script = ExtResource("15_ncdnm")
+episode_id = "foggy_highlands"
+title = "The Foggy Highlands"
+biome_types = Array[int]([7])
+spot_types = Array[ExtResource("16_r52oc")]([ExtResource("17_dspvr"), ExtResource("18_ikgao")])
+text = "The temperature is dropping as the surveyors march through a steep pass across the highlands.
+
+Ahead, a thick cloud of fog has descended over the slopes. Soon, they will find themselves swallowed up by it if they continue on the same path."
+background_image = SubResource("Resource_hdks5")
+background_credit = ExtResource("1_r0p81")
+choices = Array[ExtResource("2_r0p81")]([SubResource("Resource_6odqe"), SubResource("Resource_o2x1j"), SubResource("Resource_sqnib"), SubResource("Resource_2l4ft")])

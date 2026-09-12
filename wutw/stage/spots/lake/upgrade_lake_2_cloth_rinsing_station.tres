@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://bfjhperid285q"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_g3c3f"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_7kx4k"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_7u0ic"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="3_ggv8o"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="4_3y0ig"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="6_hkmkn"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="7_enkfu"]
+[ext_resource type="Resource" uid="uid://bb65d05uw68x1" path="res://stage/spots/lake/spot_lake.tres" id="8_hkmkn"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_enkfu"]
+[ext_resource type="MapSpriteType_Lake" uid="uid://dcopgy017tsji" path="res://map/sprites/water_features/lake/mst_lake_1.tres" id="10_heho3"]
+[ext_resource type="MapSpriteType_Lake" uid="uid://gwbeal8t070v" path="res://map/sprites/water_features/lake/mst_lake_2.tres" id="11_llbjx"]
+[ext_resource type="MapSpriteType_Lake" uid="uid://dhue4qeqrdlxe" path="res://map/sprites/water_features/lake/mst_lake_3.tres" id="12_0kotl"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://dnvive6xepqpi" path="res://map/sprites/spots/lake/mst_lake_retting_station.tres" id="13_yxf37"]
+[ext_resource type="Script" uid="uid://den3krl2s3y0b" path="res://stage/spots/spot_upgrade_visual_attach_to_river.gd" id="14_4h3u7"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://c46nahaq685up" path="res://map/sprites/spots/lake/mst_lake_rinsing_station.tres" id="15_fkoxf"]
+
+[sub_resource type="Resource" id="Resource_m1v1h"]
+script = ExtResource("14_4h3u7")
+sprite_type = ExtResource("15_fkoxf")
+replaced_sprite_type = ExtResource("13_yxf37")
+keep_replaced = true
+ignored_colliders = Array[MapSpriteType]([ExtResource("10_heho3"), ExtResource("11_llbjx"), ExtResource("12_0kotl")])
+metadata/_custom_type_script = "uid://den3krl2s3y0b"
+
+[resource]
+script = ExtResource("1_g3c3f")
+spot_upgrade_id = "lake_rinser"
+name = "Cloth Rinsing Station"
+description = "Dyed fabrics flutter beneath the water, giving the fish something to wonder at."
+required_aspects = Array[ExtResource("3_7u0ic")]([ExtResource("6_hkmkn"), ExtResource("7_enkfu")])
+granted_bonuses = Dictionary[ExtResource("2_7kx4k"), int]({
+ExtResource("3_ggv8o"): 10,
+ExtResource("4_3y0ig"): 10
+})
+spot = ExtResource("8_hkmkn")
+visuals = Array[ExtResource("9_enkfu")]([SubResource("Resource_m1v1h")])
+tags = Array[int]([2])

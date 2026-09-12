@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://ccw0t5bo5puf6"]
+
+[ext_resource type="PackedScene" uid="uid://bl780vhdwft4i" path="res://hub/contents/hub_facility.tscn" id="1_gbuil"]
+[ext_resource type="Script" uid="uid://b2eijxq7ns5fk" path="res://hub/contents/hub_shrine.gd" id="2_1hdm0"]
+[ext_resource type="Texture2D" uid="uid://2dm70o5312tt" path="res://hub/contents/shrine/shrine.png" id="2_2byuu"]
+[ext_resource type="Texture2D" uid="uid://bwde8go1s8fim" path="res://hub/contents/shrine/shrine_label.png" id="3_5c71d"]
+[ext_resource type="FontFile" uid="uid://dwycufv0f21v2" path="res://theme/fonts/Yuji_Mai/YujiMai-Regular.ttf" id="4_p3k70"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="6_wy1jn"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="7_abvr7"]
+[ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="8_g62mj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oraos"]
+font = ExtResource("4_p3k70")
+font_size = 76
+font_color = Color(1, 0.85600007, 0.27999997, 1)
+outline_size = 12
+outline_color = Color(0.23, 0.18016666, 0, 1)
+
+[node name="HubShrine" unique_id=1601844365 instance=ExtResource("1_gbuil")]
+script = ExtResource("2_1hdm0")
+tooltip_text = "[center]<header_font_size>[b]Meditate[/b][/font_size][/center]
+
+Meditate on <term:insight>s to learn new <term:skill>s."
+
+[node name="Panel" parent="." index="0" unique_id=1465047343]
+offset_left = 65.725
+offset_top = -293.963
+offset_right = 325.725
+offset_bottom = 280.037
+scale = Vector2(0.24884, 0.24884)
+
+[node name="Label" parent="Panel" index="1" unique_id=541126649]
+visible = false
+text = "瞑
+庵"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" index="2" unique_id=2108686785]
+layout_mode = 2
+theme_override_constants/margin_left = 37
+theme_override_constants/margin_top = 55
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 70
+
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer" index="0" unique_id=2065391537]
+texture_filter = 6
+layout_mode = 2
+texture = ExtResource("3_5c71d")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CollisionPolygon2D" parent="Area2D" parent_id_path=PackedInt32Array(2019498285) index="0" unique_id=521856771]
+position = Vector2(7, -7)
+polygon = PackedVector2Array(151.436, 14.094, 151.436, -277.773, 40.7029, -430.306, -262.897, -316.639, -160.23, 3.82733, 17.9696, 74.9606)
+
+[node name="Sprite" type="Sprite2D" parent="." index="2" unique_id=1000058860]
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("2_2byuu")
+offset = Vector2(0, -500)
+
+[node name="TooltipAnchor" parent="." index="3" unique_id=278453014]
+offset_left = -116.0
+offset_top = -297.0
+offset_right = 133.0
+offset_bottom = 21.0
+
+[node name="NewSkillsLabel" type="Label" parent="." index="4" unique_id=1420559434]
+unique_name_in_owner = true
+offset_left = -11.871124
+offset_top = -293.99597
+offset_right = 19.128876
+offset_bottom = -182.99597
+text = "!"
+label_settings = SubResource("LabelSettings_oraos")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UkiyoePanelContainer" type="PanelContainer" parent="." index="5" unique_id=1190290030]
+visible = false
+material = ExtResource("6_wy1jn")
+offset_left = -119.59564
+offset_top = 21.114197
+offset_right = 122.40436
+offset_bottom = 63.114197
+theme_override_styles/panel = ExtResource("7_abvr7")
+script = ExtResource("8_g62mj")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"

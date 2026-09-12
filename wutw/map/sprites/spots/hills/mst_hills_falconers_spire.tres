@@ -1,0 +1,30 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://cbkyhr6bencud"]
+
+[ext_resource type="MapSpriteType_Composite" uid="uid://j05bsit15pps" path="res://map/sprites/spots/hills/mst_hills_messenger_tower.tres" id="1_xkbwv"]
+[ext_resource type="PackedScene" uid="uid://dgfostvbmxtaj" path="res://map/sprites/spots/hills/map_effect_birds_falcons.tscn" id="5_o47h1"]
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_xkbwv"]
+p1 = Vector2(12.98, 1.245)
+p2 = Vector2(7.62, -0.52)
+p3 = Vector2(2.295, 0.145)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_o47h1"]
+p1 = Vector2(-5.79, 0.275)
+p2 = Vector2(0, -1.35)
+p3 = Vector2(4.74, 0)
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_ug2t1"]
+sprite_type = ExtResource("1_xkbwv")
+
+[sub_resource type="MapEffectAttachment" id="MapEffectAttachment_i7qoj"]
+scene = ExtResource("5_o47h1")
+offset = Vector2(-1.1804373, -5.4102893)
+scale = 0.03
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_ug2t1")])
+footprint_radius = 2.0
+effects = Array[MapEffectAttachment]([SubResource("MapEffectAttachment_i7qoj")])
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Triangle_xkbwv"), SubResource("MapSpriteCollision_Triangle_o47h1")])

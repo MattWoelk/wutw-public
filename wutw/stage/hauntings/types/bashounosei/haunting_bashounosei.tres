@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://bwglu2fsgcvhl"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_ujxa7"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="2_by3uq"]
+[ext_resource type="Resource" uid="uid://b12vykb5nwvx5" path="res://cards/tier6/card_rot.tres" id="3_4u3yx"]
+[ext_resource type="Script" uid="uid://777usfqcjmox" path="res://stage/hauntings/effects/haunting_effect_add_card.gd" id="4_4e1md"]
+[ext_resource type="Texture2D" uid="uid://d2n0dxb3m0m1y" path="res://stage/hauntings/types/bashounosei/haunting_bashounosei.png" id="5_0lytr"]
+[ext_resource type="Resource" uid="uid://c0rtm44vu4i4s" path="res://art/pieces/piece_tsukumogami_drum.tres" id="5_by3uq"]
+[ext_resource type="Resource" uid="uid://n3tftq8pnh0j" path="res://art/pieces/piece_hiroshige_yase.tres" id="6_4u3yx"]
+[ext_resource type="Texture2D" uid="uid://puf7xajkvbem" path="res://stage/hauntings/types/bashounosei/haunting_bashounosei_realistic_blight.png" id="6_6d1im"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="7_c56fu"]
+[ext_resource type="Resource" uid="uid://cfuqwl06ioxwd" path="res://stage/spots/hill/spot_hill.tres" id="8_r51qq"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="9_j8d07"]
+[ext_resource type="Script" uid="uid://wcgm3rptcu7x" path="res://stage/hauntings/triggers/haunting_trigger_bonus_gained.gd" id="10_kd5wk"]
+
+[sub_resource type="Resource" id="Resource_lwah5"]
+script = ExtResource("4_4e1md")
+card_type = ExtResource("3_4u3yx")
+metadata/_custom_type_script = "uid://777usfqcjmox"
+
+[sub_resource type="Resource" id="Resource_uur8m"]
+script = ExtResource("10_kd5wk")
+bonus_type = ExtResource("9_j8d07")
+any_spot = false
+metadata/_custom_type_script = "uid://wcgm3rptcu7x"
+
+[resource]
+script = ExtResource("7_c56fu")
+haunting_id = "bashonosei"
+name = "Bashō no Sei"
+name_japanese = "芭蕉精"
+name_realistic = "Blight"
+name_translation = "Banana Spirit"
+description = "A rot spirit is haunting this hill, appearing as human faces in the rot on banana leaves."
+description_realistic = "Creeping blight is spreading across the area, destroying agricultural yields."
+description_long = "The hills have been claimed by a creeping rot that spreads from plant to plant. It started from the banana trees, haunted by the Bashō no Sei, banana spirits who manifest as faces on the leaves. They look at the farmers with blame, and ask passing monks if even plants can attain enlightenment."
+image_small = ExtResource("5_0lytr")
+image_credit = ExtResource("5_by3uq")
+image_small_realistic = ExtResource("6_6d1im")
+image_realistic_credit = ExtResource("6_4u3yx")
+spot_type = ExtResource("8_r51qq")
+base_aspect_types = Array[ExtResource("1_ujxa7")]([ExtResource("2_by3uq")])
+extra_aspect_type = ExtResource("2_by3uq")
+scaling_bonus_type = ExtResource("9_j8d07")
+trigger = SubResource("Resource_uur8m")
+effect = SubResource("Resource_lwah5")
+spot_attach_mode = 2
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

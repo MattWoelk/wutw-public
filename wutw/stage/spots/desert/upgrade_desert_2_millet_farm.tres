@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://6hthvulotrnd"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_w6wlk"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_jekde"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_1xvjy"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="3_wycxe"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="5_x47mq"]
+[ext_resource type="Resource" uid="uid://coqtbomfb4xc" path="res://stage/spots/desert/spot_desert.tres" id="6_x47mq"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="7_0qejf"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://cn80vua452hy5" path="res://map/sprites/spots/desert/mst_desert_millet_farm.tres" id="8_abp33"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://dboe6k87s7hni" path="res://map/sprites/spots/desert/mst_desert_cactus_forest.tres" id="9_oko5q"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="10_kov5g"]
+
+[sub_resource type="Resource" id="Resource_la3jm"]
+script = ExtResource("10_kov5g")
+old_sprite_type = ExtResource("9_oko5q")
+new_sprite_type = ExtResource("8_abp33")
+biome = 2
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_w6wlk")
+spot_upgrade_id = "desert_millet_farm"
+name = "Millet Farm"
+description = "Where rice and wheat are but a memory, millet shines, ready to fill bowls within months of planting."
+required_aspects = Array[ExtResource("3_1xvjy")]([ExtResource("5_x47mq")])
+granted_bonuses = Dictionary[ExtResource("2_jekde"), int]({
+ExtResource("3_wycxe"): 15
+})
+spot = ExtResource("6_x47mq")
+visuals = Array[ExtResource("7_0qejf")]([SubResource("Resource_la3jm")])
+tags = Array[int]([1])

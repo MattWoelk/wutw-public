@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://bd7l8p63kklw4"]
+
+[ext_resource type="Script" uid="uid://cn0smx8b6coh" path="res://harmonization/harmonization_recipe.gd" id="1_rxmoo"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="2_xgyhp"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="4_2dwpm"]
+[ext_resource type="Texture2D" uid="uid://bif8savn5u3o1" path="res://visuals/sparkle.png" id="5_vhwmg"]
+[ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="6_vhwmg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vhwmg"]
+
+[sub_resource type="Curve" id="Curve_1kq07"]
+_data = [Vector2(0.0010101013, 0), 0.0, 5.0516067, 0, 0, Vector2(0.16161615, 1), 0.0, 0.0, 0, 0, Vector2(0.17575756, 0.9653533), -2.7695727, -2.7695727, 0, 0, Vector2(1, 0), 0.030541155, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_mtwdc"]
+curve = SubResource("Curve_1kq07")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2dwpm"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(50, 20, 1)
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+spread = 180.0
+initial_velocity_min = 52.219997
+initial_velocity_max = 52.219997
+angular_velocity_min = -90.000015
+angular_velocity_max = 89.999985
+gravity = Vector3(0, 0, 0)
+radial_accel_min = 23.839996
+radial_accel_max = 23.839996
+scale_min = 0.049999997
+scale_max = 0.06
+scale_curve = SubResource("CurveTexture_mtwdc")
+color = Color(0.70533335, 1, 0.48000002, 1)
+hue_variation_min = -2.2351742e-08
+hue_variation_max = 0.06999998
+
+[node name="HarmonizationRecipe" type="PanelContainer" unique_id=1884245680]
+offset_right = 97.0
+offset_bottom = 41.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vhwmg")
+script = ExtResource("1_rxmoo")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=1126386912]
+unique_name_in_owner = true
+material = ExtResource("2_xgyhp")
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("4_2dwpm")
+script = ExtResource("6_vhwmg")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1545289162]
+layout_mode = 2
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="TitleBox" type="HBoxContainer" parent="Panel/MarginContainer" unique_id=394055671]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="AspectsList" type="HBoxContainer" parent="Panel/MarginContainer/TitleBox" unique_id=1510667027]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="NameLabel" type="Label" parent="Panel/MarginContainer/TitleBox" unique_id=2113355690]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="BonusesList" type="HBoxContainer" parent="Panel/MarginContainer/TitleBox" unique_id=907769988]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+mouse_filter = 2
+
+[node name="LackLabel" type="Label" parent="Panel/MarginContainer/TitleBox" unique_id=1218872697]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.498039, 0, 0, 1)
+text = "Shortage"
+
+[node name="VFX_Activated" type="GPUParticles2D" parent="." unique_id=1936881895]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(45, 20)
+emitting = false
+amount = 60
+texture = ExtResource("5_vhwmg")
+lifetime = 3.0
+one_shot = true
+explosiveness = 0.83
+randomness = 0.21
+visibility_rect = Rect2(-150, -150, 300, 300)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_2dwpm")

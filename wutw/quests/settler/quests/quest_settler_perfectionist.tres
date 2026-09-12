@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="Quest_Settler" format=3 uid="uid://c60whyc5tl7ok"]
+
+[ext_resource type="Script" uid="uid://cjloydxgrv8oa" path="res://quests/settler/settler_quest_challenge.gd" id="1_qoocn"]
+[ext_resource type="Script" uid="uid://4wq52c05i2oa" path="res://quests/settler/challenges/settler_quest_challenge_run_var.gd" id="2_2rpkv"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="4_5p6qk"]
+[ext_resource type="Script" uid="uid://cvrgydjebg044" path="res://quests/settler/rewards/settler_quest_reward_run_var.gd" id="5_j58jl"]
+[ext_resource type="Script" uid="uid://dm56tmghxhk6v" path="res://quests/settler/goals/settler_quest_goal_num_perfect_settlements.gd" id="8_nht21"]
+[ext_resource type="Script" uid="uid://cd4swbq3t72je" path="res://quests/settler/settler_quest_reward.gd" id="9_k2maw"]
+[ext_resource type="Script" uid="uid://1na7ymvvvbby" path="res://quests/settler/quest_settler.gd" id="12_uwflq"]
+[ext_resource type="Script" uid="uid://bxua8gxfjp2wy" path="res://quests/settler/settler_quest_goal.gd" id="13_sxoyk"]
+
+[sub_resource type="Resource" id="Resource_46pq2"]
+script = ExtResource("2_2rpkv")
+var_type = 55
+delta = 1
+description = "<term:event> choices with <term_lower:aspect> requirements require 1 more."
+metadata/_custom_type_script = "uid://4wq52c05i2oa"
+
+[sub_resource type="Resource" id="Resource_1gdll"]
+script = ExtResource("5_j58jl")
+run_var = 41
+delta = 2
+preview_description = "Allows you to reshuffle your <term_lower:card_deck> and draw a new starting <term_lower:hand> 2 more times."
+outcome_description = "You can now reshuffle your <term_lower:card_deck> and draw a new starting <term_lower:hand> 2 more times during this <term_lower:run>."
+metadata/_custom_type_script = "uid://cvrgydjebg044"
+
+[sub_resource type="Resource" id="Resource_h8i3u"]
+script = ExtResource("8_nht21")
+num_required = 5
+metadata/_custom_type_script = "uid://dm56tmghxhk6v"
+
+[resource]
+script = ExtResource("12_uwflq")
+intro_text = "So many people are content to accept average work, but not me! Everything I do has to be immaculate. I'll replan and replan again until I can get the perfect result. I'm looking to join an expedition with like-minded individuals."
+challenges = Array[ExtResource("1_qoocn")]([SubResource("Resource_46pq2")])
+settler_goals = Array[ExtResource("13_sxoyk")]([SubResource("Resource_h8i3u")])
+rewards = Array[ExtResource("9_k2maw")]([SubResource("Resource_1gdll")])
+restrict_to_ages = Array[int]([1])
+quest_id = "settler_perfectionist"
+category = 2
+name = "A Perfectionist"
+metadata/_custom_type_script = "uid://1na7ymvvvbby"

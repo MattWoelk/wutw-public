@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://b54acv5mfmavn"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_f43uy"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="2_61osi"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="3_b4pxg"]
+[ext_resource type="Script" uid="uid://dnbudao6uigc6" path="res://stage/hauntings/effects/haunting_effect_lose_goal.gd" id="4_f43uy"]
+[ext_resource type="Resource" uid="uid://dg3bpnp4tuo5" path="res://art/pieces/piece_yagyou_onibi.tres" id="5_61osi"]
+[ext_resource type="Resource" uid="uid://odaj2ix2a03y" path="res://art/pieces/piece_hokusai_muneyuki.tres" id="6_0adb6"]
+[ext_resource type="Texture2D" uid="uid://vwls1l008mi6" path="res://stage/hauntings/types/onibi/haunting_onibi.png" id="7_f43uy"]
+[ext_resource type="Texture2D" uid="uid://geei2m2gyr0i" path="res://stage/hauntings/types/onibi/haunting_onibi_realistic_peat_fires.png" id="7_wfybh"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="9_k3mpj"]
+[ext_resource type="Script" uid="uid://2820j4fqvhls" path="res://stage/hauntings/triggers/haunting_trigger_slot_filled.gd" id="9_qfkeu"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="9_rqcas"]
+[ext_resource type="Resource" uid="uid://ouecqwnbe2cw" path="res://stage/spots/swamp/spot_swamp.tres" id="9_y7k5g"]
+
+[sub_resource type="Resource" id="Resource_4irfa"]
+script = ExtResource("4_f43uy")
+metadata/_custom_type_script = "uid://dnbudao6uigc6"
+
+[sub_resource type="Resource" id="Resource_6r3a8"]
+script = ExtResource("9_qfkeu")
+any_spot = false
+metadata/_custom_type_script = "uid://2820j4fqvhls"
+
+[resource]
+script = ExtResource("9_rqcas")
+haunting_id = "onibi"
+name = "Onibi"
+name_japanese = "鬼火"
+name_realistic = "Peat Fires"
+name_translation = "Demon Fires"
+description = "Flickering lights drift over the wetlands, feeding on the breath of the living."
+description_realistic = "Slow-burning peat fires smolder beneath the wetlands, releasing toxic gases that sap strength and ruin the soil."
+description_long = "At night, the swamp awakens with soft glowing lanterns that dance above the ponds. Settlers know these as Onibi, demon fires born from the grudges of the dead. They hover in flocks, swarming any who stray too near, drawing warmth and will alike.
+
+Old tales say they are the souls of the drowned, escaping from their torment beneath the mud."
+image_small = ExtResource("7_f43uy")
+image_credit = ExtResource("5_61osi")
+image_small_realistic = ExtResource("7_wfybh")
+image_realistic_credit = ExtResource("6_0adb6")
+spot_type = ExtResource("9_y7k5g")
+base_aspect_types = Array[ExtResource("1_f43uy")]([ExtResource("3_b4pxg")])
+extra_aspect_type = ExtResource("2_61osi")
+scaling_bonus_type = ExtResource("9_k3mpj")
+trigger = SubResource("Resource_6r3a8")
+effect = SubResource("Resource_4irfa")
+spot_attach_mode = 2
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

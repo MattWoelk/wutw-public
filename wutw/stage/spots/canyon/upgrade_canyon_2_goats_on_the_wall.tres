@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://m14si4c0ytap"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_cpvjb"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_huu1m"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="3_5fd3i"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_otgqb"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="4_s475n"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="6_mu4l6"]
+[ext_resource type="Resource" uid="uid://d1c7ny2xs7pwo" path="res://stage/spots/canyon/spot_canyon.tres" id="7_mu4l6"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="8_vg65j"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://brl7p61bsadfq" path="res://map/sprites/spots/canyon/mst_canyon_goats_on_the_wall.tres" id="9_3hklk"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://yi6r4d10vn2d" path="res://map/sprites/mountains/mst_mountain_1_medium.tres" id="9_06scy"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://8tdjmwgmq8ou" path="res://map/sprites/spots/canyon/mst_canyon_moss_tapestry.tres" id="10_5823k"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://desakgu6q3yov" path="res://map/sprites/mountains/mst_mountain_2_large.tres" id="10_esxw1"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://c3u877m1spx0" path="res://map/sprites/mountains/mst_mountain_3_large.tres" id="11_4k3rb"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="11_qhuk1"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://doqqvl0x3b3g4" path="res://map/sprites/mountains/mst_mountain_4_small.tres" id="12_gfts1"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bxr2aj680eaqd" path="res://map/sprites/mountains/mst_mountain_5_small.tres" id="13_4tk4b"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cekrboxmhdmhk" path="res://map/sprites/mountains/mst_mountain_6_tiny.tres" id="14_fujh3"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cjbrxida4odnk" path="res://map/sprites/mountains/mst_mountain_7_tiny.tres" id="15_ns2s8"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://56t2rh2pg58y" path="res://map/sprites/mountains/mst_mountain_8_medium.tres" id="16_20vfe"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://csjeschaiy5ct" path="res://map/sprites/mountains/mst_mountain_9_large.tres" id="17_57cx1"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bctu7rlwqc3o7" path="res://map/sprites/mountains/mst_mountain_10_medium.tres" id="18_q141m"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://t2knd16pwuwg" path="res://map/sprites/mountains/mst_mountain_11_medium.tres" id="19_cn8xf"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dxba886xk8sch" path="res://map/sprites/mountains/mst_mountain_12_pair.tres" id="20_386c4"]
+
+[sub_resource type="Resource" id="Resource_qy415"]
+script = ExtResource("11_qhuk1")
+old_sprite_type = ExtResource("10_5823k")
+new_sprite_type = ExtResource("9_3hklk")
+extra_removables = Array[MapSpriteType]([ExtResource("9_06scy"), ExtResource("10_esxw1"), ExtResource("11_4k3rb"), ExtResource("12_gfts1"), ExtResource("13_4tk4b"), ExtResource("14_fujh3"), ExtResource("15_ns2s8"), ExtResource("16_20vfe"), ExtResource("17_57cx1"), ExtResource("18_q141m"), ExtResource("19_cn8xf"), ExtResource("20_386c4")])
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_cpvjb")
+spot_upgrade_id = "canyon_goats"
+name = "Goats on the Wall"
+description = "The goats do not wonder if the cliffs will hold them. They step, and the cliffs obey."
+required_aspects = Array[ExtResource("3_otgqb")]([ExtResource("6_mu4l6")])
+granted_bonuses = Dictionary[ExtResource("2_huu1m"), int]({
+ExtResource("3_5fd3i"): 5,
+ExtResource("4_s475n"): 5
+})
+spot = ExtResource("7_mu4l6")
+visuals = Array[ExtResource("8_vg65j")]([SubResource("Resource_qy415")])
+tags = Array[int]([0])

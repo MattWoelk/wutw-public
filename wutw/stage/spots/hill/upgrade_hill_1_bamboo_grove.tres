@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://c7u2mcuw020le"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_hokwy"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_k8xl8"]
+[ext_resource type="Resource" uid="uid://dyxctpxlqu2sk" path="res://stage/spots/hill/upgrade_hill_2_rice_terrace.tres" id="2_ti6mq"]
+[ext_resource type="Resource" uid="uid://byoyp2ag51nm6" path="res://stage/spots/hill/upgrade_hill_2_tea_terrace.tres" id="3_hokwy"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="4_g0epa"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="5_umgcb"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="5_xeyij"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="8_g0epa"]
+[ext_resource type="Resource" uid="uid://cfuqwl06ioxwd" path="res://stage/spots/hill/spot_hill.tres" id="9_xeyij"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="10_trum5"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://b548ltw41s15m" path="res://map/sprites/hills/mst_hill_6.tres" id="11_mnlct"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://chlfcnqbpau20" path="res://map/sprites/hills/mst_hill_3.tres" id="12_np7hn"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://c23xw6irwc0ik" path="res://map/sprites/hills/mst_hill_2.tres" id="13_j3p3e"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dgsucgxy4wy2k" path="res://map/sprites/hills/mst_hill_4.tres" id="14_pnthd"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dqbot5dm01cko" path="res://map/sprites/hills/mst_hill_5.tres" id="15_4dklx"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://difbd6y0w4ell" path="res://map/sprites/hills/mst_hill_1.tres" id="16_bdfhv"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://bvhima0yuqcu3" path="res://map/sprites/spots/hills/mst_hills_bamboo_grove.tres" id="17_jgfri"]
+[ext_resource type="Script" uid="uid://cm6qovq4s06ky" path="res://stage/spots/spot_upgrade_visual_replace.gd" id="18_nhdou"]
+[ext_resource type="Script" uid="uid://dvrtuqbmx4v30" path="res://stage/spots/spot_upgrade_visual_add.gd" id="19_20blo"]
+
+[sub_resource type="Resource" id="Resource_fkpta"]
+script = ExtResource("18_nhdou")
+old_sprite_types = Array[MapSpriteType]([ExtResource("11_mnlct"), ExtResource("12_np7hn"), ExtResource("13_j3p3e"), ExtResource("14_pnthd"), ExtResource("15_4dklx"), ExtResource("16_bdfhv")])
+new_sprite_type = ExtResource("17_jgfri")
+extra_removables = Array[MapSpriteType]([ExtResource("11_mnlct"), ExtResource("12_np7hn"), ExtResource("13_j3p3e"), ExtResource("14_pnthd"), ExtResource("15_4dklx"), ExtResource("16_bdfhv")])
+metadata/_custom_type_script = "uid://cm6qovq4s06ky"
+
+[sub_resource type="Resource" id="Resource_xjxrw"]
+script = ExtResource("19_20blo")
+sprite_type = ExtResource("17_jgfri")
+extra_removables = Array[MapSpriteType]([ExtResource("11_mnlct"), ExtResource("12_np7hn"), ExtResource("13_j3p3e"), ExtResource("14_pnthd"), ExtResource("15_4dklx"), ExtResource("16_bdfhv")])
+metadata/_custom_type_script = "uid://dvrtuqbmx4v30"
+
+[resource]
+script = ExtResource("1_hokwy")
+spot_upgrade_id = "hill_bamboo"
+name = "Bamboo Grove"
+description = "The wind hums through the stalks, gossiping with the leaves."
+required_aspects = Array[ExtResource("5_xeyij")]([ExtResource("8_g0epa")])
+granted_bonuses = Dictionary[ExtResource("2_k8xl8"), int]({
+ExtResource("5_umgcb"): 5,
+ExtResource("4_g0epa"): 5
+})
+child_upgrades = Array[ExtResource("1_hokwy")]([ExtResource("2_ti6mq"), ExtResource("3_hokwy")])
+spot = ExtResource("9_xeyij")
+visuals = Array[ExtResource("10_trum5")]([SubResource("Resource_fkpta"), SubResource("Resource_xjxrw")])
+tags = Array[int]([1, 0])

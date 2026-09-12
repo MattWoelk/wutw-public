@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bd0a5kmnusho0"]
+
+[ext_resource type="Shader" uid="uid://bq5twnqo5j4mv" path="res://map/settlement_radius.gdshader" id="1_ysfxr"]
+[ext_resource type="Script" uid="uid://dwdoew5a5vdmr" path="res://stage/selector/stage_location_target.gd" id="2_8e4in"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8e4in"]
+shader = ExtResource("1_ysfxr")
+shader_parameter/highlight_progress = 0.0
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/size = 300.0
+shader_parameter/radius = 1.0
+shader_parameter/thickness = 0.050000002375
+shader_parameter/thickness_highlighted = 0.0800000038
+shader_parameter/smoothness = 0.030000001425
+shader_parameter/noise_scale = 199.999
+shader_parameter/noise_strength = 1.12
+shader_parameter/noise_smoothness = 1.0
+shader_parameter/global_rect = Vector4(0, 0, 0, 0)
+shader_parameter/landmass_threshold = 0.5
+shader_parameter/landmass_edge_distance = 0.001
+
+[node name="StageLocationTarget" type="ColorRect" unique_id=895870226]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 6
+material = SubResource("ShaderMaterial_8e4in")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = -660.0
+offset_bottom = -240.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_8e4in")

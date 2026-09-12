@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://cfr1wydsy7iob"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_2hxbi"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="2_wn0y8"]
+[ext_resource type="Resource" uid="uid://dmfsflijcgrtr" path="res://cards/tier6/card_blind.tres" id="3_ftbno"]
+[ext_resource type="Script" uid="uid://bqbixmm42f6mm" path="res://stage/hauntings/effects/haunting_effect_top_card.gd" id="4_212vx"]
+[ext_resource type="Resource" uid="uid://h8dp4laax1ik" path="res://art/pieces/piece_bakemono_nuppeppo.tres" id="5_ftbno"]
+[ext_resource type="Texture2D" uid="uid://cqluflb4pfwem" path="res://stage/hauntings/types/nopperabou/haunting_nopperabou.png" id="5_lxrrg"]
+[ext_resource type="Resource" uid="uid://qjcc4emrpgu8" path="res://art/pieces/piece_hokusai_suspended_bridge.tres" id="6_lxrrg"]
+[ext_resource type="Texture2D" uid="uid://rrc4ahu78g12" path="res://stage/hauntings/types/nopperabou/haunting_nopperabou_realistic_fog.png" id="6_wn0y8"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="8_o0mrq"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="9_212vx"]
+[ext_resource type="Script" uid="uid://6xguje0707l2" path="res://stage/hauntings/triggers/haunting_trigger_upgrade_activated.gd" id="10_qxcqj"]
+
+[sub_resource type="Resource" id="Resource_0eiya"]
+script = ExtResource("4_212vx")
+card_type = ExtResource("3_ftbno")
+metadata/_custom_type_script = "uid://bqbixmm42f6mm"
+
+[sub_resource type="Resource" id="Resource_lcea4"]
+script = ExtResource("10_qxcqj")
+any_spot = false
+metadata/_custom_type_script = "uid://6xguje0707l2"
+
+[resource]
+script = ExtResource("8_o0mrq")
+haunting_id = "nopperabou"
+name = "Nopperabō"
+name_japanese = "野箆坊"
+name_realistic = "Dense Fog"
+name_translation = "Flat Faced Monks"
+description = "Thick mists hide the Nopperabō, faceless wanderers who steal people's faces, turning them blind."
+description_realistic = "A thick fog frequently rolls into the area, severely limiting visibility and making work hazardous."
+description_long = "These lands are swallowed by a fog so thick that workers can barely see their own hands. Settlers report meeting the Nopperabō within the fog, figures who turn around to reveal large, blank faces lacking eyes, noses, or mouths. When the victims report the sightings, whoever they talk to tends to respond \"Oh, you mean like this?\" before wiping their face away."
+image_small = ExtResource("5_lxrrg")
+image_credit = ExtResource("5_ftbno")
+image_small_realistic = ExtResource("6_wn0y8")
+image_realistic_credit = ExtResource("6_lxrrg")
+base_aspect_types = Array[ExtResource("1_2hxbi")]([ExtResource("2_wn0y8")])
+extra_aspect_type = ExtResource("2_wn0y8")
+scaling_bonus_type = ExtResource("9_212vx")
+trigger = SubResource("Resource_lcea4")
+effect = SubResource("Resource_0eiya")
+spot_attach_mode = 2
+settlement_attach_mode = 2
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

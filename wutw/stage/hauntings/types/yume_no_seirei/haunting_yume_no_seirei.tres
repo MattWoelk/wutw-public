@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://cfdsv661yr0b1"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_2dlua"]
+[ext_resource type="Script" uid="uid://b2sp10jrl0p1v" path="res://stage/hauntings/effects/haunting_effect_lose_gained_bonus.gd" id="3_j2rs1"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="4_isg70"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="5_mbw5w"]
+[ext_resource type="Resource" uid="uid://dsvboqaxbr7vb" path="res://art/pieces/piece_bakemono_yume_seirei.tres" id="5_rei83"]
+[ext_resource type="Texture2D" uid="uid://dqdq16k0cbd8t" path="res://stage/hauntings/types/yume_no_seirei/haunting_yume_no_seirei.png" id="6_14m6t"]
+[ext_resource type="Resource" uid="uid://co0ptyxbd1g0g" path="res://art/pieces/piece_hiroshige_dreaming_courtesan.tres" id="6_fdjv0"]
+[ext_resource type="Texture2D" uid="uid://cmdl3g8qhq1ck" path="res://stage/hauntings/types/yume_no_seirei/haunting_yume_no_seirei_realistic_disenchantment.png" id="7_opsnk"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="8_8hw0m"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="9_qj400"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="9_rei83"]
+[ext_resource type="Script" uid="uid://wcgm3rptcu7x" path="res://stage/hauntings/triggers/haunting_trigger_bonus_gained.gd" id="10_fdjv0"]
+
+[sub_resource type="Resource" id="Resource_setx8"]
+script = ExtResource("3_j2rs1")
+metadata/_custom_type_script = "uid://b2sp10jrl0p1v"
+
+[sub_resource type="Resource" id="Resource_0fjsf"]
+script = ExtResource("10_fdjv0")
+bonus_type = ExtResource("9_rei83")
+metadata/_custom_type_script = "uid://wcgm3rptcu7x"
+
+[resource]
+script = ExtResource("9_qj400")
+haunting_id = "yume_no_seirei"
+name = "Yume no Seirei"
+name_japanese = "夢の精霊"
+name_realistic = "Disenchantment"
+name_translation = "Dream Ghost"
+description = "The dream spirit, Yume no Seirei, is feasting on the dreams of the settlers in this town, rendering them unable to find beauty in their life."
+description_realistic = "Excessive intellectualism has caused many of the settlers to be disenchanted with the mysteries of life, finding beauty in neither nature nor human activities."
+description_long = "Many settlers in this town have found their life force drained after a visit from Yume no Seirei, a ghastly spirit appearing as a decrepit old man by their bedsides and stealing their dreams. When they awake, they find their days turning into an endless cycle of drudgery, bereft of higher meaning."
+image_small = ExtResource("6_14m6t")
+image_credit = ExtResource("5_rei83")
+image_small_realistic = ExtResource("7_opsnk")
+image_realistic_credit = ExtResource("6_fdjv0")
+base_aspect_types = Array[ExtResource("1_2dlua")]([ExtResource("5_mbw5w")])
+extra_aspect_type = ExtResource("4_isg70")
+scaling_bonus_type = ExtResource("8_8hw0m")
+trigger = SubResource("Resource_0fjsf")
+effect = SubResource("Resource_setx8")
+spot_attach_mode = 1
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

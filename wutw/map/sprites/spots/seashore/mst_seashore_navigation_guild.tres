@@ -1,0 +1,27 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://ck6u8xumcdjh5"]
+
+[ext_resource type="MapSpriteType_Composite" uid="uid://w2ei8jt2smp1" path="res://map/sprites/spots/seashore/mst_seashore_lighthouse.tres" id="1_vagu2"]
+[ext_resource type="MapSpriteType_Building" uid="uid://dfc4afwo8gan6" path="res://map/sprites/buildings/houses/mst_house_4.tres" id="2_cpx4j"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://ddefp8wwinmmd" path="res://map/sprites/spots/seashore/mst_seashore_scrolls.tres" id="3_cif0i"]
+
+[sub_resource type="MapSpriteCollision_Rect" id="MapSpriteCollision_Rect_8l4f0"]
+rect = Rect2(-6.39, -1.24, 12.705, 2.67)
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_js8xt"]
+sprite_type = ExtResource("1_vagu2")
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_rek8g"]
+sprite_type = ExtResource("2_cpx4j")
+offset = Vector2(2.605, 0.07)
+scale = 0.79
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_ug2t1"]
+sprite_type = ExtResource("3_cif0i")
+offset = Vector2(4.04, 0.17)
+scale = 0.645
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_js8xt"), SubResource("MapSpriteComponent_rek8g"), SubResource("MapSpriteComponent_ug2t1")])
+footprint_radius = 8.385
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Rect_8l4f0")])

@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://ddt0vhvfk623m"]
+
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="1_87x4e"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="2_6djlh"]
+[ext_resource type="Script" uid="uid://dmo5tqb8akfs0" path="res://stage/hauntings/haunting_harmonization.gd" id="3_tjnhi"]
+[ext_resource type="PackedScene" uid="uid://be8el7dqxmifk" path="res://aspects/slot/aspect_slot.tscn" id="4_e3uva"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="4_tjnhi"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="5_x4rdw"]
+[ext_resource type="Texture2D" uid="uid://dyikrfpsd31fk" path="res://stage/hauntings/types/shuten_douji/haunting_shuten_douji_realistic_alcoholism.png" id="6_5b3bp"]
+[ext_resource type="Shader" uid="uid://ygmrqrvg5hpm" path="res://theme/button/ukiyoe_button.gdshader" id="7_get4g"]
+[ext_resource type="Texture2D" uid="uid://ctgl61r3xxsqv" path="res://theme/button/button_fill.png" id="8_tjnhi"]
+[ext_resource type="Texture2D" uid="uid://blje81yu8734p" path="res://theme/button/button_shape.png" id="9_r231n"]
+[ext_resource type="Texture2D" uid="uid://doe4603a6ngco" path="res://theme/button/button_outline.png" id="10_55drq"]
+[ext_resource type="Texture2D" uid="uid://cwubixgc8n0yr" path="res://theme/button/button_swish_left.png" id="11_s82fc"]
+[ext_resource type="Texture2D" uid="uid://n6l17h4ysayj" path="res://theme/button/button_swish_right.png" id="12_sorxh"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="13_ij1h1"]
+[ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="14_uny6v"]
+[ext_resource type="Shader" uid="uid://w0g4xh0eh147" path="res://stage/hauntings/haunting_masked.gdshader" id="15_ij1h1"]
+[ext_resource type="Texture2D" uid="uid://dhjw5ubvrkwx8" path="res://stage/hauntings/haunting_frame_edge.png" id="16_uny6v"]
+[ext_resource type="PackedScene" uid="uid://dbkrwj5jf26v1" path="res://theme/credits_icon/credits_icon.tscn" id="18_tw4up"]
+[ext_resource type="Resource" uid="uid://6e1uhx4d7bl3" path="res://art/pieces/piece_composed_kodama.tres" id="19_8tjmm"]
+[ext_resource type="PackedScene" uid="uid://c486xx01esukm" path="res://theme/new_indicator.tscn" id="20_exybp"]
+
+[sub_resource type="Gradient" id="Gradient_tw4up"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wqpyw"]
+gradient = SubResource("Gradient_tw4up")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8tjmm"]
+shader = ExtResource("7_get4g")
+shader_parameter/mask_tex = ExtResource("9_r231n")
+shader_parameter/background = ExtResource("8_tjnhi")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("10_55drq")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("12_sorxh")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("11_s82fc")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cnyvt"]
+shader = ExtResource("15_ij1h1")
+shader_parameter/mask = ExtResource("16_uny6v")
+
+[node name="Haunting_Harmonization" type="PanelContainer" unique_id=779459751]
+clip_children = 2
+texture_filter = 6
+material = ExtResource("1_87x4e")
+custom_maximum_size = Vector2(-1, 300)
+offset_right = 271.0
+offset_bottom = 139.0
+size_flags_horizontal = 4
+size_flags_vertical = 10
+offset_transform_enabled = true
+theme_override_styles/panel = ExtResource("2_6djlh")
+script = ExtResource("3_tjnhi")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1465316680]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = -20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=201785158]
+z_index = 1
+layout_mode = 2
+
+[node name="EffectLabel" parent="HBoxContainer/VBoxContainer" unique_id=1627404269 instance=ExtResource("4_tjnhi")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 72)
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 6
+text = "Task Activated Here
+↓
+Lose All"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="AspectsList" type="HFlowContainer" parent="HBoxContainer/VBoxContainer" unique_id=1962789368]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(115, 0)
+custom_maximum_size = Vector2(115, -1)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+alignment = 1
+
+[node name="AspectSlot" parent="HBoxContainer/VBoxContainer/AspectsList" unique_id=12973024 instance=ExtResource("4_e3uva")]
+layout_mode = 2
+aspect_type = ExtResource("5_x4rdw")
+
+[node name="AspectSlot9" parent="HBoxContainer/VBoxContainer/AspectsList" unique_id=765800832 instance=ExtResource("4_e3uva")]
+layout_mode = 2
+aspect_type = ExtResource("5_x4rdw")
+
+[node name="AspectSlot11" parent="HBoxContainer/VBoxContainer/AspectsList" unique_id=266550390 instance=ExtResource("4_e3uva")]
+layout_mode = 2
+aspect_type = ExtResource("5_x4rdw")
+
+[node name="PacifyButton" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=400028006]
+unique_name_in_owner = true
+visible = false
+material = SubResource("ShaderMaterial_8tjmm")
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_styles/normal = ExtResource("13_ij1h1")
+theme_override_styles/pressed = ExtResource("13_ij1h1")
+theme_override_styles/hover = ExtResource("13_ij1h1")
+theme_override_styles/hover_pressed = ExtResource("13_ij1h1")
+theme_override_styles/disabled = ExtResource("13_ij1h1")
+text = "Pacify"
+script = ExtResource("14_uny6v")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="Spacer" type="Control" parent="HBoxContainer/VBoxContainer" unique_id=2042404391]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=108140534]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_constants/margin_left = -8
+theme_override_constants/margin_right = -8
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer" unique_id=618519198]
+layout_mode = 2
+
+[node name="BG" type="TextureRect" parent="HBoxContainer/MarginContainer/MarginContainer" unique_id=41383789]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.8235294)
+texture_filter = 6
+material = SubResource("ShaderMaterial_cnyvt")
+layout_mode = 2
+texture = ExtResource("6_5b3bp")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="CreditsIcon" parent="HBoxContainer/MarginContainer/MarginContainer" unique_id=382726284 instance=ExtResource("18_tw4up")]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 2
+icon_size = Vector2(32, 32)
+art_piece = ExtResource("19_8tjmm")
+
+[node name="NewIcon" parent="HBoxContainer/MarginContainer/MarginContainer" unique_id=1816666732 instance=ExtResource("20_exybp")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 2
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/PacifyButton" to="." method="_on_pacify_button_pressed"]

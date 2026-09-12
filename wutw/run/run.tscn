@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://ceho5i073i5ed"]
+
+[ext_resource type="Script" uid="uid://tx2jhnbkbebj" path="res://run/run.gd" id="1_r5n8g"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="4_w508l"]
+[ext_resource type="FontFile" uid="uid://d357sc75ncblr" path="res://theme/fonts/Merienda/static/Merienda-Black.ttf" id="6_6x33b"]
+[ext_resource type="Theme" uid="uid://bneu0powe6n80" path="res://theme/theme_ukiyoe.tres" id="8_av6hb"]
+[ext_resource type="Resource" uid="uid://cfcnqlgpv4xyd" path="res://run/scaling/run_scaling.tres" id="8_pbc7g"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="13_85cly"]
+[ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="14_svaf3"]
+[ext_resource type="PackedScene" uid="uid://dtjjsvox6u5qb" path="res://map/map.scn" id="17_n5b6h"]
+
+[node name="Run" type="Node2D" unique_id=456858760]
+script = ExtResource("1_r5n8g")
+scaling = ExtResource("8_pbc7g")
+
+[node name="Map" parent="." unique_id=56728474 instance=ExtResource("17_n5b6h")]
+unique_name_in_owner = true
+
+[node name="Center" type="CenterContainer" parent="." unique_id=1857340272]
+offset_right = 1950.0
+offset_bottom = 1080.0
+pivot_offset = Vector2(250, 50)
+mouse_filter = 2
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="LoadingPanel" type="PanelContainer" parent="Center" unique_id=1896631998]
+unique_name_in_owner = true
+material = ExtResource("4_w508l")
+instance_shader_parameters/size = Vector2(311.0083, 80.18182)
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("8_av6hb")
+theme_override_styles/panel = ExtResource("13_85cly")
+script = ExtResource("14_svaf3")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="MarginContainer" type="MarginContainer" parent="Center/LoadingPanel" unique_id=773204345]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="LoadingLabel" type="Label" parent="Center/LoadingPanel/MarginContainer" unique_id=567549047]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("6_6x33b")
+theme_override_font_sizes/font_size = 24
+text = "Generating Map..."
+visible_characters_behavior = 1
+
+[node name="LoadingTimer" type="Timer" parent="Center/LoadingPanel" unique_id=1777478527]
+unique_name_in_owner = true
+wait_time = 0.4
+autostart = true

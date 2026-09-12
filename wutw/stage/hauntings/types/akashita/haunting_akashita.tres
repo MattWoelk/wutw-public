@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://dxxujm8u7hemb"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_dwo8d"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="2_fbmqn"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="2_ruppk"]
+[ext_resource type="Script" uid="uid://do5ygcjgpbgi8" path="res://stage/hauntings/effects/haunting_effect_discard.gd" id="4_5wukh"]
+[ext_resource type="Resource" uid="uid://blgcvo2hht4fb" path="res://art/pieces/piece_bakemono_akaguchi.tres" id="5_o00kh"]
+[ext_resource type="Texture2D" uid="uid://cndarkm63tu3b" path="res://stage/hauntings/types/akashita/haunting_akashita.png" id="6_dwo8d"]
+[ext_resource type="Resource" uid="uid://dkepqx5yxqdu0" path="res://art/pieces/piece_hiroshige_2_mt_asama.tres" id="7_5wukh"]
+[ext_resource type="Texture2D" uid="uid://daivbsxj2ktyq" path="res://stage/hauntings/types/akashita/haunting_akashita_realistic_volcano.png" id="7_dwo8d"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="8_d81g5"]
+[ext_resource type="Resource" uid="uid://dxoxvtquc3hu2" path="res://stage/spots/mountain/spot_mountain.tres" id="8_ruppk"]
+[ext_resource type="Script" uid="uid://2820j4fqvhls" path="res://stage/hauntings/triggers/haunting_trigger_slot_filled.gd" id="9_560bp"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="9_i33y2"]
+
+[sub_resource type="Resource" id="Resource_dktp5"]
+script = ExtResource("4_5wukh")
+aspect_type = ExtResource("2_ruppk")
+metadata/_custom_type_script = "uid://do5ygcjgpbgi8"
+
+[sub_resource type="Resource" id="Resource_dwo8d"]
+script = ExtResource("9_560bp")
+any_spot = false
+metadata/_custom_type_script = "uid://2820j4fqvhls"
+
+[resource]
+script = ExtResource("8_d81g5")
+haunting_id = "akashita"
+name = "Akashita"
+name_japanese = "赤舌"
+name_realistic = "Volcanic Ashfall"
+name_translation = "Red Tongue"
+description = "A dark cloud with a red tongue hangs over the mountain slopes, licking away the life from every seed that dares to sprout."
+description_realistic = "Volcanic ashfall is choking the mountainside, smothering crops and wildlife."
+description_long = "When the clouds turn black and the air tastes of metal, the settlers whisper of Akashita, the red-tongued cloud. They say it arises from the mountain when greed runs unchecked, farmers stealing water from their neighbor's fields.
+
+The beast hides within dark clouds, only its fanged grin and lashing tongue peeking out to drink in the land's life. Villagers claim it licks the color from leaves and the breath from beasts, leaving only gray fields and silence behind."
+image_small = ExtResource("6_dwo8d")
+image_credit = ExtResource("5_o00kh")
+image_small_realistic = ExtResource("7_dwo8d")
+image_realistic_credit = ExtResource("7_5wukh")
+spot_type = ExtResource("8_ruppk")
+base_aspect_types = Array[ExtResource("1_dwo8d")]([ExtResource("2_ruppk")])
+extra_aspect_type = ExtResource("2_fbmqn")
+scaling_bonus_type = ExtResource("9_i33y2")
+trigger = SubResource("Resource_dwo8d")
+effect = SubResource("Resource_dktp5")
+spot_attach_mode = 2
+settlement_attach_mode = 2
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

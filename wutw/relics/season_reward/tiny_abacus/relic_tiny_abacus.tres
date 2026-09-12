@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Relic" format=3 uid="uid://bl1ikyn47dhtu"]
+
+[ext_resource type="Texture2D" uid="uid://cvcd5wld0i4pa" path="res://relics/season_reward/tiny_abacus/tiny_abacus.png" id="1_1nbuv"]
+[ext_resource type="Script" uid="uid://cocdm5ulvrs8m" path="res://relics/relic.gd" id="2_b7lcb"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="3_xhlbb"]
+[ext_resource type="Resource" uid="uid://5q63svcbmx37" path="res://glossary/categories/termcategory_relic.tres" id="4_lipvb"]
+
+[resource]
+script = ExtResource("2_b7lcb")
+relic_id = "revelers_abacus"
+default_name = "Traveler's Abacus"
+default_description = "Reduce <term_lower:hand_size> by 2, but increase the number of times you can <term_lower:redraw> by 1."
+flavor_text = "Light and worn smooth by use. Perfect for tallying many small tasks."
+icon = ExtResource("1_1nbuv")
+rarity = 3
+var_modifiers = Dictionary[int, int]({
+0: -2,
+1: 1
+})
+default_starting_state = 1
+term_categories = Array[ExtResource("3_xhlbb")]([ExtResource("4_lipvb")])
+metadata/_custom_type_script = "uid://cocdm5ulvrs8m"

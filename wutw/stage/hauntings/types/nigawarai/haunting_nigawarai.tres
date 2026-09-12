@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://bim7arcdkpgra"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_1a6i3"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="2_3axyw"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="3_505gn"]
+[ext_resource type="Script" uid="uid://do5ygcjgpbgi8" path="res://stage/hauntings/effects/haunting_effect_discard.gd" id="4_o2tqu"]
+[ext_resource type="Resource" uid="uid://bjlexl1ttu521" path="res://art/pieces/piece_yagyou_nigawarai.tres" id="5_wt3av"]
+[ext_resource type="Resource" uid="uid://di6p5v2y8c8p4" path="res://art/pieces/piece_hiroshige_yoemon.tres" id="6_1a6i3"]
+[ext_resource type="Texture2D" uid="uid://b5kg5o4vq23m7" path="res://stage/hauntings/types/nigawarai/haunting_nigawarai.png" id="7_farih"]
+[ext_resource type="Texture2D" uid="uid://duagpo7gccw1d" path="res://stage/hauntings/types/nigawarai/haunting_nigawarai_realistic_animosity.png" id="8_wqc4k"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="9_3axyw"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="9_m3lsy"]
+[ext_resource type="Script" uid="uid://6xguje0707l2" path="res://stage/hauntings/triggers/haunting_trigger_upgrade_activated.gd" id="10_eykvb"]
+
+[sub_resource type="Resource" id="Resource_ts5co"]
+script = ExtResource("4_o2tqu")
+metadata/_custom_type_script = "uid://do5ygcjgpbgi8"
+
+[sub_resource type="Resource" id="Resource_64n80"]
+script = ExtResource("10_eykvb")
+any_spot = false
+metadata/_custom_type_script = "uid://6xguje0707l2"
+
+[resource]
+script = ExtResource("9_m3lsy")
+haunting_id = "nigawarai"
+name = "Nigawarai"
+name_japanese = "苦笑"
+name_realistic = "Animosity"
+name_translation = "Bitter Smiles"
+description = "Settlers whisper of the Nigawarai, spirits born from forced smiles that turn neighborly faces bitter."
+description_realistic = "Resentment spreads among settlers, causing inefficiency and discord."
+description_long = "The Nigawarai is said to arise wherever smiles hide resentment. When meals are shared without joy, and apologies ring untrue, something begins to stir. A hulking figure with a grin stretched too wide wanders between homes, licking the air for bitterness, its constant snickering an ugly hum that unsettles the heart. Those who hear it wake the next morning ready to quarrel with the first person they see.
+
+Some say the Nigawarai was once a kindly elder who smiled through years of unspoken grievances until his mask hardened into a curse. Now he roams, reminding all that swallowed words and polite deceit rot faster than open anger."
+image_small = ExtResource("7_farih")
+image_credit = ExtResource("5_wt3av")
+image_small_realistic = ExtResource("8_wqc4k")
+image_realistic_credit = ExtResource("6_1a6i3")
+base_aspect_types = Array[ExtResource("1_1a6i3")]([ExtResource("3_505gn")])
+extra_aspect_type = ExtResource("2_3axyw")
+scaling_bonus_type = ExtResource("9_3axyw")
+trigger = SubResource("Resource_64n80")
+effect = SubResource("Resource_ts5co")
+spot_attach_mode = 2
+settlement_attach_mode = 2
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

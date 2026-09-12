@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://ghajescv2eqc"]
+
+[ext_resource type="Texture2D" uid="uid://bnfcsvwrnlwcd" path="res://stage/hauntings/types/gaki/haunting_gaki.png" id="2_4wykm"]
+[ext_resource type="Material" uid="uid://g5psbm5buj40" path="res://hub/museum/museum_tile_compatibility.tres" id="3_4wykm"]
+[ext_resource type="Script" uid="uid://dfd3o72nksaas" path="res://hub/museum/museum_tile.gd" id="8_h20g8"]
+[ext_resource type="FontFile" uid="uid://dwycufv0f21v2" path="res://theme/fonts/Yuji_Mai/YujiMai-Regular.ttf" id="8_u076j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4wykm"]
+
+[sub_resource type="FontVariation" id="FontVariation_fxult"]
+base_font = ExtResource("8_u076j")
+spacing_top = -25
+spacing_bottom = -15
+
+[node name="MuseumTile" type="Button" unique_id=1362320016]
+custom_minimum_size = Vector2(165, 165)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1755.0
+offset_bottom = -915.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+toggle_mode = true
+flat = true
+script = ExtResource("8_h20g8")
+image = ExtResource("2_4wykm")
+discovered = true
+
+[node name="Container" type="PanelContainer" parent="." unique_id=428891668]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(165, 165)
+custom_maximum_size = Vector2(165, 165)
+layout_mode = 0
+offset_right = 165.0
+offset_bottom = 165.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4wykm")
+
+[node name="Image" type="TextureRect" parent="Container" unique_id=312207515]
+unique_name_in_owner = true
+material = ExtResource("3_4wykm")
+layout_mode = 2
+texture = ExtResource("2_4wykm")
+expand_mode = 1
+
+[node name="MissingLabel" type="Label" parent="Container" unique_id=336382392]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0.5921569)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_fxult")
+theme_override_font_sizes/font_size = 132
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EmptyLabel" type="Label" parent="Container" unique_id=708149286]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0.5921569)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "None"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TitleLabel" type="Label" parent="Container" unique_id=1468697267]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(160, 160)
+custom_maximum_size = Vector2(160, 160)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 21
+text = "None"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

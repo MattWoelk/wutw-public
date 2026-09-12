@@ -1,0 +1,917 @@
+[gd_scene format=3 uid="uid://bf0oaemm7sd55"]
+
+[ext_resource type="Script" uid="uid://bvw1ohn8baxvx" path="res://tutorial/starter/starter_tutorial.gd" id="1_cx6rk"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="2_2i3e5"]
+[ext_resource type="Texture2D" uid="uid://d31crtktt1gjk" path="res://tutorial/starter/portal.png" id="2_wl54n"]
+[ext_resource type="Resource" uid="uid://dx561c4ffjal3" path="res://cards/tier0/card_fire.tres" id="3_6ufjg"]
+[ext_resource type="Texture2D" uid="uid://cuv7cg57sr2vh" path="res://tutorial/starter/gate.png" id="3_bgqol"]
+[ext_resource type="Resource" uid="uid://7qh64gv3iv20" path="res://cards/tier0/card_earth.tres" id="4_44rrh"]
+[ext_resource type="Texture2D" uid="uid://dhf3tnvlhofkq" path="res://tutorial/starter/people.png" id="4_ebxeh"]
+[ext_resource type="PackedScene" uid="uid://bvrmgebiqxcw1" path="res://tutorial/starter/generic_recipe.tscn" id="5_818kr"]
+[ext_resource type="Resource" uid="uid://bt52a5cs1hqkv" path="res://cards/tier0/card_run.tres" id="5_hnvv2"]
+[ext_resource type="Texture2D" uid="uid://2lqrlcfcvk7y" path="res://stage/spots/tree_connection_end.png" id="5_rjijj"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="6_7m8as"]
+[ext_resource type="Resource" uid="uid://b4io0c7l0iw7k" path="res://cards/tier1/card_craft.tres" id="6_335nx"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="7_mdwdk"]
+[ext_resource type="Resource" uid="uid://duu0uwh50rtuq" path="res://cards/tier0/card_mountain.tres" id="7_yxmbx"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="8_irryw"]
+[ext_resource type="Resource" uid="uid://blh30dq4bsgch" path="res://cards/tier2/card_sun.tres" id="8_kaukk"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="9_edryw"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="9_n3enh"]
+[ext_resource type="Resource" uid="uid://b6dtme7vqnx5c" path="res://cards/tier2/card_mirror.tres" id="9_xgw26"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="10_rjijj"]
+[ext_resource type="Resource" uid="uid://ccgotvx11tj61" path="res://cards/tier2/card_mother.tres" id="10_ujktr"]
+[ext_resource type="Resource" uid="uid://ce0wtqn3cdg7q" path="res://cards/tier2/card_nurture.tres" id="11_6ufjg"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="11_n3enh"]
+[ext_resource type="Resource" uid="uid://c0ncfrjjtlxwd" path="res://cards/tier2/card_accumulate.tres" id="12_xco1h"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="12_xlsei"]
+[ext_resource type="Resource" uid="uid://c3n8uww1bymv1" path="res://cards/tier0/card_water.tres" id="13_335nx"]
+[ext_resource type="Resource" uid="uid://berx5kwcw5at" path="res://cards/tier1/card_two.tres" id="14_vkwn6"]
+[ext_resource type="Texture2D" uid="uid://dws83dd2ohkgo" path="res://tutorial/starter/frame_mask.png" id="15_abehs"]
+[ext_resource type="Resource" uid="uid://cwjck6hsbxorj" path="res://cards/tier0/card_tree.tres" id="15_ikqwu"]
+[ext_resource type="Texture2D" uid="uid://sxmgycj4o0po" path="res://cutscenes/intro/slides/10.png" id="16_335nx"]
+[ext_resource type="PackedScene" uid="uid://dbkrwj5jf26v1" path="res://theme/credits_icon/credits_icon.tscn" id="17_44rrh"]
+[ext_resource type="Resource" uid="uid://bmcrejdna3l0t" path="res://art/pieces/piece_hiroshige_okabe_mount_utsu.tres" id="18_kaukk"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="19_2i3e5"]
+[ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="20_0jakq"]
+[ext_resource type="Shader" uid="uid://dtp4275w1suyw" path="res://tutorial/starter/starburst.gdshader" id="20_335nx"]
+[ext_resource type="Texture2D" uid="uid://d4hp5vj58r0vm" path="res://tutorial/starter/frame.png" id="21_lckd1"]
+[ext_resource type="Texture2D" uid="uid://pn1oheiv1cqd" path="res://characters/generic/monk_shattered/character_monk.png" id="21_s2mhx"]
+[ext_resource type="Texture2D" uid="uid://chxf88ekbq0ie" path="res://visuals/canvas.png" id="21_yxmbx"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="24_335nx"]
+[ext_resource type="PackedScene" uid="uid://duhgfqb3rnmyk" path="res://stage/targeting/brushstroke_arrow.tscn" id="24_u8ea2"]
+[ext_resource type="Script" uid="uid://bv6gy0udjycyo" path="res://tutorial/starter/starter_spot.gd" id="27_yxmbx"]
+
+[sub_resource type="Gradient" id="Gradient_kaukk"]
+offsets = PackedFloat32Array(0, 0.11752577, 0.20618556, 0.3443299)
+colors = PackedColorArray(0.75, 0.40000004, 0.22500001, 1, 0.9, 0.7542, 0.576, 1, 0.93142855, 0.80316865, 0.619804, 1, 1, 0.895, 0.7, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6gl8b"]
+gradient = SubResource("Gradient_kaukk")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xgw26"]
+shader = ExtResource("20_335nx")
+shader_parameter/progress = 0.50000002375
+shader_parameter/center = Vector2(0.77, 0.23)
+shader_parameter/max_dist = 1.014000048165
+shader_parameter/fadein_margin = 0.03
+shader_parameter/fadeout_margin = 0.03
+shader_parameter/slices = 70
+shader_parameter/stripe_variation_frequency = 0.35400001611648
+shader_parameter/stripe_variation_factor = 0.93200004357148
+shader_parameter/aspect_ratio = 1.2
+shader_parameter/speed = 0.00310000013997
+shader_parameter/bg_color = Color(0.38746843, 0.3830845, 0.40943903, 1)
+shader_parameter/ray_gradient = SubResource("GradientTexture1D_6gl8b")
+shader_parameter/ray_gradient_scale = 0.18600000813648
+shader_parameter/overlay_tex = ExtResource("21_yxmbx")
+shader_parameter/noise_scale = 1376.0
+shader_parameter/noise_strength = 0.167
+shader_parameter/noise_smoothness = 1.0
+
+[sub_resource type="Animation" id="Animation_2i3e5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DialogueBox/DialogueBG:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DialogueBox/Portrait:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DialogueBox/DialogueFrame:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Gate:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Gate/Portal:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("People:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Panel_Expedition:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Panel_Gate/VBoxContainer/HBoxContainer/MarginContainer/Connector:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Panel_Gate:size")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(277, 95)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Panel_Gate:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Panel_Expedition:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_u8ea2"]
+resource_name = "build_gate"
+length = 2.4
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gate:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel_Gate/VBoxContainer/HBoxContainer/MarginContainer/Connector:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.3, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel_Gate:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.2, 1.7666667),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(257, 53), Vector2(256, 94)]
+}
+
+[sub_resource type="Animation" id="Animation_gys6q"]
+resource_name = "clear"
+length = 0.1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DialogueBox/DialogueBG:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DialogueBox/Portrait:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DialogueBox/DialogueFrame:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Gate:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Gate/Portal:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("People:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Panel_Expedition:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Panel_Gate/VBoxContainer/HBoxContainer/MarginContainer/Connector:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Panel_Gate:size")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(257, 53)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Panel_Gate:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Panel_Expedition:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_44rrh"]
+resource_name = "finish"
+step = 0.0333333
+
+[sub_resource type="Animation" id="Animation_lckd1"]
+resource_name = "gather_people"
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("People:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0jakq"]
+resource_name = "open_gateway"
+length = 2.0
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gate/Portal:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel_Expedition:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.96666664, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel_Expedition:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.91),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_6ufjg"]
+resource_name = "show_first_recipe"
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel_Gate:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fp80b"]
+resource_name = "start"
+length = 1.6
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DialogueBox/DialogueBG:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4, 1.4333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DialogueBox/Portrait:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.96666664, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DialogueBox/DialogueFrame:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.46666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Gate:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Gate/Portal:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("People:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Panel_Expedition:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Panel_Gate/VBoxContainer/HBoxContainer/MarginContainer/Connector:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Panel_Gate:size")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(257, 53)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gys6q"]
+_data = {
+&"RESET": SubResource("Animation_2i3e5"),
+&"build_gate": SubResource("Animation_u8ea2"),
+&"clear": SubResource("Animation_gys6q"),
+&"finish": SubResource("Animation_44rrh"),
+&"gather_people": SubResource("Animation_lckd1"),
+&"open_gateway": SubResource("Animation_0jakq"),
+&"show_first_recipe": SubResource("Animation_6ufjg"),
+&"start": SubResource("Animation_fp80b")
+}
+
+[node name="StarterTutorial" type="Node2D" unique_id=165433354]
+script = ExtResource("1_cx6rk")
+line_start = "Oh Enlightened One, your prophecy told us that after the Shattering, we are to put the shards back together, one expedition at a time.
+
+      Let's begin, then, by rebuilding a torii gate."
+line_redraw = "We're done with building, but we'll need to redouble our efforts to open the gateway.
+
+
+
+      Guide us with a sign, oh Enlightened One!"
+line_open = "We are ready to resume the preparations now.
+
+
+
+
+      Let's open the gate to a new shard!"
+line_opened = "Excellent! We'll need enough people to found a settlement when we get to the shard.
+
+
+
+      Let's gather everyone at the gate!"
+line_gathered = "We are exhausted, but you are always with us, oh Enlightened One. Grant us one last bit of will to embark!
+
+
+      Let's invoke this glyph's blessing!"
+tutorial_cards = Array[ExtResource("2_2i3e5")]([ExtResource("3_6ufjg"), ExtResource("4_44rrh"), ExtResource("5_hnvv2"), ExtResource("6_335nx"), ExtResource("7_yxmbx"), ExtResource("8_kaukk"), ExtResource("9_xgw26"), ExtResource("10_ujktr"), ExtResource("11_6ufjg"), ExtResource("12_xco1h"), ExtResource("13_335nx"), ExtResource("14_vkwn6"), ExtResource("15_ikqwu")])
+metadata/_edit_vertical_guides_ = [294.0]
+metadata/_edit_horizontal_guides_ = [275.0, 403.0]
+
+[node name="BG" type="TextureRect" parent="." unique_id=1062799062]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("16_335nx")
+expand_mode = 1
+
+[node name="CreditsIcon" parent="BG" unique_id=789996304 instance=ExtResource("17_44rrh")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 1
+grow_vertical = 1
+art_piece = ExtResource("18_kaukk")
+
+[node name="Gate" type="TextureRect" parent="." unique_id=232399379]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+offset_left = 1357.0
+offset_top = 118.0
+offset_right = 1581.0
+offset_bottom = 318.0
+mouse_filter = 2
+texture = ExtResource("3_bgqol")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Portal" type="TextureRect" parent="Gate" unique_id=496088511]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+show_behind_parent = true
+clip_children = 1
+layout_mode = 0
+offset_left = 46.0
+offset_top = 32.0
+offset_right = 181.0
+offset_bottom = 195.0
+mouse_filter = 2
+texture = ExtResource("2_wl54n")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="PortalAnimTex" type="ColorRect" parent="Gate/Portal" unique_id=730391121]
+material = SubResource("ShaderMaterial_xgw26")
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1414.0
+offset_top = -150.0
+offset_right = 371.0
+offset_bottom = 767.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="People" type="TextureRect" parent="." unique_id=1432551808]
+modulate = Color(1, 1, 1, 0)
+offset_left = 986.0
+offset_top = 275.0
+offset_right = 1645.0
+offset_bottom = 1081.0
+mouse_filter = 2
+texture = ExtResource("4_ebxeh")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Panel_Gate" type="PanelContainer" parent="." unique_id=292357295 node_paths=PackedStringArray("recipes")]
+material = ExtResource("24_335nx")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1360.0
+offset_top = 317.0
+offset_right = 1637.0
+offset_bottom = 412.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("19_2i3e5")
+script = ExtResource("27_yxmbx")
+recipes = [NodePath("VBoxContainer/Recipe_Gate"), NodePath("VBoxContainer/HBoxContainer/Recipe_OpenPortal")]
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel_Gate" unique_id=1928507701]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Recipe_Gate" parent="Panel_Gate/VBoxContainer" unique_id=610378337 instance=ExtResource("5_818kr")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+title = "Build Torii Gate"
+aspect_types = Array[ExtResource("6_7m8as")]([ExtResource("7_mdwdk"), ExtResource("7_mdwdk"), ExtResource("9_n3enh")])
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel_Gate/VBoxContainer" unique_id=310512070]
+layout_mode = 2
+theme_override_constants/separation = -5
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel_Gate/VBoxContainer/HBoxContainer" unique_id=489435089]
+layout_mode = 2
+theme_override_constants/margin_left = -4
+theme_override_constants/margin_top = -7
+theme_override_constants/margin_right = 4
+
+[node name="Connector" type="TextureRect" parent="Panel_Gate/VBoxContainer/HBoxContainer/MarginContainer" unique_id=1939362947]
+custom_minimum_size = Vector2(41, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("5_rjijj")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Recipe_OpenPortal" parent="Panel_Gate/VBoxContainer/HBoxContainer" unique_id=607228794 instance=ExtResource("5_818kr")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 2
+title = "Open Gateway"
+aspect_types = Array[ExtResource("6_7m8as")]([ExtResource("9_edryw"), ExtResource("10_rjijj")])
+state = 2
+
+[node name="Panel_Expedition" type="PanelContainer" parent="." unique_id=1414482857 node_paths=PackedStringArray("recipes")]
+visible = false
+modulate = Color(1, 1, 1, 0)
+material = ExtResource("24_335nx")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 772.0
+offset_top = 535.5
+offset_right = 1021.0
+offset_bottom = 623.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("19_2i3e5")
+script = ExtResource("27_yxmbx")
+recipes = [NodePath("VBoxContainer/Recipe_Expedition"), NodePath("VBoxContainer/HBoxContainer/Recipe_Embark")]
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel_Expedition" unique_id=974899812]
+layout_mode = 2
+
+[node name="Recipe_Expedition" parent="Panel_Expedition/VBoxContainer" unique_id=1292274979 instance=ExtResource("5_818kr")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+title = "Gather Expedition"
+aspect_types = Array[ExtResource("6_7m8as")]([ExtResource("11_n3enh"), ExtResource("11_n3enh")])
+state = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel_Expedition/VBoxContainer" unique_id=981193023]
+layout_mode = 2
+theme_override_constants/separation = -5
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel_Expedition/VBoxContainer/HBoxContainer" unique_id=139934100]
+layout_mode = 2
+theme_override_constants/margin_left = -4
+theme_override_constants/margin_top = -7
+theme_override_constants/margin_right = 4
+
+[node name="Connector" type="TextureRect" parent="Panel_Expedition/VBoxContainer/HBoxContainer/MarginContainer" unique_id=1148009159]
+custom_minimum_size = Vector2(41, 0)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("5_rjijj")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Recipe_Embark" parent="Panel_Expedition/VBoxContainer/HBoxContainer" unique_id=540681595 instance=ExtResource("5_818kr")]
+unique_name_in_owner = true
+layout_mode = 2
+title = "Embark"
+aspect_types = Array[ExtResource("6_7m8as")]([ExtResource("12_xlsei"), ExtResource("8_irryw")])
+state = 2
+
+[node name="DialogueBox" type="NinePatchRect" parent="." unique_id=318868416]
+unique_name_in_owner = true
+clip_children = 1
+offset_left = 109.0
+offset_top = 236.0
+offset_right = 666.0
+offset_bottom = 532.0
+texture = ExtResource("15_abehs")
+patch_margin_left = 200
+patch_margin_top = 100
+patch_margin_right = 200
+patch_margin_bottom = 100
+
+[node name="DialogueBG" type="PanelContainer" parent="DialogueBox" unique_id=1865663002]
+material = ExtResource("24_335nx")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("19_2i3e5")
+script = ExtResource("20_0jakq")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="Portrait" type="TextureRect" parent="DialogueBox" unique_id=1194439965]
+layout_mode = 0
+offset_left = -69.0
+offset_top = 9.0
+offset_right = 941.0
+offset_bottom = 845.0
+mouse_filter = 2
+texture = ExtResource("21_s2mhx")
+expand_mode = 1
+stretch_mode = 4
+flip_h = true
+
+[node name="SpeechLabel" type="Label" parent="DialogueBox" unique_id=1152123477]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(380, 209)
+custom_maximum_size = Vector2(380, 209)
+layout_mode = 0
+offset_left = 150.0
+offset_top = 55.0
+offset_right = 530.0
+offset_bottom = 264.0
+horizontal_alignment = 3
+autowrap_mode = 2
+justification_flags = 35
+visible_characters_behavior = 1
+
+[node name="DialogueFrame" type="NinePatchRect" parent="DialogueBox" unique_id=1278216455]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_lckd1")
+patch_margin_left = 200
+patch_margin_top = 100
+patch_margin_right = 200
+patch_margin_bottom = 100
+metadata/_edit_lock_ = true
+
+[node name="SkipButton" type="Button" parent="DialogueBox" unique_id=1812617745]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="HintArrow" parent="." unique_id=1242104810 instance=ExtResource("24_u8ea2")]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0.54901963)
+custom_minimum_size = Vector2(618.8869, 70)
+offset_left = 1400.0
+offset_top = 301.0
+offset_right = 2018.887
+offset_bottom = 371.0
+rotation = 1.8828385
+target_override = Vector2(1400, 340)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=926201835]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_gys6q")
+
+[node name="TransitionTex" type="ColorRect" parent="." unique_id=1011529438]
+unique_name_in_owner = true
+visible = false
+z_index = 2
+material = SubResource("ShaderMaterial_xgw26")
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="activated" from="Panel_Gate/VBoxContainer/Recipe_Gate" to="." method="_on_recipe_gate_activated"]
+[connection signal="activated" from="Panel_Gate/VBoxContainer/HBoxContainer/Recipe_OpenPortal" to="." method="_on_recipe_open_portal_activated"]
+[connection signal="activated" from="Panel_Expedition/VBoxContainer/Recipe_Expedition" to="." method="_on_recipe_expedition_activated"]
+[connection signal="activated" from="Panel_Expedition/VBoxContainer/HBoxContainer/Recipe_Embark" to="." method="_on_recipe_embark_activated"]
+[connection signal="pressed" from="DialogueBox/SkipButton" to="." method="_on_skip_button_pressed"]

@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="Quest_Settler" format=3 uid="uid://csy1bu3nnaa3t"]
+
+[ext_resource type="Script" uid="uid://cjloydxgrv8oa" path="res://quests/settler/settler_quest_challenge.gd" id="1_wgspw"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="2_jtanl"]
+[ext_resource type="Script" uid="uid://bb4ffvh7ywhr4" path="res://quests/settler/challenges/settler_quest_challenge_damage_on_bonus.gd" id="3_b18km"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="4_2733w"]
+[ext_resource type="Resource" uid="uid://dli7oi3la1ubv" path="res://characters/jobs/job_guard.tres" id="5_qpnk4"]
+[ext_resource type="Script" uid="uid://cd4swbq3t72je" path="res://quests/settler/settler_quest_reward.gd" id="6_5dmg8"]
+[ext_resource type="Resource" uid="uid://c4ah2ugau8e84" path="res://characters/jobs/job_fire_warden.tres" id="6_n1uv0"]
+[ext_resource type="Script" uid="uid://cvrgydjebg044" path="res://quests/settler/rewards/settler_quest_reward_run_var.gd" id="8_bkkgf"]
+[ext_resource type="Script" uid="uid://cschghuk4t5qx" path="res://quests/settler/goals/settler_quest_goal_global_upgrades.gd" id="11_oxwlb"]
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="12_v0plf"]
+[ext_resource type="Resource" uid="uid://dl672t0a8m46g" path="res://stage/spots/building_small/upgrade_building_small_2_watchpost.tres" id="13_wty48"]
+[ext_resource type="Resource" uid="uid://b6ghgkv80qtr2" path="res://stage/spots/plains/upgrade_plains_2_firebreak_reservoir.tres" id="14_6isys"]
+[ext_resource type="Resource" uid="uid://cv742rumu87mh" path="res://stage/spots/hill/upgrade_hill_1_signal_beacon.tres" id="15_wgspw"]
+[ext_resource type="Script" uid="uid://1na7ymvvvbby" path="res://quests/settler/quest_settler.gd" id="18_qh3s0"]
+[ext_resource type="Script" uid="uid://bxua8gxfjp2wy" path="res://quests/settler/settler_quest_goal.gd" id="19_6t2cx"]
+
+[sub_resource type="Resource" id="Resource_hu2cv"]
+script = ExtResource("3_b18km")
+bonus_type = ExtResource("2_jtanl")
+damage = 5
+metadata/_custom_type_script = "uid://bb4ffvh7ywhr4"
+
+[sub_resource type="Resource" id="Resource_dkx2x"]
+script = ExtResource("8_bkkgf")
+run_var = 52
+delta = 1
+preview_description = "Block the first time each <term_lower:haunting> triggers during each stage. Can stack."
+outcome_description = "From now on, block the first time each <term_lower:haunting> triggers during each stage. Can stack."
+metadata/_custom_type_script = "uid://cvrgydjebg044"
+
+[sub_resource type="Resource" id="Resource_u5e0m"]
+script = ExtResource("11_oxwlb")
+upgrades = Array[ExtResource("12_v0plf")]([ExtResource("13_wty48"), ExtResource("14_6isys"), ExtResource("15_wgspw")])
+metadata/_custom_type_script = "uid://cschghuk4t5qx"
+
+[resource]
+script = ExtResource("18_qh3s0")
+intro_text = "It is a custom on my shard to volunteer with an expedition at least once in one's lifetime. As a safety warden, it will be my duty to keep people safe."
+challenges = Array[ExtResource("1_wgspw")]([SubResource("Resource_hu2cv")])
+settler_goals = Array[ExtResource("19_6t2cx")]([SubResource("Resource_u5e0m")])
+rewards = Array[ExtResource("6_5dmg8")]([SubResource("Resource_dkx2x")])
+restrict_to_jobs = Array[ExtResource("4_2733w")]([ExtResource("5_qpnk4"), ExtResource("6_n1uv0")])
+quest_id = "settler_safety_warden"
+category = 2
+name = "A Safety Warden"
+metadata/_custom_type_script = "uid://1na7ymvvvbby"

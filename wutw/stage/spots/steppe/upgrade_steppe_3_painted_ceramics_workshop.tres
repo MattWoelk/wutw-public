@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://dodn5qucrntii"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_ukpml"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_px1j5"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="3_apshn"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_bxrih"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="4_i151b"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="6_i5kw6"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="7_i6pw3"]
+[ext_resource type="Resource" uid="uid://cht5gp5i657sg" path="res://stage/spots/steppe/spot_steppe.tres" id="8_7le4t"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="8_11k4j"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://cviwnc32oyhfi" path="res://map/sprites/spots/steppe/mst_steppe_ceramics_workshop.tres" id="9_7le4t"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://cf4xn2yd1d2pg" path="res://map/sprites/spots/steppe/mst_steppe_pottery_kiln.tres" id="10_r0we6"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="11_bvg5t"]
+
+[sub_resource type="Resource" id="Resource_bx7ia"]
+script = ExtResource("11_bvg5t")
+old_sprite_type = ExtResource("10_r0we6")
+new_sprite_type = ExtResource("9_7le4t")
+biome = 5
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_ukpml")
+spot_upgrade_id = "steppe_ceramics"
+name = "Painted Ceramics Workshop"
+description = "A cup may quench thirst, but a painted cup quenches the thirst of the soul."
+required_aspects = Array[ExtResource("3_bxrih")]([ExtResource("6_i5kw6"), ExtResource("7_i6pw3")])
+granted_bonuses = Dictionary[ExtResource("2_px1j5"), int]({
+ExtResource("3_apshn"): 15,
+ExtResource("4_i151b"): 10
+})
+spot = ExtResource("8_7le4t")
+visuals = Array[ExtResource("8_11k4j")]([SubResource("Resource_bx7ia")])
+tags = Array[int]([2])
+min_main_quest_progress = 110

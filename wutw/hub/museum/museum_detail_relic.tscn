@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://ufq5ke21tra1"]
+
+[ext_resource type="Script" uid="uid://d110fynoqoihh" path="res://hub/museum/museum_detail_relic.gd" id="1_nakce"]
+[ext_resource type="LabelSettings" uid="uid://bc3l8vvpbl2k" path="res://theme/fonts/presets/label_settings_header.tres" id="2_6y2ey"]
+[ext_resource type="Texture2D" uid="uid://c2mc770kjx2h8" path="res://relics/common/tea_whisk/tea-whisk.png" id="4_5qv3h"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="10_7707i"]
+
+[node name="MuseumDetail_Relic" type="MarginContainer" unique_id=828365194]
+offset_right = 660.0
+offset_bottom = 1013.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+script = ExtResource("1_nakce")
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=109705404]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TitleLabel" type="Label" parent="VBox" unique_id=685079238]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Tea Whisk"
+label_settings = ExtResource("2_6y2ey")
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBox" unique_id=860080070]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBox/MarginContainer2" unique_id=370853201]
+layout_mode = 2
+
+[node name="MainText" parent="VBox/MarginContainer2/HBoxContainer" unique_id=1347378636 instance=ExtResource("10_7707i")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+text = "Relic mechanics description."
+fit_content = true
+tooltip_directions = Array[int]([5, 1, 3])
+
+[node name="Illustration" type="TextureRect" parent="VBox/MarginContainer2/HBoxContainer" unique_id=89998752]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("4_5qv3h")
+expand_mode = 1
+stretch_mode = 5

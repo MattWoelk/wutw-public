@@ -1,0 +1,73 @@
+[gd_resource type="Resource" script_class="Quest_Settler" format=3 uid="uid://duyv4j7t1cgsb"]
+
+[ext_resource type="Script" uid="uid://cjloydxgrv8oa" path="res://quests/settler/settler_quest_challenge.gd" id="1_6c8cm"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="2_c5y8q"]
+[ext_resource type="Script" uid="uid://o6r5kcqelqsf" path="res://quests/settler/challenges/settler_quest_challenge_harm_on_aspect_cards.gd" id="3_dt2b8"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="3_fosxp"]
+[ext_resource type="Script" uid="uid://cd4swbq3t72je" path="res://quests/settler/settler_quest_reward.gd" id="4_0nujk"]
+[ext_resource type="Resource" uid="uid://c2qx8ufo4c12r" path="res://characters/jobs/job_monk_ember.tres" id="5_2e40f"]
+[ext_resource type="Script" uid="uid://1na7ymvvvbby" path="res://quests/settler/quest_settler.gd" id="7_cfpm6"]
+[ext_resource type="Script" uid="uid://cocdm5ulvrs8m" path="res://relics/relic.gd" id="7_dskhs"]
+[ext_resource type="Script" uid="uid://bxua8gxfjp2wy" path="res://quests/settler/settler_quest_goal.gd" id="8_kum8i"]
+[ext_resource type="Resource" uid="uid://bwke464koe61r" path="res://relics/uncommon/glowing_ember/relic_glowing_ember.tres" id="8_q0e4u"]
+[ext_resource type="Resource" uid="uid://c3lqm5twcoed3" path="res://relics/common/ancient_bone/relic_ancient_bone.tres" id="9_k3q4t"]
+[ext_resource type="Resource" uid="uid://c4rxohlqbukrh" path="res://relics/common/shimenawa/relic_shimenawa.tres" id="10_qufxv"]
+[ext_resource type="Resource" uid="uid://y6fmm1drk2gr" path="res://relics/common/jade_shard/relic_jade_shard.tres" id="11_odxna"]
+[ext_resource type="Resource" uid="uid://c7y02jnxa1jw8" path="res://relics/common/oracle_bone/relic_oracle_bone.tres" id="12_fwue6"]
+[ext_resource type="Resource" uid="uid://83qh03xketvs" path="res://relics/common/curious_stone/relic_curious_stone.tres" id="13_ptji1"]
+[ext_resource type="Resource" uid="uid://c4shtfdm8gspl" path="res://relics/uncommon/molten_pin/relic_molten_pin.tres" id="14_dvufh"]
+[ext_resource type="Resource" uid="uid://c6s7i0p2faf3s" path="res://relics/uncommon/bell_chain/relic_bell_chain.tres" id="15_sgk0k"]
+[ext_resource type="Resource" uid="uid://dlye2f185gh5n" path="res://relics/common/charcoal_rod/relic_charcoal_rod.tres" id="16_t3rcw"]
+[ext_resource type="Script" uid="uid://cgq3pbmhaou3t" path="res://quests/settler/rewards/settler_quest_reward_choose_relic.gd" id="17_4nucm"]
+[ext_resource type="Script" uid="uid://vw63je5kb4o1" path="res://quests/settler/goals/settler_quest_goal_biome_settlements.gd" id="20_6feuc"]
+[ext_resource type="Resource" uid="uid://coqtbomfb4xc" path="res://stage/spots/desert/spot_desert.tres" id="21_yaeps"]
+[ext_resource type="Resource" uid="uid://cht5gp5i657sg" path="res://stage/spots/steppe/spot_steppe.tres" id="22_ij0uq"]
+[ext_resource type="Resource" uid="uid://ucnbpdhw8mob" path="res://stage/spots/forest/spot_forest.tres" id="23_4oijv"]
+[ext_resource type="Resource" uid="uid://ouecqwnbe2cw" path="res://stage/spots/swamp/spot_swamp.tres" id="24_nvfdg"]
+
+[sub_resource type="Resource" id="Resource_c5y8q"]
+script = ExtResource("3_dt2b8")
+aspect_type = ExtResource("2_c5y8q")
+damage = 4
+metadata/_custom_type_script = "uid://o6r5kcqelqsf"
+
+[sub_resource type="Resource" id="Resource_k3q4t"]
+script = ExtResource("17_4nucm")
+relic_choice_pool = Array[ExtResource("7_dskhs")]([ExtResource("8_q0e4u"), ExtResource("9_k3q4t"), ExtResource("10_qufxv"), ExtResource("11_odxna"), ExtResource("12_fwue6"), ExtResource("13_ptji1"), ExtResource("14_dvufh"), ExtResource("15_sgk0k"), ExtResource("16_t3rcw")])
+metadata/_custom_type_script = "uid://cgq3pbmhaou3t"
+
+[sub_resource type="Resource" id="Resource_dt2b8"]
+script = ExtResource("20_6feuc")
+num_settlements = 1
+spot_type = ExtResource("21_yaeps")
+metadata/_custom_type_script = "uid://vw63je5kb4o1"
+
+[sub_resource type="Resource" id="Resource_2e40f"]
+script = ExtResource("20_6feuc")
+num_settlements = 1
+spot_type = ExtResource("22_ij0uq")
+metadata/_custom_type_script = "uid://vw63je5kb4o1"
+
+[sub_resource type="Resource" id="Resource_dskhs"]
+script = ExtResource("20_6feuc")
+num_settlements = 1
+spot_type = ExtResource("23_4oijv")
+metadata/_custom_type_script = "uid://vw63je5kb4o1"
+
+[sub_resource type="Resource" id="Resource_q0e4u"]
+script = ExtResource("20_6feuc")
+num_settlements = 1
+spot_type = ExtResource("24_nvfdg")
+metadata/_custom_type_script = "uid://vw63je5kb4o1"
+
+[resource]
+script = ExtResource("7_cfpm6")
+intro_text = "The abbot at my former monastery is... not a good person. I've had enough of this! It is time for me to return to the lay life. I want to see the world outside the lonely mountain peaks!"
+challenges = Array[ExtResource("1_6c8cm")]([SubResource("Resource_c5y8q")])
+settler_goals = Array[ExtResource("8_kum8i")]([SubResource("Resource_dt2b8"), SubResource("Resource_2e40f"), SubResource("Resource_dskhs"), SubResource("Resource_q0e4u")])
+rewards = Array[ExtResource("4_0nujk")]([SubResource("Resource_k3q4t")])
+restrict_to_jobs = Array[ExtResource("3_fosxp")]([ExtResource("5_2e40f")])
+quest_id = "settler_former_monk"
+category = 2
+name = "Leaving the Order"
+metadata/_custom_type_script = "uid://1na7ymvvvbby"

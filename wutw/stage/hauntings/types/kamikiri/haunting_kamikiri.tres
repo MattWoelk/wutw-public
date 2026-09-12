@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://bc0qhqgpqmya2"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_p5p3c"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="2_sfhgd"]
+[ext_resource type="Script" uid="uid://c8r1lojo6hfkm" path="res://stage/hauntings/effects/haunting_effect_lose_inspiration.gd" id="3_kxvq6"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="4_6hmgq"]
+[ext_resource type="Texture2D" uid="uid://s8c0k5xggfmr" path="res://stage/hauntings/types/kamikiri/haunting_kamikiri.png" id="5_4fjyd"]
+[ext_resource type="Resource" uid="uid://dr08pi5u0501e" path="res://art/pieces/piece_bakemono_kamikiri.tres" id="5_sfhgd"]
+[ext_resource type="Texture2D" uid="uid://cee4o5o5cf4c2" path="res://stage/hauntings/types/kamikiri/haunting_kamikiri_realistic_envy.png" id="6_bbueo"]
+[ext_resource type="Resource" uid="uid://3usbr5e3h56q" path="res://art/pieces/piece_kunisada_hannya.tres" id="6_kxvq6"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="7_4wjd5"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="8_sevch"]
+[ext_resource type="Script" uid="uid://cpv7oa1pdyk41" path="res://stage/hauntings/triggers/haunting_trigger_rare_card_played.gd" id="10_ie4wy"]
+
+[sub_resource type="Resource" id="Resource_aq72k"]
+script = ExtResource("3_kxvq6")
+base_amount = 3
+extra_amount_per_season = 0
+metadata/_custom_type_script = "uid://c8r1lojo6hfkm"
+
+[sub_resource type="Resource" id="Resource_1rvp7"]
+script = ExtResource("10_ie4wy")
+metadata/_custom_type_script = "uid://cpv7oa1pdyk41"
+
+[resource]
+script = ExtResource("8_sevch")
+haunting_id = "kamikiri"
+name = "Kamikiri"
+name_japanese = "髪切り"
+name_realistic = "Envy"
+name_translation = "Hair Cutter"
+description = "Beautiful settlers here wake up to find their hair and clothes cut up by the mysterious Kamikiri."
+description_realistic = "Envy among settlers is causing widespread theft and vandalism."
+description_long = "A mysterious monster with scissor-shaped claws and beak sneaks around at night, hiding among the roof beams. It waits for settlers to fall asleep, before descending on them and cutting off their beautiful locks. At times it doesn't stop there, but proceeds to ruin all the clothes in the victim's closet as well.
+
+The Kamikiri seems to only target the most beautiful and well-off townspeople, perhaps as a punishment for their excessive ostentation."
+image_small = ExtResource("5_4fjyd")
+image_credit = ExtResource("5_sfhgd")
+image_small_realistic = ExtResource("6_bbueo")
+image_realistic_credit = ExtResource("6_kxvq6")
+base_aspect_types = Array[ExtResource("1_p5p3c")]([ExtResource("2_sfhgd")])
+extra_aspect_type = ExtResource("4_6hmgq")
+scaling_bonus_type = ExtResource("7_4wjd5")
+trigger = SubResource("Resource_1rvp7")
+effect = SubResource("Resource_aq72k")
+spot_attach_mode = 1
+settlement_attach_mode = 1
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

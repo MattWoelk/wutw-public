@@ -1,0 +1,37 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://bfmp6ti64pdu3"]
+
+[ext_resource type="MapSpriteType_Generic" uid="uid://cf8vn7kowpnos" path="res://map/sprites/spots/steppe/mst_steppe_cairn_2.tres" id="1_1maif"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://d261yk4elct04" path="res://map/sprites/spots/steppe/mst_steppe_cairn_1.tres" id="2_jeo12"]
+
+[sub_resource type="MapSpriteCollision_Circle" id="MapSpriteCollision_Circle_1au84"]
+center = Vector2(-0.185, -0.36)
+radius = 2.345
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_gnkn2"]
+sprite_type = ExtResource("1_1maif")
+offset = Vector2(1, -1.245)
+scale = 1.13
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_hmnbm"]
+sprite_type = ExtResource("1_1maif")
+offset = Vector2(-0.92, -0.78)
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_1au84"]
+sprite_type = ExtResource("2_jeo12")
+offset = Vector2(-1.8, 0)
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_2skt4"]
+sprite_type = ExtResource("1_1maif")
+offset = Vector2(0.155, 0.115)
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_3vajm"]
+sprite_type = ExtResource("2_jeo12")
+offset = Vector2(-1.025, 0.995)
+scale = 0.88
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_gnkn2"), SubResource("MapSpriteComponent_hmnbm"), SubResource("MapSpriteComponent_1au84"), SubResource("MapSpriteComponent_2skt4"), SubResource("MapSpriteComponent_3vajm")])
+footprint_radius = 1.41
+must_be_fully_within_clip = true
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Circle_1au84")])

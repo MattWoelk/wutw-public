@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://bhqdffdlm0kx4"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_pk248"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="3_gwec8"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="3_o1h0b"]
+[ext_resource type="Script" uid="uid://do5ygcjgpbgi8" path="res://stage/hauntings/effects/haunting_effect_discard.gd" id="4_pk248"]
+[ext_resource type="Texture2D" uid="uid://c2776iptptcwe" path="res://stage/hauntings/types/akaname/haunting_akaname.png" id="5_pk248"]
+[ext_resource type="Resource" uid="uid://dn7dvi1gug8my" path="res://art/pieces/piece_bakemono_hyousube_shoukira.tres" id="5_ssidw"]
+[ext_resource type="Resource" uid="uid://i045nwc0a4kc" path="res://art/pieces/piece_hiroshige_yoshitada.tres" id="6_dooth"]
+[ext_resource type="Texture2D" uid="uid://f5vf3gr64qgf" path="res://stage/hauntings/types/akaname/haunting_akaname_realistic_sickness.png" id="6_ssidw"]
+[ext_resource type="Resource" uid="uid://w8n0bwomyvod" path="res://stage/spots/building_small/spot_building_small.tres" id="8_o1h0b"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="8_yxl0j"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="9_xtj4y"]
+[ext_resource type="Script" uid="uid://6xguje0707l2" path="res://stage/hauntings/triggers/haunting_trigger_upgrade_activated.gd" id="10_ssidw"]
+
+[sub_resource type="Resource" id="Resource_o1h0b"]
+script = ExtResource("4_pk248")
+metadata/_custom_type_script = "uid://do5ygcjgpbgi8"
+
+[sub_resource type="Resource" id="Resource_wb8k4"]
+script = ExtResource("10_ssidw")
+any_spot = false
+metadata/_custom_type_script = "uid://6xguje0707l2"
+
+[resource]
+script = ExtResource("8_yxl0j")
+haunting_id = "akaname"
+name = "Akaname"
+name_japanese = "垢嘗"
+name_realistic = "Sickness"
+name_translation = "Filth Licker"
+description = "Filth-licking goblins are said to gather in these dirty ruins, spreading sickness wherever they crawl."
+description_realistic = "Illness spreads quickly among the unwashed. Poor sanitation in this settlement has turned homes and baths into breeding grounds for disease."
+description_long = "At first, settlers only complained of sluggishness and fever. Then came the slime, a damp sheen creeping across the walls. Those who spent the night by the ruins swore they heard faint slurping sounds, as if something small and eager were licking at their bedrolls.
+
+In the Old World they spoke of Akaname, goblins born of neglect, living off the waste and grime of the careless. Their tongues are said to stretch across rooms, leaving behind sickness in their wake. Cleanliness alone keeps these creatures at bay."
+image_small = ExtResource("5_pk248")
+image_credit = ExtResource("5_ssidw")
+image_small_realistic = ExtResource("6_ssidw")
+image_realistic_credit = ExtResource("6_dooth")
+spot_type = ExtResource("8_o1h0b")
+base_aspect_types = Array[ExtResource("1_pk248")]([ExtResource("3_gwec8")])
+extra_aspect_type = ExtResource("3_o1h0b")
+scaling_bonus_type = ExtResource("9_xtj4y")
+trigger = SubResource("Resource_wb8k4")
+effect = SubResource("Resource_o1h0b")
+spot_attach_mode = 2
+settlement_attach_mode = 2
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

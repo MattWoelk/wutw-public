@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="ShardType_Lightning" format=3 uid="uid://dvlfoilu86hgr"]
+
+[ext_resource type="Resource" uid="uid://ci10ijxi2cwfw" path="res://stage/spots/wasteland/upgrade_wasteland_2_storm_camp.tres" id="1_er5su"]
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="2_m3y8m"]
+[ext_resource type="Resource" uid="uid://csqqncq7572gr" path="res://stage/spots/wasteland/upgrade_wasteland_3_storm_castle.tres" id="2_pmfpi"]
+[ext_resource type="Script" uid="uid://1mhfwcvcdo06" path="res://shard_types/lightning/shard_type_lightning.gd" id="4_8scjy"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="4_lqj2e"]
+[ext_resource type="Texture2D" uid="uid://cvs2pviknu8ls" path="res://shard_types/lightning/shard_type_lightning.png" id="4_pmfpi"]
+[ext_resource type="Resource" uid="uid://ccirytokaq4xk" path="res://art/pieces/piece_gekkou_onodera_koemon_hidetomi.tres" id="5_flsng"]
+[ext_resource type="Resource" uid="uid://diewpgttjxr6" path="res://debate/arguments/argument_electricity.tres" id="8_ei28y"]
+[ext_resource type="Resource" uid="uid://bxu7ciewwyw14" path="res://skills/craft/skill_craft_4_epic.tres" id="8_uliml"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="9_ei28y"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="10_uliml"]
+
+[sub_resource type="Resource" id="Resource_42s6q"]
+script = ExtResource("2_m3y8m")
+text = "From the early days, the ever-present storms of $shard_name have birthed a culture of storm chasing. The people in these storm chaser camps, with their gravity-defying hair and rubber sandals, were considered lunatics at first, until [b]Arashi Ryuutarou[/b] built a kite that guided lightning out of the skies to wherever one wished. This invention was quickly adopted as a tool to start fires and shatter rocks on command."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_7c60o"]
+script = ExtResource("2_m3y8m")
+text = "With time, the people of $shard_name learned to store the lightning, like a venomous snake charmed into a basket. The vast cellars below the Stormwatch Citadel were filled with jars of gold leaf and brine, each charged with enough lightning to stop a heart. It is said that in these basements, one clumsy step can start a storm."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_nw6pk"]
+script = ExtResource("2_m3y8m")
+text = "One invention led to another, and it wasn't long before the capital's nighttime streets were bright with thousands of charcoal lamps that burned no fuel. These lightning-powered lanterns lengthened the days, but emitted a constant, high-pitched hiss and a low thrum, making silence a rare commodity."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_v7pj1"]
+script = ExtResource("2_m3y8m")
+text = "The latest invention taking $shard_name by storm is a technique for coating metals with the thinnest skin of gold or silver using the lightning jars. This has become so popular and widespread, that even farmers are often seen wielding gilded hoes, and no dinner in the capital is considered proper unless eaten with a pair of gilded chopsticks from a silvered bowl."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_p17rx"]
+script = ExtResource("9_ei28y")
+text = "That was one bright shard! They had lanterns everywhere. You couldn't even see the stars at night, and I bet you can see the capital from three shards over.
+
+I heard that their lanterns barely need maintenance. They have invented some odd mechanism to keep them burning without fuel. They say it's the same thing as lightning, but they've now learned to somehow get it from waterfalls.
+
+I can't even try to figure all this stuff out, but their scholars say folks knew about it before the Shattering, and now they've started teaching the techniques to people on other shards."
+revealed_skill = ExtResource("8_uliml")
+gained_argument = ExtResource("8_ei28y")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[resource]
+script = ExtResource("4_8scjy")
+citadel = ExtResource("2_pmfpi")
+camp = ExtResource("1_er5su")
+shard_type_id = "lightning"
+name = "The Land of Bottled Lightning"
+shard_name_override = "Raikō no Kuni"
+shard_name_override_jp = "雷光国"
+shard_name_override_meaning = "Lightning Province"
+tier = 1
+illustration = ExtResource("4_pmfpi")
+illustration_credit = ExtResource("5_flsng")
+history = Array[ExtResource("2_m3y8m")]([SubResource("Resource_42s6q"), SubResource("Resource_7c60o"), SubResource("Resource_nw6pk"), SubResource("Resource_v7pj1")])
+trip_reward = SubResource("Resource_p17rx")
+metadata/_custom_type_script = "uid://c6vrs2bxrk07c"

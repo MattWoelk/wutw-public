@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://bw82mwnqnc20j"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_2jtp2"]
+[ext_resource type="Resource" uid="uid://giafyqbhomse" path="res://stage/spots/cliff/upgrade_cliff_2_silver_mine.tres" id="2_3bcq7"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_xtnjk"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="4_3bcq7"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="4_gk3nb"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="5_gk3nb"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="7_qwexo"]
+[ext_resource type="Resource" uid="uid://bom6dwl3t2obc" path="res://stage/spots/cliff/spot_cliff.tres" id="8_yeewj"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_4xdyq"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://b8imunsgkwq5e" path="res://map/sprites/spots/cliff/mst_cliff_granite_mine.tres" id="10_186ml"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cvbcwfox0oaq7" path="res://map/sprites/cliffs/mst_cliff_1.tres" id="11_pq356"]
+[ext_resource type="Script" uid="uid://cm6qovq4s06ky" path="res://stage/spots/spot_upgrade_visual_replace.gd" id="12_hkl0u"]
+
+[sub_resource type="Resource" id="Resource_7mnvv"]
+script = ExtResource("12_hkl0u")
+old_sprite_types = Array[MapSpriteType]([ExtResource("11_pq356")])
+new_sprite_type = ExtResource("10_186ml")
+metadata/_custom_type_script = "uid://cm6qovq4s06ky"
+
+[resource]
+script = ExtResource("1_2jtp2")
+spot_upgrade_id = "cliff_granite_mine"
+name = "Granite Quarry"
+description = "Picks ring out against crevices, intent on turning the ancient cliff into stones for new homes."
+required_aspects = Array[ExtResource("4_gk3nb")]([ExtResource("7_qwexo")])
+granted_bonuses = Dictionary[ExtResource("2_xtnjk"), int]({
+ExtResource("4_3bcq7"): 10,
+ExtResource("5_gk3nb"): -5
+})
+child_upgrades = Array[ExtResource("1_2jtp2")]([ExtResource("2_3bcq7")])
+spot = ExtResource("8_yeewj")
+visuals = Array[ExtResource("9_4xdyq")]([SubResource("Resource_7mnvv")])
+tags = Array[int]([2])

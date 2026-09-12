@@ -1,0 +1,136 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://d0sogxtr3353x"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_gb8gn"]
+[ext_resource type="Resource" uid="uid://carqmtr6epbw7" path="res://art/pieces/piece_hokusai_mishima.tres" id="1_p58a3"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_p58a3"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_eneyw"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="4_t4ecb"]
+[ext_resource type="Script" uid="uid://gu7gcielbwdr" path="res://events/system/outcomes/choose_card/event_outcome_choose_card.gd" id="5_i78df"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="6_x5ha2"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="7_smode"]
+[ext_resource type="Script" uid="uid://cbnw4a13y5x8c" path="res://events/system/outcomes/random/event_outcome_random.gd" id="8_s17dr"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="9_ayq1x"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="10_1npdi"]
+[ext_resource type="Resource" uid="uid://cvorh2ej42ffh" path="res://relics/uncommon/pine_curl/relic_pine_curl.tres" id="11_4ro36"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="12_hgpdc"]
+[ext_resource type="Script" uid="uid://yxgaymbbt8tk" path="res://events/system/outcomes/override_next_step/event_outcome_override_next_step.gd" id="13_e38c3"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="14_7yycy"]
+[ext_resource type="Resource" uid="uid://dhal843mubr37" path="res://cards/tier6/card_wound.tres" id="15_t4ecb"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="15_vwk6v"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="16_cyrbn"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="16_i78df"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="17_rd6ss"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="18_xc7go"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="19_jqs06"]
+
+[sub_resource type="Resource" id="Resource_3vr0c"]
+script = ExtResource("1_gb8gn")
+_texture_path = "res://stage/survey/episodes/episode_big_tree.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_2t1hw"]
+script = ExtResource("5_i78df")
+card_tag = 13
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_vok6u"]
+script = ExtResource("2_p58a3")
+label = "Study the tree."
+aspects = Array[ExtResource("3_eneyw")]([ExtResource("4_t4ecb")])
+aspects_per_season = Array[ExtResource("3_eneyw")]([null])
+outcome = SubResource("Resource_2t1hw")
+outcome_text = "The budding scholar takes a string and measures the circumference of the tree. She measures the shadow to estimate its height. Finally, she records the distance to other nearby trees and takes their measurements too. Having recorded all her findings, she signals to the group to move on."
+
+[sub_resource type="Resource" id="Resource_o37md"]
+script = ExtResource("5_i78df")
+card_tag = 17
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_l6j16"]
+script = ExtResource("2_p58a3")
+label = "Pay respects to the spirit."
+aspects = Array[ExtResource("3_eneyw")]([ExtResource("7_smode")])
+aspects_per_season = Array[ExtResource("3_eneyw")]([null])
+outcome = SubResource("Resource_o37md")
+outcome_text = "The priest draws glyphs in the dirt around the tree. He bows deeply and chants several prayers while the rest of the group stand back, respectfully. Finally, the priest is satisfied with the ritual and the group moves on from the clearing."
+
+[sub_resource type="Resource" id="Resource_dk3yg"]
+script = ExtResource("12_hgpdc")
+relic = ExtResource("11_4ro36")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_38rof"]
+script = ExtResource("13_e38c3")
+result_text = "A particularly adventurous scout climbs to the top of the tree. He reports that the view is incredible, and comes down with a sprig from the very top as a memento."
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_jl1ca"]
+script = ExtResource("10_1npdi")
+suboutcomes = Array[ExtResource("9_ayq1x")]([SubResource("Resource_dk3yg"), SubResource("Resource_38rof")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_a6ufw"]
+script = ExtResource("16_i78df")
+card_type = ExtResource("15_t4ecb")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_bgisj"]
+script = ExtResource("13_e38c3")
+result_text = "A particularly adventurous scout climbs to the top of the tree. Just as he is about to come down, his foot slips and he comes crashing down. He passes several branches before he manages to gain purchase and climb down the rest of the way. He arrives on the ground with no serious injuries, but covered in scratches, and with clothes full of sap."
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_d174p"]
+script = ExtResource("10_1npdi")
+suboutcomes = Array[ExtResource("9_ayq1x")]([SubResource("Resource_a6ufw"), SubResource("Resource_bgisj")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_x4xxy"]
+script = ExtResource("8_s17dr")
+suboutcomes = Dictionary[ExtResource("9_ayq1x"), float]({
+SubResource("Resource_jl1ca"): 0.3,
+SubResource("Resource_d174p"): 0.7
+})
+description = "Chance of <term:relic.pine_curl> or <term:card.wound>"
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_h10nl"]
+script = ExtResource("15_vwk6v")
+bonus_type = ExtResource("14_7yycy")
+min_count = 20
+max_count = -1
+extra_per_season = 50
+
+[sub_resource type="Resource" id="Resource_oodnd"]
+script = ExtResource("2_p58a3")
+label = "Climb the tree."
+requirement = SubResource("Resource_h10nl")
+aspects = Array[ExtResource("3_eneyw")]([null])
+outcome = SubResource("Resource_x4xxy")
+outcome_text = "<overridden>"
+
+[sub_resource type="Resource" id="Resource_2rwo6"]
+script = ExtResource("17_rd6ss")
+delta = 4
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_hp8qu"]
+script = ExtResource("2_p58a3")
+label = "Set up camp under the tree."
+aspects = Array[ExtResource("3_eneyw")]([ExtResource("16_cyrbn")])
+aspects_per_season = Array[ExtResource("3_eneyw")]([null])
+outcome = SubResource("Resource_2rwo6")
+outcome_text = "The scouts set up camp under the giant tree. One composes a poem, proclaiming the tree a witness to the Shattering. Someone paints a sketch. The group is inspired by the wonder they encountered."
+
+[resource]
+script = ExtResource("18_xc7go")
+episode_id = "big_tree"
+title = "The Towering Tree"
+biome_types = Array[int]([9])
+text = "The team finds themselves standing in a clearing dominated by the biggest tree they'd ever seen.
+
+One of the scouts, a priest, insists that it must be inhabited by a powerful spirit. Another, a scholar's apprentice, wants to measure it and study the factors that have let it grow so large. An adventurous fellow suggests climbing it.
+
+The rest of the group just wants to stay a while and marvel at the size."
+background_image = SubResource("Resource_3vr0c")
+background_credit = ExtResource("1_p58a3")
+choices = Array[ExtResource("2_p58a3")]([SubResource("Resource_vok6u"), SubResource("Resource_l6j16"), SubResource("Resource_oodnd"), SubResource("Resource_hp8qu")])

@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://gpnysm72dhii"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_dh2a4"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_d2qoy"]
+[ext_resource type="Resource" uid="uid://dgamb21ubiatw" path="res://stage/spots/swamp/upgrade_swamp_3_alchemist_retreat.tres" id="2_ysg13"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="3_ysg13"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="4_8rcou"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="5_q3al3"]
+[ext_resource type="Resource" uid="uid://ouecqwnbe2cw" path="res://stage/spots/swamp/spot_swamp.tres" id="7_fxu2l"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="8_awuka"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://br25tjk2nghfu" path="res://map/sprites/spots/swamp/mst_swamp_apothecary.tres" id="9_a2tjc"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://b8xwu6w7isior" path="res://map/sprites/spots/swamp/mst_swamp_murky_trail.tres" id="10_311lx"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="11_hgryf"]
+
+[sub_resource type="Resource" id="Resource_eqcwd"]
+script = ExtResource("11_hgryf")
+old_sprite_type = ExtResource("10_311lx")
+new_sprite_type = ExtResource("9_a2tjc")
+biome = 4
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_dh2a4")
+spot_upgrade_id = "swamp_apothecary"
+name = "Apothecary Hut"
+description = "Roots, herbs, and mushrooms are mixed here in auspicious ratios to keep illness at bay."
+required_aspects = Array[ExtResource("4_8rcou")]([ExtResource("5_q3al3")])
+granted_bonuses = Dictionary[ExtResource("2_d2qoy"), int]({
+ExtResource("3_ysg13"): 10
+})
+child_upgrades = Array[ExtResource("1_dh2a4")]([ExtResource("2_ysg13")])
+spot = ExtResource("7_fxu2l")
+visuals = Array[ExtResource("8_awuka")]([SubResource("Resource_eqcwd")])
+tags = Array[int]([1, 2])

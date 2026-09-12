@@ -1,0 +1,81 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://c68q5aaavw020"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_d0hab"]
+[ext_resource type="Resource" uid="uid://c7if2cxgwyodb" path="res://art/pieces/piece_yoshida_above_the_cloud.tres" id="1_psv77"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_psv77"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_t4i02"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="4_pk7fm"]
+[ext_resource type="Resource" uid="uid://ckh1okwy4ompd" path="res://cards/tier3/card_dragon.tres" id="5_d54v6"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="6_c8fre"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="7_jc6kh"]
+[ext_resource type="Resource" uid="uid://2raau6q7rfdo" path="res://cards/tier2/card_cow.tres" id="8_g0io1"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="9_fgxwg"]
+[ext_resource type="Resource" uid="uid://be60pfiwe1lip" path="res://cards/tier2/card_boat.tres" id="10_n1642"]
+[ext_resource type="Resource" uid="uid://c0rvxylgp50pb" path="res://cards/tier1/card_shape.tres" id="11_e8yed"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="12_1uc6c"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="13_3wop5"]
+
+[sub_resource type="Resource" id="Resource_swiy7"]
+script = ExtResource("1_d0hab")
+_texture_path = "res://stage/survey/episodes/cloud_shapes.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_evpa4"]
+script = ExtResource("6_c8fre")
+card_type = ExtResource("5_d54v6")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_7shn7"]
+script = ExtResource("2_psv77")
+label = "It's a dragon."
+aspects = Array[ExtResource("3_t4i02")]([ExtResource("4_pk7fm")])
+outcome = SubResource("Resource_evpa4")
+outcome_text = "After a heated discussion, the majority is finally convinced that the curling cloud looks like a magnificent dragon, its shifting body shimmering orange and purple."
+
+[sub_resource type="Resource" id="Resource_ihqxv"]
+script = ExtResource("6_c8fre")
+card_type = ExtResource("8_g0io1")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_henwa"]
+script = ExtResource("2_psv77")
+label = "It's an ox."
+aspects = Array[ExtResource("3_t4i02")]([ExtResource("7_jc6kh")])
+outcome = SubResource("Resource_ihqxv")
+outcome_text = "After a heated discussion, the majority is finally convinced that the dense cloud looks like a strong ox, with two horns protruding from its head."
+
+[sub_resource type="Resource" id="Resource_q435i"]
+script = ExtResource("6_c8fre")
+card_type = ExtResource("10_n1642")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_3wsyl"]
+script = ExtResource("2_psv77")
+label = "It's a ship."
+aspects = Array[ExtResource("3_t4i02")]([ExtResource("9_fgxwg")])
+outcome = SubResource("Resource_q435i")
+outcome_text = "After a heated discussion, the majority is finally convinced that the cloud looks like a ship, floating on waves of blue, white mist forming its sails. It seems to be heading toward a distant shard."
+
+[sub_resource type="Resource" id="Resource_yh81i"]
+script = ExtResource("6_c8fre")
+card_type = ExtResource("11_e8yed")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ajufd"]
+script = ExtResource("2_psv77")
+label = "It doesn't matter."
+aspects = Array[ExtResource("3_t4i02")]([null])
+outcome = SubResource("Resource_yh81i")
+outcome_text = "The scouts fail to agree and give up, deciding that these are random shapes not worth pay attention to."
+
+[resource]
+script = ExtResource("12_1uc6c")
+episode_id = "cloud_shapes"
+title = "The Shape of a Cloud"
+biome_types = Array[int]([0])
+text = "At the shard's edge, the scouts stop to watch the clouds below. They twist then separate, briefly forming into shapes before dissolving again.
+
+The shapes look different to each person. Soon the entire group is pointing at the same cloud, calling out details to support their interpretation."
+background_image = SubResource("Resource_swiy7")
+background_credit = ExtResource("1_psv77")
+choices = Array[ExtResource("2_psv77")]([SubResource("Resource_7shn7"), SubResource("Resource_henwa"), SubResource("Resource_3wsyl"), SubResource("Resource_ajufd")])

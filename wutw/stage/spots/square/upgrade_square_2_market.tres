@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://bneroyflus0ar"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_56jli"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_8h64s"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_ai7it"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="3_ffic2"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="4_ol5yy"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="6_gbgph"]
+[ext_resource type="Resource" uid="uid://ctiwrqhub05ib" path="res://stage/spots/square/spot_square.tres" id="7_rab3f"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="8_gkj5x"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://tk0dig2am3pl" path="res://map/sprites/spots/square/mst_square_market.tres" id="9_m4mo4"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://dblv6q4muvyfi" path="res://map/sprites/spots/square/mst_square_notice_board.tres" id="10_fwg6i"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="11_bb521"]
+
+[sub_resource type="Resource" id="Resource_gbrus"]
+script = ExtResource("11_bb521")
+old_sprite_type = ExtResource("10_fwg6i")
+new_sprite_type = ExtResource("9_m4mo4")
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_56jli")
+spot_upgrade_id = "square_market"
+name = "Marketplace"
+description = "Stalls groan under baskets of fruit, crates of hammers, and the most fashionable kimonos."
+required_aspects = Array[ExtResource("3_ai7it")]([ExtResource("6_gbgph")])
+granted_bonuses = Dictionary[ExtResource("2_8h64s"), int]({
+ExtResource("3_ffic2"): 10,
+ExtResource("4_ol5yy"): 5
+})
+spot = ExtResource("7_rab3f")
+visuals = Array[ExtResource("8_gkj5x")]([SubResource("Resource_gbrus")])

@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dq4jxpdhn3lha"]
+
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="1_ld84b"]
+[ext_resource type="Material" uid="uid://dmrs5krb7mu22" path="res://hub/museum/museum_tile.tres" id="2_7gie2"]
+[ext_resource type="Script" uid="uid://bhkg0qgm52xn3" path="res://run/run_end/discovery_haunting.gd" id="5_jv1qb"]
+[ext_resource type="FontVariation" uid="uid://b3smiw8fmrdc5" path="res://theme/fonts/presets/font_normal_spaced.tres" id="6_7gie2"]
+[ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="7_0hbll"]
+[ext_resource type="Texture2D" uid="uid://cndarkm63tu3b" path="res://stage/hauntings/types/akashita/haunting_akashita.png" id="8_nqt2q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3su0x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i8eiq"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Discovery_Haunting" type="PanelContainer" unique_id=648006731]
+custom_minimum_size = Vector2(200, 200)
+offset_right = 200.0
+offset_bottom = 200.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_3su0x")
+script = ExtResource("5_jv1qb")
+
+[node name="BG" type="TextureRect" parent="." unique_id=240216929]
+unique_name_in_owner = true
+material = ExtResource("2_7gie2")
+instance_shader_parameters/selected = 0.0
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("8_nqt2q")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=327054898]
+layout_mode = 2
+theme_override_constants/margin_bottom = 4
+
+[node name="UkiyoePanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=1079892412]
+material = ExtResource("1_ld84b")
+instance_shader_parameters/size = Vector2(244.02002, 49.97998)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_i8eiq")
+script = ExtResource("7_0hbll")
+material_customized = true
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/UkiyoePanelContainer" unique_id=251997995]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_7gie2")
+theme_override_font_sizes/font_size = 18
+text = "Akashita"
+horizontal_alignment = 1
+autowrap_mode = 3

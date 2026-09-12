@@ -1,0 +1,262 @@
+[gd_resource type="Resource" script_class="ShardType_MainQuest_LakeShrine" format=3 uid="uid://dbs1cyca7r6y5"]
+
+[ext_resource type="Resource" uid="uid://vspp3bck8ll6" path="res://events/main_quest/1_30_shrine_ritual/event_shrine_ritual.tres" id="1_nkpsm"]
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="1_r2fur"]
+[ext_resource type="Script" uid="uid://c4fa5582nnci1" path="res://shard_types/mq_lake_shrine/shard_type_mq_lake_shrine.gd" id="2_pehf6"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="3_6wk7u"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="4_6wk7u"]
+[ext_resource type="Texture2D" uid="uid://4rgtmpy7qdwm" path="res://shard_types/mq_lake_shrine/shard_type_mq_lake_shrine.png" id="4_vmy4y"]
+[ext_resource type="Resource" uid="uid://ty1geb6qrtv6" path="res://art/pieces/piece_gekkou_priest_saigyo.tres" id="5_rnllf"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="8_n1bg2"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="9_cbk7m"]
+[ext_resource type="Resource" uid="uid://c6sb2u8sispgg" path="res://debate/arguments/argument_environmental_monitoring.tres" id="10_bndtd"]
+
+[sub_resource type="Resource" id="Resource_n1bg2"]
+script = ExtResource("1_r2fur")
+text = "$shard_name is known for its many beautiful lakes, one of which has a tiny island with a grand shrine to the Enlightened One. As one of the first shrines to be erected in the New World, it has become a popular pilgrimage destination. People come from all across the shard to meditate on its shores, finding wisdom in the reflection on its tranquil water."
+time_taken = 0
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_vmy4y"]
+script = ExtResource("4_6wk7u")
+scope = 1
+event_id = "shrine_ritual"
+var_id = "incense"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_rnllf"]
+script = ExtResource("3_6wk7u")
+text = "In the early days after the shrine was established and the incense burning ritual was adopted, the lake gained fame for a permanent, sweet-smelling haze that settled over the still waters. Pilgrims would visit for the chance to inhale the holy spirit and carry away a piece of divinity in their bodies. The burnt incense was also collected and spread over the little island, with the priests drawing intricate mandalas in the ashes."
+requirement = SubResource("Resource_vmy4y")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_cbk7m"]
+script = ExtResource("4_6wk7u")
+scope = 1
+event_id = "shrine_ritual"
+var_id = "rice_pot"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_bndtd"]
+script = ExtResource("3_6wk7u")
+text = "The communal pot of the Lake Shrine has become famous throughout the shard. Although originally used to boil plain grains for the folks living around the lake, it has evolved into a perpetual stew with seasonal flavorings added daily. The pot itself was later replaced by a giant cauldron taking up much of the shrine's courtyard, and pilgrims visit regularly to taste the famous dish prepared in it."
+requirement = SubResource("Resource_cbk7m")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_yo44d"]
+script = ExtResource("4_6wk7u")
+scope = 1
+event_id = "shrine_ritual"
+var_id = "compost"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_kja61"]
+script = ExtResource("3_6wk7u")
+text = "When the Lake Shrine was first founded, it adopted an unusual ritual of gathering fallen leaves to carpet the grounds. Over the years, the priests noticed that vegetation thrived wherever the leaves were deposited, and when the farmers heard of this, they quickly adopted the practice of spreading compost on their fields, greatly enhancing the shard's fertility."
+requirement = SubResource("Resource_yo44d")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_f4xd4"]
+script = ExtResource("4_6wk7u")
+scope = 1
+event_id = "shrine_ritual"
+var_id = "waterline"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_nl218"]
+script = ExtResource("3_6wk7u")
+text = "When the Lake Shrine was first founded, the priests adopted a ritual of meditating on the spot where the torii gate meets the water. Eventually, a pragmatic priest realized that it would be useful to record the change in water level, and erected a large wooden pillar in the lake on the other side of the shrine, marked with notches. Every day, the priests would use this giant ruler to measure and record the water level."
+requirement = SubResource("Resource_f4xd4")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_bw8qc"]
+script = ExtResource("1_r2fur")
+text = "..."
+min_main_quest = 200
+overrides = Array[ExtResource("3_6wk7u")]([SubResource("Resource_rnllf"), SubResource("Resource_bndtd"), SubResource("Resource_kja61"), SubResource("Resource_nl218")])
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_ee4yp"]
+script = ExtResource("3_6wk7u")
+text = "Over the years, the falling ash and the occasional discarded incense stick have changed the lake. The clear waters have turned murky, and fish have become rare. Many of the priests also developed a chronic cough, which they suffered with pride as a sign of sharing the heavy burden of the Enlightened One."
+requirement = SubResource("Resource_vmy4y")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_5ioe4"]
+script = ExtResource("3_6wk7u")
+text = "With time, shrines across the shard have adopted the communal cauldron tradition, and many households no longer have their own kitchens, opting instead to have all their meals at the nearest shrine. Travelers say that each village on $shard_name has its own unique flavor, and locals take visitors from off the shard on culinary tours to taste the flavors of each village."
+requirement = SubResource("Resource_cbk7m")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_mxvrs"]
+script = ExtResource("3_6wk7u")
+text = "Classic painting never took hold on $shard_name, but a unique local artform developed instead. In the autumn, when the leaves turn gold and red, artists gather them in large amounts and arrange them into grand compositions, each leaf a paint daub. Although such artwork rarely lasts more than a few days, it is seen as a celebration of transience, rather than waste, and people treasure the opportunity to see a great artist's work, knowing that it is their only chance to witness its unique beauty."
+requirement = SubResource("Resource_yo44d")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_obgk7"]
+script = ExtResource("3_6wk7u")
+text = "Over the years, the priests of $shard_name invented other measurement techniques based on their water level measuring tradition. Early on they learned to measure volume by submerging things in water. Later, they constructed a device for measuring temperature, by forcing air through a tube into a water measuring vessel, and noting how the water level rises when the air is heated."
+requirement = SubResource("Resource_f4xd4")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_fxyxj"]
+script = ExtResource("1_r2fur")
+text = "..."
+min_main_quest = 300
+overrides = Array[ExtResource("3_6wk7u")]([SubResource("Resource_ee4yp"), SubResource("Resource_5ioe4"), SubResource("Resource_mxvrs"), SubResource("Resource_obgk7")])
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_3783y"]
+script = ExtResource("3_6wk7u")
+text = "Now, centuries later, the practice of burning incense is long out of favor, replaced with aromatic herbs planted in the shrine gardens. The lake was dredged repeatedly, and has since regained much of its clarity. The priesthood now dismisses the early practices as minor mistakes on the road to enlightenment."
+requirement = SubResource("Resource_vmy4y")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_gxffu"]
+script = ExtResource("3_6wk7u")
+text = "The custom of shared meals has forged a strong sense of community in the towns of $shard_name, as rich and poor alike sit on the same mats and eat from the same pot. This sense of communal pride is also bolstered by the fact that the original cauldron at the Lake Shrine has remained in continuous use for centuries now."
+requirement = SubResource("Resource_cbk7m")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_nadqr"]
+script = ExtResource("3_6wk7u")
+text = "The philosophers of $shard_name have developed a worldview that celebrates the impermanent, cyclical nature of life. Just as leaves paint the landscape for a brief moment before withering and feeding next year's growth, so do people live to spread kindness across their communities before departing, having made life better for the next generation. Even the Shattering, they argue, was merely the end of one such cycle, necessary to give rise to the civilization of the Cloud Sea."
+requirement = SubResource("Resource_yo44d")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_dmqsa"]
+script = ExtResource("3_6wk7u")
+text = "The scientifically-minded priesthood of $shard_name eventually sought to understand the history of the lake. They drove hollow bamboo tubes deep into the lakebed, extracting columns of mud. By studying the layers of sediment they were able to infer the history of the surrounding environment. On the layers corresponding to the time of the Shattering, they found a massive concentration of metals and ash, a sure sign that the land had suffered horrific burns before the world broke apart."
+requirement = SubResource("Resource_f4xd4")
+metadata/_custom_type_script = "uid://cy8bar8yxvc7q"
+
+[sub_resource type="Resource" id="Resource_n78un"]
+script = ExtResource("1_r2fur")
+text = "..."
+min_main_quest = 400
+overrides = Array[ExtResource("3_6wk7u")]([SubResource("Resource_3783y"), SubResource("Resource_gxffu"), SubResource("Resource_nadqr"), SubResource("Resource_dmqsa")])
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_vxp2v"]
+script = ExtResource("8_n1bg2")
+text = "(overridden)"
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[sub_resource type="Resource" id="Resource_4mscu"]
+script = ExtResource("4_6wk7u")
+scope = 1
+event_id = "shrine_ritual"
+var_id = "incense"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_5rfs0"]
+script = ExtResource("8_n1bg2")
+text = "The famous lake on this shard is really beautiful. The waters are crystal clear, and the island with the shrine looks like a little jungle in the middle. When I asked the priest how they got it to look like that, she said it was a divine blessing. Another visitor asked if it had always been this way, to which she conceded that it took a lot of hard work from the priests over the generations.
+
+I asked around and learned that generations back the lake was full of black sludge from incense ash, but it's a sore topic for the priesthood. They've since overcorrected, and don't allow fire on the island at all. They even follow a strict raw diet because cooking would involve burning.
+
+A shifty fellow offered to sell me a stick of ancient incense, which is illegal in the town, but I decided not to get in trouble for such a mundane item."
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[sub_resource type="Resource" id="Resource_uu0vg"]
+script = ExtResource("9_cbk7m")
+trip_reward = SubResource("Resource_5rfs0")
+requirement = SubResource("Resource_4mscu")
+metadata/_custom_type_script = "uid://bt2jv4savcrpl"
+
+[sub_resource type="Resource" id="Resource_4nsyt"]
+script = ExtResource("4_6wk7u")
+scope = 1
+event_id = "shrine_ritual"
+var_id = "rice_pot"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_iffm1"]
+script = ExtResource("8_n1bg2")
+text = "The dining culture of this shard is its most distinctive feature. It seems that the people of each town have all of their meals together at a single eatery. The lines can be a bit long, but all the food is free, and I can say from personal experience that it does taste very good.
+
+The eateries are maintained by the local priesthood, and the townsfolk regularly contribute ingredients into the common pot. Multiple people asked if I had brought any ingredients from off the shard, and seemed disappointed when I said that I hadn't known of the custom before arriving here.
+
+I visited one more town before coming back. On my way there I camped by the road for the night and had some of my travel rations. As I was doing so, an old woman passing by came over to chastise me. Apparently it's bad manners here to eat alone. The next day I got to have a meal at my destination, which was served the same way, but tasted quite different, heavy with ginger and mustard seed."
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[sub_resource type="Resource" id="Resource_mpawi"]
+script = ExtResource("9_cbk7m")
+trip_reward = SubResource("Resource_iffm1")
+requirement = SubResource("Resource_4nsyt")
+metadata/_custom_type_script = "uid://bt2jv4savcrpl"
+
+[sub_resource type="Resource" id="Resource_ak2g4"]
+script = ExtResource("4_6wk7u")
+scope = 1
+event_id = "shrine_ritual"
+var_id = "compost"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_xlbtf"]
+script = ExtResource("8_n1bg2")
+text = "I arrived on this shard at a fortunate time. The leaves had just started to turn red, and the local artists were at the peak of their activity. Each morning from the window of my inn I saw groups of people arranging leaves into great murals, which were swept into the lake by evening. My favorite was one that showed a lone deer standing on a cliff looking at a sunset.
+
+I didn't have time to visit the famous lake shrine, but I did go to the smaller shrine in the town where I was staying. The priest there was particularly proud of their graveyard, which looked like an oddly orderly forest. They don't burn their dead here, and they don't put memorial stones either. Instead, they bury the bodies under a sapling, and the deceased's family cares for the tree. They see it as maintaining the cycle of nature."
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[sub_resource type="Resource" id="Resource_uqq01"]
+script = ExtResource("9_cbk7m")
+trip_reward = SubResource("Resource_xlbtf")
+requirement = SubResource("Resource_ak2g4")
+metadata/_custom_type_script = "uid://bt2jv4savcrpl"
+
+[sub_resource type="Resource" id="Resource_8fesf"]
+script = ExtResource("4_6wk7u")
+scope = 1
+event_id = "shrine_ritual"
+var_id = "waterline"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_50vii"]
+script = ExtResource("8_n1bg2")
+text = "I visited the famous lake shrine on this shard. The place is beautiful, the whole island being surrounded by blooming lotus flowers. A priest explained to me that these flowers are not just a decoration, but serve a practical purpose, as they change color whenever the lake's water is contaminated.
+
+The shrine's archive is filled with scrolls. At first I thought they were holy sutras and the like, but it turns out they are records of various measurements dating back centuries. The priests have studied these to find regularities in the weather, and can now predict it with such accuracy that it's common for people to check the shrine's announcement board every morning to learn whether they need to carry umbrellas."
+gained_argument = ExtResource("10_bndtd")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[sub_resource type="Resource" id="Resource_fumj6"]
+script = ExtResource("9_cbk7m")
+trip_reward = SubResource("Resource_50vii")
+requirement = SubResource("Resource_8fesf")
+metadata/_custom_type_script = "uid://bt2jv4savcrpl"
+
+[resource]
+script = ExtResource("2_pehf6")
+event = ExtResource("1_nkpsm")
+shard_type_id = "mq_lake_shrine"
+name = "The Holy Lakes"
+shard_name_override = "Mizukagami no Hama"
+shard_name_override_jp = "水鏡浜"
+shard_name_override_meaning = "Water Mirror Beach"
+tier = 3
+illustration = ExtResource("4_vmy4y")
+illustration_credit = ExtResource("5_rnllf")
+history = Array[ExtResource("1_r2fur")]([SubResource("Resource_n1bg2"), SubResource("Resource_bw8qc"), SubResource("Resource_fxyxj"), SubResource("Resource_n78un")])
+trip_reward = SubResource("Resource_vxp2v")
+trip_reward_overrides = Array[ExtResource("9_cbk7m")]([SubResource("Resource_uu0vg"), SubResource("Resource_mpawi"), SubResource("Resource_uqq01"), SubResource("Resource_fumj6")])
+min_main_quest_progress = 125
+metadata/_custom_type_script = "uid://c4fa5582nnci1"

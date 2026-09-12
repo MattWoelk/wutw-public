@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bnitu216hgmvs"]
+
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="1_dqjh6"]
+[ext_resource type="Script" uid="uid://bp2a56jlwf0n8" path="res://run/run_end/discovery_survey_episode.gd" id="2_dqjh6"]
+[ext_resource type="Material" uid="uid://dmrs5krb7mu22" path="res://hub/museum/museum_tile.tres" id="4_6ks8y"]
+[ext_resource type="Texture2D" uid="uid://b2j4sn87bmvuo" path="res://cutscenes/intro/slides/8.png" id="4_qe48p"]
+[ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="5_ye2dp"]
+[ext_resource type="FontVariation" uid="uid://b3smiw8fmrdc5" path="res://theme/fonts/presets/font_normal_spaced.tres" id="6_yjt74"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cw2ye"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgpea"]
+content_margin_left = 8.0
+content_margin_top = 3.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Discovery_SurveyEpisode" type="PanelContainer" unique_id=650643119]
+material = ExtResource("1_dqjh6")
+instance_shader_parameters/size = Vector2(349.27203, 455.99402)
+custom_minimum_size = Vector2(320, 177)
+custom_maximum_size = Vector2(320, 177)
+offset_right = 320.0
+offset_bottom = 177.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_cw2ye")
+script = ExtResource("2_dqjh6")
+
+[node name="BG" type="TextureRect" parent="." unique_id=135261685]
+unique_name_in_owner = true
+material = ExtResource("4_6ks8y")
+instance_shader_parameters/discovered = true
+instance_shader_parameters/hovered = 0.0
+instance_shader_parameters/is_tall = false
+instance_shader_parameters/is_wide = true
+instance_shader_parameters/selected = 0.0
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("4_qe48p")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1273421100]
+layout_mode = 2
+theme_override_constants/margin_bottom = 4
+
+[node name="UkiyoePanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=1753454026]
+material = ExtResource("1_dqjh6")
+instance_shader_parameters/size = Vector2(299.88, 49.97998)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_mgpea")
+script = ExtResource("5_ye2dp")
+material_customized = true
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/UkiyoePanelContainer" unique_id=1545732686]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(165.235, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_yjt74")
+theme_override_font_sizes/font_size = 18
+text = "The Painted Wound"
+horizontal_alignment = 1
+autowrap_mode = 3

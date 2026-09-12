@@ -1,0 +1,352 @@
+[gd_scene format=3 uid="uid://ca2roydpwhi5h"]
+
+[ext_resource type="Script" uid="uid://cj00qlubekr1m" path="res://hub/settler_quest_list.gd" id="1_ir24t"]
+[ext_resource type="PackedScene" uid="uid://b5k16hpo8080v" path="res://theme/faded_background/faded_background.tscn" id="2_7qv2o"]
+[ext_resource type="PackedScene" uid="uid://b6ob53b0vla40" path="res://theme/scroll_panel/scroll_panel_big.tscn" id="3_lgquj"]
+[ext_resource type="Shader" uid="uid://bbe7ginxustev" path="res://theme/scroll_panel/scroll_panel_dowel.gdshader" id="4_cmctf"]
+[ext_resource type="Texture2D" uid="uid://b0cvn7ev1bwut" path="res://theme/scroll_panel/dowel_wood.png" id="5_jxgmt"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="6_5815j"]
+[ext_resource type="PackedScene" uid="uid://td606pmc1v1n" path="res://quests/settler/settler_quest_description.tscn" id="7_2cj4e"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="7_eq4wr"]
+[ext_resource type="Script" uid="uid://b67iom4b68hfb" path="res://theme/accessible_line_edit.gd" id="7_tvxrb"]
+[ext_resource type="Shader" uid="uid://ygmrqrvg5hpm" path="res://theme/button/ukiyoe_button.gdshader" id="8_ow07v"]
+[ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="8_tvxrb"]
+[ext_resource type="Texture2D" uid="uid://ctgl61r3xxsqv" path="res://theme/button/button_fill.png" id="9_nodkj"]
+[ext_resource type="Script" uid="uid://dm63mtrlfj005" path="res://theme/faded_scroll_container/faded_scroll_container.gd" id="9_wed0p"]
+[ext_resource type="Texture2D" uid="uid://blje81yu8734p" path="res://theme/button/button_shape.png" id="10_w7w5q"]
+[ext_resource type="Material" uid="uid://dm0coidukcc6" path="res://theme/button/ukiyoe_button_material.tres" id="10_w73v8"]
+[ext_resource type="Texture2D" uid="uid://doe4603a6ngco" path="res://theme/button/button_outline.png" id="11_ergw6"]
+[ext_resource type="Texture2D" uid="uid://cwubixgc8n0yr" path="res://theme/button/button_swish_left.png" id="12_grsm6"]
+[ext_resource type="Texture2D" uid="uid://n6l17h4ysayj" path="res://theme/button/button_swish_right.png" id="13_ocqm7"]
+[ext_resource type="LabelSettings" uid="uid://bc3l8vvpbl2k" path="res://theme/fonts/presets/label_settings_header.tres" id="14_bno4c"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="14_f74es"]
+[ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="15_rcle1"]
+
+[sub_resource type="Gradient" id="Gradient_8ya12"]
+offsets = PackedFloat32Array(0, 0.196721, 0.460041, 0.525615, 0.603484, 0.732582, 1)
+colors = PackedColorArray(0.59, 0.43424, 0.3068, 0.796078, 0.48, 0.35328, 0.2496, 0.294118, 0.48, 0.35328, 0.2496, 0.0116377, 0.48, 0.35328, 0.2496, 0, 0.48, 0.35328, 0.2496, 0.0431956, 0.48, 0.35328, 0.2496, 0.34902, 0.4, 0.2944, 0.208, 0.929412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g5dkl"]
+gradient = SubResource("Gradient_8ya12")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_f3mgk"]
+colors = PackedColorArray(0.331639, 0.33164, 0.331639, 1, 0.961814, 0.961814, 0.961814, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_eabfy"]
+frequency = 0.0035
+domain_warp_amplitude = 100.0
+domain_warp_frequency = -0.01
+domain_warp_fractal_lacunarity = 8.69
+domain_warp_fractal_gain = 0.19
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jijvn"]
+width = 2048
+noise = SubResource("FastNoiseLite_eabfy")
+color_ramp = SubResource("Gradient_f3mgk")
+seamless = true
+seamless_blend_skirt = 0.27
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wed0p"]
+shader = ExtResource("4_cmctf")
+shader_parameter/size = Vector2(1306, 49)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("5_jxgmt")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ek5rr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y1d6l"]
+content_margin_left = 5.0
+content_margin_right = 5.0
+bg_color = Color(0.23, 0.18315667, 0.12189999, 0.26666668)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.19, 0.14655334, 0.09689999, 1)
+expand_margin_right = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jph3v"]
+content_margin_left = 5.0
+content_margin_right = 5.0
+bg_color = Color(0.3, 0.2389, 0.159, 0.26666668)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.52, 0.40109333, 0.2652, 1)
+expand_margin_right = 1.0
+
+[sub_resource type="Gradient" id="Gradient_1xfa0"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jnknv"]
+gradient = SubResource("Gradient_1xfa0")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vcp1h"]
+shader = ExtResource("8_ow07v")
+shader_parameter/mask_tex = ExtResource("10_w7w5q")
+shader_parameter/background = ExtResource("9_nodkj")
+shader_parameter/gradient = SubResource("GradientTexture2D_jnknv")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("11_ergw6")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("13_ocqm7")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("12_grsm6")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w73v8"]
+shader = ExtResource("4_cmctf")
+shader_parameter/size = Vector2(1304, 49)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("5_jxgmt")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[node name="SettlerQuestList" type="Node2D" unique_id=239328941]
+script = ExtResource("1_ir24t")
+
+[node name="BG" parent="." unique_id=1405446200 instance=ExtResource("2_7qv2o")]
+unique_name_in_owner = true
+
+[node name="Control" type="CenterContainer" parent="." unique_id=1457973153]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="ScrollPanel" parent="Control" unique_id=704637184 instance=ExtResource("3_lgquj")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1406, 0)
+layout_mode = 2
+default_unroll_duration = 1.0
+
+[node name="TopDowelWood" parent="Control/ScrollPanel/TopDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_wed0p")
+
+[node name="Scroller" parent="Control/ScrollPanel" index="1"]
+custom_minimum_size = Vector2(0, 740)
+
+[node name="ScrollMargin" parent="Control/ScrollPanel/Scroller" index="0"]
+offset_bottom = 1656.0
+
+[node name="ContentPanel" parent="Control/ScrollPanel/Scroller/ScrollMargin" index="0"]
+material = ExtResource("6_5815j")
+
+[node name="ContentContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel" index="0"]
+theme_override_constants/margin_top = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer" index="0" unique_id=1649851538]
+custom_minimum_size = Vector2(900, 700)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=44734388]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ek5rr")
+
+[node name="TitleLabel" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/PanelContainer" unique_id=1900224117]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Available Settler Quests"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SearchInput" type="LineEdit" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/PanelContainer" unique_id=1292057243]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 31.43)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.5372549)
+theme_override_styles/normal = SubResource("StyleBoxFlat_y1d6l")
+theme_override_styles/focus = SubResource("StyleBoxFlat_jph3v")
+placeholder_text = "Search..."
+context_menu_enabled = false
+emoji_menu_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+script = ExtResource("7_tvxrb")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=597792249]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = -5
+
+[node name="ListPanel" type="PanelContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer2" unique_id=42117523]
+material = ExtResource("6_5815j")
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = ExtResource("7_eq4wr")
+script = ExtResource("8_tvxrb")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer2/ListPanel" unique_id=696041631]
+clip_children = 1
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+script = ExtResource("9_wed0p")
+
+[node name="List" type="VBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer2/ListPanel/ScrollContainer" unique_id=1793101426]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="UkiyoeButton" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer2/ListPanel/ScrollContainer/List" unique_id=693075700]
+material = ExtResource("10_w73v8")
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+theme_override_styles/normal = ExtResource("14_f74es")
+theme_override_styles/pressed = ExtResource("14_f74es")
+theme_override_styles/hover = ExtResource("14_f74es")
+theme_override_styles/hover_pressed = ExtResource("14_f74es")
+theme_override_styles/disabled = ExtResource("14_f74es")
+text = "Quest Name"
+alignment = 0
+script = ExtResource("15_rcle1")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="UkiyoeButton2" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer2/ListPanel/ScrollContainer/List" unique_id=1157562290]
+material = ExtResource("10_w73v8")
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+theme_override_styles/normal = ExtResource("14_f74es")
+theme_override_styles/pressed = ExtResource("14_f74es")
+theme_override_styles/hover = ExtResource("14_f74es")
+theme_override_styles/hover_pressed = ExtResource("14_f74es")
+theme_override_styles/disabled = ExtResource("14_f74es")
+text = "Quest Name"
+alignment = 0
+script = ExtResource("15_rcle1")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="UkiyoeButton3" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer2/ListPanel/ScrollContainer/List" unique_id=220633407]
+material = ExtResource("10_w73v8")
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+theme_override_styles/normal = ExtResource("14_f74es")
+theme_override_styles/pressed = ExtResource("14_f74es")
+theme_override_styles/hover = ExtResource("14_f74es")
+theme_override_styles/hover_pressed = ExtResource("14_f74es")
+theme_override_styles/disabled = ExtResource("14_f74es")
+text = "Quest Name"
+alignment = 0
+script = ExtResource("15_rcle1")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="UkiyoeButton4" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer2/ListPanel/ScrollContainer/List" unique_id=1261281459]
+material = ExtResource("10_w73v8")
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+theme_override_styles/normal = ExtResource("14_f74es")
+theme_override_styles/pressed = ExtResource("14_f74es")
+theme_override_styles/hover = ExtResource("14_f74es")
+theme_override_styles/hover_pressed = ExtResource("14_f74es")
+theme_override_styles/disabled = ExtResource("14_f74es")
+text = "Quest Name"
+alignment = 0
+script = ExtResource("15_rcle1")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="UkiyoeButton5" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer2/ListPanel/ScrollContainer/List" unique_id=897843707]
+material = ExtResource("10_w73v8")
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+theme_override_styles/normal = ExtResource("14_f74es")
+theme_override_styles/pressed = ExtResource("14_f74es")
+theme_override_styles/hover = ExtResource("14_f74es")
+theme_override_styles/hover_pressed = ExtResource("14_f74es")
+theme_override_styles/disabled = ExtResource("14_f74es")
+text = "Quest Name"
+alignment = 0
+script = ExtResource("15_rcle1")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="DescriptionPanel" type="PanelContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer2" unique_id=513171291]
+material = ExtResource("6_5815j")
+custom_minimum_size = Vector2(900, 400)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = ExtResource("7_eq4wr")
+script = ExtResource("8_tvxrb")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="Description" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer2/DescriptionPanel" unique_id=325238297 instance=ExtResource("7_2cj4e")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="EmptyLabel" type="Label" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer2/DescriptionPanel" unique_id=1969085313]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "No more settler quests are currently available."
+label_settings = ExtResource("14_bno4c")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer" unique_id=145904751]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="CloseButton" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer" unique_id=1739868294]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_vcp1h")
+instance_shader_parameters/background_offset = Vector2(0.074811235, 0.120469816)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 8
+theme_override_styles/normal = ExtResource("14_f74es")
+theme_override_styles/pressed = ExtResource("14_f74es")
+theme_override_styles/hover = ExtResource("14_f74es")
+theme_override_styles/hover_pressed = ExtResource("14_f74es")
+theme_override_styles/disabled = ExtResource("14_f74es")
+text = "Return"
+script = ExtResource("15_rcle1")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="AcceptButton" type="Button" parent="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer" unique_id=1786290247]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_vcp1h")
+instance_shader_parameters/background_offset = Vector2(0.76811904, 0.5058881)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 8
+theme_override_styles/normal = ExtResource("14_f74es")
+theme_override_styles/pressed = ExtResource("14_f74es")
+theme_override_styles/hover = ExtResource("14_f74es")
+theme_override_styles/hover_pressed = ExtResource("14_f74es")
+theme_override_styles/disabled = ExtResource("14_f74es")
+text = "Accept Settler"
+script = ExtResource("15_rcle1")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="BottomDowelWood" parent="Control/ScrollPanel/BottomDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_w73v8")
+
+[connection signal="text_changed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/PanelContainer/SearchInput" to="." method="_on_search_input_text_changed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Control/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/HBoxContainer/AcceptButton" to="." method="_on_accept_button_pressed"]
+
+[editable path="Control/ScrollPanel"]

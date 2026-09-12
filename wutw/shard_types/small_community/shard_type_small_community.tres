@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="ShardType_SmallCommunity" format=3 uid="uid://b0nm7516f88fa"]
+
+[ext_resource type="Script" uid="uid://c6vrs2bxrk07c" path="res://shard_types/small_community/shard_type_small_community.gd" id="1_eabfy"]
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="1_ev0en"]
+[ext_resource type="Texture2D" uid="uid://lfq5voxg7u8f" path="res://shard_types/small_community/shard_type_small_community.png" id="2_42s6q"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="2_nw6pk"]
+[ext_resource type="Resource" uid="uid://dd4q26eh7wryx" path="res://art/pieces/piece_gekkou_enoshima.tres" id="3_7c60o"]
+[ext_resource type="Resource" uid="uid://c46r08p0sw7fg" path="res://debate/arguments/argument_cooperation.tres" id="6_5q4cr"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="6_v7pj1"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="8_aq8mk"]
+
+[sub_resource type="Resource" id="Resource_42s6q"]
+script = ExtResource("1_ev0en")
+text = "Without a central capital to order folks around, the people of $shard_name rely on village councils to make all the important decisions. The villages here operate as a loose confederation of independent neighbors, sharing their surpluses and resolving conflicts directly with their neighbors, but never letting outsiders make their decisions."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_7c60o"]
+script = ExtResource("1_ev0en")
+text = "The refusal to establish a central authority has led to a predictable, if charming, chaos in the marketplace. Without a capital to dictate weights and measures, each village in $shard_name has developed its own standards. A \"bushel\" in $town1 is now defined as 4 \"bundles\", while in $town2, it is defined as what a grown-up can carry without complaining. Without a single currency, most trade is done through a complicated web of debt relationships, and traders now carry more scrolls recording who owes whom than actual goods."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_nw6pk"]
+script = ExtResource("1_ev0en")
+text = "When the great storms rolled into $town3, everyone thought that without a central treasury to fund repairs, it was going to be the end of their township. Instead, days after the storms passed, visitors from all over the shard started trickling in. Thatchers and masons from nearby towns arrived offering their services (and unsolicited advice) for free. Caravans from far-off towns brought timber and rope. Recovery took time, but $town3 stands to this day, in many ways safer and richer than when the disaster struck."
+time_taken = 2
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_v7pj1"]
+script = ExtResource("1_ev0en")
+text = "$shard_name has become a headache for cartographers and a paradise for wanderers. To walk between two townships is to cross a dozen invisible borders, each marked mainly by a change in the pickling recipes. The roads are similarly chaotic, each town paving just enough of a path to reach a nearby forest or a particularly picturesque vista."
+time_taken = 2
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_5q4cr"]
+script = ExtResource("6_v7pj1")
+text = "This was a quaint little shard. Since there are only a few towns larger than a village, I was able to visit them all. Each one I visited was more welcoming than the last, since my hosts always sent ahead word of a visitor from off the shard, a rare sight.
+
+I learned that this was one of the first shards settled after the Shattering, but they've remained at about the same size for centuries. Perhaps because of this, they never really developed a government. Decisions are made by a shared vote, and I got to see one such session in action. They were deciding what to plant in the new season.
+
+Everyone gathered in the town square, even children, and they spent the whole day debating how many fields to dedicate to rice and how many should grow hemp. It all seemed very civil, and even the people who objected to the final decision seemed unbothered by the end, mollified by favors the others promised them in return for their agreement."
+gained_argument = ExtResource("6_5q4cr")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[resource]
+script = ExtResource("1_eabfy")
+shard_type_id = "small_community"
+name = "A Tight-Knit Community"
+shard_name_override = "Iriaijima"
+shard_name_override_jp = "入会島"
+shard_name_override_meaning = "Commonage Island"
+illustration = ExtResource("2_42s6q")
+illustration_credit = ExtResource("3_7c60o")
+history = Array[ExtResource("1_ev0en")]([SubResource("Resource_42s6q"), SubResource("Resource_7c60o"), SubResource("Resource_nw6pk"), SubResource("Resource_v7pj1")])
+trip_reward = SubResource("Resource_5q4cr")
+metadata/_custom_type_script = "uid://c6vrs2bxrk07c"

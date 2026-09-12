@@ -1,0 +1,96 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://dmmy5jxugji48"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_5mdgf"]
+[ext_resource type="Resource" uid="uid://dxmv4cw67d46l" path="res://art/pieces/piece_hasui_karatsu_ruins.tres" id="1_l4pq5"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_l4pq5"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_kigac"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="4_61jmq"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="5_3ming"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="6_3x4rr"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="7_qqlbt"]
+[ext_resource type="Resource" uid="uid://dw4odlpufp071" path="res://cards/tier3/card_bone.tres" id="8_er04q"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="9_32rkf"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="10_ldn2y"]
+[ext_resource type="Resource" uid="uid://6ntajlqvr85w" path="res://relics/common/prayer_tablet/relic_prayer_tablet.tres" id="11_3utld"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="12_k6o13"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="13_dp2nu"]
+[ext_resource type="Resource" uid="uid://bhi4tyiuc2rti" path="res://cards/tier2/card_asset.tres" id="14_frmdm"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="15_ot1w7"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="16_8sm5g"]
+[ext_resource type="Resource" uid="uid://b85k7x2ec04xc" path="res://stage/spots/building_large/spot_building_large.tres" id="17_vxbn2"]
+[ext_resource type="Resource" uid="uid://w8n0bwomyvod" path="res://stage/spots/building_small/spot_building_small.tres" id="18_wefjw"]
+
+[sub_resource type="Resource" id="Resource_mu0yr"]
+script = ExtResource("1_5mdgf")
+_texture_path = "res://stage/survey/episodes/episode_abandoned_gate.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_13h7a"]
+script = ExtResource("6_3x4rr")
+bonus_type = ExtResource("5_3ming")
+amount = 10
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_0xjpd"]
+script = ExtResource("2_l4pq5")
+label = "Search the gatehouse."
+aspects = Array[ExtResource("3_kigac")]([ExtResource("4_61jmq")])
+aspects_per_season = Array[ExtResource("3_kigac")]([null])
+outcome = SubResource("Resource_13h7a")
+outcome_text = "The group searches the gatehouse. Among the crumbling furniture they manage to find several spears. They collect their iron tips for blacksmiths to reforge later."
+
+[sub_resource type="Resource" id="Resource_0w2uk"]
+script = ExtResource("9_32rkf")
+card_type = ExtResource("8_er04q")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_skang"]
+script = ExtResource("2_l4pq5")
+label = "Explore the huts."
+aspects = Array[ExtResource("3_kigac")]([ExtResource("7_qqlbt")])
+aspects_per_season = Array[ExtResource("3_kigac")]([null])
+outcome = SubResource("Resource_0w2uk")
+outcome_text = "The scouts split up and search the huts. Some find the huts empty, save for earthen pots among the ashes in the hearths.
+
+However, most of the huts contain human remains, bones stripped by time and beast. They take a few of the bones for scholars to study in the future."
+
+[sub_resource type="Resource" id="Resource_7btt3"]
+script = ExtResource("12_k6o13")
+relic = ExtResource("11_3utld")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_bacoh"]
+script = ExtResource("2_l4pq5")
+label = "Investigate the shrine."
+aspects = Array[ExtResource("3_kigac")]([ExtResource("10_ldn2y")])
+aspects_per_season = Array[ExtResource("3_kigac")]([null])
+outcome = SubResource("Resource_7btt3")
+outcome_text = "As the scouts approach the weathered shrine, they spot rows of wooden prayer tablets hanging on the walls. The ones outside have been worn smooth by the elements, but ones hanging from the rafters inside the shrine are still legible.
+
+The language is too old to understand full sentences, but they recognize a few familiar characters, the most frequent being Disease, Cough, and Cure."
+
+[sub_resource type="Resource" id="Resource_0x81b"]
+script = ExtResource("9_32rkf")
+card_type = ExtResource("14_frmdm")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_1y5f5"]
+script = ExtResource("2_l4pq5")
+label = "Catalog useful resources."
+aspects = Array[ExtResource("3_kigac")]([ExtResource("13_dp2nu")])
+aspects_per_season = Array[ExtResource("3_kigac")]([null])
+outcome = SubResource("Resource_0x81b")
+outcome_text = "The scouts walk through the village, carefully recording the amount of timber that could be scavenged, the depth of the well, and the area of the nearby fields. These records will be of use if the expedition decides to settle in the vicinity."
+
+[resource]
+script = ExtResource("15_ot1w7")
+episode_id = "abandoned_gate"
+title = "The Empty Village"
+spot_types = Array[ExtResource("16_8sm5g")]([ExtResource("17_vxbn2"), ExtResource("18_wefjw")])
+text = "The survey team arrives at what remains of an old pre-Shattering village. Grass grows between the stones on the path, and mosses have completely taken over the village square.
+
+Most of the buildings have long since fallen into ruin, but the gatehouse and a few huts still stand, as does the shrine at the center of the village."
+background_image = SubResource("Resource_mu0yr")
+background_credit = ExtResource("1_l4pq5")
+choices = Array[ExtResource("2_l4pq5")]([SubResource("Resource_0xjpd"), SubResource("Resource_skang"), SubResource("Resource_bacoh"), SubResource("Resource_1y5f5")])

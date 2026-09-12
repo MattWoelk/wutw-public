@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="ShardType_Autocracy" format=3 uid="uid://cd5q5a5piye0"]
+
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="1_8ltoj"]
+[ext_resource type="Resource" uid="uid://cym7u30yf8vmx" path="res://events/generic/census/event_census.tres" id="1_ao7bd"]
+[ext_resource type="Script" uid="uid://33inkftf305v" path="res://shard_types/autocracy/shard_type_autocracy.gd" id="2_ao7bd"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="3_h87j2"]
+[ext_resource type="Texture2D" uid="uid://c0qdibob3ngje" path="res://shard_types/autocracy/shard_type_autocracy.png" id="3_ljnwe"]
+[ext_resource type="Resource" uid="uid://cd0lsxhcboc2u" path="res://art/pieces/piece_gekkou_momotarou.tres" id="4_g11ya"]
+[ext_resource type="Resource" uid="uid://dygvv7p1rxix8" path="res://debate/arguments/argument_autocracy.tres" id="7_jxpfs"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="8_14w8a"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="9_jxpfs"]
+
+[sub_resource type="Resource" id="Resource_ljnwe"]
+script = ExtResource("1_8ltoj")
+text = "Following the first census, Overseer Kinzo, the Enlightened One's chosen, took his duties seriously. To ensure food security, all grain grown on $shard_name was collected at the capital, weighed, taxed, and redistributed, often to the same farms that grew it. Those questioning this marvel of administrative efficiency often found their ration forms misplaced in the agriculture ministry's offices for months at a time."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_g11ya"]
+script = ExtResource("1_8ltoj")
+text = "Yield management reached a new level of efficiency when each town was ordered to focus entirely on one industry. For example, $town1 was tasked with delivering nothing but chopsticks. This left the town with no firewood, threatening to leave it frozen, but the Overseer saved the day by sending a massive shipment of timber, proving once again the wisdom of his leadership."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_bej2c"]
+script = ExtResource("1_8ltoj")
+text = "To ensure civic harmony, the culture ministry enacted the Statute of Civic Etiquette. These laws standardized such things as the length of sleeves, the depth of polite bows, and the proper way to address His Excellency the Overseer. Those breaking the laws find the unmapped edges of the shard quite character-building, while those reporting such violations are invited to attend the cultural stewardship meetings at the capital."
+min_main_quest = 125
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_1aeqk"]
+script = ExtResource("1_8ltoj")
+text = "Today, the administration considers $shard_name to have achieved a state of perfect, if fragile, balance. To protect this achievement from outside corruption, the torii gates are sealed, and travel is strictly forbidden. The official records speak of a paradise where every citizen knows their exact role, every meal is meticulously portioned, and the chaotic winds of the Cloud Sea are kept safely outside the high walls of the capital."
+min_main_quest = 200
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_bu1ks"]
+script = ExtResource("8_14w8a")
+text = "This place was a challenge to get to. When I stepped through the gate onto the shard, the guards simply told me to go back. I had to wait until the middle of the night to sneak in unnoticed, and still almost got caught.
+
+Once I got some local clothes, I was able to blend in, but no shop would let me enter without a government permit, so I had to search around until I found a black market under a bridge. Folks there smuggle goods from off the shard and barter them for ration chits.
+
+Just as I was about to leave, a bunch of soldiers showed up, confiscated everything, and escorted me back to the gate. At least I didn't end up in one of their many jails."
+gained_argument = ExtResource("7_jxpfs")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[resource]
+script = ExtResource("2_ao7bd")
+event = ExtResource("1_ao7bd")
+var_name = "autocracy"
+shard_type_id = "autocracy"
+name = "The Managed Estate"
+shard_name_override = "Kiritsu no Kuni"
+shard_name_override_jp = "規律国"
+shard_name_override_meaning = "Law Province"
+illustration = ExtResource("3_ljnwe")
+illustration_credit = ExtResource("4_g11ya")
+history = Array[ExtResource("1_8ltoj")]([SubResource("Resource_ljnwe"), SubResource("Resource_g11ya"), SubResource("Resource_bej2c"), SubResource("Resource_1aeqk")])
+trip_reward = SubResource("Resource_bu1ks")
+metadata/_custom_type_script = "uid://33inkftf305v"

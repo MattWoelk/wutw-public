@@ -1,0 +1,95 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://chhcbfltc2kal"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_h0wd8"]
+[ext_resource type="Resource" uid="uid://p1n7ncysmc5b" path="res://art/pieces/piece_hokkei_fudou_pass.tres" id="1_w05ur"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_w05ur"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_86vs8"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="4_mynso"]
+[ext_resource type="Resource" uid="uid://edudlraqph2d" path="res://cards/tier3/card_hide.tres" id="5_wi2qd"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="6_fg1br"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="7_th4se"]
+[ext_resource type="Resource" uid="uid://ca6wn2y341vvm" path="res://cards/tier3/card_gate.tres" id="8_efvo5"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="9_b56gm"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="10_71788"]
+[ext_resource type="Resource" uid="uid://5bk8nvdbmad" path="res://cards/tier3/card_mystery.tres" id="11_nwn6h"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="12_5o7cv"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="13_lxdrv"]
+
+[sub_resource type="Resource" id="Resource_422ox"]
+script = ExtResource("1_h0wd8")
+_texture_path = "res://stage/survey/episodes/episode_shard_edge.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_x27or"]
+script = ExtResource("6_fg1br")
+card_type = ExtResource("5_wi2qd")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ebxq7"]
+script = ExtResource("2_w05ur")
+label = "Call out to the dog."
+aspects = Array[ExtResource("3_86vs8")]([ExtResource("4_mynso")])
+outcome = SubResource("Resource_x27or")
+outcome_text = "One of the scouts calls out softly to the animal.
+
+For a moment the dog looks back at the group with intelligent eyes, then quickly vanishes back into the clouds."
+
+[sub_resource type="Resource" id="Resource_2l8vx"]
+script = ExtResource("6_fg1br")
+card_type = ExtResource("8_efvo5")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_0gn5d"]
+script = ExtResource("2_w05ur")
+label = "Follow the dog."
+aspects = Array[ExtResource("3_86vs8")]([ExtResource("7_th4se")])
+outcome = SubResource("Resource_2l8vx")
+outcome_text = "Two scouts break apart from the rest of the group and cautiously approach the animal.
+
+The dog looks back at them, then continues walking ahead.
+
+A few minutes later, they see the familiar vermilion of a gate peek out from the cloud, and a moment later they watch the dog run through the gate and disappear."
+
+[sub_resource type="Resource" id="Resource_bbmwq"]
+script = ExtResource("10_71788")
+delta = 6
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_1woqg"]
+script = ExtResource("2_w05ur")
+label = "Observe from a distance."
+aspects = Array[ExtResource("3_86vs8")]([ExtResource("9_b56gm")])
+outcome = SubResource("Resource_bbmwq")
+outcome_text = "The scouts take a break and sit down to watch the animal. The dog likewise settles down, directing its gaze towards the setting sun. They spend the time in silence, watching the sun sink lower and lower, until it finally disappears below the horizon.
+
+As the team finally begins to make camp, they realize that the dog had vanished into the night."
+
+[sub_resource type="Resource" id="Resource_3f3fu"]
+script = ExtResource("6_fg1br")
+card_type = ExtResource("11_nwn6h")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_l4piy"]
+script = ExtResource("2_w05ur")
+label = "Ignore the dog."
+aspects = Array[ExtResource("3_86vs8")]([null])
+outcome = SubResource("Resource_3f3fu")
+outcome_text = "The scouts shrug at the strange sight, but continue their hike without investigating further.
+
+The dog follows briefly, then disappears, never to be seen again.
+
+The strange encounter becomes a topic of conversation as the explorers sit around the campfire, though, each surveyor offering a different explanation for the dog's origin."
+
+[resource]
+script = ExtResource("12_5o7cv")
+episode_id = "shard_edge"
+title = "The White Dog"
+biome_types = Array[int]([0])
+text = "The survey team is approaching the edge of a shard one evening, as the setting sun sets the Cloud Sea on fire, turning it the color of ripe persimmons. Clouds are gathering around their feet, obscuring the path ahead.
+
+As they stop to refresh themselves by a tiny waterfall, a patch of fog detaches from the clouds further up the path and resolves into the shape of a white dog.
+
+Its fur blends into the floating wisps and every few moments it disappears, only to reappear farther ahead on the path."
+background_image = SubResource("Resource_422ox")
+background_credit = ExtResource("1_w05ur")
+choices = Array[ExtResource("2_w05ur")]([SubResource("Resource_ebxq7"), SubResource("Resource_0gn5d"), SubResource("Resource_1woqg"), SubResource("Resource_l4piy")])

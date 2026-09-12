@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://b1wnujbo0nxlg"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_1kg0n"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="2_o8c81"]
+[ext_resource type="Script" uid="uid://f1nptcce2et" path="res://stage/hauntings/effects/haunting_effect_spiteful_fill.gd" id="3_82kl4"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="4_2ptm8"]
+[ext_resource type="Resource" uid="uid://djg62bddd6ied" path="res://art/pieces/piece_composed_amanojaku.tres" id="5_2ptm8"]
+[ext_resource type="Texture2D" uid="uid://bls4fkm1x5b3d" path="res://stage/hauntings/types/amanojaku/haunting_amanojaku.png" id="5_7eob7"]
+[ext_resource type="Texture2D" uid="uid://7pkb5svakjlp" path="res://stage/hauntings/types/amanojaku/haunting_amanojaku_realistic_polarization.png" id="6_utdl1"]
+[ext_resource type="Resource" uid="uid://o5g7j2heged6" path="res://art/pieces/piece_gakutei_poets.tres" id="6_vablf"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="7_2mau2"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="8_acpml"]
+[ext_resource type="Script" uid="uid://hbjd7cw7rqr2" path="res://stage/hauntings/triggers/haunting_trigger_card_slotted.gd" id="11_2ptm8"]
+
+[sub_resource type="Resource" id="Resource_0bxio"]
+script = ExtResource("3_82kl4")
+metadata/_custom_type_script = "uid://f1nptcce2et"
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("11_2ptm8")
+metadata/_custom_type_script = "uid://hbjd7cw7rqr2"
+
+[resource]
+script = ExtResource("8_acpml")
+haunting_id = "amanojaku"
+name = "Amanojaku"
+name_japanese = "天邪鬼"
+name_realistic = "Polarization"
+name_translation = "Evil Heavenly Spirits"
+description = "Corrupted divine spirits, the Amanojaku, have descended on the town, provoking people into wicked acts, counter to the plans of their comrades."
+description_realistic = "Rival teachings have torn this town apart, causing people to act out simply to spite the plans of their comrades."
+description_long = "Long, long ago, the Enlightened One crushed the wicked Amanojaku, but now they have returned to spread wickedness among the settlers of the New World. These little ogres look into the hearts of people, and provoke their darkest desires. Some are known to possess people outright, directing their actions to spite the common good of their community."
+image_small = ExtResource("5_7eob7")
+image_credit = ExtResource("5_2ptm8")
+image_small_realistic = ExtResource("6_utdl1")
+image_realistic_credit = ExtResource("6_vablf")
+base_aspect_types = Array[ExtResource("1_1kg0n")]([ExtResource("2_o8c81")])
+extra_aspect_type = ExtResource("4_2ptm8")
+scaling_bonus_type = ExtResource("7_2mau2")
+trigger = SubResource("Resource_trtbi")
+effect = SubResource("Resource_0bxio")
+spot_attach_mode = 1
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

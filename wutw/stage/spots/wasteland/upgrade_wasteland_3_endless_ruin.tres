@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://drpvelhaxlff2"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_c7pci"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="3_c7pci"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="4_303wg"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="4_k56ps"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="6_natjr"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="6_nwhc2"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="7_824fm"]
+[ext_resource type="Resource" uid="uid://ouecqwnbe55w" path="res://stage/spots/wasteland/spot_wasteland.tres" id="8_co80c"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_oiy33"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://d0ks3low8p72s" path="res://map/sprites/spots/wasteland/mst_wasteland_endless_ruin.tres" id="10_2l5po"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://ibcd7apw5bvu" path="res://map/sprites/spots/wasteland/mst_wasteland_iron_wreck.tres" id="11_mdt83"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="12_24ink"]
+
+[sub_resource type="Resource" id="Resource_phl6o"]
+script = ExtResource("12_24ink")
+old_sprite_type = ExtResource("11_mdt83")
+new_sprite_type = ExtResource("10_2l5po")
+biome = 3
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_c7pci")
+spot_upgrade_id = "wasteland_endless_ruin"
+name = "Endless Ruin"
+description = "This warren of caves teases scholars and treasure hunters with gleaming fragments of lost technology."
+required_aspects = Array[ExtResource("6_natjr")]([ExtResource("6_nwhc2"), ExtResource("7_824fm")])
+granted_bonuses = Dictionary[ExtResource("4_k56ps"), int]({
+ExtResource("3_c7pci"): 25,
+ExtResource("4_303wg"): 20
+})
+spot = ExtResource("8_co80c")
+visuals = Array[ExtResource("9_oiy33")]([SubResource("Resource_phl6o")])
+unique_per_run = true
+min_main_quest_progress = 110

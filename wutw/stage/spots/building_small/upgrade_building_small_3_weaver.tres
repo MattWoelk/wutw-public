@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://cfb354e7i6h13"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_vlq60"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_3qkua"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="3_ap0cr"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="4_80caq"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="4_kohxl"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="6_7ca41"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="7_y1ypr"]
+[ext_resource type="Resource" uid="uid://w8n0bwomyvod" path="res://stage/spots/building_small/spot_building_small.tres" id="8_odiyy"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_px00d"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://cu5ab8eqd8umv" path="res://map/sprites/spots/small_building/mst_small_building_weaver.tres" id="10_mbk8f"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://ujvkbsjl0pk" path="res://map/sprites/spots/small_building/mst_small_building_workshop.tres" id="11_c80su"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="12_tf5f6"]
+
+[sub_resource type="Resource" id="Resource_p47kr"]
+script = ExtResource("12_tf5f6")
+old_sprite_type = ExtResource("11_c80su")
+new_sprite_type = ExtResource("10_mbk8f")
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_vlq60")
+spot_upgrade_id = "building_small_weaver"
+name = "Weaving House"
+description = "From coarse hemp to ornate silk, each spool carries the efforts of the town's weavers."
+required_aspects = Array[ExtResource("4_kohxl")]([ExtResource("6_7ca41"), ExtResource("7_y1ypr")])
+granted_bonuses = Dictionary[ExtResource("2_3qkua"), int]({
+ExtResource("3_ap0cr"): 15,
+ExtResource("4_80caq"): 10
+})
+spot = ExtResource("8_odiyy")
+visuals = Array[ExtResource("9_px00d")]([SubResource("Resource_p47kr")])
+tags = Array[int]([2])
+min_main_quest_progress = 110

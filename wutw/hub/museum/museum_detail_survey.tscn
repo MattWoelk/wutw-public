@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://b65u7k0s5y5pe"]
+
+[ext_resource type="Script" uid="uid://bcqss67yxaqab" path="res://hub/museum/museum_detail_survey.gd" id="1_x1lcl"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="2_su075"]
+[ext_resource type="Shader" uid="uid://xfg5dy6oupgw" path="res://stage/hauntings/haunting_details.gdshader" id="3_iwa6l"]
+[ext_resource type="Texture2D" uid="uid://dhjw5ubvrkwx8" path="res://stage/hauntings/haunting_frame_edge.png" id="4_j3y6f"]
+[ext_resource type="Texture2D" uid="uid://b2j4sn87bmvuo" path="res://cutscenes/intro/slides/8.png" id="4_su075"]
+[ext_resource type="PackedScene" uid="uid://dbkrwj5jf26v1" path="res://theme/credits_icon/credits_icon.tscn" id="6_gcedm"]
+[ext_resource type="PackedScene" uid="uid://c8w3kklp6b4bt" path="res://stage/survey/survey_recipe.tscn" id="7_iwa6l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vemot"]
+shader = ExtResource("3_iwa6l")
+shader_parameter/mask = ExtResource("4_j3y6f")
+
+[node name="MuseumDetail_Survey" type="MarginContainer" unique_id=1452038428]
+offset_right = 660.0
+offset_bottom = 1013.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+script = ExtResource("1_x1lcl")
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=1739323208]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TitleLabel" type="Label" parent="VBox" unique_id=1585791840]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Post Road"
+horizontal_alignment = 1
+
+[node name="Illustration" type="TextureRect" parent="VBox" unique_id=582034906]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_vemot")
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("4_su075")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="CreditsIcon" parent="VBox/Illustration" unique_id=309610450 instance=ExtResource("6_gcedm")]
+unique_name_in_owner = true
+layout_mode = 1
+
+[node name="DetailsContainer" type="MarginContainer" parent="VBox" unique_id=1331310551]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBox/DetailsContainer" unique_id=2064957553]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="MainText" parent="VBox/DetailsContainer/VBoxContainer2" unique_id=1308173537 instance=ExtResource("2_su075")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+text = "Event details..."
+fit_content = true
+tooltip_directions = Array[int]([5, 1, 3])
+
+[node name="ChoicesList" type="GridContainer" parent="VBox/DetailsContainer/VBoxContainer2" unique_id=2027752116]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="SurveyRecipe" parent="VBox/DetailsContainer/VBoxContainer2/ChoicesList" unique_id=304402368 instance=ExtResource("7_iwa6l")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SurveyRecipe2" parent="VBox/DetailsContainer/VBoxContainer2/ChoicesList" unique_id=1170980648 instance=ExtResource("7_iwa6l")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SurveyRecipe3" parent="VBox/DetailsContainer/VBoxContainer2/ChoicesList" unique_id=503569118 instance=ExtResource("7_iwa6l")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SurveyRecipe4" parent="VBox/DetailsContainer/VBoxContainer2/ChoicesList" unique_id=409368885 instance=ExtResource("7_iwa6l")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spacer" type="Control" parent="VBox" unique_id=928898435]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="HintText" parent="VBox" unique_id=1184935080 instance=ExtResource("2_su075")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+text = "Extra Details"
+fit_content = true
+tooltip_directions = Array[int]([5, 1, 3])
+
+[node name="Spacer2" type="Control" parent="VBox" unique_id=760578995]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2

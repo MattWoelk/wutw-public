@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="ShardType_Militant" format=3 uid="uid://v3kq1lpeluv5"]
+
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="1_8wxut"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="1_a5rqx"]
+[ext_resource type="Script" uid="uid://dwap6wsar7ptd" path="res://shard_types/militant/shard_type_militant.gd" id="2_b6u7y"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="3_e5nk3"]
+[ext_resource type="Texture2D" uid="uid://pf4uu8epbd7u" path="res://shard_types/militant/shard_type_militant.png" id="3_kwpyt"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="3_twehv"]
+[ext_resource type="Resource" uid="uid://dl672t0a8m46g" path="res://stage/spots/building_small/upgrade_building_small_2_watchpost.tres" id="5_kwpyt"]
+[ext_resource type="Resource" uid="uid://n8lbloh3omx6" path="res://debate/arguments/argument_warlords.tres" id="7_ltsed"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="7_twehv"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="9_mivkp"]
+
+[sub_resource type="Resource" id="Resource_42s6q"]
+script = ExtResource("1_8wxut")
+text = "On $shard_name, the concept of a \"neighbor\" is synonymous with \"threat\". Soon after the shard was settled, trust eroded, and settlements withdrew into themselves, evolving into tiny, paranoid city-states. Travelers will find the spaces between them desolate, the roads deliberately destroyed to keep the others from getting close."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_7c60o"]
+script = ExtResource("1_8wxut")
+text = "A famous rope bridge once connected two neighboring towns. It hangs limp now, while both sides proudly claim they were the ones who cut the rope first to protect themselves from the barbarians across the gap. In the absence of bridges, they build watchposts, staring suspiciously at the horizon for invasions that never come."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_nw6pk"]
+script = ExtResource("1_8wxut")
+text = "Daily life on $shard_name is a performance of readiness. Farmers in $town2 till the soil in breastplates, believing that an attack is always imminent. $town3 has gone even further, moving the fields inside the high city walls, which has resulted in the streets being cramped, claustrophobic, and smelling faintly of fertilizer and panic."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_v7pj1"]
+script = ExtResource("1_8wxut")
+text = "The shard capital still stands, but it governs nothing. It has become a demilitarized zone, a neutral ground where no weapons are allowed. Its only industries are bureaucracy and spite. Each city has a cadre of representatives living in the capital, who regularly meet to exchange formal insults and hurl empty threats at each other."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_ltsed"]
+script = ExtResource("7_twehv")
+text = "I've never been to a shard that made me feel so unwelcome. All their towns have walls, and none would let me in. I had to camp out in the wilderness the entire time.
+
+At one point I met a courier on the road. He had two guards with him, and was apparently carrying a letter of grievance to a nearby village. The only other person I got to speak to was a hermit. Apparently he was a guard who got exiled after he let a woman from another town inside the walls when she was about to go into labor."
+gained_argument = ExtResource("7_ltsed")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[resource]
+script = ExtResource("2_b6u7y")
+safety = ExtResource("3_e5nk3")
+harmony = ExtResource("1_a5rqx")
+watchpost = ExtResource("5_kwpyt")
+shard_type_id = "militant"
+name = "The Fractured States"
+shard_name_override = "Kenko Iwa"
+shard_name_override_jp = "堅固岩"
+shard_name_override_meaning = "Firm Rock"
+tier = 2
+illustration = ExtResource("3_kwpyt")
+history = Array[ExtResource("1_8wxut")]([SubResource("Resource_42s6q"), SubResource("Resource_7c60o"), SubResource("Resource_nw6pk"), SubResource("Resource_v7pj1")])
+trip_reward = SubResource("Resource_ltsed")
+metadata/_custom_type_script = "uid://c6vrs2bxrk07c"

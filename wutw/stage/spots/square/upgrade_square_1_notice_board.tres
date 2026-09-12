@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://6daetq4vn11q"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_75nbt"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_fahd6"]
+[ext_resource type="Resource" uid="uid://bneroyflus0ar" path="res://stage/spots/square/upgrade_square_2_market.tres" id="2_l36ii"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_q4gll"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="4_it2u1"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="5_myd81"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="7_qyebs"]
+[ext_resource type="Resource" uid="uid://ctiwrqhub05ib" path="res://stage/spots/square/spot_square.tres" id="8_k6f5l"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_fq1ux"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://dblv6q4muvyfi" path="res://map/sprites/spots/square/mst_square_notice_board.tres" id="10_6lqmy"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://c7bph6udtgt3c" path="res://map/sprites/buildings/ruined_square/mst_town_square_1.tres" id="11_d1qk7"]
+[ext_resource type="Script" uid="uid://cm6qovq4s06ky" path="res://stage/spots/spot_upgrade_visual_replace.gd" id="12_yrbai"]
+
+[sub_resource type="Resource" id="Resource_ndxyn"]
+script = ExtResource("12_yrbai")
+old_sprite_types = Array[MapSpriteType]([ExtResource("11_d1qk7")])
+new_sprite_type = ExtResource("10_6lqmy")
+metadata/_custom_type_script = "uid://cm6qovq4s06ky"
+
+[resource]
+script = ExtResource("1_75nbt")
+spot_upgrade_id = "square_notice_board"
+name = "Notice Board"
+description = "Need a job? Lost a cat? Seeking a reliable matchmaker? The board is here for you."
+required_aspects = Array[ExtResource("3_q4gll")]([ExtResource("7_qyebs")])
+granted_bonuses = Dictionary[ExtResource("2_fahd6"), int]({
+ExtResource("4_it2u1"): 5,
+ExtResource("5_myd81"): 5
+})
+child_upgrades = Array[ExtResource("1_75nbt")]([ExtResource("2_l36ii")])
+spot = ExtResource("8_k6f5l")
+visuals = Array[ExtResource("9_fq1ux")]([SubResource("Resource_ndxyn")])

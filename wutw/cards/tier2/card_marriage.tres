@@ -1,0 +1,555 @@
+[gd_resource type="Resource" script_class="CardType" format=3 uid="uid://ymyk05yro8n0"]
+
+[ext_resource type="Script" uid="uid://b56kytec5oqcb" path="res://cards/abilities/card_ability.gd" id="1_y3h5g"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="2_unjey"]
+[ext_resource type="Script" uid="uid://7y26eumsxbnb" path="res://cards/abilities/card_ability_support.gd" id="3_im4xt"]
+[ext_resource type="Script" uid="uid://bpd0xm01q4rri" path="res://cards/abilities/card_ability_reserve.gd" id="4_7ftig"]
+[ext_resource type="Script" uid="uid://xc73x4t7ckxm" path="res://japanese/example_sentence.gd" id="5_5kxqu"]
+[ext_resource type="Script" uid="uid://bl2eelwkj800o" path="res://japanese/japanese_token.gd" id="6_unjey"]
+[ext_resource type="Script" uid="uid://du4k150pcdjs6" path="res://japanese/kanji_shape.gd" id="6_uorwf"]
+[ext_resource type="Script" uid="uid://dc15txdqjanlf" path="res://japanese/stroke_shape.gd" id="7_fa78k"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="8_ml5hj"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="9_e0ioo"]
+[ext_resource type="Resource" uid="uid://d1k7vakhjcq5g" path="res://glossary/categories/termcategory_card.tres" id="10_yabp1"]
+[ext_resource type="Script" uid="uid://b6rw4ldrj6wch" path="res://japanese/vocab.gd" id="11_lxseb"]
+
+[sub_resource type="Resource" id="Resource_inyhe"]
+script = ExtResource("3_im4xt")
+bonus_type = ExtResource("2_unjey")
+metadata/_custom_type_script = "uid://7y26eumsxbnb"
+
+[sub_resource type="Resource" id="Resource_7kgqg"]
+script = ExtResource("4_7ftig")
+metadata/_custom_type_script = "uid://bpd0xm01q4rri"
+
+[sub_resource type="Resource" id="Resource_5uppd"]
+script = ExtResource("11_lxseb")
+japanese = "結婚"
+readings = Array[String](["けっこん"])
+meanings = Array[String](["marriage"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_unjey"]
+script = ExtResource("6_unjey")
+raw_text = "結婚"
+vocab = SubResource("Resource_5uppd")
+reading = "けっこん"
+
+[sub_resource type="Resource" id="Resource_im4xt"]
+script = ExtResource("6_unjey")
+raw_text = "し"
+reading = "し"
+
+[sub_resource type="Resource" id="Resource_7ftig"]
+script = ExtResource("6_unjey")
+raw_text = "て"
+reading = "て"
+
+[sub_resource type="Resource" id="Resource_cs8jr"]
+script = ExtResource("11_lxseb")
+japanese = "何"
+readings = Array[String](["なん"])
+meanings = Array[String](["what", "how many", "many", "a lot of", "several", "a few", "some"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_5kxqu"]
+script = ExtResource("6_unjey")
+raw_text = "何"
+vocab = SubResource("Resource_cs8jr")
+reading = "なん"
+
+[sub_resource type="Resource" id="Resource_f5ux0"]
+script = ExtResource("11_lxseb")
+japanese = "年"
+readings = Array[String](["ねん"])
+meanings = Array[String](["year", "counter for years (e.g. of an era), grades (e.g. school)", "period of an apprentice's contract (usu. ten years)"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_uorwf"]
+script = ExtResource("6_unjey")
+raw_text = "年"
+vocab = SubResource("Resource_f5ux0")
+reading = "ねん"
+
+[sub_resource type="Resource" id="Resource_fa78k"]
+script = ExtResource("6_unjey")
+raw_text = "？"
+reading = "？"
+
+[sub_resource type="Resource" id="Resource_r3q20"]
+script = ExtResource("5_5kxqu")
+japanese = "結婚して何年？"
+native = "How many years have you been married?"
+parsed = Array[ExtResource("6_unjey")]([SubResource("Resource_unjey"), SubResource("Resource_im4xt"), SubResource("Resource_7ftig"), SubResource("Resource_5kxqu"), SubResource("Resource_uorwf"), SubResource("Resource_fa78k")])
+_difficulty = 426
+_used_kanji = Array[String](["結", "婚", "何", "年"])
+
+[sub_resource type="Resource" id="Resource_ml5hj"]
+script = ExtResource("11_lxseb")
+japanese = "今"
+readings = Array[String](["こん"])
+meanings = Array[String](["the current ...", "this", "today's ..."])
+jlpt_level = 5
+_difficulty = 1
+
+[sub_resource type="Resource" id="Resource_e0ioo"]
+script = ExtResource("6_unjey")
+raw_text = "今"
+vocab = SubResource("Resource_ml5hj")
+reading = "こん"
+
+[sub_resource type="Resource" id="Resource_yabp1"]
+script = ExtResource("6_unjey")
+raw_text = "結婚"
+vocab = SubResource("Resource_5uppd")
+reading = "けっこん"
+
+[sub_resource type="Resource" id="Resource_lxseb"]
+script = ExtResource("6_unjey")
+raw_text = "し"
+reading = "し"
+
+[sub_resource type="Resource" id="Resource_iah24"]
+script = ExtResource("6_unjey")
+raw_text = "てる"
+reading = "てる"
+
+[sub_resource type="Resource" id="Resource_5qpa8"]
+script = ExtResource("6_unjey")
+raw_text = "？"
+reading = "？"
+
+[sub_resource type="Resource" id="Resource_p2nkn"]
+script = ExtResource("5_5kxqu")
+japanese = "今結婚してる？"
+native = "Are you married now?"
+parsed = Array[ExtResource("6_unjey")]([SubResource("Resource_e0ioo"), SubResource("Resource_yabp1"), SubResource("Resource_lxseb"), SubResource("Resource_iah24"), SubResource("Resource_5qpa8")])
+_difficulty = 435
+_used_kanji = Array[String](["今", "結", "婚"])
+
+[sub_resource type="Resource" id="Resource_ugmws"]
+script = ExtResource("11_lxseb")
+readings = Array[String](["ふたり"])
+meanings = Array[String](["two people"])
+
+[sub_resource type="Resource" id="Resource_t86er"]
+script = ExtResource("6_unjey")
+raw_text = "二人"
+vocab = SubResource("Resource_ugmws")
+reading = "ふたり"
+
+[sub_resource type="Resource" id="Resource_0osgd"]
+script = ExtResource("6_unjey")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_6483h"]
+script = ExtResource("6_unjey")
+raw_text = "結婚"
+vocab = SubResource("Resource_5uppd")
+reading = "けっこん"
+
+[sub_resource type="Resource" id="Resource_45veq"]
+script = ExtResource("6_unjey")
+raw_text = "し"
+reading = "し"
+
+[sub_resource type="Resource" id="Resource_e2tdq"]
+script = ExtResource("6_unjey")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_3dtpr"]
+script = ExtResource("6_unjey")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_ey6w7"]
+script = ExtResource("5_5kxqu")
+japanese = "二人は結婚した。"
+native = "They got married."
+parsed = Array[ExtResource("6_unjey")]([SubResource("Resource_t86er"), SubResource("Resource_0osgd"), SubResource("Resource_6483h"), SubResource("Resource_45veq"), SubResource("Resource_e2tdq"), SubResource("Resource_3dtpr")])
+_difficulty = 436
+_used_kanji = Array[String](["二", "人", "結", "婚"])
+
+[sub_resource type="Resource" id="Resource_3otbj"]
+script = ExtResource("6_unjey")
+raw_text = "結婚"
+vocab = SubResource("Resource_5uppd")
+reading = "けっこん"
+
+[sub_resource type="Resource" id="Resource_230ju"]
+script = ExtResource("6_unjey")
+raw_text = "しよ"
+reading = "しよ"
+
+[sub_resource type="Resource" id="Resource_a5qcu"]
+script = ExtResource("6_unjey")
+raw_text = "う"
+reading = "う"
+
+[sub_resource type="Resource" id="Resource_x8g6f"]
+script = ExtResource("6_unjey")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_tb6lu"]
+script = ExtResource("5_5kxqu")
+japanese = "結婚しよう。"
+native = "Let's get married."
+parsed = Array[ExtResource("6_unjey")]([SubResource("Resource_3otbj"), SubResource("Resource_230ju"), SubResource("Resource_a5qcu"), SubResource("Resource_x8g6f")])
+_difficulty = 439
+_used_kanji = Array[String](["結", "婚"])
+
+[sub_resource type="Resource" id="Resource_f4gk4"]
+script = ExtResource("11_lxseb")
+japanese = "結婚式"
+readings = Array[String](["けっこんしき"])
+meanings = Array[String](["marriage ceremony", "wedding", "nuptials"])
+
+[sub_resource type="Resource" id="Resource_1yqpx"]
+script = ExtResource("6_unjey")
+raw_text = "結婚式"
+vocab = SubResource("Resource_f4gk4")
+reading = "けっこんしき"
+
+[sub_resource type="Resource" id="Resource_jgbbe"]
+script = ExtResource("6_unjey")
+raw_text = "みたい"
+reading = "みたい"
+
+[sub_resource type="Resource" id="Resource_ew77x"]
+script = ExtResource("6_unjey")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_75o3r"]
+script = ExtResource("5_5kxqu")
+japanese = "結婚式みたい。"
+native = "It looks like a wedding."
+parsed = Array[ExtResource("6_unjey")]([SubResource("Resource_1yqpx"), SubResource("Resource_jgbbe"), SubResource("Resource_ew77x")])
+_difficulty = 444
+_used_kanji = Array[String](["結", "婚", "式"])
+
+[sub_resource type="Resource" id="Resource_yvxqi"]
+script = ExtResource("11_lxseb")
+japanese = "本当に"
+readings = Array[String](["ほんとうに", "ほんとに"])
+meanings = Array[String](["really", "truly"])
+
+[sub_resource type="Resource" id="Resource_45dfq"]
+script = ExtResource("6_unjey")
+raw_text = "本当に"
+vocab = SubResource("Resource_yvxqi")
+reading = "ほんとうに"
+
+[sub_resource type="Resource" id="Resource_d468p"]
+script = ExtResource("6_unjey")
+raw_text = "結婚"
+vocab = SubResource("Resource_5uppd")
+reading = "けっこん"
+
+[sub_resource type="Resource" id="Resource_shmik"]
+script = ExtResource("6_unjey")
+raw_text = "し"
+reading = "し"
+
+[sub_resource type="Resource" id="Resource_6f82a"]
+script = ExtResource("6_unjey")
+raw_text = "てる"
+reading = "てる"
+
+[sub_resource type="Resource" id="Resource_7ylln"]
+script = ExtResource("6_unjey")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_kwoni"]
+script = ExtResource("6_unjey")
+raw_text = "？"
+reading = "？"
+
+[sub_resource type="Resource" id="Resource_2upfe"]
+script = ExtResource("5_5kxqu")
+japanese = "本当に結婚してるの？"
+native = "Are you really married?"
+parsed = Array[ExtResource("6_unjey")]([SubResource("Resource_45dfq"), SubResource("Resource_d468p"), SubResource("Resource_shmik"), SubResource("Resource_6f82a"), SubResource("Resource_7ylln"), SubResource("Resource_kwoni")])
+_difficulty = 476
+_used_kanji = Array[String](["本", "当", "結", "婚"])
+
+[sub_resource type="Resource" id="Resource_v8xvn"]
+script = ExtResource("6_unjey")
+raw_text = "結婚"
+vocab = SubResource("Resource_5uppd")
+reading = "けっこん"
+
+[sub_resource type="Resource" id="Resource_84ijt"]
+script = ExtResource("11_lxseb")
+japanese = "退職"
+readings = Array[String](["たいしょく"])
+meanings = Array[String](["retirement", "resignation"])
+jlpt_level = 1
+
+[sub_resource type="Resource" id="Resource_xrhhv"]
+script = ExtResource("6_unjey")
+raw_text = "退職"
+vocab = SubResource("Resource_84ijt")
+reading = "たいしょく"
+
+[sub_resource type="Resource" id="Resource_4yy5p"]
+script = ExtResource("6_unjey")
+raw_text = "し"
+reading = "し"
+
+[sub_resource type="Resource" id="Resource_y1irf"]
+script = ExtResource("6_unjey")
+raw_text = "まし"
+reading = "まし"
+
+[sub_resource type="Resource" id="Resource_kgbb8"]
+script = ExtResource("6_unjey")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_ld6gp"]
+script = ExtResource("6_unjey")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_qxfgn"]
+script = ExtResource("5_5kxqu")
+japanese = "結婚退職しました。"
+native = "I stopped working once I got married."
+parsed = Array[ExtResource("6_unjey")]([SubResource("Resource_v8xvn"), SubResource("Resource_xrhhv"), SubResource("Resource_4yy5p"), SubResource("Resource_y1irf"), SubResource("Resource_kgbb8"), SubResource("Resource_ld6gp")])
+_difficulty = 515
+_used_kanji = Array[String](["結", "婚", "退", "職"])
+
+[sub_resource type="Resource" id="Resource_sqx8q"]
+script = ExtResource("11_lxseb")
+japanese = "両親"
+readings = Array[String](["りょうしん", "ふたおや"])
+meanings = Array[String](["parents", "both parents"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_bw4go"]
+script = ExtResource("6_unjey")
+raw_text = "両親"
+vocab = SubResource("Resource_sqx8q")
+reading = "りょうしん"
+
+[sub_resource type="Resource" id="Resource_ng6mq"]
+script = ExtResource("6_unjey")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_1w4wi"]
+script = ExtResource("11_lxseb")
+japanese = "離婚"
+readings = Array[String](["りこん"])
+meanings = Array[String](["divorce"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_c2sgm"]
+script = ExtResource("6_unjey")
+raw_text = "離婚"
+vocab = SubResource("Resource_1w4wi")
+reading = "りこん"
+
+[sub_resource type="Resource" id="Resource_n5d7c"]
+script = ExtResource("6_unjey")
+raw_text = "し"
+reading = "し"
+
+[sub_resource type="Resource" id="Resource_7jx3h"]
+script = ExtResource("6_unjey")
+raw_text = "まし"
+reading = "まし"
+
+[sub_resource type="Resource" id="Resource_hv5wm"]
+script = ExtResource("6_unjey")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_xpgj4"]
+script = ExtResource("6_unjey")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_jw6tt"]
+script = ExtResource("5_5kxqu")
+japanese = "両親は離婚しました。"
+native = "My parents are divorced."
+parsed = Array[ExtResource("6_unjey")]([SubResource("Resource_bw4go"), SubResource("Resource_ng6mq"), SubResource("Resource_c2sgm"), SubResource("Resource_n5d7c"), SubResource("Resource_7jx3h"), SubResource("Resource_hv5wm"), SubResource("Resource_xpgj4")])
+_difficulty = 518
+_used_kanji = Array[String](["両", "親", "離", "婚"])
+
+[sub_resource type="Resource" id="Resource_oq6qe"]
+script = ExtResource("7_fa78k")
+points = Array[Vector2]([Vector2(26.98, 18.37), Vector2(27.29, 22.91), Vector2(26.75, 26.49), Vector2(25.96, 31.17), Vector2(24.95, 36.63), Vector2(23.77, 42.5), Vector2(22.45, 48.45), Vector2(21.02, 54.13), Vector2(19.53, 59.19), Vector2(18.01, 63.29), Vector2(18.49, 67.06), Vector2(23.44, 68.75), Vector2(27.88, 70.99), Vector2(31.95, 73.78), Vector2(35.79, 77.12), Vector2(39.05, 80.86), Vector2(41.77, 85.28)])
+
+[sub_resource type="Resource" id="Resource_vbkwv"]
+script = ExtResource("7_fa78k")
+points = Array[Vector2]([Vector2(39.5, 36.64), Vector2(39.77, 41.63), Vector2(39.05, 45.87), Vector2(38.16, 50.34), Vector2(37.07, 54.97), Vector2(35.72, 59.72), Vector2(34.06, 64.52), Vector2(32.05, 69.33), Vector2(29.63, 74.08), Vector2(26.77, 78.73), Vector2(23.41, 83.22), Vector2(19.5, 87.5), Vector2(15, 91.5)])
+
+[sub_resource type="Resource" id="Resource_4qr5y"]
+script = ExtResource("7_fa78k")
+points = Array[Vector2]([Vector2(9.5, 48.22), Vector2(14.1, 49.42), Vector2(19.46, 48.19), Vector2(24, 47.15), Vector2(28.2, 46.16), Vector2(32.54, 45.12), Vector2(37.48, 43.9), Vector2(43.5, 42.38)])
+
+[sub_resource type="Resource" id="Resource_lsk5e"]
+script = ExtResource("7_fa78k")
+points = Array[Vector2]([Vector2(78.1, 12), Vector2(75.75, 15.44), Vector2(72.36, 17.59), Vector2(67.68, 19.94), Vector2(61.75, 22.38), Vector2(54.62, 24.81)])
+
+[sub_resource type="Resource" id="Resource_sbnb1"]
+script = ExtResource("7_fa78k")
+points = Array[Vector2]([Vector2(50.75, 23.87), Vector2(52.13, 28.02), Vector2(52.14, 31.33), Vector2(52.16, 37.18), Vector2(52.18, 44.02), Vector2(52.19, 50.29), Vector2(52.2, 54.46), Vector2(55.46, 55.89), Vector2(59.68, 53.15), Vector2(65.11, 49.76), Vector2(68.64, 47.52)])
+
+[sub_resource type="Resource" id="Resource_eej7w"]
+script = ExtResource("7_fa78k")
+points = Array[Vector2]([Vector2(54.43, 35.19), Vector2(60.08, 34.3), Vector2(65.95, 33.3), Vector2(71.9, 32.27), Vector2(77.72, 31.24), Vector2(83.16, 30.28), Vector2(88.15, 29.39), Vector2(93.82, 29)])
+
+[sub_resource type="Resource" id="Resource_wo8fk"]
+script = ExtResource("7_fa78k")
+points = Array[Vector2]([Vector2(70.04, 22.15), Vector2(72.29, 26.95), Vector2(74.25, 32.59), Vector2(76.41, 37.77), Vector2(78.81, 42.5), Vector2(81.48, 46.81), Vector2(84.45, 50.69), Vector2(87.75, 54.16), Vector2(91.4, 57.23), Vector2(96.28, 59.92), Vector2(98.38, 57.27), Vector2(98, 51.38)])
+
+[sub_resource type="Resource" id="Resource_4h07c"]
+script = ExtResource("7_fa78k")
+points = Array[Vector2]([Vector2(56.23, 63.3), Vector2(57.25, 67.47), Vector2(57.25, 72.18), Vector2(57.25, 78.47), Vector2(57.25, 85.23), Vector2(57.25, 91.35), Vector2(57.25, 97)])
+
+[sub_resource type="Resource" id="Resource_6b3e6"]
+script = ExtResource("7_fa78k")
+points = Array[Vector2]([Vector2(58.14, 64.91), Vector2(61.44, 64.53), Vector2(67.38, 63.73), Vector2(74.09, 62.82), Vector2(79.68, 62.06), Vector2(84.22, 62.89), Vector2(84.8, 67.44), Vector2(84.77, 72.46), Vector2(84.71, 78.41), Vector2(84.64, 84.46), Vector2(84.58, 89.8), Vector2(84.51, 95.09)])
+
+[sub_resource type="Resource" id="Resource_u5hvq"]
+script = ExtResource("7_fa78k")
+points = Array[Vector2]([Vector2(58.4, 78.27), Vector2(62.14, 77.87), Vector2(67.41, 77.35), Vector2(73.34, 76.79), Vector2(79.04, 76.27), Vector2(83.65, 75.87)])
+
+[sub_resource type="Resource" id="Resource_qshvp"]
+script = ExtResource("7_fa78k")
+points = Array[Vector2]([Vector2(58.43, 93.97), Vector2(62.6, 93.61), Vector2(67.65, 93.2), Vector2(73.1, 92.78), Vector2(78.49, 92.38), Vector2(83.37, 92.06)])
+
+[sub_resource type="Resource" id="Resource_47dnp"]
+script = ExtResource("6_uorwf")
+stroke_shapes = Array[ExtResource("7_fa78k")]([SubResource("Resource_oq6qe"), SubResource("Resource_vbkwv"), SubResource("Resource_4qr5y"), SubResource("Resource_lsk5e"), SubResource("Resource_sbnb1"), SubResource("Resource_eej7w"), SubResource("Resource_wo8fk"), SubResource("Resource_4h07c"), SubResource("Resource_6b3e6"), SubResource("Resource_u5hvq"), SubResource("Resource_qshvp")])
+
+[sub_resource type="Resource" id="Resource_b2q7v"]
+script = ExtResource("11_lxseb")
+japanese = "結婚"
+readings = Array[String](["けっこん"])
+meanings = Array[String](["marriage"])
+jlpt_level = 5
+_difficulty = 2
+_used_kanji = Array[String](["結", "婚"])
+
+[sub_resource type="Resource" id="Resource_x3e0p"]
+script = ExtResource("11_lxseb")
+japanese = "婚約"
+readings = Array[String](["こんやく"])
+meanings = Array[String](["engagement", "betrothal"])
+jlpt_level = 3
+_difficulty = 62
+_used_kanji = Array[String](["婚", "約"])
+
+[sub_resource type="Resource" id="Resource_l0bu6"]
+script = ExtResource("11_lxseb")
+japanese = "離婚"
+readings = Array[String](["りこん"])
+meanings = Array[String](["divorce"])
+jlpt_level = 3
+_difficulty = 62
+_used_kanji = Array[String](["離", "婚"])
+
+[sub_resource type="Resource" id="Resource_rcljt"]
+script = ExtResource("11_lxseb")
+japanese = "既婚"
+readings = Array[String](["きこん"])
+meanings = Array[String](["married"])
+jlpt_level = 1
+_difficulty = 122
+_used_kanji = Array[String](["既", "婚"])
+
+[sub_resource type="Resource" id="Resource_ah763"]
+script = ExtResource("11_lxseb")
+japanese = "新婚"
+readings = Array[String](["しんこん"])
+meanings = Array[String](["newly-wed", "newly married"])
+jlpt_level = 1
+_difficulty = 122
+_used_kanji = Array[String](["新", "婚"])
+
+[sub_resource type="Resource" id="Resource_1tim6"]
+script = ExtResource("11_lxseb")
+japanese = "未婚"
+readings = Array[String](["みこん"])
+meanings = Array[String](["unmarried", "not yet married"])
+jlpt_level = 1
+_difficulty = 122
+_used_kanji = Array[String](["未", "婚"])
+
+[sub_resource type="Resource" id="Resource_k88wo"]
+script = ExtResource("11_lxseb")
+japanese = "再婚"
+readings = Array[String](["さいこん"])
+meanings = Array[String](["second marriage", "remarriage"])
+_difficulty = 652
+_used_kanji = Array[String](["再", "婚"])
+
+[sub_resource type="Resource" id="Resource_oteos"]
+script = ExtResource("11_lxseb")
+japanese = "婚姻"
+readings = Array[String](["こんいん"])
+meanings = Array[String](["marriage", "matrimony"])
+_difficulty = 659
+_used_kanji = Array[String](["婚", "姻"])
+
+[sub_resource type="Resource" id="Resource_ayql4"]
+script = ExtResource("11_lxseb")
+japanese = "結婚式"
+readings = Array[String](["けっこんしき"])
+meanings = Array[String](["marriage ceremony", "wedding", "nuptials"])
+_difficulty = 732
+_used_kanji = Array[String](["結", "婚", "式"])
+
+[sub_resource type="Resource" id="Resource_i437k"]
+script = ExtResource("11_lxseb")
+japanese = "冠婚葬祭"
+readings = Array[String](["かんこんそうさい"])
+meanings = Array[String](["important ceremonial occasions in family relationships"])
+_difficulty = 923
+_used_kanji = Array[String](["冠", "婚", "葬", "祭"])
+
+[sub_resource type="Resource" id="Resource_7165j"]
+script = ExtResource("11_lxseb")
+japanese = "晩婚"
+readings = Array[String](["ばんこん"])
+meanings = Array[String](["late marriage"])
+_difficulty = 968
+_used_kanji = Array[String](["晩", "婚"])
+
+[sub_resource type="Resource" id="Resource_5mxev"]
+script = ExtResource("11_lxseb")
+japanese = "婚約者"
+readings = Array[String](["こんやくしゃ"])
+meanings = Array[String](["fiance", "fiancee"])
+_difficulty = 1000
+_used_kanji = Array[String](["婚", "約", "者"])
+
+[sub_resource type="Resource" id="Resource_x037h"]
+script = ExtResource("11_lxseb")
+japanese = "結婚相手"
+readings = Array[String](["けっこんあいて"])
+meanings = Array[String](["marriage partner", "spouse", "wife-to-be", "husband-to-be", "future spouse", "fiancée", "fiancé"])
+_difficulty = 1000
+_used_kanji = Array[String](["結", "婚", "相", "手"])
+
+[resource]
+script = ExtResource("8_ml5hj")
+symbol = "婚"
+card_name = "Marriage"
+rarity = 2
+abilities = Array[ExtResource("1_y3h5g")]([SubResource("Resource_inyhe"), SubResource("Resource_7kgqg")])
+tags = Array[int]([21])
+vocabulary = Array[ExtResource("11_lxseb")]([SubResource("Resource_b2q7v"), SubResource("Resource_x3e0p"), SubResource("Resource_l0bu6"), SubResource("Resource_rcljt"), SubResource("Resource_ah763"), SubResource("Resource_1tim6"), SubResource("Resource_k88wo"), SubResource("Resource_oteos"), SubResource("Resource_ayql4"), SubResource("Resource_i437k"), SubResource("Resource_7165j"), SubResource("Resource_5mxev"), SubResource("Resource_x037h")])
+example_sentences = Array[ExtResource("5_5kxqu")]([SubResource("Resource_r3q20"), SubResource("Resource_p2nkn"), SubResource("Resource_ey6w7"), SubResource("Resource_tb6lu"), SubResource("Resource_75o3r"), SubResource("Resource_2upfe"), SubResource("Resource_qxfgn"), SubResource("Resource_jw6tt")])
+kanji_shape = SubResource("Resource_47dnp")
+init_aspects = 20
+term_categories = Array[ExtResource("9_e0ioo")]([ExtResource("10_yabp1")])

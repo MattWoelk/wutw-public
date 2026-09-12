@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://c00ry3m5xdpcx"]
+
+[ext_resource type="Shader" uid="uid://cy23kwgtjt4et" path="res://theme/panel/panel.gdshader" id="1_qdary"]
+[ext_resource type="Texture2D" uid="uid://cgsn7350xgqr5" path="res://theme/panel/panel_bg.png" id="2_3fqqt"]
+[ext_resource type="Script" uid="uid://di8ji7dlr1dry" path="res://relics/selector/relic_preview.gd" id="2_51hhb"]
+[ext_resource type="Texture2D" uid="uid://bnkoruxi23qsp" path="res://theme/panel/panel_frame.png" id="3_oggho"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="4_26is3"]
+[ext_resource type="Texture2D" uid="uid://df20o8u52rakv" path="res://relics/common/crystal_twig/crystal_twig.png" id="11_g6bqs"]
+[ext_resource type="FontFile" uid="uid://d357sc75ncblr" path="res://theme/fonts/Merienda/static/Merienda-Black.ttf" id="12_du686"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="13_67u4t"]
+
+[sub_resource type="Gradient" id="Gradient_4qknn"]
+offsets = PackedFloat32Array(0.00512295)
+colors = PackedColorArray(0.71, 0.543387, 0.2556, 0.168627)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l7j7v"]
+gradient = SubResource("Gradient_4qknn")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uidj4"]
+shader = ExtResource("1_qdary")
+shader_parameter/size = Vector2(525.00006, 174)
+shader_parameter/background = ExtResource("2_3fqqt")
+shader_parameter/background_shade = SubResource("GradientTexture2D_l7j7v")
+shader_parameter/background_tex_size = Vector2(2291, 3118)
+shader_parameter/background_scale = 2.0
+shader_parameter/frame_tex = ExtResource("3_oggho")
+shader_parameter/frame_tex_size = Vector2(1127, 976)
+shader_parameter/frame_margin = Vector4(15, 15, 15, 15)
+shader_parameter/frame_scale = 0.93
+shader_parameter/frame_color = Color(0.24, 0.18848, 0.1056, 1)
+shader_parameter/decor_transform = Vector4(0, 0, 300, 100)
+shader_parameter/decor_modulate = Color(1, 1, 1, 0)
+
+[node name="RelicPreview" type="PanelContainer"]
+material = SubResource("ShaderMaterial_uidj4")
+offset_right = 350.0
+offset_bottom = 116.0
+theme_override_styles/panel = ExtResource("4_26is3")
+script = ExtResource("2_51hhb")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 2
+mouse_filter = 2
+texture = ExtResource("11_g6bqs")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+mouse_filter = 2
+theme_override_constants/separation = 4
+
+[node name="NameLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_du686")
+text = "Relic Name"
+
+[node name="DescriptionLabel" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("13_67u4t")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 10)
+layout_mode = 2
+text = "Whenever you lose inspiration, gain half as much maximum inspiration (rounded down)."
+fit_content = true
+meta_underlined = false

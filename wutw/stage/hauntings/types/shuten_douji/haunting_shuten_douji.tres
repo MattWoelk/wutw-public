@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://cxebiujysdo8s"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_r23ji"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="3_674k3"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="3_ab08s"]
+[ext_resource type="Resource" uid="uid://dmfd5uheymt74" path="res://cards/tier6/card_drunk.tres" id="4_r23ji"]
+[ext_resource type="Script" uid="uid://777usfqcjmox" path="res://stage/hauntings/effects/haunting_effect_add_card.gd" id="5_jsfcr"]
+[ext_resource type="Resource" uid="uid://dwmam1alvjiwq" path="res://art/pieces/piece_kyosai_guardian_god.tres" id="6_jsfcr"]
+[ext_resource type="Texture2D" uid="uid://j6jbj1emqaa4" path="res://stage/hauntings/types/shuten_douji/haunting_shuten_douji.png" id="6_r23ji"]
+[ext_resource type="Resource" uid="uid://b1d2heqfvu2v2" path="res://art/pieces/piece_hiroshige_shimabara.tres" id="7_ot3s2"]
+[ext_resource type="Texture2D" uid="uid://dyikrfpsd31fk" path="res://stage/hauntings/types/shuten_douji/haunting_shuten_douji_realistic_alcoholism.png" id="8_e4532"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="8_r5ghp"]
+[ext_resource type="Script" uid="uid://bf8kygsbxpshs" path="res://stage/hauntings/triggers/haunting_trigger_goal_gained.gd" id="9_674k3"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="10_besxw"]
+
+[sub_resource type="Resource" id="Resource_lx3to"]
+script = ExtResource("5_jsfcr")
+card_type = ExtResource("4_r23ji")
+metadata/_custom_type_script = "uid://777usfqcjmox"
+
+[sub_resource type="Resource" id="Resource_315nl"]
+script = ExtResource("9_674k3")
+metadata/_custom_type_script = "uid://bf8kygsbxpshs"
+
+[resource]
+script = ExtResource("8_r5ghp")
+haunting_id = "shuten_douji"
+name = "Shuten Dōji"
+name_japanese = "酒吞童子"
+name_realistic = "Alcoholism"
+name_translation = "Little Lord Drunkard"
+description = "Settlers have started honoring Shuten Dōji, the Drunken King, whose revels never end, and neither does the hangover."
+description_realistic = "Alcohol abuse has spread among the settlers, sapping morale and productivity."
+description_long = "In the nights when work is done, settlers speak of deep laughter rolling down from the tents. They say it is Shuten Dōji, once a man too proud for company, now the demon king of endless drink. He tempts the weary to raise their cups and forget their tasks, promising courage that burns away before morning.
+
+It is said that his head was once severed but never silenced, its grin still whispering of comfort in every bottle. Where his name is remembered, work slows, words slur, and spirits of both kinds run dry."
+image_small = ExtResource("6_r23ji")
+image_credit = ExtResource("6_jsfcr")
+image_small_realistic = ExtResource("8_e4532")
+image_realistic_credit = ExtResource("7_ot3s2")
+base_aspect_types = Array[ExtResource("1_r23ji")]([ExtResource("3_ab08s")])
+extra_aspect_type = ExtResource("3_674k3")
+scaling_bonus_type = ExtResource("10_besxw")
+trigger = SubResource("Resource_315nl")
+effect = SubResource("Resource_lx3to")
+spot_attach_mode = 1
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

@@ -1,0 +1,94 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://dq1xsnm3wehbd"]
+
+[ext_resource type="Resource" uid="uid://cvjnyi2wrvkkb" path="res://art/pieces/piece_kouhou_morning_mist.tres" id="1_jw4r8"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_mgcod"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_jw4r8"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_jcrlg"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="4_qbdh8"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="5_yn0g7"]
+[ext_resource type="Resource" uid="uid://c67mnqx42m6eb" path="res://cards/tier2/card_fog.tres" id="6_3uo2v"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="6_gdbil"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="7_3uo2v"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="7_dvo4c"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="8_dvo4c"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="9_wqu4s"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="10_fg41g"]
+[ext_resource type="Resource" uid="uid://bb65d05uw68x1" path="res://stage/spots/lake/spot_lake.tres" id="11_50yjm"]
+[ext_resource type="Script" uid="uid://gu7gcielbwdr" path="res://events/system/outcomes/choose_card/event_outcome_choose_card.gd" id="12_wqu4s"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="13_fg41g"]
+
+[sub_resource type="Resource" id="Resource_f448y"]
+script = ExtResource("1_mgcod")
+_texture_path = "res://stage/survey/episodes/episode_misty_lake.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_3h4vs"]
+script = ExtResource("7_dvo4c")
+card_type = ExtResource("6_3uo2v")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_vshe1"]
+script = ExtResource("6_gdbil")
+bonus_type = ExtResource("5_yn0g7")
+min_count = 20
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_ixh2g"]
+script = ExtResource("2_jw4r8")
+label = "Measure the depth to navigate."
+requirement = SubResource("Resource_vshe1")
+aspects = Array[ExtResource("3_jcrlg")]([ExtResource("4_qbdh8")])
+outcome = SubResource("Resource_3h4vs")
+outcome_text = "One of the scouts ties a mallet to a rope and drops it into the water. By repeating this as the group rows around the lake, they are able to find the direction in which the depth decreases, and make their way to shore."
+
+[sub_resource type="Resource" id="Resource_pakit"]
+script = ExtResource("7_dvo4c")
+card_type = ExtResource("6_3uo2v")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_b5ql5"]
+script = ExtResource("6_gdbil")
+bonus_type = ExtResource("5_yn0g7")
+min_count = 20
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_bqjio"]
+script = ExtResource("2_jw4r8")
+label = "Judge direction by a trailing string."
+requirement = SubResource("Resource_b5ql5")
+aspects = Array[ExtResource("3_jcrlg")]([ExtResource("7_3uo2v")])
+outcome = SubResource("Resource_pakit")
+outcome_text = "A scout ties a long string to the stern and watches it as the others row. By keeping the trailing string straight, the group ensures that they are rowing in a straight line, and they eventually make their way to the shore."
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("12_wqu4s")
+card_tag = 3
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_yda2u"]
+script = ExtResource("2_jw4r8")
+label = "Head towards animal sounds."
+aspects = Array[ExtResource("3_jcrlg")]([ExtResource("8_dvo4c")])
+outcome = SubResource("Resource_trtbi")
+outcome_text = "The surveyors listen carefully. They are quickly able to determine the direction from which frog croaks the loudest and find their way to shore."
+
+[sub_resource type="Resource" id="Resource_37pa6"]
+script = ExtResource("2_jw4r8")
+label = "Wait it out."
+aspects = Array[ExtResource("3_jcrlg")]([null])
+aspects_per_season = Array[ExtResource("3_jcrlg")]([null])
+outcome_text = "The scouts decide to wait out the fog. They spend the night in the boat, and by noon the next day find the fog has lifted, letting them row safely to the distant shore."
+
+[resource]
+script = ExtResource("9_wqu4s")
+episode_id = "misty_lake"
+title = "The Foggy Lake"
+spot_types = Array[ExtResource("10_fg41g")]([ExtResource("11_50yjm")])
+text = "A thick fog has rolled in as the team is crossing a lake. It won't be long before the shores are lost in the whiteout.
+
+The scouts are worried that they will end up rowing in circles if they don't take countermeasures."
+background_image = SubResource("Resource_f448y")
+background_credit = ExtResource("1_jw4r8")
+choices = Array[ExtResource("2_jw4r8")]([SubResource("Resource_ixh2g"), SubResource("Resource_bqjio"), SubResource("Resource_yda2u"), SubResource("Resource_37pa6")])

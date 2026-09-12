@@ -1,0 +1,100 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://ctfm0ysdy5uxp"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_gut71"]
+[ext_resource type="Resource" uid="uid://cc62c75dydpka" path="res://art/pieces/piece_keith_sunrise_gate.tres" id="1_mxp1c"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_mxp1c"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_cgir6"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="4_co0p6"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="5_wq2cs"]
+[ext_resource type="Resource" uid="uid://7yw6tw58eefh" path="res://cards/tier6/card_want.tres" id="6_n8lbk"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="7_pgl7k"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="8_fagqy"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="9_a4jll"]
+[ext_resource type="Resource" uid="uid://dhal843mubr37" path="res://cards/tier6/card_wound.tres" id="10_k2mbh"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="11_oos26"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="12_rptj1"]
+[ext_resource type="Resource" uid="uid://b64jdmlism1oq" path="res://relics/common/old_painting/relic_old_painting.tres" id="13_5p6tl"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="14_nr803"]
+[ext_resource type="Resource" uid="uid://1wf2oqlaoxgi" path="res://cards/tier3/card_respect.tres" id="15_6nfc7"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="16_sbuuu"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="17_k2clu"]
+
+[sub_resource type="Resource" id="Resource_2c88x"]
+script = ExtResource("1_gut71")
+_texture_path = "res://stage/survey/episodes/episode_snowy_castle.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_m7vo7"]
+script = ExtResource("7_pgl7k")
+card_type = ExtResource("6_n8lbk")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_q4vs1"]
+script = ExtResource("2_mxp1c")
+label = "Take the ornaments."
+aspects = Array[ExtResource("3_cgir6")]([ExtResource("4_co0p6"), ExtResource("5_wq2cs")])
+outcome = SubResource("Resource_m7vo7")
+outcome_text = "The scouts fill their satchels with golden treasure, snatching every trinket within their reach.
+
+The next day the group finds two of their teammates missing, along with all the gold."
+
+[sub_resource type="Resource" id="Resource_sw2y7"]
+script = ExtResource("7_pgl7k")
+card_type = ExtResource("10_k2mbh")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_6bxub"]
+script = ExtResource("2_mxp1c")
+label = "Take the sword."
+aspects = Array[ExtResource("3_cgir6")]([ExtResource("8_fagqy"), ExtResource("9_a4jll")])
+outcome = SubResource("Resource_sw2y7")
+outcome_text = "The scouts rush towards the stairs, eyes set on the shiny weapon.
+
+As three of them crowd onto the narrow steps, the planks finally give way with a tired groan, the stairs suddenly collapsing.
+
+Several people are injured, and the sword remains out of reach."
+
+[sub_resource type="Resource" id="Resource_xh7y7"]
+script = ExtResource("14_nr803")
+relic = ExtResource("13_5p6tl")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_u4cwo"]
+script = ExtResource("2_mxp1c")
+label = "Search the basement."
+aspects = Array[ExtResource("3_cgir6")]([ExtResource("11_oos26"), ExtResource("12_rptj1")])
+outcome = SubResource("Resource_xh7y7")
+outcome_text = "The scouts, with lanterns held aloft, descend into the stone basement.
+
+Among the cobwebs and dust, they find a yellowed piece of paper. Its edges are weathered and eaten by worms, but it is still recognizable as a portrait.
+
+It depicts a richly dressed man in a palanquin, surrounded by servants."
+
+[sub_resource type="Resource" id="Resource_pmxvo"]
+script = ExtResource("7_pgl7k")
+card_type = ExtResource("15_6nfc7")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_kcu4g"]
+script = ExtResource("2_mxp1c")
+label = "Clear the dust."
+aspects = Array[ExtResource("3_cgir6")]([null])
+aspects_per_season = Array[ExtResource("3_cgir6")]([null])
+outcome = SubResource("Resource_pmxvo")
+outcome_text = "The scouts decide to pay their respects to the old ruins.
+
+They use sticks and leaves to fashion brooms, and sweep the dust off the steps, walls, and ornaments, before leaving the fort in peace."
+
+[resource]
+script = ExtResource("16_sbuuu")
+episode_id = "snowy_castle"
+title = "The Highland Fort"
+biome_types = Array[int]([7])
+text = "An unexpected sight appears before the scouts one morning. An old fort stands at a snowy peak, its broad eaves laden with a thick covering of snow.
+
+Inside the lavish veranda hang little golden ornaments, their luster hidden by a thick layer of dust.
+
+Stairs lead to a second level, where a heavy sword rests on a raised pedestal, a large blue gemstone embedded in its hilt."
+background_image = SubResource("Resource_2c88x")
+background_credit = ExtResource("1_mxp1c")
+choices = Array[ExtResource("2_mxp1c")]([SubResource("Resource_q4vs1"), SubResource("Resource_6bxub"), SubResource("Resource_u4cwo"), SubResource("Resource_kcu4g")])

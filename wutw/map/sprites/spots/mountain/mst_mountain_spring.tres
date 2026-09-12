@@ -1,0 +1,30 @@
+[gd_resource type="MapSpriteType_Lake" format=3 uid="uid://c0tqejkhi1sfu"]
+
+[ext_resource type="PackedScene" uid="uid://bww2ny72qnido" path="res://map/sprites/spots/mountain/map_effect_hot_spring_steam.tscn" id="1_5t48u"]
+
+[sub_resource type="MapSpriteCollision_Circle" id="MapSpriteCollision_Circle_vpvr4"]
+center = Vector2(-1.261, 0.029)
+radius = 1.148
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Circle" id="MapSpriteCollision_Circle_to22u"]
+center = Vector2(1.589, 0.287)
+radius = 1.114
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Rect" id="MapSpriteCollision_Rect_mxt7e"]
+rect = Rect2(-1.132, -0.883, 2.39, 2.014)
+blocking = true
+
+[sub_resource type="MapEffectAttachment" id="MapEffectAttachment_kmxow"]
+scene = ExtResource("1_5t48u")
+scale = 1.864
+
+[resource]
+atlas_rect = Rect2i(1462, 60, 60, 30)
+map_rect = Rect2(0.165, 0.248, 6, 3)
+footprint_radius = 2.734
+must_be_fully_within_clip = true
+z_index = -1
+effects = Array[MapEffectAttachment]([SubResource("MapEffectAttachment_kmxow")])
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Circle_vpvr4"), SubResource("MapSpriteCollision_Circle_to22u"), SubResource("MapSpriteCollision_Rect_mxt7e")])

@@ -1,0 +1,90 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://dt587lym44pdx"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_lh0o8"]
+[ext_resource type="Resource" uid="uid://blbmo2u1y0jjh" path="res://art/pieces/piece_hiroshige_higo.tres" id="1_t6lx5"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_t6lx5"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_3y6ya"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="4_sl5ne"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="5_gb66p"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="6_63m8a"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="7_aajle"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="8_fjqwc"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="9_ruagc"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="10_pmvsv"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="11_8wtso"]
+[ext_resource type="Resource" uid="uid://bom6dwl3t2obc" path="res://stage/spots/cliff/spot_cliff.tres" id="12_6xg5h"]
+
+[sub_resource type="Resource" id="Resource_hmwkx"]
+script = ExtResource("1_lh0o8")
+_texture_path = "res://stage/survey/episodes/episode_tree_bridge.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_r0wwb"]
+script = ExtResource("6_63m8a")
+bonus_type = ExtResource("5_gb66p")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_oyrbr"]
+script = ExtResource("2_t6lx5")
+label = "Reinforce the tree bridge."
+aspects = Array[ExtResource("3_3y6ya")]([ExtResource("4_sl5ne")])
+outcome = SubResource("Resource_r0wwb")
+outcome_text = "The group nails pegs to the tree trunk, and ties safety ropes around it, attaching them to nearby trees.
+
+Having done this, they make it across safely, but leave the tree marked and scarred."
+
+[sub_resource type="Resource" id="Resource_qcw3s"]
+script = ExtResource("6_63m8a")
+bonus_type = ExtResource("8_fjqwc")
+amount = 10
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_76fkp"]
+script = ExtResource("2_t6lx5")
+label = "Verify the trunk's sturdiness."
+aspects = Array[ExtResource("3_3y6ya")]([ExtResource("7_aajle")])
+outcome = SubResource("Resource_qcw3s")
+outcome_text = "The group decides to check how sturdy the tree is. They carefully try placing heavier and heavier packs on the trunk, and find it able to support everything they could pile upon it.
+
+In the process they notice that the bark is thicker in some areas. On closer examination, it becomes clear that at some point in the past, footholds had been carved into the trunk. Apparently they aren't the first to consider using it as a bridge."
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("6_63m8a")
+bonus_type = ExtResource("5_gb66p")
+amount = 5
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_0mwql"]
+script = ExtResource("2_t6lx5")
+label = "Camp overnight and deliberate."
+aspects = Array[ExtResource("3_3y6ya")]([ExtResource("9_ruagc")])
+outcome = SubResource("Resource_trtbi")
+outcome_text = "Unable to decide which path to take, the team sets up a camp by the tree bridge.
+
+In the early morning, the first people to wake up are greeted with a group of woolly mountain goats all standing on the tree trunk, staring at the sleeping scouts.
+
+This sight is enough to convince the group of the bridge's safety, and their trust in the goats proves well-earned."
+
+[sub_resource type="Resource" id="Resource_ep71h"]
+script = ExtResource("2_t6lx5")
+label = "Take the long path."
+aspects = Array[ExtResource("3_3y6ya")]([null])
+aspects_per_season = Array[ExtResource("3_3y6ya")]([null])
+outcome_text = "The team decides to avoid the risk and take the long path around the ravine. It is safe, but costs them extra time."
+
+[resource]
+script = ExtResource("10_pmvsv")
+episode_id = "tree_bridge"
+title = "The Tree Bridge"
+biome_types = Array[int]([9, 7])
+spot_types = Array[ExtResource("11_8wtso")]([ExtResource("12_6xg5h")])
+text = "As the group is walking along the edge of a ravine, they find a living tree growing on the edge, its thick, bent trunk forming a bridge across to the other side.
+
+Crossing it would act as a shortcut, but some of the scouts hesitate, not trusting the tree to hold their weight."
+background_image = SubResource("Resource_hmwkx")
+background_credit = ExtResource("1_t6lx5")
+choices = Array[ExtResource("2_t6lx5")]([SubResource("Resource_oyrbr"), SubResource("Resource_76fkp"), SubResource("Resource_0mwql"), SubResource("Resource_ep71h")])

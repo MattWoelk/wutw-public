@@ -1,0 +1,108 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://t2y3bwg8cv4t"]
+
+[ext_resource type="Resource" uid="uid://b7fuyscjimvmi" path="res://art/pieces/piece_bartlett_shoji.tres" id="1_loa4e"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_pd3dr"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_loa4e"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_vpa3n"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="4_k5ni4"]
+[ext_resource type="Script" uid="uid://dadces6knf8fj" path="res://events/system/outcomes/run_var/event_outcome_run_var.gd" id="5_ptstc"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="6_32yeh"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="7_wm5jq"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="8_6e1jr"]
+[ext_resource type="Resource" uid="uid://8l2qf0fixnfp" path="res://cards/tier2/card_thanks.tres" id="9_0plap"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="10_ihfyv"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="11_kv40d"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="12_j07w3"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="13_an6gq"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="14_rmxqw"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="15_0baic"]
+
+[sub_resource type="Resource" id="Resource_4ni1c"]
+script = ExtResource("1_pd3dr")
+_texture_path = "res://stage/survey/episodes/episode_shard_edge_fog.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_urk6g"]
+script = ExtResource("5_ptstc")
+run_var = 6
+delta = 3
+preview_description = "Gain 3 maximum <term:inspiration>"
+outcome_description = "Gained 3 maximum <term:inspiration>."
+metadata/_custom_type_script = "uid://dadces6knf8fj"
+
+[sub_resource type="Resource" id="Resource_q53r4"]
+script = ExtResource("7_wm5jq")
+bonus_type = ExtResource("6_32yeh")
+min_count = 25
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_viw1w"]
+script = ExtResource("2_loa4e")
+label = "Sketch the scene."
+requirement = SubResource("Resource_q53r4")
+aspects = Array[ExtResource("3_vpa3n")]([ExtResource("4_k5ni4")])
+aspects_per_season = Array[ExtResource("3_vpa3n")]([null])
+outcome = SubResource("Resource_urk6g")
+outcome_text = "One of the surveyors, an artist, sketches the scene.
+
+She takes liberties with the colors, painting the clouds a pale azure and giving the distant mountain a purple hue, with a blush of rose at the peak.
+
+The group crowds around her, admiring her work just as much as the scene itself."
+
+[sub_resource type="Resource" id="Resource_8j6k3"]
+script = ExtResource("10_ihfyv")
+card_type = ExtResource("9_0plap")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_j4qby"]
+script = ExtResource("2_loa4e")
+label = "Build a marker."
+aspects = Array[ExtResource("3_vpa3n")]([ExtResource("8_6e1jr")])
+aspects_per_season = Array[ExtResource("3_vpa3n")]([null])
+outcome = SubResource("Resource_8j6k3")
+outcome_text = "The explorers erect a stone cairn at the very edge of the shard.
+
+Once they position the last stone into place, they pause to thank the Enlightened One for the success of their journey thus far."
+
+[sub_resource type="Resource" id="Resource_g4pbm"]
+script = ExtResource("13_an6gq")
+bonus_type = ExtResource("12_j07w3")
+amount = 10
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_7tn2x"]
+script = ExtResource("2_loa4e")
+label = "Camp here."
+aspects = Array[ExtResource("3_vpa3n")]([ExtResource("11_kv40d")])
+aspects_per_season = Array[ExtResource("3_vpa3n")]([null])
+outcome = SubResource("Resource_g4pbm")
+outcome_text = "The group decides to camp at the edge.
+
+They are unusually somber as they gather around the fire for their meal, contemplating the distant shards.
+
+As they lie down for the night, they are lulled to sleep by the howling wind."
+
+[sub_resource type="Resource" id="Resource_2rdr5"]
+script = ExtResource("2_loa4e")
+label = "Shout into the void."
+aspects = Array[ExtResource("3_vpa3n")]([null])
+aspects_per_season = Array[ExtResource("3_vpa3n")]([null])
+outcome_text = "One of the scouts yells into the distance with all his might.
+
+Instead of the echo he expects, he hears his voice muted, swallowed by the dense clouds below."
+
+[resource]
+script = ExtResource("14_rmxqw")
+episode_id = "shard_edge_fog"
+title = "Distant Shards"
+biome_types = Array[int]([0])
+text = "The air is cold when the scouts reach the edge of the shard.
+
+The wind howls against them, as if telling them to stay away from the dangerous edge, but they look on in wonder.
+
+The Cloud Sea stretches into the horizon, scattered shards peeking through the clouds ahead. On one of them rises a staggeringly tall mountain."
+background_image = SubResource("Resource_4ni1c")
+background_credit = ExtResource("1_loa4e")
+choices = Array[ExtResource("2_loa4e")]([SubResource("Resource_viw1w"), SubResource("Resource_j4qby"), SubResource("Resource_7tn2x"), SubResource("Resource_2rdr5")])

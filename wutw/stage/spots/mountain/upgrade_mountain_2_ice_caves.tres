@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://dd7bt4u41vp0c"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_l2r3o"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_qdhhd"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_6jvjf"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="3_mhguf"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="4_656uc"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="6_dyyry"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="7_kpsbt"]
+[ext_resource type="Resource" uid="uid://dxoxvtquc3hu2" path="res://stage/spots/mountain/spot_mountain.tres" id="8_dyyry"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_kpsbt"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://bcs0l7tciipew" path="res://map/sprites/spots/mountain/mst_mountain_ice_caves.tres" id="10_30cb0"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://yi6r4d10vn2d" path="res://map/sprites/mountains/mst_mountain_1_medium.tres" id="10_swrw2"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://desakgu6q3yov" path="res://map/sprites/mountains/mst_mountain_2_large.tres" id="11_s5lsh"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://cpmm5kdehu4ys" path="res://map/sprites/spots/mountain/mst_mountain_snowcapped_peaks.tres" id="11_wphha"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://c3u877m1spx0" path="res://map/sprites/mountains/mst_mountain_3_large.tres" id="12_qivli"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="12_ykolt"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://doqqvl0x3b3g4" path="res://map/sprites/mountains/mst_mountain_4_small.tres" id="13_bhvfv"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bxr2aj680eaqd" path="res://map/sprites/mountains/mst_mountain_5_small.tres" id="14_xivm2"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cekrboxmhdmhk" path="res://map/sprites/mountains/mst_mountain_6_tiny.tres" id="15_yyfld"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cjbrxida4odnk" path="res://map/sprites/mountains/mst_mountain_7_tiny.tres" id="16_d05pa"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://56t2rh2pg58y" path="res://map/sprites/mountains/mst_mountain_8_medium.tres" id="17_o6rtw"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://csjeschaiy5ct" path="res://map/sprites/mountains/mst_mountain_9_large.tres" id="18_q0t6p"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bctu7rlwqc3o7" path="res://map/sprites/mountains/mst_mountain_10_medium.tres" id="19_cc255"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://t2knd16pwuwg" path="res://map/sprites/mountains/mst_mountain_11_medium.tres" id="20_ssdjr"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dxba886xk8sch" path="res://map/sprites/mountains/mst_mountain_12_pair.tres" id="21_rj37q"]
+
+[sub_resource type="Resource" id="Resource_fcb78"]
+script = ExtResource("12_ykolt")
+old_sprite_type = ExtResource("11_wphha")
+new_sprite_type = ExtResource("10_30cb0")
+biome = 7
+extra_removables = Array[MapSpriteType]([ExtResource("10_swrw2"), ExtResource("11_s5lsh"), ExtResource("12_qivli"), ExtResource("13_bhvfv"), ExtResource("14_xivm2"), ExtResource("15_yyfld"), ExtResource("16_d05pa"), ExtResource("17_o6rtw"), ExtResource("18_q0t6p"), ExtResource("19_cc255"), ExtResource("20_ssdjr"), ExtResource("21_rj37q")])
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_l2r3o")
+spot_upgrade_id = "mountain_ice_caves"
+name = "Ice Caves"
+description = "Crystal tunnels of frozen blue. They never look the same on repeat visits."
+required_aspects = Array[ExtResource("3_6jvjf")]([ExtResource("6_dyyry"), ExtResource("7_kpsbt")])
+granted_bonuses = Dictionary[ExtResource("2_qdhhd"), int]({
+ExtResource("3_mhguf"): 10,
+ExtResource("4_656uc"): 10
+})
+spot = ExtResource("8_dyyry")
+visuals = Array[ExtResource("9_kpsbt")]([SubResource("Resource_fcb78")])
+tags = Array[int]([0])

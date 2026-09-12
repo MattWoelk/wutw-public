@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://cmfm1maginido"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_f4wt8"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_lyu7n"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="3_47tk3"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_te586"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="4_h0vb6"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="6_a77ht"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="7_u27vu"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="8_cwe8o"]
+[ext_resource type="Resource" uid="uid://d1c7ny2xs7pwo" path="res://stage/spots/canyon/spot_canyon.tres" id="9_a77ht"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="10_u27vu"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://yi6r4d10vn2d" path="res://map/sprites/mountains/mst_mountain_1_medium.tres" id="11_kmov0"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://bqwb8ali6aviw" path="res://map/sprites/spots/canyon/mst_canyon_rocks_reply.tres" id="11_u7n7u"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://desakgu6q3yov" path="res://map/sprites/mountains/mst_mountain_2_large.tres" id="12_p8wwv"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://delctjhkbhs5i" path="res://map/sprites/spots/canyon/mst_canyon_wandering_script.tres" id="12_yd1ur"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://c3u877m1spx0" path="res://map/sprites/mountains/mst_mountain_3_large.tres" id="13_4iprp"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="13_rsuk1"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://doqqvl0x3b3g4" path="res://map/sprites/mountains/mst_mountain_4_small.tres" id="14_u2v05"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bxr2aj680eaqd" path="res://map/sprites/mountains/mst_mountain_5_small.tres" id="15_uafdc"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cekrboxmhdmhk" path="res://map/sprites/mountains/mst_mountain_6_tiny.tres" id="16_ck5i8"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cjbrxida4odnk" path="res://map/sprites/mountains/mst_mountain_7_tiny.tres" id="17_agwys"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://56t2rh2pg58y" path="res://map/sprites/mountains/mst_mountain_8_medium.tres" id="18_40fya"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://csjeschaiy5ct" path="res://map/sprites/mountains/mst_mountain_9_large.tres" id="19_guhcr"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bctu7rlwqc3o7" path="res://map/sprites/mountains/mst_mountain_10_medium.tres" id="20_8ga72"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://t2knd16pwuwg" path="res://map/sprites/mountains/mst_mountain_11_medium.tres" id="21_wkgg1"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dxba886xk8sch" path="res://map/sprites/mountains/mst_mountain_12_pair.tres" id="22_fcu2v"]
+
+[sub_resource type="Resource" id="Resource_jkgsf"]
+script = ExtResource("13_rsuk1")
+old_sprite_type = ExtResource("12_yd1ur")
+new_sprite_type = ExtResource("11_u7n7u")
+extra_removables = Array[MapSpriteType]([ExtResource("11_kmov0"), ExtResource("12_p8wwv"), ExtResource("13_4iprp"), ExtResource("14_u2v05"), ExtResource("15_uafdc"), ExtResource("16_ck5i8"), ExtResource("17_agwys"), ExtResource("18_40fya"), ExtResource("19_guhcr"), ExtResource("20_8ga72"), ExtResource("21_wkgg1"), ExtResource("22_fcu2v")])
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_f4wt8")
+spot_upgrade_id = "canyon_rock_reply"
+name = "The Rock's Reply"
+description = "A question left at dusk may have an answer by sunrise, but the canyon does not like an audience."
+required_aspects = Array[ExtResource("3_te586")]([ExtResource("6_a77ht"), ExtResource("7_u27vu"), ExtResource("8_cwe8o")])
+granted_bonuses = Dictionary[ExtResource("2_lyu7n"), int]({
+ExtResource("3_47tk3"): 20,
+ExtResource("4_h0vb6"): 30
+})
+spot = ExtResource("9_a77ht")
+visuals = Array[ExtResource("10_u27vu")]([SubResource("Resource_jkgsf")])
+tags = Array[int]([0])
+unique_per_run = true
+min_main_quest_progress = 110

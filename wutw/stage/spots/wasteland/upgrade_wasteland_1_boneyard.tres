@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://bliu3rh51wlmo"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_sdh5p"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="3_s3m3j"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="4_6iucf"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="6_a3m3h"]
+[ext_resource type="Resource" uid="uid://ouecqwnbe55w" path="res://stage/spots/wasteland/spot_wasteland.tres" id="6_s88lq"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="7_854qj"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="7_hp8fv"]
+[ext_resource type="Script" uid="uid://dvrtuqbmx4v30" path="res://stage/spots/spot_upgrade_visual_add.gd" id="8_jjsrm"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://ddcfbln00tiaf" path="res://map/sprites/spots/wasteland/mst_wasteland_boneyard.tres" id="9_3j8av"]
+
+[sub_resource type="Resource" id="Resource_5mjhq"]
+script = ExtResource("8_jjsrm")
+sprite_type = ExtResource("9_3j8av")
+biome = 3
+metadata/_custom_type_script = "uid://dvrtuqbmx4v30"
+
+[resource]
+script = ExtResource("1_sdh5p")
+spot_upgrade_id = "wasteland_boneyard"
+name = "Boneyard"
+description = "Bleached remains of beasts whose hooves once thundered here."
+required_aspects = Array[ExtResource("6_a3m3h")]([ExtResource("7_hp8fv")])
+granted_bonuses = Dictionary[ExtResource("4_6iucf"), int]({
+ExtResource("3_s3m3j"): 10
+})
+spot = ExtResource("6_s88lq")
+visuals = Array[ExtResource("7_854qj")]([SubResource("Resource_5mjhq")])
+tags = Array[int]([0])

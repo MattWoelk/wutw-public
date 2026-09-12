@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://3jck4mxc8uj8"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_ytk4m"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_aofgu"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="3_k318m"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_mxi0n"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="5_t8soy"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="6_uft62"]
+[ext_resource type="Resource" uid="uid://b85k7x2ec04xc" path="res://stage/spots/building_large/spot_building_large.tres" id="7_sppyo"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="8_v2tsj"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://cffibw4osyagt" path="res://map/sprites/spots/large_building/mst_large_building_hospital.tres" id="9_l0uwo"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://dnwpmiumphuqb" path="res://map/sprites/spots/large_building/mst_large_building_school.tres" id="10_natd7"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="11_vgggs"]
+
+[sub_resource type="Resource" id="Resource_qk6ae"]
+script = ExtResource("11_vgggs")
+old_sprite_type = ExtResource("10_natd7")
+new_sprite_type = ExtResource("9_l0uwo")
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_ytk4m")
+spot_upgrade_id = "building_large_hospital"
+name = "House of Healing"
+description = "Stubborn patients grumble as they are forced to rest, yet nothing eases their pain as well as the masters of this house."
+required_aspects = Array[ExtResource("3_mxi0n")]([ExtResource("5_t8soy"), ExtResource("6_uft62")])
+granted_bonuses = Dictionary[ExtResource("2_aofgu"), int]({
+ExtResource("3_k318m"): 25
+})
+spot = ExtResource("7_sppyo")
+visuals = Array[ExtResource("8_v2tsj")]([SubResource("Resource_qk6ae")])

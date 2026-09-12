@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dk0f7lxk8imnw"]
+
+[ext_resource type="Script" uid="uid://uaw5a0l4nb02" path="res://cards/drawn_kanji.gd" id="1_tad7p"]
+[ext_resource type="Texture2D" uid="uid://t7sgm33w0rh" path="res://cards/kanji_line_blurred.png" id="2_p1dek"]
+
+[sub_resource type="Curve" id="Curve_cnyvt"]
+_data = [Vector2(0, 0.5451941), 0.0, 0.5750621, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="DrawnKanji" type="Control" unique_id=1956282852]
+custom_minimum_size = Vector2(90, 90)
+custom_maximum_size = Vector2(90, 90)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 90.0
+offset_bottom = 90.0
+mouse_filter = 2
+mouse_behavior_recursive = 1
+script = ExtResource("1_tad7p")
+width_curve = SubResource("Curve_cnyvt")
+line_texture = ExtResource("2_p1dek")

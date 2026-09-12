@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Relic_ExtraHomework" format=3 uid="uid://dxay40odoudsw"]
+
+[ext_resource type="Script" uid="uid://gtm43sltv0r0" path="res://relics/common/extra_homework/relic_extra_homework.gd" id="1_py3xk"]
+[ext_resource type="Resource" uid="uid://cs0qacqnta64v" path="res://cards/tier3/card_study.tres" id="1_xjs3v"]
+[ext_resource type="Texture2D" uid="uid://c521n1h40q2v2" path="res://relics/common/extra_homework/extra_homework.png" id="2_hswml"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="2_wbwfk"]
+[ext_resource type="Resource" uid="uid://5q63svcbmx37" path="res://glossary/categories/termcategory_relic.tres" id="3_xjs3v"]
+
+[resource]
+script = ExtResource("1_py3xk")
+granted_card = ExtResource("1_xjs3v")
+relic_id = "extra_homework"
+default_name = "Extra Homework"
+default_description = "Increase all <term_lower:stage_goal>s by 15%%, but get a %s <term_lower:glyph> at the start of each <term_lower:stage>."
+flavor_text = "Desire is only increased by effort."
+icon = ExtResource("2_hswml")
+var_modifiers = Dictionary[int, int]({
+15: 15
+})
+default_starting_state = 1
+term_categories = Array[ExtResource("2_wbwfk")]([ExtResource("3_xjs3v")])
+metadata/_custom_type_script = "uid://gtm43sltv0r0"

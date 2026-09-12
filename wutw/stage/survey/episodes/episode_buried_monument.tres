@@ -1,0 +1,101 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://dngqv02cd2g14"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_2tqcv"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="1_l7bf6"]
+[ext_resource type="Resource" uid="uid://fms881rhjh6q" path="res://art/pieces/piece_hiroshige_nissaka.tres" id="1_w4aqo"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="2_2tqcv"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="3_w4aqo"]
+[ext_resource type="Resource" uid="uid://chjddqppwjodh" path="res://events/landmark/endless_ruin/endless_ruin_relics.tres" id="4_iijom"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="5_l3oq8"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="6_ei11y"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="7_awljf"]
+[ext_resource type="Script" uid="uid://gu7gcielbwdr" path="res://events/system/outcomes/choose_card/event_outcome_choose_card.gd" id="8_jcdp8"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="9_wga58"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="10_2hae7"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="11_rogax"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="12_kcigm"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="13_o7lac"]
+[ext_resource type="Resource" uid="uid://cfuqwl06ioxwd" path="res://stage/spots/hill/spot_hill.tres" id="14_de04i"]
+[ext_resource type="Resource" uid="uid://bom6dwl3t2obc" path="res://stage/spots/cliff/spot_cliff.tres" id="15_x5liu"]
+[ext_resource type="Resource" uid="uid://cmbyg0gub8sum" path="res://stage/spots/river/spot_river.tres" id="16_0u5qv"]
+[ext_resource type="Resource" uid="uid://bb65d05uw68x1" path="res://stage/spots/lake/spot_lake.tres" id="17_sm32c"]
+[ext_resource type="Resource" uid="uid://b85k7x2ec04xc" path="res://stage/spots/building_large/spot_building_large.tres" id="18_hyq0k"]
+[ext_resource type="Resource" uid="uid://w8n0bwomyvod" path="res://stage/spots/building_small/spot_building_small.tres" id="19_kuljv"]
+[ext_resource type="Resource" uid="uid://ctiwrqhub05ib" path="res://stage/spots/square/spot_square.tres" id="20_m52ks"]
+
+[sub_resource type="Resource" id="Resource_6ml1f"]
+script = ExtResource("1_2tqcv")
+_texture_path = "uid://b6p3mgw3nienw"
+_is_horizontal = true
+metadata/_custom_type_script = "uid://c7u2t141hgkj5"
+
+[sub_resource type="Resource" id="Resource_l7bf6"]
+script = ExtResource("6_ei11y")
+bonus_type = ExtResource("5_l3oq8")
+min_count = 10
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_2tqcv"]
+script = ExtResource("1_l7bf6")
+label = "Dig it up."
+requirement = SubResource("Resource_l7bf6")
+aspects = Array[ExtResource("2_2tqcv")]([ExtResource("3_w4aqo"), ExtResource("3_w4aqo")])
+aspects_per_season = Array[ExtResource("2_2tqcv")]([null])
+outcome = ExtResource("4_iijom")
+outcome_text = "The scouts start digging and discover that the boulder is the tip of an ancient building. They clear enough of the earth to find several relics to carry back to the scholars, and record the site for future excavations."
+
+[sub_resource type="Resource" id="Resource_rtg44"]
+script = ExtResource("8_jcdp8")
+card_tag = 17
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_w4aqo"]
+script = ExtResource("6_ei11y")
+bonus_type = ExtResource("5_l3oq8")
+min_count = 20
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_iijom"]
+script = ExtResource("1_l7bf6")
+label = "Take a rubbing of the carvings."
+requirement = SubResource("Resource_w4aqo")
+aspects = Array[ExtResource("2_2tqcv")]([ExtResource("7_awljf")])
+aspects_per_season = Array[ExtResource("2_2tqcv")]([null])
+outcome = SubResource("Resource_rtg44")
+outcome_text = "The team takes a charcoal rubbing of the inscriptions for future scholars to decipher."
+
+[sub_resource type="Resource" id="Resource_v41ft"]
+script = ExtResource("11_rogax")
+bonus_type = ExtResource("5_l3oq8")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_l3oq8"]
+script = ExtResource("1_l7bf6")
+label = "Mark it with a signpost."
+aspects = Array[ExtResource("2_2tqcv")]([ExtResource("10_2hae7")])
+outcome = SubResource("Resource_v41ft")
+outcome_text = "The scouts leave a little signpost warning the rest of the expedition that the stone is special and deserves further study. Considering their job accomplished, they move on."
+
+[sub_resource type="Resource" id="Resource_ei11y"]
+script = ExtResource("1_l7bf6")
+label = "Ignore the boulder."
+aspects = Array[ExtResource("2_2tqcv")]([null])
+aspects_per_season = Array[ExtResource("2_2tqcv")]([null])
+outcome_text = "The survey team ignores the boulder and marches on, ready to stumble upon more interesting things."
+
+[resource]
+script = ExtResource("12_kcigm")
+episode_id = "buried_monument"
+title = "The Odd Rock"
+biome_types = Array[int]([5, 6, 8])
+spot_types = Array[ExtResource("13_o7lac")]([ExtResource("14_de04i"), ExtResource("15_x5liu"), ExtResource("16_0u5qv"), ExtResource("17_sm32c"), ExtResource("18_hyq0k"), ExtResource("19_kuljv"), ExtResource("20_m52ks")])
+text = "The survey team comes upon an odd boulder in the middle of a path. It is unnaturally round and smooth, a little dome rising from the ground.
+
+On closer inspection, it appears to have faint carvings on the surface."
+background_image = SubResource("Resource_6ml1f")
+background_credit = ExtResource("1_w4aqo")
+choices = Array[ExtResource("1_l7bf6")]([SubResource("Resource_2tqcv"), SubResource("Resource_iijom"), SubResource("Resource_l3oq8"), SubResource("Resource_ei11y")])

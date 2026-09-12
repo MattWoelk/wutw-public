@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://bm0gmpep5w3et"]
+
+[ext_resource type="Shader" uid="uid://cy23kwgtjt4et" path="res://theme/panel/panel.gdshader" id="2_1ue01"]
+[ext_resource type="Texture2D" uid="uid://bxvoyajed7cvv" path="res://theme/panel/panel_bg_mini.png" id="3_fk788"]
+[ext_resource type="Texture2D" uid="uid://bnkoruxi23qsp" path="res://theme/panel/panel_frame.png" id="4_vc4mi"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="5_vk6ov"]
+[ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="6_cp487"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dla0s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w3n14"]
+shader = ExtResource("2_1ue01")
+shader_parameter/size = Vector2(206.91003, 67.155)
+shader_parameter/background = ExtResource("3_fk788")
+shader_parameter/background_tex_size = Vector2(947, 380)
+shader_parameter/background_scale = 2.27
+shader_parameter/frame_tex = ExtResource("4_vc4mi")
+shader_parameter/frame_tex_size = Vector2(1127, 976)
+shader_parameter/frame_margin = Vector4(1, 1, 6.285, 5.34)
+shader_parameter/frame_scale = 1.125
+shader_parameter/frame_color = Color(0.47, 0.399735, 0.3619, 1)
+shader_parameter/decor_transform = Vector4(0, 0, 100, 100)
+shader_parameter/decor_modulate = Color(1, 1, 1, 0)
+
+[node name="SpotRecipe" type="PanelContainer"]
+offset_right = 114.0
+offset_bottom = 37.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dla0s")
+
+[node name="NamePanel" type="PanelContainer" parent="."]
+self_modulate = Color(0.9, 0.9, 0.9, 1)
+material = SubResource("ShaderMaterial_w3n14")
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("5_vk6ov")
+script = ExtResource("6_cp487")
+material_customized = true
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="MarginContainer" type="MarginContainer" parent="NamePanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NamePanel/MarginContainer"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="NamePanel/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1

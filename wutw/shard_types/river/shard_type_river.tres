@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="ShardType_River" format=3 uid="uid://bdrm5uacd7qsq"]
+
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="1_5bgv4"]
+[ext_resource type="Resource" uid="uid://53ug6kgphyoa" path="res://events/generic/river_festival_flood/event_river_festival_flood.tres" id="1_eonv5"]
+[ext_resource type="Script" uid="uid://ciiyp5hc8rf0" path="res://shard_types/river/shard_type_river.gd" id="2_p3y8r"]
+[ext_resource type="Texture2D" uid="uid://b6uyy7ero5cs" path="res://shard_types/river/shard_type_river.png" id="3_6xlpw"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="3_bpjn7"]
+[ext_resource type="Resource" uid="uid://cmbyg0gub8sum" path="res://stage/spots/river/spot_river.tres" id="3_r5t82"]
+[ext_resource type="Resource" uid="uid://d1jbd14udjn0q" path="res://art/pieces/piece_gekkou_takarabune.tres" id="4_6xlpw"]
+[ext_resource type="Resource" uid="uid://ic3ko24t5584" path="res://skills/settlement/skill_settlement_create_spot_lake.tres" id="8_m8ibf"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="9_66bja"]
+[ext_resource type="Resource" uid="uid://ca64333a00n7n" path="res://relics/common/koi_emblem/relic_koi_emblem.tres" id="10_io6ec"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="11_m8ibf"]
+
+[sub_resource type="Resource" id="Resource_6xlpw"]
+script = ExtResource("1_5bgv4")
+text = "$shard_name's many river settlements suffered great damage when the river first flooded. Since then, they have rebuilt their homes on tall, thick stilts. Nowadays floods are celebrated in the highly anticipated River Lantern Festival, an occasion to let past mistakes wash away and start the season with a clean slate."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_sifqi"]
+script = ExtResource("1_5bgv4")
+text = "The waterways of $shard_name have become so fundamental to daily life, that \"Downstream\" has all but replaced \"North\". Downstream, however, is more than just a direction. The folks living by the edges of the shard, where the water spills out into the Cloud Sea, are a distinct social class. The water that reaches them is murky, often in shades of indigo or madder from the textile mills Upstream, unfit for agriculture. These \"junkers\" usually earn their living by salvaging and repurposing the flotsam that flows down the river."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_usf6u"]
+script = ExtResource("1_5bgv4")
+text = "The scholars of $river_town have developed a philosophy inspired by the constant movement of the stream. Just as the river never stops moving, so should a person continue to change throughout their life. Just as water flows around obstacles, so should a person avoid direct conflict. Instead of tradition and stability, innovation is treasured. Instead of brute force or sudden insight, patience and persistence are prized above all."
+min_main_quest = 200
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_qj7cc"]
+script = ExtResource("1_5bgv4")
+text = "The old capital of $shard_name is now little more than a tourist attraction. Much of the shard's government has been moved to an immense, interconnected flotilla of rafts and wide-bellied river ships. This floating bureaucracy drifts slowly from the source to the edge, collecting taxes and resolving disputes, before being slowly rowed back Upstream when the river's flow slows down."
+min_main_quest = 230
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_70nmt"]
+script = ExtResource("9_66bja")
+text = "When I first made my way to the capital using our old maps, I found a sleepy little place. The locals directed me to the river instead. A few days later, a grand flotilla of rafts passed by, and they took me aboard. Apparently, the whole shard is managed from those rafts.
+
+We passed by most of the settlements on the shard while drifting down the river, though I was told that there are towns further inland, reachable from the river by canals. These canals lead to artificial lakes around which those towns are built.
+
+When we reached the edge of the shard, I got to meet the \"junkers\" who live there. Friendly fellows. They've got a big market selling things they've scavenged from the river. They have these sealed jars filled with random items that you buy blindly. The one I got was mostly filled with driftwood, but it also had this coin with a carp on it, which I brought back as a memento."
+unlocked_relic = ExtResource("10_io6ec")
+revealed_skill = ExtResource("8_m8ibf")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[resource]
+script = ExtResource("2_p3y8r")
+event = ExtResource("1_eonv5")
+river_spot = ExtResource("3_r5t82")
+shard_type_id = "river"
+name = "The Land of the Flow"
+shard_name_override = "Ōkawajima"
+shard_name_override_jp = "大川島"
+shard_name_override_meaning = "Big River Island"
+illustration = ExtResource("3_6xlpw")
+illustration_credit = ExtResource("4_6xlpw")
+history = Array[ExtResource("1_5bgv4")]([SubResource("Resource_6xlpw"), SubResource("Resource_sifqi"), SubResource("Resource_usf6u"), SubResource("Resource_qj7cc")])
+trip_reward = SubResource("Resource_70nmt")
+metadata/_custom_type_script = "uid://ciiyp5hc8rf0"

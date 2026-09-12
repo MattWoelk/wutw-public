@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://blsd2y5g5wdi7"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_h4rjn"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="2_e3c3d"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="3_x5xs2"]
+[ext_resource type="Script" uid="uid://777usfqcjmox" path="res://stage/hauntings/effects/haunting_effect_add_card.gd" id="4_intni"]
+[ext_resource type="Resource" uid="uid://d3m1xh5q3vjl3" path="res://cards/tier6/card_disease.tres" id="4_o1qc1"]
+[ext_resource type="Resource" uid="uid://b433pqkyegrk5" path="res://art/pieces/piece_bakemono_nuribotoke.tres" id="6_o1qc1"]
+[ext_resource type="Texture2D" uid="uid://dcdko48gk0sj3" path="res://stage/hauntings/types/kurobouzu/haunting_kurobouzu.png" id="6_souxf"]
+[ext_resource type="Texture2D" uid="uid://daca47ykq3llo" path="res://stage/hauntings/types/kurobouzu/haunting_kurobouzu_realistic_plague.png" id="7_lg4ip"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="7_nxovl"]
+[ext_resource type="Resource" uid="uid://b71bdpi13rnux" path="res://art/pieces/piece_kuniyoshi_okabe.tres" id="7_souxf"]
+[ext_resource type="Script" uid="uid://bf8kygsbxpshs" path="res://stage/hauntings/triggers/haunting_trigger_goal_gained.gd" id="9_nck2s"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="10_lg4ip"]
+
+[sub_resource type="Resource" id="Resource_uurmi"]
+script = ExtResource("4_intni")
+card_type = ExtResource("4_o1qc1")
+metadata/_custom_type_script = "uid://777usfqcjmox"
+
+[sub_resource type="Resource" id="Resource_i8kup"]
+script = ExtResource("9_nck2s")
+metadata/_custom_type_script = "uid://bf8kygsbxpshs"
+
+[resource]
+script = ExtResource("7_nxovl")
+haunting_id = "kurobouzu"
+name = "Kurobōzu"
+name_japanese = "黒坊主"
+name_realistic = "Epidemic"
+name_translation = "Black Monks"
+description = "Settlers whisper of dark monks that slip into homes at night to steal the breath from people's lips."
+description_realistic = "An epidemic of respiratory illness is sweeping through the settlement, spreading among people who have weakened their bodies from excessive labor."
+description_long = "The hardest-working settlers are waking up with pale faces and rattling coughs. Their breaths are stolen by the Kurobōzu, shadowy monks drawn to the exhausted and the ambitious, slipping into homes to lick the sweat from tired brows and steal the breath from those sleeping too deeply. Tales claim the monsters were once greedy priests who traded their health for worldly success, and are now cursed to wander the night."
+image_small = ExtResource("6_souxf")
+image_credit = ExtResource("6_o1qc1")
+image_small_realistic = ExtResource("7_lg4ip")
+image_realistic_credit = ExtResource("7_souxf")
+base_aspect_types = Array[ExtResource("1_h4rjn")]([ExtResource("3_x5xs2")])
+extra_aspect_type = ExtResource("2_e3c3d")
+scaling_bonus_type = ExtResource("10_lg4ip")
+trigger = SubResource("Resource_i8kup")
+effect = SubResource("Resource_uurmi")
+spot_attach_mode = 1
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

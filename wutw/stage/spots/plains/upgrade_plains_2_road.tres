@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://by3ikcdc6h5j4"]
+
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="1_kwn26"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="2_ww81c"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="3_sqcit"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="4_e7bwx"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="4_u0uwo"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="5_46iyh"]
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="6_qrrsd"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="7_iawvb"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="8_fpabo"]
+[ext_resource type="Resource" uid="uid://f8guout8235a" path="res://stage/spots/plains/spot_plains.tres" id="10_6taan"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="10_ewo71"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://ctb84yptues5s" path="res://map/sprites/spots/plains/mst_plains_post_road.tres" id="12_6taan"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://bg3c0u87dkvjl" path="res://map/sprites/spots/plains/mst_plains_rest_stop.tres" id="12_t7860"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="13_6taan"]
+
+[sub_resource type="Resource" id="Resource_fsusk"]
+script = ExtResource("13_6taan")
+old_sprite_type = ExtResource("12_t7860")
+new_sprite_type = ExtResource("12_6taan")
+biome = 6
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("6_qrrsd")
+spot_upgrade_id = "plains_road"
+name = "Post Road"
+description = "A ribbon of hardened earth smoothed by feet unwilling to weave through the grass."
+required_aspects = Array[ExtResource("4_u0uwo")]([ExtResource("7_iawvb"), ExtResource("8_fpabo")])
+granted_bonuses = Dictionary[ExtResource("1_kwn26"), int]({
+ExtResource("2_ww81c"): 5,
+ExtResource("3_sqcit"): 5,
+ExtResource("4_e7bwx"): 5,
+ExtResource("5_46iyh"): 5
+})
+spot = ExtResource("10_6taan")
+visuals = Array[ExtResource("10_ewo71")]([SubResource("Resource_fsusk")])

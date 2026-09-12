@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://ct4ymcgbcdqkl"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_bjbtm"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_vvqvb"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_h630j"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="3_yffds"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="4_6dka3"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="6_ofp03"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="7_rbgj1"]
+[ext_resource type="Resource" uid="uid://b2nwnsbdieg27" path="res://stage/spots/brushland/spot_brushland.tres" id="8_ofp03"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_rbgj1"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://ci3nfowksu2kd" path="res://map/sprites/spots/brushland/mst_brushland_indigo_patch.tres" id="10_ep2ps"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://7ol7bvcjf763" path="res://map/sprites/spots/brushland/mst_brushland_mulching_shed.tres" id="11_tuqfi"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="12_nnkil"]
+
+[sub_resource type="Resource" id="Resource_0cor1"]
+script = ExtResource("12_nnkil")
+old_sprite_type = ExtResource("11_tuqfi")
+new_sprite_type = ExtResource("10_ep2ps")
+biome = 8
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_bjbtm")
+spot_upgrade_id = "brushland_indigo"
+name = "Indigo Shrub Patch"
+description = "The first steps towards the deep blue start with this humble shrubbery."
+required_aspects = Array[ExtResource("3_h630j")]([ExtResource("6_ofp03"), ExtResource("7_rbgj1")])
+granted_bonuses = Dictionary[ExtResource("2_vvqvb"), int]({
+ExtResource("3_yffds"): 10,
+ExtResource("4_6dka3"): 10
+})
+spot = ExtResource("8_ofp03")
+visuals = Array[ExtResource("9_rbgj1")]([SubResource("Resource_0cor1")])
+tags = Array[int]([2, 1])

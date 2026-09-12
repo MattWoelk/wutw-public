@@ -1,0 +1,776 @@
+[gd_resource type="Resource" script_class="CardType" format=3 uid="uid://c8yeld22iega5"]
+
+[ext_resource type="Script" uid="uid://b56kytec5oqcb" path="res://cards/abilities/card_ability.gd" id="1_3cn0q"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="2_wwnff"]
+[ext_resource type="Script" uid="uid://c0aqmugrp1wmn" path="res://cards/abilities/card_ability_gain.gd" id="3_7itvg"]
+[ext_resource type="Resource" uid="uid://blh30dq4bsgch" path="res://cards/tier2/card_sun.tres" id="4_4hrpm"]
+[ext_resource type="Script" uid="uid://c176jrcyakipx" path="res://cards/abilities/card_ability_add_card.gd" id="5_fjhej"]
+[ext_resource type="Script" uid="uid://xc73x4t7ckxm" path="res://japanese/example_sentence.gd" id="6_7itvg"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="6_tud6k"]
+[ext_resource type="Script" uid="uid://du4k150pcdjs6" path="res://japanese/kanji_shape.gd" id="7_fjhej"]
+[ext_resource type="Script" uid="uid://bl2eelwkj800o" path="res://japanese/japanese_token.gd" id="7_tud6k"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="7_weyum"]
+[ext_resource type="Resource" uid="uid://d1k7vakhjcq5g" path="res://glossary/categories/termcategory_card.tres" id="8_2cy0k"]
+[ext_resource type="Script" uid="uid://dc15txdqjanlf" path="res://japanese/stroke_shape.gd" id="8_tud6k"]
+[ext_resource type="Script" uid="uid://b6rw4ldrj6wch" path="res://japanese/vocab.gd" id="10_4hrpm"]
+
+[sub_resource type="Resource" id="Resource_txaon"]
+script = ExtResource("3_7itvg")
+bonus_type = ExtResource("2_wwnff")
+points = -10
+metadata/_custom_type_script = "uid://c0aqmugrp1wmn"
+
+[sub_resource type="Resource" id="Resource_vymdv"]
+script = ExtResource("5_fjhej")
+card_type = ExtResource("4_4hrpm")
+metadata/_custom_type_script = "uid://c176jrcyakipx"
+
+[sub_resource type="Resource" id="Resource_e5xet"]
+script = ExtResource("10_4hrpm")
+japanese = "月"
+readings = Array[String](["つき"])
+meanings = Array[String](["Moon", "month", "moonlight", "(a) moon", "natural satellite"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_f6jrd"]
+script = ExtResource("7_tud6k")
+raw_text = "月"
+vocab = SubResource("Resource_e5xet")
+reading = "つき"
+
+[sub_resource type="Resource" id="Resource_q835c"]
+script = ExtResource("7_tud6k")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_bentf"]
+script = ExtResource("10_4hrpm")
+japanese = "明るい"
+readings = Array[String](["あかるい"])
+meanings = Array[String](["light", "bright", "well-lit", "well-lighted", "bright (colour)", "cheerful", "spirited", "sunny (e.g. disposition)", "bright (future, prospects, etc.)", "rosy", "encouraging", "promising", "knowledgeable (about)", "familiar (with)", "well versed (in)", "well acquainted (with)", "fair (e.g. politics)", "clean", "impartial"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_0oeh1"]
+script = ExtResource("7_tud6k")
+raw_text = "明るい"
+vocab = SubResource("Resource_bentf")
+reading = "あかるい"
+
+[sub_resource type="Resource" id="Resource_55p77"]
+script = ExtResource("7_tud6k")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_wbgpy"]
+script = ExtResource("6_7itvg")
+japanese = "月は明るい。"
+native = "The moon is bright."
+parsed = Array[ExtResource("7_tud6k")]([SubResource("Resource_f6jrd"), SubResource("Resource_q835c"), SubResource("Resource_0oeh1"), SubResource("Resource_55p77")])
+_difficulty = 147
+_used_kanji = Array[String](["月", "明"])
+
+[sub_resource type="Resource" id="Resource_j2j36"]
+script = ExtResource("10_4hrpm")
+japanese = "今月"
+readings = Array[String](["こんげつ"])
+meanings = Array[String](["this month"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_mlgtc"]
+script = ExtResource("7_tud6k")
+raw_text = "今月"
+vocab = SubResource("Resource_j2j36")
+reading = "こんげつ"
+
+[sub_resource type="Resource" id="Resource_ccapk"]
+script = ExtResource("7_tud6k")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_1pkwf"]
+script = ExtResource("10_4hrpm")
+japanese = "雨"
+readings = Array[String](["あめ"])
+meanings = Array[String](["rain", "rainy day", "rainy weather", "the November suit (in hanafuda)"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_71x3w"]
+script = ExtResource("7_tud6k")
+raw_text = "雨"
+vocab = SubResource("Resource_1pkwf")
+reading = "あめ"
+
+[sub_resource type="Resource" id="Resource_tr4m7"]
+script = ExtResource("7_tud6k")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_fy0o8"]
+script = ExtResource("10_4hrpm")
+japanese = "多い"
+readings = Array[String](["おおい"])
+meanings = Array[String](["many", "numerous", "a lot", "large amount of", "large quantity of", "much", "frequent", "common"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_dphii"]
+script = ExtResource("7_tud6k")
+raw_text = "多かっ"
+vocab = SubResource("Resource_fy0o8")
+reading = "おおかっ"
+
+[sub_resource type="Resource" id="Resource_rpx5h"]
+script = ExtResource("7_tud6k")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_euou1"]
+script = ExtResource("7_tud6k")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_weyum"]
+script = ExtResource("6_7itvg")
+japanese = "今月は雨が多かった。"
+native = "It's rained a lot this month."
+parsed = Array[ExtResource("7_tud6k")]([SubResource("Resource_mlgtc"), SubResource("Resource_ccapk"), SubResource("Resource_71x3w"), SubResource("Resource_tr4m7"), SubResource("Resource_dphii"), SubResource("Resource_rpx5h"), SubResource("Resource_euou1")])
+_difficulty = 247
+_used_kanji = Array[String](["今", "月", "雨", "多"])
+
+[sub_resource type="Resource" id="Resource_egj1d"]
+script = ExtResource("10_4hrpm")
+japanese = "昨日"
+readings = Array[String](["きのう", "さくじつ"])
+meanings = Array[String](["yesterday"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_4v1mc"]
+script = ExtResource("7_tud6k")
+raw_text = "昨日"
+vocab = SubResource("Resource_egj1d")
+reading = "きのう"
+
+[sub_resource type="Resource" id="Resource_5pyiq"]
+script = ExtResource("7_tud6k")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_ri5ry"]
+script = ExtResource("10_4hrpm")
+japanese = "満月"
+readings = Array[String](["まんげつ"])
+meanings = Array[String](["full moon"])
+jlpt_level = 1
+
+[sub_resource type="Resource" id="Resource_y6x5x"]
+script = ExtResource("7_tud6k")
+raw_text = "満月"
+vocab = SubResource("Resource_ri5ry")
+reading = "まんげつ"
+
+[sub_resource type="Resource" id="Resource_hvat2"]
+script = ExtResource("7_tud6k")
+raw_text = "だっ"
+reading = "だっ"
+
+[sub_resource type="Resource" id="Resource_8aiky"]
+script = ExtResource("7_tud6k")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_jrq33"]
+script = ExtResource("7_tud6k")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_4hrpm"]
+script = ExtResource("6_7itvg")
+japanese = "昨日は満月だった。"
+native = "The moon was full yesterday."
+parsed = Array[ExtResource("7_tud6k")]([SubResource("Resource_4v1mc"), SubResource("Resource_5pyiq"), SubResource("Resource_y6x5x"), SubResource("Resource_hvat2"), SubResource("Resource_8aiky"), SubResource("Resource_jrq33")])
+_difficulty = 314
+_used_kanji = Array[String](["昨", "日", "満", "月"])
+
+[sub_resource type="Resource" id="Resource_isr4t"]
+script = ExtResource("10_4hrpm")
+japanese = "昨夜"
+readings = Array[String](["さくや"])
+meanings = Array[String](["last night", "yesterday evening"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_88iv7"]
+script = ExtResource("7_tud6k")
+raw_text = "昨夜"
+vocab = SubResource("Resource_isr4t")
+reading = "さくや"
+
+[sub_resource type="Resource" id="Resource_8pr3e"]
+script = ExtResource("7_tud6k")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_64q8e"]
+script = ExtResource("7_tud6k")
+raw_text = "満月"
+vocab = SubResource("Resource_ri5ry")
+reading = "まんげつ"
+
+[sub_resource type="Resource" id="Resource_dnmh8"]
+script = ExtResource("7_tud6k")
+raw_text = "だっ"
+reading = "だっ"
+
+[sub_resource type="Resource" id="Resource_juauo"]
+script = ExtResource("7_tud6k")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_aqigq"]
+script = ExtResource("7_tud6k")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_88hdb"]
+script = ExtResource("6_7itvg")
+japanese = "昨夜は満月だった。"
+native = "The moon was full last night."
+parsed = Array[ExtResource("7_tud6k")]([SubResource("Resource_88iv7"), SubResource("Resource_8pr3e"), SubResource("Resource_64q8e"), SubResource("Resource_dnmh8"), SubResource("Resource_juauo"), SubResource("Resource_aqigq")])
+_difficulty = 321
+_used_kanji = Array[String](["昨", "夜", "満", "月"])
+
+[sub_resource type="Resource" id="Resource_esugi"]
+script = ExtResource("7_tud6k")
+raw_text = "その"
+reading = "その"
+
+[sub_resource type="Resource" id="Resource_fb575"]
+script = ExtResource("10_4hrpm")
+japanese = "晩"
+readings = Array[String](["ばん"])
+meanings = Array[String](["evening", "night", "dinner", "evening meal", "counter for nights"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_mmf1k"]
+script = ExtResource("7_tud6k")
+raw_text = "晩"
+vocab = SubResource("Resource_fb575")
+reading = "ばん"
+
+[sub_resource type="Resource" id="Resource_jljt5"]
+script = ExtResource("7_tud6k")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_8ashr"]
+script = ExtResource("7_tud6k")
+raw_text = "月"
+vocab = SubResource("Resource_e5xet")
+reading = "つき"
+
+[sub_resource type="Resource" id="Resource_qk5po"]
+script = ExtResource("7_tud6k")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_57xoq"]
+script = ExtResource("10_4hrpm")
+japanese = "出る"
+readings = Array[String](["でる"])
+meanings = Array[String](["to leave", "to exit", "to go out", "to come out", "to get out", "to leave (on a journey)", "to depart", "to start out", "to set out", "to move forward", "to come to", "to get to", "to lead to", "to reach", "to appear", "to emerge", "to surface", "to come forth", "to turn up", "to be found", "to be detected", "to be discovered", "to be exposed", "to show", "to be exhibited", "to be on display", "to appear (in print)", "to be published", "to be announced", "to be issued", "to be listed", "to attend", "to participate", "to take part", "to enter (an event)", "to play in", "to perform", "to be stated", "to be expressed", "to come up", "to be brought up", "to be raised", "to sell", "to exceed", "to go over", "to stick out", "to protrude", "to break out", "to occur", "to start", "to originate", "to be produced", "to come from", "to be derived from", "to be given", "to get", "to receive", "to be offered", "to be provided", "to be presented", "to be submitted", "to be handed in", "to be turned in", "to be paid", "to answer (phone, door, etc.)", "to assume (an attitude)", "to act", "to behave", "to pick up (speed, etc.)", "to gain", "to flow (e.g. tears)", "to run", "to bleed", "to graduate", "to ejaculate", "to cum"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_qpirf"]
+script = ExtResource("7_tud6k")
+raw_text = "出"
+vocab = SubResource("Resource_57xoq")
+reading = "で"
+
+[sub_resource type="Resource" id="Resource_mruul"]
+script = ExtResource("7_tud6k")
+raw_text = "て"
+reading = "て"
+
+[sub_resource type="Resource" id="Resource_dhnu3"]
+script = ExtResource("7_tud6k")
+raw_text = "い"
+reading = "い"
+
+[sub_resource type="Resource" id="Resource_nfe5a"]
+script = ExtResource("7_tud6k")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_ia3a3"]
+script = ExtResource("7_tud6k")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_fjhej"]
+script = ExtResource("6_7itvg")
+japanese = "その晩は月が出ていた。"
+native = "There was a moon that night."
+parsed = Array[ExtResource("7_tud6k")]([SubResource("Resource_esugi"), SubResource("Resource_mmf1k"), SubResource("Resource_jljt5"), SubResource("Resource_8ashr"), SubResource("Resource_qk5po"), SubResource("Resource_qpirf"), SubResource("Resource_mruul"), SubResource("Resource_dhnu3"), SubResource("Resource_nfe5a"), SubResource("Resource_ia3a3")])
+_difficulty = 391
+_used_kanji = Array[String](["晩", "月", "出"])
+
+[sub_resource type="Resource" id="Resource_amkyw"]
+script = ExtResource("7_tud6k")
+raw_text = "月"
+vocab = SubResource("Resource_e5xet")
+reading = "つき"
+
+[sub_resource type="Resource" id="Resource_gwt02"]
+script = ExtResource("7_tud6k")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_gotxk"]
+script = ExtResource("7_tud6k")
+raw_text = "昇っ"
+reading = "のぼっ"
+
+[sub_resource type="Resource" id="Resource_slc2n"]
+script = ExtResource("7_tud6k")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_4wbo2"]
+script = ExtResource("7_tud6k")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_7itvg"]
+script = ExtResource("6_7itvg")
+japanese = "月は昇った。"
+native = "The moon has risen."
+parsed = Array[ExtResource("7_tud6k")]([SubResource("Resource_amkyw"), SubResource("Resource_gwt02"), SubResource("Resource_gotxk"), SubResource("Resource_slc2n"), SubResource("Resource_4wbo2")])
+_difficulty = 397
+_used_kanji = Array[String](["月", "昇"])
+
+[sub_resource type="Resource" id="Resource_nywfm"]
+script = ExtResource("7_tud6k")
+raw_text = "月"
+vocab = SubResource("Resource_e5xet")
+reading = "つき"
+
+[sub_resource type="Resource" id="Resource_gassc"]
+script = ExtResource("7_tud6k")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_tbpm8"]
+script = ExtResource("10_4hrpm")
+japanese = "優しい"
+readings = Array[String](["やさしい"])
+meanings = Array[String](["tender", "kind", "gentle", "graceful", "affectionate", "amiable"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_2wuiq"]
+script = ExtResource("7_tud6k")
+raw_text = "優しい"
+vocab = SubResource("Resource_tbpm8")
+reading = "やさしい"
+
+[sub_resource type="Resource" id="Resource_gvpb6"]
+script = ExtResource("10_4hrpm")
+japanese = "光"
+readings = Array[String](["ひかり"])
+meanings = Array[String](["light", "illumination", "ray", "beam", "gleam", "glow", "happiness", "hope", "influence", "power", "vision", "eyesight", "optical fiber", "optical fibre"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_61e2r"]
+script = ExtResource("7_tud6k")
+raw_text = "光"
+vocab = SubResource("Resource_gvpb6")
+reading = "ひかり"
+
+[sub_resource type="Resource" id="Resource_hkah2"]
+script = ExtResource("7_tud6k")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_533k5"]
+script = ExtResource("10_4hrpm")
+japanese = "投げかける"
+readings = Array[String](["なげかける"])
+meanings = Array[String](["to throw at", "to turn", "to raise"])
+
+[sub_resource type="Resource" id="Resource_8r6jc"]
+script = ExtResource("7_tud6k")
+raw_text = "投げかけ"
+vocab = SubResource("Resource_533k5")
+reading = "なげかけ"
+
+[sub_resource type="Resource" id="Resource_bb6rp"]
+script = ExtResource("7_tud6k")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_sq317"]
+script = ExtResource("7_tud6k")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_tud6k"]
+script = ExtResource("6_7itvg")
+japanese = "月は優しい光を投げかけた。"
+native = "The moon cast a gentle light."
+parsed = Array[ExtResource("7_tud6k")]([SubResource("Resource_nywfm"), SubResource("Resource_gassc"), SubResource("Resource_2wuiq"), SubResource("Resource_61e2r"), SubResource("Resource_hkah2"), SubResource("Resource_8r6jc"), SubResource("Resource_bb6rp"), SubResource("Resource_sq317")])
+_difficulty = 450
+_used_kanji = Array[String](["月", "優", "光", "投"])
+
+[sub_resource type="Resource" id="Resource_u08kp"]
+script = ExtResource("7_tud6k")
+raw_text = "月が丘"
+reading = "つきがおか"
+
+[sub_resource type="Resource" id="Resource_7qorb"]
+script = ExtResource("7_tud6k")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_fbwfr"]
+script = ExtResource("10_4hrpm")
+japanese = "上"
+readings = Array[String](["うえ"])
+meanings = Array[String](["above", "over", "up", "top", "summit", "upper part", "head (e.g. of a staircase)", "surface", "on (top of)", "the above (in a piece of writing)", "earlier part", "superior", "better", "higher (position, rank, etc.)", "upper (class)", "elder", "older", "senior", "with respect to ...", "in terms of", "as far as ... is concerned", "when (e.g. drunk)", "besides ...", "in addition to ...", "on top of ...", "as well as ...", "after ...", "upon ...", "on ...", "with (e.g. full awareness)", "as a result of ...", "since ...", "now that ...", "because ...", "honorable", "venerable", "dear", "emperor", "sovereign", "shogun", "daimyo"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_kbn66"]
+script = ExtResource("7_tud6k")
+raw_text = "上"
+vocab = SubResource("Resource_fbwfr")
+reading = "うえ"
+
+[sub_resource type="Resource" id="Resource_d35u4"]
+script = ExtResource("7_tud6k")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_f8b60"]
+script = ExtResource("7_tud6k")
+raw_text = "昇っ"
+reading = "のぼっ"
+
+[sub_resource type="Resource" id="Resource_dm0ht"]
+script = ExtResource("7_tud6k")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_c4nvo"]
+script = ExtResource("7_tud6k")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_2cy0k"]
+script = ExtResource("6_7itvg")
+japanese = "月が丘の上に昇った。"
+native = "The moon rose above the hill."
+parsed = Array[ExtResource("7_tud6k")]([SubResource("Resource_u08kp"), SubResource("Resource_7qorb"), SubResource("Resource_kbn66"), SubResource("Resource_d35u4"), SubResource("Resource_f8b60"), SubResource("Resource_dm0ht"), SubResource("Resource_c4nvo")])
+_difficulty = 497
+_used_kanji = Array[String](["月", "丘", "上", "昇"])
+
+[sub_resource type="Resource" id="Resource_rhfib"]
+script = ExtResource("10_4hrpm")
+japanese = "来月"
+readings = Array[String](["らいげつ"])
+meanings = Array[String](["next month"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_4ba1x"]
+script = ExtResource("7_tud6k")
+raw_text = "来月"
+vocab = SubResource("Resource_rhfib")
+reading = "らいげつ"
+
+[sub_resource type="Resource" id="Resource_avnu3"]
+script = ExtResource("7_tud6k")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_ugxt0"]
+script = ExtResource("7_tud6k")
+raw_text = "とても"
+reading = "とても"
+
+[sub_resource type="Resource" id="Resource_qo7qj"]
+script = ExtResource("10_4hrpm")
+japanese = "忙しい"
+readings = Array[String](["いそがしい"])
+meanings = Array[String](["busy", "occupied", "hectic", "restless", "hurried", "fidgety"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_6ud7e"]
+script = ExtResource("7_tud6k")
+raw_text = "忙しい"
+vocab = SubResource("Resource_qo7qj")
+reading = "いそがしい"
+
+[sub_resource type="Resource" id="Resource_wei0o"]
+script = ExtResource("7_tud6k")
+raw_text = "だろ"
+reading = "だろ"
+
+[sub_resource type="Resource" id="Resource_hfbut"]
+script = ExtResource("7_tud6k")
+raw_text = "う"
+reading = "う"
+
+[sub_resource type="Resource" id="Resource_jbf4y"]
+script = ExtResource("7_tud6k")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_xw6p5"]
+script = ExtResource("6_7itvg")
+japanese = "来月はとても忙しいだろう。"
+native = "I'll be very busy next month."
+parsed = Array[ExtResource("7_tud6k")]([SubResource("Resource_4ba1x"), SubResource("Resource_avnu3"), SubResource("Resource_ugxt0"), SubResource("Resource_6ud7e"), SubResource("Resource_wei0o"), SubResource("Resource_hfbut"), SubResource("Resource_jbf4y")])
+_difficulty = 507
+_used_kanji = Array[String](["来", "月", "忙"])
+
+[sub_resource type="Resource" id="Resource_aq821"]
+script = ExtResource("10_4hrpm")
+japanese = "私"
+readings = Array[String](["わたし"])
+meanings = Array[String](["I", "me"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_3nnvb"]
+script = ExtResource("7_tud6k")
+raw_text = "私"
+vocab = SubResource("Resource_aq821")
+reading = "わたし"
+
+[sub_resource type="Resource" id="Resource_sjoy6"]
+script = ExtResource("7_tud6k")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_ibqa7"]
+script = ExtResource("10_4hrpm")
+japanese = "彼"
+readings = Array[String](["かれ"])
+meanings = Array[String](["he", "him", "boyfriend"])
+jlpt_level = 4
+_difficulty = 31
+
+[sub_resource type="Resource" id="Resource_uaucv"]
+script = ExtResource("7_tud6k")
+raw_text = "彼"
+vocab = SubResource("Resource_ibqa7")
+reading = "かれ"
+
+[sub_resource type="Resource" id="Resource_26tdm"]
+script = ExtResource("7_tud6k")
+raw_text = "から"
+reading = "から"
+
+[sub_resource type="Resource" id="Resource_61q6y"]
+script = ExtResource("7_tud6k")
+raw_text = "月"
+vocab = SubResource("Resource_e5xet")
+reading = "つき"
+
+[sub_resource type="Resource" id="Resource_2m3p0"]
+script = ExtResource("7_tud6k")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_c1x3o"]
+script = ExtResource("10_4hrpm")
+japanese = "一"
+readings = Array[String](["いち"])
+meanings = Array[String](["one", "1", "best", "first", "foremost", "beginning", "start", "a (single)", "one (of many)", "ace", "bottom string (on a shamisen, etc.)"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_jpngq"]
+script = ExtResource("7_tud6k")
+raw_text = "一"
+vocab = SubResource("Resource_c1x3o")
+reading = "いち"
+
+[sub_resource type="Resource" id="Resource_mxbtp"]
+script = ExtResource("10_4hrpm")
+japanese = "度"
+readings = Array[String](["ど"])
+meanings = Array[String](["degree (angle, temperature, scale, etc.)", "counter for occurrences", "strength (of glasses)", "glasses prescription", "alcohol content (percentage)", "alcohol by volume", "extent", "degree", "limit", "presence of mind", "composure"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_efy3g"]
+script = ExtResource("7_tud6k")
+raw_text = "度"
+vocab = SubResource("Resource_mxbtp")
+reading = "ど"
+
+[sub_resource type="Resource" id="Resource_k7nes"]
+script = ExtResource("10_4hrpm")
+japanese = "便り"
+readings = Array[String](["たより", "だより"])
+meanings = Array[String](["news", "tidings", "information", "correspondence", "letter"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_j0inv"]
+script = ExtResource("7_tud6k")
+raw_text = "便り"
+vocab = SubResource("Resource_k7nes")
+reading = "たより"
+
+[sub_resource type="Resource" id="Resource_u03h4"]
+script = ExtResource("7_tud6k")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_k8oed"]
+script = ExtResource("7_tud6k")
+raw_text = "もらう"
+reading = "もらう"
+
+[sub_resource type="Resource" id="Resource_dvdgr"]
+script = ExtResource("7_tud6k")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_6ma8e"]
+script = ExtResource("6_7itvg")
+japanese = "私は彼から月に一度便りをもらう。"
+native = "I hear from him once a month."
+parsed = Array[ExtResource("7_tud6k")]([SubResource("Resource_3nnvb"), SubResource("Resource_sjoy6"), SubResource("Resource_uaucv"), SubResource("Resource_26tdm"), SubResource("Resource_61q6y"), SubResource("Resource_2m3p0"), SubResource("Resource_jpngq"), SubResource("Resource_efy3g"), SubResource("Resource_j0inv"), SubResource("Resource_u03h4"), SubResource("Resource_k8oed"), SubResource("Resource_dvdgr")])
+_difficulty = 645
+_used_kanji = Array[String](["私", "彼", "月", "一", "度", "便"])
+
+[sub_resource type="Resource" id="Resource_fyujg"]
+script = ExtResource("8_tud6k")
+points = Array[Vector2]([Vector2(34.25, 16.25), Vector2(35.76, 21.08), Vector2(35.85, 27.62), Vector2(35.96, 33.94), Vector2(36.04, 40.05), Vector2(36.08, 45.92), Vector2(36.03, 51.56), Vector2(35.88, 56.96), Vector2(35.59, 62.11), Vector2(35.13, 67), Vector2(34.47, 71.63), Vector2(33.59, 75.99), Vector2(32.45, 80.08), Vector2(31.03, 83.87), Vector2(29.29, 87.38), Vector2(27.21, 90.59), Vector2(24.75, 93.5)])
+
+[sub_resource type="Resource" id="Resource_15lxd"]
+script = ExtResource("8_tud6k")
+points = Array[Vector2]([Vector2(36.25, 19), Vector2(39.58, 18.5), Vector2(45.11, 17.66), Vector2(51.8, 16.65), Vector2(58.62, 15.62), Vector2(64.54, 14.73), Vector2(68.51, 14.14), Vector2(72.1, 14.03), Vector2(74.89, 17.2), Vector2(75, 19.57), Vector2(74.98, 21.81), Vector2(74.95, 25.18), Vector2(74.91, 29.51), Vector2(74.86, 34.64), Vector2(74.81, 40.4), Vector2(74.75, 46.62), Vector2(74.7, 53.14), Vector2(74.65, 59.78), Vector2(74.6, 66.37), Vector2(74.56, 72.76), Vector2(74.52, 78.77), Vector2(74.51, 84.23), Vector2(74.45, 90.11), Vector2(72.46, 95.1), Vector2(68.93, 93.25), Vector2(65.75, 90)])
+
+[sub_resource type="Resource" id="Resource_1b54c"]
+script = ExtResource("8_tud6k")
+points = Array[Vector2]([Vector2(37.25, 38), Vector2(42.01, 37.32), Vector2(47.34, 36.58), Vector2(52.99, 35.84), Vector2(58.68, 35.11), Vector2(64.17, 34.46), Vector2(69.2, 33.91), Vector2(73.5, 33.5)])
+
+[sub_resource type="Resource" id="Resource_6jfa0"]
+script = ExtResource("8_tud6k")
+points = Array[Vector2]([Vector2(37, 58.25), Vector2(41.28, 57.7), Vector2(46.4, 57.05), Vector2(52.03, 56.36), Vector2(57.85, 55.68), Vector2(63.55, 55.07), Vector2(68.79, 54.57), Vector2(73.25, 54.25)])
+
+[sub_resource type="Resource" id="Resource_g7w7x"]
+script = ExtResource("7_fjhej")
+stroke_shapes = Array[ExtResource("8_tud6k")]([SubResource("Resource_fyujg"), SubResource("Resource_15lxd"), SubResource("Resource_1b54c"), SubResource("Resource_6jfa0")])
+
+[sub_resource type="Resource" id="Resource_dj5go"]
+script = ExtResource("10_4hrpm")
+japanese = "月"
+readings = Array[String](["つき"])
+meanings = Array[String](["moon", "month"])
+jlpt_level = 5
+_difficulty = 1
+_used_kanji = Array[String](["月"])
+
+[sub_resource type="Resource" id="Resource_heogk"]
+script = ExtResource("10_4hrpm")
+japanese = "毎月"
+readings = Array[String](["まいつき", "まいげつ"])
+meanings = Array[String](["every month", "each month", "monthly"])
+jlpt_level = 5
+_difficulty = 2
+_used_kanji = Array[String](["毎", "月"])
+
+[sub_resource type="Resource" id="Resource_ikwb7"]
+script = ExtResource("10_4hrpm")
+japanese = "先月"
+readings = Array[String](["せんげつ"])
+meanings = Array[String](["last month"])
+jlpt_level = 5
+_difficulty = 2
+_used_kanji = Array[String](["先", "月"])
+
+[sub_resource type="Resource" id="Resource_1mjmt"]
+script = ExtResource("10_4hrpm")
+japanese = "来月"
+readings = Array[String](["らいげつ"])
+meanings = Array[String](["next month"])
+jlpt_level = 5
+_difficulty = 2
+_used_kanji = Array[String](["来", "月"])
+
+[sub_resource type="Resource" id="Resource_f3x3t"]
+script = ExtResource("10_4hrpm")
+japanese = "年月"
+readings = Array[String](["としつき", "ねんげつ"])
+meanings = Array[String](["months and years"])
+jlpt_level = 3
+_difficulty = 62
+_used_kanji = Array[String](["年", "月"])
+
+[sub_resource type="Resource" id="Resource_wn37y"]
+script = ExtResource("10_4hrpm")
+japanese = "月日"
+readings = Array[String](["つきひ"])
+meanings = Array[String](["time", "years", "the moon and the sun"])
+jlpt_level = 2
+_difficulty = 92
+_used_kanji = Array[String](["月", "日"])
+
+[sub_resource type="Resource" id="Resource_04qlk"]
+script = ExtResource("10_4hrpm")
+japanese = "満月"
+readings = Array[String](["まんげつ"])
+meanings = Array[String](["full moon"])
+jlpt_level = 1
+_difficulty = 122
+_used_kanji = Array[String](["満", "月"])
+
+[sub_resource type="Resource" id="Resource_mwxle"]
+script = ExtResource("10_4hrpm")
+japanese = "月並み"
+readings = Array[String](["つきなみ"])
+meanings = Array[String](["every month", "commonplace"])
+jlpt_level = 1
+_difficulty = 123
+_used_kanji = Array[String](["月", "並"])
+
+[sub_resource type="Resource" id="Resource_6anan"]
+script = ExtResource("10_4hrpm")
+japanese = "同月"
+readings = Array[String](["どうげつ"])
+meanings = Array[String](["the same month"])
+_difficulty = 724
+_used_kanji = Array[String](["同", "月"])
+
+[sub_resource type="Resource" id="Resource_e7py3"]
+script = ExtResource("10_4hrpm")
+japanese = "半月"
+readings = Array[String](["はんつき"])
+meanings = Array[String](["half-moon", "half a month", "semicircle"])
+_difficulty = 747
+_used_kanji = Array[String](["半", "月"])
+
+[sub_resource type="Resource" id="Resource_8qo7n"]
+script = ExtResource("10_4hrpm")
+japanese = "翌月"
+readings = Array[String](["よくげつ"])
+meanings = Array[String](["following month"])
+_difficulty = 788
+_used_kanji = Array[String](["翌", "月"])
+
+[sub_resource type="Resource" id="Resource_6amow"]
+script = ExtResource("10_4hrpm")
+japanese = "月内"
+readings = Array[String](["げつない"])
+meanings = Array[String](["by the end of this month"])
+_difficulty = 954
+_used_kanji = Array[String](["月", "内"])
+
+[resource]
+script = ExtResource("6_tud6k")
+symbol = "月"
+card_name = "Moon"
+rarity = 2
+abilities = Array[ExtResource("1_3cn0q")]([SubResource("Resource_txaon"), SubResource("Resource_vymdv")])
+tags = Array[int]([19, 17])
+vocabulary = Array[ExtResource("10_4hrpm")]([SubResource("Resource_dj5go"), SubResource("Resource_heogk"), SubResource("Resource_ikwb7"), SubResource("Resource_1mjmt"), SubResource("Resource_f3x3t"), SubResource("Resource_wn37y"), SubResource("Resource_04qlk"), SubResource("Resource_mwxle"), SubResource("Resource_6anan"), SubResource("Resource_e7py3"), SubResource("Resource_8qo7n"), SubResource("Resource_6amow")])
+example_sentences = Array[ExtResource("6_7itvg")]([SubResource("Resource_wbgpy"), SubResource("Resource_weyum"), SubResource("Resource_4hrpm"), SubResource("Resource_88hdb"), SubResource("Resource_fjhej"), SubResource("Resource_7itvg"), SubResource("Resource_tud6k"), SubResource("Resource_2cy0k"), SubResource("Resource_xw6p5"), SubResource("Resource_6ma8e")])
+kanji_shape = SubResource("Resource_g7w7x")
+init_aspects = 36
+term_categories = Array[ExtResource("7_weyum")]([ExtResource("8_2cy0k")])

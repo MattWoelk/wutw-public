@@ -1,0 +1,79 @@
+[gd_resource type="Resource" script_class="RandomTripRewards" format=3 uid="uid://cgtrcffvj0u7g"]
+
+[ext_resource type="Script" uid="uid://xhjv8q6d2y7b" path="res://debate/debate_argument.gd" id="1_pj33c"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="2_p3doi"]
+[ext_resource type="Script" uid="uid://bnsrb3o1wg44" path="res://hub/trip/random_trip_rewards.gd" id="3_f6mko"]
+[ext_resource type="Resource" uid="uid://c7gvsiy8ycxng" path="res://debate/arguments/argument_ecological_instability.tres" id="3_gi0sv"]
+[ext_resource type="Resource" uid="uid://b8kfblbxc4cj8" path="res://debate/arguments/argument_industrial_expansion.tres" id="4_5yu17"]
+[ext_resource type="Resource" uid="uid://6elcf2xkte4h" path="res://debate/arguments/argument_twin_gods.tres" id="5_ov4s8"]
+[ext_resource type="Resource" uid="uid://djqemimv2rho8" path="res://relics/uncommon/paired_lanterns/relic_paired_lanterns.tres" id="6_qdp5y"]
+[ext_resource type="Resource" uid="uid://cuo2cwxrjwxix" path="res://debate/arguments/argument_big_dam.tres" id="7_enspa"]
+[ext_resource type="Resource" uid="uid://bfq15h5u8qvo7" path="res://debate/arguments/argument_lost_history.tres" id="8_2gepj"]
+[ext_resource type="Resource" uid="uid://df4qpikb41sfd" path="res://debate/arguments/argument_royal_monument.tres" id="9_v028o"]
+[ext_resource type="Resource" uid="uid://ima0bd7ouhy3" path="res://debate/arguments/argument_plague.tres" id="10_ajpnn"]
+[ext_resource type="Resource" uid="uid://bim6gn0d6doh6" path="res://debate/arguments/argument_collision.tres" id="11_qsdsq"]
+
+[sub_resource type="Resource" id="Resource_08pc0"]
+script = ExtResource("2_p3doi")
+text = "The ecologists on this shard have found a bunch of papers from before the Shattering. They say one of them is a letter to a pre-Shattering ruler talking about sea levels, droughts, and such."
+gained_argument = ExtResource("3_gi0sv")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[sub_resource type="Resource" id="Resource_eay1g"]
+script = ExtResource("2_p3doi")
+text = "Apparently one of the ruins on this shard was an ancient city hall. The scholars found government decrees there, from before the Shattering. I am probably misunderstanding the old language, but it looks like an official assigning a thousand scholars to study one specific type of metal."
+gained_argument = ExtResource("4_5yu17")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[sub_resource type="Resource" id="Resource_scuic"]
+script = ExtResource("2_p3doi")
+text = "It seems this shard had a few Shattering survivors before we resettled it. They had odd little shrines with twin lanterns, signifying a Sun god and a Moon god. Nowadays everyone there agrees that these are just aspects of the Enlightened One, but I've brought some of their old written sermons for the records."
+unlocked_relic = ExtResource("6_qdp5y")
+gained_argument = ExtResource("5_ov4s8")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[sub_resource type="Resource" id="Resource_nhjh6"]
+script = ExtResource("2_p3doi")
+text = "I visited the newest city on this shard, and according to the folks there, when they first settled the place, they dug up some ancient ruins. They thought it was just cobbled roads, but then they found preserved blueprints, and it seems to have been a system of aqueducts, spanning further that the edges of the. I can't imagine how they could've ever built it."
+gained_argument = ExtResource("7_enspa")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[sub_resource type="Resource" id="Resource_bjr7w"]
+script = ExtResource("2_p3doi")
+text = "This was an odd trip. When I got to the shard I found the gate abandoned, and it took me a while to find a settlement. When I did, no one believed that I came from another shard. They think they are alone in the world, and have never heard of other shards. I suppose over the centuries they lost track of their origin.
+
+The worst part was when I wanted to come back and the gate didn't work. It seems to be malfunctioning, only opening once in a while, so I had to camp there for a week before I managed to slip through when it finally opened."
+gained_argument = ExtResource("8_2gepj")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[sub_resource type="Resource" id="Resource_m0rb8"]
+script = ExtResource("2_p3doi")
+text = "This was a pretty ordinary shard, but they have a great metal statue at the center of the city square in the capital, almost three stories high. Apparently they dug it out of some old ruins. They think it depicts a ruler from before the Shattering."
+gained_argument = ExtResource("9_v028o")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[sub_resource type="Resource" id="Resource_qkrlv"]
+script = ExtResource("2_p3doi")
+text = "Several cities on this shard have bone museums. Apparently folks have found odd human bones throughout the shard, carved as if by a thousand tiny chisels. Eventually they dug up a cache of pre-Shattering records documenting a bone-eating plague that devastated the ancient world. As far as the scholars could tell, its effect spread far beyond the area which now comprises this shard."
+gained_argument = ExtResource("10_ajpnn")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[sub_resource type="Resource" id="Resource_72i1r"]
+script = ExtResource("2_p3doi")
+text = "Looks like The Enlightened One's Abode is not the first shard to collide with another. Apparently this shard used to be three different ones, which collided centuries ago. The other two were uninhabited at the time, but now there are towns throughout the area, and aside from the size of the shard, it's impossible to tell that it used to be separate landmasses."
+gained_argument = ExtResource("11_qsdsq")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[resource]
+script = ExtResource("3_f6mko")
+rewards = Dictionary[ExtResource("1_pj33c"), ExtResource("2_p3doi")]({
+ExtResource("3_gi0sv"): SubResource("Resource_08pc0"),
+ExtResource("4_5yu17"): SubResource("Resource_eay1g"),
+ExtResource("5_ov4s8"): SubResource("Resource_scuic"),
+ExtResource("7_enspa"): SubResource("Resource_nhjh6"),
+ExtResource("8_2gepj"): SubResource("Resource_bjr7w"),
+ExtResource("9_v028o"): SubResource("Resource_m0rb8"),
+ExtResource("10_ajpnn"): SubResource("Resource_qkrlv"),
+ExtResource("11_qsdsq"): SubResource("Resource_72i1r")
+})
+metadata/_custom_type_script = "uid://bnsrb3o1wg44"

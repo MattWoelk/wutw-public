@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://rnhq8yu7ffm3"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_72yli"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="2_bbq00"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="3_pts2p"]
+[ext_resource type="Resource" uid="uid://tysp6y0sdwfh" path="res://cards/tier6/card_harm.tres" id="4_2uohj"]
+[ext_resource type="Script" uid="uid://777usfqcjmox" path="res://stage/hauntings/effects/haunting_effect_add_card.gd" id="5_2uohj"]
+[ext_resource type="Resource" uid="uid://qmak6vjo6q10" path="res://art/pieces/piece_bakemono_nureonna.tres" id="6_3a3j1"]
+[ext_resource type="Texture2D" uid="uid://dfa8vi0y6jj78" path="res://stage/hauntings/types/uwabami/haunting_uwabami.png" id="6_ce37c"]
+[ext_resource type="Resource" uid="uid://bvcuxs2pb8iw4" path="res://art/pieces/piece_hasui_arayu_road.tres" id="7_2uohj"]
+[ext_resource type="Texture2D" uid="uid://bndrvdbvwcowg" path="res://stage/hauntings/types/uwabami/haunting_uwabami_realistic_quicksand.png" id="7_t1kb5"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="8_4qkmt"]
+[ext_resource type="Resource" uid="uid://coqtbomfb4xc" path="res://stage/spots/desert/spot_desert.tres" id="9_3y8fp"]
+[ext_resource type="Script" uid="uid://bf8kygsbxpshs" path="res://stage/hauntings/triggers/haunting_trigger_goal_gained.gd" id="10_dw1px"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="10_ga2e3"]
+
+[sub_resource type="Resource" id="Resource_a6ufw"]
+script = ExtResource("5_2uohj")
+card_type = ExtResource("4_2uohj")
+metadata/_custom_type_script = "uid://777usfqcjmox"
+
+[sub_resource type="Resource" id="Resource_6b2vc"]
+script = ExtResource("10_dw1px")
+any_spot = false
+metadata/_custom_type_script = "uid://bf8kygsbxpshs"
+
+[resource]
+script = ExtResource("8_4qkmt")
+haunting_id = "uwabami"
+name = "Uwabami"
+name_japanese = "蟒蛇"
+name_realistic = "Quicksand"
+name_translation = "Giant Snakes"
+description = "The desert is said to hide Uwabami, great serpents that swallow travelers whole without leaving a trace."
+description_realistic = "Treacherous quicksand pockets have formed beneath the dunes. Travelers who cross carelessly are lost to the shifting earth."
+description_long = "The desert sands are home to the Uwabami, vast serpents swimming beneath the dunes, their scales shimmering like heat on the horizon. They coil themselves around anything they encounter, pulling it deep into the sands.
+
+Some say they were driven mad by betrayal, when a mountain god tricked such a serpent into tying itself into a knot."
+image_small = ExtResource("6_ce37c")
+image_credit = ExtResource("6_3a3j1")
+image_small_realistic = ExtResource("7_t1kb5")
+image_realistic_credit = ExtResource("7_2uohj")
+spot_type = ExtResource("9_3y8fp")
+base_aspect_types = Array[ExtResource("1_72yli")]([ExtResource("3_pts2p")])
+extra_aspect_type = ExtResource("2_bbq00")
+scaling_bonus_type = ExtResource("10_ga2e3")
+trigger = SubResource("Resource_6b2vc")
+effect = SubResource("Resource_a6ufw")
+spot_attach_mode = 2
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

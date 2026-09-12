@@ -1,0 +1,117 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://ev8txke86aqu"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_mpn3e"]
+[ext_resource type="Resource" uid="uid://byocyluvsyyq1" path="res://art/pieces/piece_hiroshige_hakone_torches.tres" id="1_ocdtd"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_ocdtd"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_8ka6v"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="4_xtu5e"]
+[ext_resource type="Script" uid="uid://cbnw4a13y5x8c" path="res://events/system/outcomes/random/event_outcome_random.gd" id="5_kyjrq"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="6_fr4qi"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="7_tg3g8"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="8_fq765"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="9_i0ap8"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="10_o6wr6"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="11_86pcl"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="12_xwc8h"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="13_5ytff"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="14_141tx"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="15_2ty3j"]
+[ext_resource type="Resource" uid="uid://d1c7ny2xs7pwo" path="res://stage/spots/canyon/spot_canyon.tres" id="16_6ppxj"]
+
+[sub_resource type="Resource" id="Resource_7hpux"]
+script = ExtResource("1_mpn3e")
+_texture_path = "res://stage/survey/episodes/tanuki_canyon.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_sdggf"]
+script = ExtResource("8_fq765")
+bonus_type = ExtResource("7_tg3g8")
+amount = 10
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_hw7uc"]
+script = ExtResource("5_kyjrq")
+suboutcomes = Dictionary[ExtResource("6_fr4qi"), float]({
+SubResource("Resource_sdggf"): 0.5
+})
+description = "Gain or lose <term:bonus.safety>"
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_80qh6"]
+script = ExtResource("2_ocdtd")
+label = "Watch closely."
+aspects = Array[ExtResource("3_8ka6v")]([ExtResource("4_xtu5e")])
+aspects_per_season = Array[ExtResource("3_8ka6v")]([null])
+outcome = SubResource("Resource_hw7uc")
+outcome_text = "The scouts watch the critter as it stares back at them with an unflinching gaze.
+
+Eventually it gets up and walks away, then looks back at the group as if expecting them to follow.
+
+The tanuki leads them off the path through a narrow passage, which ends in a small cave, safe from the elements.
+
+As they prepare their camp, the tanuki skitters off into the dark."
+
+[sub_resource type="Resource" id="Resource_0ijbd"]
+script = ExtResource("10_o6wr6")
+delta = 2
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_vjl5j"]
+script = ExtResource("2_ocdtd")
+label = "Honor the spirit."
+aspects = Array[ExtResource("3_8ka6v")]([ExtResource("9_i0ap8")])
+aspects_per_season = Array[ExtResource("3_8ka6v")]([null])
+outcome = SubResource("Resource_0ijbd")
+outcome_text = "The scouts and the tanuki regard each other for a long moment.
+
+Unsure whether it's a simple critter or something stranger, the scouts offer it a deep, long bow.
+
+When they look up, the tanuki is gone."
+
+[sub_resource type="Resource" id="Resource_o5ani"]
+script = ExtResource("8_fq765")
+bonus_type = ExtResource("12_xwc8h")
+amount = 15
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_blug2"]
+script = ExtResource("2_ocdtd")
+label = "Offer food."
+aspects = Array[ExtResource("3_8ka6v")]([ExtResource("11_86pcl")])
+aspects_per_season = Array[ExtResource("3_8ka6v")]([null])
+outcome = SubResource("Resource_o5ani")
+outcome_text = "One of the scouts kneels down and places a rice ball on the ground. The tanuki sniffs cautiously, then approaches, greedily eating the morsel.
+
+Once its meal is finished, the tanuki scampers away."
+
+[sub_resource type="Resource" id="Resource_1t6ab"]
+script = ExtResource("8_fq765")
+bonus_type = ExtResource("13_5ytff")
+amount = 1
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_g050j"]
+script = ExtResource("2_ocdtd")
+label = "Continue on."
+aspects = Array[ExtResource("3_8ka6v")]([null])
+aspects_per_season = Array[ExtResource("3_8ka6v")]([null])
+outcome = SubResource("Resource_1t6ab")
+outcome_text = "The scouts don't let fear delay them, and ignore the critter, who scampers halfway up a leaning tree trunk and watches them pass."
+
+[resource]
+script = ExtResource("14_141tx")
+episode_id = "tanuki_canyon"
+title = "The Haunted Canyon"
+spot_types = Array[ExtResource("15_2ty3j")]([ExtResource("16_6ppxj")])
+text = "Darkness is gathering between the canyon walls. The scouts light their torches and press on, hoping to find shelter soon, or cross the canyon before night falls.
+
+They have heard tales of spirits haunting such canyons, carving messages on the walls and driving people mad.
+
+Suddenly the light from their torches catches the gleam of a pair of eyes, low to the ground.
+
+Sitting in the middle of the path is a lone tanuki."
+background_image = SubResource("Resource_7hpux")
+background_credit = ExtResource("1_ocdtd")
+choices = Array[ExtResource("2_ocdtd")]([SubResource("Resource_80qh6"), SubResource("Resource_vjl5j"), SubResource("Resource_blug2"), SubResource("Resource_g050j")])

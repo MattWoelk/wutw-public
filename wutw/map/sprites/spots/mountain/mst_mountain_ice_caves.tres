@@ -1,0 +1,40 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://bcs0l7tciipew"]
+
+[ext_resource type="MapSpriteType_Composite" uid="uid://cpmm5kdehu4ys" path="res://map/sprites/spots/mountain/mst_mountain_snowcapped_peaks.tres" id="1_buvw5"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://cksy345dbliyh" path="res://map/sprites/spots/mountain/mst_mountain_ice_caves_openings.tres" id="2_7gr0u"]
+[ext_resource type="PackedScene" uid="uid://eay4sljsd1c1" path="res://map/sprites/spots/seashore/map_effect_sparkle_small.tscn" id="3_7gr0u"]
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_ubdba"]
+p1 = Vector2(-5.925, -0.415)
+p2 = Vector2(5.44, 0.41)
+p3 = Vector2(0.55, -2.725)
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_y5lky"]
+sprite_type = ExtResource("1_buvw5")
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_g7pe5"]
+sprite_type = ExtResource("2_7gr0u")
+offset = Vector2(0.66, -0.05)
+scale = 1.135
+
+[sub_resource type="MapEffectAttachment" id="MapEffectAttachment_g2qgi"]
+scene = ExtResource("3_7gr0u")
+offset = Vector2(-0.5602393, -0.20924248)
+scale = 0.05
+
+[sub_resource type="MapEffectAttachment" id="MapEffectAttachment_w6ct8"]
+scene = ExtResource("3_7gr0u")
+offset = Vector2(2.2904716, -0.13881339)
+scale = 0.04
+
+[sub_resource type="MapEffectAttachment" id="MapEffectAttachment_mj88u"]
+scene = ExtResource("3_7gr0u")
+offset = Vector2(1.0966483, -0.013872102)
+scale = 0.04
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_y5lky"), SubResource("MapSpriteComponent_g7pe5")])
+footprint_radius = 2.2
+effects = Array[MapEffectAttachment]([SubResource("MapEffectAttachment_g2qgi"), SubResource("MapEffectAttachment_w6ct8"), SubResource("MapEffectAttachment_mj88u")])
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Triangle_ubdba")])

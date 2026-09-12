@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://r7rs8ngrvgo7"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_5fokr"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_qeh08"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_7jvc3"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="3_cbreb"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="4_e6ohi"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="5_8cx0a"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="7_8y1oo"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="8_uqaa3"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="9_0xfib"]
+[ext_resource type="Resource" uid="uid://cfuqwl06ioxwd" path="res://stage/spots/hill/spot_hill.tres" id="10_8cx0a"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="11_8y1oo"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://b548ltw41s15m" path="res://map/sprites/hills/mst_hill_6.tres" id="12_mnpt4"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://chlfcnqbpau20" path="res://map/sprites/hills/mst_hill_3.tres" id="13_r4hio"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://c23xw6irwc0ik" path="res://map/sprites/hills/mst_hill_2.tres" id="14_4tgpm"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dgsucgxy4wy2k" path="res://map/sprites/hills/mst_hill_4.tres" id="15_0ynt6"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dqbot5dm01cko" path="res://map/sprites/hills/mst_hill_5.tres" id="16_wq4ew"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://difbd6y0w4ell" path="res://map/sprites/hills/mst_hill_1.tres" id="17_xlm1d"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://cbkyhr6bencud" path="res://map/sprites/spots/hills/mst_hills_falconers_spire.tres" id="18_eht8w"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://j05bsit15pps" path="res://map/sprites/spots/hills/mst_hills_messenger_tower.tres" id="19_udia0"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="20_4dr53"]
+
+[sub_resource type="Resource" id="Resource_6tr8k"]
+script = ExtResource("20_4dr53")
+old_sprite_type = ExtResource("19_udia0")
+new_sprite_type = ExtResource("18_eht8w")
+extra_removables = Array[MapSpriteType]([ExtResource("12_mnpt4"), ExtResource("13_r4hio"), ExtResource("14_4tgpm"), ExtResource("15_0ynt6"), ExtResource("16_wq4ew"), ExtResource("17_xlm1d")])
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_5fokr")
+spot_upgrade_id = "hill_falconer_tower"
+name = "Falconer's Spire"
+description = "When pigeons lack range, folks call on companion falcons, resolute enough to carry messages across the Cloud Sea to other shards."
+required_aspects = Array[ExtResource("3_7jvc3")]([ExtResource("7_8y1oo"), ExtResource("8_uqaa3"), ExtResource("9_0xfib")])
+granted_bonuses = Dictionary[ExtResource("2_qeh08"), int]({
+ExtResource("3_cbreb"): 10,
+ExtResource("4_e6ohi"): 10,
+ExtResource("5_8cx0a"): 15
+})
+spot = ExtResource("10_8cx0a")
+visuals = Array[ExtResource("11_8y1oo")]([SubResource("Resource_6tr8k")])
+min_main_quest_progress = 330

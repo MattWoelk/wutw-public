@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://4nkvx5d25pui"]
+
+[ext_resource type="Script" uid="uid://cjjs7i3ggr676" path="res://quests/list/quest_goal_entry.gd" id="1_4ub8l"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="2_l53nf"]
+[ext_resource type="Texture2D" uid="uid://cyuufddwxhvbe" path="res://quests/list/checkmark.png" id="2_s7wkn"]
+[ext_resource type="Texture2D" uid="uid://dxaidgvlm5vcl" path="res://quests/list/crossmark.png" id="3_qwq4x"]
+[ext_resource type="Texture2D" uid="uid://drgvkclgt7sc7" path="res://quests/list/dashmark.png" id="4_5kc6w"]
+
+[node name="QuestGoalEntry" type="HBoxContainer" unique_id=1046501372]
+theme_override_constants/separation = 3
+script = ExtResource("1_4ub8l")
+text = "Accomplish the task."
+
+[node name="CompletionMark" type="TextureRect" parent="." unique_id=500162412]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0.15, 0.15, 0.15, 1)
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("2_s7wkn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FailedMark" type="TextureRect" parent="." unique_id=1099274249]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0.61, 0.1098, 0.1098, 1)
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("3_qwq4x")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="InProgressMark" type="TextureRect" parent="." unique_id=8573410]
+unique_name_in_owner = true
+modulate = Color(0.23, 0.23, 0.23, 1)
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("4_5kc6w")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Text" parent="." unique_id=1634550118 instance=ExtResource("2_l53nf")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+text = "Accomplish the task."
+fit_content = true
+tooltip_directions = Array[int]([5, 3])

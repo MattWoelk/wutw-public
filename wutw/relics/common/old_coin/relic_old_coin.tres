@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Relic_OldCoin" format=3 uid="uid://cb13shr80bibh"]
+
+[ext_resource type="Texture2D" uid="uid://rjb2u6bwqq2h" path="res://relics/common/old_coin/old_coin.png" id="1_w3gfj"]
+[ext_resource type="Script" uid="uid://bnmbsna8qxjwo" path="res://relics/common/old_coin/relic_old_coin.gd" id="2_w3gfj"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="3_ufrrs"]
+[ext_resource type="Resource" uid="uid://5q63svcbmx37" path="res://glossary/categories/termcategory_relic.tres" id="4_u4iy2"]
+
+[resource]
+script = ExtResource("2_w3gfj")
+relic_id = "old_coin"
+default_name = "Old Coin"
+default_description = "All <term_lower:shop> thresholds are reduced by 20%."
+flavor_text = "It's expired currency, but it still commands respect."
+icon = ExtResource("1_w3gfj")
+var_modifiers = Dictionary[int, int]({
+14: -20
+})
+default_starting_state = 1
+term_categories = Array[ExtResource("3_ufrrs")]([ExtResource("4_u4iy2")])
+metadata/_custom_type_script = "uid://cocdm5ulvrs8m"

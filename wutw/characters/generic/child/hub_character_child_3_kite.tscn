@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://3ugoomxytqhf"]
+
+[ext_resource type="PackedScene" uid="uid://dlut83dwv3n4m" path="res://hub/contents/hub_character.tscn" id="1_1hy1a"]
+[ext_resource type="Shader" uid="uid://b16cdl73goxeq" path="res://characters/generic/child/kite.gdshader" id="2_cx6ao"]
+[ext_resource type="Texture2D" uid="uid://b241hhbyyqcke" path="res://hub/contents/wind_noise.tres" id="3_e8vpe"]
+[ext_resource type="Texture2D" uid="uid://d3qumta6hw628" path="res://characters/generic/child/kite.png" id="4_0fqub"]
+[ext_resource type="Texture2D" uid="uid://bkpodo830kr0d" path="res://characters/generic/child/kite_tail_2.png" id="5_hcdn1"]
+[ext_resource type="Texture2D" uid="uid://b5l1miww82ko6" path="res://characters/generic/child/kite_tail_3.png" id="6_752sd"]
+[ext_resource type="Texture2D" uid="uid://bms230knqlwy3" path="res://characters/generic/child/kite_tail_1.png" id="7_mjyeu"]
+[ext_resource type="Texture2D" uid="uid://ck3v2phafm2t0" path="res://characters/generic/child/child_hub_3_kite.png" id="8_1hy1a"]
+
+[sub_resource type="Gradient" id="Gradient_ju8qi"]
+offsets = PackedFloat32Array(0, 0.34541792, 0.7432024, 1)
+colors = PackedColorArray(0.05, 0.05, 0.05, 1, 0.17925479, 0.17925479, 0.17925479, 1, 0.55865586, 0.55865586, 0.55865586, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ewvyr"]
+gradient = SubResource("Gradient_ju8qi")
+fill_from = Vector2(0.94323146, 0.09606987)
+fill_to = Vector2(0.7394469, 0.30276564)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hlo6p"]
+shader = ExtResource("2_cx6ao")
+shader_parameter/wind_noise = ExtResource("3_e8vpe")
+shader_parameter/wind_speed = 0.074
+shader_parameter/wind_amplitude = 50.0
+shader_parameter/gradient = SubResource("GradientTexture2D_ewvyr")
+shader_parameter/noise = ExtResource("3_e8vpe")
+shader_parameter/direction = Vector2(0, 1)
+shader_parameter/scale = 0.55999998748288
+shader_parameter/speed = 0.21999999508256
+shader_parameter/strength = 0.0150000007125
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ffau"]
+shader = ExtResource("2_cx6ao")
+shader_parameter/wind_noise = ExtResource("3_e8vpe")
+shader_parameter/wind_speed = 0.074
+shader_parameter/wind_amplitude = 50.0
+shader_parameter/gradient = SubResource("GradientTexture2D_ewvyr")
+shader_parameter/noise = ExtResource("3_e8vpe")
+shader_parameter/direction = Vector2(0, 1)
+shader_parameter/scale = 0.41999999061216
+shader_parameter/speed = 0.21999999508256
+shader_parameter/strength = 0.0150000007125
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ac1y"]
+shader = ExtResource("2_cx6ao")
+shader_parameter/wind_noise = ExtResource("3_e8vpe")
+shader_parameter/wind_speed = 0.074
+shader_parameter/wind_amplitude = 50.0
+shader_parameter/gradient = SubResource("GradientTexture2D_ewvyr")
+shader_parameter/noise = ExtResource("3_e8vpe")
+shader_parameter/direction = Vector2(0, 1)
+shader_parameter/scale = 0.499999988824
+shader_parameter/speed = 0.20999999530608
+shader_parameter/strength = 0.0150000007125
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7v2hg"]
+shader = ExtResource("2_cx6ao")
+shader_parameter/wind_noise = ExtResource("3_e8vpe")
+shader_parameter/wind_speed = 0.074
+shader_parameter/wind_amplitude = 50.0
+shader_parameter/direction = Vector2(0, 1)
+shader_parameter/scale = 1.0
+shader_parameter/speed = 0.5
+shader_parameter/strength = 1.0
+
+[node name="HubCharacter_Child" unique_id=311478011 instance=ExtResource("1_1hy1a")]
+
+[node name="CollisionPolygon2D" parent="Area2D" parent_id_path=PackedInt32Array(2019498285) index="0" unique_id=521856771]
+polygon = PackedVector2Array(-3.952507, 1.8899307, -0.35655975, -0.7356796, 4.609268, 2.8602676, 16.1548, 1.7805138, 14.027222, -2.219719, 14.608479, -18.02919, 13.741837, -28.589994, 11.116219, -34.12661, 17.580334, -35.01123, 20.191711, -40.462326, 19.735085, -48.39624, 17.052395, -61.467216, 11.801174, -64.149925, 8.319386, -60.95353, 5.5796165, -68.031265, -0.299469, -73.45372, -4.29496, -74.081566, -14.911564, -64.206985, -9.032478, -61.410137, -12.628422, -56.786777, -12.343029, -41.48974, -17.423016, -36.466827, -27.582993, -39.606148, -31.121859, -34.583237, -29.450478, -28.02974, -23.92997, -28.589989, -17.822563, -22.59674, -9.546181, -22.996292, -10.973141, -15.747322, -14.340794, 1.2049904)
+
+[node name="Sprite2D" parent="Area2D" parent_id_path=PackedInt32Array(2019498285) index="1" unique_id=183582231]
+position = Vector2(-1.151876, -36.557396)
+scale = Vector2(0.41091678, 0.41091678)
+texture = ExtResource("8_1hy1a")
+
+[node name="Tail" type="Sprite2D" parent="Area2D/Sprite2D" index="0" unique_id=1801567332]
+material = SubResource("ShaderMaterial_hlo6p")
+position = Vector2(269.48044, -230.14809)
+scale = Vector2(1.1777893, 1.1777893)
+texture = ExtResource("5_hcdn1")
+
+[node name="Tail2" type="Sprite2D" parent="Area2D/Sprite2D" index="1" unique_id=1518066425]
+material = SubResource("ShaderMaterial_2ffau")
+position = Vector2(269.48044, -230.14809)
+scale = Vector2(1.1777893, 1.1777893)
+texture = ExtResource("6_752sd")
+
+[node name="Tail3" type="Sprite2D" parent="Area2D/Sprite2D" index="2" unique_id=715942085]
+material = SubResource("ShaderMaterial_3ac1y")
+position = Vector2(269.48044, -230.14809)
+scale = Vector2(1.1777893, 1.1777893)
+texture = ExtResource("7_mjyeu")
+
+[node name="Kite" type="Sprite2D" parent="Area2D/Sprite2D" index="3" unique_id=2118773264]
+material = SubResource("ShaderMaterial_7v2hg")
+position = Vector2(269.48044, -230.14809)
+scale = Vector2(1.1777893, 1.1777893)
+texture = ExtResource("4_0fqub")
+
+[node name="TooltipAnchor" parent="." index="1" unique_id=278453014]
+offset_left = -30.381737
+offset_top = -74.122086
+offset_right = 20.418762
+offset_bottom = 1.920044

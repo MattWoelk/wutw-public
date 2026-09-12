@@ -1,0 +1,34 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://ctb84yptues5s"]
+
+[ext_resource type="MapSpriteType_Generic" uid="uid://5cmjuvd8wbpb" path="res://map/sprites/spots/plains/mst_plains_road.tres" id="1_fqo81"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://bg3c0u87dkvjl" path="res://map/sprites/spots/plains/mst_plains_rest_stop.tres" id="2_1ft2h"]
+
+[sub_resource type="MapSpriteCollision_Rect" id="MapSpriteCollision_Rect_6tehh"]
+rect = Rect2(-1.775, -2.94, 4.3, 3.315)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Rect" id="MapSpriteCollision_Rect_8flf1"]
+rect = Rect2(-4.57, 2.13, 2.375, 1.175)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_xuswu"]
+p1 = Vector2(-3.19, 2.195)
+p2 = Vector2(-1.965, -1.765)
+p3 = Vector2(-1.905, 0.97)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Rect" id="MapSpriteCollision_Rect_klf30"]
+rect = Rect2(2.405, -2.985, 3.865, 1.745)
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_dhd00"]
+sprite_type = ExtResource("1_fqo81")
+offset = Vector2(0.785, 0.06)
+scale = 1.355
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_5dd1w"]
+sprite_type = ExtResource("2_1ft2h")
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_dhd00"), SubResource("MapSpriteComponent_5dd1w")])
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Rect_6tehh"), SubResource("MapSpriteCollision_Rect_8flf1"), SubResource("MapSpriteCollision_Triangle_xuswu"), SubResource("MapSpriteCollision_Rect_klf30")])

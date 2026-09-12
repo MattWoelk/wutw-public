@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://ct50e1yg6won4"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_4ingj"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_n6kh3"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="3_a64g6"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="4_18oww"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="5_mmtev"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="6_ui2rt"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="7_q5bvo"]
+[ext_resource type="Resource" uid="uid://f8guout8235a" path="res://stage/spots/plains/spot_plains.tres" id="8_6jcjl"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="8_q8u3e"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://wyhxqf55mfam" path="res://map/sprites/spots/plains/mst_plains_endless_blossoms.tres" id="10_6jcjl"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://cmk7n0t54yioe" path="res://map/sprites/spots/plains/mst_plains_sacred_grove.tres" id="10_apbpn"]
+[ext_resource type="Script" uid="uid://dvrtuqbmx4v30" path="res://stage/spots/spot_upgrade_visual_add.gd" id="10_xjqa5"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="11_6jcjl"]
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("10_xjqa5")
+sprite_type = ExtResource("10_6jcjl")
+biome = 6
+metadata/_custom_type_script = "uid://dvrtuqbmx4v30"
+
+[sub_resource type="Resource" id="Resource_xjqa5"]
+script = ExtResource("11_6jcjl")
+old_sprite_type = ExtResource("10_apbpn")
+new_sprite_type = ExtResource("10_6jcjl")
+biome = 6
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_4ingj")
+spot_upgrade_id = "plains_endless_blossoms"
+name = "Endless Blossoms"
+description = "Petals carpet the field in unending bloom, as if spring itself took a vow never to leave."
+required_aspects = Array[ExtResource("5_mmtev")]([ExtResource("6_ui2rt"), ExtResource("7_q5bvo")])
+granted_bonuses = Dictionary[ExtResource("2_n6kh3"), int]({
+ExtResource("3_a64g6"): 35,
+ExtResource("4_18oww"): 20
+})
+spot = ExtResource("8_6jcjl")
+visuals = Array[ExtResource("8_q8u3e")]([SubResource("Resource_trtbi"), SubResource("Resource_xjqa5")])
+tags = Array[int]([0])
+unique_per_run = true
+min_main_quest_progress = 110

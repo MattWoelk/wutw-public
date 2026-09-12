@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://c7iux4svkhnmt"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_xpeei"]
+[ext_resource type="Resource" uid="uid://dwj1tc2o267ob" path="res://stage/spots/cliff/upgrade_cliff_2_echo_cave.tres" id="2_dy0ua"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_jawes"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="4_ict5i"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="4_jawes"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="6_dy0ua"]
+[ext_resource type="Resource" uid="uid://bom6dwl3t2obc" path="res://stage/spots/cliff/spot_cliff.tres" id="7_vusyu"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="8_42jrn"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://c82bnw47oxnnw" path="res://map/sprites/spots/cliff/mst_cliff_cave_shelter.tres" id="9_7t5nx"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cvbcwfox0oaq7" path="res://map/sprites/cliffs/mst_cliff_1.tres" id="10_mq32x"]
+[ext_resource type="Script" uid="uid://cm6qovq4s06ky" path="res://stage/spots/spot_upgrade_visual_replace.gd" id="11_7sl0a"]
+
+[sub_resource type="Resource" id="Resource_2nw2c"]
+script = ExtResource("11_7sl0a")
+old_sprite_types = Array[MapSpriteType]([ExtResource("10_mq32x")])
+new_sprite_type = ExtResource("9_7t5nx")
+metadata/_custom_type_script = "uid://cm6qovq4s06ky"
+
+[resource]
+script = ExtResource("1_xpeei")
+spot_upgrade_id = "cliff_shelter"
+name = "Cave Shelter"
+description = "Perhaps the remnant of an Old World mine, or an ancient bear's burrow. Today all it can do is keep a traveler safe from the rain."
+required_aspects = Array[ExtResource("4_ict5i")]([ExtResource("6_dy0ua")])
+granted_bonuses = Dictionary[ExtResource("2_jawes"), int]({
+ExtResource("4_jawes"): 10
+})
+child_upgrades = Array[ExtResource("1_xpeei")]([ExtResource("2_dy0ua")])
+spot = ExtResource("7_vusyu")
+visuals = Array[ExtResource("8_42jrn")]([SubResource("Resource_2nw2c")])

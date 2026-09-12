@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://88irqs3b6bt"]
+
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="1_g47fu"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="2_4urcl"]
+[ext_resource type="Script" uid="uid://cbfs115pa1464" path="res://hub/shard_explorer/shard_history_block.gd" id="3_5yb8g"]
+[ext_resource type="Material" uid="uid://dm0coidukcc6" path="res://theme/button/ukiyoe_button_material.tres" id="5_6qnxp"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="6_tb4rx"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="13_sy3bn"]
+[ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="14_myg5h"]
+
+[node name="ShardHistoryBlock" type="PanelContainer" unique_id=461640967]
+material = ExtResource("1_g47fu")
+instance_shader_parameters/size = Vector2(939.47705, 261.954)
+offset_right = 581.0
+offset_bottom = 130.0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("2_4urcl")
+script = ExtResource("3_5yb8g")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1321776655]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Label" parent="MarginContainer" unique_id=121303431 instance=ExtResource("6_tb4rx")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+text = "Shard history shard history shard history shard history shard history shard history shard history shard history shard history shard history shard history shard history shard history shard history shard history shard history shard history shard history shard history shard history shard history shard history shard history shard history shard history shard history"
+fit_content = true
+scroll_active = true
+visible_characters_behavior = 1
+tooltip_directions = Array[int]([5, 1])
+
+[node name="RevealButton" type="Button" parent="." unique_id=1268393290]
+unique_name_in_owner = true
+material = ExtResource("5_6qnxp")
+instance_shader_parameters/size = Vector2(249.01794, 66.29703)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = ExtResource("13_sy3bn")
+theme_override_styles/pressed = ExtResource("13_sy3bn")
+theme_override_styles/hover = ExtResource("13_sy3bn")
+theme_override_styles/hover_pressed = ExtResource("13_sy3bn")
+theme_override_styles/disabled = ExtResource("13_sy3bn")
+text = "Reveal History"
+script = ExtResource("14_myg5h")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="SkipButton" type="Button" parent="." unique_id=2096430219]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+flat = true
+
+[connection signal="pressed" from="RevealButton" to="." method="_on_reveal_button_pressed"]
+[connection signal="pressed" from="SkipButton" to="." method="_on_skip_button_pressed"]

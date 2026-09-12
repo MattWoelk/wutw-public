@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://cpoppaup5nopq"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_kq47s"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="3_5juwo"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="3_i7oqi"]
+[ext_resource type="Resource" uid="uid://dylc6a1ekfdr2" path="res://cards/tier6/card_fall.tres" id="4_acx3g"]
+[ext_resource type="Script" uid="uid://777usfqcjmox" path="res://stage/hauntings/effects/haunting_effect_add_card.gd" id="5_7n7ey"]
+[ext_resource type="Texture2D" uid="uid://b0pcroho7j6ta" path="res://stage/hauntings/types/yamabiko/haunting_yamabiko.png" id="6_12kdr"]
+[ext_resource type="Resource" uid="uid://di7pt4lei1y3y" path="res://art/pieces/piece_bakemono_yamabiko.tres" id="6_acx3g"]
+[ext_resource type="Resource" uid="uid://brf65sj541phn" path="res://art/pieces/piece_hiroshige_houraiji.tres" id="7_7n7ey"]
+[ext_resource type="Texture2D" uid="uid://cdt016gcv2hxj" path="res://stage/hauntings/types/yamabiko/haunting_yamabiko_realistic_landslide.png" id="7_ou4go"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="8_l7ox4"]
+[ext_resource type="Resource" uid="uid://d1c7ny2xs7pwo" path="res://stage/spots/canyon/spot_canyon.tres" id="9_6foxp"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="10_12kdr"]
+[ext_resource type="Script" uid="uid://6xguje0707l2" path="res://stage/hauntings/triggers/haunting_trigger_upgrade_activated.gd" id="10_tr3lh"]
+
+[sub_resource type="Resource" id="Resource_4e4e8"]
+script = ExtResource("5_7n7ey")
+card_type = ExtResource("4_acx3g")
+metadata/_custom_type_script = "uid://777usfqcjmox"
+
+[sub_resource type="Resource" id="Resource_vy5ev"]
+script = ExtResource("10_tr3lh")
+any_spot = false
+metadata/_custom_type_script = "uid://6xguje0707l2"
+
+[resource]
+script = ExtResource("8_l7ox4")
+haunting_id = "yamabiko"
+name = "Yamabiko"
+name_japanese = "山彦"
+name_realistic = "Landslides"
+name_translation = "Mountain Boys"
+description = "Settlers claim that little mocking mountain spirits are sliding down the canyon walls, crumbling the stone in their wake."
+description_realistic = "The canyon walls are unstable, with even minor disturbances triggering dangerous landslides."
+description_long = "Settlers working in the canyon are often ambushed by debris sliding down the walls, starting with a snapping sound and followed by a stream of echoes.
+
+The old tales speak of the Yamabiko, the mountain boys. These little beasts look like a mix between dogs and monkeys, and thrive on mimicking humans. When the settlers make too much racket, the Yamabiko eagerly join in, clapping and jumping up and down, breaking off pieces of the canyon walls."
+image_small = ExtResource("6_12kdr")
+image_credit = ExtResource("6_acx3g")
+image_small_realistic = ExtResource("7_ou4go")
+image_realistic_credit = ExtResource("7_7n7ey")
+spot_type = ExtResource("9_6foxp")
+base_aspect_types = Array[ExtResource("1_kq47s")]([ExtResource("3_i7oqi")])
+extra_aspect_type = ExtResource("3_5juwo")
+scaling_bonus_type = ExtResource("10_12kdr")
+trigger = SubResource("Resource_vy5ev")
+effect = SubResource("Resource_4e4e8")
+spot_attach_mode = 2
+settlement_attach_mode = 2
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

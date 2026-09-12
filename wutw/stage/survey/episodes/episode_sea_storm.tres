@@ -1,0 +1,132 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://bsyr0hfp0bgkf"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_2vyxr"]
+[ext_resource type="Resource" uid="uid://dl82biqlyoma6" path="res://art/pieces/piece_hasui_hinomisuki.tres" id="1_vmpkk"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_vmpkk"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_j5utr"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="4_y4unl"]
+[ext_resource type="Resource" uid="uid://c8ax48tb3uxge" path="res://cards/tier6/card_soak.tres" id="5_dle0n"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="6_ggsfw"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="7_4q157"]
+[ext_resource type="Resource" uid="uid://c5xo0cfu3q6c0" path="res://cards/tier6/card_frozen.tres" id="8_t8u61"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="9_f1ydn"]
+[ext_resource type="Resource" uid="uid://dhal843mubr37" path="res://cards/tier6/card_wound.tres" id="10_td7rt"]
+[ext_resource type="Script" uid="uid://cbnw4a13y5x8c" path="res://events/system/outcomes/random/event_outcome_random.gd" id="11_wu6qv"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="12_2x3qn"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="13_240x2"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="14_c2nhi"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="15_j5utr"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="15_srrkm"]
+
+[sub_resource type="Resource" id="Resource_g5iqo"]
+script = ExtResource("1_2vyxr")
+_texture_path = "res://stage/survey/episodes/sea_storm.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_rtars"]
+script = ExtResource("6_ggsfw")
+card_type = ExtResource("10_td7rt")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_gfx4s"]
+script = ExtResource("2_vmpkk")
+label = "Make a palisade."
+aspects = Array[ExtResource("3_j5utr")]([ExtResource("9_f1ydn")])
+aspects_per_season = Array[ExtResource("3_j5utr")]([null])
+outcome = SubResource("Resource_rtars")
+outcome_text = "The scouts work together to tie driftwood into a makeshift palisade and take shelter behind it.
+
+It doesn't take long for the waves to shatter their work in an explosion of splinters.
+
+The scouts take the hint and rush away from the shore, but by then several are already injured."
+
+[sub_resource type="Resource" id="Resource_61j28"]
+script = ExtResource("6_ggsfw")
+card_type = ExtResource("5_dle0n")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_35xva"]
+script = ExtResource("2_vmpkk")
+label = "Rush inland."
+aspects = Array[ExtResource("3_j5utr")]([ExtResource("4_y4unl")])
+aspects_per_season = Array[ExtResource("3_j5utr")]([null])
+outcome = SubResource("Resource_61j28")
+outcome_text = "The scouts abandon their campsite and rush away from the shore.
+
+They find a sheltered ditch, where they lie flat and watch in terror as trees crash around them.
+
+By morning, they are thoroughly soaked, but at least they are safe."
+
+[sub_resource type="Resource" id="Resource_8lsgb"]
+script = ExtResource("6_ggsfw")
+card_type = ExtResource("8_t8u61")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_55ro1"]
+script = ExtResource("2_vmpkk")
+label = "Hide behind a rock."
+aspects = Array[ExtResource("3_j5utr")]([ExtResource("7_4q157")])
+aspects_per_season = Array[ExtResource("3_j5utr")]([null])
+outcome = SubResource("Resource_8lsgb")
+outcome_text = "The scouts head to the large boulders strewn across the beach and shelter behind the largest one they can find. 
+
+The boulder blocks the wind and the waves, but they spend the rest of the night shivering."
+
+[sub_resource type="Resource" id="Resource_1lbd3"]
+script = ExtResource("6_ggsfw")
+card_type = ExtResource("10_td7rt")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_vn11c"]
+script = ExtResource("6_ggsfw")
+card_type = ExtResource("5_dle0n")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_w6x1a"]
+script = ExtResource("6_ggsfw")
+card_type = ExtResource("8_t8u61")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_351df"]
+script = ExtResource("13_240x2")
+suboutcomes = Array[ExtResource("12_2x3qn")]([SubResource("Resource_1lbd3"), SubResource("Resource_vn11c"), SubResource("Resource_w6x1a")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_js0r0"]
+script = ExtResource("11_wu6qv")
+suboutcomes = Dictionary[ExtResource("12_2x3qn"), float]({
+SubResource("Resource_351df"): 1.0
+})
+description = "<related_term:card.wound><related_term:card.soak><related_term:card.frozen>Get hurt, soaked, and shivering"
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_k703e"]
+script = ExtResource("2_vmpkk")
+label = "Wait it out."
+aspects = Array[ExtResource("3_j5utr")]([null])
+outcome = SubResource("Resource_js0r0")
+outcome_text = "The scouts stay in their tents and wait out the storm. They pray to the Enlightened One, yet the wind continues to rage.
+
+A wave tears one tent from its stakes, and carries away their packs.
+
+Another fells a tree, which lands next to the scouts, its sharp branches scratching several of them.
+
+By morning, they are hurt, soaked, and shivering, but grateful to have survived."
+
+[sub_resource type="Resource" id="Resource_dcpb5"]
+script = ExtResource("15_j5utr")
+min_progress = 200
+metadata/_custom_type_script = "uid://c50bhh4sr0g8o"
+
+[resource]
+script = ExtResource("14_c2nhi")
+episode_id = "sea_storm"
+title = "The Stormy Sea"
+biome_types = Array[int]([1, 10])
+requirement = SubResource("Resource_dcpb5")
+text = "The survey team is camping by the seashore when they are woken up by a fierce gale.
+
+It howls, ripping through their tents and blowing out their fire. The nearby pines groan as huge waves crash against the rocks."
+background_image = SubResource("Resource_g5iqo")
+background_credit = ExtResource("1_vmpkk")
+choices = Array[ExtResource("2_vmpkk")]([SubResource("Resource_gfx4s"), SubResource("Resource_35xva"), SubResource("Resource_55ro1"), SubResource("Resource_k703e")])

@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://hollpi58nihi"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_t84td"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_pu3n3"]
+[ext_resource type="Resource" uid="uid://1h5xk0ef254j" path="res://stage/spots/desert/upgrade_desert_3_blooming_dunes.tres" id="2_s473x"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_hexxv"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="4_3brck"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="5_02x3y"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="7_wsjui"]
+[ext_resource type="Resource" uid="uid://coqtbomfb4xc" path="res://stage/spots/desert/spot_desert.tres" id="8_02x3y"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_wsjui"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://coprokl784kkp" path="res://map/sprites/spots/desert/mst_desert_camel_grazing_spot.tres" id="10_7rwbk"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://dboe6k87s7hni" path="res://map/sprites/spots/desert/mst_desert_cactus_forest.tres" id="11_gh4kb"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="12_wjoyb"]
+
+[sub_resource type="Resource" id="Resource_21tbh"]
+script = ExtResource("12_wjoyb")
+old_sprite_type = ExtResource("11_gh4kb")
+new_sprite_type = ExtResource("10_7rwbk")
+biome = 2
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_t84td")
+spot_upgrade_id = "desert_camels"
+name = "Camel Grazing Spot"
+description = "A meeting place for those with thick skins and bad tempers. The camels are here too."
+required_aspects = Array[ExtResource("3_hexxv")]([ExtResource("7_wsjui")])
+granted_bonuses = Dictionary[ExtResource("2_pu3n3"), int]({
+ExtResource("4_3brck"): 8,
+ExtResource("5_02x3y"): 3
+})
+child_upgrades = Array[ExtResource("1_t84td")]([ExtResource("2_s473x")])
+spot = ExtResource("8_02x3y")
+visuals = Array[ExtResource("9_wsjui")]([SubResource("Resource_21tbh")])
+tags = Array[int]([0])

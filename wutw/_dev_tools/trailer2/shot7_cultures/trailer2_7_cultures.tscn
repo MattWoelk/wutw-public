@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://df5ln306yceid"]
+
+[ext_resource type="Script" uid="uid://cux83qulqm6y8" path="res://_dev_tools/trailer2/shot7_cultures/trailer2_7_cultures.gd" id="1_7b4vc"]
+[ext_resource type="PackedScene" uid="uid://bjgjlkb7wy3eu" path="res://hub/hub.tscn" id="2_srlvd"]
+
+[sub_resource type="Animation" id="Animation_orm4f"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_oywfe"]
+resource_name = "pan"
+length = 15.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n86b7"]
+_data = {
+&"RESET": SubResource("Animation_orm4f"),
+&"pan": SubResource("Animation_oywfe")
+}
+
+[node name="Trailer2_7_Cultures" type="Node2D" unique_id=1819132525]
+script = ExtResource("1_7b4vc")
+metadata/movie_file = "C:/Users/max99/wutw_trailer2_media/7_cultures.avi"
+
+[node name="Hub" parent="." unique_id=652285157 instance=ExtResource("2_srlvd")]
+unique_name_in_owner = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1724866048]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_n86b7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1416441141]
+modulate = Color(1, 1, 1, 0)
+offset_left = -14.0
+offset_top = -8.0
+offset_right = 1938.0
+offset_bottom = 1092.0

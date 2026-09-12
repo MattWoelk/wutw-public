@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://dxqwegrdbsn8"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_blcjw"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_8q4mk"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="3_uhgi0"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="4_8q4mk"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="4_ijeq4"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="5_j6bqd"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="6_thcqd"]
+[ext_resource type="Resource" uid="uid://d1c7ny2xs7pwo" path="res://stage/spots/canyon/spot_canyon.tres" id="8_ijeq4"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_j6bqd"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://btvdn57djjgcy" path="res://map/sprites/spots/canyon/mst_canyon_eternal_vault.tres" id="10_fthc6"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://yi6r4d10vn2d" path="res://map/sprites/mountains/mst_mountain_1_medium.tres" id="10_ix2sy"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://desakgu6q3yov" path="res://map/sprites/mountains/mst_mountain_2_large.tres" id="11_fki1p"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://dj3v8t4s3gl5l" path="res://map/sprites/spots/canyon/mst_canyon_suspended_bridge.tres" id="11_r8xj0"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="12_gotf3"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://c3u877m1spx0" path="res://map/sprites/mountains/mst_mountain_3_large.tres" id="12_rmrl7"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://doqqvl0x3b3g4" path="res://map/sprites/mountains/mst_mountain_4_small.tres" id="13_35r6a"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bxr2aj680eaqd" path="res://map/sprites/mountains/mst_mountain_5_small.tres" id="14_cpxlu"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cekrboxmhdmhk" path="res://map/sprites/mountains/mst_mountain_6_tiny.tres" id="15_r46w0"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://cjbrxida4odnk" path="res://map/sprites/mountains/mst_mountain_7_tiny.tres" id="16_eptja"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://56t2rh2pg58y" path="res://map/sprites/mountains/mst_mountain_8_medium.tres" id="17_33gpt"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://csjeschaiy5ct" path="res://map/sprites/mountains/mst_mountain_9_large.tres" id="18_cb2di"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://bctu7rlwqc3o7" path="res://map/sprites/mountains/mst_mountain_10_medium.tres" id="19_cowt3"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://t2knd16pwuwg" path="res://map/sprites/mountains/mst_mountain_11_medium.tres" id="20_igq7d"]
+[ext_resource type="MapSpriteType_Mountain" uid="uid://dxba886xk8sch" path="res://map/sprites/mountains/mst_mountain_12_pair.tres" id="21_xupp3"]
+
+[sub_resource type="Resource" id="Resource_he5nv"]
+script = ExtResource("12_gotf3")
+old_sprite_type = ExtResource("11_r8xj0")
+new_sprite_type = ExtResource("10_fthc6")
+extra_removables = Array[MapSpriteType]([ExtResource("10_ix2sy"), ExtResource("11_fki1p"), ExtResource("12_rmrl7"), ExtResource("13_35r6a"), ExtResource("14_cpxlu"), ExtResource("15_r46w0"), ExtResource("16_eptja"), ExtResource("17_33gpt"), ExtResource("18_cb2di"), ExtResource("19_cowt3"), ExtResource("20_igq7d"), ExtResource("21_xupp3")])
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_blcjw")
+spot_upgrade_id = "canyon_vault"
+name = "Eternal Vault"
+description = "No records remain of what lies behind this massive gate, but whoever built it clearly wanted to make sure it stays inside."
+required_aspects = Array[ExtResource("4_ijeq4")]([ExtResource("5_j6bqd"), ExtResource("6_thcqd")])
+granted_bonuses = Dictionary[ExtResource("2_8q4mk"), int]({
+ExtResource("3_uhgi0"): 30,
+ExtResource("4_8q4mk"): 10
+})
+spot = ExtResource("8_ijeq4")
+visuals = Array[ExtResource("9_j6bqd")]([SubResource("Resource_he5nv")])
+unique_per_run = true

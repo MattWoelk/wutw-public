@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://wshj2f4ifaju"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_h7yhf"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_h8f6b"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="3_bqe18"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="5_o53h5"]
+[ext_resource type="Resource" uid="uid://ouecqwnbe2cw" path="res://stage/spots/swamp/spot_swamp.tres" id="6_5xh84"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="6_cen0o"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="7_h7yhf"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://cxwxqhxl6tefo" path="res://map/sprites/spots/swamp/mst_swamp_footbridge_network.tres" id="8_156a3"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://b8xwu6w7isior" path="res://map/sprites/spots/swamp/mst_swamp_murky_trail.tres" id="9_cpl0g"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="10_3tglq"]
+
+[sub_resource type="Resource" id="Resource_cen0o"]
+script = ExtResource("10_3tglq")
+old_sprite_type = ExtResource("9_cpl0g")
+new_sprite_type = ExtResource("8_156a3")
+biome = 4
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_h7yhf")
+spot_upgrade_id = "swamp_footbridge"
+name = "Footbridge Network"
+description = "The planks are mismatched and the footing is narrow, but it beats navigating the muck."
+required_aspects = Array[ExtResource("6_cen0o")]([ExtResource("5_o53h5")])
+granted_bonuses = Dictionary[ExtResource("2_h8f6b"), int]({
+ExtResource("3_bqe18"): 10
+})
+spot = ExtResource("6_5xh84")
+visuals = Array[ExtResource("7_h7yhf")]([SubResource("Resource_cen0o")])

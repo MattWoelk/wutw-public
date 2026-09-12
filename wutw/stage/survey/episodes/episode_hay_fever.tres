@@ -1,0 +1,122 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://bka0vayh54u1s"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_2477b"]
+[ext_resource type="Resource" uid="uid://dtdrtv0h27vnv" path="res://art/pieces/piece_hiroshige_hiratsuka.tres" id="1_xcnvw"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_xcnvw"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_56tct"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="4_pxuuc"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="5_6l16a"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="6_6mau8"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="7_eqoy2"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="8_rf78i"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="9_bkwtf"]
+[ext_resource type="Resource" uid="uid://dpsq4t5okk4kb" path="res://cards/tier6/card_itchy.tres" id="10_jvequ"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="11_okkm8"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="12_x8u5r"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="13_o043y"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="14_dqhjd"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="15_m44lu"]
+
+[sub_resource type="Resource" id="Resource_xqrtf"]
+script = ExtResource("1_2477b")
+_texture_path = "res://stage/survey/episodes/hay_fever.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_6skk5"]
+script = ExtResource("6_6mau8")
+bonus_type = ExtResource("5_6l16a")
+amount = 15
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_4cj1s"]
+script = ExtResource("2_xcnvw")
+label = "Use damp cloths."
+aspects = Array[ExtResource("3_56tct")]([ExtResource("4_pxuuc")])
+aspects_per_season = Array[ExtResource("3_56tct")]([null])
+outcome = SubResource("Resource_6skk5")
+outcome_text = "The scouts place damp cloths over their faces and continue hiking.
+
+Although a few still sneeze once in a while, most seem to be cured for the time being."
+
+[sub_resource type="Resource" id="Resource_p2e05"]
+script = ExtResource("11_okkm8")
+card_type = ExtResource("10_jvequ")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ih7np"]
+script = ExtResource("6_6mau8")
+bonus_type = ExtResource("12_x8u5r")
+amount = 15
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_r72o5"]
+script = ExtResource("8_rf78i")
+suboutcomes = Array[ExtResource("9_bkwtf")]([SubResource("Resource_p2e05"), SubResource("Resource_ih7np")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_jmbf1"]
+script = ExtResource("2_xcnvw")
+label = "Flee to the forest."
+aspects = Array[ExtResource("3_56tct")]([ExtResource("7_eqoy2")])
+aspects_per_season = Array[ExtResource("3_56tct")]([null])
+outcome = SubResource("Resource_r72o5")
+outcome_text = "The scouts blame the bad air on angry spirits haunting the plains, and retreat to a nearby cedar grove.
+
+Unfortunately, their symptoms only worsen there.
+
+Finally, someone notices pollen falling from the canopy in thick yellow clouds, the wind carrying it across the plains."
+
+[sub_resource type="Resource" id="Resource_fwr6u"]
+script = ExtResource("6_6mau8")
+bonus_type = ExtResource("5_6l16a")
+amount = 10
+extra_per_season = 5
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_j0g5a"]
+script = ExtResource("11_okkm8")
+card_type = ExtResource("10_jvequ")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_bq2go"]
+script = ExtResource("8_rf78i")
+suboutcomes = Array[ExtResource("9_bkwtf")]([SubResource("Resource_fwr6u"), SubResource("Resource_j0g5a")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_15hem"]
+script = ExtResource("2_xcnvw")
+label = "Wash in the stream."
+aspects = Array[ExtResource("3_56tct")]([ExtResource("13_o043y")])
+aspects_per_season = Array[ExtResource("3_56tct")]([null])
+outcome = SubResource("Resource_bq2go")
+outcome_text = "The scouts wash their faces in a cold stream.
+
+The symptoms abate, but their relief is only temporary.
+
+Not an hour later, they go back to sneezing and scratching their eyes."
+
+[sub_resource type="Resource" id="Resource_bm11l"]
+script = ExtResource("11_okkm8")
+card_type = ExtResource("10_jvequ")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_qo7mm"]
+script = ExtResource("2_xcnvw")
+label = "Continue hiking."
+aspects = Array[ExtResource("3_56tct")]([null])
+outcome = SubResource("Resource_bm11l")
+outcome_text = "The explorers continue onward, though they cannot stop sneezing and scratching their eyes."
+
+[resource]
+script = ExtResource("14_dqhjd")
+episode_id = "hay_fever"
+title = "The Itch"
+biome_types = Array[int]([6])
+text = "The sunny skies and warm breeze have made travelling across the plains pleasant. The surveyors whistle and sing merrily as they hike.
+
+By late afternoon, however, the sky has become strangely hazy and several scouts have begun to sneeze. Many more complain of itchy, watery eyes."
+background_image = SubResource("Resource_xqrtf")
+background_credit = ExtResource("1_xcnvw")
+choices = Array[ExtResource("2_xcnvw")]([SubResource("Resource_4cj1s"), SubResource("Resource_jmbf1"), SubResource("Resource_15hem"), SubResource("Resource_qo7mm")])

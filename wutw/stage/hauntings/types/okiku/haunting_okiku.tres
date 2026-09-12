@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://d4jvml7ieqkst"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_bkslr"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="3_8a0w1"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="3_vf7an"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="4_8a0w1"]
+[ext_resource type="Script" uid="uid://dfi0l7t0ecg8o" path="res://stage/hauntings/effects/haunting_effect_lose_bonus.gd" id="5_ndxj8"]
+[ext_resource type="Resource" uid="uid://diwgcn38ltpbi" path="res://art/pieces/piece_yagyou_curtains.tres" id="6_tv0f1"]
+[ext_resource type="Texture2D" uid="uid://dhda05qkji4w7" path="res://stage/hauntings/types/okiku/haunting_okiku.png" id="7_6o0qs"]
+[ext_resource type="Resource" uid="uid://bpaahluwvdjax" path="res://art/pieces/piece_hiroshige_otsu.tres" id="7_tv0f1"]
+[ext_resource type="Texture2D" uid="uid://b1tmb5dohk03k" path="res://stage/hauntings/types/okiku/haunting_okiku_realistic_water_contamination.png" id="8_8a0w1"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="8_gh175"]
+[ext_resource type="Resource" uid="uid://ctiwrqhub05ib" path="res://stage/spots/square/spot_square.tres" id="9_70yuj"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="10_3n0yx"]
+[ext_resource type="Script" uid="uid://2820j4fqvhls" path="res://stage/hauntings/triggers/haunting_trigger_slot_filled.gd" id="11_8a0w1"]
+
+[sub_resource type="Resource" id="Resource_yw8np"]
+script = ExtResource("5_ndxj8")
+bonus_type = ExtResource("4_8a0w1")
+metadata/_custom_type_script = "uid://dfi0l7t0ecg8o"
+
+[sub_resource type="Resource" id="Resource_ndxj8"]
+script = ExtResource("11_8a0w1")
+any_spot = false
+metadata/_custom_type_script = "uid://2820j4fqvhls"
+
+[resource]
+script = ExtResource("8_gh175")
+haunting_id = "okiku"
+name = "Okiku"
+name_japanese = "お菊"
+name_realistic = "Contaminated Wells"
+name_translation = "Lady Chrysanthemum"
+description = "People whisper of a ghost who counts dishes from the bottom of the well, her grief souring the water and the hearts of all who drink it."
+description_realistic = "Poor maintenance has poisoned the town's well, spreading illness among the settlers."
+description_long = "The well at the square has turned murky, something unseen clinging to its depths. Each night, villagers claim to hear faint counting rising through the stone: one, two, three... nine. Some swear they saw a pale hand break the surface.
+
+The old tales recall Okiku, a servant falsely accused of losing a precious plate and thrown into the town's well. They say she returns to count what was lost, her sorrow spreading through the well's water.
+
+Since her whispers began, people have started to fall ill after drinking, and the square smells faintly of rot."
+image_small = ExtResource("7_6o0qs")
+image_credit = ExtResource("6_tv0f1")
+image_small_realistic = ExtResource("8_8a0w1")
+image_realistic_credit = ExtResource("7_tv0f1")
+spot_type = ExtResource("9_70yuj")
+base_aspect_types = Array[ExtResource("1_bkslr")]([ExtResource("3_vf7an")])
+extra_aspect_type = ExtResource("3_8a0w1")
+scaling_bonus_type = ExtResource("10_3n0yx")
+trigger = SubResource("Resource_ndxj8")
+effect = SubResource("Resource_yw8np")
+spot_attach_mode = 2
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

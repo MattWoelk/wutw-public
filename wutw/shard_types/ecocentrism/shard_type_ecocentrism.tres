@@ -1,0 +1,66 @@
+[gd_resource type="Resource" script_class="ShardType_Ecocentrism" format=3 uid="uid://crwh68mgyq3dx"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_8egu1"]
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="1_cdjus"]
+[ext_resource type="Resource" uid="uid://dsf7ab0570nf5" path="res://stage/spots/brushland/upgrade_brushland_2_firewood_coppice.tres" id="2_ojldy"]
+[ext_resource type="Script" uid="uid://btwswbn37womu" path="res://shard_types/ecocentrism/shard_type_ecocentrism.gd" id="2_vftj4"]
+[ext_resource type="Resource" uid="uid://bw82mwnqnc20j" path="res://stage/spots/cliff/upgrade_cliff_1_rock_mine.tres" id="3_ewsdv"]
+[ext_resource type="Resource" uid="uid://giafyqbhomse" path="res://stage/spots/cliff/upgrade_cliff_2_silver_mine.tres" id="4_vu3dt"]
+[ext_resource type="Resource" uid="uid://utv78s02n3bx" path="res://stage/spots/forest/upgrade_forest_1_woodcutter.tres" id="5_xlil7"]
+[ext_resource type="Resource" uid="uid://bv5uoj724kc1o" path="res://stage/spots/forest/upgrade_forest_2_logging_mill.tres" id="6_jq4sr"]
+[ext_resource type="Resource" uid="uid://g5vii58twf4u" path="res://stage/spots/hill/upgrade_hill_1_stone_quarry.tres" id="7_uu3j2"]
+[ext_resource type="Resource" uid="uid://du7oheplc8jb3" path="res://stage/spots/hill/upgrade_hill_2_masonry_yard.tres" id="8_4smf7"]
+[ext_resource type="Resource" uid="uid://bphp08b0lalpe" path="res://stage/spots/forest/upgrade_forest_2_wildlife_sanctuary.tres" id="10_i58hp"]
+[ext_resource type="Texture2D" uid="uid://dv0omh5835u7t" path="res://shard_types/ecocentrism/shard_type_ecocentrism.png" id="10_ojldy"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="10_xlil7"]
+[ext_resource type="Resource" uid="uid://dlhfn8x7y26ht" path="res://skills/settlement/skill_settlement_extra_spot.tres" id="14_jq4sr"]
+[ext_resource type="Resource" uid="uid://f8j3jwoln58m" path="res://debate/arguments/argument_weird_lifestyles.tres" id="14_uu3j2"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="15_uu3j2"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="17_uu3j2"]
+
+[sub_resource type="Resource" id="Resource_8egu1"]
+script = ExtResource("1_cdjus")
+text = "The people who settled in $shard_name took the lessons of the Shattering to heart. Perhaps too much so. Although the expedition that settled this shard left behind buildings of timber and stone, the permanent settlers refused to repeat the sins of the Old World by swinging an axe or lifting a pick. Most moved into mud huts, but the more radical ones live in burrows, natural caves, and hollows in large trees."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_ojldy"]
+script = ExtResource("1_cdjus")
+text = "As their architecture blended into the landscape, so too did their society. The idea of a central government brought to mind the rigid hierarchies of the Old World, so the population dissolved into hundreds of tiny, self-sufficient communes. Even today, traveling between these communes is notoriously difficult, as paving a road is considered a violent scarring of the earth. All but the most traveled paths now weave through deep woods and untouched undergrowth."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_ewsdv"]
+script = ExtResource("1_cdjus")
+text = "The cuisine here has evolved into a strict practice of non-interference. The inhabitants survive almost entirely on a diet of fruits, refusing to harvest anything that harms the host plant. The only exceptions are made for medicinal herbs. When a root must be pulled to treat a fever, the commune gathers to perform a lengthy, deeply apologetic ritual to the earth. Consequently, the scholars of the shard do not study astronomy or engineering, but dedicate their lives to botany, nutrition, and the healing arts, ensuring that every borrowed leaf is put to its absolute best use."
+min_main_quest = 200
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_vu3dt"]
+script = ExtResource("1_cdjus")
+text = "In these isolated communes, the local wildlife is granted absolute right of way. If a family of raccoon dogs decides to settle in a commune's firepit, the cooks have to dig up a new one, or simply forgo hot meals until the animals leave. When a fox wanders into a family burrow, the residents either pack up their belongings and leave, or learn to live alongside their new roommate. Many opt for the second option, with almost a third of households having an animal companion, as the beasts of this land have grown remarkably accustomed to humans."
+min_main_quest = 320
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_4smf7"]
+script = ExtResource("15_uu3j2")
+text = "I nearly twisted my ankle three times just trying to find the first settlement on this shard. There are no roads at all. The first locals I found explained that I'm supposed to follow mushroom patches, which they use as signposts of sorts.
+
+Everyone I met was living out in the wild. Apparently they gave up on building long ago, so instead of towns they have tiny communes scattered throughout the place. I had to sleep outside on moss mats most of the time. Way more comfortable than I expected, but I wouldn't want to spend the rest of my days living like that.
+
+It's certainly an odd way of life, but it seems to work for them, and to their credit, they can figure out how to settle anywhere, no matter the geography. Oh, and their berry wine is to die for."
+revealed_skill = ExtResource("14_jq4sr")
+gained_argument = ExtResource("14_uu3j2")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[resource]
+script = ExtResource("2_vftj4")
+sanctuary = ExtResource("10_i58hp")
+extractive_developments = Array[ExtResource("1_8egu1")]([ExtResource("3_ewsdv"), ExtResource("4_vu3dt"), ExtResource("7_uu3j2"), ExtResource("8_4smf7"), ExtResource("5_xlil7"), ExtResource("6_jq4sr"), ExtResource("2_ojldy")])
+shard_type_id = "ecocentrism"
+name = "The Overgrown Communes"
+shard_name_override = "Nezukami Mori"
+shard_name_override_jp = "根掴森"
+shard_name_override_meaning = "Root Grasping Forest"
+illustration = ExtResource("10_ojldy")
+history = Array[ExtResource("1_cdjus")]([SubResource("Resource_8egu1"), SubResource("Resource_ojldy"), SubResource("Resource_ewsdv"), SubResource("Resource_vu3dt")])
+trip_reward = SubResource("Resource_4smf7")
+metadata/_custom_type_script = "uid://btwswbn37womu"

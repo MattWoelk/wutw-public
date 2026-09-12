@@ -1,0 +1,741 @@
+[gd_resource type="Resource" script_class="CardType" format=3 uid="uid://bcexepixpxr8f"]
+
+[ext_resource type="Script" uid="uid://b56kytec5oqcb" path="res://cards/abilities/card_ability.gd" id="1_ux282"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="2_msqt3"]
+[ext_resource type="Script" uid="uid://7y26eumsxbnb" path="res://cards/abilities/card_ability_support.gd" id="3_emy3y"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="4_4cuo2"]
+[ext_resource type="Script" uid="uid://c0aqmugrp1wmn" path="res://cards/abilities/card_ability_gain.gd" id="5_kqnpa"]
+[ext_resource type="Script" uid="uid://xc73x4t7ckxm" path="res://japanese/example_sentence.gd" id="5_skt8a"]
+[ext_resource type="Script" uid="uid://bl2eelwkj800o" path="res://japanese/japanese_token.gd" id="6_4cuo2"]
+[ext_resource type="Script" uid="uid://du4k150pcdjs6" path="res://japanese/kanji_shape.gd" id="6_emy3y"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="6_kqnpa"]
+[ext_resource type="Script" uid="uid://dc15txdqjanlf" path="res://japanese/stroke_shape.gd" id="7_4cuo2"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="7_ey1r1"]
+[ext_resource type="Resource" uid="uid://d1k7vakhjcq5g" path="res://glossary/categories/termcategory_card.tres" id="8_ne72w"]
+[ext_resource type="Script" uid="uid://b6rw4ldrj6wch" path="res://japanese/vocab.gd" id="9_atvd2"]
+
+[sub_resource type="Resource" id="Resource_egrnu"]
+script = ExtResource("3_emy3y")
+bonus_type = ExtResource("2_msqt3")
+metadata/_custom_type_script = "uid://7y26eumsxbnb"
+
+[sub_resource type="Resource" id="Resource_0eiya"]
+script = ExtResource("5_kqnpa")
+bonus_type = ExtResource("4_4cuo2")
+points = 7
+metadata/_custom_type_script = "uid://c0aqmugrp1wmn"
+
+[sub_resource type="Resource" id="Resource_4cuo2"]
+script = ExtResource("9_atvd2")
+japanese = "愛す"
+readings = Array[String](["あいす"])
+meanings = Array[String](["to love"])
+
+[sub_resource type="Resource" id="Resource_nf2y5"]
+script = ExtResource("6_4cuo2")
+raw_text = "愛し"
+vocab = SubResource("Resource_4cuo2")
+reading = "あいし"
+
+[sub_resource type="Resource" id="Resource_2gw42"]
+script = ExtResource("6_4cuo2")
+raw_text = "てる"
+reading = "てる"
+
+[sub_resource type="Resource" id="Resource_luq1r"]
+script = ExtResource("6_4cuo2")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_cijr2"]
+script = ExtResource("5_skt8a")
+japanese = "愛してる。"
+native = "I love you."
+parsed = Array[ExtResource("6_4cuo2")]([SubResource("Resource_nf2y5"), SubResource("Resource_2gw42"), SubResource("Resource_luq1r")])
+_difficulty = 239
+_used_kanji = Array[String](["愛"])
+
+[sub_resource type="Resource" id="Resource_025ek"]
+script = ExtResource("9_atvd2")
+japanese = "親"
+readings = Array[String](["おや"])
+meanings = Array[String](["founder", "inventor", "ancestor", "forefather"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_k4jby"]
+script = ExtResource("6_4cuo2")
+raw_text = "親"
+vocab = SubResource("Resource_025ek")
+reading = "おや"
+
+[sub_resource type="Resource" id="Resource_nkhkj"]
+script = ExtResource("6_4cuo2")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_40xla"]
+script = ExtResource("9_atvd2")
+japanese = "子"
+readings = Array[String](["こ"])
+meanings = Array[String](["child", "kid", "teenager", "youngster", "young (non-adult) person", "(one's) child", "offspring", "young woman", "young (animal)", "offshoot", "interest", "new share", "player who is not a dealer", "young geisha", "young prostitute", "bird egg", "-er (often of young women)"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_rg10r"]
+script = ExtResource("6_4cuo2")
+raw_text = "子"
+vocab = SubResource("Resource_40xla")
+reading = "こ"
+
+[sub_resource type="Resource" id="Resource_4q5n4"]
+script = ExtResource("6_4cuo2")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_kwoe4"]
+script = ExtResource("9_atvd2")
+japanese = "愛する"
+readings = Array[String](["あいする"])
+meanings = Array[String](["to love"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_pha8e"]
+script = ExtResource("6_4cuo2")
+raw_text = "愛する"
+vocab = SubResource("Resource_kwoe4")
+reading = "あいする"
+
+[sub_resource type="Resource" id="Resource_hm3yj"]
+script = ExtResource("6_4cuo2")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_vkrjc"]
+script = ExtResource("5_skt8a")
+japanese = "親は子を愛する。"
+native = "Parents love their children."
+parsed = Array[ExtResource("6_4cuo2")]([SubResource("Resource_k4jby"), SubResource("Resource_nkhkj"), SubResource("Resource_rg10r"), SubResource("Resource_4q5n4"), SubResource("Resource_pha8e"), SubResource("Resource_hm3yj")])
+_difficulty = 276
+_used_kanji = Array[String](["親", "子", "愛"])
+
+[sub_resource type="Resource" id="Resource_h8evj"]
+script = ExtResource("6_4cuo2")
+raw_text = "ご"
+reading = "ご"
+
+[sub_resource type="Resource" id="Resource_xblcq"]
+script = ExtResource("9_atvd2")
+japanese = "自愛"
+readings = Array[String](["じあい"])
+meanings = Array[String](["taking care of oneself", "self-love"])
+
+[sub_resource type="Resource" id="Resource_6ebc7"]
+script = ExtResource("6_4cuo2")
+raw_text = "自愛"
+vocab = SubResource("Resource_xblcq")
+reading = "じあい"
+
+[sub_resource type="Resource" id="Resource_g6o2x"]
+script = ExtResource("6_4cuo2")
+raw_text = "ください"
+reading = "ください"
+
+[sub_resource type="Resource" id="Resource_73sy6"]
+script = ExtResource("6_4cuo2")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_fvvp5"]
+script = ExtResource("5_skt8a")
+japanese = "ご自愛ください。"
+native = "Please take care of yourself."
+parsed = Array[ExtResource("6_4cuo2")]([SubResource("Resource_h8evj"), SubResource("Resource_6ebc7"), SubResource("Resource_g6o2x"), SubResource("Resource_73sy6")])
+_difficulty = 278
+_used_kanji = Array[String](["自", "愛"])
+
+[sub_resource type="Resource" id="Resource_w70ii"]
+script = ExtResource("9_atvd2")
+japanese = "愛"
+readings = Array[String](["あい"])
+meanings = Array[String](["love", "affection", "care", "attachment", "craving", "desire", "agape", "Ireland"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_46475"]
+script = ExtResource("6_4cuo2")
+raw_text = "愛"
+vocab = SubResource("Resource_w70ii")
+reading = "あい"
+
+[sub_resource type="Resource" id="Resource_ipr3w"]
+script = ExtResource("6_4cuo2")
+raw_text = "と"
+reading = "と"
+
+[sub_resource type="Resource" id="Resource_5a1ek"]
+script = ExtResource("9_atvd2")
+japanese = "平和"
+readings = Array[String](["へいわ"])
+meanings = Array[String](["peace", "harmony"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_yjp5s"]
+script = ExtResource("6_4cuo2")
+raw_text = "平和"
+vocab = SubResource("Resource_5a1ek")
+reading = "へいわ"
+
+[sub_resource type="Resource" id="Resource_jj74w"]
+script = ExtResource("6_4cuo2")
+raw_text = "です"
+reading = "です"
+
+[sub_resource type="Resource" id="Resource_d520p"]
+script = ExtResource("6_4cuo2")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_wlly4"]
+script = ExtResource("5_skt8a")
+japanese = "愛と平和です。"
+native = "Love and Peace."
+parsed = Array[ExtResource("6_4cuo2")]([SubResource("Resource_46475"), SubResource("Resource_ipr3w"), SubResource("Resource_yjp5s"), SubResource("Resource_jj74w"), SubResource("Resource_d520p")])
+_difficulty = 287
+_used_kanji = Array[String](["愛", "平", "和"])
+
+[sub_resource type="Resource" id="Resource_vhr4g"]
+script = ExtResource("6_4cuo2")
+raw_text = "これ"
+reading = "これ"
+
+[sub_resource type="Resource" id="Resource_wss08"]
+script = ExtResource("6_4cuo2")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_garwl"]
+script = ExtResource("6_4cuo2")
+raw_text = "愛"
+vocab = SubResource("Resource_w70ii")
+reading = "あい"
+
+[sub_resource type="Resource" id="Resource_nylcg"]
+script = ExtResource("6_4cuo2")
+raw_text = "な"
+reading = "な"
+
+[sub_resource type="Resource" id="Resource_ltohc"]
+script = ExtResource("6_4cuo2")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_hx4tp"]
+script = ExtResource("6_4cuo2")
+raw_text = "か"
+reading = "か"
+
+[sub_resource type="Resource" id="Resource_f5dvu"]
+script = ExtResource("6_4cuo2")
+raw_text = "？"
+reading = "？"
+
+[sub_resource type="Resource" id="Resource_wcmjg"]
+script = ExtResource("5_skt8a")
+japanese = "これが愛なのか？"
+native = "Is this love?"
+parsed = Array[ExtResource("6_4cuo2")]([SubResource("Resource_vhr4g"), SubResource("Resource_wss08"), SubResource("Resource_garwl"), SubResource("Resource_nylcg"), SubResource("Resource_ltohc"), SubResource("Resource_hx4tp"), SubResource("Resource_f5dvu")])
+_difficulty = 289
+_used_kanji = Array[String](["愛"])
+
+[sub_resource type="Resource" id="Resource_qt80v"]
+script = ExtResource("9_atvd2")
+japanese = "心から"
+readings = Array[String](["こころから", "しんから"])
+meanings = Array[String](["from the bottom of one's heart", "heartily", "sincerely"])
+
+[sub_resource type="Resource" id="Resource_351kx"]
+script = ExtResource("6_4cuo2")
+raw_text = "心から"
+vocab = SubResource("Resource_qt80v")
+reading = "こころから"
+
+[sub_resource type="Resource" id="Resource_62lfx"]
+script = ExtResource("6_4cuo2")
+raw_text = "愛し"
+vocab = SubResource("Resource_4cuo2")
+reading = "あいし"
+
+[sub_resource type="Resource" id="Resource_7bcv1"]
+script = ExtResource("6_4cuo2")
+raw_text = "てる"
+reading = "てる"
+
+[sub_resource type="Resource" id="Resource_2fjqt"]
+script = ExtResource("6_4cuo2")
+raw_text = "よ"
+reading = "よ"
+
+[sub_resource type="Resource" id="Resource_gdhm8"]
+script = ExtResource("6_4cuo2")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_qmqal"]
+script = ExtResource("5_skt8a")
+japanese = "心から愛してるよ。"
+native = "I love you from the bottom of my heart."
+parsed = Array[ExtResource("6_4cuo2")]([SubResource("Resource_351kx"), SubResource("Resource_62lfx"), SubResource("Resource_7bcv1"), SubResource("Resource_2fjqt"), SubResource("Resource_gdhm8")])
+_difficulty = 294
+_used_kanji = Array[String](["心", "愛"])
+
+[sub_resource type="Resource" id="Resource_why88"]
+script = ExtResource("9_atvd2")
+japanese = "相思相愛"
+readings = Array[String](["そうしそうあい"])
+meanings = Array[String](["mutual love"])
+
+[sub_resource type="Resource" id="Resource_2ul8h"]
+script = ExtResource("6_4cuo2")
+raw_text = "相思相愛"
+vocab = SubResource("Resource_why88")
+reading = "そうしそうあい"
+
+[sub_resource type="Resource" id="Resource_j84e8"]
+script = ExtResource("6_4cuo2")
+raw_text = "です"
+reading = "です"
+
+[sub_resource type="Resource" id="Resource_mwglo"]
+script = ExtResource("6_4cuo2")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_gok0b"]
+script = ExtResource("5_skt8a")
+japanese = "相思相愛です。"
+native = "I love him and he loves me."
+parsed = Array[ExtResource("6_4cuo2")]([SubResource("Resource_2ul8h"), SubResource("Resource_j84e8"), SubResource("Resource_mwglo")])
+_difficulty = 294
+_used_kanji = Array[String](["相", "思", "愛"])
+
+[sub_resource type="Resource" id="Resource_ckm5l"]
+script = ExtResource("6_4cuo2")
+raw_text = "愛"
+vocab = SubResource("Resource_w70ii")
+reading = "あい"
+
+[sub_resource type="Resource" id="Resource_lt2kf"]
+script = ExtResource("6_4cuo2")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_ydal2"]
+script = ExtResource("9_atvd2")
+japanese = "信じる"
+readings = Array[String](["しんじる"])
+meanings = Array[String](["to believe", "to believe in", "to place trust in", "to confide in", "to have faith in"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_xb18p"]
+script = ExtResource("6_4cuo2")
+raw_text = "信じ"
+vocab = SubResource("Resource_ydal2")
+reading = "しんじ"
+
+[sub_resource type="Resource" id="Resource_f8g7m"]
+script = ExtResource("6_4cuo2")
+raw_text = "ます"
+reading = "ます"
+
+[sub_resource type="Resource" id="Resource_b34b8"]
+script = ExtResource("6_4cuo2")
+raw_text = "か"
+reading = "か"
+
+[sub_resource type="Resource" id="Resource_0hoi1"]
+script = ExtResource("6_4cuo2")
+raw_text = "？"
+reading = "？"
+
+[sub_resource type="Resource" id="Resource_04uac"]
+script = ExtResource("5_skt8a")
+japanese = "愛を信じますか？"
+native = "Do you believe in love?"
+parsed = Array[ExtResource("6_4cuo2")]([SubResource("Resource_ckm5l"), SubResource("Resource_lt2kf"), SubResource("Resource_xb18p"), SubResource("Resource_f8g7m"), SubResource("Resource_b34b8"), SubResource("Resource_0hoi1")])
+_difficulty = 306
+_used_kanji = Array[String](["愛", "信"])
+
+[sub_resource type="Resource" id="Resource_ky3j5"]
+script = ExtResource("6_4cuo2")
+raw_text = "それ"
+reading = "それ"
+
+[sub_resource type="Resource" id="Resource_kx4xv"]
+script = ExtResource("6_4cuo2")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_aq0c2"]
+script = ExtResource("9_atvd2")
+japanese = "真実"
+readings = Array[String](["しんじつ", "しんじち"])
+meanings = Array[String](["truth", "reality", "truly", "really", "absolute truth"])
+jlpt_level = 1
+
+[sub_resource type="Resource" id="Resource_5yq5m"]
+script = ExtResource("6_4cuo2")
+raw_text = "真実"
+vocab = SubResource("Resource_aq0c2")
+reading = "しんじつ"
+
+[sub_resource type="Resource" id="Resource_2tqyf"]
+script = ExtResource("6_4cuo2")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_hiyoo"]
+script = ExtResource("6_4cuo2")
+raw_text = "愛"
+vocab = SubResource("Resource_w70ii")
+reading = "あい"
+
+[sub_resource type="Resource" id="Resource_hh5ic"]
+script = ExtResource("6_4cuo2")
+raw_text = "だ"
+reading = "だ"
+
+[sub_resource type="Resource" id="Resource_gvf04"]
+script = ExtResource("6_4cuo2")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_vg56a"]
+script = ExtResource("5_skt8a")
+japanese = "それは真実の愛だ。"
+native = "That's true love."
+parsed = Array[ExtResource("6_4cuo2")]([SubResource("Resource_ky3j5"), SubResource("Resource_kx4xv"), SubResource("Resource_5yq5m"), SubResource("Resource_2tqyf"), SubResource("Resource_hiyoo"), SubResource("Resource_hh5ic"), SubResource("Resource_gvf04")])
+_difficulty = 320
+_used_kanji = Array[String](["真", "実", "愛"])
+
+[sub_resource type="Resource" id="Resource_a23n4"]
+script = ExtResource("6_4cuo2")
+raw_text = "すごく"
+reading = "すごく"
+
+[sub_resource type="Resource" id="Resource_rr175"]
+script = ExtResource("9_atvd2")
+japanese = "可愛い"
+readings = Array[String](["かわいい", "かわいーい", "かわーい", "かわえー"])
+meanings = Array[String](["cute", "adorable", "charming", "lovely", "pretty", "dear", "precious", "darling", "pet", "innocent", "childlike", "childish", "lovable", "dainty", "little", "tiny"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_hy271"]
+script = ExtResource("6_4cuo2")
+raw_text = "可愛い"
+vocab = SubResource("Resource_rr175")
+reading = "かわいい"
+
+[sub_resource type="Resource" id="Resource_uv5mh"]
+script = ExtResource("6_4cuo2")
+raw_text = "歌"
+reading = "うた"
+
+[sub_resource type="Resource" id="Resource_qq2nd"]
+script = ExtResource("6_4cuo2")
+raw_text = "でし"
+reading = "でし"
+
+[sub_resource type="Resource" id="Resource_inhq8"]
+script = ExtResource("6_4cuo2")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_xfhlv"]
+script = ExtResource("6_4cuo2")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_qa4ps"]
+script = ExtResource("5_skt8a")
+japanese = "すごく可愛い歌でした。"
+native = "That was a really cute song."
+parsed = Array[ExtResource("6_4cuo2")]([SubResource("Resource_a23n4"), SubResource("Resource_hy271"), SubResource("Resource_uv5mh"), SubResource("Resource_qq2nd"), SubResource("Resource_inhq8"), SubResource("Resource_xfhlv")])
+_difficulty = 391
+_used_kanji = Array[String](["可", "愛", "歌"])
+
+[sub_resource type="Resource" id="Resource_pwsre"]
+script = ExtResource("9_atvd2")
+readings = Array[String](["ふたり"])
+meanings = Array[String](["two people"])
+
+[sub_resource type="Resource" id="Resource_pg4jx"]
+script = ExtResource("6_4cuo2")
+raw_text = "二人"
+vocab = SubResource("Resource_pwsre")
+reading = "ふたり"
+
+[sub_resource type="Resource" id="Resource_2tomc"]
+script = ExtResource("6_4cuo2")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_874wq"]
+script = ExtResource("6_4cuo2")
+raw_text = "相思相愛"
+vocab = SubResource("Resource_why88")
+reading = "そうしそうあい"
+
+[sub_resource type="Resource" id="Resource_j54o8"]
+script = ExtResource("6_4cuo2")
+raw_text = "な"
+reading = "な"
+
+[sub_resource type="Resource" id="Resource_q6esp"]
+script = ExtResource("6_4cuo2")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_n8yjq"]
+script = ExtResource("6_4cuo2")
+raw_text = "よ"
+reading = "よ"
+
+[sub_resource type="Resource" id="Resource_b35j2"]
+script = ExtResource("6_4cuo2")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_7uobo"]
+script = ExtResource("5_skt8a")
+japanese = "二人は相思相愛なのよ。"
+native = "They love each other."
+parsed = Array[ExtResource("6_4cuo2")]([SubResource("Resource_pg4jx"), SubResource("Resource_2tomc"), SubResource("Resource_874wq"), SubResource("Resource_j54o8"), SubResource("Resource_q6esp"), SubResource("Resource_n8yjq"), SubResource("Resource_b35j2")])
+_difficulty = 409
+_used_kanji = Array[String](["二", "人", "相", "思", "愛"])
+
+[sub_resource type="Resource" id="Resource_skt8a"]
+script = ExtResource("7_4cuo2")
+points = Array[Vector2]([Vector2(59.38, 8.75), Vector2(56.58, 11.81), Vector2(52.75, 13.75), Vector2(47.55, 15.86), Vector2(41.37, 17.97), Vector2(34.55, 19.89)])
+
+[sub_resource type="Resource" id="Resource_kqnpa"]
+script = ExtResource("7_4cuo2")
+points = Array[Vector2]([Vector2(32.12, 23.38), Vector2(37.14, 27.01), Vector2(40.43, 31.3)])
+
+[sub_resource type="Resource" id="Resource_ey1r1"]
+script = ExtResource("7_4cuo2")
+points = Array[Vector2]([Vector2(48.17, 22.31), Vector2(52.72, 25.68), Vector2(55.77, 29.59)])
+
+[sub_resource type="Resource" id="Resource_ne72w"]
+script = ExtResource("7_4cuo2")
+points = Array[Vector2]([Vector2(75.86, 18.37), Vector2(73.27, 22.74), Vector2(68.67, 26.88), Vector2(62.27, 31.5)])
+
+[sub_resource type="Resource" id="Resource_atvd2"]
+script = ExtResource("7_4cuo2")
+points = Array[Vector2]([Vector2(17.99, 38.24), Vector2(16.91, 45.8), Vector2(15.27, 52.32)])
+
+[sub_resource type="Resource" id="Resource_ig232"]
+script = ExtResource("7_4cuo2")
+points = Array[Vector2]([Vector2(18.36, 39.68), Vector2(22.61, 39.21), Vector2(27.23, 38.67), Vector2(32.14, 38.09), Vector2(37.3, 37.46), Vector2(42.64, 36.81), Vector2(48.11, 36.16), Vector2(53.65, 35.52), Vector2(59.21, 34.9), Vector2(64.72, 34.31), Vector2(70.12, 33.78), Vector2(75.37, 33.32), Vector2(80.4, 32.94), Vector2(85.15, 32.66), Vector2(91.95, 32.89), Vector2(93.7, 35.41), Vector2(90.5, 38.97), Vector2(86.36, 41.84)])
+
+[sub_resource type="Resource" id="Resource_iyvur"]
+script = ExtResource("7_4cuo2")
+points = Array[Vector2]([Vector2(29.53, 46.89), Vector2(28.44, 51.8), Vector2(26.06, 57.46)])
+
+[sub_resource type="Resource" id="Resource_tsec8"]
+script = ExtResource("7_4cuo2")
+points = Array[Vector2]([Vector2(39.78, 45.13), Vector2(42.44, 48.59), Vector2(45.4, 51.46), Vector2(48.86, 53.74), Vector2(53.01, 55.46), Vector2(58.04, 56.62), Vector2(64.16, 57.24), Vector2(71.57, 57.33), Vector2(78.66, 56.14), Vector2(77.16, 52.6)])
+
+[sub_resource type="Resource" id="Resource_pdx4s"]
+script = ExtResource("7_4cuo2")
+points = Array[Vector2]([Vector2(53.13, 42.75), Vector2(56.16, 46.35), Vector2(58.71, 45.88)])
+
+[sub_resource type="Resource" id="Resource_uomuc"]
+script = ExtResource("7_4cuo2")
+points = Array[Vector2]([Vector2(72.97, 40.61), Vector2(77.23, 43.67), Vector2(81, 48.16)])
+
+[sub_resource type="Resource" id="Resource_cus5a"]
+script = ExtResource("7_4cuo2")
+points = Array[Vector2]([Vector2(41.78, 60.53), Vector2(40.6, 65.17), Vector2(38.07, 69.2), Vector2(34.36, 73.71), Vector2(29.66, 78.22), Vector2(24.12, 82.25)])
+
+[sub_resource type="Resource" id="Resource_i1jql"]
+script = ExtResource("7_4cuo2")
+points = Array[Vector2]([Vector2(42.58, 67.93), Vector2(47.66, 67.63), Vector2(52.68, 66.84), Vector2(57.91, 65.79), Vector2(63.23, 64.6), Vector2(68.39, 64.74), Vector2(67.7, 68.97), Vector2(65.86, 71.46), Vector2(63.34, 74.35), Vector2(60.2, 77.52), Vector2(56.49, 80.86), Vector2(52.28, 84.27), Vector2(47.61, 87.62), Vector2(42.55, 90.81), Vector2(37.15, 93.73), Vector2(31.47, 96.26), Vector2(25.57, 98.29), Vector2(19.5, 99.72)])
+
+[sub_resource type="Resource" id="Resource_tstnb"]
+script = ExtResource("7_4cuo2")
+points = Array[Vector2]([Vector2(39.1, 73.3), Vector2(42.74, 74.33), Vector2(47.07, 76.25), Vector2(51.89, 78.84), Vector2(56.99, 81.85), Vector2(62.18, 85.05), Vector2(67.25, 88.22), Vector2(72, 91.12), Vector2(76.37, 93.58), Vector2(81.21, 95.73), Vector2(86.38, 97)])
+
+[sub_resource type="Resource" id="Resource_lkyho"]
+script = ExtResource("6_emy3y")
+stroke_shapes = Array[ExtResource("7_4cuo2")]([SubResource("Resource_skt8a"), SubResource("Resource_kqnpa"), SubResource("Resource_ey1r1"), SubResource("Resource_ne72w"), SubResource("Resource_atvd2"), SubResource("Resource_ig232"), SubResource("Resource_iyvur"), SubResource("Resource_tsec8"), SubResource("Resource_pdx4s"), SubResource("Resource_uomuc"), SubResource("Resource_cus5a"), SubResource("Resource_i1jql"), SubResource("Resource_tstnb")])
+
+[sub_resource type="Resource" id="Resource_2cuw7"]
+script = ExtResource("9_atvd2")
+japanese = "可愛い"
+readings = Array[String](["かわいい"])
+meanings = Array[String](["cute", "adorable", "lovely", "sweet", "pretty"])
+jlpt_level = 5
+_difficulty = 3
+_used_kanji = Array[String](["可", "愛"])
+
+[sub_resource type="Resource" id="Resource_ldbjt"]
+script = ExtResource("9_atvd2")
+japanese = "愛"
+readings = Array[String](["あい"])
+meanings = Array[String](["love", "affection", "care", "attachment", "craving", "desire"])
+jlpt_level = 3
+_difficulty = 61
+_used_kanji = Array[String](["愛"])
+
+[sub_resource type="Resource" id="Resource_tpego"]
+script = ExtResource("9_atvd2")
+japanese = "愛情"
+readings = Array[String](["あいじょう"])
+meanings = Array[String](["love", "affection"])
+jlpt_level = 3
+_difficulty = 62
+_used_kanji = Array[String](["愛", "情"])
+
+[sub_resource type="Resource" id="Resource_nd8a0"]
+script = ExtResource("9_atvd2")
+japanese = "愛する"
+readings = Array[String](["あいする"])
+meanings = Array[String](["to love"])
+jlpt_level = 3
+_difficulty = 63
+_used_kanji = Array[String](["愛"])
+
+[sub_resource type="Resource" id="Resource_4uegh"]
+script = ExtResource("9_atvd2")
+japanese = "可愛がる"
+readings = Array[String](["かわいがる"])
+meanings = Array[String](["to be affectionate to", "to treat tenderly", "to dote on", "to cherish", "to show favouritism to", "to be partial to", "to fondle", "to caress", "to pet"])
+jlpt_level = 2
+_difficulty = 94
+_used_kanji = Array[String](["可", "愛"])
+
+[sub_resource type="Resource" id="Resource_7w866"]
+script = ExtResource("9_atvd2")
+japanese = "愛憎"
+readings = Array[String](["あいぞう"])
+meanings = Array[String](["love and hate"])
+jlpt_level = 1
+_difficulty = 122
+_used_kanji = Array[String](["愛", "憎"])
+
+[sub_resource type="Resource" id="Resource_s5321"]
+script = ExtResource("9_atvd2")
+japanese = "愛想"
+readings = Array[String](["あいそ", "あいそう"])
+meanings = Array[String](["amiability", "friendliness", "affability", "sociability", "fondness", "affection", "liking", "compliments", "courtesies", "flattery", "hospitality"])
+jlpt_level = 1
+_difficulty = 122
+_used_kanji = Array[String](["愛", "想"])
+
+[sub_resource type="Resource" id="Resource_8lkrm"]
+script = ExtResource("9_atvd2")
+japanese = "恋愛"
+readings = Array[String](["れんあい"])
+meanings = Array[String](["romantic love", "romance", "tender passion", "emotion", "affections"])
+jlpt_level = 1
+_difficulty = 122
+_used_kanji = Array[String](["恋", "愛"])
+
+[sub_resource type="Resource" id="Resource_keqm2"]
+script = ExtResource("9_atvd2")
+japanese = "愛す"
+readings = Array[String](["あいす"])
+meanings = Array[String](["to love"])
+_difficulty = 540
+_used_kanji = Array[String](["愛"])
+
+[sub_resource type="Resource" id="Resource_bnj44"]
+script = ExtResource("9_atvd2")
+japanese = "愛人"
+readings = Array[String](["あいじん"])
+meanings = Array[String](["lover", "mistress"])
+_difficulty = 638
+_used_kanji = Array[String](["愛", "人"])
+
+[sub_resource type="Resource" id="Resource_cyqeg"]
+script = ExtResource("9_atvd2")
+japanese = "愛称"
+readings = Array[String](["あいしょう"])
+meanings = Array[String](["pet name", "nickname", "affectionate name", "term of endearment"])
+_difficulty = 640
+_used_kanji = Array[String](["愛", "称"])
+
+[sub_resource type="Resource" id="Resource_e8mvj"]
+script = ExtResource("9_atvd2")
+japanese = "愛しい"
+readings = Array[String](["いとしい"])
+meanings = Array[String](["beloved", "lovely", "dear", "darling", "dearest", "pitiable", "pitiful"])
+_difficulty = 644
+_used_kanji = Array[String](["愛"])
+
+[sub_resource type="Resource" id="Resource_bykfx"]
+script = ExtResource("9_atvd2")
+japanese = "最愛"
+readings = Array[String](["さいあい"])
+meanings = Array[String](["beloved", "dearest"])
+_difficulty = 664
+_used_kanji = Array[String](["最", "愛"])
+
+[sub_resource type="Resource" id="Resource_4dji6"]
+script = ExtResource("9_atvd2")
+japanese = "親愛"
+readings = Array[String](["しんあい"])
+meanings = Array[String](["deep affection", "dear", "beloved"])
+_difficulty = 670
+_used_kanji = Array[String](["親", "愛"])
+
+[sub_resource type="Resource" id="Resource_rotaa"]
+script = ExtResource("9_atvd2")
+japanese = "愛用"
+readings = Array[String](["あいよう"])
+meanings = Array[String](["favorite", "habitually used"])
+_difficulty = 686
+_used_kanji = Array[String](["愛", "用"])
+
+[sub_resource type="Resource" id="Resource_kqggy"]
+script = ExtResource("9_atvd2")
+japanese = "愛好"
+readings = Array[String](["あいこう"])
+meanings = Array[String](["love", "adoration", "being fond of", "having a passion for"])
+_difficulty = 739
+_used_kanji = Array[String](["愛", "好"])
+
+[sub_resource type="Resource" id="Resource_dc16t"]
+script = ExtResource("9_atvd2")
+japanese = "同性愛"
+readings = Array[String](["どうせいあい"])
+meanings = Array[String](["homosexuality", "homosexual love"])
+_difficulty = 747
+_used_kanji = Array[String](["同", "性", "愛"])
+
+[sub_resource type="Resource" id="Resource_lw8ew"]
+script = ExtResource("9_atvd2")
+japanese = "愛国"
+readings = Array[String](["あいこく"])
+meanings = Array[String](["patriotism"])
+_difficulty = 760
+_used_kanji = Array[String](["愛", "国"])
+
+[sub_resource type="Resource" id="Resource_5lhlw"]
+script = ExtResource("9_atvd2")
+japanese = "愛嬌"
+readings = Array[String](["あいきょう"])
+meanings = Array[String](["charm", "attractiveness", "amiability", "winsomeness", "courtesy", "ingratiating behaviour", "entertainment", "amusement", "fun"])
+_difficulty = 770
+_used_kanji = Array[String](["愛", "嬌"])
+
+[resource]
+script = ExtResource("6_kqnpa")
+symbol = "愛"
+card_name = "Love"
+rarity = 2
+abilities = Array[ExtResource("1_ux282")]([SubResource("Resource_egrnu"), SubResource("Resource_0eiya")])
+tags = Array[int]([7, 21, 17])
+vocabulary = Array[ExtResource("9_atvd2")]([SubResource("Resource_2cuw7"), SubResource("Resource_ldbjt"), SubResource("Resource_tpego"), SubResource("Resource_nd8a0"), SubResource("Resource_4uegh"), SubResource("Resource_7w866"), SubResource("Resource_s5321"), SubResource("Resource_8lkrm"), SubResource("Resource_keqm2"), SubResource("Resource_bnj44"), SubResource("Resource_cyqeg"), SubResource("Resource_e8mvj"), SubResource("Resource_bykfx"), SubResource("Resource_4dji6"), SubResource("Resource_rotaa"), SubResource("Resource_kqggy"), SubResource("Resource_dc16t"), SubResource("Resource_lw8ew"), SubResource("Resource_5lhlw")])
+example_sentences = Array[ExtResource("5_skt8a")]([SubResource("Resource_cijr2"), SubResource("Resource_vkrjc"), SubResource("Resource_fvvp5"), SubResource("Resource_wlly4"), SubResource("Resource_wcmjg"), SubResource("Resource_qmqal"), SubResource("Resource_gok0b"), SubResource("Resource_04uac"), SubResource("Resource_vg56a"), SubResource("Resource_qa4ps"), SubResource("Resource_7uobo")])
+kanji_shape = SubResource("Resource_lkyho")
+init_aspects = 80
+term_categories = Array[ExtResource("7_ey1r1")]([ExtResource("8_ne72w")])

@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://ci10ijxi2cwfw"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_vrfqi"]
+[ext_resource type="Resource" uid="uid://csqqncq7572gr" path="res://stage/spots/wasteland/upgrade_wasteland_3_storm_castle.tres" id="2_qi0sg"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="4_52nql"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="4_vrfqi"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="5_7dm78"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="6_7k3oy"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="7_mvvvd"]
+[ext_resource type="Resource" uid="uid://ouecqwnbe55w" path="res://stage/spots/wasteland/spot_wasteland.tres" id="8_3b535"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_vmv7e"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://btov06kt3g6gm" path="res://map/sprites/spots/wasteland/mst_wasteland_stormchaser_camp.tres" id="10_w58mt"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://d27evmqjpejqb" path="res://map/sprites/spots/wasteland/mst_wasteland_salt_flats.tres" id="11_m0vld"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="12_s7kps"]
+
+[sub_resource type="Resource" id="Resource_hje2e"]
+script = ExtResource("12_s7kps")
+old_sprite_type = ExtResource("11_m0vld")
+new_sprite_type = ExtResource("10_w58mt")
+biome = 3
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_vrfqi")
+spot_upgrade_id = "wasteland_storm_camp"
+name = "Storm Chaser Camp"
+description = "The scholars gathered here believe that the Shattering can be understood by studying the storms."
+required_aspects = Array[ExtResource("6_7k3oy")]([ExtResource("7_mvvvd")])
+granted_bonuses = Dictionary[ExtResource("4_52nql"), int]({
+ExtResource("4_vrfqi"): 10,
+ExtResource("5_7dm78"): 10
+})
+child_upgrades = Array[ExtResource("1_vrfqi")]([ExtResource("2_qi0sg")])
+spot = ExtResource("8_3b535")
+visuals = Array[ExtResource("9_vmv7e")]([SubResource("Resource_hje2e")])

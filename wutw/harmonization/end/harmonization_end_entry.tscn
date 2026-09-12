@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnanspy84rvu6"]
+
+[ext_resource type="Theme" uid="uid://bneu0powe6n80" path="res://theme/theme_ukiyoe.tres" id="1_sbhfd"]
+[ext_resource type="Script" uid="uid://cut6dph7o2g51" path="res://harmonization/end/harmonization_end_entry.gd" id="2_5us26"]
+[ext_resource type="Texture2D" uid="uid://d3sukw4scgcir" path="res://run/inspiration.png" id="3_4dasg"]
+[ext_resource type="FontFile" uid="uid://d357sc75ncblr" path="res://theme/fonts/Merienda/static/Merienda-Black.ttf" id="3_4yx0f"]
+
+[node name="HarmonizationEndEntry" type="VBoxContainer"]
+offset_right = 712.0
+offset_bottom = 25.0
+mouse_filter = 0
+theme = ExtResource("1_sbhfd")
+script = ExtResource("2_5us26")
+
+[node name="LabelContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="LabelContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 0.694118)
+theme_override_fonts/font = ExtResource("3_4yx0f")
+text = "The Forgotten Orchard: "
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters_behavior = 1
+
+[node name="ResultLabel" type="Label" parent="LabelContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 0.694118)
+text = "Food and Harmony shortages unsatisfied."
+visible_characters_behavior = 1
+
+[node name="InspirationBox" type="HBoxContainer" parent="LabelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="InspirationLabel" type="Label" parent="LabelContainer/InspirationBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.501961, 0, 0, 1)
+text = "-2"
+horizontal_alignment = 2
+visible_characters_behavior = 1
+
+[node name="Icon" type="TextureRect" parent="LabelContainer/InspirationBox"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 10
+mouse_filter = 2
+texture = ExtResource("3_4dasg")
+expand_mode = 3
+
+[node name="InspirationHintLabel" type="Label" parent="LabelContainer/InspirationBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.501961, 0, 0, 1)
+text = "Inspiration"
+visible_characters_behavior = 1

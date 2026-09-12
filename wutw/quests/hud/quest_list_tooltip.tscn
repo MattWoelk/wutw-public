@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://coeucy3xtcfmi"]
+
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="1_ir0qn"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="4_wkkbi"]
+[ext_resource type="Script" uid="uid://c6pl5ab17v7i6" path="res://quests/hud/quest_list_tooltip.gd" id="5_egkyu"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="6_85h5l"]
+[ext_resource type="Script" uid="uid://dm63mtrlfj005" path="res://theme/faded_scroll_container/faded_scroll_container.gd" id="6_egkyu"]
+[ext_resource type="FontFile" uid="uid://4akk8wkhg56y" path="res://theme/fonts/Merienda/static/Merienda-ExtraBold.ttf" id="6_reqbc"]
+[ext_resource type="Shader" uid="uid://ygmrqrvg5hpm" path="res://theme/button/ukiyoe_button.gdshader" id="7_tgiop"]
+[ext_resource type="Texture2D" uid="uid://ctgl61r3xxsqv" path="res://theme/button/button_fill.png" id="8_48ggm"]
+[ext_resource type="Texture2D" uid="uid://blje81yu8734p" path="res://theme/button/button_shape.png" id="9_2357c"]
+[ext_resource type="Texture2D" uid="uid://doe4603a6ngco" path="res://theme/button/button_outline.png" id="10_tvtdu"]
+[ext_resource type="Texture2D" uid="uid://cwubixgc8n0yr" path="res://theme/button/button_swish_left.png" id="11_lqdna"]
+[ext_resource type="Texture2D" uid="uid://n6l17h4ysayj" path="res://theme/button/button_swish_right.png" id="12_vmjtj"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="13_mr3d0"]
+[ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="14_mnu8i"]
+
+[sub_resource type="Gradient" id="Gradient_j5apj"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wqpyw"]
+gradient = SubResource("Gradient_j5apj")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_reqbc"]
+shader = ExtResource("7_tgiop")
+shader_parameter/mask_tex = ExtResource("9_2357c")
+shader_parameter/background = ExtResource("8_48ggm")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("10_tvtdu")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("12_vmjtj")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("11_lqdna")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[node name="QuestListTooltip" type="PanelContainer" unique_id=1557051975]
+material = ExtResource("1_ir0qn")
+offset_right = 469.0
+offset_bottom = 241.0
+mouse_behavior_recursive = 1
+theme_override_styles/panel = ExtResource("4_wkkbi")
+script = ExtResource("5_egkyu")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=957524992]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=47836762]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1237727434]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("6_reqbc")
+theme_override_font_sizes/font_size = 22
+text = "Quests"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarkedUpLabel" parent="MarginContainer/VBoxContainer" unique_id=1326201659 instance=ExtResource("6_85h5l")]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 3
+mouse_filter = 1
+text = ""
+fit_content = true
+tooltip_directions = Array[int]([5, 3, 1, 0])
+
+[node name="Scroller" type="ScrollContainer" parent="MarginContainer/VBoxContainer" unique_id=455506420]
+unique_name_in_owner = true
+clip_children = 1
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+horizontal_scroll_mode = 0
+script = ExtResource("6_egkyu")
+metadata/_custom_type_script = "uid://dm63mtrlfj005"
+
+[node name="QuestList" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Scroller" unique_id=1609363215]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="QuestEntry" parent="MarginContainer/VBoxContainer/Scroller/QuestList" unique_id=920690417 instance_placeholder="res://quests/list/quest_entry.tscn"]
+layout_mode = 2
+
+[node name="QuestEntry2" parent="MarginContainer/VBoxContainer/Scroller/QuestList" unique_id=1179908579 instance_placeholder="res://quests/list/quest_entry.tscn"]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=2135415936]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_reqbc")
+instance_shader_parameters/background_offset = Vector2(0.908324, 0.3240264)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_styles/normal = ExtResource("13_mr3d0")
+theme_override_styles/pressed = ExtResource("13_mr3d0")
+theme_override_styles/hover = ExtResource("13_mr3d0")
+theme_override_styles/hover_pressed = ExtResource("13_mr3d0")
+theme_override_styles/disabled = ExtResource("13_mr3d0")
+text = "Close"
+script = ExtResource("14_mnu8i")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

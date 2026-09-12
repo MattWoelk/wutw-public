@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://c0vbj77sccws5"]
+
+[ext_resource type="Material" uid="uid://dm0coidukcc6" path="res://theme/button/ukiyoe_button_material.tres" id="1_f6lnp"]
+[ext_resource type="Script" uid="uid://dm04xfes8wcqx" path="res://stage/survey/survey_prep_button.gd" id="2_fxxtq"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="2_tjhbq"]
+[ext_resource type="Shader" uid="uid://ygmrqrvg5hpm" path="res://theme/button/ukiyoe_button.gdshader" id="3_tpwht"]
+[ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="3_u5lip"]
+[ext_resource type="Texture2D" uid="uid://ctgl61r3xxsqv" path="res://theme/button/button_fill.png" id="4_t6xj8"]
+[ext_resource type="Texture2D" uid="uid://blje81yu8734p" path="res://theme/button/button_shape.png" id="5_nwfx7"]
+[ext_resource type="Texture2D" uid="uid://doe4603a6ngco" path="res://theme/button/button_outline.png" id="6_11xrv"]
+[ext_resource type="Texture2D" uid="uid://cwubixgc8n0yr" path="res://theme/button/button_swish_left.png" id="7_36tb2"]
+[ext_resource type="Texture2D" uid="uid://n6l17h4ysayj" path="res://theme/button/button_swish_right.png" id="8_mtq41"]
+[ext_resource type="WwiseEvent" uid="uid://cb88kcuutpvmt" path="res://Wwise/resources/Event/{158E2442-012A-4822-BC23-73BDEE81C212}.tres" id="11_08ksr"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="12_k8r5t"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="13_3apaq"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="14_0ksot"]
+[ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="15_4j04t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wdkn3"]
+
+[sub_resource type="Gradient" id="Gradient_3cav5"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wqpyw"]
+gradient = SubResource("Gradient_3cav5")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qi2xr"]
+shader = ExtResource("3_tpwht")
+shader_parameter/mask_tex = ExtResource("5_nwfx7")
+shader_parameter/background = ExtResource("4_t6xj8")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/outline_tex = ExtResource("6_11xrv")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("8_mtq41")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("7_36tb2")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[node name="SurveyPrepButton" type="VBoxContainer" unique_id=703690899]
+material = ExtResource("1_f6lnp")
+instance_shader_parameters/background_offset = Vector2(0.61875445, 0.6977304)
+instance_shader_parameters/size = Vector2(708.54004, 92.609985)
+instance_shader_parameters/state = 0.0
+offset_right = 482.0
+offset_bottom = 63.0
+script = ExtResource("2_fxxtq")
+action_label = "Do something."
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=828864006]
+z_index = 1
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_wdkn3")
+
+[node name="Button" type="Button" parent="PanelContainer" unique_id=303170082]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_qi2xr")
+instance_shader_parameters/background_offset = Vector2(0.79705834, 0.39209786)
+instance_shader_parameters/size = Vector2(585.5702, 65.6033)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = ExtResource("2_tjhbq")
+theme_override_styles/pressed = ExtResource("2_tjhbq")
+theme_override_styles/hover = ExtResource("2_tjhbq")
+theme_override_styles/hover_pressed = ExtResource("2_tjhbq")
+theme_override_styles/disabled = ExtResource("2_tjhbq")
+alignment = 0
+script = ExtResource("3_u5lip")
+click_sound = ExtResource("11_08ksr")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1253612493]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="ButtonLabel" parent="PanelContainer/MarginContainer" unique_id=1627404269 instance=ExtResource("12_k8r5t")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "[b][lb]20 Food[rb][/b] Pack extra supplies"
+fit_content = true
+vertical_alignment = 1
+
+[node name="OutcomeContainer" type="MarginContainer" parent="." unique_id=1653658711]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = -12
+theme_override_constants/margin_right = 15
+
+[node name="OutcomePanel" type="PanelContainer" parent="OutcomeContainer" unique_id=1862102630]
+unique_name_in_owner = true
+material = ExtResource("13_3apaq")
+instance_shader_parameters/size = Vector2(549.1239, 51.02478)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("14_0ksot")
+script = ExtResource("15_4j04t")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="MarginContainer" type="MarginContainer" parent="OutcomeContainer/OutcomePanel" unique_id=1276147585]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="OutcomeLabel" parent="OutcomeContainer/OutcomePanel/MarginContainer" unique_id=1214475940 instance=ExtResource("12_k8r5t")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+size_flags_horizontal = 1
+text = "[i]Continue the story...[/i]"
+fit_content = true
+
+[connection signal="pressed" from="PanelContainer/Button" to="." method="_on_button_pressed"]

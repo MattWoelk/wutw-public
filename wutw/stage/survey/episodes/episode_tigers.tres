@@ -1,0 +1,113 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://2tp8tisar0oo"]
+
+[ext_resource type="Resource" uid="uid://du8r3ncalkfl5" path="res://art/pieces/piece_shousou_tigers.tres" id="1_f3eko"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_r8l8n"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_f3eko"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_s7p5p"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="4_45h07"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="5_y8wse"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="6_7u8qs"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="7_ki3nm"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="8_hq1k1"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="9_vj8j7"]
+[ext_resource type="Resource" uid="uid://dhal843mubr37" path="res://cards/tier6/card_wound.tres" id="10_7p4le"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="11_njy6p"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="12_4v7hc"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="13_v220v"]
+
+[sub_resource type="Resource" id="Resource_6rma8"]
+script = ExtResource("1_r8l8n")
+_texture_path = "uid://dg7bva8lww8ca"
+_is_horizontal = true
+
+[sub_resource type="Resource" id="Resource_i2sri"]
+script = ExtResource("5_y8wse")
+bonus_type = ExtResource("4_45h07")
+amount = -15
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_vmrt4"]
+script = ExtResource("6_7u8qs")
+bonus_type = ExtResource("4_45h07")
+min_count = 15
+max_count = -1
+extra_per_season = 10
+
+[sub_resource type="Resource" id="Resource_o56kg"]
+script = ExtResource("2_f3eko")
+label = "Throw provisions at the tigers."
+requirement = SubResource("Resource_vmrt4")
+aspects = Array[ExtResource("3_s7p5p")]([null])
+aspects_per_season = Array[ExtResource("3_s7p5p")]([null])
+outcome = SubResource("Resource_i2sri")
+outcome_text = "One of the scouts removes some food from his pack and hurls it towards the tigers' feet.
+
+The cubs step forward, sniffing, to investigate, and the group slowly retreats.
+
+The tigress follows them for a distance, waiting for more food, but eventually gives up, returning to her cubs."
+
+[sub_resource type="Resource" id="Resource_iee1s"]
+script = ExtResource("5_y8wse")
+bonus_type = ExtResource("8_hq1k1")
+amount = -15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_iv1vl"]
+script = ExtResource("2_f3eko")
+label = "Light a torch."
+aspects = Array[ExtResource("3_s7p5p")]([ExtResource("7_ki3nm")])
+aspects_per_season = Array[ExtResource("3_s7p5p")]([null])
+outcome = SubResource("Resource_iee1s")
+outcome_text = "The explorers quickly light their torches. The tigers, wary, back up.
+
+One scout, her hands trembling, accidentally drops hers.
+
+The dry grass begins to smoulder and the group is forced to abandon their route and race ahead of the spreading fire."
+
+[sub_resource type="Resource" id="Resource_j7d8j"]
+script = ExtResource("5_y8wse")
+bonus_type = ExtResource("8_hq1k1")
+amount = 10
+extra_per_season = 5
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_jqltq"]
+script = ExtResource("2_f3eko")
+label = "Watch the tigers' behavior."
+aspects = Array[ExtResource("3_s7p5p")]([ExtResource("9_vj8j7")])
+aspects_per_season = Array[ExtResource("3_s7p5p")]([null])
+outcome = SubResource("Resource_j7d8j")
+outcome_text = "The group remains motionless, cautiously observing the beasts.
+
+One scout slowly points behind him. Lying on top of a patch of flattened grass is a fresh animal carcass. 
+
+The group slowly moves out of the tigers' way, and are ignored as a reward."
+
+[sub_resource type="Resource" id="Resource_atoiu"]
+script = ExtResource("11_njy6p")
+card_type = ExtResource("10_7p4le")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_n75vl"]
+script = ExtResource("2_f3eko")
+label = "Run away."
+aspects = Array[ExtResource("3_s7p5p")]([null, null])
+outcome = SubResource("Resource_atoiu")
+outcome_text = "Panicked, the scouts run, all scattering in different directions.
+
+The tigress immediately pursues the slowest moving surveyor. 
+
+He ends up injured, but is rescued when the rest of the scouts fling stones to scare the tigers away."
+
+[resource]
+script = ExtResource("12_4v7hc")
+episode_id = "tigers"
+title = "The Tigers"
+biome_types = Array[int]([5, 8, 4, 9, 6])
+text = "The scouts begin to notice an unusual silence in the air. The birds and insects have suddenly grown quiet.
+
+As they press forward, a tigress emerges through the tall grass with three nearly-grown cubs behind her. She growls, watching the surveyors intently."
+background_image = SubResource("Resource_6rma8")
+background_credit = ExtResource("1_f3eko")
+choices = Array[ExtResource("2_f3eko")]([SubResource("Resource_o56kg"), SubResource("Resource_iv1vl"), SubResource("Resource_jqltq"), SubResource("Resource_n75vl")])

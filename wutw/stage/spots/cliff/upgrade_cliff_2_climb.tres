@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://cygw853p5tc64"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_136lr"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_dadid"]
+[ext_resource type="Resource" uid="uid://b7v0xymh0kmyw" path="res://stage/spots/cliff/upgrade_cliff_3_stair.tres" id="2_kfgbr"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="3_kfgbr"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="4_kabxd"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="4_koa4y"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="5_l20ap"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="7_ar0ge"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="8_1voag"]
+[ext_resource type="Resource" uid="uid://bom6dwl3t2obc" path="res://stage/spots/cliff/spot_cliff.tres" id="10_xreyp"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="11_rocv4"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://djerja2u1qwfd" path="res://map/sprites/spots/cliff/mst_cliff_climbing_trial.tres" id="12_fgsth"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://bdjf7ed7joala" path="res://map/sprites/spots/cliff/mst_cliff_bird_nesting_cliff.tres" id="13_toext"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="14_yexrt"]
+
+[sub_resource type="Resource" id="Resource_g85ox"]
+script = ExtResource("14_yexrt")
+old_sprite_type = ExtResource("13_toext")
+new_sprite_type = ExtResource("12_fgsth")
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_136lr")
+spot_upgrade_id = "cliff_climbing_trial"
+name = "Climbing Trial"
+description = "Old ropes hang from pegs pounded into the rock. An invitation to test one's mettle."
+required_aspects = Array[ExtResource("4_koa4y")]([ExtResource("7_ar0ge"), ExtResource("8_1voag")])
+granted_bonuses = Dictionary[ExtResource("2_dadid"), int]({
+ExtResource("4_kabxd"): 15,
+ExtResource("5_l20ap"): -5,
+ExtResource("3_kfgbr"): 5
+})
+child_upgrades = Array[ExtResource("1_136lr")]([ExtResource("2_kfgbr")])
+spot = ExtResource("10_xreyp")
+visuals = Array[ExtResource("11_rocv4")]([SubResource("Resource_g85ox")])

@@ -1,0 +1,31 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://cn80vua452hy5"]
+
+[ext_resource type="MapSpriteType_Composite" uid="uid://cdowhv53swx83" path="res://map/sprites/spots/plains/mst_plains_buckwheat_field.tres" id="2_fygg6"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://dboe6k87s7hni" path="res://map/sprites/spots/desert/mst_desert_cactus_forest.tres" id="9_fqe5p"]
+
+[sub_resource type="MapSpriteCollision_Circle" id="MapSpriteCollision_Circle_fygg6"]
+center = Vector2(-0.285, -1.36)
+radius = 2.195
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Triangle" id="MapSpriteCollision_Triangle_bol2t"]
+p1 = Vector2(-3.01, 3.035)
+p2 = Vector2(1, 0)
+p3 = Vector2(-10.24, -0.47)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Rect" id="MapSpriteCollision_Rect_it17e"]
+rect = Rect2(-10.29, -1.465, 9.09, 1.52)
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_wgrcm"]
+sprite_type = ExtResource("9_fqe5p")
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_7gjug"]
+sprite_type = ExtResource("2_fygg6")
+offset = Vector2(-5.795, 0.12)
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_wgrcm"), SubResource("MapSpriteComponent_7gjug")])
+footprint_radius = 3.19
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Circle_fygg6"), SubResource("MapSpriteCollision_Triangle_bol2t"), SubResource("MapSpriteCollision_Rect_it17e")])

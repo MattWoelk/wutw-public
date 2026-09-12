@@ -1,0 +1,197 @@
+[gd_scene format=3 uid="uid://cfkeqf863p7wy"]
+
+[ext_resource type="Script" uid="uid://cjkind32lli0e" path="res://map/settlement_list/settlement_list.gd" id="1_an54s"]
+[ext_resource type="PackedScene" uid="uid://byk0q0ccedhx0" path="res://theme/scroll_panel/scroll_panel.tscn" id="2_72y2i"]
+[ext_resource type="FontFile" uid="uid://4akk8wkhg56y" path="res://theme/fonts/Merienda/static/Merienda-ExtraBold.ttf" id="2_tg40w"]
+[ext_resource type="Shader" uid="uid://bbe7ginxustev" path="res://theme/scroll_panel/scroll_panel_dowel.gdshader" id="3_31p3e"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="3_rxacy"]
+[ext_resource type="Texture2D" uid="uid://b0cvn7ev1bwut" path="res://theme/scroll_panel/dowel_wood.png" id="4_6o4xu"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="5_bnxfs"]
+[ext_resource type="Script" uid="uid://dm63mtrlfj005" path="res://theme/faded_scroll_container/faded_scroll_container.gd" id="8_72y2i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jxt03"]
+
+[sub_resource type="Gradient" id="Gradient_ofyuc"]
+offsets = PackedFloat32Array(0, 0.196721, 0.460041, 0.525615, 0.603484, 0.732582, 1)
+colors = PackedColorArray(0.59, 0.43424, 0.3068, 0.796078, 0.48, 0.35328, 0.2496, 0.294118, 0.48, 0.35328, 0.2496, 0.0116377, 0.48, 0.35328, 0.2496, 0, 0.48, 0.35328, 0.2496, 0.0431956, 0.48, 0.35328, 0.2496, 0.34902, 0.4, 0.2944, 0.208, 0.929412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g5dkl"]
+gradient = SubResource("Gradient_ofyuc")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_0fvof"]
+colors = PackedColorArray(0.331639, 0.33164, 0.331639, 1, 0.961814, 0.961814, 0.961814, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0fvof"]
+frequency = 0.0035
+domain_warp_amplitude = 100.0
+domain_warp_frequency = -0.01
+domain_warp_fractal_lacunarity = 8.69
+domain_warp_fractal_gain = 0.19
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jijvn"]
+width = 2048
+noise = SubResource("FastNoiseLite_0fvof")
+color_ramp = SubResource("Gradient_0fvof")
+seamless = true
+seamless_blend_skirt = 0.27
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bnxfs"]
+shader = ExtResource("3_31p3e")
+shader_parameter/size = Vector2(348, 25)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("4_6o4xu")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_72y2i"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_72y2i"]
+shader = ExtResource("3_31p3e")
+shader_parameter/size = Vector2(346, 25)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("4_6o4xu")
+shader_parameter/wood_tex_scale = Vector2(0.36, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_g5dkl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[node name="SettlementsList" type="PanelContainer" unique_id=1569390693]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1545.0
+offset_bottom = -580.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jxt03")
+script = ExtResource("1_an54s")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="ScrollPanel" parent="." unique_id=877692353 instance=ExtResource("2_72y2i")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(399, 0)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="TopDowelWood" parent="ScrollPanel/TopDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_bnxfs")
+
+[node name="Scroller" parent="ScrollPanel" index="1"]
+custom_minimum_size = Vector2(0, 124)
+
+[node name="ScrollMargin" parent="ScrollPanel/Scroller" index="0"]
+offset_right = 0.0
+offset_bottom = 271.0
+
+[node name="ContentPanel" parent="ScrollPanel/Scroller/ScrollMargin" index="0"]
+material = ExtResource("5_bnxfs")
+
+[node name="ContentContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel" index="0"]
+theme_override_constants/margin_bottom = 18
+
+[node name="VBox" type="VBoxContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer" index="0" unique_id=1696129992]
+custom_minimum_size = Vector2(328, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="SettlementsLabel" type="Label" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox" unique_id=836745119]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tg40w")
+theme_override_font_sizes/font_size = 18
+text = "Settlements"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CapitalPanel" type="PanelContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox" unique_id=1541655379]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_72y2i")
+
+[node name="CapitalHBox" type="HBoxContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox/CapitalPanel" unique_id=492525805]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_constants/separation = 10
+
+[node name="CapitalLabel" type="Label" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox/CapitalPanel/CapitalHBox" unique_id=1472160084]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("2_tg40w")
+text = "Shard Capital"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CapitalYieldsList" type="HBoxContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox/CapitalPanel/CapitalHBox" unique_id=224176387]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+mouse_filter = 2
+mouse_behavior_recursive = 1
+
+[node name="BonusPreview1" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox/CapitalPanel/CapitalHBox/CapitalYieldsList" unique_id=2143583739 instance_placeholder="res://bonuses/bonus.tscn"]
+layout_mode = 2
+script = null
+
+[node name="BonusPreview3" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox/CapitalPanel/CapitalHBox/CapitalYieldsList" unique_id=87288551 instance_placeholder="res://bonuses/bonus.tscn"]
+layout_mode = 2
+script = null
+
+[node name="BonusPreview4" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox/CapitalPanel/CapitalHBox/CapitalYieldsList" unique_id=404817936 instance_placeholder="res://bonuses/bonus.tscn"]
+layout_mode = 2
+script = null
+
+[node name="BonusPreview5" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox/CapitalPanel/CapitalHBox/CapitalYieldsList" unique_id=1833948575 instance_placeholder="res://bonuses/bonus.tscn"]
+layout_mode = 2
+script = null
+
+[node name="BonusPreview6" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox/CapitalPanel/CapitalHBox/CapitalYieldsList" unique_id=1624922997 instance_placeholder="res://bonuses/bonus.tscn"]
+layout_mode = 2
+script = null
+
+[node name="BonusPreview7" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox/CapitalPanel/CapitalHBox/CapitalYieldsList" unique_id=437929841 instance_placeholder="res://bonuses/bonus.tscn"]
+layout_mode = 2
+script = null
+
+[node name="BonusPreview2" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox/CapitalPanel/CapitalHBox/CapitalYieldsList" unique_id=4314581 instance_placeholder="res://bonuses/bonus.tscn"]
+layout_mode = 2
+bonus_type = ExtResource("3_rxacy")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox" unique_id=344743597]
+unique_name_in_owner = true
+clip_children = 1
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 0
+mouse_force_pass_scroll_events = false
+script = ExtResource("8_72y2i")
+
+[node name="List" type="VBoxContainer" parent="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox/ScrollContainer" unique_id=1760224174]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 5
+
+[node name="BottomDowelWood" parent="ScrollPanel/BottomDowelContainer" index="0"]
+material = SubResource("ShaderMaterial_72y2i")
+
+[connection signal="mouse_entered" from="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox/CapitalPanel" to="." method="_on_capital_panel_mouse_entered"]
+[connection signal="mouse_exited" from="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox/CapitalPanel" to="." method="_on_capital_panel_mouse_exited"]
+[connection signal="gui_input" from="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox/CapitalPanel/CapitalHBox" to="." method="_on_capital_h_box_gui_input"]
+[connection signal="resized" from="ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBox/ScrollContainer/List" to="." method="_on_list_resized"]
+
+[editable path="ScrollPanel"]

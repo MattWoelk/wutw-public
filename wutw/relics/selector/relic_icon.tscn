@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://cilt1t0eyef38"]
+
+[ext_resource type="Theme" uid="uid://bneu0powe6n80" path="res://theme/theme_ukiyoe.tres" id="1_gmbrs"]
+[ext_resource type="Script" uid="uid://bnrq46jh8j6ql" path="res://relics/selector/relic_icon.gd" id="2_gmbrs"]
+[ext_resource type="Texture2D" uid="uid://ymi5jdnxi4ip" path="res://theme/button.png" id="2_klclw"]
+[ext_resource type="Texture2D" uid="uid://df20o8u52rakv" path="res://relics/common/crystal_twig/crystal_twig.png" id="3_38vwl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hnlgb"]
+texture = ExtResource("2_klclw")
+texture_margin_left = 20.0
+texture_margin_top = 16.0
+texture_margin_right = 20.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="Animation" id="Animation_38vwl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_klclw"]
+resource_name = "trigger"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(2, 2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1.4, 1.4, 1.4, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(2, 2, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r1n8a"]
+_data = {
+&"RESET": SubResource("Animation_38vwl"),
+&"trigger": SubResource("Animation_klclw")
+}
+
+[node name="RelicIcon" type="Button" unique_id=518162531]
+custom_minimum_size = Vector2(128, 128)
+offset_right = 78.0
+offset_bottom = 71.0
+pivot_offset = Vector2(64, 0)
+theme = ExtResource("1_gmbrs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hnlgb")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_hnlgb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_hnlgb")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_hnlgb")
+script = ExtResource("2_gmbrs")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=955455673]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_right = 74.0
+offset_bottom = 74.0
+mouse_filter = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 8
+
+[node name="Icon" type="TextureRect" parent="MarginContainer" unique_id=1231183728]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_38vwl")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CounterLabel" type="Label" parent="MarginContainer" unique_id=1919531134]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
+text = "1/4 "
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1364867799]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_r1n8a")

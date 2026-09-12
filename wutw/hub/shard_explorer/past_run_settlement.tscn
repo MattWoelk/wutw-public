@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://biw6fjgeumjug"]
+
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="1_fq5nv"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="2_p8t0v"]
+[ext_resource type="Script" uid="uid://d3e741l84uj5c" path="res://hub/shard_explorer/past_run_settlement.gd" id="3_37257"]
+[ext_resource type="PackedScene" uid="uid://njdji4l7s1q0" path="res://bonuses/bonus_counter.tscn" id="4_2wxub"]
+[ext_resource type="Texture2D" uid="uid://bbqnmp7msmijg" path="res://map/settlement_list/landmark.png" id="5_d4vsr"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="5_nt4sl"]
+[ext_resource type="Texture2D" uid="uid://c8vfujaun5p2a" path="res://map/settlement_list/connected.png" id="5_rbo7w"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="6_lonhr"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="7_w6b80"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="8_3he4r"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="9_ojp1c"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="10_l7bgq"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="11_46lu6"]
+
+[node name="PastRunSettlement" type="PanelContainer" unique_id=2039585991]
+material = ExtResource("1_fq5nv")
+instance_shader_parameters/size = Vector2(1512.63, 918.75006)
+offset_right = 1029.0
+offset_bottom = 334.0
+theme_override_styles/panel = ExtResource("2_p8t0v")
+script = ExtResource("3_37257")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=198862279]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="VBoxContainer" unique_id=338207865]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+mouse_filter = 0
+theme_override_font_sizes/font_size = 28
+text = "Furusato"
+vertical_alignment = 1
+visible_characters_behavior = 1
+
+[node name="BonusesList" type="HBoxContainer" parent="VBoxContainer" unique_id=1495010427]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="BonusCounter" parent="VBoxContainer/BonusesList" unique_id=1878366383 instance=ExtResource("4_2wxub")]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+bonus_type = ExtResource("5_nt4sl")
+
+[node name="BonusCounter3" parent="VBoxContainer/BonusesList" unique_id=1347961087 instance=ExtResource("4_2wxub")]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+bonus_type = ExtResource("6_lonhr")
+
+[node name="BonusCounter2" parent="VBoxContainer/BonusesList" unique_id=1569230107 instance=ExtResource("4_2wxub")]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+bonus_type = ExtResource("7_w6b80")
+
+[node name="BonusCounter4" parent="VBoxContainer/BonusesList" unique_id=1755663242 instance=ExtResource("4_2wxub")]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+bonus_type = ExtResource("8_3he4r")
+
+[node name="BonusCounter5" parent="VBoxContainer/BonusesList" unique_id=1087102124 instance=ExtResource("4_2wxub")]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+bonus_type = ExtResource("9_ojp1c")
+
+[node name="BonusCounter6" parent="VBoxContainer/BonusesList" unique_id=1555758729 instance=ExtResource("4_2wxub")]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+bonus_type = ExtResource("10_l7bgq")
+
+[node name="BonusCounter7" parent="VBoxContainer/BonusesList" unique_id=989466879 instance=ExtResource("4_2wxub")]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+bonus_type = ExtResource("11_46lu6")
+
+[node name="ShopIcon" type="TextureRect" parent="VBoxContainer/BonusesList" unique_id=2104887029]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 24)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("5_d4vsr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ConnectedIcon" type="TextureRect" parent="VBoxContainer/BonusesList" unique_id=1438087201]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 24)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("5_rbo7w")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="UpgradesList" type="HFlowContainer" parent="VBoxContainer" unique_id=1598120914]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+alignment = 1
+
+[node name="Discovery_Upgrade" parent="VBoxContainer/UpgradesList" unique_id=1404410423 instance_placeholder="res://run/run_end/discovery_upgrade.tscn"]
+layout_mode = 2
+
+[node name="Discovery_Upgrade2" parent="VBoxContainer/UpgradesList" unique_id=306654312 instance_placeholder="res://run/run_end/discovery_upgrade.tscn"]
+layout_mode = 2
+
+[node name="Discovery_Upgrade3" parent="VBoxContainer/UpgradesList" unique_id=674720476 instance_placeholder="res://run/run_end/discovery_upgrade.tscn"]
+layout_mode = 2
+
+[node name="Discovery_Upgrade4" parent="VBoxContainer/UpgradesList" unique_id=490120117 instance_placeholder="res://run/run_end/discovery_upgrade.tscn"]
+layout_mode = 2
+
+[node name="EventsList" type="HFlowContainer" parent="VBoxContainer" unique_id=918392655]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+alignment = 1
+
+[node name="Discovery_Event" parent="VBoxContainer/EventsList" unique_id=650643119 instance_placeholder="res://run/run_end/discovery_event.tscn"]
+layout_mode = 2
+
+[node name="Discovery_Event2" parent="VBoxContainer/EventsList" unique_id=914094618 instance_placeholder="res://run/run_end/discovery_event.tscn"]
+layout_mode = 2
+
+[node name="Discovery_Event3" parent="VBoxContainer/EventsList" unique_id=1206625794 instance_placeholder="res://run/run_end/discovery_event.tscn"]
+layout_mode = 2
+
+[node name="Discovery_Event4" parent="VBoxContainer/EventsList" unique_id=507943605 instance_placeholder="res://run/run_end/discovery_event.tscn"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="VBoxContainer" unique_id=94414757]
+layout_mode = 2

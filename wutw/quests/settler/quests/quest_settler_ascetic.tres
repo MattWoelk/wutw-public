@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="Quest_Settler" format=3 uid="uid://b0xt12jxp550v"]
+
+[ext_resource type="Script" uid="uid://cjloydxgrv8oa" path="res://quests/settler/settler_quest_challenge.gd" id="1_yeuke"]
+[ext_resource type="Script" uid="uid://blsf5ga4p16iw" path="res://quests/settler/challenges/settler_quest_challenge_damage_on_rare_cards.gd" id="2_fqbye"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="3_2tghb"]
+[ext_resource type="Resource" uid="uid://gb2hon6q3l08" path="res://characters/jobs/job_adventurer.tres" id="4_sy2pn"]
+[ext_resource type="Resource" uid="uid://jttde8t0g8wh" path="res://characters/jobs/job_priest.tres" id="5_3qhjk"]
+[ext_resource type="Script" uid="uid://cd4swbq3t72je" path="res://quests/settler/settler_quest_reward.gd" id="5_sxg5n"]
+[ext_resource type="Resource" uid="uid://gmdrouwpddwx" path="res://characters/jobs/job_hermit.tres" id="6_65wpq"]
+[ext_resource type="Script" uid="uid://b1hfr566uv3en" path="res://quests/settler/rewards/settler_quest_reward_make_card_innate.gd" id="6_xpyd2"]
+[ext_resource type="Script" uid="uid://1na7ymvvvbby" path="res://quests/settler/quest_settler.gd" id="7_lkow1"]
+[ext_resource type="Script" uid="uid://bxua8gxfjp2wy" path="res://quests/settler/settler_quest_goal.gd" id="8_4nqm0"]
+[ext_resource type="Resource" uid="uid://djn3flqos8t4f" path="res://characters/jobs/job_monk_shattered.tres" id="8_cfn8i"]
+[ext_resource type="Resource" uid="uid://c5e7uvgwx4xd6" path="res://characters/jobs/job_wanderer.tres" id="8_tmhfe"]
+[ext_resource type="Script" uid="uid://c0f31c6uvr016" path="res://quests/settler/goals/settler_quest_goal_any_upgrade.gd" id="9_q2awa"]
+[ext_resource type="Resource" uid="uid://c2qx8ufo4c12r" path="res://characters/jobs/job_monk_ember.tres" id="9_smk1d"]
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="10_pj7f0"]
+[ext_resource type="Resource" uid="uid://kau1o80i2qm0" path="res://characters/jobs/job_monk_forest.tres" id="10_s47pu"]
+[ext_resource type="Resource" uid="uid://bxfsnqpj2fir0" path="res://stage/spots/forest/upgrade_forest_2_hermit.tres" id="11_ir227"]
+[ext_resource type="Resource" uid="uid://brr7uk3citu0o" path="res://characters/jobs/job_monk_wilds.tres" id="11_lmxhr"]
+
+[sub_resource type="Resource" id="Resource_3qhjk"]
+script = ExtResource("2_fqbye")
+damage = 2
+metadata/_custom_type_script = "uid://blsf5ga4p16iw"
+
+[sub_resource type="Resource" id="Resource_65wpq"]
+script = ExtResource("6_xpyd2")
+metadata/_custom_type_script = "uid://b1hfr566uv3en"
+
+[sub_resource type="Resource" id="Resource_tmhfe"]
+script = ExtResource("9_q2awa")
+upgrades = Array[ExtResource("10_pj7f0")]([ExtResource("11_ir227")])
+metadata/_custom_type_script = "uid://c0f31c6uvr016"
+
+[resource]
+script = ExtResource("7_lkow1")
+intro_text = "I have spent my life living among people, and I grow weary of the excesses of civilization. It is time for me to take up the mossy robes and retire into the wilderness."
+challenges = Array[ExtResource("1_yeuke")]([SubResource("Resource_3qhjk")])
+settler_goals = Array[ExtResource("8_4nqm0")]([SubResource("Resource_tmhfe")])
+rewards = Array[ExtResource("5_sxg5n")]([SubResource("Resource_65wpq")])
+exclude_jobs = Array[ExtResource("3_2tghb")]([ExtResource("5_3qhjk"), ExtResource("6_65wpq"), ExtResource("4_sy2pn"), ExtResource("8_tmhfe"), ExtResource("8_cfn8i"), ExtResource("9_smk1d"), ExtResource("10_s47pu"), ExtResource("11_lmxhr")])
+restrict_to_ages = Array[int]([1, 2])
+quest_id = "settler_ascetic"
+category = 2
+name = "An Ascetic"
+metadata/_custom_type_script = "uid://1na7ymvvvbby"

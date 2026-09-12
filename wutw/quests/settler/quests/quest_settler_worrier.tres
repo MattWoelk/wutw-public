@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="Quest_Settler" format=3 uid="uid://dow2wlf2vx5j6"]
+
+[ext_resource type="Script" uid="uid://cjloydxgrv8oa" path="res://quests/settler/settler_quest_challenge.gd" id="1_lvrtb"]
+[ext_resource type="Script" uid="uid://4wq52c05i2oa" path="res://quests/settler/challenges/settler_quest_challenge_run_var.gd" id="2_3x5t5"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="3_3s21m"]
+[ext_resource type="Resource" uid="uid://d01sh3wyj45gx" path="res://characters/jobs/job_child.tres" id="4_4g51i"]
+[ext_resource type="Resource" uid="uid://jttde8t0g8wh" path="res://characters/jobs/job_priest.tres" id="5_qps02"]
+[ext_resource type="Script" uid="uid://cd4swbq3t72je" path="res://quests/settler/settler_quest_reward.gd" id="6_r7eiq"]
+[ext_resource type="Resource" uid="uid://c2qx8ufo4c12r" path="res://characters/jobs/job_monk_ember.tres" id="6_tkqe8"]
+[ext_resource type="Resource" uid="uid://brr7uk3citu0o" path="res://characters/jobs/job_monk_wilds.tres" id="7_de4q1"]
+[ext_resource type="Script" uid="uid://0k12wwnmq50h" path="res://quests/settler/rewards/settler_quest_reward_add_relic.gd" id="8_is2hi"]
+[ext_resource type="Resource" uid="uid://kau1o80i2qm0" path="res://characters/jobs/job_monk_forest.tres" id="8_kfppy"]
+[ext_resource type="Script" uid="uid://1na7ymvvvbby" path="res://quests/settler/quest_settler.gd" id="9_3x5t5"]
+[ext_resource type="Resource" uid="uid://djn3flqos8t4f" path="res://characters/jobs/job_monk_shattered.tres" id="9_6c2br"]
+[ext_resource type="Script" uid="uid://bxua8gxfjp2wy" path="res://quests/settler/settler_quest_goal.gd" id="10_4g51i"]
+[ext_resource type="Resource" uid="uid://gb2hon6q3l08" path="res://characters/jobs/job_adventurer.tres" id="10_evepq"]
+[ext_resource type="Resource" uid="uid://c5e7uvgwx4xd6" path="res://characters/jobs/job_wanderer.tres" id="11_lmk45"]
+[ext_resource type="Script" uid="uid://cschghuk4t5qx" path="res://quests/settler/goals/settler_quest_goal_global_upgrades.gd" id="11_qps02"]
+[ext_resource type="Resource" uid="uid://c4ah2ugau8e84" path="res://characters/jobs/job_fire_warden.tres" id="12_8jxkb"]
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="12_tkqe8"]
+[ext_resource type="Resource" uid="uid://da8ybdjfnxnc3" path="res://characters/jobs/job_sailor.tres" id="13_6yrx6"]
+[ext_resource type="Resource" uid="uid://dxousp23orvc" path="res://characters/jobs/job_courier.tres" id="14_4b58j"]
+[ext_resource type="Resource" uid="uid://co3g6h6pf13ta" path="res://characters/jobs/job_porter.tres" id="15_76tl5"]
+[ext_resource type="Resource" uid="uid://dtmugkdjmcrar" path="res://relics/common/sobagara_pillow/relic_sobagara_pillow.tres" id="17_3qcu0"]
+[ext_resource type="Resource" uid="uid://dl672t0a8m46g" path="res://stage/spots/building_small/upgrade_building_small_2_watchpost.tres" id="23_24j5v"]
+
+[sub_resource type="Resource" id="Resource_evepq"]
+script = ExtResource("2_3x5t5")
+var_type = 22
+delta = -999
+description = "No <term_lower:event>s occur during the <term_lower:run>."
+metadata/_custom_type_script = "uid://4wq52c05i2oa"
+
+[sub_resource type="Resource" id="Resource_51bqo"]
+script = ExtResource("8_is2hi")
+relic = ExtResource("17_3qcu0")
+metadata/_custom_type_script = "uid://0k12wwnmq50h"
+
+[sub_resource type="Resource" id="Resource_p7jql"]
+script = ExtResource("11_qps02")
+upgrades = Array[ExtResource("12_tkqe8")]([ExtResource("23_24j5v"), ExtResource("23_24j5v"), ExtResource("23_24j5v"), ExtResource("23_24j5v")])
+metadata/_custom_type_script = "uid://cschghuk4t5qx"
+
+[resource]
+script = ExtResource("9_3x5t5")
+intro_text = "My home shard is obsessed with adventuring. Even my former husband kept saying I was boring because I don't like it. But I'd just rather be safe and cozy. Ironic, that I need to move to a whole new shard to escape adventure."
+challenges = Array[ExtResource("1_lvrtb")]([SubResource("Resource_evepq")])
+settler_goals = Array[ExtResource("10_4g51i")]([SubResource("Resource_p7jql")])
+rewards = Array[ExtResource("6_r7eiq")]([SubResource("Resource_51bqo")])
+exclude_jobs = Array[ExtResource("3_3s21m")]([ExtResource("4_4g51i"), ExtResource("5_qps02"), ExtResource("6_tkqe8"), ExtResource("7_de4q1"), ExtResource("8_kfppy"), ExtResource("9_6c2br"), ExtResource("10_evepq"), ExtResource("11_lmk45"), ExtResource("12_8jxkb"), ExtResource("13_6yrx6"), ExtResource("14_4b58j"), ExtResource("15_76tl5")])
+quest_id = "settler_worrier"
+category = 2
+name = "A Worrier"
+metadata/_custom_type_script = "uid://1na7ymvvvbby"

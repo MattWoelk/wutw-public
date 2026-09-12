@@ -1,0 +1,850 @@
+[gd_resource type="Resource" script_class="CardType" format=3 uid="uid://c8ykgnjdubwpm"]
+
+[ext_resource type="Script" uid="uid://b56kytec5oqcb" path="res://cards/abilities/card_ability.gd" id="1_3aqci"]
+[ext_resource type="Script" uid="uid://dsf68mqjn7ufp" path="res://cards/abilities/card_ability_expand.gd" id="2_kisk7"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="3_0hflp"]
+[ext_resource type="Script" uid="uid://7y26eumsxbnb" path="res://cards/abilities/card_ability_support.gd" id="4_kqixw"]
+[ext_resource type="Script" uid="uid://xc73x4t7ckxm" path="res://japanese/example_sentence.gd" id="5_3hamb"]
+[ext_resource type="Script" uid="uid://du4k150pcdjs6" path="res://japanese/kanji_shape.gd" id="6_0hflp"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="6_dt4dh"]
+[ext_resource type="Script" uid="uid://bl2eelwkj800o" path="res://japanese/japanese_token.gd" id="6_kqixw"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="7_4o4mo"]
+[ext_resource type="Script" uid="uid://dc15txdqjanlf" path="res://japanese/stroke_shape.gd" id="7_kqixw"]
+[ext_resource type="Resource" uid="uid://d1k7vakhjcq5g" path="res://glossary/categories/termcategory_card.tres" id="8_66fvh"]
+[ext_resource type="Script" uid="uid://b6rw4ldrj6wch" path="res://japanese/vocab.gd" id="9_u5lj2"]
+
+[sub_resource type="Resource" id="Resource_7cc54"]
+script = ExtResource("2_kisk7")
+count = -1
+metadata/_custom_type_script = "uid://dsf68mqjn7ufp"
+
+[sub_resource type="Resource" id="Resource_y6uti"]
+script = ExtResource("4_kqixw")
+bonus_type = ExtResource("3_0hflp")
+reversed = true
+metadata/_custom_type_script = "uid://7y26eumsxbnb"
+
+[sub_resource type="Resource" id="Resource_kqixw"]
+script = ExtResource("9_u5lj2")
+japanese = "恐れ入る"
+readings = Array[String](["おそれいる"])
+meanings = Array[String](["to be sorry", "to beg someone's pardon", "to feel small", "to be much obliged", "to be grateful", "to be thankful", "to be amazed", "to be greatly impressed", "to admire", "to be dumbfounded", "to be confounded", "to be stunned", "to be fed up (with)", "to be defeated", "to be beaten"])
+jlpt_level = 1
+
+[sub_resource type="Resource" id="Resource_0e73e"]
+script = ExtResource("6_kqixw")
+raw_text = "恐れ入り"
+vocab = SubResource("Resource_kqixw")
+reading = "おそれいり"
+
+[sub_resource type="Resource" id="Resource_byml1"]
+script = ExtResource("6_kqixw")
+raw_text = "ます"
+reading = "ます"
+
+[sub_resource type="Resource" id="Resource_8wyxa"]
+script = ExtResource("6_kqixw")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_vbhxn"]
+script = ExtResource("5_3hamb")
+japanese = "恐れ入ります。"
+native = "I am sorry."
+parsed = Array[ExtResource("6_kqixw")]([SubResource("Resource_0e73e"), SubResource("Resource_byml1"), SubResource("Resource_8wyxa")])
+_difficulty = 414
+_used_kanji = Array[String](["恐", "入"])
+
+[sub_resource type="Resource" id="Resource_aq821"]
+script = ExtResource("9_u5lj2")
+japanese = "私"
+readings = Array[String](["わたし"])
+meanings = Array[String](["I", "me"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_2350s"]
+script = ExtResource("6_kqixw")
+raw_text = "私"
+vocab = SubResource("Resource_aq821")
+reading = "わたし"
+
+[sub_resource type="Resource" id="Resource_yel2u"]
+script = ExtResource("6_kqixw")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_6h5dh"]
+script = ExtResource("9_u5lj2")
+japanese = "犬"
+readings = Array[String](["いぬ"])
+meanings = Array[String](["dog (Canis (lupus) familiaris)", "canine", "squealer", "rat", "snitch", "informer", "informant", "spy", "loser", "asshole", "counterfeit", "inferior", "useless", "wasteful"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_m15fa"]
+script = ExtResource("6_kqixw")
+raw_text = "犬"
+vocab = SubResource("Resource_6h5dh")
+reading = "いぬ"
+
+[sub_resource type="Resource" id="Resource_j1c6s"]
+script = ExtResource("6_kqixw")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_uml0s"]
+script = ExtResource("9_u5lj2")
+japanese = "恐い"
+readings = Array[String](["こわい"])
+meanings = Array[String](["scary", "frightening", "eerie", "dreadful"])
+
+[sub_resource type="Resource" id="Resource_rop1l"]
+script = ExtResource("6_kqixw")
+raw_text = "恐い"
+vocab = SubResource("Resource_uml0s")
+reading = "こわい"
+
+[sub_resource type="Resource" id="Resource_36vo3"]
+script = ExtResource("6_kqixw")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_4fxxv"]
+script = ExtResource("5_3hamb")
+japanese = "私は犬が恐い。"
+native = "I am afraid of dogs."
+parsed = Array[ExtResource("6_kqixw")]([SubResource("Resource_2350s"), SubResource("Resource_yel2u"), SubResource("Resource_m15fa"), SubResource("Resource_j1c6s"), SubResource("Resource_rop1l"), SubResource("Resource_36vo3")])
+_difficulty = 444
+_used_kanji = Array[String](["私", "犬", "恐"])
+
+[sub_resource type="Resource" id="Resource_itrjj"]
+script = ExtResource("9_u5lj2")
+japanese = "恐らく"
+readings = Array[String](["おそらく"])
+meanings = Array[String](["probably", "(most) likely", "in all likelihood", "I suspect", "I dare say", "I'm afraid"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_qahgt"]
+script = ExtResource("6_kqixw")
+raw_text = "恐らく"
+vocab = SubResource("Resource_itrjj")
+reading = "おそらく"
+
+[sub_resource type="Resource" id="Resource_gdch3"]
+script = ExtResource("9_u5lj2")
+japanese = "時間"
+readings = Array[String](["じかん"])
+meanings = Array[String](["time", "hour", "period", "class", "lesson"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_md4nk"]
+script = ExtResource("6_kqixw")
+raw_text = "時間"
+vocab = SubResource("Resource_gdch3")
+reading = "じかん"
+
+[sub_resource type="Resource" id="Resource_xfuy2"]
+script = ExtResource("6_kqixw")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_qcfv5"]
+script = ExtResource("6_kqixw")
+raw_text = "ない"
+reading = "ない"
+
+[sub_resource type="Resource" id="Resource_kto88"]
+script = ExtResource("6_kqixw")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_evbao"]
+script = ExtResource("5_3hamb")
+japanese = "恐らく時間がない。"
+native = "I'm afraid there is no time."
+parsed = Array[ExtResource("6_kqixw")]([SubResource("Resource_qahgt"), SubResource("Resource_md4nk"), SubResource("Resource_xfuy2"), SubResource("Resource_qcfv5"), SubResource("Resource_kto88")])
+_difficulty = 450
+_used_kanji = Array[String](["恐", "時", "間"])
+
+[sub_resource type="Resource" id="Resource_036q7"]
+script = ExtResource("9_u5lj2")
+japanese = "動物"
+readings = Array[String](["どうぶつ"])
+meanings = Array[String](["animal"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_dfbsx"]
+script = ExtResource("6_kqixw")
+raw_text = "動物"
+vocab = SubResource("Resource_036q7")
+reading = "どうぶつ"
+
+[sub_resource type="Resource" id="Resource_tv3yk"]
+script = ExtResource("6_kqixw")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_vjq2c"]
+script = ExtResource("9_u5lj2")
+japanese = "火"
+readings = Array[String](["ひ"])
+meanings = Array[String](["fire", "flame", "blaze"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_td3bj"]
+script = ExtResource("6_kqixw")
+raw_text = "火"
+vocab = SubResource("Resource_vjq2c")
+reading = "ひ"
+
+[sub_resource type="Resource" id="Resource_ncugd"]
+script = ExtResource("6_kqixw")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_nlctn"]
+script = ExtResource("9_u5lj2")
+japanese = "恐れる"
+readings = Array[String](["おそれる"])
+meanings = Array[String](["to fear", "to be afraid of"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_hwec3"]
+script = ExtResource("6_kqixw")
+raw_text = "恐れる"
+vocab = SubResource("Resource_nlctn")
+reading = "おそれる"
+
+[sub_resource type="Resource" id="Resource_qablu"]
+script = ExtResource("6_kqixw")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_f2s4q"]
+script = ExtResource("5_3hamb")
+japanese = "動物は火を恐れる。"
+native = "Animals are afraid of fire."
+parsed = Array[ExtResource("6_kqixw")]([SubResource("Resource_dfbsx"), SubResource("Resource_tv3yk"), SubResource("Resource_td3bj"), SubResource("Resource_ncugd"), SubResource("Resource_hwec3"), SubResource("Resource_qablu")])
+_difficulty = 460
+_used_kanji = Array[String](["動", "物", "火", "恐"])
+
+[sub_resource type="Resource" id="Resource_d7ge4"]
+script = ExtResource("6_kqixw")
+raw_text = "恐れる"
+vocab = SubResource("Resource_nlctn")
+reading = "おそれる"
+
+[sub_resource type="Resource" id="Resource_67yoi"]
+script = ExtResource("6_kqixw")
+raw_text = "な"
+reading = "な"
+
+[sub_resource type="Resource" id="Resource_f0frm"]
+script = ExtResource("6_kqixw")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_w0ioh"]
+script = ExtResource("5_3hamb")
+japanese = "恐れるな。"
+native = "Don't be afraid."
+parsed = Array[ExtResource("6_kqixw")]([SubResource("Resource_d7ge4"), SubResource("Resource_67yoi"), SubResource("Resource_f0frm")])
+_difficulty = 461
+_used_kanji = Array[String](["恐"])
+
+[sub_resource type="Resource" id="Resource_r5lww"]
+script = ExtResource("9_u5lj2")
+japanese = "今日"
+readings = Array[String](["きょう", "こんにち", "こんち", "こんじつ"])
+meanings = Array[String](["today", "this day", "these days", "recently", "nowadays"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_3e3pn"]
+script = ExtResource("6_kqixw")
+raw_text = "今日"
+vocab = SubResource("Resource_r5lww")
+reading = "きょう"
+
+[sub_resource type="Resource" id="Resource_td306"]
+script = ExtResource("6_kqixw")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_lhqrl"]
+script = ExtResource("6_kqixw")
+raw_text = "恐ろしく"
+reading = "おそろしく"
+
+[sub_resource type="Resource" id="Resource_hrjx4"]
+script = ExtResource("9_u5lj2")
+japanese = "寒い"
+readings = Array[String](["さむい", "さぶい"])
+meanings = Array[String](["cold (e.g. weather)", "uninteresting (esp. joke)", "lame", "dull", "weak", "corny"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_s41e8"]
+script = ExtResource("6_kqixw")
+raw_text = "寒い"
+vocab = SubResource("Resource_hrjx4")
+reading = "さむい"
+
+[sub_resource type="Resource" id="Resource_slxd0"]
+script = ExtResource("6_kqixw")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_ofxb7"]
+script = ExtResource("5_3hamb")
+japanese = "今日は恐ろしく寒い。"
+native = "It's awfully cold today."
+parsed = Array[ExtResource("6_kqixw")]([SubResource("Resource_3e3pn"), SubResource("Resource_td306"), SubResource("Resource_lhqrl"), SubResource("Resource_s41e8"), SubResource("Resource_slxd0")])
+_difficulty = 469
+_used_kanji = Array[String](["今", "日", "恐", "寒"])
+
+[sub_resource type="Resource" id="Resource_qjurl"]
+script = ExtResource("9_u5lj2")
+japanese = "失敗"
+readings = Array[String](["しっぱい"])
+meanings = Array[String](["failure", "mistake", "blunder"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_88fh4"]
+script = ExtResource("6_kqixw")
+raw_text = "失敗"
+vocab = SubResource("Resource_qjurl")
+reading = "しっぱい"
+
+[sub_resource type="Resource" id="Resource_ewauc"]
+script = ExtResource("6_kqixw")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_y52y8"]
+script = ExtResource("6_kqixw")
+raw_text = "恐れる"
+vocab = SubResource("Resource_nlctn")
+reading = "おそれる"
+
+[sub_resource type="Resource" id="Resource_homgt"]
+script = ExtResource("6_kqixw")
+raw_text = "な"
+reading = "な"
+
+[sub_resource type="Resource" id="Resource_kfsn5"]
+script = ExtResource("6_kqixw")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_up6so"]
+script = ExtResource("5_3hamb")
+japanese = "失敗を恐れるな。"
+native = "Don't be afraid of making mistakes."
+parsed = Array[ExtResource("6_kqixw")]([SubResource("Resource_88fh4"), SubResource("Resource_ewauc"), SubResource("Resource_y52y8"), SubResource("Resource_homgt"), SubResource("Resource_kfsn5")])
+_difficulty = 470
+_used_kanji = Array[String](["失", "敗", "恐"])
+
+[sub_resource type="Resource" id="Resource_q3ph8"]
+script = ExtResource("6_kqixw")
+raw_text = "それ"
+reading = "それ"
+
+[sub_resource type="Resource" id="Resource_5sdym"]
+script = ExtResource("6_kqixw")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_p71wm"]
+script = ExtResource("9_u5lj2")
+japanese = "見る"
+readings = Array[String](["みる"])
+meanings = Array[String](["to see", "to look", "to watch", "to view", "to observe", "to examine", "to look over", "to assess", "to check", "to judge", "to look after", "to attend to", "to take care of", "to keep an eye on", "to experience", "to meet with (misfortune, success, etc.)", "to try ...", "to have a go at ...", "to give ... a try", "to see (that) ...", "to find (that) ..."])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_3xdwb"]
+script = ExtResource("6_kqixw")
+raw_text = "見る"
+vocab = SubResource("Resource_p71wm")
+reading = "みる"
+
+[sub_resource type="Resource" id="Resource_yqmc0"]
+script = ExtResource("6_kqixw")
+raw_text = "も"
+reading = "も"
+
+[sub_resource type="Resource" id="Resource_r5qnq"]
+script = ExtResource("9_u5lj2")
+japanese = "恐ろしい"
+readings = Array[String](["おそろしい"])
+meanings = Array[String](["terrible", "dreadful", "terrifying", "frightening"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_crl02"]
+script = ExtResource("6_kqixw")
+raw_text = "恐ろしい"
+vocab = SubResource("Resource_r5qnq")
+reading = "おそろしい"
+
+[sub_resource type="Resource" id="Resource_3xnvm"]
+script = ExtResource("6_kqixw")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_yk8g4"]
+script = ExtResource("5_3hamb")
+japanese = "それは見るも恐ろしい。"
+native = "It is horrible to see."
+parsed = Array[ExtResource("6_kqixw")]([SubResource("Resource_q3ph8"), SubResource("Resource_5sdym"), SubResource("Resource_3xdwb"), SubResource("Resource_yqmc0"), SubResource("Resource_crl02"), SubResource("Resource_3xnvm")])
+_difficulty = 481
+_used_kanji = Array[String](["見", "恐"])
+
+[sub_resource type="Resource" id="Resource_3xbww"]
+script = ExtResource("9_u5lj2")
+japanese = "恐怖"
+readings = Array[String](["きょうふ", "くふ"])
+meanings = Array[String](["fear", "dread", "dismay", "terror", "horror", "scare", "panic"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_7s3f2"]
+script = ExtResource("6_kqixw")
+raw_text = "恐怖"
+vocab = SubResource("Resource_3xbww")
+reading = "きょうふ"
+
+[sub_resource type="Resource" id="Resource_gv2sv"]
+script = ExtResource("6_kqixw")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_7vrse"]
+script = ExtResource("9_u5lj2")
+japanese = "感じる"
+readings = Array[String](["かんじる"])
+meanings = Array[String](["to feel", "to sense", "to experience", "to be moved (by)", "to be touched (by)", "to be impressed (by)", "to respond (to)", "to become infected with (an illness)", "to catch"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_ki72c"]
+script = ExtResource("6_kqixw")
+raw_text = "感じ"
+vocab = SubResource("Resource_7vrse")
+reading = "かんじ"
+
+[sub_resource type="Resource" id="Resource_4snrg"]
+script = ExtResource("6_kqixw")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_kf4un"]
+script = ExtResource("6_kqixw")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_k1u24"]
+script = ExtResource("5_3hamb")
+japanese = "恐怖を感じた。"
+native = "I felt afraid."
+parsed = Array[ExtResource("6_kqixw")]([SubResource("Resource_7s3f2"), SubResource("Resource_gv2sv"), SubResource("Resource_ki72c"), SubResource("Resource_4snrg"), SubResource("Resource_kf4un")])
+_difficulty = 481
+_used_kanji = Array[String](["恐", "怖", "感"])
+
+[sub_resource type="Resource" id="Resource_ytnjm"]
+script = ExtResource("6_kqixw")
+raw_text = "恐れる"
+vocab = SubResource("Resource_nlctn")
+reading = "おそれる"
+
+[sub_resource type="Resource" id="Resource_ibr2v"]
+script = ExtResource("6_kqixw")
+raw_text = "こと"
+reading = "こと"
+
+[sub_resource type="Resource" id="Resource_ik68y"]
+script = ExtResource("6_kqixw")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_jf3tr"]
+script = ExtResource("9_u5lj2")
+japanese = "何"
+readings = Array[String](["なに"])
+meanings = Array[String](["what", "you-know-what", "that thing", "whatsit", "whachamacallit", "what's-his-name", "what's-her-name", "penis", "(one's) thing", "dick", "(not) at all", "(not) in the slightest", "what?", "huh?", "hey!", "come on!", "oh, no (it's fine)", "why (it's nothing)", "oh (certainly not)"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_23r7v"]
+script = ExtResource("6_kqixw")
+raw_text = "何"
+vocab = SubResource("Resource_jf3tr")
+reading = "なに"
+
+[sub_resource type="Resource" id="Resource_0pn5p"]
+script = ExtResource("6_kqixw")
+raw_text = "も"
+reading = "も"
+
+[sub_resource type="Resource" id="Resource_t3jtl"]
+script = ExtResource("6_kqixw")
+raw_text = "ない"
+reading = "ない"
+
+[sub_resource type="Resource" id="Resource_737jk"]
+script = ExtResource("6_kqixw")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_uh5bi"]
+script = ExtResource("5_3hamb")
+japanese = "恐れることは何もない。"
+native = "There is nothing for you to be afraid of."
+parsed = Array[ExtResource("6_kqixw")]([SubResource("Resource_ytnjm"), SubResource("Resource_ibr2v"), SubResource("Resource_ik68y"), SubResource("Resource_23r7v"), SubResource("Resource_0pn5p"), SubResource("Resource_t3jtl"), SubResource("Resource_737jk")])
+_difficulty = 494
+_used_kanji = Array[String](["恐", "何"])
+
+[sub_resource type="Resource" id="Resource_1pkwf"]
+script = ExtResource("9_u5lj2")
+japanese = "雨"
+readings = Array[String](["あめ"])
+meanings = Array[String](["rain", "rainy day", "rainy weather", "the November suit (in hanafuda)"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_rv6pl"]
+script = ExtResource("6_kqixw")
+raw_text = "雨"
+vocab = SubResource("Resource_1pkwf")
+reading = "あめ"
+
+[sub_resource type="Resource" id="Resource_errvf"]
+script = ExtResource("6_kqixw")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_ht0ut"]
+script = ExtResource("9_u5lj2")
+japanese = "降る"
+readings = Array[String](["くだる"])
+meanings = Array[String](["to descend", "to go down", "to come down", "to be handed down (of an order, judgment, etc.)", "to pass (of time)", "to surrender", "to capitulate", "to be less than", "to be inferior to", "to have the runs", "to have diarrhea", "to pass (in stool)", "to be discharged from the body", "to depreciate oneself", "to be humble"])
+jlpt_level = 5
+_difficulty = 2
+
+[sub_resource type="Resource" id="Resource_1i7dv"]
+script = ExtResource("6_kqixw")
+raw_text = "降る"
+vocab = SubResource("Resource_ht0ut")
+reading = "ふる"
+
+[sub_resource type="Resource" id="Resource_6neqw"]
+script = ExtResource("9_u5lj2")
+japanese = "恐れ"
+readings = Array[String](["おそれ"])
+meanings = Array[String](["fear", "horror", "anxiety", "concern", "uneasiness", "reverence", "risk", "danger", "likelihood", "awe"])
+jlpt_level = 1
+
+[sub_resource type="Resource" id="Resource_cydyb"]
+script = ExtResource("6_kqixw")
+raw_text = "恐れ"
+vocab = SubResource("Resource_6neqw")
+reading = "おそれ"
+
+[sub_resource type="Resource" id="Resource_xl4ue"]
+script = ExtResource("6_kqixw")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_aoxeo"]
+script = ExtResource("6_kqixw")
+raw_text = "ある"
+reading = "ある"
+
+[sub_resource type="Resource" id="Resource_71xd6"]
+script = ExtResource("6_kqixw")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_e0nhi"]
+script = ExtResource("5_3hamb")
+japanese = "雨が降る恐れがある。"
+native = "It's threatening to rain."
+parsed = Array[ExtResource("6_kqixw")]([SubResource("Resource_rv6pl"), SubResource("Resource_errvf"), SubResource("Resource_1i7dv"), SubResource("Resource_cydyb"), SubResource("Resource_xl4ue"), SubResource("Resource_aoxeo"), SubResource("Resource_71xd6")])
+_difficulty = 494
+_used_kanji = Array[String](["雨", "降", "恐"])
+
+[sub_resource type="Resource" id="Resource_ygcl7"]
+script = ExtResource("6_kqixw")
+raw_text = "私"
+vocab = SubResource("Resource_aq821")
+reading = "わたし"
+
+[sub_resource type="Resource" id="Resource_4j7re"]
+script = ExtResource("6_kqixw")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_wdfgp"]
+script = ExtResource("6_kqixw")
+raw_text = "恐ろしい"
+vocab = SubResource("Resource_r5qnq")
+reading = "おそろしい"
+
+[sub_resource type="Resource" id="Resource_qg85m"]
+script = ExtResource("9_u5lj2")
+japanese = "夢"
+readings = Array[String](["ゆめ"])
+meanings = Array[String](["dream", "hope", "wish", "aspiration", "ambition", "unrealistic aspiration", "daydream", "pipe dream", "delusion", "illusion", "fleeting thing", "something short-lived"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_lnv6p"]
+script = ExtResource("6_kqixw")
+raw_text = "夢"
+vocab = SubResource("Resource_qg85m")
+reading = "ゆめ"
+
+[sub_resource type="Resource" id="Resource_jjq5b"]
+script = ExtResource("6_kqixw")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_qtfor"]
+script = ExtResource("6_kqixw")
+raw_text = "見"
+vocab = SubResource("Resource_p71wm")
+reading = "み"
+
+[sub_resource type="Resource" id="Resource_jrvye"]
+script = ExtResource("6_kqixw")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_hrnu4"]
+script = ExtResource("6_kqixw")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_o10uv"]
+script = ExtResource("5_3hamb")
+japanese = "私は恐ろしい夢を見た。"
+native = "I had a terrible dream."
+parsed = Array[ExtResource("6_kqixw")]([SubResource("Resource_ygcl7"), SubResource("Resource_4j7re"), SubResource("Resource_wdfgp"), SubResource("Resource_lnv6p"), SubResource("Resource_jjq5b"), SubResource("Resource_qtfor"), SubResource("Resource_jrvye"), SubResource("Resource_hrnu4")])
+_difficulty = 528
+_used_kanji = Array[String](["私", "恐", "夢", "見"])
+
+[sub_resource type="Resource" id="Resource_ibqa7"]
+script = ExtResource("9_u5lj2")
+japanese = "彼"
+readings = Array[String](["かれ"])
+meanings = Array[String](["he", "him", "boyfriend"])
+jlpt_level = 4
+_difficulty = 31
+
+[sub_resource type="Resource" id="Resource_a6rgq"]
+script = ExtResource("6_kqixw")
+raw_text = "彼"
+vocab = SubResource("Resource_ibqa7")
+reading = "かれ"
+
+[sub_resource type="Resource" id="Resource_xe82u"]
+script = ExtResource("6_kqixw")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_nkonn"]
+script = ExtResource("6_kqixw")
+raw_text = "恐く"
+vocab = SubResource("Resource_uml0s")
+reading = "こわく"
+
+[sub_resource type="Resource" id="Resource_x6u6p"]
+script = ExtResource("6_kqixw")
+raw_text = "て"
+reading = "て"
+
+[sub_resource type="Resource" id="Resource_ohyo3"]
+script = ExtResource("9_u5lj2")
+japanese = "青い"
+readings = Array[String](["あおい"])
+meanings = Array[String](["blue", "azure", "green"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_w3wyq"]
+script = ExtResource("6_kqixw")
+raw_text = "青く"
+vocab = SubResource("Resource_ohyo3")
+reading = "あおく"
+
+[sub_resource type="Resource" id="Resource_xysn3"]
+script = ExtResource("6_kqixw")
+raw_text = "なっ"
+reading = "なっ"
+
+[sub_resource type="Resource" id="Resource_g4iph"]
+script = ExtResource("6_kqixw")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_h0x8x"]
+script = ExtResource("6_kqixw")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_p1s8p"]
+script = ExtResource("5_3hamb")
+japanese = "彼は恐くて青くなった。"
+native = "He turned pale with fright."
+parsed = Array[ExtResource("6_kqixw")]([SubResource("Resource_a6rgq"), SubResource("Resource_xe82u"), SubResource("Resource_nkonn"), SubResource("Resource_x6u6p"), SubResource("Resource_w3wyq"), SubResource("Resource_xysn3"), SubResource("Resource_g4iph"), SubResource("Resource_h0x8x")])
+_difficulty = 530
+_used_kanji = Array[String](["彼", "恐", "青"])
+
+[sub_resource type="Resource" id="Resource_3hamb"]
+script = ExtResource("7_kqixw")
+points = Array[Vector2]([Vector2(14.01, 22.3), Vector2(19.72, 22.46), Vector2(25.04, 21.52), Vector2(31.16, 20.22), Vector2(36.98, 18.97), Vector2(42.47, 18.58)])
+
+[sub_resource type="Resource" id="Resource_dt4dh"]
+script = ExtResource("7_kqixw")
+points = Array[Vector2]([Vector2(27.94, 23.39), Vector2(29.03, 29.2), Vector2(29.02, 36.09), Vector2(29.01, 42.64), Vector2(29, 47.12)])
+
+[sub_resource type="Resource" id="Resource_4o4mo"]
+script = ExtResource("7_kqixw")
+points = Array[Vector2]([Vector2(14.79, 53.96), Vector2(19.49, 53.48), Vector2(24.09, 50.98), Vector2(29.23, 48.22), Vector2(34.5, 45.42), Vector2(39.47, 42.78), Vector2(43.75, 40.5)])
+
+[sub_resource type="Resource" id="Resource_66fvh"]
+script = ExtResource("7_kqixw")
+points = Array[Vector2]([Vector2(53.5, 16.41), Vector2(54.44, 21.38), Vector2(54.09, 26.61), Vector2(53.48, 31.92), Vector2(52.48, 37.18), Vector2(50.97, 42.26), Vector2(48.81, 47.05), Vector2(45.9, 51.42), Vector2(42.09, 55.25)])
+
+[sub_resource type="Resource" id="Resource_u5lj2"]
+script = ExtResource("7_kqixw")
+points = Array[Vector2]([Vector2(55.27, 18.16), Vector2(59.37, 17.54), Vector2(65.68, 16.59), Vector2(71.32, 15.72), Vector2(75.23, 15.57), Vector2(75.94, 20.09), Vector2(75.23, 25.35), Vector2(74.69, 30.61), Vector2(74.32, 35.63), Vector2(74.16, 40.2), Vector2(74.61, 45.35), Vector2(76.91, 49.01), Vector2(81.75, 50.48), Vector2(89.17, 50.12), Vector2(92.52, 48.4), Vector2(93.22, 44.6)])
+
+[sub_resource type="Resource" id="Resource_0yyrf"]
+script = ExtResource("7_kqixw")
+points = Array[Vector2]([Vector2(59.75, 29.25), Vector2(64.78, 34.95), Vector2(67.64, 40.46)])
+
+[sub_resource type="Resource" id="Resource_b71fm"]
+script = ExtResource("7_kqixw")
+points = Array[Vector2]([Vector2(22.25, 73.12), Vector2(21.68, 76.66), Vector2(19.69, 82.12), Vector2(16.94, 87.92), Vector2(14.06, 92.49)])
+
+[sub_resource type="Resource" id="Resource_3t8sx"]
+script = ExtResource("7_kqixw")
+points = Array[Vector2]([Vector2(31.75, 66.75), Vector2(34.37, 71.47), Vector2(37.13, 75.76), Vector2(40.06, 79.62), Vector2(43.19, 83.04), Vector2(46.57, 86.02), Vector2(50.22, 88.58), Vector2(54.18, 90.71), Vector2(58.49, 92.4), Vector2(63.18, 93.66), Vector2(68.29, 94.5), Vector2(73.84, 94.9), Vector2(79.89, 94.88), Vector2(86.61, 94.28), Vector2(89.67, 92.85), Vector2(88.49, 90.21), Vector2(82.96, 85.98)])
+
+[sub_resource type="Resource" id="Resource_m5sjt"]
+script = ExtResource("7_kqixw")
+points = Array[Vector2]([Vector2(54.08, 63.74), Vector2(57.74, 70.4), Vector2(60.37, 69.03)])
+
+[sub_resource type="Resource" id="Resource_s841g"]
+script = ExtResource("7_kqixw")
+points = Array[Vector2]([Vector2(79.16, 62.06), Vector2(83.13, 64.69), Vector2(86.95, 67.88), Vector2(90.5, 71.74), Vector2(93.68, 76.38)])
+
+[sub_resource type="Resource" id="Resource_lf6pk"]
+script = ExtResource("6_0hflp")
+stroke_shapes = Array[ExtResource("7_kqixw")]([SubResource("Resource_3hamb"), SubResource("Resource_dt4dh"), SubResource("Resource_4o4mo"), SubResource("Resource_66fvh"), SubResource("Resource_u5lj2"), SubResource("Resource_0yyrf"), SubResource("Resource_b71fm"), SubResource("Resource_3t8sx"), SubResource("Resource_m5sjt"), SubResource("Resource_s841g")])
+
+[sub_resource type="Resource" id="Resource_4k25c"]
+script = ExtResource("9_u5lj2")
+japanese = "恐怖"
+readings = Array[String](["きょうふ"])
+meanings = Array[String](["fear", "dread", "dismay", "terror", "horror", "scare", "panic"])
+jlpt_level = 3
+_difficulty = 62
+_used_kanji = Array[String](["恐", "怖"])
+
+[sub_resource type="Resource" id="Resource_ya6q3"]
+script = ExtResource("9_u5lj2")
+japanese = "恐らく"
+readings = Array[String](["おそらく"])
+meanings = Array[String](["probably", "most likely", "in all likelihood", "I suspect", "I dare say", "I'm afraid"])
+jlpt_level = 3
+_difficulty = 63
+_used_kanji = Array[String](["恐"])
+
+[sub_resource type="Resource" id="Resource_k27ks"]
+script = ExtResource("9_u5lj2")
+japanese = "恐れる"
+readings = Array[String](["おそれる"])
+meanings = Array[String](["to fear", "to be afraid of"])
+jlpt_level = 3
+_difficulty = 63
+_used_kanji = Array[String](["恐"])
+
+[sub_resource type="Resource" id="Resource_44kvi"]
+script = ExtResource("9_u5lj2")
+japanese = "恐ろしい"
+readings = Array[String](["おそろしい"])
+meanings = Array[String](["dreadful", "terrifying", "terrible", "frightening"])
+jlpt_level = 3
+_difficulty = 64
+_used_kanji = Array[String](["恐"])
+
+[sub_resource type="Resource" id="Resource_qaqct"]
+script = ExtResource("9_u5lj2")
+japanese = "恐縮"
+readings = Array[String](["きょうしゅく"])
+meanings = Array[String](["feeling obliged", "being very grateful", "being thankful", "feeling sorry for troubling someone", "feeling ashamed of a mistake, etc.", "feeling embarrassed by compliments, hospitality, etc.", "shrinking back in fear"])
+jlpt_level = 2
+_difficulty = 92
+_used_kanji = Array[String](["恐", "縮"])
+
+[sub_resource type="Resource" id="Resource_qcav4"]
+script = ExtResource("9_u5lj2")
+japanese = "恐れ"
+readings = Array[String](["おそれ"])
+meanings = Array[String](["fear", "horror", "anxiety", "concern", "uneasiness", "reverence", "risk", "danger", "likelihood", "awe"])
+jlpt_level = 1
+_difficulty = 122
+_used_kanji = Array[String](["恐"])
+
+[sub_resource type="Resource" id="Resource_nc0lj"]
+script = ExtResource("9_u5lj2")
+japanese = "恐竜"
+readings = Array[String](["きょうりゅう"])
+meanings = Array[String](["dinosaur"])
+_difficulty = 638
+_used_kanji = Array[String](["恐", "竜"])
+
+[sub_resource type="Resource" id="Resource_36n2t"]
+script = ExtResource("9_u5lj2")
+japanese = "恐喝"
+readings = Array[String](["きょうかつ"])
+meanings = Array[String](["blackmail", "extortion", "threat to extort money"])
+_difficulty = 697
+_used_kanji = Array[String](["恐", "喝"])
+
+[sub_resource type="Resource" id="Resource_uapm2"]
+script = ExtResource("9_u5lj2")
+japanese = "恐る恐る"
+readings = Array[String](["おそるおそる"])
+meanings = Array[String](["fearfully", "timidly", "nervously", "cautiously", "gingerly"])
+_difficulty = 713
+_used_kanji = Array[String](["恐"])
+
+[sub_resource type="Resource" id="Resource_nxbv0"]
+script = ExtResource("9_u5lj2")
+japanese = "恐慌"
+readings = Array[String](["きょうこう"])
+meanings = Array[String](["panic", "scare", "alarm"])
+_difficulty = 768
+_used_kanji = Array[String](["恐", "慌"])
+
+[sub_resource type="Resource" id="Resource_6qpcl"]
+script = ExtResource("9_u5lj2")
+japanese = "恐怖症"
+readings = Array[String](["きょうふしょう"])
+meanings = Array[String](["phobia", "morbid fear"])
+_difficulty = 836
+_used_kanji = Array[String](["恐", "怖", "症"])
+
+[sub_resource type="Resource" id="Resource_84ioa"]
+script = ExtResource("9_u5lj2")
+japanese = "恐るべき"
+readings = Array[String](["おそるべき"])
+meanings = Array[String](["terrible", "terrifying", "dreadful", "horrible", "horrifying", "appalling", "astonishing", "astounding", "staggering", "tremendous", "awesome", "enormous"])
+_difficulty = 926
+_used_kanji = Array[String](["恐"])
+
+[resource]
+script = ExtResource("6_dt4dh")
+symbol = "恐"
+card_name = "Fear"
+rarity = 6
+abilities = Array[ExtResource("1_3aqci")]([SubResource("Resource_7cc54"), SubResource("Resource_y6uti")])
+tags = Array[int]([7, 17])
+vocabulary = Array[ExtResource("9_u5lj2")]([SubResource("Resource_4k25c"), SubResource("Resource_ya6q3"), SubResource("Resource_k27ks"), SubResource("Resource_44kvi"), SubResource("Resource_qaqct"), SubResource("Resource_qcav4"), SubResource("Resource_nc0lj"), SubResource("Resource_36n2t"), SubResource("Resource_uapm2"), SubResource("Resource_nxbv0"), SubResource("Resource_6qpcl"), SubResource("Resource_84ioa")])
+example_sentences = Array[ExtResource("5_3hamb")]([SubResource("Resource_vbhxn"), SubResource("Resource_4fxxv"), SubResource("Resource_evbao"), SubResource("Resource_f2s4q"), SubResource("Resource_w0ioh"), SubResource("Resource_ofxb7"), SubResource("Resource_up6so"), SubResource("Resource_yk8g4"), SubResource("Resource_k1u24"), SubResource("Resource_uh5bi"), SubResource("Resource_e0nhi"), SubResource("Resource_o10uv"), SubResource("Resource_p1s8p")])
+kanji_shape = SubResource("Resource_lf6pk")
+init_aspects = 64
+term_categories = Array[ExtResource("7_4o4mo")]([ExtResource("8_66fvh")])

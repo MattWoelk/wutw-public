@@ -1,0 +1,124 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://pioagnddi6p7"]
+
+[ext_resource type="Resource" uid="uid://dbp0i4n6dedty" path="res://art/pieces/piece_ginkou_mayumi.tres" id="1_lkm12"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_mopbx"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_lkm12"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_f0ivc"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="4_wtw7v"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="5_mcyjo"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="6_w7vr6"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="7_331of"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="8_b866k"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="9_v3xks"]
+[ext_resource type="Script" uid="uid://gu7gcielbwdr" path="res://events/system/outcomes/choose_card/event_outcome_choose_card.gd" id="10_6ccly"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="11_14tyc"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="12_odoct"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="13_is32i"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="14_ncqas"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="15_tlhi2"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="16_6mvrb"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="17_rkc2m"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="18_ek8bg"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="19_e3423"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="20_cnbf6"]
+
+[sub_resource type="Resource" id="Resource_28of2"]
+script = ExtResource("1_mopbx")
+_texture_path = "res://stage/survey/episodes/episode_missing_rations.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_yfufb"]
+script = ExtResource("7_331of")
+bonus_type = ExtResource("6_w7vr6")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_y6loq"]
+script = ExtResource("2_lkm12")
+label = "Settle for an apology."
+aspects = Array[ExtResource("3_f0ivc")]([ExtResource("4_wtw7v")])
+aspects_per_season = Array[ExtResource("3_f0ivc")]([ExtResource("5_mcyjo")])
+outcome = SubResource("Resource_yfufb")
+outcome_text = "The rest of the team intervenes to break up the argument. They convince the victim to empathize with the inexperienced youth, and she eventually settles for a sincere apology, agreeing to forgive the poor fool."
+
+[sub_resource type="Resource" id="Resource_is1wa"]
+script = ExtResource("8_b866k")
+delta = -6
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_vgty0"]
+script = ExtResource("2_lkm12")
+label = "Make the thief carry her pack."
+aspects = Array[ExtResource("3_f0ivc")]([null])
+outcome = SubResource("Resource_is1wa")
+outcome_text = "The young scout has no choice but to accept the extra burden, but the rift remains unhealed, and is sure to lead to trouble down the road."
+
+[sub_resource type="Resource" id="Resource_5yng5"]
+script = ExtResource("10_6ccly")
+card_tag = 18
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_u2yq0"]
+script = ExtResource("13_is32i")
+bonus_type = ExtResource("6_w7vr6")
+min_count = 20
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_kvtj0"]
+script = ExtResource("13_is32i")
+bonus_type = ExtResource("14_ncqas")
+min_count = 10
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_pivks"]
+script = ExtResource("15_tlhi2")
+all_requirements = Array[ExtResource("12_odoct")]([SubResource("Resource_u2yq0"), SubResource("Resource_kvtj0")])
+
+[sub_resource type="Resource" id="Resource_n1xbi"]
+script = ExtResource("2_lkm12")
+label = "Compensate her from others' rations."
+requirement = SubResource("Resource_pivks")
+aspects = Array[ExtResource("3_f0ivc")]([ExtResource("9_v3xks")])
+outcome = SubResource("Resource_5yng5")
+outcome_text = "The rest of the survey team offers to share their rations as compensation, and the woman's anger dissipates by the time she finishes the meal."
+
+[sub_resource type="Resource" id="Resource_5vd5c"]
+script = ExtResource("7_331of")
+bonus_type = ExtResource("18_ek8bg")
+amount = -15
+extra_per_season = -15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_rcd8v"]
+script = ExtResource("8_b866k")
+delta = -6
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_o7jfo"]
+script = ExtResource("16_6mvrb")
+suboutcomes = Array[ExtResource("17_rkc2m")]([SubResource("Resource_5vd5c"), SubResource("Resource_rcd8v")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_esn61"]
+script = ExtResource("2_lkm12")
+label = "Let her have revenge."
+aspects = Array[ExtResource("3_f0ivc")]([null])
+aspects_per_season = Array[ExtResource("3_f0ivc")]([null])
+outcome = SubResource("Resource_o7jfo")
+outcome_text = "The woman lands one kick on the thief's behind and walks away. It isn't enough to cause damage, but enough to leave a traumatic memory."
+
+[resource]
+script = ExtResource("19_e3423")
+episode_id = "missing_rations"
+title = "The Missing Rations"
+text = "When the team stops to have their meal, one of the scouts notices that half of her rice is missing from her pack.
+
+After a brief investigation, one of the younger team members admits that he had forgotten to pack his rations and ate hers instead during yesterday's meal.
+
+The woman is furious and threatening to beat up the thief."
+background_image = SubResource("Resource_28of2")
+background_credit = ExtResource("1_lkm12")
+choices = Array[ExtResource("2_lkm12")]([SubResource("Resource_y6loq"), SubResource("Resource_vgty0"), SubResource("Resource_n1xbi"), SubResource("Resource_esn61")])

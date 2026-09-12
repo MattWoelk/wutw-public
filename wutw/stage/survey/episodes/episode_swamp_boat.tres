@@ -1,0 +1,96 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://ddsc8gfpaccvr"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_m25c8"]
+[ext_resource type="Resource" uid="uid://dfeu354w66hll" path="res://art/pieces/piece_hiroshige_fuji_marsh.tres" id="1_qjdoq"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_qjdoq"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_ujufw"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="4_hqwjx"]
+[ext_resource type="Resource" uid="uid://cpb2m7c62tkc" path="res://cards/tier2/card_plug.tres" id="5_l01ps"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="6_87ju6"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="7_gyu6d"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="8_1iibb"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="9_5lvs5"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="10_cdp5i"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="11_wegml"]
+[ext_resource type="Resource" uid="uid://cdkl8x4gpqmfb" path="res://cards/tier6/card_foolish.tres" id="12_g53ps"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="13_2sv2d"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="14_lgxfq"]
+
+[sub_resource type="Resource" id="Resource_xj1vb"]
+script = ExtResource("1_m25c8")
+_texture_path = "res://stage/survey/episodes/episode_swamp_boat.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_syyab"]
+script = ExtResource("6_87ju6")
+card_type = ExtResource("5_l01ps")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_tjqia"]
+script = ExtResource("2_qjdoq")
+label = "Plug the hole."
+aspects = Array[ExtResource("3_ujufw")]([ExtResource("4_hqwjx")])
+aspects_per_season = Array[ExtResource("3_ujufw")]([null])
+outcome = SubResource("Resource_syyab")
+outcome_text = "One of the scouts reacts quickly, shedding his robe and wedging the cloth into the hole.
+
+This keeps the boat afloat long enough to reach the shore, where the rest of the survey team helps them fashion a more permanent wooden plug."
+
+[sub_resource type="Resource" id="Resource_c2r7g"]
+script = ExtResource("9_5lvs5")
+bonus_type = ExtResource("8_1iibb")
+amount = -15
+extra_per_season = -15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_vfm8x"]
+script = ExtResource("2_qjdoq")
+label = "Get into another boat."
+aspects = Array[ExtResource("3_ujufw")]([ExtResource("7_gyu6d")])
+aspects_per_season = Array[ExtResource("3_ujufw")]([null])
+outcome = SubResource("Resource_c2r7g")
+outcome_text = "The scouts call to their teammates in the nearest boat, who row over as quickly as they can. They all crowd into one boat, which becomes dangerously weighed down by the extra passengers.
+
+Together, they watch as the leaking boat is swallowed by the swamp."
+
+[sub_resource type="Resource" id="Resource_0l1ne"]
+script = ExtResource("11_wegml")
+delta = -4
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_wwgns"]
+script = ExtResource("2_qjdoq")
+label = "Row to land."
+aspects = Array[ExtResource("3_ujufw")]([ExtResource("10_cdp5i")])
+aspects_per_season = Array[ExtResource("3_ujufw")]([null])
+outcome = SubResource("Resource_0l1ne")
+outcome_text = "The scouts quickly row to a nearby clump of thickly growing reeds. They disembark just as the boat finally sinks.
+
+They find themselves knee-deep in the oozing muck, where they stay, cursing their fate, until the other boats catch up."
+
+[sub_resource type="Resource" id="Resource_6brqd"]
+script = ExtResource("6_87ju6")
+card_type = ExtResource("12_g53ps")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_8q0sy"]
+script = ExtResource("2_qjdoq")
+label = "Abandon the boat."
+aspects = Array[ExtResource("3_ujufw")]([null])
+aspects_per_season = Array[ExtResource("3_ujufw")]([null])
+outcome = SubResource("Resource_6brqd")
+outcome_text = "The scouts jump overboard, scattering in all directions.
+
+Some of them, unable to swim, begin to panic until they realize that the water is only chest-deep."
+
+[resource]
+script = ExtResource("13_2sv2d")
+episode_id = "swamp_boat"
+title = "The Sinking Boat"
+biome_types = Array[int]([4])
+text = "As the scouts row down a stream winding its way through the swamp, one of their boats springs a leak.
+
+As water begins to flood the bottom of the boat, they scramble to find the source and quickly discover a small hole in the hull."
+background_image = SubResource("Resource_xj1vb")
+background_credit = ExtResource("1_qjdoq")
+choices = Array[ExtResource("2_qjdoq")]([SubResource("Resource_tjqia"), SubResource("Resource_vfm8x"), SubResource("Resource_wwgns"), SubResource("Resource_8q0sy")])

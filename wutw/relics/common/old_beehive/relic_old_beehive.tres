@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Relic_OldBeehive" format=3 uid="uid://bapq2dia3o08d"]
+
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="1_bfex1"]
+[ext_resource type="Resource" uid="uid://dmoj3ldoyhfv4" path="res://cards/tier3/card_bee.tres" id="2_1xjqw"]
+[ext_resource type="Texture2D" uid="uid://dxtkrmdsw8wyl" path="res://relics/common/old_beehive/old_beehive.png" id="3_ex6k1"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="3_ybnma"]
+[ext_resource type="Script" uid="uid://usd76vr0urgb" path="res://relics/common/old_beehive/relic_old_beehive.gd" id="4_5q621"]
+[ext_resource type="Resource" uid="uid://5q63svcbmx37" path="res://glossary/categories/termcategory_relic.tres" id="6_1xjqw"]
+
+[resource]
+script = ExtResource("4_5q621")
+bonus_type = ExtResource("1_bfex1")
+amount_to_trigger = 50
+granted_card_type = ExtResource("2_1xjqw")
+relic_id = "old_beehive"
+default_name = "Old Beehive"
+default_description = "For every %d %s gained during <term_lower:stage>s, add a %s <term_lower:glyph> to your <term_lower:hand>. Can trigger no more than once per <term_lower:turn>."
+flavor_text = "Nothing attracts bees like harmony."
+icon = ExtResource("3_ex6k1")
+default_starting_state = 1
+term_categories = Array[ExtResource("3_ybnma")]([ExtResource("6_1xjqw")])
+metadata/_custom_type_script = "uid://cocdm5ulvrs8m"

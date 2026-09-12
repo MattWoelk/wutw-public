@@ -1,0 +1,134 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://dgco5ga2frwrf"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_2nqg7"]
+[ext_resource type="Resource" uid="uid://bovppk3wtpsge" path="res://art/pieces/piece_hiroshige_shirasuka.tres" id="1_xufbu"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_xufbu"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_rryoj"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="4_6xtbe"]
+[ext_resource type="Script" uid="uid://cbnw4a13y5x8c" path="res://events/system/outcomes/random/event_outcome_random.gd" id="5_dhiwq"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="6_4whb0"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="7_h6jxk"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="8_gnsto"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="9_7ggey"]
+[ext_resource type="Script" uid="uid://yxgaymbbt8tk" path="res://events/system/outcomes/override_next_step/event_outcome_override_next_step.gd" id="10_wt2jq"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="11_a02ru"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="12_8xtr5"]
+[ext_resource type="Script" uid="uid://gu7gcielbwdr" path="res://events/system/outcomes/choose_card/event_outcome_choose_card.gd" id="13_j6sm0"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="14_els3n"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="15_neqm8"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="16_egse5"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="17_3rxpe"]
+
+[sub_resource type="Resource" id="Resource_xdvfo"]
+script = ExtResource("1_2nqg7")
+_texture_path = "res://stage/survey/episodes/water_goat.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_h7qhd"]
+script = ExtResource("8_gnsto")
+bonus_type = ExtResource("7_h6jxk")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_np3km"]
+script = ExtResource("10_wt2jq")
+result_text = "A strong scout jumps into the waves below.
+
+He tries to guide the goat toward land, but the panicked animal aims a sharp kick in the man's direction, before finally calming down and swimming back to the shore."
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_0duua"]
+script = ExtResource("8_gnsto")
+bonus_type = ExtResource("11_a02ru")
+amount = -10
+extra_per_season = -5
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_gikcp"]
+script = ExtResource("9_7ggey")
+suboutcomes = Array[ExtResource("6_4whb0")]([SubResource("Resource_np3km"), SubResource("Resource_0duua")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_t1s6a"]
+script = ExtResource("5_dhiwq")
+suboutcomes = Dictionary[ExtResource("6_4whb0"), float]({
+SubResource("Resource_h7qhd"): 0.5,
+SubResource("Resource_gikcp"): 0.5
+})
+description = "Gain <term:bonus.harmony> or lose <term:bonus.safety>"
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_uq31o"]
+script = ExtResource("2_xufbu")
+label = "Jump in."
+aspects = Array[ExtResource("3_rryoj")]([ExtResource("4_6xtbe")])
+aspects_per_season = Array[ExtResource("3_rryoj")]([null])
+outcome = SubResource("Resource_t1s6a")
+outcome_text = "A strong scout jumps into the waves below.
+
+He tries to guide the goat toward land, and it finally calms down and swims back. As soon as its hooves find purchase, it runs off."
+
+[sub_resource type="Resource" id="Resource_fjhlb"]
+script = ExtResource("13_j6sm0")
+card_tier_bonus = -20
+aspect = ExtResource("12_8xtr5")
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_m0fgk"]
+script = ExtResource("2_xufbu")
+label = "Pray."
+aspects = Array[ExtResource("3_rryoj")]([ExtResource("12_8xtr5")])
+aspects_per_season = Array[ExtResource("3_rryoj")]([null])
+outcome = SubResource("Resource_fjhlb")
+outcome_text = "The scouts bow their heads and ask the Enlightened One to assist the drowning animal.
+
+By the time they raise their heads, the goat has managed to calm down and swim back to shore."
+
+[sub_resource type="Resource" id="Resource_kxvfn"]
+script = ExtResource("8_gnsto")
+bonus_type = ExtResource("7_h6jxk")
+amount = 20
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_xebkk"]
+script = ExtResource("2_xufbu")
+label = "Race to the beach."
+aspects = Array[ExtResource("3_rryoj")]([ExtResource("15_neqm8")])
+aspects_per_season = Array[ExtResource("3_rryoj")]([null])
+outcome = SubResource("Resource_kxvfn")
+outcome_text = "The group rushes to the beach, watching the goat struggle in the water.
+
+Three of the scouts swim to the animal and guide it safely to shore."
+
+[sub_resource type="Resource" id="Resource_k68is"]
+script = ExtResource("8_gnsto")
+bonus_type = ExtResource("7_h6jxk")
+amount = -5
+extra_per_season = -5
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_dl4bs"]
+script = ExtResource("2_xufbu")
+label = "Leave it alone."
+aspects = Array[ExtResource("3_rryoj")]([null])
+aspects_per_season = Array[ExtResource("3_rryoj")]([null])
+outcome = SubResource("Resource_k68is")
+outcome_text = "The scouts decide to let nature take its course, and walk away.
+
+They hear the goat struggling and splashing in the waves below.
+"
+
+[resource]
+script = ExtResource("16_egse5")
+episode_id = "water_goat"
+title = "The Goat"
+text = "As the scouts round a narrow bend in the trail, they come face to face with a shaggy goat.
+
+It startles and jumps away, its hooves scraping against loose stones. With a sharp bleat, it falls into the water below.
+
+The scouts look down, and though the animal should be able to swim, it seems to be panicking."
+background_image = SubResource("Resource_xdvfo")
+background_credit = ExtResource("1_xufbu")
+choices = Array[ExtResource("2_xufbu")]([SubResource("Resource_uq31o"), SubResource("Resource_m0fgk"), SubResource("Resource_xebkk"), SubResource("Resource_dl4bs")])

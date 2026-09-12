@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="Quest_Settler" format=3 uid="uid://dqt8f0mprgvx2"]
+
+[ext_resource type="Script" uid="uid://cjloydxgrv8oa" path="res://quests/settler/settler_quest_challenge.gd" id="1_5e7of"]
+[ext_resource type="Script" uid="uid://dfdiwag264fbv" path="res://quests/settler/challenges/settler_quest_challenge_no_heal_during_survey.gd" id="2_4yayv"]
+[ext_resource type="Resource" uid="uid://gb2hon6q3l08" path="res://characters/jobs/job_adventurer.tres" id="4_igjxq"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="4_mfye6"]
+[ext_resource type="Resource" uid="uid://co3g6h6pf13ta" path="res://characters/jobs/job_porter.tres" id="5_see75"]
+[ext_resource type="Resource" uid="uid://dli7oi3la1ubv" path="res://characters/jobs/job_guard.tres" id="6_niao0"]
+[ext_resource type="Resource" uid="uid://blf4pbxl5dj72" path="res://relics/season_reward/field_scroll/relic_field_scroll.tres" id="8_5hpfe"]
+[ext_resource type="Script" uid="uid://cd4swbq3t72je" path="res://quests/settler/settler_quest_reward.gd" id="9_us8ma"]
+[ext_resource type="Script" uid="uid://0k12wwnmq50h" path="res://quests/settler/rewards/settler_quest_reward_add_relic.gd" id="11_00n5b"]
+[ext_resource type="Script" uid="uid://d2v2u8566xwt4" path="res://quests/settler/goals/settler_quest_goal_num_survey_episodes.gd" id="12_apk6s"]
+[ext_resource type="Script" uid="uid://1na7ymvvvbby" path="res://quests/settler/quest_settler.gd" id="12_nelm8"]
+[ext_resource type="Script" uid="uid://bxua8gxfjp2wy" path="res://quests/settler/settler_quest_goal.gd" id="13_x56xh"]
+
+[sub_resource type="Resource" id="Resource_fc2km"]
+script = ExtResource("2_4yayv")
+metadata/_custom_type_script = "uid://dfdiwag264fbv"
+
+[sub_resource type="Resource" id="Resource_mlo6m"]
+script = ExtResource("11_00n5b")
+relic = ExtResource("8_5hpfe")
+metadata/_custom_type_script = "uid://0k12wwnmq50h"
+
+[sub_resource type="Resource" id="Resource_6feqn"]
+script = ExtResource("12_apk6s")
+num_required = 20
+metadata/_custom_type_script = "uid://d2v2u8566xwt4"
+
+[resource]
+script = ExtResource("12_nelm8")
+intro_text = "My old scouting team fired me. Can you believe them? \"Lowers team morale,\" they said. It's not my fault that bad things are bound to happen. I just don't sugarcoat it."
+challenges = Array[ExtResource("1_5e7of")]([SubResource("Resource_fc2km")])
+settler_goals = Array[ExtResource("13_x56xh")]([SubResource("Resource_6feqn")])
+rewards = Array[ExtResource("9_us8ma")]([SubResource("Resource_mlo6m")])
+restrict_to_jobs = Array[ExtResource("4_mfye6")]([ExtResource("4_igjxq"), ExtResource("5_see75"), ExtResource("6_niao0")])
+quest_id = "settler_grumpy_scout"
+category = 2
+name = "A Grumpy Scout"
+metadata/_custom_type_script = "uid://1na7ymvvvbby"

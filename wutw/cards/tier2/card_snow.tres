@@ -1,0 +1,875 @@
+[gd_resource type="Resource" script_class="CardType" format=3 uid="uid://bikiqnrtha0a1"]
+
+[ext_resource type="Script" uid="uid://b56kytec5oqcb" path="res://cards/abilities/card_ability.gd" id="1_nux36"]
+[ext_resource type="Script" uid="uid://dt05mwgh6yi5w" path="res://cards/abilities/card_ability_fill.gd" id="2_2c0ki"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="3_2deun"]
+[ext_resource type="Script" uid="uid://c0aqmugrp1wmn" path="res://cards/abilities/card_ability_gain.gd" id="4_4p6y2"]
+[ext_resource type="Script" uid="uid://xc73x4t7ckxm" path="res://japanese/example_sentence.gd" id="5_m51f0"]
+[ext_resource type="Script" uid="uid://bl2eelwkj800o" path="res://japanese/japanese_token.gd" id="6_anvi7"]
+[ext_resource type="Script" uid="uid://b6rw4ldrj6wch" path="res://japanese/vocab.gd" id="7_xsm84"]
+[ext_resource type="Script" uid="uid://du4k150pcdjs6" path="res://japanese/kanji_shape.gd" id="8_6xltr"]
+[ext_resource type="Script" uid="uid://dc15txdqjanlf" path="res://japanese/stroke_shape.gd" id="9_xwn6p"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="10_jyq8g"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="11_sxwhd"]
+[ext_resource type="Resource" uid="uid://d1k7vakhjcq5g" path="res://glossary/categories/termcategory_card.tres" id="12_4fpam"]
+
+[sub_resource type="Resource" id="Resource_urlny"]
+script = ExtResource("2_2c0ki")
+metadata/_custom_type_script = "uid://dt05mwgh6yi5w"
+
+[sub_resource type="Resource" id="Resource_ja2s4"]
+script = ExtResource("4_4p6y2")
+bonus_type = ExtResource("3_2deun")
+points = 10
+metadata/_custom_type_script = "uid://c0aqmugrp1wmn"
+
+[sub_resource type="Resource" id="Resource_4bqpr"]
+script = ExtResource("7_xsm84")
+japanese = "雪"
+readings = Array[String](["ゆき"])
+meanings = Array[String](["snow", "snowfall"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_tbpkq"]
+script = ExtResource("6_anvi7")
+raw_text = "雪"
+vocab = SubResource("Resource_4bqpr")
+reading = "ゆき"
+
+[sub_resource type="Resource" id="Resource_ij18k"]
+script = ExtResource("6_anvi7")
+raw_text = "みたい"
+reading = "みたい"
+
+[sub_resource type="Resource" id="Resource_s0muj"]
+script = ExtResource("6_anvi7")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_7eui2"]
+script = ExtResource("5_m51f0")
+japanese = "雪みたい。"
+native = "It looks like snow."
+parsed = Array[ExtResource("6_anvi7")]([SubResource("Resource_tbpkq"), SubResource("Resource_ij18k"), SubResource("Resource_s0muj")])
+_difficulty = 128
+
+[sub_resource type="Resource" id="Resource_dh1qr"]
+script = ExtResource("6_anvi7")
+raw_text = "雪"
+vocab = SubResource("Resource_4bqpr")
+reading = "ゆき"
+
+[sub_resource type="Resource" id="Resource_hhjxf"]
+script = ExtResource("6_anvi7")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_smpso"]
+script = ExtResource("6_anvi7")
+raw_text = "とけ"
+reading = "とけ"
+
+[sub_resource type="Resource" id="Resource_bw4kd"]
+script = ExtResource("6_anvi7")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_u7fdb"]
+script = ExtResource("6_anvi7")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_h7bx0"]
+script = ExtResource("5_m51f0")
+japanese = "雪がとけた。"
+native = "The snow has melted."
+parsed = Array[ExtResource("6_anvi7")]([SubResource("Resource_dh1qr"), SubResource("Resource_hhjxf"), SubResource("Resource_smpso"), SubResource("Resource_bw4kd"), SubResource("Resource_u7fdb")])
+_difficulty = 144
+
+[sub_resource type="Resource" id="Resource_7bxff"]
+script = ExtResource("7_xsm84")
+japanese = "外"
+readings = Array[String](["そと", "と"])
+meanings = Array[String](["outside", "exterior", "the open (air)", "other place", "somewhere else", "outside one's group (family, company, etc.)"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_myhd7"]
+script = ExtResource("6_anvi7")
+raw_text = "外"
+vocab = SubResource("Resource_7bxff")
+reading = "そと"
+
+[sub_resource type="Resource" id="Resource_dq07w"]
+script = ExtResource("6_anvi7")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_o2qmk"]
+script = ExtResource("6_anvi7")
+raw_text = "雪"
+vocab = SubResource("Resource_4bqpr")
+reading = "ゆき"
+
+[sub_resource type="Resource" id="Resource_r2l4p"]
+script = ExtResource("6_anvi7")
+raw_text = "だ"
+reading = "だ"
+
+[sub_resource type="Resource" id="Resource_ebewd"]
+script = ExtResource("6_anvi7")
+raw_text = "よ"
+reading = "よ"
+
+[sub_resource type="Resource" id="Resource_aadlc"]
+script = ExtResource("6_anvi7")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_5tqiu"]
+script = ExtResource("5_m51f0")
+japanese = "外は雪だよ。"
+native = "It's snowing outside."
+parsed = Array[ExtResource("6_anvi7")]([SubResource("Resource_myhd7"), SubResource("Resource_dq07w"), SubResource("Resource_o2qmk"), SubResource("Resource_r2l4p"), SubResource("Resource_ebewd"), SubResource("Resource_aadlc")])
+_difficulty = 161
+
+[sub_resource type="Resource" id="Resource_eym37"]
+script = ExtResource("7_xsm84")
+japanese = "雨"
+readings = Array[String](["あめ"])
+meanings = Array[String](["rain", "rainy day", "rainy weather", "the November suit (in hanafuda)"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_ctlnj"]
+script = ExtResource("6_anvi7")
+raw_text = "雨"
+vocab = SubResource("Resource_eym37")
+reading = "あめ"
+
+[sub_resource type="Resource" id="Resource_lug2d"]
+script = ExtResource("6_anvi7")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_eno60"]
+script = ExtResource("6_anvi7")
+raw_text = "雪"
+vocab = SubResource("Resource_4bqpr")
+reading = "ゆき"
+
+[sub_resource type="Resource" id="Resource_gxcs5"]
+script = ExtResource("6_anvi7")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_6abt6"]
+script = ExtResource("6_anvi7")
+raw_text = "なっ"
+reading = "なっ"
+
+[sub_resource type="Resource" id="Resource_rk0ri"]
+script = ExtResource("6_anvi7")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_nvkfk"]
+script = ExtResource("6_anvi7")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_nr7v2"]
+script = ExtResource("5_m51f0")
+japanese = "雨は雪になった。"
+native = "The rain turned to snow."
+parsed = Array[ExtResource("6_anvi7")]([SubResource("Resource_ctlnj"), SubResource("Resource_lug2d"), SubResource("Resource_eno60"), SubResource("Resource_gxcs5"), SubResource("Resource_6abt6"), SubResource("Resource_rk0ri"), SubResource("Resource_nvkfk")])
+_difficulty = 181
+
+[sub_resource type="Resource" id="Resource_hriun"]
+script = ExtResource("6_anvi7")
+raw_text = "雪"
+vocab = SubResource("Resource_4bqpr")
+reading = "ゆき"
+
+[sub_resource type="Resource" id="Resource_u6fxi"]
+script = ExtResource("6_anvi7")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_ombnf"]
+script = ExtResource("6_anvi7")
+raw_text = "よう"
+reading = "よう"
+
+[sub_resource type="Resource" id="Resource_vqknb"]
+script = ExtResource("6_anvi7")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_lptfo"]
+script = ExtResource("7_xsm84")
+japanese = "白い"
+readings = Array[String](["しろい"])
+meanings = Array[String](["white", "blank (e.g. paper)", "uncolored", "unmarked", "spotless", "immaculate", "innocent", "not guilty", "pure", "bright", "vivid", "inexperienced", "naive", "unrefined"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_5kyp1"]
+script = ExtResource("6_anvi7")
+raw_text = "白い"
+vocab = SubResource("Resource_lptfo")
+reading = "しろい"
+
+[sub_resource type="Resource" id="Resource_4h76i"]
+script = ExtResource("6_anvi7")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_o8k77"]
+script = ExtResource("5_m51f0")
+japanese = "雪のように白い。"
+native = "It is white as snow."
+parsed = Array[ExtResource("6_anvi7")]([SubResource("Resource_hriun"), SubResource("Resource_u6fxi"), SubResource("Resource_ombnf"), SubResource("Resource_vqknb"), SubResource("Resource_5kyp1"), SubResource("Resource_4h76i")])
+_difficulty = 181
+
+[sub_resource type="Resource" id="Resource_2oamh"]
+script = ExtResource("6_anvi7")
+raw_text = "雪"
+vocab = SubResource("Resource_4bqpr")
+reading = "ゆき"
+
+[sub_resource type="Resource" id="Resource_qeml7"]
+script = ExtResource("6_anvi7")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_fhry3"]
+script = ExtResource("7_xsm84")
+japanese = "水"
+readings = Array[String](["みず"])
+meanings = Array[String](["water (esp. cool or cold)", "fluid (esp. in an animal tissue)", "liquid", "flood", "floodwaters", "water offered to wrestlers just prior to a bout", "break granted to wrestlers engaged in a prolonged bout"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_voqs6"]
+script = ExtResource("6_anvi7")
+raw_text = "水"
+vocab = SubResource("Resource_fhry3")
+reading = "みず"
+
+[sub_resource type="Resource" id="Resource_5l4mo"]
+script = ExtResource("6_anvi7")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_xf4au"]
+script = ExtResource("6_anvi7")
+raw_text = "なっ"
+reading = "なっ"
+
+[sub_resource type="Resource" id="Resource_bpvee"]
+script = ExtResource("6_anvi7")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_8yg25"]
+script = ExtResource("6_anvi7")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_ne8si"]
+script = ExtResource("5_m51f0")
+japanese = "雪が水になった。"
+native = "The snow turned into water."
+parsed = Array[ExtResource("6_anvi7")]([SubResource("Resource_2oamh"), SubResource("Resource_qeml7"), SubResource("Resource_voqs6"), SubResource("Resource_5l4mo"), SubResource("Resource_xf4au"), SubResource("Resource_bpvee"), SubResource("Resource_8yg25")])
+_difficulty = 181
+
+[sub_resource type="Resource" id="Resource_ogych"]
+script = ExtResource("7_xsm84")
+japanese = "今日"
+readings = Array[String](["きょう", "こんにち", "こんち", "こんじつ"])
+meanings = Array[String](["today", "this day", "these days", "recently", "nowadays"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_ru18j"]
+script = ExtResource("6_anvi7")
+raw_text = "今日"
+vocab = SubResource("Resource_ogych")
+reading = "きょう"
+
+[sub_resource type="Resource" id="Resource_oums3"]
+script = ExtResource("6_anvi7")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_mge5s"]
+script = ExtResource("6_anvi7")
+raw_text = "雪"
+vocab = SubResource("Resource_4bqpr")
+reading = "ゆき"
+
+[sub_resource type="Resource" id="Resource_bh7cg"]
+script = ExtResource("6_anvi7")
+raw_text = "です"
+reading = "です"
+
+[sub_resource type="Resource" id="Resource_wvlib"]
+script = ExtResource("6_anvi7")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_px32y"]
+script = ExtResource("5_m51f0")
+japanese = "今日は雪です。"
+native = "It is snowing today."
+parsed = Array[ExtResource("6_anvi7")]([SubResource("Resource_ru18j"), SubResource("Resource_oums3"), SubResource("Resource_mge5s"), SubResource("Resource_bh7cg"), SubResource("Resource_wvlib")])
+_difficulty = 185
+
+[sub_resource type="Resource" id="Resource_ih5b6"]
+script = ExtResource("6_anvi7")
+raw_text = "今日"
+vocab = SubResource("Resource_ogych")
+reading = "きょう"
+
+[sub_resource type="Resource" id="Resource_axkcy"]
+script = ExtResource("6_anvi7")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_ll0sr"]
+script = ExtResource("6_anvi7")
+raw_text = "雪"
+vocab = SubResource("Resource_4bqpr")
+reading = "ゆき"
+
+[sub_resource type="Resource" id="Resource_p6n0o"]
+script = ExtResource("6_anvi7")
+raw_text = "です"
+reading = "です"
+
+[sub_resource type="Resource" id="Resource_t7ugl"]
+script = ExtResource("6_anvi7")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_sfixq"]
+script = ExtResource("5_m51f0")
+japanese = "今日は雪です。"
+native = "It's snowy today."
+parsed = Array[ExtResource("6_anvi7")]([SubResource("Resource_ih5b6"), SubResource("Resource_axkcy"), SubResource("Resource_ll0sr"), SubResource("Resource_p6n0o"), SubResource("Resource_t7ugl")])
+_difficulty = 185
+
+[sub_resource type="Resource" id="Resource_mkoj3"]
+script = ExtResource("6_anvi7")
+raw_text = "雪"
+vocab = SubResource("Resource_4bqpr")
+reading = "ゆき"
+
+[sub_resource type="Resource" id="Resource_tn23x"]
+script = ExtResource("6_anvi7")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_d43mr"]
+script = ExtResource("7_xsm84")
+japanese = "深い"
+readings = Array[String](["ふかい"])
+meanings = Array[String](["deep", "profound", "dense", "thick", "close (relationship)", "intense", "strong", "late"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_xwm73"]
+script = ExtResource("6_anvi7")
+raw_text = "深い"
+vocab = SubResource("Resource_d43mr")
+reading = "ふかい"
+
+[sub_resource type="Resource" id="Resource_e7agq"]
+script = ExtResource("6_anvi7")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_71wdf"]
+script = ExtResource("5_m51f0")
+japanese = "雪が深い。"
+native = "The snow is deep."
+parsed = Array[ExtResource("6_anvi7")]([SubResource("Resource_mkoj3"), SubResource("Resource_tn23x"), SubResource("Resource_xwm73"), SubResource("Resource_e7agq")])
+_difficulty = 186
+
+[sub_resource type="Resource" id="Resource_nny32"]
+script = ExtResource("6_anvi7")
+raw_text = "雪"
+vocab = SubResource("Resource_4bqpr")
+reading = "ゆき"
+
+[sub_resource type="Resource" id="Resource_1l6i5"]
+script = ExtResource("6_anvi7")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_3wfui"]
+script = ExtResource("6_anvi7")
+raw_text = "なる"
+reading = "なる"
+
+[sub_resource type="Resource" id="Resource_v751l"]
+script = ExtResource("6_anvi7")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_xbycp"]
+script = ExtResource("6_anvi7")
+raw_text = "かしら"
+reading = "かしら"
+
+[sub_resource type="Resource" id="Resource_05hpd"]
+script = ExtResource("6_anvi7")
+raw_text = "？"
+reading = "？"
+
+[sub_resource type="Resource" id="Resource_nid86"]
+script = ExtResource("5_m51f0")
+japanese = "雪になるのかしら？"
+native = "I wonder whether it'll snow."
+parsed = Array[ExtResource("6_anvi7")]([SubResource("Resource_nny32"), SubResource("Resource_1l6i5"), SubResource("Resource_3wfui"), SubResource("Resource_v751l"), SubResource("Resource_xbycp"), SubResource("Resource_05hpd")])
+_difficulty = 194
+
+[sub_resource type="Resource" id="Resource_lhdww"]
+script = ExtResource("7_xsm84")
+japanese = "冬"
+readings = Array[String](["ふゆ"])
+meanings = Array[String](["winter"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_6xliv"]
+script = ExtResource("6_anvi7")
+raw_text = "冬"
+vocab = SubResource("Resource_lhdww")
+reading = "ふゆ"
+
+[sub_resource type="Resource" id="Resource_so1yd"]
+script = ExtResource("6_anvi7")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_f6124"]
+script = ExtResource("6_anvi7")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_bybqk"]
+script = ExtResource("6_anvi7")
+raw_text = "雪"
+vocab = SubResource("Resource_4bqpr")
+reading = "ゆき"
+
+[sub_resource type="Resource" id="Resource_wg2c8"]
+script = ExtResource("6_anvi7")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_01l34"]
+script = ExtResource("7_xsm84")
+japanese = "多い"
+readings = Array[String](["おおい"])
+meanings = Array[String](["many", "numerous", "a lot", "large amount of", "large quantity of", "much", "frequent", "common"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_jx7lf"]
+script = ExtResource("6_anvi7")
+raw_text = "多い"
+vocab = SubResource("Resource_01l34")
+reading = "おおい"
+
+[sub_resource type="Resource" id="Resource_wrx02"]
+script = ExtResource("6_anvi7")
+raw_text = "ん"
+reading = "ん"
+
+[sub_resource type="Resource" id="Resource_p1hg8"]
+script = ExtResource("6_anvi7")
+raw_text = "です"
+reading = "です"
+
+[sub_resource type="Resource" id="Resource_h8ym5"]
+script = ExtResource("6_anvi7")
+raw_text = "よ"
+reading = "よ"
+
+[sub_resource type="Resource" id="Resource_5a715"]
+script = ExtResource("6_anvi7")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_7vvb3"]
+script = ExtResource("5_m51f0")
+japanese = "冬には雪が多いんですよ。"
+native = "We have a lot of snow in the winter."
+parsed = Array[ExtResource("6_anvi7")]([SubResource("Resource_6xliv"), SubResource("Resource_so1yd"), SubResource("Resource_f6124"), SubResource("Resource_bybqk"), SubResource("Resource_wg2c8"), SubResource("Resource_jx7lf"), SubResource("Resource_wrx02"), SubResource("Resource_p1hg8"), SubResource("Resource_h8ym5"), SubResource("Resource_5a715")])
+_difficulty = 278
+
+[sub_resource type="Resource" id="Resource_sggdb"]
+script = ExtResource("6_anvi7")
+raw_text = "雪"
+vocab = SubResource("Resource_4bqpr")
+reading = "ゆき"
+
+[sub_resource type="Resource" id="Resource_d2x7y"]
+script = ExtResource("6_anvi7")
+raw_text = "だ"
+reading = "だ"
+
+[sub_resource type="Resource" id="Resource_ogvap"]
+script = ExtResource("6_anvi7")
+raw_text = "けど"
+reading = "けど"
+
+[sub_resource type="Resource" id="Resource_fhptb"]
+script = ExtResource("6_anvi7")
+raw_text = "、"
+reading = "、"
+
+[sub_resource type="Resource" id="Resource_ujiih"]
+script = ExtResource("7_xsm84")
+japanese = "行く"
+readings = Array[String](["いく", "ゆく"])
+meanings = Array[String](["to go", "to move (towards)", "to head (towards)", "to leave (for)", "to move through", "to travel across", "to walk along (e.g. a road)", "to go (well, badly, etc.)", "to proceed", "to turn out", "to get along", "to do (in a particular way)", "to go (with; a choice)", "to try", "to pass (of time, seasons, etc.)", "to go by", "to stream", "to flow", "to die", "to pass away", "to reach (a stage, extent, age, etc.)", "to get to", "to go (so far as ...)", "to reach (of information, instructions, wind, etc.)", "to arrive", "to continue ...", "to go on ...", "to (progress) steadily", "to gradually ...", "to progressively ...", "to have an orgasm", "to come", "to cum", "to trip", "to get high", "to have a drug-induced hallucination"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_j4sqg"]
+script = ExtResource("6_anvi7")
+raw_text = "行か"
+vocab = SubResource("Resource_ujiih")
+reading = "いか"
+
+[sub_resource type="Resource" id="Resource_3g4pe"]
+script = ExtResource("6_anvi7")
+raw_text = "なくっ"
+reading = "なくっ"
+
+[sub_resource type="Resource" id="Resource_kw205"]
+script = ExtResource("6_anvi7")
+raw_text = "ちゃ"
+reading = "ちゃ"
+
+[sub_resource type="Resource" id="Resource_3563r"]
+script = ExtResource("6_anvi7")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_36y61"]
+script = ExtResource("5_m51f0")
+japanese = "雪だけど、行かなくっちゃ。"
+native = "Even though it's snowing, I have to go."
+parsed = Array[ExtResource("6_anvi7")]([SubResource("Resource_sggdb"), SubResource("Resource_d2x7y"), SubResource("Resource_ogvap"), SubResource("Resource_fhptb"), SubResource("Resource_j4sqg"), SubResource("Resource_3g4pe"), SubResource("Resource_kw205"), SubResource("Resource_3563r")])
+_difficulty = 278
+
+[sub_resource type="Resource" id="Resource_8pf2q"]
+script = ExtResource("6_anvi7")
+raw_text = "その"
+reading = "その"
+
+[sub_resource type="Resource" id="Resource_pb7ek"]
+script = ExtResource("7_xsm84")
+japanese = "山"
+readings = Array[String](["やま"])
+meanings = Array[String](["mountain", "hill", "mine", "(mountain) forest", "heap", "pile", "stack", "protruding or high part of an object", "crown (of a hat)", "thread (of a screw)", "tread (of a tire)", "climax", "peak", "critical point", "guess", "speculation", "gamble", "(criminal) case", "crime", "mountain climbing", "mountaineering", "festival float (esp. one mounted with a decorative halberd)", "deck (from which players draw cards)", "draw pile", "stock", "wall", "wall tile", "wild"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_r5wke"]
+script = ExtResource("6_anvi7")
+raw_text = "山"
+vocab = SubResource("Resource_pb7ek")
+reading = "やま"
+
+[sub_resource type="Resource" id="Resource_1mur0"]
+script = ExtResource("6_anvi7")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_pegwi"]
+script = ExtResource("6_anvi7")
+raw_text = "雪"
+vocab = SubResource("Resource_4bqpr")
+reading = "ゆき"
+
+[sub_resource type="Resource" id="Resource_oshrk"]
+script = ExtResource("6_anvi7")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_bn245"]
+script = ExtResource("6_anvi7")
+raw_text = "おおわ"
+reading = "おおわ"
+
+[sub_resource type="Resource" id="Resource_f1l7f"]
+script = ExtResource("6_anvi7")
+raw_text = "れ"
+reading = "れ"
+
+[sub_resource type="Resource" id="Resource_o10bs"]
+script = ExtResource("6_anvi7")
+raw_text = "て"
+reading = "て"
+
+[sub_resource type="Resource" id="Resource_0vrre"]
+script = ExtResource("6_anvi7")
+raw_text = "いる"
+reading = "いる"
+
+[sub_resource type="Resource" id="Resource_mii3h"]
+script = ExtResource("6_anvi7")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_ma3ho"]
+script = ExtResource("5_m51f0")
+japanese = "その山は雪におおわれている。"
+native = "The mountain is covered with snow."
+parsed = Array[ExtResource("6_anvi7")]([SubResource("Resource_8pf2q"), SubResource("Resource_r5wke"), SubResource("Resource_1mur0"), SubResource("Resource_pegwi"), SubResource("Resource_oshrk"), SubResource("Resource_bn245"), SubResource("Resource_f1l7f"), SubResource("Resource_o10bs"), SubResource("Resource_0vrre"), SubResource("Resource_mii3h")])
+_difficulty = 281
+
+[sub_resource type="Resource" id="Resource_c63mw"]
+script = ExtResource("6_anvi7")
+raw_text = "どうして"
+reading = "どうして"
+
+[sub_resource type="Resource" id="Resource_l54a0"]
+script = ExtResource("6_anvi7")
+raw_text = "雪"
+vocab = SubResource("Resource_4bqpr")
+reading = "ゆき"
+
+[sub_resource type="Resource" id="Resource_ekmud"]
+script = ExtResource("6_anvi7")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_esdgb"]
+script = ExtResource("6_anvi7")
+raw_text = "白い"
+vocab = SubResource("Resource_lptfo")
+reading = "しろい"
+
+[sub_resource type="Resource" id="Resource_aolyo"]
+script = ExtResource("7_xsm84")
+japanese = "色"
+readings = Array[String](["いろ"])
+meanings = Array[String](["colour", "color", "hue", "tint", "tinge", "shade", "complexion", "skin colour", "skin color", "look (on one's face)", "expression", "appearance", "air", "feeling", "personality", "character", "tone (of one's voice, etc.)", "tune", "sound", "ring", "love", "lust", "sensuality", "love affair", "lover", "paramour", "beauty", "sexiness", "physical appeal", "kind", "type", "variety"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_k2kna"]
+script = ExtResource("6_anvi7")
+raw_text = "色"
+vocab = SubResource("Resource_aolyo")
+reading = "いろ"
+
+[sub_resource type="Resource" id="Resource_1au0y"]
+script = ExtResource("6_anvi7")
+raw_text = "です"
+reading = "です"
+
+[sub_resource type="Resource" id="Resource_wfw7o"]
+script = ExtResource("6_anvi7")
+raw_text = "か"
+reading = "か"
+
+[sub_resource type="Resource" id="Resource_6p58t"]
+script = ExtResource("6_anvi7")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_bgk5u"]
+script = ExtResource("5_m51f0")
+japanese = "どうして雪が白い色ですか。"
+native = "Why is snow white?"
+parsed = Array[ExtResource("6_anvi7")]([SubResource("Resource_c63mw"), SubResource("Resource_l54a0"), SubResource("Resource_ekmud"), SubResource("Resource_esdgb"), SubResource("Resource_k2kna"), SubResource("Resource_1au0y"), SubResource("Resource_wfw7o"), SubResource("Resource_6p58t")])
+_difficulty = 285
+
+[sub_resource type="Resource" id="Resource_8nnc8"]
+script = ExtResource("7_xsm84")
+japanese = "去年"
+readings = Array[String](["きょねん", "こぞ"])
+meanings = Array[String](["last year"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_73ul3"]
+script = ExtResource("6_anvi7")
+raw_text = "去年"
+vocab = SubResource("Resource_8nnc8")
+reading = "きょねん"
+
+[sub_resource type="Resource" id="Resource_fojb0"]
+script = ExtResource("6_anvi7")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_m5f7s"]
+script = ExtResource("6_anvi7")
+raw_text = "雪"
+vocab = SubResource("Resource_4bqpr")
+reading = "ゆき"
+
+[sub_resource type="Resource" id="Resource_ftxbo"]
+script = ExtResource("6_anvi7")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_ykt0a"]
+script = ExtResource("6_anvi7")
+raw_text = "多かっ"
+vocab = SubResource("Resource_01l34")
+reading = "おおかっ"
+
+[sub_resource type="Resource" id="Resource_pe4ie"]
+script = ExtResource("6_anvi7")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_xhuhy"]
+script = ExtResource("6_anvi7")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_g4aec"]
+script = ExtResource("5_m51f0")
+japanese = "去年は雪が多かった。"
+native = "There was a great deal of snow last year."
+parsed = Array[ExtResource("6_anvi7")]([SubResource("Resource_73ul3"), SubResource("Resource_fojb0"), SubResource("Resource_m5f7s"), SubResource("Resource_ftxbo"), SubResource("Resource_ykt0a"), SubResource("Resource_pe4ie"), SubResource("Resource_xhuhy")])
+_difficulty = 289
+
+[sub_resource type="Resource" id="Resource_8pr8e"]
+script = ExtResource("9_xwn6p")
+points = Array[Vector2]([Vector2(30.3, 17.75), Vector2(35.44, 17.71), Vector2(39.97, 17.23), Vector2(44.89, 16.69), Vector2(50.13, 16.1), Vector2(55.51, 15.51), Vector2(60.89, 14.94), Vector2(66.1, 14.43), Vector2(70.97, 14.02), Vector2(75.76, 13.73), Vector2(80.73, 13.93)])
+
+[sub_resource type="Resource" id="Resource_gr5qc"]
+script = ExtResource("9_xwn6p")
+points = Array[Vector2]([Vector2(19.13, 30.26), Vector2(18.46, 35.62), Vector2(17.18, 41.12), Vector2(15.76, 46.52)])
+
+[sub_resource type="Resource" id="Resource_0fwc2"]
+script = ExtResource("9_xwn6p")
+points = Array[Vector2]([Vector2(20.02, 32.66), Vector2(23.98, 32.16), Vector2(28.53, 31.6), Vector2(33.57, 30.98), Vector2(39.01, 30.34), Vector2(44.73, 29.68), Vector2(50.63, 29.01), Vector2(56.62, 28.36), Vector2(62.58, 27.74), Vector2(68.41, 27.16), Vector2(74.02, 26.63), Vector2(79.3, 26.18), Vector2(84.15, 25.82), Vector2(88.45, 25.55), Vector2(94.07, 26.92), Vector2(92.03, 31.04), Vector2(88.66, 34.47)])
+
+[sub_resource type="Resource" id="Resource_a3naq"]
+script = ExtResource("9_xwn6p")
+points = Array[Vector2]([Vector2(52.65, 18.92), Vector2(54.26, 23.88), Vector2(54.27, 28.17), Vector2(54.3, 34.35), Vector2(54.34, 41.22), Vector2(54.37, 47.58), Vector2(54.39, 53.32)])
+
+[sub_resource type="Resource" id="Resource_wncep"]
+script = ExtResource("9_xwn6p")
+points = Array[Vector2]([Vector2(32.73, 38.9), Vector2(38.6, 40.8), Vector2(43.25, 43.07)])
+
+[sub_resource type="Resource" id="Resource_s8q10"]
+script = ExtResource("9_xwn6p")
+points = Array[Vector2]([Vector2(29.33, 47.1), Vector2(35.81, 49.29), Vector2(41, 51.85)])
+
+[sub_resource type="Resource" id="Resource_4mbb7"]
+script = ExtResource("9_xwn6p")
+points = Array[Vector2]([Vector2(66.56, 34.1), Vector2(72.69, 36.51), Vector2(77, 38.78)])
+
+[sub_resource type="Resource" id="Resource_a52l5"]
+script = ExtResource("9_xwn6p")
+points = Array[Vector2]([Vector2(66.12, 44.62), Vector2(72.15, 46.98), Vector2(76.91, 49.81)])
+
+[sub_resource type="Resource" id="Resource_ormkw"]
+script = ExtResource("9_xwn6p")
+points = Array[Vector2]([Vector2(29.41, 61.93), Vector2(34.21, 62.92), Vector2(39.7, 62.38), Vector2(45.23, 61.7), Vector2(50.75, 61.1), Vector2(56.17, 60.56), Vector2(61.44, 60.07), Vector2(66.49, 59.63), Vector2(71.24, 59.2), Vector2(75.64, 58.8), Vector2(80.5, 59.39), Vector2(81.86, 63.65), Vector2(81.2, 67.95), Vector2(80.51, 72.79), Vector2(79.78, 78.04), Vector2(79.02, 83.57), Vector2(78.21, 89.24)])
+
+[sub_resource type="Resource" id="Resource_62ro5"]
+script = ExtResource("9_xwn6p")
+points = Array[Vector2]([Vector2(29.89, 76.19), Vector2(34.75, 77.26), Vector2(39.73, 76.85), Vector2(44.98, 76.31), Vector2(50.51, 75.75), Vector2(56.16, 75.2), Vector2(61.74, 74.68), Vector2(67.09, 74.2), Vector2(72.03, 73.78), Vector2(76.38, 73.43), Vector2(79.96, 73.18)])
+
+[sub_resource type="Resource" id="Resource_w4b5l"]
+script = ExtResource("9_xwn6p")
+points = Array[Vector2]([Vector2(27.88, 93.44), Vector2(33.11, 94.24), Vector2(38.41, 93.84), Vector2(43.76, 93.34), Vector2(49.29, 92.81), Vector2(54.89, 92.26), Vector2(60.48, 91.71), Vector2(65.94, 91.18), Vector2(71.18, 90.68), Vector2(76.29, 90.23), Vector2(81.71, 90.42)])
+
+[sub_resource type="Resource" id="Resource_4xo8q"]
+script = ExtResource("8_6xltr")
+stroke_shapes = Array[ExtResource("9_xwn6p")]([SubResource("Resource_8pr8e"), SubResource("Resource_gr5qc"), SubResource("Resource_0fwc2"), SubResource("Resource_a3naq"), SubResource("Resource_wncep"), SubResource("Resource_s8q10"), SubResource("Resource_4mbb7"), SubResource("Resource_a52l5"), SubResource("Resource_ormkw"), SubResource("Resource_62ro5"), SubResource("Resource_w4b5l")])
+
+[sub_resource type="Resource" id="Resource_jgw0h"]
+script = ExtResource("7_xsm84")
+japanese = "雪"
+readings = Array[String](["ゆき"])
+meanings = Array[String](["snow", "snowfall"])
+jlpt_level = 5
+_difficulty = 1
+
+[sub_resource type="Resource" id="Resource_8o5lh"]
+script = ExtResource("7_xsm84")
+japanese = "吹雪"
+readings = Array[String](["ふぶき"])
+meanings = Array[String](["snow storm", "blizzard"])
+jlpt_level = 2
+_difficulty = 92
+
+[sub_resource type="Resource" id="Resource_1lkor"]
+script = ExtResource("7_xsm84")
+japanese = "初雪"
+readings = Array[String](["はつゆき"])
+meanings = Array[String](["first snow of the season", "first snowfall"])
+_difficulty = 712
+
+[sub_resource type="Resource" id="Resource_ph52b"]
+script = ExtResource("7_xsm84")
+japanese = "積雪"
+readings = Array[String](["せきせつ"])
+meanings = Array[String](["fallen snow", "snow cover"])
+_difficulty = 794
+
+[sub_resource type="Resource" id="Resource_k5ocx"]
+script = ExtResource("7_xsm84")
+japanese = "降雪"
+readings = Array[String](["こうせつ"])
+meanings = Array[String](["snowfall", "snow"])
+_difficulty = 826
+
+[sub_resource type="Resource" id="Resource_r3nmt"]
+script = ExtResource("7_xsm84")
+japanese = "大雪"
+readings = Array[String](["おおゆき"])
+meanings = Array[String](["heavy snow", "heavy snowfall"])
+_difficulty = 842
+
+[sub_resource type="Resource" id="Resource_e0fj8"]
+script = ExtResource("7_xsm84")
+japanese = "雪国"
+readings = Array[String](["ゆきぐに"])
+meanings = Array[String](["snow country", "snowy region"])
+_difficulty = 855
+
+[sub_resource type="Resource" id="Resource_ft2yo"]
+script = ExtResource("7_xsm84")
+japanese = "雪辱"
+readings = Array[String](["せつじょく"])
+meanings = Array[String](["vindication of honor", "making up for loss", "revenge"])
+_difficulty = 898
+
+[sub_resource type="Resource" id="Resource_ohb5h"]
+script = ExtResource("7_xsm84")
+japanese = "雪解け"
+readings = Array[String](["ゆきどけ"])
+meanings = Array[String](["thawing of snow", "thaw"])
+_difficulty = 918
+
+[sub_resource type="Resource" id="Resource_sl64b"]
+script = ExtResource("7_xsm84")
+japanese = "新雪"
+readings = Array[String](["しんせつ"])
+meanings = Array[String](["fresh snow", "new snow"])
+_difficulty = 948
+
+[sub_resource type="Resource" id="Resource_i578y"]
+script = ExtResource("7_xsm84")
+japanese = "雪渓"
+readings = Array[String](["せっけい"])
+meanings = Array[String](["snowy valley"])
+_difficulty = 962
+
+[resource]
+script = ExtResource("10_jyq8g")
+symbol = "雪"
+card_name = "Snow"
+rarity = 2
+abilities = Array[ExtResource("1_nux36")]([SubResource("Resource_urlny"), SubResource("Resource_ja2s4")])
+tags = Array[int]([19, 23])
+vocabulary = Array[ExtResource("7_xsm84")]([SubResource("Resource_jgw0h"), SubResource("Resource_8o5lh"), SubResource("Resource_1lkor"), SubResource("Resource_ph52b"), SubResource("Resource_k5ocx"), SubResource("Resource_r3nmt"), SubResource("Resource_e0fj8"), SubResource("Resource_ft2yo"), SubResource("Resource_ohb5h"), SubResource("Resource_sl64b"), SubResource("Resource_i578y")])
+example_sentences = Array[ExtResource("5_m51f0")]([SubResource("Resource_7eui2"), SubResource("Resource_h7bx0"), SubResource("Resource_5tqiu"), SubResource("Resource_nr7v2"), SubResource("Resource_o8k77"), SubResource("Resource_ne8si"), SubResource("Resource_px32y"), SubResource("Resource_sfixq"), SubResource("Resource_71wdf"), SubResource("Resource_nid86"), SubResource("Resource_7vvb3"), SubResource("Resource_36y61"), SubResource("Resource_ma3ho"), SubResource("Resource_bgk5u"), SubResource("Resource_g4aec")])
+kanji_shape = SubResource("Resource_4xo8q")
+init_aspects = 36
+term_categories = Array[ExtResource("11_sxwhd")]([ExtResource("12_4fpam")])

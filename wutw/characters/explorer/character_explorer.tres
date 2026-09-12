@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://bmdvuqk4f4xsg"]
+
+[ext_resource type="Texture2D" uid="uid://dw720vfprsyem" path="res://characters/explorer/portrait_explorer.png" id="1_3f1aj"]
+[ext_resource type="PackedScene" uid="uid://d1inu5wtiejf2" path="res://characters/explorer/dialogue_portrait_explorer.tscn" id="1_ii2pb"]
+[ext_resource type="Script" uid="uid://dgmvrqp5auq50" path="res://characters/character.gd" id="2_b4dyr"]
+[ext_resource type="Script" uid="uid://dqpgr2ouh8rfm" path="res://characters/hub_character_spec.gd" id="2_jdkcm"]
+[ext_resource type="PackedScene" uid="uid://c5t62wfp168x7" path="res://characters/explorer/hub_character_explorer.tscn" id="2_kbnse"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="3_pcw5t"]
+
+[sub_resource type="Resource" id="Resource_pcw5t"]
+script = ExtResource("2_jdkcm")
+scene = ExtResource("2_kbnse")
+main_character = true
+allowed_sockets_mask = 64
+metadata/_custom_type_script = "uid://dqpgr2ouh8rfm"
+
+[resource]
+script = ExtResource("2_b4dyr")
+character_id = "explorer"
+character_name = "The Explorer"
+dialogue_scene = ExtResource("1_ii2pb")
+dialogue_portrait = ExtResource("1_3f1aj")
+hub_specs = Array[ExtResource("2_jdkcm")]([SubResource("Resource_pcw5t")])
+metadata/_custom_type_script = "uid://dgmvrqp5auq50"

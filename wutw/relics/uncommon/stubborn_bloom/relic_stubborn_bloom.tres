@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Relic" format=3 uid="uid://1pb5fsovy1f7"]
+
+[ext_resource type="Texture2D" uid="uid://cjyoqi1d3ooy4" path="res://relics/uncommon/stubborn_bloom/stubborn_bloom.png" id="1_4rhlb"]
+[ext_resource type="Script" uid="uid://cocdm5ulvrs8m" path="res://relics/relic.gd" id="2_37cxs"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="3_72kcr"]
+[ext_resource type="Resource" uid="uid://5q63svcbmx37" path="res://glossary/categories/termcategory_relic.tres" id="4_37cxs"]
+
+[resource]
+script = ExtResource("2_37cxs")
+relic_id = "stubborn_bloom"
+default_name = "Stubborn Bloom"
+default_description = "Restore 5 <term:inspiration> after every <term_lower:foray>."
+flavor_text = "Sometimes a flower simply refuses to wilt."
+icon = ExtResource("1_4rhlb")
+rarity = 1
+var_modifiers = Dictionary[int, int]({
+32: 5
+})
+default_starting_state = 1
+term_categories = Array[ExtResource("3_72kcr")]([ExtResource("4_37cxs")])
+metadata/_custom_type_script = "uid://cocdm5ulvrs8m"

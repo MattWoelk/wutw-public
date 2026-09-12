@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://ckascrqbwrpsy"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_0i7ks"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_ct3lp"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="3_ewmw5"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="4_2gd0c"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="5_y6nj3"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="6_vw1xp"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="7_tdt5p"]
+[ext_resource type="Resource" uid="uid://b85k7x2ec04xc" path="res://stage/spots/building_large/spot_building_large.tres" id="8_ewmw5"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_2gd0c"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://cdc4erkcdxouw" path="res://map/sprites/spots/large_building/mst_large_building_printer.tres" id="10_vw1xp"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://bpryqve107y4f" path="res://map/sprites/spots/large_building/mst_large_building_scriptorium.tres" id="11_tdt5p"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="12_4p2ab"]
+
+[sub_resource type="Resource" id="Resource_ahy3u"]
+script = ExtResource("12_4p2ab")
+old_sprite_type = ExtResource("11_tdt5p")
+new_sprite_type = ExtResource("10_vw1xp")
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_0i7ks")
+spot_upgrade_id = "building_large_printer"
+name = "Woodblock Print Studio"
+description = "Paper hangs from ceiling lines while carvers lean over their blocks, printing history one color at a time."
+required_aspects = Array[ExtResource("5_y6nj3")]([ExtResource("6_vw1xp"), ExtResource("7_tdt5p")])
+granted_bonuses = Dictionary[ExtResource("2_ct3lp"), int]({
+ExtResource("3_ewmw5"): 20,
+ExtResource("4_2gd0c"): 20
+})
+spot = ExtResource("8_ewmw5")
+visuals = Array[ExtResource("9_2gd0c")]([SubResource("Resource_ahy3u")])
+unique_per_run = true
+min_main_quest_progress = 110

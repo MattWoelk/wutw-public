@@ -1,0 +1,104 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://b8o18te2u4ti3"]
+
+[ext_resource type="Resource" uid="uid://wtb1us3ocdny" path="res://art/pieces/piece_hiroshige_odai.tres" id="1_im846"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_juh7y"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_im846"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_msq25"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="4_af3mt"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="5_0q77i"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="6_h8be5"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="7_y7170"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="8_b0ooa"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="9_pdwl5"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="10_6nxbm"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="11_c26r7"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="12_js153"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="13_6405n"]
+
+[sub_resource type="Resource" id="Resource_uk5o6"]
+script = ExtResource("1_juh7y")
+_texture_path = "res://stage/survey/episodes/episode_glum_swamp.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_g4awi"]
+script = ExtResource("6_h8be5")
+bonus_type = ExtResource("5_0q77i")
+amount = 20
+extra_per_season = 20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_1ut1l"]
+script = ExtResource("2_im846")
+label = "Follow the pessimist."
+aspects = Array[ExtResource("3_msq25")]([ExtResource("4_af3mt")])
+aspects_per_season = Array[ExtResource("3_msq25")]([null])
+outcome = SubResource("Resource_g4awi")
+outcome_text = "\"I don't expect we'll all arrive in one piece,\" the scout says glumly. Still, he traces the tree's roots and finds a narrow ridge of solid ground beneath the water.
+
+He predicts lost sandals, unfriendly wildlife, and death, but the group follows his lead anyway. The first two predictions come to pass, but the last one does not."
+
+[sub_resource type="Resource" id="Resource_aaood"]
+script = ExtResource("6_h8be5")
+bonus_type = ExtResource("8_b0ooa")
+amount = -20
+extra_per_season = -20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_5myv4"]
+script = ExtResource("2_im846")
+label = "Challenge the pessimist."
+aspects = Array[ExtResource("3_msq25")]([ExtResource("7_y7170")])
+aspects_per_season = Array[ExtResource("3_msq25")]([null])
+outcome = SubResource("Resource_aaood")
+outcome_text = "Exhausted by the gloomy surveyor's constant predictions of disaster, the group demands he prove he knows where he is going.
+
+The resulting argument takes up the rest of the day.
+"
+
+[sub_resource type="Resource" id="Resource_clmkt"]
+script = ExtResource("6_h8be5")
+bonus_type = ExtResource("10_6nxbm")
+amount = 15
+extra_per_season = 25
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_vhj8x"]
+script = ExtResource("2_im846")
+label = "Camp by the tree."
+aspects = Array[ExtResource("3_msq25")]([ExtResource("9_pdwl5")])
+aspects_per_season = Array[ExtResource("3_msq25")]([null])
+outcome = SubResource("Resource_clmkt")
+outcome_text = "The group decides that they are too tired to continue. The gloomy scout grumbles that they will probably drown in their sleep, but then digs drainage ditches around the camp and stays up all night to watch for rising water.
+
+By morning, everyone else is well rested and the supplies are still dry."
+
+[sub_resource type="Resource" id="Resource_x1ga2"]
+script = ExtResource("11_c26r7")
+delta = -3
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_ycthf"]
+script = ExtResource("2_im846")
+label = "Ignore the pessimist."
+aspects = Array[ExtResource("3_msq25")]([null])
+aspects_per_season = Array[ExtResource("3_msq25")]([null])
+outcome = SubResource("Resource_x1ga2")
+outcome_text = "The group decides to ignore the gloomy man's grumbling. They take the tree as a sign of drier land nearby. They rush ahead towards the next tree, letting their glum teammate trail behind.
+
+The ground seems firmer at first, but then rapidly gives way under their feet.
+
+The rescue takes up the rest of the day."
+
+[resource]
+script = ExtResource("12_js153")
+episode_id = "glum_swamp"
+title = "Lost in the Swamp"
+biome_types = Array[int]([4])
+text = "The scouts' sandals cling to the muck as they swat at clouds of insects. They have been circling the same pools and arguing over the same landmarks under the overcast sky all day.
+
+At last, they come upon something new: a small blooming cherry tree alone in the swamp.
+
+\"Probably the last tree we'll ever see,\" mutters one of the scouts."
+background_image = SubResource("Resource_uk5o6")
+background_credit = ExtResource("1_im846")
+choices = Array[ExtResource("2_im846")]([SubResource("Resource_1ut1l"), SubResource("Resource_5myv4"), SubResource("Resource_vhj8x"), SubResource("Resource_ycthf")])

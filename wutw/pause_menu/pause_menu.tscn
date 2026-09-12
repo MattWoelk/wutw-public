@@ -1,0 +1,719 @@
+[gd_scene format=3 uid="uid://ddmmtjy02c0x2"]
+
+[ext_resource type="Script" uid="uid://ebr8er2fmfyw" path="res://pause_menu/pause_menu.gd" id="1_b4s0c"]
+[ext_resource type="Texture2D" uid="uid://bf6g0waib064d" path="res://hub/insights/enso.png" id="2_b0obc"]
+[ext_resource type="PackedScene" uid="uid://b5k16hpo8080v" path="res://theme/faded_background/faded_background.tscn" id="2_etxg4"]
+[ext_resource type="Shader" uid="uid://cy23kwgtjt4et" path="res://theme/panel/panel.gdshader" id="2_gm4du"]
+[ext_resource type="PackedScene" uid="uid://i2fmn1y05u5y" path="res://aspects/aspect_counters_panel.tscn" id="3_cux0y"]
+[ext_resource type="Texture2D" uid="uid://cgsn7350xgqr5" path="res://theme/panel/panel_bg.png" id="3_etxg4"]
+[ext_resource type="Theme" uid="uid://bneu0powe6n80" path="res://theme/theme_ukiyoe.tres" id="3_wn31l"]
+[ext_resource type="PackedScene" uid="uid://cfkeqf863p7wy" path="res://map/settlement_list/settlement_list.tscn" id="4_cux0y"]
+[ext_resource type="Texture2D" uid="uid://bnkoruxi23qsp" path="res://theme/panel/panel_frame.png" id="4_nsdwt"]
+[ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="5_plusc"]
+[ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="6_htrey"]
+[ext_resource type="PackedScene" uid="uid://qj1fpo58ltk2" path="res://quests/settler/settler_challenges_list.tscn" id="7_tokj7"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="8_plusc"]
+[ext_resource type="Shader" uid="uid://ygmrqrvg5hpm" path="res://theme/button/ukiyoe_button.gdshader" id="9_luw8j"]
+[ext_resource type="Texture2D" uid="uid://ctgl61r3xxsqv" path="res://theme/button/button_fill.png" id="10_tokj7"]
+[ext_resource type="Texture2D" uid="uid://blje81yu8734p" path="res://theme/button/button_shape.png" id="11_8ss11"]
+[ext_resource type="Texture2D" uid="uid://doe4603a6ngco" path="res://theme/button/button_outline.png" id="12_gqtue"]
+[ext_resource type="Texture2D" uid="uid://cwubixgc8n0yr" path="res://theme/button/button_swish_left.png" id="13_uejek"]
+[ext_resource type="Texture2D" uid="uid://n6l17h4ysayj" path="res://theme/button/button_swish_right.png" id="14_vfaqf"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="16_do541"]
+[ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="17_fcuti"]
+[ext_resource type="Script" uid="uid://dm63mtrlfj005" path="res://theme/faded_scroll_container/faded_scroll_container.gd" id="17_luw8j"]
+[ext_resource type="Texture2D" uid="uid://kjimxsrrryst" path="res://main_menu/discord/discord.png" id="20_nsdwt"]
+[ext_resource type="Texture2D" uid="uid://0utn1vkqobf5" path="res://cutscenes/demo_end/steam_logo.png" id="21_plusc"]
+[ext_resource type="PackedScene" uid="uid://w3x16ookd85k" path="res://quests/list/quest_list.tscn" id="23_luw8j"]
+[ext_resource type="PackedScene" uid="uid://c8atsmuee3oic" path="res://pause_menu/pending_trips_list.tscn" id="26_tokj7"]
+
+[sub_resource type="Gradient" id="Gradient_luw8j"]
+offsets = PackedFloat32Array(0.00512295)
+colors = PackedColorArray(0.71, 0.543387, 0.2556, 0.168627)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_plusc"]
+gradient = SubResource("Gradient_luw8j")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_plusc"]
+shader = ExtResource("2_gm4du")
+shader_parameter/background = ExtResource("3_etxg4")
+shader_parameter/background_shade = SubResource("GradientTexture2D_plusc")
+shader_parameter/background_tex_size = Vector2(2291, 3118)
+shader_parameter/background_scale = 2.0
+shader_parameter/frame_tex = ExtResource("4_nsdwt")
+shader_parameter/frame_tex_size = Vector2(1127, 976)
+shader_parameter/frame_margin = Vector4(15, 15, 15, 15)
+shader_parameter/frame_scale = 0.93
+shader_parameter/frame_color = Color(0.24, 0.18848, 0.1056, 1)
+shader_parameter/decor_transform = Vector4(0, 0, 300, 100)
+shader_parameter/decor_modulate = Color(1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_etxg4"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_luw8j"]
+gradient = SubResource("Gradient_etxg4")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_luw8j"]
+shader = ExtResource("9_luw8j")
+shader_parameter/mask_tex = ExtResource("11_8ss11")
+shader_parameter/background = ExtResource("10_tokj7")
+shader_parameter/gradient = SubResource("GradientTexture2D_luw8j")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_gqtue")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_vfaqf")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_uejek")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="Gradient" id="Gradient_hl08a"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g4pi8"]
+gradient = SubResource("Gradient_hl08a")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uejek"]
+shader = ExtResource("9_luw8j")
+shader_parameter/mask_tex = ExtResource("11_8ss11")
+shader_parameter/background = ExtResource("10_tokj7")
+shader_parameter/gradient = SubResource("GradientTexture2D_g4pi8")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_gqtue")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_vfaqf")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_uejek")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vfaqf"]
+shader = ExtResource("9_luw8j")
+shader_parameter/mask_tex = ExtResource("11_8ss11")
+shader_parameter/background = ExtResource("10_tokj7")
+shader_parameter/gradient = SubResource("GradientTexture2D_g4pi8")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_gqtue")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_vfaqf")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_uejek")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="Gradient" id="Gradient_xsq2j"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uejek"]
+gradient = SubResource("Gradient_xsq2j")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_do541"]
+shader = ExtResource("9_luw8j")
+shader_parameter/mask_tex = ExtResource("11_8ss11")
+shader_parameter/background = ExtResource("10_tokj7")
+shader_parameter/gradient = SubResource("GradientTexture2D_uejek")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_gqtue")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_vfaqf")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_uejek")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fcuti"]
+shader = ExtResource("9_luw8j")
+shader_parameter/mask_tex = ExtResource("11_8ss11")
+shader_parameter/background = ExtResource("10_tokj7")
+shader_parameter/gradient = SubResource("GradientTexture2D_g4pi8")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_gqtue")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_vfaqf")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_uejek")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6an08"]
+shader = ExtResource("9_luw8j")
+shader_parameter/mask_tex = ExtResource("11_8ss11")
+shader_parameter/background = ExtResource("10_tokj7")
+shader_parameter/gradient = SubResource("GradientTexture2D_g4pi8")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_gqtue")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_vfaqf")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_uejek")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4wbmk"]
+shader = ExtResource("9_luw8j")
+shader_parameter/mask_tex = ExtResource("11_8ss11")
+shader_parameter/background = ExtResource("10_tokj7")
+shader_parameter/gradient = SubResource("GradientTexture2D_g4pi8")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_gqtue")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_vfaqf")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_uejek")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t6cjy"]
+shader = ExtResource("9_luw8j")
+shader_parameter/mask_tex = ExtResource("11_8ss11")
+shader_parameter/background = ExtResource("10_tokj7")
+shader_parameter/gradient = SubResource("GradientTexture2D_g4pi8")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_gqtue")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_vfaqf")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_uejek")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ap3l6"]
+shader = ExtResource("9_luw8j")
+shader_parameter/mask_tex = ExtResource("11_8ss11")
+shader_parameter/background = ExtResource("10_tokj7")
+shader_parameter/gradient = SubResource("GradientTexture2D_g4pi8")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("12_gqtue")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("14_vfaqf")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("13_uejek")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[node name="PauseMenu" type="Node2D" unique_id=532415667]
+script = ExtResource("1_b4s0c")
+metadata/_edit_vertical_guides_ = [960.0]
+
+[node name="BG" parent="." unique_id=506368843 instance=ExtResource("2_etxg4")]
+unique_name_in_owner = true
+default_duration = 0.3
+
+[node name="MainContainer" type="CenterContainer" parent="." unique_id=1365228176]
+unique_name_in_owner = true
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="HBox" type="HBoxContainer" parent="MainContainer" unique_id=1730893352]
+custom_minimum_size = Vector2(1600, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LeftColumn" type="VBoxContainer" parent="MainContainer/HBox" unique_id=1228222632]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(392, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="SettlementsList" parent="MainContainer/HBox/LeftColumn" unique_id=1583071029 instance=ExtResource("4_cux0y")]
+material = SubResource("ShaderMaterial_plusc")
+layout_mode = 2
+size_flags_horizontal = 4
+zoom_pivot = Vector2(0, 0.5)
+
+[node name="SettlerChallengesList" parent="MainContainer/HBox/LeftColumn" unique_id=1101851320 instance=ExtResource("7_tokj7")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="DeckBox" type="HBoxContainer" parent="MainContainer/HBox/LeftColumn" unique_id=574966858]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="AspectCountersPanel" parent="MainContainer/HBox/LeftColumn/DeckBox" unique_id=1424657872 instance=ExtResource("3_cux0y")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ViewDeckButton" type="Button" parent="MainContainer/HBox/LeftColumn/DeckBox" unique_id=1953675752]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_luw8j")
+instance_shader_parameters/background_offset = Vector2(0.6948004, 0.28104904)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_wn31l")
+theme_override_styles/normal = ExtResource("16_do541")
+theme_override_styles/pressed = ExtResource("16_do541")
+theme_override_styles/hover = ExtResource("16_do541")
+theme_override_styles/hover_pressed = ExtResource("16_do541")
+theme_override_styles/disabled = ExtResource("16_do541")
+text = "View Glyph Deck (99)"
+script = ExtResource("17_fcuti")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="StatsBox" type="HBoxContainer" parent="MainContainer/HBox/LeftColumn" unique_id=868148630]
+layout_mode = 2
+
+[node name="InsightsPanel" type="PanelContainer" parent="MainContainer/HBox/LeftColumn/StatsBox" unique_id=1412905630]
+unique_name_in_owner = true
+material = ExtResource("8_plusc")
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("5_plusc")
+script = ExtResource("6_htrey")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer/HBox/LeftColumn/StatsBox/InsightsPanel" unique_id=2064200171]
+layout_mode = 2
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer/HBox/LeftColumn/StatsBox/InsightsPanel/MarginContainer" unique_id=222148833]
+layout_mode = 2
+
+[node name="InsightsHintLabel" type="Label" parent="MainContainer/HBox/LeftColumn/StatsBox/InsightsPanel/MarginContainer/HBoxContainer" unique_id=265000735]
+layout_mode = 2
+text = "Insights Gained: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InsightsLabel" type="Label" parent="MainContainer/HBox/LeftColumn/StatsBox/InsightsPanel/MarginContainer/HBoxContainer" unique_id=1625119705]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "42"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InsightsIcon" type="TextureRect" parent="MainContainer/HBox/LeftColumn/StatsBox/InsightsPanel/MarginContainer/HBoxContainer" unique_id=681217575]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_b0obc")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="ViewStatsButton" type="Button" parent="MainContainer/HBox/LeftColumn/StatsBox" unique_id=1730851635]
+material = SubResource("ShaderMaterial_luw8j")
+instance_shader_parameters/background_offset = Vector2(0.4797176, 0.78990376)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_wn31l")
+theme_override_styles/normal = ExtResource("16_do541")
+theme_override_styles/pressed = ExtResource("16_do541")
+theme_override_styles/hover = ExtResource("16_do541")
+theme_override_styles/hover_pressed = ExtResource("16_do541")
+theme_override_styles/disabled = ExtResource("16_do541")
+text = "View Stats
+"
+script = ExtResource("17_fcuti")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="RelicScroller" type="ScrollContainer" parent="MainContainer/HBox/LeftColumn" unique_id=2005456045]
+unique_name_in_owner = true
+clip_children = 1
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("17_luw8j")
+metadata/_custom_type_script = "uid://dm63mtrlfj005"
+
+[node name="RelicList" type="GridContainer" parent="MainContainer/HBox/LeftColumn/RelicScroller" unique_id=519801530]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+columns = 3
+
+[node name="RelicIcon" parent="MainContainer/HBox/LeftColumn/RelicScroller/RelicList" unique_id=2139733129 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+layout_mode = 2
+
+[node name="RelicIcon2" parent="MainContainer/HBox/LeftColumn/RelicScroller/RelicList" unique_id=837179186 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+layout_mode = 2
+
+[node name="RelicIcon4" parent="MainContainer/HBox/LeftColumn/RelicScroller/RelicList" unique_id=518162531 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+layout_mode = 2
+
+[node name="RelicIcon5" parent="MainContainer/HBox/LeftColumn/RelicScroller/RelicList" unique_id=366588904 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+layout_mode = 2
+
+[node name="RelicIcon3" parent="MainContainer/HBox/LeftColumn/RelicScroller/RelicList" unique_id=493337873 instance_placeholder="res://relics/selector/relic_icon.tscn"]
+layout_mode = 2
+
+[node name="CenterColumn" type="VBoxContainer" parent="MainContainer/HBox" unique_id=1000496682]
+custom_minimum_size = Vector2(0, 850)
+layout_mode = 2
+
+[node name="TitleContainer" type="VBoxContainer" parent="MainContainer/HBox/CenterColumn" unique_id=61412922]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 100
+
+[node name="StagePanel" type="PanelContainer" parent="MainContainer/HBox/CenterColumn/TitleContainer" unique_id=714239246]
+unique_name_in_owner = true
+material = ExtResource("8_plusc")
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("5_plusc")
+script = ExtResource("6_htrey")
+metadata/_custom_type_script = "uid://dveiu76ujl3xp"
+metadata/_edit_group_ = true
+
+[node name="StageLabel" type="Label" parent="MainContainer/HBox/CenterColumn/TitleContainer/StagePanel" unique_id=2139733854]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Season 2 - Foray 5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuList" type="VBoxContainer" parent="MainContainer/HBox/CenterColumn" unique_id=1299320506]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/separation = 10
+
+[node name="ResumeButton" type="Button" parent="MainContainer/HBox/CenterColumn/MenuList" unique_id=1457226420]
+material = SubResource("ShaderMaterial_uejek")
+instance_shader_parameters/background_offset = Vector2(0.63171595, 0.1941581)
+instance_shader_parameters/state = 0.0
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_wn31l")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("16_do541")
+theme_override_styles/pressed = ExtResource("16_do541")
+theme_override_styles/hover = ExtResource("16_do541")
+theme_override_styles/hover_pressed = ExtResource("16_do541")
+theme_override_styles/disabled = ExtResource("16_do541")
+text = "Resume"
+script = ExtResource("17_fcuti")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="RetryButton" type="Button" parent="MainContainer/HBox/CenterColumn/MenuList" unique_id=894476585]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_vfaqf")
+instance_shader_parameters/background_offset = Vector2(0.23220804, 0.69739777)
+instance_shader_parameters/state = 0.0
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_wn31l")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("16_do541")
+theme_override_styles/pressed = ExtResource("16_do541")
+theme_override_styles/hover = ExtResource("16_do541")
+theme_override_styles/hover_pressed = ExtResource("16_do541")
+theme_override_styles/disabled = ExtResource("16_do541")
+text = "Retry Foray"
+script = ExtResource("17_fcuti")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="Spacer" type="Control" parent="MainContainer/HBox/CenterColumn/MenuList" unique_id=1104788757]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="SkipButton" type="Button" parent="MainContainer/HBox/CenterColumn/MenuList" unique_id=1662992344]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_do541")
+instance_shader_parameters/background_offset = Vector2(0.268983, 0.39583907)
+instance_shader_parameters/state = 0.0
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_wn31l")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("16_do541")
+theme_override_styles/pressed = ExtResource("16_do541")
+theme_override_styles/hover = ExtResource("16_do541")
+theme_override_styles/hover_pressed = ExtResource("16_do541")
+theme_override_styles/disabled = ExtResource("16_do541")
+text = "Skip Cutscene"
+script = ExtResource("17_fcuti")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="BackToHubButton" type="Button" parent="MainContainer/HBox/CenterColumn/MenuList" unique_id=1431574307]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_fcuti")
+instance_shader_parameters/background_offset = Vector2(0.6534045, 0.30395845)
+instance_shader_parameters/state = 0.0
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_wn31l")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("16_do541")
+theme_override_styles/pressed = ExtResource("16_do541")
+theme_override_styles/hover = ExtResource("16_do541")
+theme_override_styles/hover_pressed = ExtResource("16_do541")
+theme_override_styles/disabled = ExtResource("16_do541")
+text = "Finish Expedition"
+script = ExtResource("17_fcuti")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="Spacer2" type="Control" parent="MainContainer/HBox/CenterColumn/MenuList" unique_id=544544453]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="SettingsButton" type="Button" parent="MainContainer/HBox/CenterColumn/MenuList" unique_id=1795182977]
+material = SubResource("ShaderMaterial_6an08")
+instance_shader_parameters/background_offset = Vector2(0.05895605, 0.41612336)
+instance_shader_parameters/state = 0.0
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_wn31l")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("16_do541")
+theme_override_styles/pressed = ExtResource("16_do541")
+theme_override_styles/hover = ExtResource("16_do541")
+theme_override_styles/hover_pressed = ExtResource("16_do541")
+theme_override_styles/disabled = ExtResource("16_do541")
+text = "Settings"
+script = ExtResource("17_fcuti")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="BugReportButton" type="Button" parent="MainContainer/HBox/CenterColumn/MenuList" unique_id=1393937004]
+material = SubResource("ShaderMaterial_6an08")
+instance_shader_parameters/background_offset = Vector2(0.9606778, 0.58308905)
+instance_shader_parameters/state = 0.0
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_wn31l")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("16_do541")
+theme_override_styles/pressed = ExtResource("16_do541")
+theme_override_styles/hover = ExtResource("16_do541")
+theme_override_styles/hover_pressed = ExtResource("16_do541")
+theme_override_styles/disabled = ExtResource("16_do541")
+text = "Send Feedback"
+script = ExtResource("17_fcuti")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="QuitButton" type="Button" parent="MainContainer/HBox/CenterColumn/MenuList" unique_id=1422146167]
+material = SubResource("ShaderMaterial_4wbmk")
+instance_shader_parameters/background_offset = Vector2(0.8838596, 0.7504581)
+instance_shader_parameters/state = 0.0
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_wn31l")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("16_do541")
+theme_override_styles/pressed = ExtResource("16_do541")
+theme_override_styles/hover = ExtResource("16_do541")
+theme_override_styles/hover_pressed = ExtResource("16_do541")
+theme_override_styles/disabled = ExtResource("16_do541")
+text = "Quit"
+script = ExtResource("17_fcuti")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="CTAs" type="VBoxContainer" parent="MainContainer/HBox/CenterColumn" unique_id=1969009733]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+offset_transform_enabled = true
+offset_transform_position = Vector2(5, 0)
+offset_transform_visual_only = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer/HBox/CenterColumn/CTAs" unique_id=754548334]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="DiscordButton" type="Button" parent="MainContainer/HBox/CenterColumn/CTAs/HBoxContainer" unique_id=632200467]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="MainContainer/HBox/CenterColumn/CTAs/HBoxContainer/DiscordButton" unique_id=366546523]
+modulate = Color(0.65715075, 0.74307793, 0.88499516, 1)
+custom_minimum_size = Vector2(76, 76)
+layout_mode = 0
+offset_right = 76.0
+offset_bottom = 76.0
+size_flags_vertical = 3
+texture = ExtResource("20_nsdwt")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="SteamButton" type="Button" parent="MainContainer/HBox/CenterColumn/CTAs/HBoxContainer" unique_id=413368721]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.875, 0.875)
+offset_transform_visual_only = false
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="MainContainer/HBox/CenterColumn/CTAs/HBoxContainer/SteamButton" unique_id=1358029823]
+modulate = Color(0.65715075, 0.74307793, 0.88499516, 1)
+custom_minimum_size = Vector2(76, 76)
+layout_mode = 0
+offset_right = 76.0
+offset_bottom = 76.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+texture = ExtResource("21_plusc")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RightColumn" type="VBoxContainer" parent="MainContainer/HBox" unique_id=30805873]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+
+[node name="QuestList" parent="MainContainer/HBox/RightColumn" unique_id=1435752854 instance=ExtResource("23_luw8j")]
+layout_mode = 2
+
+[node name="PendingTripsList" parent="MainContainer/HBox/RightColumn" unique_id=796824552 instance=ExtResource("26_tokj7")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainContainer/HBox/RightColumn" unique_id=223581740]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ViewMuseumButton" type="Button" parent="MainContainer/HBox/RightColumn/VBoxContainer" unique_id=2130169220]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_t6cjy")
+instance_shader_parameters/background_offset = Vector2(0.89618284, 0.6589886)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_wn31l")
+theme_override_styles/normal = ExtResource("16_do541")
+theme_override_styles/pressed = ExtResource("16_do541")
+theme_override_styles/hover = ExtResource("16_do541")
+theme_override_styles/hover_pressed = ExtResource("16_do541")
+theme_override_styles/disabled = ExtResource("16_do541")
+text = "Browse Museum"
+script = ExtResource("17_fcuti")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="ViewCardsListButton" type="Button" parent="MainContainer/HBox/RightColumn/VBoxContainer" unique_id=237005121]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_t6cjy")
+instance_shader_parameters/background_offset = Vector2(0.89618284, 0.6589886)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_wn31l")
+theme_override_styles/normal = ExtResource("16_do541")
+theme_override_styles/pressed = ExtResource("16_do541")
+theme_override_styles/hover = ExtResource("16_do541")
+theme_override_styles/hover_pressed = ExtResource("16_do541")
+theme_override_styles/disabled = ExtResource("16_do541")
+text = "Browse Glyph Catalog"
+script = ExtResource("17_fcuti")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="ViewShardTypesButton" type="Button" parent="MainContainer/HBox/RightColumn/VBoxContainer" unique_id=135402548]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_ap3l6")
+instance_shader_parameters/background_offset = Vector2(0.24754053, 0.17957126)
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_wn31l")
+theme_override_styles/normal = ExtResource("16_do541")
+theme_override_styles/pressed = ExtResource("16_do541")
+theme_override_styles/hover = ExtResource("16_do541")
+theme_override_styles/hover_pressed = ExtResource("16_do541")
+theme_override_styles/disabled = ExtResource("16_do541")
+text = "View Potential Shard Cultures"
+script = ExtResource("17_fcuti")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[connection signal="pressed" from="MainContainer/HBox/LeftColumn/DeckBox/ViewDeckButton" to="." method="_on_view_deck_button_pressed"]
+[connection signal="pressed" from="MainContainer/HBox/LeftColumn/StatsBox/ViewStatsButton" to="." method="_on_view_stats_button_pressed"]
+[connection signal="resized" from="MainContainer/HBox/LeftColumn/RelicScroller/RelicList" to="." method="_on_relic_list_resized"]
+[connection signal="pressed" from="MainContainer/HBox/CenterColumn/MenuList/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="MainContainer/HBox/CenterColumn/MenuList/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="MainContainer/HBox/CenterColumn/MenuList/SkipButton" to="." method="_on_skip_button_pressed"]
+[connection signal="pressed" from="MainContainer/HBox/CenterColumn/MenuList/BackToHubButton" to="." method="_on_back_to_hub_button_pressed"]
+[connection signal="pressed" from="MainContainer/HBox/CenterColumn/MenuList/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MainContainer/HBox/CenterColumn/MenuList/BugReportButton" to="." method="_on_bug_report_button_pressed"]
+[connection signal="pressed" from="MainContainer/HBox/CenterColumn/MenuList/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="mouse_entered" from="MainContainer/HBox/CenterColumn/CTAs/HBoxContainer/DiscordButton" to="." method="_on_discord_button_mouse_entered"]
+[connection signal="mouse_exited" from="MainContainer/HBox/CenterColumn/CTAs/HBoxContainer/DiscordButton" to="." method="_on_discord_button_mouse_exited"]
+[connection signal="pressed" from="MainContainer/HBox/CenterColumn/CTAs/HBoxContainer/DiscordButton" to="." method="_on_discord_button_pressed"]
+[connection signal="mouse_entered" from="MainContainer/HBox/CenterColumn/CTAs/HBoxContainer/SteamButton" to="." method="_on_steam_button_mouse_entered"]
+[connection signal="mouse_exited" from="MainContainer/HBox/CenterColumn/CTAs/HBoxContainer/SteamButton" to="." method="_on_steam_button_mouse_exited"]
+[connection signal="pressed" from="MainContainer/HBox/CenterColumn/CTAs/HBoxContainer/SteamButton" to="." method="_on_steam_button_pressed"]
+[connection signal="pressed" from="MainContainer/HBox/RightColumn/VBoxContainer/ViewMuseumButton" to="." method="_on_view_museum_button_pressed"]
+[connection signal="pressed" from="MainContainer/HBox/RightColumn/VBoxContainer/ViewCardsListButton" to="." method="_on_view_cards_list_button_pressed"]
+[connection signal="pressed" from="MainContainer/HBox/RightColumn/VBoxContainer/ViewShardTypesButton" to="." method="_on_view_shard_types_button_pressed"]

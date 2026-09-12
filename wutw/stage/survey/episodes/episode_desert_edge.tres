@@ -1,0 +1,103 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://dalo68s78g0um"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_h3fut"]
+[ext_resource type="Resource" uid="uid://4glthw0m06if" path="res://art/pieces/piece_hiroshige_hara_reisho.tres" id="1_kdr0i"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_kdr0i"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_wnfoi"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="4_ocukw"]
+[ext_resource type="Resource" uid="uid://bdr6lka5y51g3" path="res://cards/tier6/card_burdensome.tres" id="5_bhpr2"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="6_cv1pb"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="7_0mt1t"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="8_do423"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="9_3ku11"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="10_k4242"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="11_qqs51"]
+[ext_resource type="Script" uid="uid://dadces6knf8fj" path="res://events/system/outcomes/run_var/event_outcome_run_var.gd" id="12_xo88e"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="13_fot1k"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="14_ho6ln"]
+
+[sub_resource type="Resource" id="Resource_850hn"]
+script = ExtResource("1_h3fut")
+_texture_path = "res://stage/survey/episodes/desert_edge.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_m88ho"]
+script = ExtResource("6_cv1pb")
+card_type = ExtResource("5_bhpr2")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_3hqxh"]
+script = ExtResource("2_kdr0i")
+label = "Carry them."
+aspects = Array[ExtResource("3_wnfoi")]([ExtResource("4_ocukw")])
+aspects_per_season = Array[ExtResource("3_wnfoi")]([null])
+outcome = SubResource("Resource_m88ho")
+outcome_text = "Eager to leave the desert behind, the scouts haul their sick companions onto their backs and trudge onward.
+
+By the time they reach the edge of the desert, most of the team collapses from exhaustion."
+
+[sub_resource type="Resource" id="Resource_m7d2d"]
+script = ExtResource("9_3ku11")
+bonus_type = ExtResource("8_do423")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_2lb7x"]
+script = ExtResource("2_kdr0i")
+label = "Construct shelter."
+aspects = Array[ExtResource("3_wnfoi")]([ExtResource("7_0mt1t")])
+aspects_per_season = Array[ExtResource("3_wnfoi")]([null])
+outcome = SubResource("Resource_m7d2d")
+outcome_text = "The scouts set up the tents and let the two who are sick lie down inside.
+
+The recovery is slow, and the group is forced to spend the night in the desert, but by morning everyone is well again."
+
+[sub_resource type="Resource" id="Resource_m6yhk"]
+script = ExtResource("9_3ku11")
+bonus_type = ExtResource("11_qqs51")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_jxt7k"]
+script = ExtResource("2_kdr0i")
+label = "Use up the water."
+aspects = Array[ExtResource("3_wnfoi")]([ExtResource("10_k4242")])
+aspects_per_season = Array[ExtResource("3_wnfoi")]([null])
+outcome = SubResource("Resource_m6yhk")
+outcome_text = "The sick explorers are given the rest of the group's water, which keeps them well enough for the team to reach the edge of the desert safely.
+
+This willingness to sacrifice binds the team together."
+
+[sub_resource type="Resource" id="Resource_8ooav"]
+script = ExtResource("12_xo88e")
+run_var = 6
+delta = -2
+preview_description = "Lose 2 maximum <term:inspiration>"
+outcome_description = "Lost 2 maximum <term:inspiration>."
+metadata/_custom_type_script = "uid://dadces6knf8fj"
+
+[sub_resource type="Resource" id="Resource_c5ogy"]
+script = ExtResource("2_kdr0i")
+label = "Keep going."
+aspects = Array[ExtResource("3_wnfoi")]([null])
+outcome = SubResource("Resource_8ooav")
+outcome_text = "The explorers are so close to leaving the desert behind them that they decide to press forward despite their companions' pale faces and trembling limbs.
+
+The plan quickly falls apart when one of the two sick people faints, and the other begins to hallucinate.
+"
+
+[resource]
+script = ExtResource("13_fot1k")
+episode_id = "desert_edge"
+title = "The Desert's Edge"
+biome_types = Array[int]([2])
+text = "The scouts are crossing a stretch of desert, the edge of it now only hours away.
+
+The afternoon sun is at its worst, and the heat feels unbearable.
+
+Water is running low, and two of the surveyors are beginning to show signs of heat exhaustion."
+background_image = SubResource("Resource_850hn")
+background_credit = ExtResource("1_kdr0i")
+choices = Array[ExtResource("2_kdr0i")]([SubResource("Resource_3hqxh"), SubResource("Resource_2lb7x"), SubResource("Resource_jxt7k"), SubResource("Resource_c5ogy")])

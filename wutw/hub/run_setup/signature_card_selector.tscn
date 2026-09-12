@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://dy2m2205eoh5n"]
+
+[ext_resource type="Script" uid="uid://d2awwuv1qddio" path="res://hub/run_setup/signature_card_selector.gd" id="1_7ikn6"]
+[ext_resource type="Shader" uid="uid://ygmrqrvg5hpm" path="res://theme/button/ukiyoe_button.gdshader" id="4_p7gtk"]
+[ext_resource type="PackedScene" uid="uid://dgmyeosmc67d7" path="res://cards/card.tscn" id="4_umuvi"]
+[ext_resource type="Texture2D" uid="uid://ctgl61r3xxsqv" path="res://theme/button/button_fill.png" id="5_b2x7s"]
+[ext_resource type="Texture2D" uid="uid://blje81yu8734p" path="res://theme/button/button_shape.png" id="6_7o1rb"]
+[ext_resource type="Texture2D" uid="uid://doe4603a6ngco" path="res://theme/button/button_outline.png" id="7_aib6n"]
+[ext_resource type="Texture2D" uid="uid://cwubixgc8n0yr" path="res://theme/button/button_swish_left.png" id="8_3ohkn"]
+[ext_resource type="Texture2D" uid="uid://n6l17h4ysayj" path="res://theme/button/button_swish_right.png" id="9_23w6a"]
+[ext_resource type="PackedScene" uid="uid://b56iv8k5emagl" path="res://hub/crafting/unknown_card.tscn" id="10_mktgp"]
+[ext_resource type="Texture2D" uid="uid://go64cbx1ohwd" path="res://theme/button/white_1x1px.png" id="11_p7gtk"]
+[ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="11_r526l"]
+
+[sub_resource type="Gradient" id="Gradient_j5apj"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wqpyw"]
+gradient = SubResource("Gradient_j5apj")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mktgp"]
+shader = ExtResource("4_p7gtk")
+shader_parameter/mask_tex = ExtResource("6_7o1rb")
+shader_parameter/background = ExtResource("5_b2x7s")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/outline_tex = ExtResource("7_aib6n")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("9_23w6a")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("8_3ohkn")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7o1rb"]
+content_margin_left = 10.0
+content_margin_top = 2.0
+content_margin_right = 10.0
+content_margin_bottom = 2.0
+texture = ExtResource("11_p7gtk")
+
+[node name="SignatureCardSelector" type="Control" unique_id=452500977]
+custom_minimum_size = Vector2(214, 232)
+layout_mode = 3
+anchors_preset = 0
+size_flags_vertical = 10
+mouse_filter = 1
+script = ExtResource("1_7ikn6")
+
+[node name="UnknownCard" parent="." unique_id=1609376207 instance=ExtResource("10_mktgp")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 214.0
+offset_bottom = 232.0
+mouse_filter = 2
+mouse_behavior_recursive = 1
+rarity = 0
+count = 0
+
+[node name="SelectedCard" parent="." unique_id=1327378361 instance=ExtResource("4_umuvi")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -232.0
+offset_right = 90.0
+grow_horizontal = 2
+grow_vertical = 0
+force_show_signature = true
+
+[node name="ChooseButton" type="Button" parent="." unique_id=973651235]
+unique_name_in_owner = true
+z_index = 1
+material = SubResource("ShaderMaterial_mktgp")
+instance_shader_parameters/size = Vector2(259.98346, 49.80992)
+instance_shader_parameters/state = 0.0
+layout_mode = 0
+offset_right = 214.0
+offset_bottom = 41.0
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_7o1rb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7o1rb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7o1rb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_7o1rb")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_7o1rb")
+text = "Choose Signature Glyph"
+autowrap_mode = 2
+script = ExtResource("11_r526l")
+stylebox_override = SubResource("StyleBoxTexture_7o1rb")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[connection signal="selected" from="SelectedCard" to="." method="_on_selected_card_selected"]
+[connection signal="pressed" from="ChooseButton" to="." method="_on_choose_button_pressed"]

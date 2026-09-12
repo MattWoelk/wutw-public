@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://duvci80llkh"]
+
+[ext_resource type="PackedScene" uid="uid://bl780vhdwft4i" path="res://hub/contents/hub_facility.tscn" id="1_8skcs"]
+[ext_resource type="Script" uid="uid://sdw6rfnb82il" path="res://hub/contents/portal_network/hub_portal_network.gd" id="2_8ilv4"]
+[ext_resource type="Texture2D" uid="uid://dlaflrathcfqd" path="res://hub/contents/main_gate/gate.png" id="2_bxt8s"]
+[ext_resource type="Texture2D" uid="uid://dfpd8ykcvto7g" path="res://hub/contents/portal_network/portal_network_label.png" id="2_s0s2e"]
+[ext_resource type="FontFile" uid="uid://dwycufv0f21v2" path="res://theme/fonts/Yuji_Mai/YujiMai-Regular.ttf" id="5_vd1bt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ohwvv"]
+font = ExtResource("5_vd1bt")
+font_size = 76
+font_color = Color(1, 0.85600007, 0.27999997, 1)
+outline_size = 12
+outline_color = Color(0.23, 0.18016666, 0, 1)
+
+[node name="HubPortalNetwork" unique_id=1644338336 instance=ExtResource("1_8skcs")]
+y_sort_enabled = true
+script = ExtResource("2_8ilv4")
+tooltip_text = "[center]<header_font_size>[b]Torii Network[/b][/font_size][/center]
+
+These gates connect all shards to the Haven, opening the door to cross-shard travel and collaboration."
+
+[node name="Panel" parent="." index="0" unique_id=1465047343]
+offset_left = -295.86023
+offset_top = -104.661026
+offset_right = -35.86023
+offset_bottom = 641.339
+scale = Vector2(0.24884, 0.24884)
+
+[node name="Label" parent="Panel" index="1" unique_id=541126649]
+visible = false
+text = "結
+界
+場"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" index="2" unique_id=1981154286]
+layout_mode = 2
+theme_override_constants/margin_left = 37
+theme_override_constants/margin_top = 55
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 70
+
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer" index="0" unique_id=2117311202]
+texture_filter = 6
+layout_mode = 2
+texture = ExtResource("2_s0s2e")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CollisionPolygon2D" parent="Area2D" parent_id_path=PackedInt32Array(2019498285) index="0" unique_id=521856771]
+position = Vector2(7, -7)
+polygon = PackedVector2Array(95.2652, -50.355377, 93.768555, -116.95401, -46.911682, -116.20572, -212.28583, -59.33496, -227.25183, -103.48462, -304.32666, -90.76355, -302.83008, 101.54935, -214.53076, 115.76706, -64.12256, 64.1344, 89.27881, 28.964355)
+
+[node name="PortalTorii1" type="Sprite2D" parent="." index="2" unique_id=1161266047]
+y_sort_enabled = true
+position = Vector2(-167.03703, 68.78317)
+rotation = -0.185005
+scale = Vector2(0.1336238, 0.14940612)
+skew = 0.127409
+texture = ExtResource("2_bxt8s")
+offset = Vector2(-56.4814, -467.516)
+
+[node name="PortalTorii3" type="Sprite2D" parent="." index="3" unique_id=837321427]
+y_sort_enabled = true
+position = Vector2(45.31427, 14.108822)
+rotation = 0.099483766
+scale = Vector2(0.13767578, 0.13767578)
+skew = -0.10471976
+texture = ExtResource("2_bxt8s")
+offset = Vector2(-76.3975, -490.271)
+
+[node name="PortalTorii2" type="Sprite2D" parent="." index="4" unique_id=1626226542]
+y_sort_enabled = true
+position = Vector2(-55.43315, 70.55707)
+scale = Vector2(0.12302192, 0.12302192)
+texture = ExtResource("2_bxt8s")
+offset = Vector2(-76.28, -688.977)
+
+[node name="TooltipAnchor" parent="." index="5" unique_id=278453014]
+offset_left = -300.14355
+offset_top = -141.60988
+offset_right = 119.712036
+offset_bottom = 106.70416
+
+[node name="TripResultsPendingLabel" type="Label" parent="." index="6" unique_id=271312849]
+unique_name_in_owner = true
+offset_left = -96.98044
+offset_top = -227.84491
+offset_right = -65.98044
+offset_bottom = -116.84491
+text = "!"
+label_settings = SubResource("LabelSettings_ohwvv")
+horizontal_alignment = 1
+vertical_alignment = 1

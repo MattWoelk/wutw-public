@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://ca1fjn2ctneam"]
+
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="1_cc5uv"]
+[ext_resource type="Resource" uid="uid://cu5qb415c2riy" path="res://stage/spots/plains/upgrade_plains_2_sacred_grove.tres" id="2_0b6dc"]
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="2_3u6ui"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="2_l3s6j"]
+[ext_resource type="Resource" uid="uid://515h2qap8n77" path="res://stage/spots/plains/upgrade_plains_2_herb_garden.tres" id="3_8m1ys"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_odk4s"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="4_0mrjj"]
+[ext_resource type="Resource" uid="uid://f8guout8235a" path="res://stage/spots/plains/spot_plains.tres" id="8_iemf7"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="8_np6fn"]
+[ext_resource type="Script" uid="uid://dvrtuqbmx4v30" path="res://stage/spots/spot_upgrade_visual_add.gd" id="9_iemf7"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://f2kwo81ebt88" path="res://map/sprites/spots/plains/mst_plains_wildflower_field.tres" id="10_go8ro"]
+
+[sub_resource type="Resource" id="Resource_hbueq"]
+script = ExtResource("9_iemf7")
+sprite_type = ExtResource("10_go8ro")
+biome = 6
+metadata/_custom_type_script = "uid://dvrtuqbmx4v30"
+
+[resource]
+script = ExtResource("2_3u6ui")
+spot_upgrade_id = "plains_flower_field"
+name = "Wildflower Meadow"
+description = "A riot of blossoms insists on claiming every inch of grass, leaving insects no excuse to nap."
+required_aspects = Array[ExtResource("3_odk4s")]([ExtResource("4_0mrjj")])
+granted_bonuses = Dictionary[ExtResource("1_cc5uv"), int]({
+ExtResource("2_l3s6j"): 10
+})
+child_upgrades = Array[ExtResource("2_3u6ui")]([ExtResource("3_8m1ys"), ExtResource("2_0b6dc")])
+spot = ExtResource("8_iemf7")
+visuals = Array[ExtResource("8_np6fn")]([SubResource("Resource_hbueq")])
+tags = Array[int]([0])

@@ -1,0 +1,107 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://by1b632181uub"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_1ov4c"]
+[ext_resource type="Resource" uid="uid://cfoqqne41un10" path="res://art/pieces/piece_hiroshige_zazanza.tres" id="1_plm68"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_plm68"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_f3qwa"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="4_iyeb1"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="5_pr0ky"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="6_7ch4b"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="7_r50fm"]
+[ext_resource type="Script" uid="uid://dadces6knf8fj" path="res://events/system/outcomes/run_var/event_outcome_run_var.gd" id="8_70rsv"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="9_ibnxw"]
+[ext_resource type="Resource" uid="uid://blm4y3tx0euaa" path="res://cards/tier2/card_picture.tres" id="10_raj2d"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="11_4mlch"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="12_0444f"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="13_w842c"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="14_0txul"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="15_caa1e"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="16_3svbc"]
+
+[sub_resource type="Resource" id="Resource_holvh"]
+script = ExtResource("1_1ov4c")
+_texture_path = "res://stage/survey/episodes/seashore_pines.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_phwd7"]
+script = ExtResource("6_7ch4b")
+bonus_type = ExtResource("5_pr0ky")
+amount = 15
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_jvlif"]
+script = ExtResource("2_plm68")
+label = "Collect pine resin."
+aspects = Array[ExtResource("3_f3qwa")]([ExtResource("4_iyeb1")])
+aspects_per_season = Array[ExtResource("3_f3qwa")]([null])
+outcome = SubResource("Resource_phwd7")
+outcome_text = "The surveyors scrape resin from the trunk, the thick, gummy material sticking to their hands.
+
+It will prove useful for starting fires or repairing packs."
+
+[sub_resource type="Resource" id="Resource_sprvr"]
+script = ExtResource("8_70rsv")
+run_var = 6
+delta = 2
+preview_description = "Gain 2 maximum <term:inspiration>"
+outcome_description = "Gained 2 maximum <term:inspiration>."
+metadata/_custom_type_script = "uid://dadces6knf8fj"
+
+[sub_resource type="Resource" id="Resource_h5brj"]
+script = ExtResource("2_plm68")
+label = "Gather kindling."
+aspects = Array[ExtResource("3_f3qwa")]([ExtResource("7_r50fm")])
+aspects_per_season = Array[ExtResource("3_f3qwa")]([null])
+outcome = SubResource("Resource_sprvr")
+outcome_text = "The scouts gather the dry twigs and the dead branches that have fallen from the trees.
+
+They assemble these into a large bonfire on the beach, and stay late into the night reminiscing about all the adventures they have experienced over their lifetimes."
+
+[sub_resource type="Resource" id="Resource_st8er"]
+script = ExtResource("11_4mlch")
+card_type = ExtResource("10_raj2d")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_gd8a4"]
+script = ExtResource("13_w842c")
+bonus_type = ExtResource("12_0444f")
+min_count = 15
+max_count = -1
+extra_per_season = 25
+
+[sub_resource type="Resource" id="Resource_c6w1t"]
+script = ExtResource("2_plm68")
+label = "Sketch the pines."
+requirement = SubResource("Resource_gd8a4")
+aspects = Array[ExtResource("3_f3qwa")]([ExtResource("9_ibnxw")])
+aspects_per_season = Array[ExtResource("3_f3qwa")]([null])
+outcome = SubResource("Resource_st8er")
+outcome_text = "While most of the scouts continue gathering reeds, an artist among them puts brush to paper and paints a passable depiction of the coast with its gnarled pines standing out against the clear sunset sky."
+
+[sub_resource type="Resource" id="Resource_n63eb"]
+script = ExtResource("14_0txul")
+delta = 2
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_rjxoe"]
+script = ExtResource("2_plm68")
+label = "Rest by the pines."
+aspects = Array[ExtResource("3_f3qwa")]([null])
+aspects_per_season = Array[ExtResource("3_f3qwa")]([null])
+outcome = SubResource("Resource_n63eb")
+outcome_text = "The surveyors rest against the sturdy trunks and let the sun wash over their faces.
+
+The rush of sea wind and salt spray is invigorating."
+
+[resource]
+script = ExtResource("15_caa1e")
+episode_id = "seashore_pines"
+title = "The Gnarled Pines"
+biome_types = Array[int]([1, 10])
+text = "The scouts are gathering reeds when they pass a scattered grove of gnarled pines.
+
+Over the years, the harsh coastal winds have twisted the branches into wild shapes, and the sea spray has crusted the bark with layers of salt."
+background_image = SubResource("Resource_holvh")
+background_credit = ExtResource("1_plm68")
+choices = Array[ExtResource("2_plm68")]([SubResource("Resource_jvlif"), SubResource("Resource_h5brj"), SubResource("Resource_c6w1t"), SubResource("Resource_rjxoe")])

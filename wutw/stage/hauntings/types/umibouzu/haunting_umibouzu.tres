@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://crp4r782obs0s"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_mn7sv"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="2_4w3la"]
+[ext_resource type="Resource" uid="uid://0ra2xmdtua6t" path="res://cards/tier6/card_drown.tres" id="4_3lgo3"]
+[ext_resource type="Resource" uid="uid://b85kcelx3dkeq" path="res://art/pieces/piece_bakemono_umibouzu.tres" id="5_3lgo3"]
+[ext_resource type="Script" uid="uid://777usfqcjmox" path="res://stage/hauntings/effects/haunting_effect_add_card.gd" id="5_8wvv2"]
+[ext_resource type="Resource" uid="uid://cku6gal75setq" path="res://art/pieces/piece_hokusai_great_wave.tres" id="6_8wvv2"]
+[ext_resource type="Texture2D" uid="uid://c8pwee06r8kw4" path="res://stage/hauntings/types/umibouzu/haunting_umibouzu.png" id="6_epxo1"]
+[ext_resource type="Texture2D" uid="uid://b2nrqe2ol7val" path="res://stage/hauntings/types/umibouzu/haunting_umibouzu_realistic_waves.png" id="7_udwkr"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="8_26odt"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="9_epxo1"]
+[ext_resource type="Resource" uid="uid://skws2o4hx05g" path="res://stage/spots/seashore/spot_seashore.tres" id="9_sgglc"]
+[ext_resource type="Script" uid="uid://2820j4fqvhls" path="res://stage/hauntings/triggers/haunting_trigger_slot_filled.gd" id="10_3lgo3"]
+
+[sub_resource type="Resource" id="Resource_uurmi"]
+script = ExtResource("5_8wvv2")
+card_type = ExtResource("4_3lgo3")
+metadata/_custom_type_script = "uid://777usfqcjmox"
+
+[sub_resource type="Resource" id="Resource_ktr5t"]
+script = ExtResource("10_3lgo3")
+any_spot = false
+metadata/_custom_type_script = "uid://2820j4fqvhls"
+
+[resource]
+script = ExtResource("8_26odt")
+haunting_id = "umibouzu"
+name = "Umibōzu"
+name_japanese = "海坊主"
+name_realistic = "High Waves"
+name_translation = "Sea Monks"
+description = "Settlers refuse to go near the seashore, terrified of the Umibōzu, a giant shadow that rises from the waves to smash their efforts."
+description_realistic = "Unpredictable tides and dangerously high waves are constantly battering the coastline, threatening to wash away any new structures."
+description_long = "The sea has grown violently restless, with sudden swells crashing against the shore. Those who work near the water tell frantic stories of a massive, pitch-black figure rising from the sea, its smooth, rounded head blocking out the stars before it brings the waves crashing down.
+
+They call it the Umibōzu, the sea monk. Legends say it is born from the drowned souls of the Old World, a creature of pure resentment that demands the sea remain untamed. It rises to test the courage of the settlers, punishing any attempt to claim the shoreline by overwhelming them with the sea's fury."
+image_small = ExtResource("6_epxo1")
+image_credit = ExtResource("5_3lgo3")
+image_small_realistic = ExtResource("7_udwkr")
+image_realistic_credit = ExtResource("6_8wvv2")
+spot_type = ExtResource("9_sgglc")
+base_aspect_types = Array[ExtResource("1_mn7sv")]([ExtResource("2_4w3la")])
+extra_aspect_type = ExtResource("2_4w3la")
+scaling_bonus_type = ExtResource("9_epxo1")
+trigger = SubResource("Resource_ktr5t")
+effect = SubResource("Resource_uurmi")
+spot_attach_mode = 2
+settlement_attach_mode = 2
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

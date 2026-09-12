@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://4v8bg1m1j03m"]
+
+[ext_resource type="Material" uid="uid://tbovy3kmjctq" path="res://hub/trip/trip_option_button_mat_compatibility.tres" id="1_eioxj"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="2_cpm5e"]
+[ext_resource type="Script" uid="uid://cmunwjl2oela2" path="res://hub/trip/trip_option.gd" id="3_7yo1n"]
+[ext_resource type="FontFile" uid="uid://ctwx1483jbir0" path="res://theme/fonts/Merienda/static/Merienda-Bold.ttf" id="6_dqe1r"]
+
+[node name="TripOption" type="Button" unique_id=1960524235]
+material = ExtResource("1_eioxj")
+custom_minimum_size = Vector2(0, 110)
+offset_right = 433.0
+offset_bottom = 110.0
+theme_override_styles/normal = ExtResource("2_cpm5e")
+theme_override_styles/pressed = ExtResource("2_cpm5e")
+theme_override_styles/hover = ExtResource("2_cpm5e")
+theme_override_styles/hover_pressed = ExtResource("2_cpm5e")
+theme_override_styles/disabled = ExtResource("2_cpm5e")
+toggle_mode = true
+alignment = 0
+text_overrun_behavior = 3
+script = ExtResource("3_7yo1n")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="Offset" type="Control" parent="." unique_id=748876975]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Offset" unique_id=244280800]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_right = 142.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NameLabel" type="Label" parent="Offset/VBoxContainer" unique_id=1868909813]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("6_dqe1r")
+theme_override_font_sizes/font_size = 20
+text = "Takama ga Hara"
+vertical_alignment = 1
+
+[node name="TypeLabel" type="Label" parent="Offset/VBoxContainer" unique_id=1953497427]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_font_sizes/font_size = 14
+text = "A Tight-Knit Community"
+vertical_alignment = 1

@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="HauntingType" format=3 uid="uid://5rysqia4uunc"]
+
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="1_w64ov"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="3_87n6w"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="3_adjda"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="3_w64ov"]
+[ext_resource type="Script" uid="uid://dfi0l7t0ecg8o" path="res://stage/hauntings/effects/haunting_effect_lose_bonus.gd" id="4_w64ov"]
+[ext_resource type="Texture2D" uid="uid://u1q87y2etkn1" path="res://stage/hauntings/types/kasukurai/haunting_kasukurai.png" id="6_adjda"]
+[ext_resource type="Resource" uid="uid://dbfjlux1p7pjj" path="res://art/pieces/piece_yagyou_kasukurai.tres" id="6_w64ov"]
+[ext_resource type="Texture2D" uid="uid://l7guta6fksoa" path="res://stage/hauntings/types/kasukurai/haunting_kasukurai_realistic_rodents.png" id="7_0hmdb"]
+[ext_resource type="Resource" uid="uid://dew0abjpv85u6" path="res://art/pieces/piece_yoshitoshi_priest_raigo.tres" id="7_pm3ul"]
+[ext_resource type="Script" uid="uid://cjsbl05vupd2y" path="res://stage/hauntings/types/haunting_type.gd" id="9_lltdc"]
+[ext_resource type="Script" uid="uid://cw46n47ekhnqm" path="res://cards/abilities/card_ability_discard.gd" id="11_adjda"]
+[ext_resource type="Script" uid="uid://dum2eb4b3vbos" path="res://stage/hauntings/triggers/haunting_trigger_ability_cast.gd" id="12_0hmdb"]
+
+[sub_resource type="Resource" id="Resource_6bj7k"]
+script = ExtResource("4_w64ov")
+bonus_type = ExtResource("3_87n6w")
+metadata/_custom_type_script = "uid://dfi0l7t0ecg8o"
+
+[sub_resource type="Resource" id="Resource_blf8j"]
+script = ExtResource("11_adjda")
+metadata/_custom_type_script = "uid://cw46n47ekhnqm"
+
+[sub_resource type="Resource" id="Resource_6tac1"]
+script = ExtResource("12_0hmdb")
+abillity_class = SubResource("Resource_blf8j")
+metadata/_custom_type_script = "uid://dum2eb4b3vbos"
+
+[resource]
+script = ExtResource("9_lltdc")
+haunting_id = "kasukurai"
+name = "Kasukurai"
+name_japanese = "粕食らい"
+name_realistic = "Vermin Infestation"
+name_translation = "Leftover Eaters"
+description = "The expedition is haunted by Kasukurai, little gluttons said to creep in after meals to devour anything left behind."
+description_realistic = "A growing rodent infestation is spoiling stored provisions and reducing available food."
+description_long = "At night, settlers whisper of soft chewing behind the walls and footprints around the grain stores. Nothing is ever stolen, but radishes are nibbled, and beans go missing.
+
+The locals blame the Kasukurai, spirits of waste and negligence. They say these sneaky figures crawl out from beneath discarded scraps, their thin lips smacking for every morsel left after a meal. Every careless waste draws more of them, until the storerooms echo with a thousand unseen feasts.
+
+Some tales claim they were once cooks who squandered food while others starved, doomed now to consume what no one wants."
+image_small = ExtResource("6_adjda")
+image_credit = ExtResource("6_w64ov")
+image_small_realistic = ExtResource("7_0hmdb")
+image_realistic_credit = ExtResource("7_pm3ul")
+base_aspect_types = Array[ExtResource("1_w64ov")]([ExtResource("3_adjda")])
+extra_aspect_type = ExtResource("3_w64ov")
+scaling_bonus_type = ExtResource("3_87n6w")
+trigger = SubResource("Resource_6tac1")
+effect = SubResource("Resource_6bj7k")
+spot_attach_mode = 1
+metadata/_custom_type_script = "uid://cjsbl05vupd2y"

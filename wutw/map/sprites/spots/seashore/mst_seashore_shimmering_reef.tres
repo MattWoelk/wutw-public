@@ -1,0 +1,79 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://dh8yx3h8mcs4u"]
+
+[ext_resource type="MapSpriteType_Generic" uid="uid://cgulmnnx60naa" path="res://map/sprites/spots/seashore/mst_seashore_turtle.tres" id="1_ccwye"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://g6h4g1yvl81b" path="res://map/sprites/spots/seashore/mst_seashore_reef_rock.tres" id="2_gfpod"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://cmxoelfwhud48" path="res://map/sprites/spots/seashore/mst_seashore_coral_garden.tres" id="3_3pafe"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://brt8p8xqtliaj" path="res://map/sprites/spots/seashore/mst_seashore_coral_2.tres" id="4_8dq1y"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://dcjvrm5ttq2vi" path="res://map/sprites/spots/seashore/mst_seashore_coral_3.tres" id="5_pkr44"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://drw7d0uwdgov1" path="res://map/sprites/spots/seashore/mst_seashore_coral_4.tres" id="6_tmc3d"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://cvtpm0lop33q2" path="res://map/sprites/spots/seashore/mst_seashore_coral_1.tres" id="7_yewcn"]
+[ext_resource type="PackedScene" uid="uid://dgfostvbmxtaj" path="res://map/sprites/spots/hills/map_effect_birds_falcons.tscn" id="9_njqe7"]
+[ext_resource type="PackedScene" uid="uid://djtjuwjcv52q1" path="res://map/sprites/spots/seashore/map_effect_sparkle.tscn" id="11_gfpod"]
+
+[sub_resource type="MapSpriteCollision_Rect" id="MapSpriteCollision_Rect_gfpod"]
+rect = Rect2(-3.525, -1.425, 5.785, 3.265)
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_fg8br"]
+sprite_type = ExtResource("1_ccwye")
+offset = Vector2(-2.72, 0.03)
+scale = 0.815
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_t36bh"]
+sprite_type = ExtResource("2_gfpod")
+offset = Vector2(-2.48, -1.985)
+scale = 1.285
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_54475"]
+sprite_type = ExtResource("3_3pafe")
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_aa3r0"]
+sprite_type = ExtResource("4_8dq1y")
+offset = Vector2(0.62, 0.215)
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_1xc1m"]
+sprite_type = ExtResource("5_pkr44")
+offset = Vector2(-1.025, 0.44)
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_jgiln"]
+sprite_type = ExtResource("6_tmc3d")
+offset = Vector2(0.185, -0.99)
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_il7bx"]
+sprite_type = ExtResource("5_pkr44")
+offset = Vector2(-0.195, -1.425)
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_xu372"]
+sprite_type = ExtResource("7_yewcn")
+offset = Vector2(-2.14, -0.57)
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_x3740"]
+sprite_type = ExtResource("4_8dq1y")
+offset = Vector2(-1.365, -0.41)
+scale = 0.74
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_obd1v"]
+sprite_type = ExtResource("6_tmc3d")
+offset = Vector2(1.8, -0.895)
+scale = 0.75
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_dcyf5"]
+sprite_type = ExtResource("5_pkr44")
+offset = Vector2(1.65, -0.035)
+scale = 1.14
+
+[sub_resource type="MapEffectAttachment" id="MapEffectAttachment_3pafe"]
+scene = ExtResource("11_gfpod")
+offset = Vector2(0, 0.24)
+scale = 0.06
+
+[sub_resource type="MapEffectAttachment" id="MapEffectAttachment_ccwye"]
+scene = ExtResource("9_njqe7")
+offset = Vector2(3.285, -3.055)
+scale = 0.045
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_fg8br"), SubResource("MapSpriteComponent_t36bh"), SubResource("MapSpriteComponent_54475"), SubResource("MapSpriteComponent_aa3r0"), SubResource("MapSpriteComponent_1xc1m"), SubResource("MapSpriteComponent_jgiln"), SubResource("MapSpriteComponent_il7bx"), SubResource("MapSpriteComponent_xu372"), SubResource("MapSpriteComponent_x3740"), SubResource("MapSpriteComponent_obd1v"), SubResource("MapSpriteComponent_dcyf5")])
+footprint_radius = 3.49
+effects = Array[MapEffectAttachment]([SubResource("MapEffectAttachment_3pafe"), SubResource("MapEffectAttachment_ccwye")])
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Rect_gfpod")])

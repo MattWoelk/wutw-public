@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="ShardType_FoodHeaven" format=3 uid="uid://b775kx77a78m7"]
+
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="1_be511"]
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="1_ykxfi"]
+[ext_resource type="Script" uid="uid://bjw0s664p3vns" path="res://shard_types/food_heaven/shard_type_food_heaven.gd" id="3_dh7t8"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="3_ppj2p"]
+[ext_resource type="Texture2D" uid="uid://cap8aa0mnfcli" path="res://shard_types/food_heaven/shard_type_food_heaven.png" id="3_x0tvg"]
+[ext_resource type="Resource" uid="uid://b0lbp3yrxj8ca" path="res://art/pieces/piece_gekkou_autumn_leaf_viewing.tres" id="4_x0tvg"]
+[ext_resource type="Resource" uid="uid://botkcoaeju416" path="res://debate/arguments/argument_hedonism.tres" id="7_t7l46"]
+[ext_resource type="Resource" uid="uid://cgjdsyj8ftqx6" path="res://skills/cards/skill_cards_quality_3.tres" id="7_uwp76"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="8_t7l46"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="10_t7l46"]
+
+[sub_resource type="Resource" id="Resource_42s6q"]
+script = ExtResource("1_ykxfi")
+text = "The first settlers of $shard_name were heroic, wise, and incredibly hungry. From early on, keeping bowls full was their top priority, and soon the primary challenge was not starvation, but storage. Before long, towns were judged primarily by the size of their strategic rice reserves, and any village that faced a failed harvest was immediately overflowing with supplies from their neighbors. The customary greeting here is not \"Hello\", but \"How was your meal?\"."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_7c60o"]
+script = ExtResource("1_ykxfi")
+text = "As mere survival became a distant memory, the people of $shard_name turned their energy toward unnecessary perfection. In $town1, a debate over the proper thickness of a noodle caused a bitter schism, with every citizen aligning themselves with one of the two rival noodle shops. Meanwhile, the scholars of $town2 abandoned literature to focus on mapping out the migration path of the local mushroom colony. The highest status here is achieved by earning the highly sought-after title of Person of Taste."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_nw6pk"]
+script = ExtResource("1_ykxfi")
+text = "When tensions rose between the orchard keepers and the rice farmers over water rights, the dispute was settled in a battle of chefs, ensuring that no harsh words were spoken on an empty stomach. The resulting Great Banquet of $town3 lasted for four days, with the orchard keepers eking out a victory with a dish of persimmons simmered in pickled plum syrup."
+time_taken = 2
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_v7pj1"]
+script = ExtResource("1_ykxfi")
+text = "Today, visitors to $shard_name's capital are drawn to the grand shrine beside the city hall. Foreigners are surprised by the fact that it is dedicated not to the Enlightened One, but to the spirits of fermentation. The shrine's halls carry the earthy, salty tang of miso, and faint burbles can be heard from the huge cellars lying under its floors. People here move with a deliberate, satisfied slowness, having learned that rushing through life only leads to indigestion."
+time_taken = 2
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_nup1v"]
+script = ExtResource("8_t7l46")
+text = "Now that's a shard I want to visit again! I barely stepped out of the gate before being offered a free bowl of \"welcome soup\", which tasted better than the most expensive meal I've had before. And by their standards, it's considered barely edible.
+
+Every day of the trip, my biggest challenge was to limit my portions so I could try as many dishes as possible. By the time I reached the capital I had to buy a new sash because mine was getting too tight.
+
+The highlight was definitely the fermentation shrine on the capital's main square. I've never seen so many kinds of pickles, and I didn't even have time to visit the cellars!
+
+I'm sure the scholars would consider these people simple, but they've certainly achieved perfection in their own way."
+revealed_skill = ExtResource("7_uwp76")
+gained_argument = ExtResource("7_t7l46")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[resource]
+script = ExtResource("3_dh7t8")
+food_bonus_type = ExtResource("1_be511")
+shard_type_id = "food_heaven"
+name = "A Gourmand's Heaven"
+shard_name_override = "Hōjōhara"
+shard_name_override_jp = "豊穣原"
+shard_name_override_meaning = "Abundance Plains"
+tier = 1
+illustration = ExtResource("3_x0tvg")
+illustration_credit = ExtResource("4_x0tvg")
+history = Array[ExtResource("1_ykxfi")]([SubResource("Resource_42s6q"), SubResource("Resource_7c60o"), SubResource("Resource_nw6pk"), SubResource("Resource_v7pj1")])
+trip_reward = SubResource("Resource_nup1v")
+metadata/_custom_type_script = "uid://c6vrs2bxrk07c"

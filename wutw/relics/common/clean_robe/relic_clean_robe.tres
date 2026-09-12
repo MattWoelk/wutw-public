@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Relic" format=3 uid="uid://qgol8b0f5o5f"]
+
+[ext_resource type="Texture2D" uid="uid://bedymaa28ycxe" path="res://relics/common/clean_robe/clean_robe.png" id="1_8hftm"]
+[ext_resource type="Script" uid="uid://cocdm5ulvrs8m" path="res://relics/relic.gd" id="2_ahukl"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="4_3feuj"]
+[ext_resource type="Resource" uid="uid://5q63svcbmx37" path="res://glossary/categories/termcategory_relic.tres" id="5_3jogk"]
+
+[resource]
+script = ExtResource("2_ahukl")
+relic_id = "clean_robe"
+default_name = "Clean Robe"
+default_description = "Gain 10% extra <term:insight>s."
+flavor_text = "As befits a proper scholar."
+icon = ExtResource("1_8hftm")
+var_modifiers = Dictionary[int, int]({
+42: 10
+})
+default_starting_state = 1
+term_categories = Array[ExtResource("4_3feuj")]([ExtResource("5_3jogk")])
+metadata/_custom_type_script = "uid://cocdm5ulvrs8m"

@@ -1,0 +1,149 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://6eo23u682evv"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_msb57"]
+[ext_resource type="Resource" uid="uid://wd6erwgnfsja" path="res://art/pieces/piece_hiroshige_kirifuri.tres" id="1_xod50"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_xod50"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_3s22n"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="4_xda7v"]
+[ext_resource type="Resource" uid="uid://cdkl8x4gpqmfb" path="res://cards/tier6/card_foolish.tres" id="5_86ppr"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="6_vkwi3"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="7_xax7u"]
+[ext_resource type="Script" uid="uid://cbnw4a13y5x8c" path="res://events/system/outcomes/random/event_outcome_random.gd" id="8_0sbbd"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="9_au87m"]
+[ext_resource type="Resource" uid="uid://7hxfgxohiwck" path="res://relics/common/firefly_lantern/relic_firefly_lantern.tres" id="10_xhi1y"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="11_ik2hr"]
+[ext_resource type="Script" uid="uid://yxgaymbbt8tk" path="res://events/system/outcomes/override_next_step/event_outcome_override_next_step.gd" id="12_02rwh"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="13_defwx"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="14_eaemv"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="15_ihpj2"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="16_4u13x"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="17_hfy4p"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="18_3s22n"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="18_vd4pn"]
+[ext_resource type="Resource" uid="uid://bom6dwl3t2obc" path="res://stage/spots/cliff/spot_cliff.tres" id="19_asxyt"]
+
+[sub_resource type="Resource" id="Resource_vo6yk"]
+script = ExtResource("1_msb57")
+_texture_path = "res://stage/survey/episodes/episode_waterfall_cave.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_jiikm"]
+script = ExtResource("6_vkwi3")
+card_type = ExtResource("5_86ppr")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_sjvdb"]
+script = ExtResource("2_xod50")
+label = "Walk on the stones."
+aspects = Array[ExtResource("3_3s22n")]([ExtResource("4_xda7v")])
+aspects_per_season = Array[ExtResource("3_3s22n")]([null])
+outcome = SubResource("Resource_jiikm")
+outcome_text = "Several scouts attempt to approach the waterfall, stepping carefully onto the stones.
+
+The result is chaos. One scout loses both her footing and her pack to the rushing water. Another topples face-first into the stream, thrashing wildly until his teammate pulls him out.
+
+The group quickly realizes the folly of this approach."
+
+[sub_resource type="Resource" id="Resource_fk6aa"]
+script = ExtResource("11_ik2hr")
+relic = ExtResource("10_xhi1y")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_dkkcu"]
+script = ExtResource("12_02rwh")
+result_text = "The scouts climb the cliffs looking for another entrance to the cave. 
+
+At the top they find an opening, partially blocked by a fallen tree trunk.
+
+Eager to see what lies inside, the scouts shove the tree trunk aside, only to dislodge a large boulder, which tumbles down and blocks the cave entrance."
+description = ""
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_qywm5"]
+script = ExtResource("8_0sbbd")
+suboutcomes = Dictionary[ExtResource("9_au87m"), float]({
+SubResource("Resource_fk6aa"): 0.5,
+SubResource("Resource_dkkcu"): 0.5
+})
+description = "Chance of <term:relic.firefly_lantern>"
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_222v2"]
+script = ExtResource("2_xod50")
+label = "Look for another entrance."
+aspects = Array[ExtResource("3_3s22n")]([ExtResource("7_xax7u"), null])
+aspects_per_season = Array[ExtResource("3_3s22n")]([null])
+outcome = SubResource("Resource_qywm5")
+outcome_text = "The scouts climb the cliffs looking for another entrance to the cave. 
+
+At the top they find an opening, partially blocked by a fallen tree trunk.
+
+Working together, the scouts heave the tree aside, just enough to squeeze into the opening .
+
+They find the cave filled with fireflies, their lights casting a pale green glow on the walls."
+
+[sub_resource type="Resource" id="Resource_fyc7s"]
+script = ExtResource("11_ik2hr")
+relic = ExtResource("10_xhi1y")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_g4g8o"]
+script = ExtResource("15_ihpj2")
+bonus_type = ExtResource("14_eaemv")
+min_count = 25
+max_count = -1
+extra_per_season = 25
+
+[sub_resource type="Resource" id="Resource_fdj48"]
+script = ExtResource("2_xod50")
+label = "Swing in."
+requirement = SubResource("Resource_g4g8o")
+aspects = Array[ExtResource("3_3s22n")]([ExtResource("13_defwx")])
+aspects_per_season = Array[ExtResource("3_3s22n")]([null])
+outcome = SubResource("Resource_fyc7s")
+outcome_text = "The scouts tie a rope to tree branches hanging over the fall, and send a surveyor swinging through the curtain of rushing water.
+
+Safely inside the cave, he looks on in wonder. Fireflies fill the half-darkness, their light casting a pale green glow on the walls.
+
+Unsure whether the others will believe him, the scout lures one of the insects into an unfolded lantern before leaving through a small opening in the rock.
+"
+
+[sub_resource type="Resource" id="Resource_jusr7"]
+script = ExtResource("16_4u13x")
+bonus_type = ExtResource("14_eaemv")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_85w7m"]
+script = ExtResource("2_xod50")
+label = "Leave it unexplored."
+aspects = Array[ExtResource("3_3s22n")]([null])
+aspects_per_season = Array[ExtResource("3_3s22n")]([null])
+outcome = SubResource("Resource_jusr7")
+outcome_text = "The group, tired from hiking all day, decides to move on.
+
+Night falls as they leave the waterfall behind.
+
+Looking back, they can see it glowing in the dark."
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("18_3s22n")
+min_progress = 210
+metadata/_custom_type_script = "uid://c50bhh4sr0g8o"
+
+[resource]
+script = ExtResource("17_hfy4p")
+episode_id = "waterfall_cave"
+title = "The Hidden Recess"
+biome_types = Array[int]([7])
+spot_types = Array[ExtResource("18_vd4pn")]([ExtResource("19_asxyt")])
+requirement = SubResource("Resource_trtbi")
+text = "The day's trek has exhausted the survey team.
+
+As they stop by a swift waterfall to refill their water, a scout notices a dark recess behind the waterfall.
+
+The curtain of water may be concealing a cave, but reaching it would require crossing the slippery rocks."
+background_image = SubResource("Resource_vo6yk")
+background_credit = ExtResource("1_xod50")
+choices = Array[ExtResource("2_xod50")]([SubResource("Resource_sjvdb"), SubResource("Resource_222v2"), SubResource("Resource_fdj48"), SubResource("Resource_85w7m")])

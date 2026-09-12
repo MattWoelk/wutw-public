@@ -1,0 +1,200 @@
+[gd_scene format=3 uid="uid://be8el7dqxmifk"]
+
+[ext_resource type="Script" uid="uid://dct4rlfcnpmqk" path="res://aspects/slot/aspect_slot.gd" id="1_7k32i"]
+[ext_resource type="Shader" uid="uid://ctgqc366pxmk2" path="res://aspects/slot/aspect_slot.gdshader" id="2_t6tb8"]
+[ext_resource type="Material" uid="uid://bb00nixa2etp1" path="res://aspects/slot/aspect_slot_material.tres" id="2_uabb2"]
+[ext_resource type="Texture2D" uid="uid://1ndfd038v2dw" path="res://aspects/types/connection/connection.png" id="3_t6tb8"]
+[ext_resource type="Texture2D" uid="uid://i0lyama67uco" path="res://aspects/slot/dashed_slot_mask.png" id="4_wtfaq"]
+
+[sub_resource type="Gradient" id="Gradient_v4fqm"]
+offsets = PackedFloat32Array(0.00614754, 0.0409836, 0.270492, 0.294057)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jhu4u"]
+gradient = SubResource("Gradient_v4fqm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fyr20"]
+shader = ExtResource("2_t6tb8")
+shader_parameter/aspect_tex = ExtResource("3_t6tb8")
+shader_parameter/fade_blend = 0.132
+shader_parameter/frame_shape = 1
+shader_parameter/frame_gradient = SubResource("GradientTexture1D_jhu4u")
+shader_parameter/frame_size = Vector2(0.3, 0.3)
+shader_parameter/frame_color = Color(1, 1, 1, 1)
+shader_parameter/frame_gradient_scale = 1.566
+shader_parameter/frame_gradient_highlight_scale = 0.731
+shader_parameter/frame_size_highlight_scale = 0.781
+shader_parameter/star_params = Vector2(0.53, 0.575)
+shader_parameter/dashed_mask = ExtResource("4_wtfaq")
+shader_parameter/is_accessible = false
+shader_parameter/noise_scale = 23.189
+shader_parameter/noise_strength = 0.221
+shader_parameter/noise_color = Color(0.242956, 0.245698, 0.048515, 1)
+shader_parameter/fade_progress = 0.0
+shader_parameter/highlight = 0.0
+shader_parameter/dashed = false
+
+[sub_resource type="Gradient" id="Gradient_wtfaq"]
+offsets = PackedFloat32Array(0, 0.4410609, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uabb2"]
+gradient = SubResource("Gradient_wtfaq")
+width = 48
+height = 48
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5185185, 0.05698006)
+
+[sub_resource type="Animation" id="Animation_6qjsa"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("IconTexture:material:shader_parameter/fade_progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimGlow:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("IconTexture:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimGlow:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_muwpy"]
+resource_name = "fill"
+length = 1.4
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("IconTexture:material:shader_parameter/fade_progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.7)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimGlow:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.11666667, 0, 0, 0, 1, -0.25, 0, 0.25, 0, 0, -0.11666667, 0, 0, 0),
+"times": PackedFloat32Array(0.4, 0.7, 1.4)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("IconTexture:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.35, 0.7),
+"transitions": PackedFloat32Array(2, 0.5, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimGlow:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.16666667, 0.56666666, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5), Vector2(5, 5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6qjsa"]
+_data = {
+&"RESET": SubResource("Animation_6qjsa"),
+&"fill": SubResource("Animation_muwpy")
+}
+
+[node name="AspectSlot" type="Control" unique_id=12973024 groups=["AspectSlots"]]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 3
+anchors_preset = 0
+pivot_offset = Vector2(12, 12)
+script = ExtResource("1_7k32i")
+icon_material_template = ExtResource("2_uabb2")
+
+[node name="IconTexture" type="ColorRect" parent="." unique_id=1684057845]
+unique_name_in_owner = true
+texture_filter = 6
+material = SubResource("ShaderMaterial_fyr20")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(12, 12)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
+
+[node name="AnimGlow" type="TextureRect" parent="." unique_id=1894637831]
+unique_name_in_owner = true
+modulate = Color(1.2, 1.2, 1.2, 0)
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(24, 24)
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_uabb2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1521329238]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_6qjsa")
+playback_auto_capture = false

@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://utv78s02n3bx"]
+
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="1_yuupw"]
+[ext_resource type="Resource" uid="uid://bv5uoj724kc1o" path="res://stage/spots/forest/upgrade_forest_2_logging_mill.tres" id="2_6d6ne"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="2_dtl2y"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="3_6d6ne"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_dtl2y"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="4_mkd0p"]
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="5_mkd0p"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="6_j8v71"]
+[ext_resource type="Resource" uid="uid://ucnbpdhw8mob" path="res://stage/spots/forest/spot_forest.tres" id="9_lhbx8"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="10_c2baj"]
+[ext_resource type="Script" uid="uid://dvrtuqbmx4v30" path="res://stage/spots/spot_upgrade_visual_add.gd" id="11_s4uo3"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://5gv7vwn2h51q" path="res://map/sprites/spots/forest/mst_forest_woodcutter_camp.tres" id="12_yiw36"]
+
+[sub_resource type="Resource" id="Resource_n6m57"]
+script = ExtResource("11_s4uo3")
+sprite_type = ExtResource("12_yiw36")
+biome = 9
+metadata/_custom_type_script = "uid://dvrtuqbmx4v30"
+
+[resource]
+script = ExtResource("5_mkd0p")
+spot_upgrade_id = "forest_woodcutter"
+name = "Woodcutter's Camp"
+description = "Dry stumps dot the clearing, each a mute witness to a tree's reluctant farewell."
+required_aspects = Array[ExtResource("3_dtl2y")]([ExtResource("6_j8v71")])
+granted_bonuses = Dictionary[ExtResource("1_yuupw"), int]({
+ExtResource("2_dtl2y"): 15,
+ExtResource("3_6d6ne"): -5,
+ExtResource("4_mkd0p"): -5
+})
+child_upgrades = Array[ExtResource("5_mkd0p")]([ExtResource("2_6d6ne")])
+spot = ExtResource("9_lhbx8")
+visuals = Array[ExtResource("10_c2baj")]([SubResource("Resource_n6m57")])
+tags = Array[int]([2])

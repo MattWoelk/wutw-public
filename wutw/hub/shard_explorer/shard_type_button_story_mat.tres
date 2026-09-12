@@ -1,0 +1,34 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b8lhbv35pymc"]
+
+[ext_resource type="Shader" uid="uid://ygmrqrvg5hpm" path="res://theme/button/ukiyoe_button.gdshader" id="1_ngth6"]
+[ext_resource type="Texture2D" uid="uid://ctgl61r3xxsqv" path="res://theme/button/button_fill.png" id="2_qy1fc"]
+[ext_resource type="Texture2D" uid="uid://blje81yu8734p" path="res://theme/button/button_shape.png" id="3_3snhi"]
+[ext_resource type="Texture2D" uid="uid://doe4603a6ngco" path="res://theme/button/button_outline.png" id="4_ojx2c"]
+[ext_resource type="Texture2D" uid="uid://cwubixgc8n0yr" path="res://theme/button/button_swish_left.png" id="5_rl2i4"]
+[ext_resource type="Texture2D" uid="uid://n6l17h4ysayj" path="res://theme/button/button_swish_right.png" id="6_tcp0b"]
+
+[sub_resource type="Gradient" id="Gradient_ci11e"]
+colors = PackedColorArray(0.54, 0.22680002, 0.5139001, 1, 0.54, 0.22680002, 0.5139001, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_f63px"]
+gradient = SubResource("Gradient_ci11e")
+fill_from = Vector2(0.48326054, 1)
+fill_to = Vector2(0.48908296, 0.45123726)
+
+[resource]
+shader = ExtResource("1_ngth6")
+shader_parameter/mask_tex = ExtResource("3_3snhi")
+shader_parameter/background = ExtResource("2_qy1fc")
+shader_parameter/gradient = SubResource("GradientTexture2D_f63px")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("4_ojx2c")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("6_tcp0b")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("5_rl2i4")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0

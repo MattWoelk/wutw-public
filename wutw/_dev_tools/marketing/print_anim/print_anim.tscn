@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cs5u42vho6gc3"]
+
+[ext_resource type="Script" uid="uid://d3recd62su62e" path="res://_dev_tools/marketing/print_anim/print_anim.gd" id="1_qdo8s"]
+[ext_resource type="Resource" uid="uid://dalchdv6unsx" path="res://events/landmark/print_studio/event_print_studio.tres" id="2_ieh7t"]
+[ext_resource type="Shader" uid="uid://ds5k1utmnp83o" path="res://_art_experiment/printing/print.gdshader" id="3_1fvrw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x2dmj"]
+shader = ExtResource("3_1fvrw")
+shader_parameter/paper_color = Color(0.8235294, 0.78039217, 0.5647059, 1)
+shader_parameter/modulate = Color(0.75126517, 0.5678494, 0.5709063, 1)
+shader_parameter/key_color = Color(0.3019608, 0.24313726, 0.16862746, 1)
+shader_parameter/max_key_lum_dist = 0.13999999687072
+shader_parameter/max_key_hue_dist = 0.70999998413008
+shader_parameter/key_boost = 0.41999999433748003
+shader_parameter/palette_count = 6
+shader_parameter/palette_starts = PackedColorArray(0.827451, 0.68235296, 0.47843137, 1, 0.73333335, 0.7019608, 0.5372549, 1, 0.47843137, 0.6313726, 0.36078432, 1, 0.5607, 0.63, 0.56763, 1, 0.1408, 0.22144005, 0.32, 1, 0.69, 0.20010002, 0.22459508, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+shader_parameter/palette_ends = PackedColorArray(0.5411765, 0.42352942, 0.3137255, 1, 0.6039216, 0.5019608, 0.38431373, 1, 0.29411766, 0.3529412, 0.29411766, 1, 0.50980395, 0.5686275, 0.48235294, 1, 0.19607843, 0.15686275, 0.35686275, 1, 0.627451, 0.16470589, 0.18431373, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+shader_parameter/debug_palette_display = -3
+shader_parameter/progress = 0.0
+
+[node name="PrintAnim" type="Node2D"]
+script = ExtResource("1_qdo8s")
+event = ExtResource("2_ieh7t")
+anim_material = SubResource("ShaderMaterial_x2dmj")
+metadata/movie_file = "C:/Users/max99/print_anim.avi"

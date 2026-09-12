@@ -1,0 +1,429 @@
+[gd_resource type="Resource" script_class="CardType" format=3 uid="uid://2xkihqn2egtg"]
+
+[ext_resource type="Script" uid="uid://b56kytec5oqcb" path="res://cards/abilities/card_ability.gd" id="1_c4g0v"]
+[ext_resource type="Script" uid="uid://be305pd33nph1" path="res://cards/abilities/card_ability_inspire.gd" id="2_6obay"]
+[ext_resource type="Resource" uid="uid://dmfd5uheymt74" path="res://cards/tier6/card_drunk.tres" id="3_ajd8s"]
+[ext_resource type="Script" uid="uid://c176jrcyakipx" path="res://cards/abilities/card_ability_add_card.gd" id="4_ajd8s"]
+[ext_resource type="Script" uid="uid://xc73x4t7ckxm" path="res://japanese/example_sentence.gd" id="5_ajd8s"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="5_b5trk"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="6_0p7tr"]
+[ext_resource type="Script" uid="uid://du4k150pcdjs6" path="res://japanese/kanji_shape.gd" id="6_b5trk"]
+[ext_resource type="Script" uid="uid://bl2eelwkj800o" path="res://japanese/japanese_token.gd" id="6_rksfs"]
+[ext_resource type="Script" uid="uid://dc15txdqjanlf" path="res://japanese/stroke_shape.gd" id="7_0p7tr"]
+[ext_resource type="Resource" uid="uid://d1k7vakhjcq5g" path="res://glossary/categories/termcategory_card.tres" id="7_rksfs"]
+[ext_resource type="Script" uid="uid://b6rw4ldrj6wch" path="res://japanese/vocab.gd" id="9_dgdak"]
+
+[sub_resource type="Resource" id="Resource_fpurs"]
+script = ExtResource("2_6obay")
+points = 2
+metadata/_custom_type_script = "uid://be305pd33nph1"
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("4_ajd8s")
+card_type = ExtResource("3_ajd8s")
+metadata/_custom_type_script = "uid://c176jrcyakipx"
+
+[sub_resource type="Resource" id="Resource_0grbx"]
+script = ExtResource("9_dgdak")
+japanese = "薬"
+readings = Array[String](["くすり"])
+meanings = Array[String](["medicine", "pharmaceuticals", "(legal) drugs", "pill", "ointment", "salve", "efficacious chemical (gunpowder, pesticide, etc.)", "(pottery) glaze", "(illegal) drug", "narcotic", "small bribe"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_kcgrg"]
+script = ExtResource("6_rksfs")
+raw_text = "薬"
+vocab = SubResource("Resource_0grbx")
+reading = "くすり"
+
+[sub_resource type="Resource" id="Resource_gbsap"]
+script = ExtResource("6_rksfs")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_rl423"]
+script = ExtResource("9_dgdak")
+japanese = "飲む"
+readings = Array[String](["のむ"])
+meanings = Array[String](["to drink", "to swallow", "to take (medicine)", "to smoke (tobacco)", "to swallow up", "to engulf", "to suppress (one's anger, bitter feelings, etc.)", "to keep down", "to hold back", "to swallow (one's tears)", "to catch (one's breath)", "to accept (a demand, conditions, etc.)", "to agree to", "to make light of (someone)", "to think nothing of", "to overwhelm", "to overawe", "to carry (a concealed dagger, etc.)", "to conceal (up one's sleeve, etc.)"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_urlm1"]
+script = ExtResource("6_rksfs")
+raw_text = "飲ん"
+vocab = SubResource("Resource_rl423")
+reading = "のん"
+
+[sub_resource type="Resource" id="Resource_5i7kv"]
+script = ExtResource("6_rksfs")
+raw_text = "で"
+reading = "で"
+
+[sub_resource type="Resource" id="Resource_p1ypm"]
+script = ExtResource("6_rksfs")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_ajd8s"]
+script = ExtResource("5_ajd8s")
+japanese = "薬を飲んで。"
+native = "Take the medicine."
+parsed = Array[ExtResource("6_rksfs")]([SubResource("Resource_kcgrg"), SubResource("Resource_gbsap"), SubResource("Resource_urlm1"), SubResource("Resource_5i7kv"), SubResource("Resource_p1ypm")])
+_difficulty = 217
+_used_kanji = Array[String](["薬", "飲"])
+
+[sub_resource type="Resource" id="Resource_pbv2i"]
+script = ExtResource("9_dgdak")
+japanese = "お茶"
+readings = Array[String](["おちゃ"])
+meanings = Array[String](["tea (esp. green or barley)", "tea break", "teatime", "tea ceremony"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_o800p"]
+script = ExtResource("6_rksfs")
+raw_text = "お茶"
+vocab = SubResource("Resource_pbv2i")
+reading = "おちゃ"
+
+[sub_resource type="Resource" id="Resource_4j4jt"]
+script = ExtResource("6_rksfs")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_3lbs0"]
+script = ExtResource("6_rksfs")
+raw_text = "飲み"
+vocab = SubResource("Resource_rl423")
+reading = "のみ"
+
+[sub_resource type="Resource" id="Resource_ajtih"]
+script = ExtResource("6_rksfs")
+raw_text = "ませ"
+reading = "ませ"
+
+[sub_resource type="Resource" id="Resource_1xyhr"]
+script = ExtResource("6_rksfs")
+raw_text = "ん"
+reading = "ん"
+
+[sub_resource type="Resource" id="Resource_k8xpq"]
+script = ExtResource("6_rksfs")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_b5trk"]
+script = ExtResource("5_ajd8s")
+japanese = "お茶は飲みません。"
+native = "I never drink tea."
+parsed = Array[ExtResource("6_rksfs")]([SubResource("Resource_o800p"), SubResource("Resource_4j4jt"), SubResource("Resource_3lbs0"), SubResource("Resource_ajtih"), SubResource("Resource_1xyhr"), SubResource("Resource_k8xpq")])
+_difficulty = 253
+_used_kanji = Array[String](["茶", "飲"])
+
+[sub_resource type="Resource" id="Resource_gfek2"]
+script = ExtResource("9_dgdak")
+japanese = "一気に"
+readings = Array[String](["いっきに"])
+meanings = Array[String](["in one go", "in one gulp", "in one breath", "without stopping", "without pausing", "without a rest", "in one sitting", "at a stretch", "suddenly", "all of a sudden", "all at once"])
+
+[sub_resource type="Resource" id="Resource_m7t5k"]
+script = ExtResource("6_rksfs")
+raw_text = "一気に"
+vocab = SubResource("Resource_gfek2")
+reading = "いっきに"
+
+[sub_resource type="Resource" id="Resource_blmif"]
+script = ExtResource("9_dgdak")
+japanese = "飲み干す"
+readings = Array[String](["のみほす"])
+meanings = Array[String](["to drink up", "to drink to the last drop", "to drink (a glass) dry", "to drain (one's glass)", "to empty", "to down (a drink)"])
+
+[sub_resource type="Resource" id="Resource_d45ob"]
+script = ExtResource("6_rksfs")
+raw_text = "飲み干し"
+vocab = SubResource("Resource_blmif")
+reading = "のみほし"
+
+[sub_resource type="Resource" id="Resource_bofmr"]
+script = ExtResource("6_rksfs")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_kuqni"]
+script = ExtResource("6_rksfs")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_dgdak"]
+script = ExtResource("5_ajd8s")
+japanese = "一気に飲み干した。"
+native = "I gulped it down."
+parsed = Array[ExtResource("6_rksfs")]([SubResource("Resource_m7t5k"), SubResource("Resource_d45ob"), SubResource("Resource_bofmr"), SubResource("Resource_kuqni")])
+_difficulty = 376
+_used_kanji = Array[String](["一", "気", "飲", "干"])
+
+[sub_resource type="Resource" id="Resource_aq821"]
+script = ExtResource("9_dgdak")
+japanese = "私"
+readings = Array[String](["わたし"])
+meanings = Array[String](["I", "me"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_mefqd"]
+script = ExtResource("6_rksfs")
+raw_text = "私"
+vocab = SubResource("Resource_aq821")
+reading = "わたし"
+
+[sub_resource type="Resource" id="Resource_xx05d"]
+script = ExtResource("6_rksfs")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_qbwem"]
+script = ExtResource("9_dgdak")
+japanese = "水"
+readings = Array[String](["みず"])
+meanings = Array[String](["water (esp. cool or cold)", "fluid (esp. in an animal tissue)", "liquid", "flood", "floodwaters", "water offered to wrestlers just prior to a bout", "break granted to wrestlers engaged in a prolonged bout"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_b17sc"]
+script = ExtResource("6_rksfs")
+raw_text = "水"
+vocab = SubResource("Resource_qbwem")
+reading = "みず"
+
+[sub_resource type="Resource" id="Resource_fknud"]
+script = ExtResource("6_rksfs")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_26shm"]
+script = ExtResource("6_rksfs")
+raw_text = "飲み"
+vocab = SubResource("Resource_rl423")
+reading = "のみ"
+
+[sub_resource type="Resource" id="Resource_uwfhm"]
+script = ExtResource("6_rksfs")
+raw_text = "まし"
+reading = "まし"
+
+[sub_resource type="Resource" id="Resource_xoh77"]
+script = ExtResource("6_rksfs")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_abbmy"]
+script = ExtResource("6_rksfs")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_0royo"]
+script = ExtResource("5_ajd8s")
+japanese = "私は水を飲みました。"
+native = "I drank water."
+parsed = Array[ExtResource("6_rksfs")]([SubResource("Resource_mefqd"), SubResource("Resource_xx05d"), SubResource("Resource_b17sc"), SubResource("Resource_fknud"), SubResource("Resource_26shm"), SubResource("Resource_uwfhm"), SubResource("Resource_xoh77"), SubResource("Resource_abbmy")])
+_difficulty = 393
+_used_kanji = Array[String](["私", "水", "飲"])
+
+[sub_resource type="Resource" id="Resource_wflbh"]
+script = ExtResource("9_dgdak")
+japanese = "僕"
+readings = Array[String](["ぼく"])
+meanings = Array[String](["I", "me", "you", "manservant"])
+jlpt_level = 4
+
+[sub_resource type="Resource" id="Resource_eg68c"]
+script = ExtResource("6_rksfs")
+raw_text = "僕"
+vocab = SubResource("Resource_wflbh")
+reading = "ぼく"
+
+[sub_resource type="Resource" id="Resource_q68cu"]
+script = ExtResource("6_rksfs")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_xgjkl"]
+script = ExtResource("6_rksfs")
+raw_text = "水"
+vocab = SubResource("Resource_qbwem")
+reading = "みず"
+
+[sub_resource type="Resource" id="Resource_xtw7c"]
+script = ExtResource("6_rksfs")
+raw_text = "しか"
+reading = "しか"
+
+[sub_resource type="Resource" id="Resource_cquy3"]
+script = ExtResource("6_rksfs")
+raw_text = "飲ま"
+vocab = SubResource("Resource_rl423")
+reading = "のま"
+
+[sub_resource type="Resource" id="Resource_yk2go"]
+script = ExtResource("6_rksfs")
+raw_text = "ない"
+reading = "ない"
+
+[sub_resource type="Resource" id="Resource_7p7u2"]
+script = ExtResource("6_rksfs")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_0p7tr"]
+script = ExtResource("5_ajd8s")
+japanese = "僕は水しか飲まない。"
+native = "I only drink water."
+parsed = Array[ExtResource("6_rksfs")]([SubResource("Resource_eg68c"), SubResource("Resource_q68cu"), SubResource("Resource_xgjkl"), SubResource("Resource_xtw7c"), SubResource("Resource_cquy3"), SubResource("Resource_yk2go"), SubResource("Resource_7p7u2")])
+_difficulty = 467
+_used_kanji = Array[String](["僕", "水", "飲"])
+
+[sub_resource type="Resource" id="Resource_xxbeg"]
+script = ExtResource("7_0p7tr")
+points = Array[Vector2]([Vector2(31.53, 14.5), Vector2(30.69, 19.22), Vector2(28.56, 23.52), Vector2(25.77, 28.16), Vector2(22.44, 32.91), Vector2(18.68, 37.51), Vector2(14.61, 41.75), Vector2(10.37, 45.37)])
+
+[sub_resource type="Resource" id="Resource_0hiw6"]
+script = ExtResource("7_0p7tr")
+points = Array[Vector2]([Vector2(33.5, 19.5), Vector2(39.14, 22.23), Vector2(44.45, 25.92), Vector2(48.5, 30.25)])
+
+[sub_resource type="Resource" id="Resource_j0aoc"]
+script = ExtResource("7_0p7tr")
+points = Array[Vector2]([Vector2(32.79, 32.26), Vector2(34.05, 38.29), Vector2(33.99, 43.78)])
+
+[sub_resource type="Resource" id="Resource_xp2ty"]
+script = ExtResource("7_0p7tr")
+points = Array[Vector2]([Vector2(20.01, 46.32), Vector2(25.26, 46.27), Vector2(31.74, 45.01), Vector2(37.79, 43.88), Vector2(40.95, 43.31), Vector2(43.64, 46.51), Vector2(42.87, 51.64), Vector2(42, 57.43), Vector2(41.19, 62.78), Vector2(40.49, 67.74)])
+
+[sub_resource type="Resource" id="Resource_1ln6n"]
+script = ExtResource("7_0p7tr")
+points = Array[Vector2]([Vector2(22.71, 57.53), Vector2(28.23, 56.47), Vector2(35.09, 55.32), Vector2(41.24, 54.37)])
+
+[sub_resource type="Resource" id="Resource_w4xhc"]
+script = ExtResource("7_0p7tr")
+points = Array[Vector2]([Vector2(22.37, 68.85), Vector2(28.04, 67.94), Vector2(33.86, 67.13), Vector2(39.58, 66.38)])
+
+[sub_resource type="Resource" id="Resource_0qwl0"]
+script = ExtResource("7_0p7tr")
+points = Array[Vector2]([Vector2(20.37, 47.01), Vector2(21.4, 50.85), Vector2(21.37, 55.05), Vector2(21.33, 60.8), Vector2(21.28, 67.39), Vector2(21.22, 74.14), Vector2(21.16, 80.33), Vector2(21.11, 85.27), Vector2(21.08, 88.28), Vector2(21.47, 92), Vector2(25.79, 90.65), Vector2(28.89, 88.45), Vector2(33.24, 85.52), Vector2(38.5, 82.25)])
+
+[sub_resource type="Resource" id="Resource_4cdvm"]
+script = ExtResource("7_0p7tr")
+points = Array[Vector2]([Vector2(37.25, 74.25), Vector2(40.01, 79.28), Vector2(42.25, 86)])
+
+[sub_resource type="Resource" id="Resource_nunik"]
+script = ExtResource("7_0p7tr")
+points = Array[Vector2]([Vector2(61.5, 14.25), Vector2(61.35, 19.1), Vector2(60.23, 23.64), Vector2(58.75, 28.74), Vector2(56.88, 34.13), Vector2(54.64, 39.56), Vector2(52.01, 44.77), Vector2(49, 49.5)])
+
+[sub_resource type="Resource" id="Resource_atsbr"]
+script = ExtResource("7_0p7tr")
+points = Array[Vector2]([Vector2(58.22, 37.74), Vector2(63.06, 37.52), Vector2(67.65, 36.39), Vector2(74.88, 34.61), Vector2(81.81, 32.9), Vector2(85.52, 31.99), Vector2(89.16, 32.76), Vector2(87.65, 37.01), Vector2(82.49, 43.25)])
+
+[sub_resource type="Resource" id="Resource_0v8jx"]
+script = ExtResource("7_0p7tr")
+points = Array[Vector2]([Vector2(64.85, 47.5), Vector2(65.41, 52.41), Vector2(64.56, 57.32), Vector2(63.47, 62.17), Vector2(62.12, 66.92), Vector2(60.46, 71.56), Vector2(58.47, 76.07), Vector2(56.11, 80.41), Vector2(53.34, 84.58), Vector2(50.13, 88.54), Vector2(46.45, 92.27), Vector2(42.25, 95.75)])
+
+[sub_resource type="Resource" id="Resource_8s8ho"]
+script = ExtResource("7_0p7tr")
+points = Array[Vector2]([Vector2(65.42, 60.5), Vector2(67.32, 63.71), Vector2(69.94, 67.59), Vector2(73.1, 71.92), Vector2(76.59, 76.45), Vector2(80.24, 80.97), Vector2(83.83, 85.24), Vector2(87.18, 89.03), Vector2(90.56, 92.66), Vector2(94.75, 95.5)])
+
+[sub_resource type="Resource" id="Resource_4qumd"]
+script = ExtResource("6_b5trk")
+stroke_shapes = Array[ExtResource("7_0p7tr")]([SubResource("Resource_xxbeg"), SubResource("Resource_0hiw6"), SubResource("Resource_j0aoc"), SubResource("Resource_xp2ty"), SubResource("Resource_1ln6n"), SubResource("Resource_w4xhc"), SubResource("Resource_0qwl0"), SubResource("Resource_4cdvm"), SubResource("Resource_nunik"), SubResource("Resource_atsbr"), SubResource("Resource_0v8jx"), SubResource("Resource_8s8ho")])
+
+[sub_resource type="Resource" id="Resource_rksfs"]
+script = ExtResource("9_dgdak")
+japanese = "飲む"
+readings = Array[String](["のむ"])
+meanings = Array[String](["to drink"])
+jlpt_level = 5
+_difficulty = 2
+_used_kanji = Array[String](["飲"])
+
+[sub_resource type="Resource" id="Resource_hrkc2"]
+script = ExtResource("9_dgdak")
+japanese = "飲み物"
+readings = Array[String](["のみもの"])
+meanings = Array[String](["beverage"])
+jlpt_level = 5
+_difficulty = 3
+_used_kanji = Array[String](["飲", "物"])
+
+[sub_resource type="Resource" id="Resource_h8fck"]
+script = ExtResource("9_dgdak")
+japanese = "飲み込む"
+readings = Array[String](["のみこむ"])
+meanings = Array[String](["to gulp down"])
+jlpt_level = 1
+_difficulty = 124
+_used_kanji = Array[String](["飲", "込"])
+
+[sub_resource type="Resource" id="Resource_dl63y"]
+script = ExtResource("9_dgdak")
+japanese = "飲食"
+readings = Array[String](["いんしょく"])
+meanings = Array[String](["food and drink", "eating and drinking"])
+_difficulty = 666
+_used_kanji = Array[String](["飲", "食"])
+
+[sub_resource type="Resource" id="Resource_r2oby"]
+script = ExtResource("9_dgdak")
+japanese = "飲料"
+readings = Array[String](["いんりょう"])
+meanings = Array[String](["beverage", "drink"])
+_difficulty = 725
+_used_kanji = Array[String](["飲", "料"])
+
+[sub_resource type="Resource" id="Resource_j684l"]
+script = ExtResource("9_dgdak")
+japanese = "飲酒"
+readings = Array[String](["いんしゅ"])
+meanings = Array[String](["drinking alcohol"])
+_difficulty = 779
+_used_kanji = Array[String](["飲", "酒"])
+
+[sub_resource type="Resource" id="Resource_5qhan"]
+script = ExtResource("9_dgdak")
+japanese = "飲み水"
+readings = Array[String](["のみみず"])
+meanings = Array[String](["drinking water"])
+_difficulty = 933
+_used_kanji = Array[String](["飲", "水"])
+
+[sub_resource type="Resource" id="Resource_ex1jt"]
+script = ExtResource("9_dgdak")
+japanese = "飲物"
+readings = Array[String](["のみもの"])
+meanings = Array[String](["beverage"])
+_difficulty = 935
+_used_kanji = Array[String](["飲", "物"])
+
+[sub_resource type="Resource" id="Resource_adj48"]
+script = ExtResource("9_dgdak")
+japanese = "飲食店"
+readings = Array[String](["いんしょくてん"])
+meanings = Array[String](["restaurant"])
+_difficulty = 1000
+_used_kanji = Array[String](["飲", "食", "店"])
+
+[sub_resource type="Resource" id="Resource_4f3ne"]
+script = ExtResource("9_dgdak")
+japanese = "飲料水"
+readings = Array[String](["いんりょうすい"])
+meanings = Array[String](["drinking water"])
+_difficulty = 1000
+_used_kanji = Array[String](["飲", "料", "水"])
+
+[resource]
+script = ExtResource("5_b5trk")
+symbol = "飲"
+card_name = "Drink"
+rarity = 1
+abilities = Array[ExtResource("1_c4g0v")]([SubResource("Resource_fpurs"), SubResource("Resource_trtbi")])
+tags = Array[int]([9, 18])
+vocabulary = Array[ExtResource("9_dgdak")]([SubResource("Resource_rksfs"), SubResource("Resource_hrkc2"), SubResource("Resource_h8fck"), SubResource("Resource_dl63y"), SubResource("Resource_r2oby"), SubResource("Resource_j684l"), SubResource("Resource_5qhan"), SubResource("Resource_ex1jt"), SubResource("Resource_adj48"), SubResource("Resource_4f3ne")])
+example_sentences = Array[ExtResource("5_ajd8s")]([SubResource("Resource_ajd8s"), SubResource("Resource_b5trk"), SubResource("Resource_dgdak"), SubResource("Resource_0royo"), SubResource("Resource_0p7tr")])
+kanji_shape = SubResource("Resource_4qumd")
+debug_power_adjustment = 5
+init_aspects = 64
+term_categories = Array[ExtResource("6_0p7tr")]([ExtResource("7_rksfs")])

@@ -1,0 +1,814 @@
+[gd_scene format=3 uid="uid://dgmyeosmc67d7"]
+
+[ext_resource type="Script" uid="uid://exc3c8qwkan0" path="res://cards/card.gd" id="1_qgq17"]
+[ext_resource type="LabelSettings" uid="uid://kfd2iofdfggd" path="res://theme/fonts/presets/label_settings_card_name.tres" id="2_1dpkt"]
+[ext_resource type="Material" uid="uid://cdysj3m4gb683" path="res://cards/art/card_rarity_material_compatibility.tres" id="4_1sf5n"]
+[ext_resource type="Texture2D" uid="uid://c66aj8bt8kjit" path="res://cards/art/card_base.png" id="4_2eeoa"]
+[ext_resource type="Shader" uid="uid://dxc4ewrgbw2ie" path="res://cards/art/card_symbol.gdshader" id="6_acvkr"]
+[ext_resource type="FontVariation" uid="uid://cg0r11kdhnguu" path="res://theme/fonts/presets/font_card_symbol.tres" id="7_rhob6"]
+[ext_resource type="PackedScene" uid="uid://c3pppnvtjoj7" path="res://aspects/aspect.tscn" id="8_2eeoa"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="9_1sf5n"]
+[ext_resource type="Texture2D" uid="uid://ev3llicglsq8" path="res://cards/art/card_border.png" id="9_hwwr4"]
+[ext_resource type="Shader" uid="uid://td5t8lc2dpjv" path="res://aspects/aspect.gdshader" id="9_iruc6"]
+[ext_resource type="Texture2D" uid="uid://cujd81fxnmf4v" path="res://cards/art/owned_icon.png" id="10_53nac"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="10_acvkr"]
+[ext_resource type="PackedScene" uid="uid://c486xx01esukm" path="res://theme/new_indicator.tscn" id="11_1sf5n"]
+[ext_resource type="Texture2D" uid="uid://dh70v4m3dakn6" path="res://cards/art/innate_icon.png" id="11_53nac"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="11_rhob6"]
+[ext_resource type="FontVariation" uid="uid://dn0ai0vy0frp1" path="res://theme/fonts/presets/font_card_ability.tres" id="12_1dpkt"]
+[ext_resource type="Texture2D" uid="uid://dykwqn284k67t" path="res://cards/art/signature_icon.png" id="13_acvkr"]
+[ext_resource type="Texture2D" uid="uid://bged7v8k4r7ty" path="res://cards/art/dowel_mask.png" id="14_iijrc"]
+[ext_resource type="Shader" uid="uid://gpgadexvoqm8" path="res://visuals/shaders/multiply.gdshader" id="16_hwwr4"]
+[ext_resource type="Material" uid="uid://dtsujt3iqw7ga" path="res://cards/art/card_dowel_mat_compatibility.tres" id="18_1sf5n"]
+
+[sub_resource type="Gradient" id="Gradient_p6473"]
+offsets = PackedFloat32Array(0.5061856, 0.56494844)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mpdjx"]
+seed = 140
+frequency = 1.0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 0.405
+domain_warp_frequency = 0.295
+domain_warp_fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_61onk"]
+noise = SubResource("FastNoiseLite_mpdjx")
+color_ramp = SubResource("Gradient_p6473")
+
+[sub_resource type="Gradient" id="Gradient_1wco4"]
+offsets = PackedFloat32Array(0.428279, 0.694672, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.668421, 0.668421, 0.668421, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vttq4"]
+seed = 215
+frequency = 0.0125
+offset = Vector3(0, -126.12, 0)
+fractal_lacunarity = 1.9
+fractal_gain = 0.565
+fractal_weighted_strength = 0.98
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qfw1p"]
+noise = SubResource("FastNoiseLite_vttq4")
+color_ramp = SubResource("Gradient_1wco4")
+bump_strength = 12.6
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1y3j1"]
+shader = ExtResource("6_acvkr")
+shader_parameter/main_noise = SubResource("NoiseTexture2D_qfw1p")
+shader_parameter/detail_noise = SubResource("NoiseTexture2D_61onk")
+shader_parameter/detail_noise_scale = 0.76200003549648
+shader_parameter/shine_noise_scale = 0.48600002238648
+shader_parameter/shine_amount = Vector2(0.21, -0.04)
+shader_parameter/shine_color = Color(1.0249712, 0.8560658, 0.3493494, 0.77254903)
+shader_parameter/size = Vector2(157, 99)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1wco4"]
+shader = ExtResource("9_iruc6")
+shader_parameter/noise_scale = 53.922
+shader_parameter/noise_strength = 0.242
+shader_parameter/noise_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_acvkr"]
+shader = ExtResource("16_hwwr4")
+
+[sub_resource type="Gradient" id="Gradient_kbqer"]
+offsets = PackedFloat32Array(0, 0.30957, 0.484375)
+colors = PackedColorArray(0.5, 0.43825, 0.405, 1, 0.93, 0.899775, 0.8835, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hwwr4"]
+gradient = SubResource("Gradient_kbqer")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Animation" id="Animation_53nac"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RootVBox/Control/MaskContainer/MainContainer:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RootVBox/Control/Dowel/Shadow:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RootVBox/Control/Dowel/Shadow:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:custom_minimum_size:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [214.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RootVBox/NameLabel:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iruc6"]
+resource_name = "appear"
+length = 0.7
+step = 0.005
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RootVBox/Control/MaskContainer/MainContainer:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-206, -0.25, 0, 0.25, 0, -206, -0.25, 0, 0.09, 88.8594, 0, -0.285, -53.8051, 0.25, 0),
+"times": PackedFloat32Array(0, 0.25, 0.7)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RootVBox/Control/Dowel/Shadow:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26, 0.285),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RootVBox/Control/Dowel:instance_shader_parameters/anim_offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.233333, 1.23422, 3.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.25, 0.7)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RootVBox/Control/Dowel:instance_shader_parameters/reveal_lines_progress")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-0.18, -0.25, 0, 0.015, 0.468652, 1, -0.065, -0.235284, 0, 0),
+"times": PackedFloat32Array(0, 0.135)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RootVBox/Control/Dowel:instance_shader_parameters/reveal_progress")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-0.3, -0.05, -0.0034831, 0.04, -0.0104493, 0, -0.035, -0.162357, 0.02, 0.330138, 1, -0.055, -0.449535, 0.035, 0.0452803),
+"times": PackedFloat32Array(0, 0.135, 0.25)
+}
+
+[sub_resource type="Animation" id="Animation_iijrc"]
+resource_name = "appear_compatibility"
+length = 0.7
+step = 0.005
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RootVBox/Control/MaskContainer/MainContainer:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-206, -0.25, 0, 0.25, 0, -206, -0.25, 0, 0.09, 88.8594, 0, -0.285, -53.8051, 0.25, 0),
+"times": PackedFloat32Array(0, 0.25, 0.7)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RootVBox/Control/Dowel/Shadow:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26, 0.285),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_l8rp0"]
+resource_name = "disappear"
+length = 0.8
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RootVBox/Control/MaskContainer/MainContainer:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.285, -53.8051, 0.25, 0, -206, -0.25, 0, 0.25, -0.141708, -206, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.45, 0.7)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RootVBox/Control/Dowel/Shadow:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.333333, 0.366667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:custom_minimum_size:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5709937, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [214.0, 0.0]
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RootVBox/Control/Dowel:instance_shader_parameters/anim_offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(3.2, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.233333, 1.23422),
+"times": PackedFloat32Array(0, 0.4667)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RootVBox/Control/Dowel:instance_shader_parameters/reveal_lines_progress")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.065, -0.235284, 0.0211272, -0.440104, -0.18, -0.043735, 0.26009, 0.015, 0.468652),
+"times": PackedFloat32Array(0.56666666, 0.7)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RootVBox/Control/Dowel:instance_shader_parameters/reveal_progress")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(1, -0.055, -0.449535, 0.035, 0.0452803, 0, -0.031120647, 0.26571405, 0.0245983, -0.210025, -0.3, -0.05, -0.0034831, 0.04, -0.0104493),
+"times": PackedFloat32Array(0.45, 0.56666666, 0.7)
+}
+
+[sub_resource type="Animation" id="Animation_8o0a7"]
+resource_name = "disappear_compatibility"
+length = 0.8
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RootVBox/Control/MaskContainer/MainContainer:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.285, -53.8051, 0.25, 0, -206, -0.25, 0, 0.25, -0.141708, -206, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.45, 0.7)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RootVBox/Control/Dowel/Shadow:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.333333, 0.366667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:custom_minimum_size:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5709937, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [214.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_1dpkt"]
+resource_name = "rollup"
+length = 0.8
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RootVBox/Control/MaskContainer/MainContainer:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.285, -53.8051, 0.25, 0, -206, -0.25, 0, 0.25, -0.141708, -206, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.45, 0.7)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RootVBox/Control/Dowel/Shadow:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.333333, 0.366667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath(".:custom_minimum_size:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5709937, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [214.0, 0.0]
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RootVBox/Control/Dowel:instance_shader_parameters/anim_offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(3.2, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.233333, 1.23422),
+"times": PackedFloat32Array(0, 0.4667)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/path = NodePath("RootVBox/Control/Dowel:instance_shader_parameters/reveal_lines_progress")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.065, -0.235284, 0.0211272, -0.440104, -0.18, -0.043735, 0.26009, 0.015, 0.468652),
+"times": PackedFloat32Array(0.56666666, 0.7)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = false
+tracks/5/path = NodePath("RootVBox/Control/Dowel:instance_shader_parameters/reveal_progress")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(1, -0.055, -0.449535, 0.035, 0.0452803, 0, -0.031120647, 0.26571405, 0.0245983, -0.210025, -0.3, -0.05, -0.0034831, 0.04, -0.0104493),
+"times": PackedFloat32Array(0.45, 0.56666666, 0.7)
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("RootVBox/NameLabel:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_eyey0"]
+resource_name = "rollup_compatibility"
+length = 0.8
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RootVBox/Control/MaskContainer/MainContainer:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.285, -53.8051, 0.25, 0, -206, -0.25, 0, 0.25, -0.141708, -206, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.45, 0.7)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RootVBox/Control/Dowel/Shadow:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.333333, 0.366667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath(".:custom_minimum_size:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5709937, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [214.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RootVBox/NameLabel:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0tfah"]
+_data = {
+&"RESET": SubResource("Animation_53nac"),
+&"appear": SubResource("Animation_iruc6"),
+&"appear_compatibility": SubResource("Animation_iijrc"),
+&"disappear": SubResource("Animation_l8rp0"),
+&"disappear_compatibility": SubResource("Animation_8o0a7"),
+&"rollup": SubResource("Animation_1dpkt"),
+&"rollup_compatibility": SubResource("Animation_eyey0")
+}
+
+[node name="Card" type="Control" unique_id=269468893]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(214, 232)
+layout_mode = 3
+anchors_preset = 0
+pivot_offset = Vector2(106.907, 227.72)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+script = ExtResource("1_qgq17")
+
+[node name="RootVBox" type="VBoxContainer" parent="." unique_id=1358029513]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(214, 232)
+layout_mode = 1
+offset_right = 214.0
+offset_bottom = 232.0
+pivot_offset = Vector2(107, 231)
+
+[node name="NameLabel" type="Label" parent="RootVBox" unique_id=636770237]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+text = "Console"
+label_settings = ExtResource("2_1dpkt")
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="RootVBox" unique_id=1206025124]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="MaskContainer" type="TextureRect" parent="RootVBox/Control" unique_id=2102810907]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="MainContainer" type="Control" parent="RootVBox/Control/MaskContainer" unique_id=88254539]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+metadata/_edit_lock_ = true
+
+[node name="Background" type="TextureRect" parent="RootVBox/Control/MaskContainer/MainContainer" unique_id=1566177781]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 2.0
+offset_right = 198.0
+offset_bottom = 206.0
+mouse_filter = 2
+texture = ExtResource("4_2eeoa")
+expand_mode = 1
+
+[node name="Control" type="Control" parent="RootVBox/Control/MaskContainer/MainContainer" unique_id=1586247273]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RarityOverlay" type="TextureRect" parent="RootVBox/Control/MaskContainer/MainContainer/Control" unique_id=407374314]
+unique_name_in_owner = true
+self_modulate = Color(0.98, 0.661, 0.363, 1)
+material = ExtResource("4_1sf5n")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = 8.0
+offset_right = -186.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_hwwr4")
+expand_mode = 1
+
+[node name="RarityOverlay2" type="TextureRect" parent="RootVBox/Control/MaskContainer/MainContainer/Control" unique_id=841631997]
+unique_name_in_owner = true
+self_modulate = Color(0.98, 0.661, 0.363, 1)
+material = ExtResource("4_1sf5n")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 187.0
+offset_top = 7.0
+offset_right = -17.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_hwwr4")
+expand_mode = 1
+flip_h = true
+
+[node name="VBox" type="VBoxContainer" parent="RootVBox/Control/MaskContainer/MainContainer" unique_id=1922323011]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 29.0
+offset_top = 11.0
+offset_right = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Symbol" type="Label" parent="RootVBox/Control/MaskContainer/MainContainer/VBox" unique_id=43588350]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_1y3j1")
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_rhob6")
+theme_override_font_sizes/font_size = 95
+text = "慰"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AspectsList" type="HBoxContainer" parent="RootVBox/Control/MaskContainer/MainContainer/VBox" unique_id=2049455961]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.937255)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Aspect" parent="RootVBox/Control/MaskContainer/MainContainer/VBox/AspectsList" unique_id=2125816862 instance=ExtResource("8_2eeoa")]
+layout_mode = 2
+
+[node name="Aspect2" parent="RootVBox/Control/MaskContainer/MainContainer/VBox/AspectsList" unique_id=2094073698 instance=ExtResource("8_2eeoa")]
+layout_mode = 2
+aspect_type = ExtResource("9_1sf5n")
+
+[node name="Aspect3" parent="RootVBox/Control/MaskContainer/MainContainer/VBox/AspectsList" unique_id=274021552 instance=ExtResource("8_2eeoa")]
+layout_mode = 2
+aspect_type = ExtResource("10_acvkr")
+
+[node name="LabelContainer" type="MarginContainer" parent="RootVBox/Control/MaskContainer/MainContainer/VBox" unique_id=1940479124]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = -1
+theme_override_constants/margin_right = -1
+theme_override_constants/margin_bottom = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RootVBox/Control/MaskContainer/MainContainer/VBox/LabelContainer" unique_id=1788099880]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = -2
+
+[node name="AbilityLabel1" parent="RootVBox/Control/MaskContainer/MainContainer/VBox/LabelContainer/VBoxContainer" unique_id=797573781 instance=ExtResource("11_rhob6")]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.9019608)
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+size_flags_horizontal = 1
+theme_override_colors/font_outline_color = Color(0.8, 0.6236, 0.296, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/normal_font = ExtResource("12_1dpkt")
+text = ""
+fit_content = true
+horizontal_alignment = 1
+
+[node name="AbilityLabel2" parent="RootVBox/Control/MaskContainer/MainContainer/VBox/LabelContainer/VBoxContainer" unique_id=1802599846 instance=ExtResource("11_rhob6")]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.9019608)
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+size_flags_horizontal = 1
+theme_override_colors/font_outline_color = Color(0.8, 0.6236, 0.296, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/normal_font = ExtResource("12_1dpkt")
+text = ""
+fit_content = true
+horizontal_alignment = 1
+
+[node name="NewIcon" parent="RootVBox/Control/MaskContainer/MainContainer" unique_id=2080640517 instance=ExtResource("11_1sf5n")]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 32.0
+offset_top = 17.0
+offset_right = 58.0
+offset_bottom = 44.0
+grow_horizontal = 1
+
+[node name="SignatureIcon" type="TextureRect" parent="RootVBox/Control/MaskContainer/MainContainer" unique_id=1839023073]
+unique_name_in_owner = true
+visible = false
+material = SubResource("ShaderMaterial_1wco4")
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -182.0
+offset_top = 17.0
+offset_right = -154.0
+offset_bottom = 45.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("13_acvkr")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="UnlockedIcon" type="TextureRect" parent="RootVBox/Control/MaskContainer/MainContainer" unique_id=157518638]
+unique_name_in_owner = true
+visible = false
+material = SubResource("ShaderMaterial_1wco4")
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -62.0
+offset_top = 13.0
+offset_right = -30.0
+offset_bottom = 45.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("10_53nac")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="InnateIcon" type="TextureRect" parent="RootVBox/Control/MaskContainer/MainContainer" unique_id=1695363071]
+unique_name_in_owner = true
+visible = false
+material = SubResource("ShaderMaterial_1wco4")
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -62.0
+offset_top = 13.0
+offset_right = -30.0
+offset_bottom = 45.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("11_53nac")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="HoverOverlay" type="ColorRect" parent="RootVBox/Control/MaskContainer/MainContainer" unique_id=1508187034]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 29.0
+offset_top = 11.0
+offset_right = -28.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Dowel" type="TextureRect" parent="RootVBox/Control" unique_id=1077696153]
+unique_name_in_owner = true
+material = ExtResource("18_1sf5n")
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -214.0
+offset_top = -4.0
+offset_right = -2.0
+offset_bottom = 11.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+mouse_filter = 2
+texture = ExtResource("14_iijrc")
+expand_mode = 2
+
+[node name="Shadow" type="TextureRect" parent="RootVBox/Control/Dowel" unique_id=681517761]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_acvkr")
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 16.0
+offset_top = 14.0
+offset_right = -14.0
+offset_bottom = 34.0
+grow_horizontal = 2
+size_flags_vertical = 0
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_hwwr4")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1488911510]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_0tfah")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

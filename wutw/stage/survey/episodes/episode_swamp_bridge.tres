@@ -1,0 +1,128 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://b1w6ihvj2dyfj"]
+
+[ext_resource type="Resource" uid="uid://c26ylasgxtyw6" path="res://art/pieces/piece_hokusai_yatsuhashi.tres" id="1_jnkcl"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_xif1x"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_jnkcl"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_qbtgn"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="4_rnugl"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="5_u6kud"]
+[ext_resource type="Script" uid="uid://cbnw4a13y5x8c" path="res://events/system/outcomes/random/event_outcome_random.gd" id="6_3yhae"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_po40p"]
+[ext_resource type="Script" uid="uid://yxgaymbbt8tk" path="res://events/system/outcomes/override_next_step/event_outcome_override_next_step.gd" id="8_gt2hw"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="9_17nhj"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="10_deh3m"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="11_tw6vn"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="12_k3k2n"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="13_1547u"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="14_isn3x"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="15_qpjoc"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="16_m1p2j"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="17_0s04i"]
+
+[sub_resource type="Resource" id="Resource_1683s"]
+script = ExtResource("1_xif1x")
+_texture_path = "res://stage/survey/episodes/episode_swamp_bridge.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_1qy1g"]
+script = ExtResource("8_gt2hw")
+result_text = "To avoid spending too much time getting bitten by the swarming insects, the scouts hastily line up the bamboo rods and lay down the planks haphazardly.
+
+Luckily, the construction holds and they cross safely, having saved time and avoided the worst of the insects."
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_3uubi"]
+script = ExtResource("8_gt2hw")
+result_text = "To avoid spending too much time getting bitten by the swarming insects, the group works hastily lining up the bamboo rods and laying down the planks haphazardly.
+
+Unfortunately, just as the last few scouts step off the bridge, a plank slips and brings a large part of the construction down with it. Whoever crosses the swamp next will have to redo the work."
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_cbhun"]
+script = ExtResource("11_tw6vn")
+bonus_type = ExtResource("10_deh3m")
+amount = -10
+extra_per_season = -15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_e5kyd"]
+script = ExtResource("9_17nhj")
+suboutcomes = Array[ExtResource("7_po40p")]([SubResource("Resource_3uubi"), SubResource("Resource_cbhun")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_hxjwq"]
+script = ExtResource("6_3yhae")
+suboutcomes = Dictionary[ExtResource("7_po40p"), float]({
+SubResource("Resource_1qy1g"): 0.5,
+SubResource("Resource_e5kyd"): 0.5
+})
+description = "Chance of <term:bonus.safety> loss"
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_jfwyh"]
+script = ExtResource("2_jnkcl")
+label = "Try to finish quickly."
+aspects = Array[ExtResource("3_qbtgn")]([ExtResource("4_rnugl"), ExtResource("5_u6kud")])
+outcome = SubResource("Resource_hxjwq")
+outcome_text = "<overridden>"
+
+[sub_resource type="Resource" id="Resource_70vxg"]
+script = ExtResource("11_tw6vn")
+bonus_type = ExtResource("10_deh3m")
+amount = 15
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_ytr5i"]
+script = ExtResource("2_jnkcl")
+label = "Banish insects with fragrant herbs."
+aspects = Array[ExtResource("3_qbtgn")]([ExtResource("12_k3k2n"), ExtResource("12_k3k2n")])
+outcome = SubResource("Resource_70vxg")
+outcome_text = "It turns out that one of the scouts had prepared for this situation. She takes out a bundle of fragrant herbs and instructs the group to rub them on their skin.
+
+Within minutes, the swarm thins as the insects flee the potent smell, and the team is able to finish their work in peace."
+
+[sub_resource type="Resource" id="Resource_7dbi2"]
+script = ExtResource("11_tw6vn")
+bonus_type = ExtResource("14_isn3x")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_m28nf"]
+script = ExtResource("2_jnkcl")
+label = "Use mud to protect skin."
+aspects = Array[ExtResource("3_qbtgn")]([ExtResource("13_1547u"), ExtResource("13_1547u")])
+outcome = SubResource("Resource_7dbi2")
+outcome_text = "The scouts slather mud on their exposed skin, successfully protecting themselves from insect bites.
+
+However, by the time they are done, the whole group is walking in a cloud of musty stench and stale sweat."
+
+[sub_resource type="Resource" id="Resource_4st7x"]
+script = ExtResource("15_qpjoc")
+delta = -5
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_4xq5o"]
+script = ExtResource("2_jnkcl")
+label = "Ward insects off with torches."
+aspects = Array[ExtResource("3_qbtgn")]([null])
+aspects_per_season = Array[ExtResource("3_qbtgn")]([null])
+outcome = SubResource("Resource_4st7x")
+outcome_text = "The scouts light torches, hoping to fend off the swarm.
+
+To their surprise, this only seems to attract the insects, and by the time the work is finished everyone is covered in dozens of bug bites."
+
+[resource]
+script = ExtResource("16_m1p2j")
+episode_id = "swamp_bridge"
+title = "The Biting Swarm"
+biome_types = Array[int]([4])
+text = "The survey team has reached a particularly treacherous swamp.
+
+In order to prepare for the rest of the expedition, they have spent several days constructing a narrow bridge raised on bamboo stilts above the muck.
+
+As they are nearing the end of their construction, a thick swarm of biting insects descends on the area, making the work unbearable."
+background_image = SubResource("Resource_1683s")
+background_credit = ExtResource("1_jnkcl")
+choices = Array[ExtResource("2_jnkcl")]([SubResource("Resource_jfwyh"), SubResource("Resource_ytr5i"), SubResource("Resource_m28nf"), SubResource("Resource_4xq5o")])

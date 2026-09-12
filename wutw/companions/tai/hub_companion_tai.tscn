@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://7wge2bt0iv6q"]
+
+[ext_resource type="Script" uid="uid://irgoexk18u0b" path="res://companions/tai/tai_hub.gd" id="1_7xl1r"]
+[ext_resource type="Texture2D" uid="uid://bkwakynut25ps" path="res://companions/tai/tai_hub.png" id="1_n8eyj"]
+[ext_resource type="Resource" uid="uid://dqjy5ssba0gib" path="res://companions/tai/companion_tai.tres" id="2_45ftt"]
+[ext_resource type="Shader" uid="uid://bjr32oxgkayvx" path="res://companions/tai/tai_hub.gdshader" id="3_6dkc6"]
+
+[sub_resource type="Gradient" id="Gradient_pbgd6"]
+offsets = PackedFloat32Array(0.4018127, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_52fqb"]
+gradient = SubResource("Gradient_pbgd6")
+fill_from = Vector2(0.54730713, 0.45705968)
+fill_to = Vector2(0.3930131, 0.78311497)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3qajw"]
+shader = ExtResource("3_6dkc6")
+shader_parameter/mask = SubResource("GradientTexture2D_52fqb")
+
+[node name="HubCompanion_Tai" type="Node2D" unique_id=1239197047 groups=["HubFacilities"]]
+texture_filter = 6
+script = ExtResource("1_7xl1r")
+companion = ExtResource("2_45ftt")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=712949688]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_3qajw")
+instance_shader_parameters/depth = 0.0
+position = Vector2(38.160034, 74.22638)
+texture = ExtResource("1_n8eyj")
+
+[node name="Area2D" type="Area2D" parent="Sprite" unique_id=1287134228]
+position = Vector2(-38.160034, -74.22638)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite/Area2D" unique_id=295582209]
+visible = false
+position = Vector2(7, -7)
+polygon = PackedVector2Array(327.36548, -33.076324, 229.79211, -12.378952, 147.00262, -73.62629, 44.78293, -105.72834, -9.283661, -105.30594, -67.57425, -52.506516, -214.99025, -3.0862427, -172.32831, 47.178802, -81.513306, 71.255356, 81.953735, 68.298584, 235.28326, 47.178802, 321.87433, 73.367325)
+
+[node name="TooltipAnchor" type="Control" parent="." unique_id=1358955170]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -215.00122
+offset_top = -120.54466
+offset_right = 348.09076
+offset_bottom = 105.37831
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[connection signal="input_event" from="Sprite/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Sprite/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite/Area2D" to="." method="_on_area_2d_mouse_exited"]

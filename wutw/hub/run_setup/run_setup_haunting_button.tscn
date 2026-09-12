@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://t8ymhe2q3eix"]
+
+[ext_resource type="Texture2D" uid="uid://vwls1l008mi6" path="res://stage/hauntings/types/onibi/haunting_onibi.png" id="1_8os36"]
+[ext_resource type="Shader" uid="uid://ygmrqrvg5hpm" path="res://theme/button/ukiyoe_button.gdshader" id="1_52g8o"]
+[ext_resource type="Script" uid="uid://3uiutgh5y3qv" path="res://hub/run_setup/run_setup_haunting_button.gd" id="2_rlime"]
+[ext_resource type="Texture2D" uid="uid://ctgl61r3xxsqv" path="res://theme/button/button_fill.png" id="2_u8mqo"]
+[ext_resource type="Texture2D" uid="uid://blje81yu8734p" path="res://theme/button/button_shape.png" id="3_a08sh"]
+[ext_resource type="Texture2D" uid="uid://doe4603a6ngco" path="res://theme/button/button_outline.png" id="4_3n1ng"]
+[ext_resource type="Texture2D" uid="uid://cwubixgc8n0yr" path="res://theme/button/button_swish_left.png" id="5_3qgk8"]
+[ext_resource type="Texture2D" uid="uid://n6l17h4ysayj" path="res://theme/button/button_swish_right.png" id="6_j67u0"]
+[ext_resource type="Texture2D" uid="uid://go64cbx1ohwd" path="res://theme/button/white_1x1px.png" id="10_8t81d"]
+
+[sub_resource type="Gradient" id="Gradient_j5apj"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wqpyw"]
+gradient = SubResource("Gradient_j5apj")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4r2r0"]
+shader = ExtResource("1_52g8o")
+shader_parameter/size = Vector2(362.3648, 362.3648)
+shader_parameter/state = 0.0
+shader_parameter/mask_tex = ExtResource("3_a08sh")
+shader_parameter/background = ExtResource("2_u8mqo")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/outline_tex = ExtResource("4_3n1ng")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("6_j67u0")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("5_3qgk8")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b0siv"]
+content_margin_left = 4.0
+content_margin_top = 6.0
+content_margin_right = 4.0
+content_margin_bottom = 6.0
+texture = ExtResource("10_8t81d")
+
+[node name="RunSetupHauntingButton" type="Button"]
+material = SubResource("ShaderMaterial_4r2r0")
+custom_minimum_size = Vector2(150, 150)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1770.0
+offset_bottom = -930.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_b0siv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_b0siv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_b0siv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_b0siv")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_b0siv")
+text = "Choose Haunting to Ban"
+icon = ExtResource("1_8os36")
+autowrap_mode = 2
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_rlime")
+stylebox_override = SubResource("StyleBoxTexture_b0siv")

@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://cl8h0b8goemjr"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_rkp62"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_33ete"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="3_hvxep"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_lan2t"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="4_650qm"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="5_vhj1r"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="7_274j8"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="8_m4tp4"]
+[ext_resource type="Resource" uid="uid://skws2o4hx05g" path="res://stage/spots/seashore/spot_seashore.tres" id="9_vhj1r"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="10_274j8"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://br6virlat4ykc" path="res://map/sprites/spots/seashore/mst_seashore_whale_caller_shrine.tres" id="11_qdohx"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://bonk70v3vay2a" path="res://map/sprites/spots/seashore/mst_seashore_driftwood_shoal.tres" id="12_n3ab2"]
+[ext_resource type="Script" uid="uid://cetbfk5i7mq4q" path="res://stage/spots/spot_upgrade_visual_upgrade.gd" id="13_2yi6b"]
+
+[sub_resource type="Resource" id="Resource_d18cp"]
+script = ExtResource("13_2yi6b")
+old_sprite_type = ExtResource("12_n3ab2")
+new_sprite_type = ExtResource("11_qdohx")
+biome = 1
+metadata/_custom_type_script = "uid://cetbfk5i7mq4q"
+
+[resource]
+script = ExtResource("1_rkp62")
+spot_upgrade_id = "seashore_whale_shrine"
+name = "Whale Caller Shrine"
+description = "Priests summon the leviathans of the deep here, and meditate upon their songs."
+required_aspects = Array[ExtResource("3_lan2t")]([ExtResource("7_274j8"), ExtResource("8_m4tp4")])
+granted_bonuses = Dictionary[ExtResource("2_33ete"), int]({
+ExtResource("3_hvxep"): 15,
+ExtResource("4_650qm"): 5,
+ExtResource("5_vhj1r"): 10
+})
+spot = ExtResource("9_vhj1r")
+visuals = Array[ExtResource("10_274j8")]([SubResource("Resource_d18cp")])
+tags = Array[int]([3])
+min_main_quest_progress = 110

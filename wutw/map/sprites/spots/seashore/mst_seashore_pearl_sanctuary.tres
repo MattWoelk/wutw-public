@@ -1,0 +1,44 @@
+[gd_resource type="MapSpriteType_Composite" format=3 uid="uid://d2uujlldwmivy"]
+
+[ext_resource type="MapSpriteType_Composite" uid="uid://0bc175nwupeo" path="res://map/sprites/spots/seashore/mst_seashore_kelp_farm.tres" id="1_0qw5u"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://jf706k6b6s8x" path="res://map/sprites/spots/wasteland/mst_wasteland_gravel_1.tres" id="2_wx35q"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://cfhp3wutiq6j3" path="res://map/sprites/spots/lake/mst_lake_tub.tres" id="3_7i5j7"]
+[ext_resource type="MapSpriteType_Generic" uid="uid://cxeujlkr71diw" path="res://map/sprites/spots/wasteland/mst_wasteland_gravel_2.tres" id="4_77g30"]
+[ext_resource type="PackedScene" uid="uid://eay4sljsd1c1" path="res://map/sprites/spots/seashore/map_effect_sparkle_small.tscn" id="5_wx35q"]
+
+[sub_resource type="MapSpriteCollision_Rect" id="MapSpriteCollision_Rect_0qw5u"]
+rect = Rect2(-4.335, -0.815, 8.76, 2.99)
+blocking = true
+
+[sub_resource type="MapSpriteCollision_Rect" id="MapSpriteCollision_Rect_wx35q"]
+rect = Rect2(-1.545, -1.725, 3.89, 1.04)
+blocking = true
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_obd1v"]
+sprite_type = ExtResource("1_0qw5u")
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_dcyf5"]
+sprite_type = ExtResource("2_wx35q")
+offset = Vector2(-3.18, 0.865)
+scale = 0.79
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_c488d"]
+sprite_type = ExtResource("3_7i5j7")
+offset = Vector2(-2.03, 0.115)
+scale = 0.245
+
+[sub_resource type="MapSpriteComponent" id="MapSpriteComponent_a7shb"]
+sprite_type = ExtResource("4_77g30")
+offset = Vector2(-3.735, 1.045)
+scale = 0.83
+
+[sub_resource type="MapEffectAttachment" id="MapEffectAttachment_7i5j7"]
+scene = ExtResource("5_wx35q")
+offset = Vector2(-3.5694578, 0.81505805)
+scale = 0.05
+
+[resource]
+components = Array[MapSpriteComponent]([SubResource("MapSpriteComponent_obd1v"), SubResource("MapSpriteComponent_dcyf5"), SubResource("MapSpriteComponent_c488d"), SubResource("MapSpriteComponent_a7shb")])
+footprint_radius = 4.285
+effects = Array[MapEffectAttachment]([SubResource("MapEffectAttachment_7i5j7")])
+collision = Array[MapSpriteCollision]([SubResource("MapSpriteCollision_Rect_0qw5u"), SubResource("MapSpriteCollision_Rect_wx35q")])

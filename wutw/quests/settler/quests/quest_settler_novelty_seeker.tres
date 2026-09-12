@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="Quest_Settler" format=3 uid="uid://bc7v123ppw405"]
+
+[ext_resource type="Script" uid="uid://cjloydxgrv8oa" path="res://quests/settler/settler_quest_challenge.gd" id="1_sic88"]
+[ext_resource type="Script" uid="uid://cc2jxdhk36vn7" path="res://quests/settler/challenges/settler_quest_challenge_discard_duplicates.gd" id="2_k14dt"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="4_ejemw"]
+[ext_resource type="Resource" uid="uid://c2qx8ufo4c12r" path="res://characters/jobs/job_monk_ember.tres" id="4_ytfmr"]
+[ext_resource type="Resource" uid="uid://brr7uk3citu0o" path="res://characters/jobs/job_monk_wilds.tres" id="5_seq6y"]
+[ext_resource type="Resource" uid="uid://djn3flqos8t4f" path="res://characters/jobs/job_monk_shattered.tres" id="6_t37rx"]
+[ext_resource type="Resource" uid="uid://kau1o80i2qm0" path="res://characters/jobs/job_monk_forest.tres" id="7_20siq"]
+[ext_resource type="Script" uid="uid://cd4swbq3t72je" path="res://quests/settler/settler_quest_reward.gd" id="7_t37rx"]
+[ext_resource type="Resource" uid="uid://d01sh3wyj45gx" path="res://characters/jobs/job_child.tres" id="8_yp5uu"]
+[ext_resource type="Resource" uid="uid://gmdrouwpddwx" path="res://characters/jobs/job_hermit.tres" id="9_mo0nd"]
+[ext_resource type="Script" uid="uid://1na7ymvvvbby" path="res://quests/settler/quest_settler.gd" id="9_yp5uu"]
+[ext_resource type="Resource" uid="uid://jttde8t0g8wh" path="res://characters/jobs/job_priest.tres" id="10_lslol"]
+[ext_resource type="Script" uid="uid://bxua8gxfjp2wy" path="res://quests/settler/settler_quest_goal.gd" id="10_mo0nd"]
+[ext_resource type="Resource" uid="uid://c5e7uvgwx4xd6" path="res://characters/jobs/job_wanderer.tres" id="11_lpndd"]
+[ext_resource type="Resource" uid="uid://gb2hon6q3l08" path="res://characters/jobs/job_adventurer.tres" id="12_vlo1v"]
+[ext_resource type="Script" uid="uid://ddq33u80psjgf" path="res://quests/settler/rewards/settler_quest_reward_choose_card.gd" id="14_822tj"]
+[ext_resource type="Script" uid="uid://3ubnomfktmv7" path="res://quests/settler/goals/settler_quest_goal_num_events.gd" id="17_fil25"]
+
+[sub_resource type="Resource" id="Resource_626li"]
+script = ExtResource("2_k14dt")
+metadata/_custom_type_script = "uid://cc2jxdhk36vn7"
+
+[sub_resource type="Resource" id="Resource_vjtq6"]
+script = ExtResource("14_822tj")
+card_tier_bonus = 50
+metadata/_custom_type_script = "uid://ddq33u80psjgf"
+
+[sub_resource type="Resource" id="Resource_ris0q"]
+script = ExtResource("17_fil25")
+num_required = 15
+metadata/_custom_type_script = "uid://3ubnomfktmv7"
+
+[resource]
+script = ExtResource("9_yp5uu")
+intro_text = "I'm tired of the same old sights. I need more novelty in my life. Romance! Adventure! Questionable behavior!"
+challenges = Array[ExtResource("1_sic88")]([SubResource("Resource_626li")])
+settler_goals = Array[ExtResource("10_mo0nd")]([SubResource("Resource_ris0q")])
+rewards = Array[ExtResource("7_t37rx")]([SubResource("Resource_vjtq6")])
+exclude_jobs = Array[ExtResource("4_ejemw")]([ExtResource("4_ytfmr"), ExtResource("5_seq6y"), ExtResource("6_t37rx"), ExtResource("7_20siq"), ExtResource("8_yp5uu"), ExtResource("9_mo0nd"), ExtResource("10_lslol"), ExtResource("11_lpndd"), ExtResource("12_vlo1v")])
+quest_id = "settler_novelty_seeker"
+category = 2
+name = "A Novelty Seeker"
+metadata/_custom_type_script = "uid://1na7ymvvvbby"

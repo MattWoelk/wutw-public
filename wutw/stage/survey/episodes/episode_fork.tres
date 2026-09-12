@@ -1,0 +1,66 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://cy6hxvwomrfbn"]
+
+[ext_resource type="Resource" uid="uid://6r1fdg4tla8r" path="res://art/pieces/piece_hiroshige_minakuchi.tres" id="1_h4y18"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_hh7nf"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_h4y18"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_ov8qh"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="4_q3epx"]
+[ext_resource type="Script" uid="uid://gu7gcielbwdr" path="res://events/system/outcomes/choose_card/event_outcome_choose_card.gd" id="5_n16tv"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="6_grg88"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="7_fwgwq"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="8_u4pcm"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="9_staxs"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="10_t35x5"]
+[ext_resource type="Resource" uid="uid://cfuqwl06ioxwd" path="res://stage/spots/hill/spot_hill.tres" id="11_se6hu"]
+
+[sub_resource type="Resource" id="Resource_rc2ey"]
+script = ExtResource("1_hh7nf")
+_texture_path = "res://stage/survey/episodes/episode_fork.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_hc6xv"]
+script = ExtResource("5_n16tv")
+card_tag = 3
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_o5ag2"]
+script = ExtResource("2_h4y18")
+label = "Take the animal trail."
+aspects = Array[ExtResource("3_ov8qh")]([ExtResource("4_q3epx")])
+aspects_per_season = Array[ExtResource("3_ov8qh")]([null])
+outcome = SubResource("Resource_hc6xv")
+outcome_text = "Following the long path takes up much of the day, but the scouts get well acquainted with the local fauna."
+
+[sub_resource type="Resource" id="Resource_xwktg"]
+script = ExtResource("5_n16tv")
+card_tag = 4
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_70sfi"]
+script = ExtResource("2_h4y18")
+label = "Climb the steep path."
+aspects = Array[ExtResource("3_ov8qh")]([ExtResource("7_fwgwq")])
+aspects_per_season = Array[ExtResource("3_ov8qh")]([null])
+outcome = SubResource("Resource_xwktg")
+outcome_text = "The climb up is grueling, but that gives the surveyors time to identify many of the minerals composing the loose rocks."
+
+[sub_resource type="Resource" id="Resource_6g6x1"]
+script = ExtResource("2_h4y18")
+label = "Search for alternative options."
+aspects = Array[ExtResource("3_ov8qh")]([ExtResource("8_u4pcm")])
+outcome_text = "The scouts split up and search the surroundings. One of them returns having found a trail they had missed earlier that offers a shortcut bypassing the hill entirely."
+
+[resource]
+script = ExtResource("9_staxs")
+episode_id = "fork"
+title = "The Fork in the Road"
+biome_types = Array[int]([8])
+spot_types = Array[ExtResource("10_t35x5")]([ExtResource("11_se6hu")])
+text = "The surveyors are trying to pass over a hill when they reach a fork in the road.
+
+One path looks smooth, well-trodden by animals, but it goes all the way around the hill.
+
+The other is steep and covered with loose stones, but is much more direct."
+background_image = SubResource("Resource_rc2ey")
+background_credit = ExtResource("1_h4y18")
+choices = Array[ExtResource("2_h4y18")]([SubResource("Resource_o5ag2"), SubResource("Resource_70sfi"), SubResource("Resource_6g6x1")])

@@ -1,0 +1,722 @@
+[gd_resource type="Resource" script_class="CardType" format=3 uid="uid://da4ei63xy8dq4"]
+
+[ext_resource type="Script" uid="uid://b56kytec5oqcb" path="res://cards/abilities/card_ability.gd" id="1_wpu4r"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="2_7cqsw"]
+[ext_resource type="Script" uid="uid://c0aqmugrp1wmn" path="res://cards/abilities/card_ability_gain.gd" id="3_g6cak"]
+[ext_resource type="Resource" uid="uid://br87onrn3vqme" path="res://cards/tier0/card_fruit.tres" id="4_4b8mq"]
+[ext_resource type="Script" uid="uid://c176jrcyakipx" path="res://cards/abilities/card_ability_add_card.gd" id="5_054ux"]
+[ext_resource type="Script" uid="uid://xc73x4t7ckxm" path="res://japanese/example_sentence.gd" id="6_qfr2c"]
+[ext_resource type="Script" uid="uid://bl2eelwkj800o" path="res://japanese/japanese_token.gd" id="7_7cqsw"]
+[ext_resource type="Script" uid="uid://du4k150pcdjs6" path="res://japanese/kanji_shape.gd" id="7_toqqm"]
+[ext_resource type="Script" uid="uid://dc15txdqjanlf" path="res://japanese/stroke_shape.gd" id="8_3ry2m"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="9_sm0ig"]
+[ext_resource type="Script" uid="uid://bjwl7ojqhubsa" path="res://glossary/categories/termcategory_category.gd" id="10_73ju3"]
+[ext_resource type="Resource" uid="uid://d1k7vakhjcq5g" path="res://glossary/categories/termcategory_card.tres" id="11_o32b6"]
+[ext_resource type="Script" uid="uid://b6rw4ldrj6wch" path="res://japanese/vocab.gd" id="12_n1cpv"]
+
+[sub_resource type="Resource" id="Resource_22ff2"]
+script = ExtResource("3_g6cak")
+bonus_type = ExtResource("2_7cqsw")
+points = 10
+metadata/_custom_type_script = "uid://c0aqmugrp1wmn"
+
+[sub_resource type="Resource" id="Resource_mmac3"]
+script = ExtResource("5_054ux")
+card_type = ExtResource("4_4b8mq")
+metadata/_custom_type_script = "uid://c176jrcyakipx"
+
+[sub_resource type="Resource" id="Resource_6dnp4"]
+script = ExtResource("12_n1cpv")
+japanese = "桜"
+readings = Array[String](["さくら"])
+meanings = Array[String](["cherry tree", "cherry blossom", "sakura", "light pink", "fake buyer", "paid audience", "shill", "seat filler", "hired applauder", "horse meat"])
+jlpt_level = 3
+
+[sub_resource type="Resource" id="Resource_7cqsw"]
+script = ExtResource("7_7cqsw")
+raw_text = "桜"
+vocab = SubResource("Resource_6dnp4")
+reading = "さくら"
+
+[sub_resource type="Resource" id="Resource_g6cak"]
+script = ExtResource("7_7cqsw")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_p71wm"]
+script = ExtResource("12_n1cpv")
+japanese = "見る"
+readings = Array[String](["みる"])
+meanings = Array[String](["to see", "to look", "to watch", "to view", "to observe", "to examine", "to look over", "to assess", "to check", "to judge", "to look after", "to attend to", "to take care of", "to keep an eye on", "to experience", "to meet with (misfortune, success, etc.)", "to try ...", "to have a go at ...", "to give ... a try", "to see (that) ...", "to find (that) ..."])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_4b8mq"]
+script = ExtResource("7_7cqsw")
+raw_text = "見"
+vocab = SubResource("Resource_p71wm")
+reading = "み"
+
+[sub_resource type="Resource" id="Resource_054ux"]
+script = ExtResource("7_7cqsw")
+raw_text = "ごろ"
+reading = "ごろ"
+
+[sub_resource type="Resource" id="Resource_qfr2c"]
+script = ExtResource("7_7cqsw")
+raw_text = "だ"
+reading = "だ"
+
+[sub_resource type="Resource" id="Resource_toqqm"]
+script = ExtResource("7_7cqsw")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_lmfop"]
+script = ExtResource("6_qfr2c")
+japanese = "桜が見ごろだ。"
+native = "The cherry blossoms are at their best."
+parsed = Array[ExtResource("7_7cqsw")]([SubResource("Resource_7cqsw"), SubResource("Resource_g6cak"), SubResource("Resource_4b8mq"), SubResource("Resource_054ux"), SubResource("Resource_qfr2c"), SubResource("Resource_toqqm")])
+_difficulty = 289
+_used_kanji = Array[String](["桜", "見"])
+
+[sub_resource type="Resource" id="Resource_3ry2m"]
+script = ExtResource("7_7cqsw")
+raw_text = "桜"
+vocab = SubResource("Resource_6dnp4")
+reading = "さくら"
+
+[sub_resource type="Resource" id="Resource_sm0ig"]
+script = ExtResource("7_7cqsw")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_ir1lf"]
+script = ExtResource("12_n1cpv")
+japanese = "大好き"
+readings = Array[String](["だいすき"])
+meanings = Array[String](["liking very much", "loving (something or someone)", "adoring", "being very fond of"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_73ju3"]
+script = ExtResource("7_7cqsw")
+raw_text = "大好き"
+vocab = SubResource("Resource_ir1lf")
+reading = "だいすき"
+
+[sub_resource type="Resource" id="Resource_o32b6"]
+script = ExtResource("7_7cqsw")
+raw_text = "です"
+reading = "です"
+
+[sub_resource type="Resource" id="Resource_n1cpv"]
+script = ExtResource("7_7cqsw")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_jqv48"]
+script = ExtResource("6_qfr2c")
+japanese = "桜は大好きです。"
+native = "I love cherry blossoms."
+parsed = Array[ExtResource("7_7cqsw")]([SubResource("Resource_3ry2m"), SubResource("Resource_sm0ig"), SubResource("Resource_73ju3"), SubResource("Resource_o32b6"), SubResource("Resource_n1cpv")])
+_difficulty = 331
+_used_kanji = Array[String](["桜", "大", "好"])
+
+[sub_resource type="Resource" id="Resource_gdal7"]
+script = ExtResource("7_7cqsw")
+raw_text = "桜"
+vocab = SubResource("Resource_6dnp4")
+reading = "さくら"
+
+[sub_resource type="Resource" id="Resource_j8mw5"]
+script = ExtResource("7_7cqsw")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_l2s6t"]
+script = ExtResource("12_n1cpv")
+japanese = "木"
+readings = Array[String](["き"])
+meanings = Array[String](["tree", "shrub", "bush"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_322kw"]
+script = ExtResource("7_7cqsw")
+raw_text = "木"
+vocab = SubResource("Resource_l2s6t")
+reading = "き"
+
+[sub_resource type="Resource" id="Resource_jwd11"]
+script = ExtResource("7_7cqsw")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_f7y43"]
+script = ExtResource("12_n1cpv")
+japanese = "満開"
+readings = Array[String](["まんかい"])
+meanings = Array[String](["full bloom (esp. of cherry blossom)", "full blossom"])
+
+[sub_resource type="Resource" id="Resource_f7bit"]
+script = ExtResource("7_7cqsw")
+raw_text = "満開"
+vocab = SubResource("Resource_f7y43")
+reading = "まんかい"
+
+[sub_resource type="Resource" id="Resource_i2box"]
+script = ExtResource("7_7cqsw")
+raw_text = "だ"
+reading = "だ"
+
+[sub_resource type="Resource" id="Resource_v3slt"]
+script = ExtResource("7_7cqsw")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_h087g"]
+script = ExtResource("6_qfr2c")
+japanese = "桜の木が満開だ。"
+native = "The cherry trees are in full bloom."
+parsed = Array[ExtResource("7_7cqsw")]([SubResource("Resource_gdal7"), SubResource("Resource_j8mw5"), SubResource("Resource_322kw"), SubResource("Resource_jwd11"), SubResource("Resource_f7bit"), SubResource("Resource_i2box"), SubResource("Resource_v3slt")])
+_difficulty = 346
+_used_kanji = Array[String](["桜", "木", "満", "開"])
+
+[sub_resource type="Resource" id="Resource_xokpw"]
+script = ExtResource("7_7cqsw")
+raw_text = "桜"
+vocab = SubResource("Resource_6dnp4")
+reading = "さくら"
+
+[sub_resource type="Resource" id="Resource_tkobx"]
+script = ExtResource("7_7cqsw")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_t0yal"]
+script = ExtResource("7_7cqsw")
+raw_text = "満開"
+vocab = SubResource("Resource_f7y43")
+reading = "まんかい"
+
+[sub_resource type="Resource" id="Resource_ybiel"]
+script = ExtResource("7_7cqsw")
+raw_text = "で"
+reading = "で"
+
+[sub_resource type="Resource" id="Resource_ne8st"]
+script = ExtResource("7_7cqsw")
+raw_text = "ある"
+reading = "ある"
+
+[sub_resource type="Resource" id="Resource_4ahgy"]
+script = ExtResource("7_7cqsw")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_cegdu"]
+script = ExtResource("6_qfr2c")
+japanese = "桜が満開である。"
+native = "The cherry blossoms are in full bloom."
+parsed = Array[ExtResource("7_7cqsw")]([SubResource("Resource_xokpw"), SubResource("Resource_tkobx"), SubResource("Resource_t0yal"), SubResource("Resource_ybiel"), SubResource("Resource_ne8st"), SubResource("Resource_4ahgy")])
+_difficulty = 350
+_used_kanji = Array[String](["桜", "満", "開"])
+
+[sub_resource type="Resource" id="Resource_8a6lu"]
+script = ExtResource("7_7cqsw")
+raw_text = "桜"
+vocab = SubResource("Resource_6dnp4")
+reading = "さくら"
+
+[sub_resource type="Resource" id="Resource_svg3a"]
+script = ExtResource("7_7cqsw")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_1tyvd"]
+script = ExtResource("12_n1cpv")
+japanese = "花"
+readings = Array[String](["はな"])
+meanings = Array[String](["flower", "blossom", "bloom", "petal", "cherry blossom", "beauty", "blooming (esp. of cherry blossoms)", "ikebana", "hanafuda", "(the) best", "glorious", "lovely"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_043nf"]
+script = ExtResource("7_7cqsw")
+raw_text = "花"
+vocab = SubResource("Resource_1tyvd")
+reading = "はな"
+
+[sub_resource type="Resource" id="Resource_jhw8u"]
+script = ExtResource("7_7cqsw")
+raw_text = "を"
+reading = "を"
+
+[sub_resource type="Resource" id="Resource_x7hk2"]
+script = ExtResource("7_7cqsw")
+raw_text = "見"
+vocab = SubResource("Resource_p71wm")
+reading = "み"
+
+[sub_resource type="Resource" id="Resource_0uo7b"]
+script = ExtResource("7_7cqsw")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_h14fs"]
+script = ExtResource("12_n1cpv")
+japanese = "来る"
+readings = Array[String](["くる"])
+meanings = Array[String](["to come (spatially or temporally)", "to approach", "to arrive", "to come back", "to do ... and come back", "to come to be", "to become", "to get", "to grow", "to continue", "to come from", "to be caused by", "to derive from", "to come to (e.g. \"when it comes to spinach ...\")"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_gmfwm"]
+script = ExtResource("7_7cqsw")
+raw_text = "来"
+vocab = SubResource("Resource_h14fs")
+reading = "き"
+
+[sub_resource type="Resource" id="Resource_3oeiw"]
+script = ExtResource("7_7cqsw")
+raw_text = "まし"
+reading = "まし"
+
+[sub_resource type="Resource" id="Resource_kjqdm"]
+script = ExtResource("7_7cqsw")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_f7i30"]
+script = ExtResource("7_7cqsw")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_b02ot"]
+script = ExtResource("6_qfr2c")
+japanese = "桜の花を見に来ました。"
+native = "I came to look at the cherry blossoms."
+parsed = Array[ExtResource("7_7cqsw")]([SubResource("Resource_8a6lu"), SubResource("Resource_svg3a"), SubResource("Resource_043nf"), SubResource("Resource_jhw8u"), SubResource("Resource_x7hk2"), SubResource("Resource_0uo7b"), SubResource("Resource_gmfwm"), SubResource("Resource_3oeiw"), SubResource("Resource_kjqdm"), SubResource("Resource_f7i30")])
+_difficulty = 368
+_used_kanji = Array[String](["桜", "花", "見", "来"])
+
+[sub_resource type="Resource" id="Resource_50uci"]
+script = ExtResource("12_n1cpv")
+japanese = "庭"
+readings = Array[String](["にわ"])
+meanings = Array[String](["garden", "yard", "courtyard", "field (of action)", "area"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_eq5h0"]
+script = ExtResource("7_7cqsw")
+raw_text = "庭"
+vocab = SubResource("Resource_50uci")
+reading = "にわ"
+
+[sub_resource type="Resource" id="Resource_l3781"]
+script = ExtResource("7_7cqsw")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_dbxfl"]
+script = ExtResource("7_7cqsw")
+raw_text = "桜"
+vocab = SubResource("Resource_6dnp4")
+reading = "さくら"
+
+[sub_resource type="Resource" id="Resource_hnis4"]
+script = ExtResource("7_7cqsw")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_oext4"]
+script = ExtResource("7_7cqsw")
+raw_text = "木"
+vocab = SubResource("Resource_l2s6t")
+reading = "き"
+
+[sub_resource type="Resource" id="Resource_62ac7"]
+script = ExtResource("7_7cqsw")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_5m7vl"]
+script = ExtResource("7_7cqsw")
+raw_text = "あり"
+reading = "あり"
+
+[sub_resource type="Resource" id="Resource_2ex6j"]
+script = ExtResource("7_7cqsw")
+raw_text = "ます"
+reading = "ます"
+
+[sub_resource type="Resource" id="Resource_gr2q5"]
+script = ExtResource("7_7cqsw")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_xqjp7"]
+script = ExtResource("6_qfr2c")
+japanese = "庭に桜の木があります。"
+native = "There's a cherry tree in the garden."
+parsed = Array[ExtResource("7_7cqsw")]([SubResource("Resource_eq5h0"), SubResource("Resource_l3781"), SubResource("Resource_dbxfl"), SubResource("Resource_hnis4"), SubResource("Resource_oext4"), SubResource("Resource_62ac7"), SubResource("Resource_5m7vl"), SubResource("Resource_2ex6j"), SubResource("Resource_gr2q5")])
+_difficulty = 372
+_used_kanji = Array[String](["庭", "桜", "木"])
+
+[sub_resource type="Resource" id="Resource_8hmry"]
+script = ExtResource("12_n1cpv")
+japanese = "道"
+readings = Array[String](["みち"])
+meanings = Array[String](["road", "path", "street", "lane", "passage", "route", "way", "distance", "journey", "road (e.g. to victory)", "course", "way (of living, proper conduct, etc.)", "moral principles", "teachings (esp. Confucian or Buddhist)", "dogma", "field (e.g. of medicine)", "subject", "speciality", "means", "method"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_4v3tk"]
+script = ExtResource("7_7cqsw")
+raw_text = "道"
+vocab = SubResource("Resource_8hmry")
+reading = "みち"
+
+[sub_resource type="Resource" id="Resource_cmmgp"]
+script = ExtResource("7_7cqsw")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_mymfc"]
+script = ExtResource("12_n1cpv")
+japanese = "両側"
+readings = Array[String](["りょうがわ", "りょうそく"])
+meanings = Array[String](["both sides"])
+jlpt_level = 2
+
+[sub_resource type="Resource" id="Resource_4qsed"]
+script = ExtResource("7_7cqsw")
+raw_text = "両側"
+vocab = SubResource("Resource_mymfc")
+reading = "りょうがわ"
+
+[sub_resource type="Resource" id="Resource_ihmix"]
+script = ExtResource("7_7cqsw")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_2tfbc"]
+script = ExtResource("7_7cqsw")
+raw_text = "桜"
+vocab = SubResource("Resource_6dnp4")
+reading = "さくら"
+
+[sub_resource type="Resource" id="Resource_ppvov"]
+script = ExtResource("7_7cqsw")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_kgxer"]
+script = ExtResource("7_7cqsw")
+raw_text = "ある"
+reading = "ある"
+
+[sub_resource type="Resource" id="Resource_qbdkk"]
+script = ExtResource("7_7cqsw")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_ysdvg"]
+script = ExtResource("6_qfr2c")
+japanese = "道の両側に桜がある。"
+native = "There are cherry trees on both sides of the street."
+parsed = Array[ExtResource("7_7cqsw")]([SubResource("Resource_4v3tk"), SubResource("Resource_cmmgp"), SubResource("Resource_4qsed"), SubResource("Resource_ihmix"), SubResource("Resource_2tfbc"), SubResource("Resource_ppvov"), SubResource("Resource_kgxer"), SubResource("Resource_qbdkk")])
+_difficulty = 386
+_used_kanji = Array[String](["道", "両", "側", "桜"])
+
+[sub_resource type="Resource" id="Resource_g6cp3"]
+script = ExtResource("7_7cqsw")
+raw_text = "桜"
+vocab = SubResource("Resource_6dnp4")
+reading = "さくら"
+
+[sub_resource type="Resource" id="Resource_ca25l"]
+script = ExtResource("7_7cqsw")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_uqsey"]
+script = ExtResource("7_7cqsw")
+raw_text = "花"
+vocab = SubResource("Resource_1tyvd")
+reading = "はな"
+
+[sub_resource type="Resource" id="Resource_46skx"]
+script = ExtResource("7_7cqsw")
+raw_text = "は"
+reading = "は"
+
+[sub_resource type="Resource" id="Resource_yvxqi"]
+script = ExtResource("12_n1cpv")
+japanese = "本当に"
+readings = Array[String](["ほんとうに", "ほんとに"])
+meanings = Array[String](["really", "truly"])
+
+[sub_resource type="Resource" id="Resource_8kohc"]
+script = ExtResource("7_7cqsw")
+raw_text = "本当に"
+vocab = SubResource("Resource_yvxqi")
+reading = "ほんとうに"
+
+[sub_resource type="Resource" id="Resource_2goxj"]
+script = ExtResource("7_7cqsw")
+raw_text = "きれい"
+reading = "きれい"
+
+[sub_resource type="Resource" id="Resource_npbh0"]
+script = ExtResource("7_7cqsw")
+raw_text = "です"
+reading = "です"
+
+[sub_resource type="Resource" id="Resource_d3u5e"]
+script = ExtResource("7_7cqsw")
+raw_text = "よ"
+reading = "よ"
+
+[sub_resource type="Resource" id="Resource_tty16"]
+script = ExtResource("7_7cqsw")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_ttdun"]
+script = ExtResource("6_qfr2c")
+japanese = "桜の花は本当にきれいですよ。"
+native = "Cherry blossoms are truly beautiful."
+parsed = Array[ExtResource("7_7cqsw")]([SubResource("Resource_g6cp3"), SubResource("Resource_ca25l"), SubResource("Resource_uqsey"), SubResource("Resource_46skx"), SubResource("Resource_8kohc"), SubResource("Resource_2goxj"), SubResource("Resource_npbh0"), SubResource("Resource_d3u5e"), SubResource("Resource_tty16")])
+_difficulty = 418
+_used_kanji = Array[String](["桜", "花", "本", "当"])
+
+[sub_resource type="Resource" id="Resource_ben63"]
+script = ExtResource("7_7cqsw")
+raw_text = "この"
+reading = "この"
+
+[sub_resource type="Resource" id="Resource_8xan4"]
+script = ExtResource("12_n1cpv")
+japanese = "お寺"
+readings = Array[String](["おてら"])
+meanings = Array[String](["temple", "monk"])
+
+[sub_resource type="Resource" id="Resource_4m0s4"]
+script = ExtResource("7_7cqsw")
+raw_text = "お寺"
+vocab = SubResource("Resource_8xan4")
+reading = "おてら"
+
+[sub_resource type="Resource" id="Resource_84cef"]
+script = ExtResource("7_7cqsw")
+raw_text = "って"
+reading = "って"
+
+[sub_resource type="Resource" id="Resource_vil7p"]
+script = ExtResource("7_7cqsw")
+raw_text = "、"
+reading = "、"
+
+[sub_resource type="Resource" id="Resource_p3qol"]
+script = ExtResource("7_7cqsw")
+raw_text = "桜"
+vocab = SubResource("Resource_6dnp4")
+reading = "さくら"
+
+[sub_resource type="Resource" id="Resource_mnkx5"]
+script = ExtResource("7_7cqsw")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_oq4it"]
+script = ExtResource("12_n1cpv")
+japanese = "名所"
+readings = Array[String](["めいしょ"])
+meanings = Array[String](["famous place", "noted place", "place of (scenic or historical) interest", "sights (to see)"])
+jlpt_level = 2
+
+[sub_resource type="Resource" id="Resource_84up6"]
+script = ExtResource("7_7cqsw")
+raw_text = "名所"
+vocab = SubResource("Resource_oq4it")
+reading = "めいしょ"
+
+[sub_resource type="Resource" id="Resource_tdkhg"]
+script = ExtResource("7_7cqsw")
+raw_text = "な"
+reading = "な"
+
+[sub_resource type="Resource" id="Resource_jk1xe"]
+script = ExtResource("7_7cqsw")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_a7k7n"]
+script = ExtResource("7_7cqsw")
+raw_text = "よ"
+reading = "よ"
+
+[sub_resource type="Resource" id="Resource_0m8km"]
+script = ExtResource("7_7cqsw")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_vgu70"]
+script = ExtResource("6_qfr2c")
+japanese = "このお寺って、桜の名所なのよ。"
+native = "This temple is famous for its cherry blossoms."
+parsed = Array[ExtResource("7_7cqsw")]([SubResource("Resource_ben63"), SubResource("Resource_4m0s4"), SubResource("Resource_84cef"), SubResource("Resource_vil7p"), SubResource("Resource_p3qol"), SubResource("Resource_mnkx5"), SubResource("Resource_84up6"), SubResource("Resource_tdkhg"), SubResource("Resource_jk1xe"), SubResource("Resource_a7k7n"), SubResource("Resource_0m8km")])
+_difficulty = 449
+_used_kanji = Array[String](["寺", "桜", "名", "所"])
+
+[sub_resource type="Resource" id="Resource_gyjci"]
+script = ExtResource("7_7cqsw")
+raw_text = "かつて"
+reading = "かつて"
+
+[sub_resource type="Resource" id="Resource_lkgxh"]
+script = ExtResource("7_7cqsw")
+raw_text = "庭"
+vocab = SubResource("Resource_50uci")
+reading = "にわ"
+
+[sub_resource type="Resource" id="Resource_gm38q"]
+script = ExtResource("7_7cqsw")
+raw_text = "に"
+reading = "に"
+
+[sub_resource type="Resource" id="Resource_dulnl"]
+script = ExtResource("12_n1cpv")
+japanese = "大きな"
+readings = Array[String](["おおきな"])
+meanings = Array[String](["big", "large", "great"])
+jlpt_level = 5
+
+[sub_resource type="Resource" id="Resource_oqkbj"]
+script = ExtResource("7_7cqsw")
+raw_text = "大きな"
+vocab = SubResource("Resource_dulnl")
+reading = "おおきな"
+
+[sub_resource type="Resource" id="Resource_ugxr8"]
+script = ExtResource("7_7cqsw")
+raw_text = "桜"
+vocab = SubResource("Resource_6dnp4")
+reading = "さくら"
+
+[sub_resource type="Resource" id="Resource_x4lxy"]
+script = ExtResource("7_7cqsw")
+raw_text = "の"
+reading = "の"
+
+[sub_resource type="Resource" id="Resource_kv3wf"]
+script = ExtResource("7_7cqsw")
+raw_text = "木"
+vocab = SubResource("Resource_l2s6t")
+reading = "き"
+
+[sub_resource type="Resource" id="Resource_lsano"]
+script = ExtResource("7_7cqsw")
+raw_text = "が"
+reading = "が"
+
+[sub_resource type="Resource" id="Resource_7mfsh"]
+script = ExtResource("7_7cqsw")
+raw_text = "あっ"
+reading = "あっ"
+
+[sub_resource type="Resource" id="Resource_0acjo"]
+script = ExtResource("7_7cqsw")
+raw_text = "た"
+reading = "た"
+
+[sub_resource type="Resource" id="Resource_u7wug"]
+script = ExtResource("7_7cqsw")
+raw_text = "。"
+reading = "。"
+
+[sub_resource type="Resource" id="Resource_x50ej"]
+script = ExtResource("6_qfr2c")
+japanese = "かつて庭に大きな桜の木があった。"
+native = "There used to be a big cherry tree in the garden."
+parsed = Array[ExtResource("7_7cqsw")]([SubResource("Resource_gyjci"), SubResource("Resource_lkgxh"), SubResource("Resource_gm38q"), SubResource("Resource_oqkbj"), SubResource("Resource_ugxr8"), SubResource("Resource_x4lxy"), SubResource("Resource_kv3wf"), SubResource("Resource_lsano"), SubResource("Resource_7mfsh"), SubResource("Resource_0acjo"), SubResource("Resource_u7wug")])
+_difficulty = 458
+_used_kanji = Array[String](["庭", "大", "桜", "木"])
+
+[sub_resource type="Resource" id="Resource_ssys3"]
+script = ExtResource("8_3ry2m")
+points = Array[Vector2]([Vector2(12.28, 39.22), Vector2(17.8, 39.23), Vector2(22.73, 38.34), Vector2(28.43, 37.19), Vector2(34.05, 36.05), Vector2(39.52, 35.62)])
+
+[sub_resource type="Resource" id="Resource_clyja"]
+script = ExtResource("8_3ry2m")
+points = Array[Vector2]([Vector2(26.61, 16), Vector2(28.4, 20.77), Vector2(28.4, 21.87), Vector2(28.42, 24.32), Vector2(28.43, 28.05), Vector2(28.45, 32.84), Vector2(28.47, 38.47), Vector2(28.49, 44.72), Vector2(28.51, 51.38), Vector2(28.52, 58.24), Vector2(28.52, 65.07), Vector2(28.52, 71.65), Vector2(28.5, 77.78), Vector2(28.47, 83.23), Vector2(28.41, 89.45), Vector2(28.35, 93.5)])
+
+[sub_resource type="Resource" id="Resource_nnoln"]
+script = ExtResource("8_3ry2m")
+points = Array[Vector2]([Vector2(27.69, 39.03), Vector2(26.84, 45.14), Vector2(25, 50.48), Vector2(22.74, 55.89), Vector2(20.35, 60.79), Vector2(17.76, 65.44), Vector2(14.88, 70.12), Vector2(11.61, 75.09)])
+
+[sub_resource type="Resource" id="Resource_3oyu4"]
+script = ExtResource("8_3ry2m")
+points = Array[Vector2]([Vector2(31.25, 44.38), Vector2(35.65, 48.54), Vector2(39.75, 53.76)])
+
+[sub_resource type="Resource" id="Resource_4kk8t"]
+script = ExtResource("8_3ry2m")
+points = Array[Vector2]([Vector2(43.62, 22.61), Vector2(46.99, 28.54), Vector2(49.77, 34.75), Vector2(51.19, 39)])
+
+[sub_resource type="Resource" id="Resource_wcqya"]
+script = ExtResource("8_3ry2m")
+points = Array[Vector2]([Vector2(60.31, 19.19), Vector2(62.82, 23.43), Vector2(65.66, 29.15), Vector2(67.41, 34.61)])
+
+[sub_resource type="Resource" id="Resource_01ged"]
+script = ExtResource("8_3ry2m")
+points = Array[Vector2]([Vector2(87.34, 17.25), Vector2(86.91, 21.93), Vector2(85.02, 25.41), Vector2(82.53, 29.82), Vector2(79.63, 34.59), Vector2(76.53, 39.17)])
+
+[sub_resource type="Resource" id="Resource_fn1ad"]
+script = ExtResource("8_3ry2m")
+points = Array[Vector2]([Vector2(64.92, 45.62), Vector2(64.4, 50.72), Vector2(62.71, 55.43), Vector2(60.71, 60.13), Vector2(58.34, 64.86), Vector2(55.56, 69.65), Vector2(53.69, 74.34), Vector2(58.53, 75.82), Vector2(63.32, 77.25), Vector2(68.13, 79.05), Vector2(72.88, 81.38), Vector2(77.5, 84.43), Vector2(81.74, 88.2), Vector2(85.08, 92.14), Vector2(88, 96.74)])
+
+[sub_resource type="Resource" id="Resource_mv7ei"]
+script = ExtResource("8_3ry2m")
+points = Array[Vector2]([Vector2(78.53, 56.65), Vector2(78.5, 61.67), Vector2(77.13, 65.48), Vector2(75.38, 69.41), Vector2(73.2, 73.39), Vector2(70.53, 77.35), Vector2(67.3, 81.23), Vector2(63.44, 84.95), Vector2(58.9, 88.45), Vector2(53.62, 91.65), Vector2(47.52, 94.5)])
+
+[sub_resource type="Resource" id="Resource_psydy"]
+script = ExtResource("8_3ry2m")
+points = Array[Vector2]([Vector2(39.2, 61.14), Vector2(44.37, 61.82), Vector2(49.26, 61.31), Vector2(54.12, 60.69), Vector2(59.09, 60.08), Vector2(64.18, 59.48), Vector2(69.36, 58.92), Vector2(74.64, 58.41), Vector2(79.99, 57.95), Vector2(85.4, 57.57), Vector2(90.69, 57.32), Vector2(95.8, 57.98)])
+
+[sub_resource type="Resource" id="Resource_yq6jm"]
+script = ExtResource("7_toqqm")
+stroke_shapes = Array[ExtResource("8_3ry2m")]([SubResource("Resource_ssys3"), SubResource("Resource_clyja"), SubResource("Resource_nnoln"), SubResource("Resource_3oyu4"), SubResource("Resource_4kk8t"), SubResource("Resource_wcqya"), SubResource("Resource_01ged"), SubResource("Resource_fn1ad"), SubResource("Resource_mv7ei"), SubResource("Resource_psydy")])
+
+[sub_resource type="Resource" id="Resource_uj3oa"]
+script = ExtResource("12_n1cpv")
+japanese = "桜"
+readings = Array[String](["さくら"])
+meanings = Array[String](["cherry tree", "cherry blossom", "sakura", "fake buyer", "paid audience", "shill", "seat filler", "hired applauder"])
+jlpt_level = 3
+_difficulty = 61
+_used_kanji = Array[String](["桜"])
+
+[sub_resource type="Resource" id="Resource_ps5jr"]
+script = ExtResource("12_n1cpv")
+japanese = "桜花"
+readings = Array[String](["おうか"])
+meanings = Array[String](["cherry blossom"])
+_difficulty = 689
+_used_kanji = Array[String](["桜", "花"])
+
+[sub_resource type="Resource" id="Resource_8uilw"]
+script = ExtResource("12_n1cpv")
+japanese = "八重桜"
+readings = Array[String](["やえざくら"])
+meanings = Array[String](["double-flowered cherry tree", "double cherry blossoms"])
+_difficulty = 964
+_used_kanji = Array[String](["八", "重", "桜"])
+
+[resource]
+script = ExtResource("9_sm0ig")
+symbol = "桜"
+card_name = "Cherry"
+rarity = 2
+abilities = Array[ExtResource("1_wpu4r")]([SubResource("Resource_22ff2"), SubResource("Resource_mmac3")])
+tags = Array[int]([2, 18, 20])
+vocabulary = Array[ExtResource("12_n1cpv")]([SubResource("Resource_uj3oa"), SubResource("Resource_ps5jr"), SubResource("Resource_8uilw")])
+example_sentences = Array[ExtResource("6_qfr2c")]([SubResource("Resource_lmfop"), SubResource("Resource_jqv48"), SubResource("Resource_h087g"), SubResource("Resource_cegdu"), SubResource("Resource_b02ot"), SubResource("Resource_xqjp7"), SubResource("Resource_ysdvg"), SubResource("Resource_ttdun"), SubResource("Resource_vgu70"), SubResource("Resource_x50ej")])
+kanji_shape = SubResource("Resource_yq6jm")
+init_aspects = 6
+term_categories = Array[ExtResource("10_73ju3")]([ExtResource("11_o32b6")])

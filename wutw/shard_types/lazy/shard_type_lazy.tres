@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="ShardType_Lazy" format=3 uid="uid://dvmaaby8ujqfp"]
+
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="1_16y5w"]
+[ext_resource type="Resource" uid="uid://cem57n26te6mg" path="res://stage/spots/forest/upgrade_forest_2_fruit_grove.tres" id="1_vut6a"]
+[ext_resource type="Script" uid="uid://c540ag7jf1o8t" path="res://shard_types/lazy/shard_type_lazy.gd" id="2_oh4gv"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="3_01cf1"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="3_3h08t"]
+[ext_resource type="Texture2D" uid="uid://cksgpukkncrmx" path="res://shard_types/lazy/shard_type_lazy.png" id="4_lxlwy"]
+[ext_resource type="Resource" uid="uid://ph56dr5pmkui" path="res://art/pieces/piece_hanko_karabitsu.tres" id="5_g0qi3"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="6_lscx2"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="8_rejaa"]
+
+[sub_resource type="Resource" id="Resource_jidpg"]
+script = ExtResource("1_16y5w")
+text = "The settlers of $shard_name were greeted by a land rich in wild fruit, rendering deliberate agriculture an afterthought. To avoid impacting the natural bounty, fields were eschewed in favor of letting wildflowers and weeds flourish. The native groves remained communal spaces, with every citizen expected to spend a few days each month tending them. Many look forward to this duty, as aside from making jam, it is one of the only culturally acceptable forms of labor."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_a1hu1"]
+script = ExtResource("1_16y5w")
+text = "Celebrations on $shard_name often include only a brief ceremony, followed by a long feast, and a dance consisting for the most part of gentle swaying and slowly rolling on the ground. A communal nap usually follows, and the day culminates in a gathering around a lazily smoldering fire to tell stories and play improvisational games late into the night."
+min_main_quest = 130
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_7px5e"]
+script = ExtResource("1_16y5w")
+text = "The people of this shard have traditionally lived in small straw huts, but the citizens of $town1 have come up with a different solution. Given the temperate weather, they started to forego buildings and instead sleep in hammocks hung between tree trunks. Larger trees support multiple levels of hammocks, with rope ladders for easy access. People even bring their hammocks with them when traveling."
+min_main_quest = 220
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_wtukp"]
+script = ExtResource("1_16y5w")
+text = "On most shards, the Order of Growth consists of serene monks and nuns who watch grass grow as a form of meditation. Not so on $shard_name. Here, it consists of rebellious youths who consider growth a counter to the stagnation they see in their culture. They build large treehouses, connected by bridges into elaborate neighborhoods, and craft masterwork wooden implements and gears, which serve as the shard's main export goods."
+min_main_quest = 320
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_afqw6"]
+script = ExtResource("8_rejaa")
+text = "I arrived on $shard_name just after a large group of tourists, and had to wait for hours while the arrival clerk leisurely recorded everyone's name, stopping for occasional snacks and a lengthy lunch break.
+
+My first destination was the famed treetop town of $town2, where nuns from the Order of Growth led me to an odd mechanized platform that brought us to the entrance hidden in the canopy. As we strolled through the settlement, crossing rope bridges and stopping at tea houses, I overheard many people referring to \"danglers\". When I asked my guide about this, she got uncomfortable and explained that it is an offensive term for people who still live in their hammocks.
+
+I then visited a settlement of these hammock people. It looked like little more than a forest with a few firepits during the day, but by evening every tree within view was full of hammocks, blocking every possible exit. Luckily, I was offered a free hammock and was able to spend the night there before returning to the gate."
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[resource]
+script = ExtResource("2_oh4gv")
+productivity = ExtResource("6_lscx2")
+grove = ExtResource("1_vut6a")
+shard_type_id = "lazy"
+name = "The Leisure Province"
+shard_name_override = "Anseijima"
+shard_name_override_jp = "安静島"
+shard_name_override_meaning = "Repose Island"
+tier = 2
+illustration = ExtResource("4_lxlwy")
+illustration_credit = ExtResource("5_g0qi3")
+history = Array[ExtResource("1_16y5w")]([SubResource("Resource_jidpg"), SubResource("Resource_a1hu1"), SubResource("Resource_7px5e"), SubResource("Resource_wtukp")])
+trip_reward = SubResource("Resource_afqw6")
+metadata/_custom_type_script = "uid://c540ag7jf1o8t"

@@ -1,0 +1,516 @@
+[gd_scene format=3 uid="uid://dg8ye5ssncvad"]
+
+[ext_resource type="Script" uid="uid://f5rq3ed1pb0l" path="res://companions/hub_companion.gd" id="1_4ul8u"]
+[ext_resource type="Resource" uid="uid://cdspemalastd" path="res://companions/koi/companion_koi.tres" id="2_ensng"]
+[ext_resource type="Texture2D" uid="uid://dnsgcpyc6gj4g" path="res://companions/koi/koi_hub.png" id="3_ensng"]
+
+[sub_resource type="Animation" id="Animation_h1o43"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton2D/root/spine3:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skeleton2D/root/spine3/spine2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skeleton2D/root/spine3/spine2/spine1:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Skeleton2D/root/spine3/spine4:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Skeleton2D/root/spine3/spine2/spine1/tail1/tail2:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Skeleton2D/root/spine3/spine2/spine1/tail1:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Skeleton2D/root/spine3/spine4/head:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Skeleton2D/root/spine3/fin_front_right:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-5.820766e-11, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Skeleton2D/root/spine3/fin_front_left:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-5.820766e-11, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Skeleton2D/root/spine3/fin_back_right:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(2.647752, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Skeleton2D/root/spine3/fin_back_left:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.53035307, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_ensng"]
+resource_name = "idle_2"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton2D/root/spine3:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.054227125, -0.16666667, 0, 0.16683333, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 2.001)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skeleton2D/root/spine3/spine2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(-0.24171011, 0, 0, 0.56666666, 0.0068775415, -0.18740037, -0.21702096, -0.0017768379, 0.36666667, 0.0030020475, -0.28166434, -0.21928276, -0.00030657346, 0.26666665, 0.0003728196, -0.24171011, 0, 0, 0.14444447, 0.040285025),
+"times": PackedFloat32Array(0, 1.0666667, 1.5333333, 2.001)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skeleton2D/root/spine3/spine2/spine1:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.2388889, 0, 0.483025, 0.021375105, 0.119172804, -0.250625, -0.013208598, 0.4000001, -0.0071559325, 0, -0.26766658, 0.0131969, 0.25, 0),
+"times": PackedFloat32Array(0, 0.616975, 1.3, 2.001)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Skeleton2D/root/spine3/spine4:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0.15981853, 0, 0, 0.26666668, -0.036114585, 0.1713107, -0.2666667, 0.0123659475, 0.31111115, -0.014426938, 0.1251993, -0.31111115, 0.022206945, 0.08888885, -0.006344838, 0.15981853, 0, 0, 0.26666668, -0.036114585),
+"times": PackedFloat32Array(0, 0.8004, 1.7342001, 2.001)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Skeleton2D/root/spine3/spine2/spine1/tail1/tail2:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.008802762, -0.16666669, -0.00431331, 0.23333329, 0.012547813, 0.051347688, -0.2839417, -0.005899042, 0.26666665, -0.0012008175, 0.008214584, -0.055555545, 0.004382898, 0.08888888, -0.007012638, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.73333335, 1.2333333, 1.6, 2.001)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Skeleton2D/root/spine3/spine2/spine1/tail1:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.004685512, -0.39999998, -0.003921191, 0.13333338, 0.002744834, 0.05456384, -0.2840749, -0.007725518, 0.315925, -0.009293996, 0, -0.23433328, 0.0052736904, 0.25, 0),
+"times": PackedFloat32Array(0, 0.93333334, 1.484075, 2.001)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Skeleton2D/root/spine3/spine4/head:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0.16440946, 0, 0, 0.16666667, -0.04272002, 0.12527871, -0.26666668, 0.008488423, 0.13888888, -0.004421053, 0.24186632, -0.26111114, 0, 0.40555558, 0, 0.16440946, 0, 0, 0.16666667, -0.04272002),
+"times": PackedFloat32Array(0, 0.516925, 1.484075, 2.001)
+}
+
+[sub_resource type="Animation" id="Animation_0khgm"]
+resource_name = "idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton2D/root/spine3:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.108529165, -0.50000006, -0.0035310984, 0.6666667, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.3333334, 4)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skeleton2D/root/spine3/spine2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.14444447, 0, 0.6888889, 0, 0.096892565, -0.4333334, -0.00025828928, 0.5277741, 0.00031458086, -0.034757495, -0.27787006, -0.00063456927, 0.33333302, 0.00076122954, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.86666673, 2.0333333, 3.166667, 4)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skeleton2D/root/spine3/spine2/spine1:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 2, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.2388889, 0, 0.59444445, 0, 0.12931457, -0.5666667, -0.0009739548, 0.46108443, 0.0007924859, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.2333333, 2.5, 4)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Skeleton2D/root/spine3/spine4:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.056868978, -0.33333337, 0.00035743415, 0.36670753, -0.00039322133, -0.00093877316, -0.40000004, -0.0066904686, 0.16666667, 0.002787695, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.6, 3.466667, 4)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Skeleton2D/root/spine3/spine2/spine1/tail1/tail2:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.42777783, 0, 0.40555555, 0, 0.120908864, -0.4666667, -0.0006004125, 0.533329, 0.0006861801, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.5, 3.1333334, 4)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Skeleton2D/root/spine3/spine2/spine1/tail1:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.42777783, 0, 0.40555555, 0, 0.086685635, -0.3000002, -0.0012661666, 0.4332401, 0.0018285126, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.1, 2.9333334, 4)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Skeleton2D/root/spine3/spine4/head:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.09191067, -0.3333333, 0.0005754903, 0.6666277, -0.0011509134, -0.091545954, -0.5, -0.011488833, 0.16666667, 0.0038296112, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 3.466667, 4)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Skeleton2D/root/spine3/fin_front_right:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(-5.820766e-11, -0.25, 0, 0.25, 0, 0.108389795, -0.23333335, 0, 0.6, 0, -5.820766e-11, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.4000001, 4)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Skeleton2D/root/spine3/fin_front_left:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(-5.820766e-11, -0.25, 0, 0.25, 0, -0.11540703, -0.23333335, 0, 0.6, 0, -5.820766e-11, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.4000001, 4)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Skeleton2D/root/spine3/fin_back_right:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 0),
+"points": PackedFloat32Array(2.647752, 0, 0, 0.28888893, 0, 2.647752, -0.25, 0, 0.25, 0, 2.7522452, -0.26111114, 0, 0.2833333, 0, 2.647752, -0.54444444, 0, 0, 0),
+"times": PackedFloat32Array(0, 2.1, 3.0000002, 4)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Skeleton2D/root/spine3/fin_back_left:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 0),
+"points": PackedFloat32Array(-0.53035307, 0, 0, 0.28888893, 0, -0.53035307, -0.25, 0, 0.25, 0, -0.65244734, -0.26111114, 0, 0.2833333, 0, -0.53035307, -0.54444444, 0, 0, 0),
+"times": PackedFloat32Array(0, 1.7333335, 3.0000002, 4)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2rutv"]
+_data = {
+&"RESET": SubResource("Animation_h1o43"),
+&"idle": SubResource("Animation_ensng"),
+&"idle_static": SubResource("Animation_0khgm")
+}
+
+[node name="HubCompanion_Koi" type="Node2D" unique_id=1239197047 groups=["HubFacilities"]]
+texture_filter = 6
+script = ExtResource("1_4ul8u")
+companion = ExtResource("2_ensng")
+tooltip_text = "[b]Cat Companion[/b]"
+
+[node name="Body" type="Polygon2D" parent="." unique_id=476871856]
+texture_repeat = 1
+position = Vector2(-118.132805, -52.476402)
+scale = Vector2(0.31792352, 0.31792352)
+texture = ExtResource("3_ensng")
+skeleton = NodePath("../Skeleton2D")
+polygon = PackedVector2Array(550.0947, 136.67546, 553.31274, 138.41855, 562.16223, 139.22305, 571.9503, 146.73174, 578.38635, 161.21278, 578.9227, 169.12372, 569.53687, 189.23628, 562.56445, 193.66104, 551.43555, 193.12471, 548.08344, 194.8678, 537.08795, 203.31633, 508.66217, 209.21602, 483.32037, 211.0932, 460.39203, 210.9591, 457.7104, 214.17712, 448.0562, 229.99979, 436.25684, 252.794, 420.9713, 270.09082, 404.34415, 281.6211, 390.5335, 283.63235, 379.2705, 277.86676, 370.1528, 263.5198, 372.16406, 242.87091, 376.18658, 226.3786, 383.69525, 217.12683, 388.2541, 213.2384, 365.86212, 214.17699, 354.465, 212.4339, 349.5039, 215.24966, 329.52542, 232.41238, 315.84888, 240.4574, 301.36786, 242.60274, 292.38425, 238.71431, 289.97073, 228.79211, 293.3228, 217.52908, 296.54083, 208.94772, 297.34534, 205.59563, 272.27173, 205.32903, 240.3598, 202.78143, 205.7641, 201.57349, 175.46118, 200.50081, 147.57176, 200.36673, 133.7618, 200.50131, 128.8007, 201.43991, 108.95631, 210.95985, 83.882645, 221.41838, 66.45177, 227.31807, 56.797737, 228.25665, 53.713806, 225.44089, 55.993233, 219.00488, 64.84276, 206.93735, 68.06077, 203.85341, 57.065903, 198.75824, 52.104805, 189.37238, 51.3003, 179.85243, 57.19999, 176.63441, 70.07202, 179.85243, 86.43024, 182.66818, 108.01772, 186.95886, 119.817085, 187.76337, 125.180435, 185.61803, 150.65634, 174.22092, 181.22743, 160.67845, 210.59305, 148.74498, 237.94614, 138.82278, 265.03104, 129.03467, 283.26642, 124.878075, 281.25516, 122.46457, 275.0873, 113.48096, 273.34424, 104.363266, 275.62433, 94.44107, 282.32852, 90.15039, 298.55264, 90.68673, 314.7768, 97.65908, 332.47583, 105.83819, 337.43692, 109.8607, 339.71637, 111.87196, 357.14612, 108.51869, 373.77252, 107.17786, 388.11948, 107.44602, 396.1645, 107.71419, 393.75098, 104.76434, 387.1809, 92.96498, 381.41528, 77.1431, 379.80627, 59.98038, 381.01385, 45.76953, 388.1203, 37.590424, 404.88074, 39.869846, 424.45697, 50.864716, 440.01068, 71.64769, 450.33514, 87.06732, 463.34125, 104.90046, 466.02295, 110.531975, 467.63196, 113.21365, 493.50793, 117.23755, 520.45874, 123.27132, 536.68286, 128.90283, 428.91302, 106.366684, 429.44843, 109.936, 304.70105, 116.539215, 306.66415, 118.85927, 321.8349, 207.01892, 320.05023, 211.30208, 423.20245, 211.65894, 422.66705, 215.94211, 550.8852, 164.61505, 543.2341, 164.26727, 123.024796, 195.15419, 129.20078, 193.25389, 236.55473, 172.21053, 323.49942, 163.35797, 405.06937, 163.67413)
+uv = PackedVector2Array(550.0947, 136.67546, 553.31274, 138.41855, 562.16223, 139.22305, 571.9503, 146.73174, 578.38635, 161.21278, 578.9227, 169.12372, 569.53687, 189.23628, 562.56445, 193.66104, 551.43555, 193.12471, 548.08344, 194.8678, 537.08795, 203.31633, 508.66217, 209.21602, 483.32037, 211.0932, 460.39203, 210.9591, 457.7104, 214.17712, 448.0562, 229.99979, 436.25684, 252.794, 420.9713, 270.09082, 404.34415, 281.6211, 390.5335, 283.63235, 379.2705, 277.86676, 370.1528, 263.5198, 372.16406, 242.87091, 376.18658, 226.3786, 383.69525, 217.12683, 388.2541, 213.2384, 365.86212, 214.17699, 354.465, 212.4339, 349.5039, 215.24966, 329.52542, 232.41238, 315.84888, 240.4574, 301.36786, 242.60274, 292.38425, 238.71431, 289.97073, 228.79211, 293.3228, 217.52908, 296.54083, 208.94772, 297.34534, 205.59563, 272.27173, 205.32903, 240.3598, 202.78143, 205.7641, 201.57349, 175.46118, 200.50081, 147.57176, 200.36673, 133.7618, 200.50131, 128.8007, 201.43991, 108.95631, 210.95985, 83.882645, 221.41838, 66.45177, 227.31807, 56.797737, 228.25665, 53.713806, 225.44089, 55.993233, 219.00488, 64.84276, 206.93735, 68.06077, 203.85341, 57.065903, 198.75824, 52.104805, 189.37238, 51.3003, 179.85243, 57.19999, 176.63441, 70.07202, 179.85243, 86.43024, 182.66818, 108.01772, 186.95886, 119.817085, 187.76337, 125.180435, 185.61803, 150.65634, 174.22092, 181.22743, 160.67845, 210.59305, 148.74498, 237.94614, 138.82278, 265.03104, 129.03467, 283.26642, 124.878075, 281.25516, 122.46457, 275.0873, 113.48096, 273.34424, 104.363266, 275.62433, 94.44107, 282.32852, 90.15039, 298.55264, 90.68673, 314.7768, 97.65908, 332.47583, 105.83819, 337.43692, 109.8607, 339.71637, 111.87196, 357.14612, 108.51869, 373.77252, 107.17786, 388.11948, 107.44602, 396.1645, 107.71419, 393.75098, 104.76434, 387.1809, 92.96498, 381.41528, 77.1431, 379.80627, 59.98038, 381.01385, 45.76953, 388.1203, 37.590424, 404.88074, 39.869846, 424.45697, 50.864716, 440.01068, 71.64769, 450.33514, 87.06732, 463.34125, 104.90046, 466.02295, 110.531975, 467.63196, 113.21365, 493.50793, 117.23755, 520.45874, 123.27132, 536.68286, 128.90283, 428.91302, 106.366684, 429.44843, 109.936, 304.70105, 116.539215, 306.66415, 118.85927, 321.8349, 207.01892, 320.05023, 211.30208, 423.20245, 211.65894, 422.66705, 215.94211, 550.8852, 164.61505, 543.2341, 164.26727, 123.024796, 195.15419, 129.20078, 193.25389, 236.55473, 172.21053, 323.49942, 163.35797, 405.06937, 163.67413)
+polygons = [PackedInt32Array(1, 105, 8, 7, 6, 5, 4, 3, 2), PackedInt32Array(0, 106, 9, 8, 105, 1), PackedInt32Array(0, 96, 106), PackedInt32Array(106, 9, 10), PackedInt32Array(10, 96, 106), PackedInt32Array(10, 11, 95, 96), PackedInt32Array(11, 12, 94, 95), PackedInt32Array(93, 13, 12, 94), PackedInt32Array(92, 98, 103, 13, 93), PackedInt32Array(13, 14, 104, 103), PackedInt32Array(103, 25, 24, 104), PackedInt32Array(24, 23, 22, 16, 15), PackedInt32Array(24, 104, 14, 15), PackedInt32Array(22, 21, 20, 19, 18, 17, 16), PackedInt32Array(29, 33, 32, 31, 30), PackedInt32Array(29, 28, 102, 35, 34, 33), PackedInt32Array(35, 36, 101, 27, 28, 102), PackedInt32Array(25, 111, 103), PackedInt32Array(111, 98, 103), PackedInt32Array(111, 80, 98), PackedInt32Array(80, 79, 25, 111), PackedInt32Array(79, 78, 26, 25), PackedInt32Array(77, 27, 26, 78), PackedInt32Array(77, 76, 110, 101, 27), PackedInt32Array(76, 100, 110), PackedInt32Array(100, 66, 36, 101, 110), PackedInt32Array(66, 65, 37, 36), PackedInt32Array(65, 64, 109, 38, 37), PackedInt32Array(64, 63, 39, 38, 109), PackedInt32Array(62, 63, 39, 40), PackedInt32Array(62, 61, 41, 40), PackedInt32Array(61, 60, 108, 42, 41), PackedInt32Array(60, 59, 107, 43, 42, 108), PackedInt32Array(59, 58, 44, 43, 107), PackedInt32Array(57, 45, 44, 58), PackedInt32Array(57, 56, 55, 54, 53, 52, 51), PackedInt32Array(57, 51, 45), PackedInt32Array(51, 50, 49, 48, 47, 46, 45), PackedInt32Array(67, 99, 74, 75, 76, 100, 66), PackedInt32Array(68, 73, 74, 99, 67), PackedInt32Array(68, 69, 70, 71, 72, 73), PackedInt32Array(81, 97, 98, 80), PackedInt32Array(97, 91, 92, 98), PackedInt32Array(91, 90, 82, 81, 97), PackedInt32Array(90, 89, 83, 82), PackedInt32Array(89, 88, 87, 86, 85, 84, 83)]
+bones = ["root", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/spine3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 1, 1, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0, 0, 0, 0.5, 0.5, 0, 0.5, 0.5, 0, 0.5, 0.5, 0, 0, 0, 0, 0, 0.5, 0.5), "root/spine3/spine2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0), "root/spine3/spine2/spine1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0, 0), "root/spine3/spine2/spine1/tail1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0, 0, 0), "root/spine3/spine2/spine1/tail1/tail2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0, 0, 0, 0), "root/spine3/spine2/spine1/tail1/tail2/tail_left", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/spine3/spine2/spine1/tail1/tail2/tail_right", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/spine3/spine4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0, 0, 0, 0), "root/spine3/spine4/head", PackedFloat32Array(0.5, 0.5, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0, 0, 0, 0, 0), "root/spine3/spine4/head/mouth", PackedFloat32Array(0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0, 0), "root/spine3/fin_front_right", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0), "root/spine3/fin_front_right/fin_front_right2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/spine3/fin_front_left", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/spine3/fin_front_left/fin_front_left2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/spine3/fin_back_right", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/spine3/fin_back_left", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+internal_vertex_count = 15
+
+[node name="Skeleton2D" type="Skeleton2D" parent="." unique_id=1308328656]
+unique_name_in_owner = true
+position = Vector2(-125.33102, -138.85497)
+rotation = 0.00068263046
+scale = Vector2(2.3994045, 2.3994045)
+
+[node name="root" type="Bone2D" parent="Skeleton2D" unique_id=364124572]
+position = Vector2(53.071526, 73.43533)
+rest = Transform2D(1, 0, 0, 1, 53.071526, 73.43533)
+editor_settings/show_bone_gizmo = false
+
+[node name="spine3" type="Bone2D" parent="Skeleton2D/root" unique_id=1263142823]
+position = Vector2(-0.8382859, -16.005814)
+rest = Transform2D(1, 0, 0, 1, -0.8382859, -16.005814)
+editor_settings/show_bone_gizmo = false
+
+[node name="spine2" type="Bone2D" parent="Skeleton2D/root/spine3" unique_id=273411081]
+position = Vector2(-8.184267, 0.11135006)
+rest = Transform2D(1, 0, 0, 1, -8.184267, 0.11135006)
+editor_settings/show_bone_gizmo = false
+
+[node name="spine1" type="Bone2D" parent="Skeleton2D/root/spine3/spine2" unique_id=214393647]
+position = Vector2(-10.256388, 1.8455124)
+scale = Vector2(0.9999999, 0.9999999)
+rest = Transform2D(1, 0, 0, 1, -10.256388, 1.8455124)
+editor_settings/show_bone_gizmo = false
+
+[node name="tail1" type="Bone2D" parent="Skeleton2D/root/spine3/spine2/spine1" unique_id=1325072994]
+position = Vector2(-10.323464, 1.5864868)
+scale = Vector2(0.9999999, 0.9999999)
+rest = Transform2D(1, 0, 0, 1, -10.323464, 1.5864868)
+editor_settings/show_bone_gizmo = false
+
+[node name="tail2" type="Bone2D" parent="Skeleton2D/root/spine3/spine2/spine1/tail1" unique_id=952088629]
+position = Vector2(-5.295595, 1.3410535)
+scale = Vector2(0.9999996, 0.9999996)
+rest = Transform2D(1, 0, 0, 1, -5.295595, 1.3410535)
+editor_settings/show_bone_gizmo = false
+
+[node name="tail_left" type="Bone2D" parent="Skeleton2D/root/spine3/spine2/spine1/tail1/tail2" unique_id=170747990]
+position = Vector2(-5.851139, -1.0785472)
+rotation = -2.8781376
+rest = Transform2D(-0.965496, -0.26041794, 0.26041794, -0.965496, -5.851139, -1.0785472)
+auto_calculate_length_and_angle = false
+length = 8.0
+bone_angle = -2.489587
+editor_settings/show_bone_gizmo = false
+
+[node name="tail_right" type="Bone2D" parent="Skeleton2D/root/spine3/spine2/spine1/tail1/tail2" unique_id=1181507692]
+position = Vector2(-5.7838326, 2.8069506)
+rotation = 2.7853465
+scale = Vector2(0.9999998, 0.9999998)
+rest = Transform2D(-0.9372126, 0.34875855, -0.34875855, -0.9372126, -5.7838326, 2.8069506)
+auto_calculate_length_and_angle = false
+length = 8.0
+bone_angle = 0.0
+editor_settings/show_bone_gizmo = false
+
+[node name="spine4" type="Bone2D" parent="Skeleton2D/root/spine3" unique_id=921892511]
+position = Vector2(8.621262, 0.45386505)
+scale = Vector2(0.99999994, 0.99999994)
+rest = Transform2D(1, 0, 0, 1, 8.621262, 0.45386505)
+editor_settings/show_bone_gizmo = false
+
+[node name="head" type="Bone2D" parent="Skeleton2D/root/spine3/spine4" unique_id=963672196]
+position = Vector2(8.497366, 0.5838318)
+scale = Vector2(0.9999993, 0.9999993)
+rest = Transform2D(1, 0, 0, 1, 8.497366, 0.5838318)
+editor_settings/show_bone_gizmo = false
+
+[node name="mouth" type="Bone2D" parent="Skeleton2D/root/spine3/spine4/head" unique_id=1707062475]
+position = Vector2(9.017989, -0.3526764)
+rotation = 1.8501378
+rest = Transform2D(-0.27572274, 0.9612372, -0.9612372, -0.27572274, 9.017989, -0.3526764)
+auto_calculate_length_and_angle = false
+length = 5.0
+bone_angle = -107.42495
+editor_settings/show_bone_gizmo = false
+
+[node name="fin_front_right" type="Bone2D" parent="Skeleton2D/root/spine3" unique_id=718821144]
+position = Vector2(7.277098, 6.4178023)
+rest = Transform2D(1, -5.820766e-11, 5.820766e-11, 1, 7.277098, 6.4178023)
+editor_settings/show_bone_gizmo = false
+
+[node name="fin_front_right2" type="Bone2D" parent="Skeleton2D/root/spine3/fin_front_right" unique_id=1773284284]
+position = Vector2(-2.5954688, 4.253547)
+rotation = 2.474347
+rest = Transform2D(-0.7855292, 0.6188246, -0.6188246, -0.7855292, -2.5954688, 4.253547)
+auto_calculate_length_and_angle = false
+length = 5.0
+bone_angle = -21.740997
+editor_settings/show_bone_gizmo = false
+
+[node name="fin_front_left" type="Bone2D" parent="Skeleton2D/root/spine3" unique_id=1129176810]
+position = Vector2(8.140918, -6.662924)
+rest = Transform2D(1, -5.820766e-11, 5.820766e-11, 1, 8.140918, -6.662924)
+editor_settings/show_bone_gizmo = false
+
+[node name="fin_front_left2" type="Bone2D" parent="Skeleton2D/root/spine3/fin_front_left" unique_id=520658128]
+position = Vector2(-2.4720645, -4.631476)
+rotation = -1.9193423
+scale = Vector2(0.99999994, 0.99999994)
+rest = Transform2D(-0.34153154, -0.9398703, 0.9398703, -0.34153154, -2.4720645, -4.631476)
+auto_calculate_length_and_angle = false
+length = 5.0
+bone_angle = -21.740997
+editor_settings/show_bone_gizmo = false
+
+[node name="fin_back_right" type="Bone2D" parent="Skeleton2D/root/spine3" unique_id=904036218]
+position = Vector2(-6.4246545, 6.0437346)
+rotation = 2.647752
+scale = Vector2(0.9999997, 0.9999997)
+rest = Transform2D(-0.8805188, 0.4740111, -0.4740111, -0.8805188, -6.4246545, 6.0437346)
+auto_calculate_length_and_angle = false
+length = 5.0
+bone_angle = -21.740997
+editor_settings/show_bone_gizmo = false
+
+[node name="fin_back_left" type="Bone2D" parent="Skeleton2D/root/spine3" unique_id=2088498800]
+position = Vector2(-8.641906, -5.675699)
+rotation = -0.53035307
+rest = Transform2D(0.8626285, -0.5058379, 0.5058379, 0.8626285, -8.641906, -5.675699)
+auto_calculate_length_and_angle = false
+length = 5.0
+bone_angle = -118.091194
+editor_settings/show_bone_gizmo = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1358726726]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_2rutv")
+playback_default_blend_time = 0.4
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1287134228]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=295582209]
+visible = false
+position = Vector2(7, -7)
+polygon = PackedVector2Array(79.004395, 7.107086, 38.116516, -24.069916, -4.3046265, -46.04715, -56.947815, -27.136505, -114.19083, 7.6181946, -113.16864, 34.706406, -42.637024, 50.55046, 0.29522705, 56.68364, 54.47168, 30.61763)
+
+[node name="TooltipAnchor" type="Control" parent="." unique_id=1358955170]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -106.86798
+offset_top = -46.625473
+offset_right = 79.86963
+offset_bottom = 49.622116
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

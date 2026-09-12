@@ -1,0 +1,99 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://c0u33fj1maiv"]
+
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_4xjw2"]
+[ext_resource type="Resource" uid="uid://um1vreplknm1" path="res://art/pieces/piece_hokusai_inume_pass.tres" id="1_hq2mv"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_hq2mv"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_7e7p7"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="4_ipwfa"]
+[ext_resource type="Resource" uid="uid://bkjldm00yk2ef" path="res://cards/tier6/card_weak.tres" id="5_ob8lp"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="6_4r0m8"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="7_ldxtw"]
+[ext_resource type="Script" uid="uid://gu7gcielbwdr" path="res://events/system/outcomes/choose_card/event_outcome_choose_card.gd" id="8_aegja"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="9_v8krk"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="10_j2gjw"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="11_cm1w7"]
+[ext_resource type="Resource" uid="uid://cer6b18uutqkb" path="res://cards/tier6/card_refuse.tres" id="12_ka6ah"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="13_aqurr"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="14_2s60g"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="15_tdj2i"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="16_ih75m"]
+[ext_resource type="Resource" uid="uid://cfuqwl06ioxwd" path="res://stage/spots/hill/spot_hill.tres" id="17_ex5xa"]
+
+[sub_resource type="Resource" id="Resource_mtfjs"]
+script = ExtResource("1_4xjw2")
+_texture_path = "res://stage/survey/episodes/episode_pace_setter.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_gtbix"]
+script = ExtResource("6_4r0m8")
+card_type = ExtResource("5_ob8lp")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_6ulmr"]
+script = ExtResource("2_hq2mv")
+label = "Enforce a slower pace."
+aspects = Array[ExtResource("3_7e7p7")]([ExtResource("4_ipwfa")])
+aspects_per_season = Array[ExtResource("3_7e7p7")]([null])
+outcome = SubResource("Resource_gtbix")
+outcome_text = "The team convinces the fast walker to slow down and stay with the group. He reluctantly complies, but keeps accusing his teammates of being weak and unfit for the mission."
+
+[sub_resource type="Resource" id="Resource_3pp64"]
+script = ExtResource("8_aegja")
+aspect = ExtResource("7_ldxtw")
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_gn0jj"]
+script = ExtResource("11_cm1w7")
+bonus_type = ExtResource("10_j2gjw")
+min_count = 30
+max_count = -1
+extra_per_season = 40
+
+[sub_resource type="Resource" id="Resource_wt0kj"]
+script = ExtResource("2_hq2mv")
+label = "Rotate the lead position."
+requirement = SubResource("Resource_gn0jj")
+aspects = Array[ExtResource("3_7e7p7")]([ExtResource("7_ldxtw")])
+outcome = SubResource("Resource_3pp64")
+outcome_text = "The scouts agree to take turns walking in the lead, naturally evening out the pace. When a slow person is leading, the fast walker keeps running ahead and coming back, unable to restrain himself."
+
+[sub_resource type="Resource" id="Resource_sbaqf"]
+script = ExtResource("6_4r0m8")
+card_type = ExtResource("12_ka6ah")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_fhhid"]
+script = ExtResource("2_hq2mv")
+label = "Let him carry a heavier load."
+aspects = Array[ExtResource("3_7e7p7")]([null])
+aspects_per_season = Array[ExtResource("3_7e7p7")]([null])
+outcome = SubResource("Resource_sbaqf")
+outcome_text = "The athletic scout refuses, complaining that such an arrangement wouldn't be fair. The other scouts try to convince him for a while, but eventually grow tired of the argument and let it go."
+
+[sub_resource type="Resource" id="Resource_gowjx"]
+script = ExtResource("14_2s60g")
+bonus_type = ExtResource("13_aqurr")
+amount = -15
+extra_per_season = -15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_c8k8f"]
+script = ExtResource("2_hq2mv")
+label = "Keep the faster pace."
+aspects = Array[ExtResource("3_7e7p7")]([null])
+aspects_per_season = Array[ExtResource("3_7e7p7")]([null])
+outcome = SubResource("Resource_gowjx")
+outcome_text = "The fast walker convinces the rest of the group to keep pace. The result is a tired, unhappy team prone to making mistakes."
+
+[resource]
+script = ExtResource("15_tdj2i")
+episode_id = "pace_setter"
+title = "The Pace Setter"
+biome_types = Array[int]([7])
+spot_types = Array[ExtResource("16_ih75m")]([ExtResource("17_ex5xa")])
+text = "A naturally athletic surveyor has taken the lead and is setting a blistering pace, completely oblivious to the fact that half the team is panting and struggling to keep up.
+
+When asked to slow down, he argues that moving fast will save them days of travel."
+background_image = SubResource("Resource_mtfjs")
+background_credit = ExtResource("1_hq2mv")
+choices = Array[ExtResource("2_hq2mv")]([SubResource("Resource_6ulmr"), SubResource("Resource_wt0kj"), SubResource("Resource_fhhid"), SubResource("Resource_c8k8f")])

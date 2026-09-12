@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://cipqyvkq40q5u"]
+
+[ext_resource type="Script" uid="uid://dh127xapdb8gc" path="res://map/map_effect_particles.gd" id="1_6l5sr"]
+[ext_resource type="Texture2D" uid="uid://d0gt3ri6pvso2" path="res://hub/contents/trees/sakura/petal.png" id="2_7nt1c"]
+
+[sub_resource type="Curve" id="Curve_5xv8e"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.17442273, 1), 0.0, 0.0, 0, 0, Vector2(0.78223264, 0.9999101), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_ovx8t"]
+curve = SubResource("Curve_5xv8e")
+
+[sub_resource type="Curve" id="Curve_btnqj"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0.0039995275, -1), 0.0, 1.9784507, 0, 0, Vector2(1, -0.051806927), 0.05241059, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ty8fc"]
+curve = SubResource("Curve_btnqj")
+
+[sub_resource type="Curve" id="Curve_5a8vg"]
+_limits = [0.0, 100.0, 0.0, 1.0]
+_data = [Vector2(0, 6.812645), 0.0, 0.0, 0, 0, Vector2(0.5733903, 30.93116), 84.123505, 84.123505, 0, 0, Vector2(1, 62.240288), 81.47356, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_8m5g2"]
+curve = SubResource("Curve_5a8vg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4oxy7"]
+particle_flag_disable_z = true
+particle_flag_damping_as_friction = true
+emission_shape_scale = Vector3(1, 0, 0)
+emission_shape = 3
+emission_box_extents = Vector3(50, 1, 1)
+angle_min = -7.1999893
+angle_max = 213.70001
+angle_curve = SubResource("CurveTexture_ty8fc")
+spread = 20.0
+initial_velocity_min = 0.59999996
+initial_velocity_max = 0.59999996
+gravity = Vector3(0, 32, 0)
+damping_min = 0.2
+damping_max = 0.2
+damping_curve = SubResource("CurveTexture_8m5g2")
+scale_min = 0.59999996
+scale_max = 0.79999995
+color = Color(0.98, 0.735, 0.82075, 1)
+alpha_curve = SubResource("CurveTexture_ovx8t")
+hue_variation_min = -0.020000022
+hue_variation_max = 0.019999977
+turbulence_enabled = true
+turbulence_influence_min = 0.038
+turbulence_influence_max = 0.038
+
+[node name="SakuraPetals" type="Node2D" unique_id=131336058]
+script = ExtResource("1_6l5sr")
+
+[node name="ParticleSystem" type="GPUParticles2D" parent="." unique_id=2017857531]
+unique_name_in_owner = true
+amount = 7
+texture = ExtResource("2_7nt1c")
+lifetime = 4.0
+randomness = 0.5
+visibility_rect = Rect2(-65, -1, 130, 90)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_4oxy7")

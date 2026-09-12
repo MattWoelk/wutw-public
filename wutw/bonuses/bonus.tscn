@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://227b305k8bpi"]
+
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="2_bfmwi"]
+[ext_resource type="Script" uid="uid://0snbasco77rw" path="res://bonuses/bonus.gd" id="2_ev65h"]
+[ext_resource type="Shader" uid="uid://uurjda1l3vwm" path="res://bonuses/bonus.gdshader" id="3_xchmf"]
+[ext_resource type="Texture2D" uid="uid://yldg7b38p7db" path="res://bonuses/types/icons/bonus_safety.png" id="4_jpu2f"]
+[ext_resource type="Texture2D" uid="uid://boqqwospl62o5" path="res://bonuses/types/icons/bonus_safety_glow.png" id="5_f2swu"]
+[ext_resource type="Texture2D" uid="uid://go64cbx1ohwd" path="res://theme/button/white_1x1px.png" id="6_bfmwi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bfmwi"]
+shader = ExtResource("3_xchmf")
+shader_parameter/base_tex = ExtResource("4_jpu2f")
+shader_parameter/glow_tex = ExtResource("5_f2swu")
+shader_parameter/positive_color = Color(0.3, 1, 0, 1)
+shader_parameter/negative_color = Color(1, 1, 1, 1)
+shader_parameter/min_width = 1.5
+shader_parameter/max_width = 3.0
+shader_parameter/animation_speed = 0.0
+shader_parameter/enable_outline = false
+shader_parameter/is_negative = false
+
+[node name="Bonus" type="Control" groups=["Bonuses"]]
+texture_filter = 4
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 24.0
+offset_bottom = 24.0
+script = ExtResource("2_ev65h")
+bonus_type = ExtResource("2_bfmwi")
+
+[node name="Texture" type="TextureRect" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_bfmwi")
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_bfmwi")
+expand_mode = 1
+stretch_mode = 4

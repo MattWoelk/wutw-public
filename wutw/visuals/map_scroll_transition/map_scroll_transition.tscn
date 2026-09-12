@@ -1,0 +1,539 @@
+[gd_scene format=3 uid="uid://c4nseewxlxb4k"]
+
+[ext_resource type="WwiseEvent" uid="uid://pjwrft08x8pl" path="res://Wwise/resources/Event/{56D4F930-58EA-44D3-BDB6-A977BF1D19E9}.tres" id="2_kwbr2"]
+[ext_resource type="Shader" uid="uid://co4cy84xityjc" path="res://visuals/map_scroll_transition/map_scroll_mask.gdshader" id="2_p8j3u"]
+[ext_resource type="Texture2D" uid="uid://chxf88ekbq0ie" path="res://visuals/canvas.png" id="2_q511d"]
+[ext_resource type="WwiseEvent" uid="uid://ca1pp0kmr1hdk" path="res://Wwise/resources/Event/{677ECEBB-C796-487E-A95C-2AE178E6D138}.tres" id="3_gsdn1"]
+[ext_resource type="Script" uid="uid://c4mjjfki72ag1" path="res://visuals/map_scroll_transition/map_scroll_transition.gd" id="3_i3h4u"]
+[ext_resource type="Texture2D" uid="uid://cswm4x5hux4oa" path="res://cutscenes/intro/slides/frame.png" id="4_p8j3u"]
+[ext_resource type="Texture2D" uid="uid://dwfngfmjjitf4" path="res://theme/scroll_panel/scroll_panel_dowel_container_large.png" id="6_gsdn1"]
+[ext_resource type="Shader" uid="uid://bbe7ginxustev" path="res://theme/scroll_panel/scroll_panel_dowel.gdshader" id="7_dt8xp"]
+[ext_resource type="Texture2D" uid="uid://5sok2l1kxkji" path="res://theme/scroll_panel/dowel_paper.png" id="8_d4qo1"]
+[ext_resource type="Texture2D" uid="uid://go64cbx1ohwd" path="res://theme/button/white_1x1px.png" id="9_kf8n3"]
+[ext_resource type="Shader" uid="uid://gpgadexvoqm8" path="res://visuals/shaders/multiply.gdshader" id="10_t0kac"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kwbr2"]
+shader = ExtResource("2_p8j3u")
+shader_parameter/left = -4.7497455e-09
+shader_parameter/right = 1.0
+
+[sub_resource type="Gradient" id="Gradient_kjquw"]
+offsets = PackedFloat32Array(0, 0.196721, 0.460041, 0.525615, 0.603484, 0.732582, 1)
+colors = PackedColorArray(0.59, 0.43424, 0.3068, 0.796078, 0.48, 0.35328, 0.2496, 0.294118, 0.48, 0.35328, 0.2496, 0.0116377, 0.48, 0.35328, 0.2496, 0, 0.48, 0.35328, 0.2496, 0.0431956, 0.48, 0.35328, 0.2496, 0.34902, 0.4, 0.2944, 0.208, 0.929412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_35omn"]
+gradient = SubResource("Gradient_kjquw")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_d5lpw"]
+colors = PackedColorArray(0.331639, 0.33164, 0.331639, 1, 0.961814, 0.961814, 0.961814, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7pjam"]
+frequency = 0.0035
+domain_warp_amplitude = 100.0
+domain_warp_frequency = -0.01
+domain_warp_fractal_lacunarity = 8.69
+domain_warp_fractal_gain = 0.19
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e4fdl"]
+width = 2048
+noise = SubResource("FastNoiseLite_7pjam")
+color_ramp = SubResource("Gradient_d5lpw")
+seamless = true
+seamless_blend_skirt = 0.27
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2m7vn"]
+shader = ExtResource("7_dt8xp")
+shader_parameter/size = Vector2(100, 49)
+shader_parameter/scroll_offset = 1.0
+shader_parameter/wood_tex = ExtResource("8_d4qo1")
+shader_parameter/wood_tex_scale = Vector2(2.595, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_35omn")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_e4fdl")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b5a66"]
+shader = ExtResource("10_t0kac")
+
+[sub_resource type="Gradient" id="Gradient_35omn"]
+offsets = PackedFloat32Array(0, 0.30957, 0.484375)
+colors = PackedColorArray(0.5, 0.43825, 0.405, 1, 0.93, 0.899775, 0.8835, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_16k78"]
+gradient = SubResource("Gradient_35omn")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_edoc2"]
+offsets = PackedFloat32Array(0, 0.196721, 0.460041, 0.525615, 0.603484, 0.732582, 1)
+colors = PackedColorArray(0.59, 0.43424, 0.3068, 0.796078, 0.48, 0.35328, 0.2496, 0.294118, 0.48, 0.35328, 0.2496, 0.0116377, 0.48, 0.35328, 0.2496, 0, 0.48, 0.35328, 0.2496, 0.0431956, 0.48, 0.35328, 0.2496, 0.34902, 0.4, 0.2944, 0.208, 0.929412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e4fdl"]
+gradient = SubResource("Gradient_edoc2")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_6higg"]
+colors = PackedColorArray(0.331639, 0.33164, 0.331639, 1, 0.961814, 0.961814, 0.961814, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_yyj25"]
+frequency = 0.0035
+domain_warp_amplitude = 100.0
+domain_warp_frequency = -0.01
+domain_warp_fractal_lacunarity = 8.69
+domain_warp_fractal_gain = 0.19
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mnthn"]
+width = 2048
+noise = SubResource("FastNoiseLite_yyj25")
+color_ramp = SubResource("Gradient_6higg")
+seamless = true
+seamless_blend_skirt = 0.27
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0luv0"]
+shader = ExtResource("7_dt8xp")
+shader_parameter/size = Vector2(100, 50)
+shader_parameter/scroll_offset = 0.0
+shader_parameter/wood_tex = ExtResource("8_d4qo1")
+shader_parameter/wood_tex_scale = Vector2(2.595, 0.18)
+shader_parameter/gradient_tex = SubResource("GradientTexture2D_e4fdl")
+shader_parameter/gradient_factor = 0.83
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_mnthn")
+shader_parameter/noise_scale = Vector2(300, 50)
+
+[sub_resource type="Animation" id="Animation_a2gs4"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main/LeftDowelContainer:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Main/RightDowelContainer:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Main/LeftDowelContainer/LeftDowelWood:material:shader_parameter/scroll_offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Main/RightDowelContainer/RightDowelWood:material:shader_parameter/scroll_offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Main/ContentContainer/Mask/Image:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Main/ContentContainer/ScrollBG:material:shader_parameter/left")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-4.7497455e-09, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Main/ContentContainer/ScrollBG:material:shader_parameter/right")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Main:position:x")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Main:position:y")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Main:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_0xloh"]
+resource_name = "roll"
+length = 2.0
+step = 0.0333333
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main/LeftDowelContainer:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2, 0),
+"points": PackedFloat32Array(-59.04259, 0, 0, 0.03333334, 0, -59.04259, -0.25, 0, 0.25, 0, 938.0455, -0.13333333, -166.18134, 0, 0),
+"times": PackedFloat32Array(0, 0.20000002, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Main/RightDowelContainer:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 2, 0),
+"points": PackedFloat32Array(1909.9996, 0, 0, 0.03333334, 0, 1909.9996, -0.25, 0, 0.25, 0, 990.72064, -0.13333333, 153.21317, 0, 0),
+"times": PackedFloat32Array(0, 0.20000002, 2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Main/LeftDowelContainer/LeftDowelWood:material:shader_parameter/scroll_offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(4.5, -0.25, 0, 0.23333333, -0.22515869, 3.5, -0.23333335, 0.13589382, 0.25, 0),
+"times": PackedFloat32Array(0.2, 2)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Main/RightDowelContainer/RightDowelWood:material:shader_parameter/scroll_offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(3.5, -0.25, 0, 0.23333333, 0.19931889, 4.5, -0.26666665, -0.14763927, 0.25, 0),
+"times": PackedFloat32Array(0.2, 2)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Main/ContentContainer/Mask/Image:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.19999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1.4530243, 1.4530243, 1.4530243, 1)]
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Main/ContentContainer/ScrollBG:material:shader_parameter/left")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-4.7497455e-09, -0.25, 0, 0.25, 0, 0.5, -0.13333334, -0.083333336, 0, 0),
+"times": PackedFloat32Array(0.2, 2)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Main/ContentContainer/ScrollBG:material:shader_parameter/right")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.53, -0.13333333, 0.07833334, 0, 0),
+"times": PackedFloat32Array(0.20000002, 2)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Main:position:x")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 3, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.14353171, 7.9766226, 183.92937, -0.19999999, -92.71936, 0.19999999, 92.71936, 1068.5603, -0.20000005, -390.47137, 0, 0),
+"times": PackedFloat32Array(0.33333334, 0.93333334, 2)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Main:position:y")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 3, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.17686507, -1.3310701, 132.26723, -0.19999999, -65.13922, 0.19999999, 65.13922, 998.1059, -0.13333333, -290.81665, 0, 0),
+"times": PackedFloat32Array(0.33333334, 0.96666664, 2)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Main:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.76666665, -0.00096996, -0.8801472, -0.20000005, 0.19488871, 0, 0),
+"times": PackedFloat32Array(0.33333334, 2)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wvji6"]
+_data = {
+&"RESET": SubResource("Animation_a2gs4"),
+&"roll": SubResource("Animation_0xloh")
+}
+
+[node name="MapScrollTransition" type="Node2D" unique_id=1649423610]
+script = ExtResource("3_i3h4u")
+roll_sound = ExtResource("2_kwbr2")
+roll_end_sound = ExtResource("3_gsdn1")
+
+[node name="Main" type="Control" parent="." unique_id=1215533979]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0005
+offset_bottom = 1079.9993
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+
+[node name="NextButton" type="Button" parent="Main" unique_id=89587991]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+flat = true
+
+[node name="ContentContainer" type="Control" parent="Main" unique_id=1569730865]
+clip_contents = true
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+
+[node name="ScrollBG" type="TextureRect" parent="Main/ContentContainer" unique_id=1607310201]
+material = SubResource("ShaderMaterial_kwbr2")
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_q511d")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Mask" type="TextureRect" parent="Main/ContentContainer" unique_id=373290720]
+unique_name_in_owner = true
+clip_children = 1
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_p8j3u")
+expand_mode = 1
+
+[node name="Image" type="TextureRect" parent="Main/ContentContainer/Mask" unique_id=2018627393]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_kwbr2")
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Line2D" type="Line2D" parent="Main/ContentContainer" unique_id=652253348]
+modulate = Color(1, 1, 1, 0.5294118)
+material = SubResource("ShaderMaterial_kwbr2")
+points = PackedVector2Array(1920, -1, 0, 0)
+width = 6.0
+default_color = Color(0, 0, 0, 1)
+antialiased = true
+
+[node name="Line2D2" type="Line2D" parent="Main/ContentContainer" unique_id=336116236]
+modulate = Color(1, 1, 1, 0.5294118)
+material = SubResource("ShaderMaterial_kwbr2")
+position = Vector2(131, 1046)
+points = PackedVector2Array(1791, 34, -131, 34)
+width = 6.0
+default_color = Color(0, 0, 0, 1)
+antialiased = true
+
+[node name="LeftDowelContainer" type="NinePatchRect" parent="Main" unique_id=1814495154]
+texture_filter = 2
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 0
+offset_top = 1134.8065
+offset_right = 1189.2998
+offset_bottom = 1206.8065
+rotation = -1.57116
+texture = ExtResource("6_gsdn1")
+patch_margin_left = 72
+patch_margin_right = 72
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="LeftDowelWood" type="TextureRect" parent="Main/LeftDowelContainer" unique_id=878492453]
+unique_name_in_owner = true
+show_behind_parent = true
+material = SubResource("ShaderMaterial_2m7vn")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 11.0
+offset_right = -50.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_kf8n3")
+expand_mode = 1
+
+[node name="LeftShadow" type="TextureRect" parent="Main/LeftDowelContainer" unique_id=1281413359]
+material = SubResource("ShaderMaterial_b5a66")
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 57.51306
+offset_top = 59.0
+offset_right = -57.0
+offset_bottom = 123.0
+grow_horizontal = 2
+size_flags_vertical = 0
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_16k78")
+
+[node name="RightDowelContainer" type="NinePatchRect" parent="Main" unique_id=1457354919]
+z_index = 1
+texture_filter = 2
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 0
+offset_top = 1136.8352
+offset_right = 1195.5575
+offset_bottom = 1208.8352
+rotation = -1.5708
+texture = ExtResource("6_gsdn1")
+patch_margin_left = 72
+patch_margin_right = 72
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+metadata/_edit_group_ = true
+
+[node name="RightDowelWood" type="TextureRect" parent="Main/RightDowelContainer" unique_id=2014151618]
+unique_name_in_owner = true
+show_behind_parent = true
+material = SubResource("ShaderMaterial_0luv0")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 11.0
+offset_right = -50.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_kf8n3")
+expand_mode = 1
+
+[node name="RightShadow" type="TextureRect" parent="Main/RightDowelContainer" unique_id=1411365644]
+material = SubResource("ShaderMaterial_b5a66")
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1135.4315
+offset_top = 11.285156
+offset_right = 1015.8397
+offset_bottom = 75.28516
+grow_horizontal = 2
+scale = Vector2(-1, -1)
+size_flags_vertical = 0
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_16k78")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=842587490]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_wvji6")
+
+[node name="MouseBlocker" type="ColorRect" parent="." unique_id=1599187963]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 40.0
+offset_bottom = 40.0

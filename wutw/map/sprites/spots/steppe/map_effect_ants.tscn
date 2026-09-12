@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://kuohh10fojmo"]
+
+[ext_resource type="Script" uid="uid://dh127xapdb8gc" path="res://map/map_effect_particles.gd" id="1_mpji5"]
+[ext_resource type="Texture2D" uid="uid://dcs6o20gkvl0s" path="res://map/sprites/spots/steppe/ant.png" id="2_mpji5"]
+
+[sub_resource type="Curve" id="Curve_88uco"]
+_data = [Vector2(0, 0), 0.0, 2.6790414, 0, 0, Vector2(0.05916542, 0.61491275), 0.40445524, 0.40445524, 0, 0, Vector2(0.8748325, 0.5984342), -0.27649114, -0.27649114, 0, 0, Vector2(1, 0), -3.9659877, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_5fdos"]
+curve = SubResource("Curve_88uco")
+
+[sub_resource type="Curve" id="Curve_drwvn"]
+_data = [Vector2(0.3625778, 0.008204699), 0.0, 0.0, 0, 0, Vector2(0.36651823, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_6kwvg"]
+width = 64
+curve = SubResource("Curve_drwvn")
+
+[sub_resource type="Curve" id="Curve_ssax5"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.11728662, 1), 0.0, 0.0, 0, 0, Vector2(0.50246274, -1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_7533i"]
+curve = SubResource("Curve_ssax5")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lfm3u"]
+lifetime_randomness = 0.3
+particle_flag_align_y = true
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, 0.1, 0)
+emission_shape = 1
+emission_sphere_radius = 35.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = 59.999996
+radial_accel_max = 59.999996
+radial_accel_curve = SubResource("CurveTexture_7533i")
+damping_curve = SubResource("CurveTexture_6kwvg")
+scale_min = 0.01
+scale_max = 0.01
+color = Color(0.4155171, 0.26150423, 0.07423412, 1)
+alpha_curve = SubResource("CurveTexture_5fdos")
+turbulence_enabled = true
+turbulence_noise_speed = Vector3(1, 0, 0)
+
+[node name="Ants" type="Node2D" unique_id=19583879]
+script = ExtResource("1_mpji5")
+
+[node name="ParticleSystem" type="GPUParticles2D" parent="." unique_id=1295716697]
+unique_name_in_owner = true
+amount = 15
+texture = ExtResource("2_mpji5")
+lifetime = 7.0
+randomness = 1.0
+local_coords = true
+trail_lifetime = 0.17
+process_material = SubResource("ParticleProcessMaterial_lfm3u")

@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="SpotUpgrade" format=3 uid="uid://be68q217d3hp8"]
+
+[ext_resource type="Script" uid="uid://b0htm2ynuxyr0" path="res://stage/spots/spot_upgrade.gd" id="1_pt7y4"]
+[ext_resource type="Resource" uid="uid://buffbajf212d2" path="res://stage/spots/brushland/upgrade_brushland_2_silk_weaver_hut.tres" id="2_lhqch"]
+[ext_resource type="Script" uid="uid://dub0143h25jbv" path="res://bonuses/bonus_type.gd" id="2_mjd4o"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_okv5w"]
+[ext_resource type="Resource" uid="uid://ci8ujr01rbsk1" path="res://stage/spots/brushland/upgrade_brushland_2_paper_mulberry_grove.tres" id="3_sdi6r"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="5_ho4s4"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="7_whwv2"]
+[ext_resource type="Resource" uid="uid://b2nwnsbdieg27" path="res://stage/spots/brushland/spot_brushland.tres" id="8_ho4s4"]
+[ext_resource type="Script" uid="uid://debk7gw02ca51" path="res://stage/spots/spot_upgrade_visual.gd" id="9_whwv2"]
+[ext_resource type="Script" uid="uid://dvrtuqbmx4v30" path="res://stage/spots/spot_upgrade_visual_add.gd" id="10_5886i"]
+[ext_resource type="MapSpriteType_Composite" uid="uid://cle56q4pwkyf1" path="res://map/sprites/spots/brushland/mst_brushland_mulberry_patch.tres" id="11_v7i7g"]
+
+[sub_resource type="Resource" id="Resource_qqag4"]
+script = ExtResource("10_5886i")
+sprite_type = ExtResource("11_v7i7g")
+biome = 8
+metadata/_custom_type_script = "uid://dvrtuqbmx4v30"
+
+[resource]
+script = ExtResource("1_pt7y4")
+spot_upgrade_id = "brushland_mulberry"
+name = "Mulberry Patch"
+description = "Sweet berries for the settlers, and tasty leaves for the silkworms."
+required_aspects = Array[ExtResource("3_okv5w")]([ExtResource("7_whwv2")])
+granted_bonuses = Dictionary[ExtResource("2_mjd4o"), int]({
+ExtResource("5_ho4s4"): 10
+})
+child_upgrades = Array[ExtResource("1_pt7y4")]([ExtResource("2_lhqch"), ExtResource("3_sdi6r")])
+spot = ExtResource("8_ho4s4")
+visuals = Array[ExtResource("9_whwv2")]([SubResource("Resource_qqag4")])
+tags = Array[int]([1])

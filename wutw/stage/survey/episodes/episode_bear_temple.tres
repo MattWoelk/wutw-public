@@ -1,0 +1,111 @@
+[gd_resource type="Resource" script_class="SurveyEpisode" format=3 uid="uid://2st16tduk3xi"]
+
+[ext_resource type="Resource" uid="uid://b4nq6mw04kdl6" path="res://art/pieces/piece_hiroshige_tamachi_moon.tres" id="1_362po"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="1_tt0fj"]
+[ext_resource type="Script" uid="uid://dlmpygdk2j680" path="res://stage/survey/survey_choice.gd" id="2_362po"]
+[ext_resource type="Script" uid="uid://du42tf0sp171d" path="res://aspects/types/aspect_type.gd" id="3_kjoqt"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="4_4bday"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="5_wik20"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="6_64xom"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="7_1b38o"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="8_nnom0"]
+[ext_resource type="Resource" uid="uid://buh01uc7q7qwe" path="res://relics/common/odd_statue/relic_odd_statue.tres" id="9_3pwku"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="10_r4oyg"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="11_wlqv1"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="12_qdvhg"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="13_ldh7b"]
+[ext_resource type="Script" uid="uid://xa1k8k6o7j78" path="res://stage/survey/survey_episode.gd" id="14_rh1s0"]
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="15_fd2fi"]
+[ext_resource type="Resource" uid="uid://cfuqwl06ioxwd" path="res://stage/spots/hill/spot_hill.tres" id="16_ng6ip"]
+
+[sub_resource type="Resource" id="Resource_30h7h"]
+script = ExtResource("1_tt0fj")
+_texture_path = "res://stage/survey/episodes/episode_bear_temple.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("5_wik20")
+bonus_type = ExtResource("4_4bday")
+amount = -10
+extra_per_season = -20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_ncsyd"]
+script = ExtResource("7_1b38o")
+bonus_type = ExtResource("6_64xom")
+min_count = 15
+max_count = -1
+extra_per_season = 35
+
+[sub_resource type="Resource" id="Resource_uffrp"]
+script = ExtResource("2_362po")
+label = "Camp despite misgivings."
+requirement = SubResource("Resource_ncsyd")
+aspects = Array[ExtResource("3_kjoqt")]([null])
+outcome = SubResource("Resource_trtbi")
+outcome_text = "The scouts disregard the naysayers and camp inside the temple anyway.
+
+During the night, they wake up to scratching noises, and as they raise their torches, they find a group of brown bear cubs ransacking their packs, spilling supplies everywhere.
+
+After the commotion dies down and the scouts are safe outside, they realize that they had to leave most of their supplies behind."
+
+[sub_resource type="Resource" id="Resource_0eiya"]
+script = ExtResource("10_r4oyg")
+relic = ExtResource("9_3pwku")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_vew3g"]
+script = ExtResource("2_362po")
+label = "Look for anything unusual."
+aspects = Array[ExtResource("3_kjoqt")]([ExtResource("8_nnom0"), null])
+aspects_per_season = Array[ExtResource("3_kjoqt")]([null])
+outcome = SubResource("Resource_0eiya")
+outcome_text = "A few brave members of the team climb the stairs to the temple's upper level, hoping to investigate the strange noises before setting up camp. Afraid to ignite the dry wood, they conduct the search in the dark.
+
+Although they fail to find the source of the alleged noises, they return with a little statuette, surprisingly unlike the image of the Enlightened One they are used to."
+
+[sub_resource type="Resource" id="Resource_d174p"]
+script = ExtResource("13_ldh7b")
+delta = 3
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_t8iha"]
+script = ExtResource("2_362po")
+label = "Perform a cleansing ritual."
+aspects = Array[ExtResource("3_kjoqt")]([ExtResource("11_wlqv1"), ExtResource("12_qdvhg")])
+outcome = SubResource("Resource_d174p")
+outcome_text = "One of the scouts, the most familiar with sacred rites, performs a simple cleansing ritual to pacify any restless spirits, chanting and spraying water on the ground.
+
+The night passes without incident, and in the morning, as they are leaving, they spot an auspicious omen: a bear cub walking towards the temple grounds."
+
+[sub_resource type="Resource" id="Resource_a6ufw"]
+script = ExtResource("13_ldh7b")
+delta = -2
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_5fpco"]
+script = ExtResource("2_362po")
+label = "Post guards and camp outside."
+aspects = Array[ExtResource("3_kjoqt")]([null])
+aspects_per_season = Array[ExtResource("3_kjoqt")]([null])
+outcome = SubResource("Resource_a6ufw")
+outcome_text = "The team decides to be extra careful and camp outside the temple.
+
+Two of the scouts stand guard all night, and spot no danger.
+
+In the morning, they can't stop complaining about forgoing sleep for no good reason."
+
+[resource]
+script = ExtResource("14_rh1s0")
+episode_id = "bear_temple"
+title = "The Abandoned Temple"
+biome_types = Array[int]([9])
+spot_types = Array[ExtResource("15_fd2fi")]([ExtResource("16_ng6ip")])
+text = "After a tiring all-day hike, the survey team stumbles upon an old, pre-Shattering temple, abandoned but in surprisingly good repair.
+
+The scouts are happy to find shelter for the night, especially knowing that boars and bears frequent the area.
+
+Some among the group feel hesitant, though, claiming that they hear strange creaking noises and feel an eerie presence in the air inside."
+background_image = SubResource("Resource_30h7h")
+background_credit = ExtResource("1_362po")
+choices = Array[ExtResource("2_362po")]([SubResource("Resource_uffrp"), SubResource("Resource_vew3g"), SubResource("Resource_t8iha"), SubResource("Resource_5fpco")])

@@ -1,0 +1,65 @@
+[gd_resource type="Resource" script_class="ShardType_Archaeology" format=3 uid="uid://cep85bnvgigm2"]
+
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="1_v8ok0"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="2_a1voi"]
+[ext_resource type="Script" uid="uid://dhdjm8gh2xgnw" path="res://shard_types/archaeology/shard_type_archaeology.gd" id="2_v8t2j"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="3_alvlp"]
+[ext_resource type="Texture2D" uid="uid://na4a3aoqumxp" path="res://shard_types/archaeology/shard_type_archaeology.png" id="3_jg246"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="4_5rxn2"]
+[ext_resource type="Resource" uid="uid://bt2prb478coco" path="res://art/pieces/piece_gekkou_chimneys.tres" id="4_nmdad"]
+[ext_resource type="Resource" uid="uid://bq55bwby645m6" path="res://shops/get_relics/shop_get_relics.tres" id="5_nmdad"]
+[ext_resource type="Resource" uid="uid://ddg4pxc0c5w33" path="res://skills/relics/skill_relics_reroll.tres" id="7_25ttr"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="8_2gr1h"]
+[ext_resource type="Resource" uid="uid://dga0vfj4kvqf7" path="res://debate/arguments/argument_war_machine.tres" id="8_25ttr"]
+[ext_resource type="Resource" uid="uid://ouecqwnbe55w" path="res://stage/spots/wasteland/spot_wasteland.tres" id="10_hjpt7"]
+
+[sub_resource type="Resource" id="Resource_f3v0t"]
+script = ExtResource("1_v8ok0")
+text = "The settlers of $shard_name built many of their towns in the shard's wasteland. Although establishing a secure food supply posed great challenges, this unusual choice of habitat led them to the discovery of thick sheets of a strange, unyielding metal scattered under a thin layer of topsoil. Local smiths were frustrated at first, as the metal wouldn't even soften in their hottest forges, but soon adapted, learning to cut, carve, and polish the metal sheets. These wasteland towns became the industrial heart of the shard, outfitting farmers and builders with tools that never rusted or broke."
+min_main_quest = 200
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_hxsx4"]
+script = ExtResource("1_v8ok0")
+text = "Besides being an industrial hub, the wasteland attracted many scholars eager to study the artifacts in the underground ruins. Among the most unusual finds were stacks of thick paper, thousands of sheets bearing the exact same writing. What baffled the scholars even more was the text, as the script appeared to bear no relation even to the language used before the Shattering. They concluded that these papers were intended to reach a vast number of people, though the meaning they were meant to convey remains a mystery."
+min_main_quest = 300
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_fdq8k"]
+script = ExtResource("1_v8ok0")
+text = "As the excavations of the wasteland on $shard_name continued, they found more and more Iron Wrecks, large hollow structures made of the same indestructible metal so common on this shard. As scholars have studied these in more detail, they have found openings leading into bellies filled with rows of heavy metal eggs. While the purpose of these artifacts remains debated, they are known to be hollow, as the empty shells of such eggs are sometimes found embedded into the glass of the wasteland's glass dunes."
+min_main_quest = 330
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_d6kjs"]
+script = ExtResource("1_v8ok0")
+text = "Today, the archaeological explorations on $shard_name have mostly stopped. The tunnels under the wasteland have been mapped almost completely, and local archives have exhaustive catalogues of all the artifacts found within. While much of the past remains shrouded, the scholars have been able to disprove the earlier assumption that it was a surface settlement swallowed by millennia of dust. They discovered metal stairways leading up from several corridors, with thick metal trapdoors at the top, which proved that the entire structure must have been built underground from the start."
+min_main_quest = 410
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_xuscw"]
+script = ExtResource("8_2gr1h")
+text = "At first I found this shard desolate, with the wasteland surrounding most of the cities, but it quickly grew on me after I got to visit the underground ruins they have mapped out. That place is huge! I spent hours walking through the tunnels and never reached the end. It's a whole city down there, full of ancient pipes and pieces of strange machines.
+
+I was hoping to bring back a few of the artifacts for our museum, but the only one they let me take was a thick sheet of paper with text in an unknown ancient language. They have a room stacked full of papers identical to it, so they give them out freely to visiting scholars."
+revealed_skill = ExtResource("7_25ttr")
+gained_argument = ExtResource("8_25ttr")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[resource]
+script = ExtResource("2_v8t2j")
+wasteland = ExtResource("10_hjpt7")
+knowledge_bonus = ExtResource("4_5rxn2")
+ruins_shop = ExtResource("5_nmdad")
+shard_type_id = "archaeology"
+name = "The Wasteland Excavators"
+shard_name_override = "Tsukajima"
+shard_name_override_jp = "塚島"
+shard_name_override_meaning = "Barrow Island"
+tier = 1
+illustration = ExtResource("3_jg246")
+illustration_credit = ExtResource("4_nmdad")
+history = Array[ExtResource("1_v8ok0")]([SubResource("Resource_f3v0t"), SubResource("Resource_hxsx4"), SubResource("Resource_fdq8k"), SubResource("Resource_d6kjs")])
+trip_reward = SubResource("Resource_xuscw")
+min_main_quest_progress = 200
+metadata/_custom_type_script = "uid://dhdjm8gh2xgnw"

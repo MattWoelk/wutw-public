@@ -1,0 +1,65 @@
+[gd_resource type="Resource" script_class="ShardType_SeasonalMigration" format=3 uid="uid://bq0sen25ps8qo"]
+
+[ext_resource type="Script" uid="uid://dwtqh0ebqpsk3" path="res://stage/spots/spot_type.gd" id="1_4qemj"]
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="1_yrwbf"]
+[ext_resource type="Resource" uid="uid://coqtbomfb4xc" path="res://stage/spots/desert/spot_desert.tres" id="2_60ih4"]
+[ext_resource type="Script" uid="uid://dv43hi2piokos" path="res://shard_types/seasonal_migration/shard_type_seasonal_migration.gd" id="3_5hf7g"]
+[ext_resource type="Resource" uid="uid://ouecqwnbe55w" path="res://stage/spots/wasteland/spot_wasteland.tres" id="3_r2128"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="5_6iobk"]
+[ext_resource type="Texture2D" uid="uid://2xuw7rvhny1n" path="res://shard_types/seasonal_migration/shard_type_seasonal_migration.png" id="5_r2128"]
+[ext_resource type="Resource" uid="uid://djj80232xdmvw" path="res://art/pieces/piece_gekkou_fuji_24.tres" id="6_duqr6"]
+[ext_resource type="Resource" uid="uid://f8guout8235a" path="res://stage/spots/plains/spot_plains.tres" id="6_e81k4"]
+[ext_resource type="Resource" uid="uid://ucnbpdhw8mob" path="res://stage/spots/forest/spot_forest.tres" id="7_duqr6"]
+[ext_resource type="Resource" uid="uid://i5v05keakiv" path="res://skills/capital/skill_capital_trade_discount.tres" id="9_1moly"]
+[ext_resource type="Resource" uid="uid://57oun3rapyb" path="res://debate/arguments/argument_transience.tres" id="9_4pkk5"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="10_4pkk5"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="12_4pkk5"]
+
+[sub_resource type="Resource" id="Resource_42s6q"]
+script = ExtResource("1_yrwbf")
+text = "The settlement of $shard_name began as a gamble against the harsh winds and ever-present dust. The first settlers discovered that the ancient ruins here held immense treasures of the past, but for half the year, scouring winds blew hard enough to strip the paint off a wagon in minutes. Rather than fleeing, they reinforced their homes in $dry_town with thick, windowless walls towards the wind, agreeing on a shared custody with the storms."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_7c60o"]
+script = ExtResource("1_yrwbf")
+text = "Not long after the founding expedition ended, the inhabitants of $shard_name established a new custom. During the windy season, they would journey to the green, safe towns like $wet_town, then return after the worst of the dust storms had passed. To survive this journey, these people have turned road building into an art. These are no mere dirt tracks, but paved, lantern-lit highways engineered to withstand centuries of abuse. During migration seasons, the road becomes a moving city in itself, teeming with carts, caravans, and camps."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_nw6pk"]
+script = ExtResource("1_yrwbf")
+text = "This dual life created a peculiar domestic culture on $shard_name. Because they could not carry everything with them, settlers learned to leave their homes fully stocked for their return. A unique trust developed: you might leave your door unlocked, knowing the only thing that might enter is the wind. Over time, dwellings turned into communal property. Returning families would settle in the first house they encountered, leaving their old home for others to occupy. In fact, the concept of \"home\" itself shifted from a building to one's baggage and one's travel companions. Visitors are often unsettled by the sight of $dry_town in the off-season: a pristine, silent metropolis where the only movement is the dust blowing through the streets."
+time_taken = 2
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_v7pj1"]
+script = ExtResource("1_yrwbf")
+text = "Today, the people of $shard_name are possessed by a rhythmic restlessness. They are the best logistical planners in the Cloud Sea, able to pack an entire community into crates in under two days. Their architecture is aerodynamic, their furniture is collapsible, and their road network is legendary."
+time_taken = 2
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_cnida"]
+script = ExtResource("10_4pkk5")
+text = "I was lucky to arrive on this shard during what they call migration season. I quickly joined the endless flow of caravans and was welcomed without a question. As we traveled towards the \"dry\" cities, my companions explained how the entire population of the shard migrates between cities every season.
+
+At one point we passed a restaurant, but one unlike any I'd seen before. The whole building was set on hundreds of wheels, moving along with the flow of traffic. The food was pretty good too.
+
+When we finally arrived, it was as if the city was waking up from hibernation. One day a street was completely deserted, and the next day it was bustling with workshops and offices. I suppose when you've spent your whole life traveling, you can unpack a workshop in your sleep."
+revealed_skill = ExtResource("9_1moly")
+gained_argument = ExtResource("9_4pkk5")
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[resource]
+script = ExtResource("3_5hf7g")
+dry_sites = Array[ExtResource("1_4qemj")]([ExtResource("2_60ih4"), ExtResource("3_r2128")])
+wet_sites = Array[ExtResource("1_4qemj")]([ExtResource("7_duqr6"), ExtResource("6_e81k4")])
+shard_type_id = "seasonal_migration"
+name = "The Migratory Circuit"
+shard_name_override = "Sunabokori Iwa"
+shard_name_override_jp = "砂埃岩"
+shard_name_override_meaning = "Dusty Rock"
+tier = 2
+illustration = ExtResource("5_r2128")
+illustration_credit = ExtResource("6_duqr6")
+history = Array[ExtResource("1_yrwbf")]([SubResource("Resource_42s6q"), SubResource("Resource_7c60o"), SubResource("Resource_nw6pk"), SubResource("Resource_v7pj1")])
+trip_reward = SubResource("Resource_cnida")
+metadata/_custom_type_script = "uid://c6vrs2bxrk07c"

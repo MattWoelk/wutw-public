@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="Quest_Settler" format=3 uid="uid://d3wug6ltrmx6p"]
+
+[ext_resource type="Script" uid="uid://cjloydxgrv8oa" path="res://quests/settler/settler_quest_challenge.gd" id="1_6b6bd"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="2_6b6bd"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="3_stmha"]
+[ext_resource type="Script" uid="uid://o6r5kcqelqsf" path="res://quests/settler/challenges/settler_quest_challenge_harm_on_aspect_cards.gd" id="4_0fmcw"]
+[ext_resource type="Script" uid="uid://dubk46gum5oed" path="res://characters/jobs/job.gd" id="4_1jvkx"]
+[ext_resource type="Resource" uid="uid://d01sh3wyj45gx" path="res://characters/jobs/job_child.tres" id="6_1jvkx"]
+[ext_resource type="Script" uid="uid://cd4swbq3t72je" path="res://quests/settler/settler_quest_reward.gd" id="6_uc7br"]
+[ext_resource type="Resource" uid="uid://gb2hon6q3l08" path="res://characters/jobs/job_adventurer.tres" id="7_0gsyv"]
+[ext_resource type="Script" uid="uid://cvrgydjebg044" path="res://quests/settler/rewards/settler_quest_reward_run_var.gd" id="7_a56rl"]
+[ext_resource type="Script" uid="uid://1na7ymvvvbby" path="res://quests/settler/quest_settler.gd" id="8_djeqq"]
+[ext_resource type="Script" uid="uid://bxua8gxfjp2wy" path="res://quests/settler/settler_quest_goal.gd" id="9_svnl8"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="12_uc7br"]
+[ext_resource type="Script" uid="uid://byyys5rj62gks" path="res://quests/settler/goals/settler_quest_goal_num_cards.gd" id="13_a56rl"]
+[ext_resource type="Script" uid="uid://3xshfa7eyl6i" path="res://quests/settler/goals/settler_quest_goal_num_settlements.gd" id="14_djeqq"]
+
+[sub_resource type="Resource" id="Resource_rvvo5"]
+script = ExtResource("4_0fmcw")
+aspect_type = ExtResource("2_6b6bd")
+bonus_loss_type = ExtResource("3_stmha")
+bonus_loss = 5
+metadata/_custom_type_script = "uid://o6r5kcqelqsf"
+
+[sub_resource type="Resource" id="Resource_f21y0"]
+script = ExtResource("7_a56rl")
+run_var = 39
+delta = 3
+preview_description = "Whenever you lose <term:inspiration>, lose 3 less."
+outcome_description = "From now on, whenever you lose <term:inspiration>, lose 3 less."
+metadata/_custom_type_script = "uid://cvrgydjebg044"
+
+[sub_resource type="Resource" id="Resource_mpgdh"]
+script = ExtResource("13_a56rl")
+aspect_required = ExtResource("12_uc7br")
+num_required = 10
+metadata/_custom_type_script = "uid://byyys5rj62gks"
+
+[sub_resource type="Resource" id="Resource_7tf7d"]
+script = ExtResource("14_djeqq")
+num_settlements = 5
+metadata/_custom_type_script = "uid://3xshfa7eyl6i"
+
+[resource]
+script = ExtResource("8_djeqq")
+intro_text = "Folks nowadays don't respect their elders. All they care about is so-called progress. Well, progress is what shattered our world in the first place! I am moving to a shard which knows to honor its traditions."
+challenges = Array[ExtResource("1_6b6bd")]([SubResource("Resource_rvvo5")])
+settler_goals = Array[ExtResource("9_svnl8")]([SubResource("Resource_mpgdh"), SubResource("Resource_7tf7d")])
+rewards = Array[ExtResource("6_uc7br")]([SubResource("Resource_f21y0")])
+exclude_jobs = Array[ExtResource("4_1jvkx")]([ExtResource("6_1jvkx"), ExtResource("7_0gsyv")])
+quest_id = "settler_traditionalist"
+category = 2
+name = "A Traditionalist"
+metadata/_custom_type_script = "uid://1na7ymvvvbby"

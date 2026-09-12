@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="ShardType_MainQuest_WildMonastery" format=3 uid="uid://dt6lg34q03ewa"]
+
+[ext_resource type="Script" uid="uid://bl1twid5gmdyr" path="res://shard_types/shard_type_history.gd" id="1_beuym"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="1_jc4bt"]
+[ext_resource type="Script" uid="uid://cy8bar8yxvc7q" path="res://shard_types/shard_type_history_override.gd" id="3_8e1xp"]
+[ext_resource type="Texture2D" uid="uid://d2m712w6ktvmg" path="res://shard_types/mq_wild_monastery/shard_type_mq_wild_monastery.png" id="4_t5dbf"]
+[ext_resource type="Resource" uid="uid://y3tvpip3akx4" path="res://art/pieces/piece_gekkou_yamabushi.tres" id="5_jc4bt"]
+[ext_resource type="Resource" uid="uid://bhli4xwx0vayp" path="res://stage/spots/brushland/upgrade_brushland_3_monastery_of_the_wilds.tres" id="6_mwa7k"]
+[ext_resource type="Script" uid="uid://1ehdubgyonou" path="res://shard_types/mq_wild_monastery/shard_type_mq_wild_monastery.gd" id="7_jc4bt"]
+[ext_resource type="Script" uid="uid://ciddaw1laebi3" path="res://shard_types/trip_reward.gd" id="8_t5dbf"]
+[ext_resource type="Script" uid="uid://bt2jv4savcrpl" path="res://shard_types/trip_reward_override.gd" id="9_7dp2w"]
+
+[sub_resource type="Resource" id="Resource_yxugy"]
+script = ExtResource("1_beuym")
+text = "When $shard_name was first settled, the aim was to learn to live in harmony with nature. No grand fortresses were erected, and no shard-wide industries were established. In fact, the only building of note on this shard is the Monastery of the Wilds, where monks invite wild beasts to roam the grounds, seeking to commune with the spirit of the Enlightened One dwelling within them."
+time_taken = 0
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_jc4bt"]
+script = ExtResource("1_beuym")
+text = "The monks of $shard_name use animals to guide much of what they do. When new paths need to be established, they look for animal trails to widen. When wells are to be dug, they follow wild dogs until they start digging holes around dry riverbeds. Even their eating habits are inspired by the local fauna, so when the bears settle down to hibernate for the winter, the monks start their seasonal fast, consuming nothing but water and dried seeds."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_8e1xp"]
+script = ExtResource("1_beuym")
+text = "The sacred rites of the order are aimed at growing close to the animals around them, so they have long abandoned the old holy chants, and instead pray by mimicking animal sounds, and trying to harmonize with birdsongs. The custom of holy relics has similarly been adapted, with the most treasured artifacts consisting of the shed antlers of a particularly famous deer and the feathers of an owl that had spent its whole life on monastery grounds and had been named an honorary monk."
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_t5dbf"]
+script = ExtResource("1_beuym")
+text = "Today, the monks have adopted the scientific method of the age. They have thoroughly studied bird migration patterns, and even confirmed that some birds regularly use gates to travel between shards. They have also enhanced the balance of the local ecosystem, importing pollinators best suited to the local flora, and adopting animals whose habitats are no longer sustainable on their home shards."
+min_main_quest = 500
+metadata/_custom_type_script = "uid://bl1twid5gmdyr"
+
+[sub_resource type="Resource" id="Resource_mwa7k"]
+script = ExtResource("8_t5dbf")
+text = "The few towns on this shard seemed to have more animals than people. The first town I visited had strange birds the size of a child walking around the street. When I got close to one it seemed completely unafraid. I checked into an inn that night, and my room had a separate cubby in case I brought along an animal companion.
+
+When I finally reached the Monastery of the Wilds, the monks introduced me to several of the animals that live on the temple grounds. Each of them has their own monastic title, and some even lead meditation classes. The best part, though, was when the monks took me out into the wilderness and showed me the giant beasts they brought from another shard. These are colossal, as big as a house, with tusks and strange, long noses that they use almost like hands. I've never seen anything like them!"
+metadata/_custom_type_script = "uid://ciddaw1laebi3"
+
+[resource]
+script = ExtResource("7_jc4bt")
+monastery = ExtResource("6_mwa7k")
+harmony = ExtResource("1_jc4bt")
+min_harmony = 250
+shard_type_id = "mq_wild_monastery"
+name = "The Holy Wilds"
+shard_name_override = "Dōbutsu no Mori"
+shard_name_override_jp = "動物森"
+shard_name_override_meaning = "Animal Forest"
+tier = 3
+illustration = ExtResource("4_t5dbf")
+illustration_credit = ExtResource("5_jc4bt")
+history = Array[ExtResource("1_beuym")]([SubResource("Resource_yxugy"), SubResource("Resource_jc4bt"), SubResource("Resource_8e1xp"), SubResource("Resource_t5dbf")])
+trip_reward = SubResource("Resource_mwa7k")
+min_main_quest_progress = 310
+metadata/_custom_type_script = "uid://1ehdubgyonou"

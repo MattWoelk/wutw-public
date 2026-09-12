@@ -1,0 +1,159 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://cm72s1jsffniq"]
+
+[ext_resource type="Resource" uid="uid://bbriab4xm77gs" path="res://stage/spots/mountain/upgrade_mountain_1_smoldering_crater.tres" id="1_ik1q4"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_irkln"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_befh5"]
+[ext_resource type="Resource" uid="uid://jn1qem8kwrkq" path="res://art/pieces/piece_tankei_eruption.tres" id="4_irkln"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="4_j4hs7"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_i6nmk"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="6_r6l1m"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="7_m01mj"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="8_ka408"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="9_jyaow"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="10_frv8l"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="11_7huuu"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="12_4yg70"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="13_q08yr"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="14_sla6o"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="15_80alx"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="16_1gcbi"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="17_yxmls"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="18_br8h0"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="19_b4x8h"]
+[ext_resource type="Resource" uid="uid://c1pvywklu45ke" path="res://cards/tier6/card_pass_away.tres" id="20_wbbm4"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="21_ole5h"]
+
+[sub_resource type="Resource" id="Resource_8d21v"]
+script = ExtResource("4_j4hs7")
+_texture_path = "res://events/generic/volcano/volcano.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_awdfn"]
+script = ExtResource("6_r6l1m")
+delta = 5
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_3dfey"]
+script = ExtResource("8_ka408")
+aspect_type = ExtResource("7_m01mj")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_jlgob"]
+script = ExtResource("5_i6nmk")
+markedup_text = "Let the elders mount the rescue."
+requirement = SubResource("Resource_3dfey")
+outcome = SubResource("Resource_awdfn")
+markedup_result_text = "The elders' argument prevails. The volunteers wrap wet scarves around their mouths, gather torches from the shrine, and fell trees to create a makeshift bridge.
+
+They cross carefully, calling out to villagers on the other side, their voices lost in the roaring cataclysm.
+
+When the smoke clears, all of the stranded villagers are accounted for, but several of the elders are nowhere to be found."
+
+[sub_resource type="Resource" id="Resource_x4eta"]
+script = ExtResource("10_frv8l")
+bonus_type = ExtResource("9_jyaow")
+amount = 20
+extra_per_season = 30
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_cyaf3"]
+script = ExtResource("8_ka408")
+aspect_type = ExtResource("11_7huuu")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_ynos6"]
+script = ExtResource("5_i6nmk")
+markedup_text = "Let the young guide the stranded villagers."
+requirement = SubResource("Resource_cyaf3")
+outcome = SubResource("Resource_x4eta")
+markedup_result_text = "The youngsters convince the crowd that they have the quickest feet and the strongest lungs. The fittest of them gather their torches, ropes, and axes, felling trees to create a makeshift bridge.
+
+They disappear into the smoke, moving quickly through the ruins, calling out loudly to the people lost among the wreckage. 
+
+By daybreak, many of the rescuers return coughing and burned, but some of the families do not return at all."
+
+[sub_resource type="Resource" id="Resource_dfgex"]
+script = ExtResource("10_frv8l")
+bonus_type = ExtResource("9_jyaow")
+amount = 30
+extra_per_season = 20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_xkub2"]
+script = ExtResource("10_frv8l")
+bonus_type = ExtResource("14_sla6o")
+amount = 20
+extra_per_season = 20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_a30r8"]
+script = ExtResource("12_4yg70")
+suboutcomes = Array[ExtResource("13_q08yr")]([SubResource("Resource_dfgex"), SubResource("Resource_xkub2")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_q4iss"]
+script = ExtResource("17_yxmls")
+bonus_type = ExtResource("16_1gcbi")
+min_count = 20
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_k2ko4"]
+script = ExtResource("17_yxmls")
+bonus_type = ExtResource("18_br8h0")
+min_count = 20
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_u5inl"]
+script = ExtResource("19_b4x8h")
+all_requirements = Array[ExtResource("15_80alx")]([SubResource("Resource_q4iss"), SubResource("Resource_k2ko4")])
+
+[sub_resource type="Resource" id="Resource_guq0h"]
+script = ExtResource("5_i6nmk")
+markedup_text = "Search for alternatives."
+requirement = SubResource("Resource_u5inl")
+outcome = SubResource("Resource_a30r8")
+markedup_result_text = "The eldest woman in the settlement claims to remember an old foraging path she had used before the bridge was built.
+
+Despite the riskiness of the proposition, the villagers follow her up the slopes. The path is narrow, barely visible in the ashy darkness, but the elder seems to know every bend by memory.
+
+The group makes it through to the other side, and they manage to guide their stranded comrades back safely."
+
+[sub_resource type="Resource" id="Resource_qwwt6"]
+script = ExtResource("21_ole5h")
+card_type = ExtResource("20_wbbm4")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_0cgs3"]
+script = ExtResource("5_i6nmk")
+markedup_text = "Let the volunteers draw lots."
+outcome = SubResource("Resource_qwwt6")
+markedup_result_text = "A council member in the crowd decides that there's no time for debate and thrust a basket of bamboo slips at the volunteers, telling them to draw lots.
+
+Those who choose slips smeared with soot place wet cloths over their mouths and head into the ashy darkness. They fell tall trees to create a makeshift bridge and rush across to search for survivors.
+
+Although most of the stranded villagers are saved, the rescue group, having never worked together before, soon scatters, and several of them end up trapped in the ruins."
+
+[sub_resource type="Resource" id="Resource_pf74x"]
+script = ExtResource("3_befh5")
+markedup_text = "One night, the mountain splits open with a roar. Ash falls like grey snow and stones tumble down the slopes, glowing in the dark.
+
+The villagers flee across the last undamaged bridge leading away from the eruption, but some are still waiting to cross. A burning boulder crashes into the bridge, collapsing it and leaving families stranded on the far side.
+
+Under the burning sky, volunteers spring up from amongst the villagers: a group of strong youngsters claiming to be best able to help, and a group of seniors, saying they've already had long lives, and should be the ones to take the risk."
+background_image = SubResource("Resource_8d21v")
+background_credit = ExtResource("4_irkln")
+choices = Array[ExtResource("5_i6nmk")]([SubResource("Resource_jlgob"), SubResource("Resource_ynos6"), SubResource("Resource_guq0h")])
+exit_choice = SubResource("Resource_0cgs3")
+
+[resource]
+script = ExtResource("2_irkln")
+default_probability_weight = 5
+default_spot_upgrade = ExtResource("1_ik1q4")
+event_id = "volcano"
+event_name = "The Fire Mountain"
+steps = Array[ExtResource("3_befh5")]([SubResource("Resource_pf74x")])
+categories = Array[int]([3])

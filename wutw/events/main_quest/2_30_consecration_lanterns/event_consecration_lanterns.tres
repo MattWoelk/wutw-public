@@ -1,0 +1,200 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://cbkutvs1xhhqn"]
+
+[ext_resource type="Resource" uid="uid://c27xky7vb28c7" path="res://stage/spots/seashore/upgrade_seashore_3_ghost_lanterns.tres" id="1_kxq7t"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="2_sy5ej"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_sbw55"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_t2pnp"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_41gjg"]
+[ext_resource type="Resource" uid="uid://bnofvamorhaov" path="res://art/pieces/piece_original_ghost_lanterns.tres" id="6_tyksf"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="7_c5o5j"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_x7wfp"]
+
+[sub_resource type="Resource" id="Resource_lojyp"]
+script = ExtResource("2_sy5ej")
+min_progress = 220
+max_progress = 220
+
+[sub_resource type="Resource" id="Resource_1rh3b"]
+script = ExtResource("7_x7wfp")
+_texture_path = "res://events/main_quest/2_30_consecration_lanterns/event_consecration_lanterns_base.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_gp1dv"]
+script = ExtResource("7_c5o5j")
+scope = 1
+event_id = "firefox"
+var_id = "salt"
+var_type = 1
+value = "true"
+
+[sub_resource type="Resource" id="Resource_qynpt"]
+script = ExtResource("6_41gjg")
+markedup_text = "Pour a trail of ash between the lanterns."
+requirement = SubResource("Resource_gp1dv")
+markedup_requirement_hint = "A previous choice"
+markedup_requirement_tooltip = "A previous choice: purified the fox spirits' tree with salt"
+result_event_step_id = "salt"
+
+[sub_resource type="Resource" id="Resource_k5aps"]
+script = ExtResource("7_c5o5j")
+scope = 1
+event_id = "firefox"
+var_id = "blood"
+var_type = 1
+value = "true"
+
+[sub_resource type="Resource" id="Resource_y5nml"]
+script = ExtResource("6_41gjg")
+markedup_text = "Offer blood in return for the lanterns' power."
+requirement = SubResource("Resource_k5aps")
+markedup_requirement_hint = "A previous choice"
+markedup_requirement_tooltip = "A previous choice: banished the fox spirits' by spilling blood"
+result_event_step_id = "blood"
+
+[sub_resource type="Resource" id="Resource_58nin"]
+script = ExtResource("7_c5o5j")
+scope = 1
+event_id = "firefox"
+var_id = "destroy"
+var_type = 1
+value = "true"
+
+[sub_resource type="Resource" id="Resource_yyr3p"]
+script = ExtResource("6_41gjg")
+markedup_text = "Shatter the lanterns to release their light."
+requirement = SubResource("Resource_58nin")
+markedup_requirement_hint = "A previous choice"
+markedup_requirement_tooltip = "A previous choice: cut down the fox spirits' tree"
+result_event_step_id = "destroy"
+
+[sub_resource type="Resource" id="Resource_dasqf"]
+script = ExtResource("7_c5o5j")
+scope = 1
+event_id = "firefox"
+var_id = "science"
+var_type = 1
+value = "true"
+
+[sub_resource type="Resource" id="Resource_63ro7"]
+script = ExtResource("6_41gjg")
+markedup_text = "Replace the lanterns to direct their glow upward."
+requirement = SubResource("Resource_dasqf")
+markedup_requirement_hint = "A previous choice"
+markedup_requirement_tooltip = "A previous choice: left the fox spirits' tree alone"
+result_event_step_id = "science"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_sphbv"]
+script = ExtResource("4_t2pnp")
+markedup_text = "The expedition arrives at the dock, where rows of pale lanterns glow softly in the night. The water below is calm, moonlight dancing on its ripples.
+
+This is the place the Scribe named in his plan, a passage between worlds, a place of [i]Change[/i].
+
+Disciples prepare for the consecration, laying out their implements with practiced care. The air tastes faintly of salt and seaweed."
+background_image = SubResource("Resource_1rh3b")
+background_credit = ExtResource("6_tyksf")
+choices = Array[ExtResource("6_41gjg")]([SubResource("Resource_qynpt"), SubResource("Resource_y5nml"), SubResource("Resource_yyr3p"), SubResource("Resource_63ro7")])
+
+[sub_resource type="Resource" id="Resource_gbtx2"]
+script = ExtResource("7_x7wfp")
+_texture_path = "res://events/main_quest/2_30_consecration_lanterns/event_consecration_lanterns_salt.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_fltmf"]
+script = ExtResource("6_41gjg")
+markedup_text = "Continue"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_hyaad"]
+script = ExtResource("4_t2pnp")
+event_step_id = "salt"
+markedup_text = "A trail of ash is poured between the lanterns, and a great urn is emptied into the sea.
+
+Some of the ash sinks, but much of it rises, hanging in the air around the dock. Soon a fine mist envelops the lanterns, glowing with borrowed light.
+
+Disciples watch for glyphs in the mist's curls, now appearing, now dissipating. They spend the night meditating on Change and transformation.
+
+\"The air itself was shifting,\" one recalls. \"It let me appreciate the Enlightened One's power to change the very essence of the world.\""
+background_image = SubResource("Resource_gbtx2")
+background_credit = ExtResource("6_tyksf")
+exit_choice = SubResource("Resource_fltmf")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[sub_resource type="Resource" id="Resource_tyksf"]
+script = ExtResource("7_x7wfp")
+_texture_path = "res://events/main_quest/2_30_consecration_lanterns/event_consecration_lanterns_blood.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_m8kax"]
+script = ExtResource("6_41gjg")
+markedup_text = "Continue"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_76ena"]
+script = ExtResource("4_t2pnp")
+event_step_id = "blood"
+markedup_text = "The disciples kneel between the lanterns, marking the dock with splatters of crimson. The sea ripples as they chant, echoing the rhythm of their incantations.
+
+Before long, the incantations evolve, words in languages unknown spilling from the tongues of the bloodied men and women. Cries follow, and laughter, and new glyphs traced in the air with hand and foot.
+
+Eventually exhaustion overtakes the group and they retreat, leaving unmistakable stains behind.
+
+\"The sea spoke through us,\" they declare in the morning. \"It is prepared to glorify the Enlightened One.\""
+background_image = SubResource("Resource_tyksf")
+background_credit = ExtResource("6_tyksf")
+exit_choice = SubResource("Resource_m8kax")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[sub_resource type="Resource" id="Resource_x7wfp"]
+script = ExtResource("7_x7wfp")
+_texture_path = "res://events/main_quest/2_30_consecration_lanterns/event_consecration_lanterns_destroy.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_1c3qd"]
+script = ExtResource("6_41gjg")
+markedup_text = "Continue"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_ixcym"]
+script = ExtResource("4_t2pnp")
+event_step_id = "destroy"
+markedup_text = "Hammers fall in unison, and the first lantern shatters into the waves below. Others follow, stone crumbling like sand.
+
+The disciples stand among the ruins, proud of their accomplishment.
+
+\"The light has been set free,\" one declares in the darkness. \"It will find its way home.\""
+background_image = SubResource("Resource_x7wfp")
+background_credit = ExtResource("6_tyksf")
+exit_choice = SubResource("Resource_1c3qd")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[sub_resource type="Resource" id="Resource_wbyvl"]
+script = ExtResource("7_x7wfp")
+_texture_path = "res://events/main_quest/2_30_consecration_lanterns/event_consecration_lanterns_science.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_242uo"]
+script = ExtResource("6_41gjg")
+markedup_text = "Continue"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_u8tnk"]
+script = ExtResource("4_t2pnp")
+event_step_id = "science"
+markedup_text = "The disciples carefully replace each lantern with a new design, boxes they brought from the Haven, with a single opening at the top. The glow no longer spills outward, but rises, like a beacon, into the sky.
+
+\"Before, the energies were wasted,\" one explains. \"This will direct them heavenward, a channel for the Enlightened One's power.\""
+background_image = SubResource("Resource_wbyvl")
+background_credit = ExtResource("6_tyksf")
+exit_choice = SubResource("Resource_242uo")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[resource]
+script = ExtResource("3_sbw55")
+default_probability_weight = 1
+default_spot_upgrade = ExtResource("1_kxq7t")
+event_id = "consecration_lanterns"
+event_name = "Consecration: Ghost Lanterns"
+requirement = SubResource("Resource_lojyp")
+steps = Array[ExtResource("4_t2pnp")]([SubResource("Resource_sphbv"), SubResource("Resource_hyaad"), SubResource("Resource_76ena"), SubResource("Resource_ixcym"), SubResource("Resource_u8tnk")])
+categories = Array[int]([1])

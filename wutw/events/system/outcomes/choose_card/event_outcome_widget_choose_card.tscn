@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://cmuudyqvqvje6"]
+
+[ext_resource type="Script" uid="uid://ceul624l3517p" path="res://events/system/outcomes/choose_card/event_outcome_widget_choose_card.gd" id="1_yhmsj"]
+[ext_resource type="Shader" uid="uid://ygmrqrvg5hpm" path="res://theme/button/ukiyoe_button.gdshader" id="2_6fdk1"]
+[ext_resource type="Texture2D" uid="uid://ctgl61r3xxsqv" path="res://theme/button/button_fill.png" id="3_ccdq8"]
+[ext_resource type="Texture2D" uid="uid://blje81yu8734p" path="res://theme/button/button_shape.png" id="4_cihbi"]
+[ext_resource type="Texture2D" uid="uid://doe4603a6ngco" path="res://theme/button/button_outline.png" id="5_ox6wh"]
+[ext_resource type="Texture2D" uid="uid://cwubixgc8n0yr" path="res://theme/button/button_swish_left.png" id="6_j85ph"]
+[ext_resource type="Texture2D" uid="uid://n6l17h4ysayj" path="res://theme/button/button_swish_right.png" id="7_p2tvh"]
+[ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="8_v3rlb"]
+[ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="9_gsihb"]
+[ext_resource type="FontFile" uid="uid://4akk8wkhg56y" path="res://theme/fonts/Merienda/static/Merienda-ExtraBold.ttf" id="10_jpgih"]
+[ext_resource type="PackedScene" uid="uid://dgmyeosmc67d7" path="res://cards/card.tscn" id="11_r8x23"]
+
+[sub_resource type="Gradient" id="Gradient_j5apj"]
+colors = PackedColorArray(0.33, 0.18117, 0.0594, 0.423529, 0.33, 0.18117, 0.0594, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wqpyw"]
+gradient = SubResource("Gradient_j5apj")
+fill_from = Vector2(1, 0.911681)
+fill_to = Vector2(0.900285, 0.430199)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yhmsj"]
+shader = ExtResource("2_6fdk1")
+shader_parameter/mask_tex = ExtResource("4_cihbi")
+shader_parameter/background = ExtResource("3_ccdq8")
+shader_parameter/gradient = SubResource("GradientTexture2D_wqpyw")
+shader_parameter/background_tex_size = Vector2(635, 249)
+shader_parameter/background_scale = 1.0
+shader_parameter/pressed_modulate = Color(0.91, 0.855, 0.773, 1)
+shader_parameter/outline_tex = ExtResource("5_ox6wh")
+shader_parameter/outline_tex_size = Vector2(650, 261)
+shader_parameter/outline_margin = Vector4(6.38, 6.3, 7.48, 7.97)
+shader_parameter/outline_scale = 4.825
+shader_parameter/swish_right_tex = ExtResource("7_p2tvh")
+shader_parameter/swish_right_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/swish_left_tex = ExtResource("6_j85ph")
+shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
+shader_parameter/hover_distance = 2.0
+
+[node name="EventOutcomeWidget_ChooseCard" type="VBoxContainer" unique_id=373557963]
+offset_right = 238.0
+offset_bottom = 61.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_yhmsj")
+
+[node name="Button" type="Button" parent="." unique_id=899359058]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_yhmsj")
+instance_shader_parameters/state = 0.0
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme_override_styles/normal = ExtResource("8_v3rlb")
+theme_override_styles/pressed = ExtResource("8_v3rlb")
+theme_override_styles/hover = ExtResource("8_v3rlb")
+theme_override_styles/hover_pressed = ExtResource("8_v3rlb")
+theme_override_styles/disabled = ExtResource("8_v3rlb")
+text = "Select a Glyph"
+script = ExtResource("9_gsihb")
+metadata/_custom_type_script = "uid://tmvhmuymumhk"
+
+[node name="Label" type="Label" parent="." unique_id=943913550]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_jpgih")
+text = "Glyph Gained"
+horizontal_alignment = 1
+
+[node name="Card" parent="." unique_id=269468893 instance=ExtResource("11_r8x23")]
+unique_name_in_owner = true
+layout_mode = 2
+allow_select = false
+allow_unselect = false
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,127 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://c4cpkufn0v0hd"]
+
+[ext_resource type="Resource" uid="uid://bmxn7dbokm3sb" path="res://stage/spots/plains/upgrade_plains_1_rest_stop.tres" id="1_qvfjq"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_h0g87"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_albkb"]
+[ext_resource type="Resource" uid="uid://cg14rrnvhfevi" path="res://art/pieces/piece_hiroshige_fujimi_teahouse.tres" id="4_as6xq"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_qd7hq"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="6_bu00w"]
+[ext_resource type="Resource" uid="uid://c28fyoe551w6a" path="res://relics/common/travelers_pouch/relic_travelers_pouch.tres" id="6_jb6re"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_kq0vx"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="7_as6xq"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_qd7hq"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="8_kq0vx"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="9_7ucq0"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="10_jb6re"]
+[ext_resource type="Resource" uid="uid://q4dh2ru8iiyg" path="res://cards/tier3/card_righteousness.tres" id="10_qh8br"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="11_03n8m"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="12_1783j"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="16_jb6re"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="17_as6xq"]
+
+[sub_resource type="Resource" id="Resource_qh8br"]
+script = ExtResource("6_kq0vx")
+_texture_path = "res://events/generic/forgotten_pouch/forgotten_pouch.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_d0keq"]
+script = ExtResource("7_as6xq")
+relic = ExtResource("6_jb6re")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_as6xq"]
+script = ExtResource("12_1783j")
+bonus_type = ExtResource("10_jb6re")
+amount = -50
+extra_per_season = -50
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_kq0vx"]
+script = ExtResource("6_bu00w")
+suboutcomes = Array[ExtResource("7_qd7hq")]([SubResource("Resource_d0keq"), SubResource("Resource_as6xq")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_8mfyw"]
+script = ExtResource("9_7ucq0")
+bonus_type = ExtResource("8_kq0vx")
+min_count = -1
+max_count = 50
+extra_per_season = 50
+
+[sub_resource type="Resource" id="Resource_2stvf"]
+script = ExtResource("5_qd7hq")
+markedup_text = "Keep the pouch."
+requirement = SubResource("Resource_8mfyw")
+outcome = SubResource("Resource_kq0vx")
+markedup_result_text = "\"There's no proof it belonged to anyone,\" one settler reasons, slipping it into their pack. \"No reason for letting it go to waste.\""
+
+[sub_resource type="Resource" id="Resource_mxy6s"]
+script = ExtResource("11_03n8m")
+card_type = ExtResource("10_qh8br")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_xxhwh"]
+script = ExtResource("9_7ucq0")
+bonus_type = ExtResource("8_kq0vx")
+min_count = 30
+max_count = -1
+extra_per_season = 50
+
+[sub_resource type="Resource" id="Resource_kio1v"]
+script = ExtResource("5_qd7hq")
+markedup_text = "Search for the owner."
+requirement = SubResource("Resource_xxhwh")
+outcome = SubResource("Resource_mxy6s")
+markedup_result_text = "The settlers follow a trail of flattened grass and catch up to a traveler by the next ridge.
+
+She smiles in relief at the sight of the pouch.
+
+\"You didn't have to go through all this trouble,\" she says. \"But I'm so grateful that you did.\""
+
+[sub_resource type="Resource" id="Resource_40rqf"]
+script = ExtResource("12_1783j")
+bonus_type = ExtResource("8_kq0vx")
+amount = 20
+extra_per_season = 20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_7ucq0"]
+script = ExtResource("17_as6xq")
+aspect_type = ExtResource("16_jb6re")
+min_count = 1
+extra_per_season = 1
+metadata/_custom_type_script = "uid://cjdop1iab2efw"
+
+[sub_resource type="Resource" id="Resource_df5af"]
+script = ExtResource("5_qd7hq")
+markedup_text = "Build a little lost-and-found box."
+requirement = SubResource("Resource_7ucq0")
+outcome = SubResource("Resource_40rqf")
+markedup_result_text = "It won't solve everything, but it's a start.
+
+The settlers leave a tiny wooden box with a polite sign, and trust that it will be put to good use."
+
+[sub_resource type="Resource" id="Resource_ptcwf"]
+script = ExtResource("5_qd7hq")
+markedup_text = "Leave it be."
+markedup_result_text = "Maybe its owner will return. Maybe it was left on purpose.
+
+Either way, the pouch remains on the bench."
+
+[sub_resource type="Resource" id="Resource_egt2j"]
+script = ExtResource("3_albkb")
+markedup_text = "The rest stop is quiet, save for birdsong and breeze. But someone was here recently, and forgot something.
+
+A pouch lies on the bench, a modest thing with no markings. It doesn't seem to contain much, so perhaps its absence won't even be noticed."
+background_image = SubResource("Resource_qh8br")
+background_credit = ExtResource("4_as6xq")
+choices = Array[ExtResource("5_qd7hq")]([SubResource("Resource_2stvf"), SubResource("Resource_kio1v"), SubResource("Resource_df5af")])
+exit_choice = SubResource("Resource_ptcwf")
+
+[resource]
+script = ExtResource("2_h0g87")
+default_spot_upgrade = ExtResource("1_qvfjq")
+event_id = "forgotten_pouch"
+event_name = "Forgotten Pouch"
+steps = Array[ExtResource("3_albkb")]([SubResource("Resource_egt2j")])
+categories = Array[int]([3])

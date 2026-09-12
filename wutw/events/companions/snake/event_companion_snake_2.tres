@@ -1,0 +1,125 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://dsdnf52fe5w0j"]
+
+[ext_resource type="Resource" uid="uid://cw8a8r56kuekw" path="res://stage/spots/desert/upgrade_desert_3_grand_bazaar.tres" id="1_fdthv"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_dtlwu"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_cw3d3"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_dc2g0"]
+[ext_resource type="Resource" uid="uid://4umd6a8xr14f" path="res://art/pieces/piece_hokkei_snake_melons.tres" id="5_dtlwu"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="5_ugrg4"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_wtdt7"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="7_4f4ub"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="8_um7sm"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_tl8dm"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="10_y60ve"]
+[ext_resource type="Resource" uid="uid://mfqj0cpsbnxu" path="res://cards/tier4/card_trade.tres" id="11_nf2ar"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="12_71dvi"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="13_ld37r"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="14_wdhlx"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="15_wjt4u"]
+
+[sub_resource type="Resource" id="Resource_ohd81"]
+script = ExtResource("2_dtlwu")
+scope = 1
+event_id = "global"
+var_id = "companion_snake"
+value = "1"
+
+[sub_resource type="Resource" id="Resource_6844u"]
+script = ExtResource("5_ugrg4")
+_texture_path = "res://events/companions/snake/companion_snake_2.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_5rtn8"]
+script = ExtResource("7_4f4ub")
+scope = 1
+event_id = "global"
+var_id = "companion_snake"
+value = "2"
+description = "Retrieve the snake's treasure safely"
+outcome_description = "The snake's treasure is retrieved safely."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_bvpdb"]
+script = ExtResource("9_tl8dm")
+aspect_type = ExtResource("8_um7sm")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_3q1fc"]
+script = ExtResource("6_wtdt7")
+markedup_text = "Leave the snake undisturbed until dusk."
+requirement = SubResource("Resource_bvpdb")
+outcome = SubResource("Resource_5rtn8")
+markedup_result_text = "The merchant decides to wait until the sun sets, hoping that the snake will leave once the melons cool down.
+
+The plan succeeds, and by the time the market closes and he checks on the melons again, the snake is nowhere to be seen.	"
+
+[sub_resource type="Resource" id="Resource_k52r6"]
+script = ExtResource("9_tl8dm")
+aspect_type = ExtResource("10_y60ve")
+min_count = 4
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_gckvo"]
+script = ExtResource("6_wtdt7")
+markedup_text = "Lure the snake away with a hot stone."
+requirement = SubResource("Resource_k52r6")
+outcome = SubResource("Resource_5rtn8")
+markedup_result_text = "The merchant picks up a large, hot stone from the ground and sets it in front of the snake.
+
+It only takes a few minutes before the snake gives up the melons, sensing the greater warmth, and lazily transfers itself to the rock."
+
+[sub_resource type="Resource" id="Resource_exiuf"]
+script = ExtResource("12_71dvi")
+card_type = ExtResource("11_nf2ar")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_32nyk"]
+script = ExtResource("9_tl8dm")
+aspect_type = ExtResource("13_ld37r")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_n0gpn"]
+script = ExtResource("6_wtdt7")
+markedup_text = "Offer the snake as a free bonus with melon purchase."
+requirement = SubResource("Resource_32nyk")
+outcome = SubResource("Resource_exiuf")
+markedup_result_text = "The merchant puts up a sign advertising a new bargain: one free snake with every two melons purchased, while supplies last.
+
+To his surprise, no one takes him up on the offer, but it does cause a buzz among the marketgoers."
+
+[sub_resource type="Resource" id="Resource_63e8m"]
+script = ExtResource("15_wjt4u")
+bonus_type = ExtResource("14_wdhlx")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_wpkqd"]
+script = ExtResource("6_wtdt7")
+markedup_text = "Tip the stand over."
+outcome = SubResource("Resource_63e8m")
+markedup_result_text = "Lacking any patience, the merchant kicks the stand, tipping it over.
+
+The snake slithers away unharmed, if annoyed, but the melons hit the stones with a splat and shatter into a pile of wet debris."
+
+[sub_resource type="Resource" id="Resource_ri550"]
+script = ExtResource("4_dc2g0")
+markedup_text = "A merchant has left several of his prized melons out on his market stand during his midday break, only to come back to a sleek little snake curling around them.
+
+It seems the snake has found the warm fruit inviting and decided to take a nap. It awakens when the merchant approaches, and stares up at him, unwilling to part with its claimed spot."
+background_image = SubResource("Resource_6844u")
+background_credit = ExtResource("5_dtlwu")
+choices = Array[ExtResource("6_wtdt7")]([SubResource("Resource_3q1fc"), SubResource("Resource_gckvo"), SubResource("Resource_n0gpn")])
+exit_choice = SubResource("Resource_wpkqd")
+
+[resource]
+script = ExtResource("3_cw3d3")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_fdthv")
+event_id = "companion_snake_2"
+event_name = "The Warm Fruit"
+requirement = SubResource("Resource_ohd81")
+steps = Array[ExtResource("4_dc2g0")]([SubResource("Resource_ri550")])
+categories = Array[int]([0, 4])

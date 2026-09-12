@@ -1,0 +1,160 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://dwjo7eka2hbya"]
+
+[ext_resource type="Resource" uid="uid://df0mbiisjudjg" path="res://stage/spots/swamp/upgrade_swamp_1_rice_paddy.tres" id="1_pbvdl"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_1c83n"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_pbvdl"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_a1mth"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_7t3xg"]
+[ext_resource type="Resource" uid="uid://ckdegk44tbs12" path="res://art/pieces/piece_hirokage_foxes.tres" id="6_a1mth"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_ckeg8"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="7_ouvaa"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="8_5w8rf"]
+[ext_resource type="Resource" uid="uid://bwke464koe61r" path="res://relics/uncommon/glowing_ember/relic_glowing_ember.tres" id="8_gl7kq"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="9_w8rli"]
+[ext_resource type="Resource" uid="uid://i7x0f643ksaf" path="res://companions/fox/companion_fox.tres" id="11_s8ipu"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="12_1c83n"]
+[ext_resource type="Script" uid="uid://2you2r2oar48" path="res://events/system/outcomes/unlock_companion/event_outcome_unlock_companion.gd" id="12_gmkhe"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="13_xobb6"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="14_ajmsu"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="14_pbvdl"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="15_a1mth"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="15_yk85k"]
+[ext_resource type="Script" uid="uid://dnxdmp6ko2c00" path="res://events/system/outcomes/mark_all_choices_seen/event_outcome_mark_all_choices_seen.gd" id="20_gl7kq"]
+[ext_resource type="Resource" uid="uid://cnb340dpgdx6s" path="res://events/companions/fox/event_companion_fox_1.tres" id="21_ckeg8"]
+[ext_resource type="Resource" uid="uid://wuhkp63g4lms" path="res://events/companions/fox/event_companion_fox_2.tres" id="22_s8ipu"]
+[ext_resource type="Resource" uid="uid://bt52a5cs1hqkv" path="res://cards/tier0/card_run.tres" id="23_gmkhe"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="24_xobb6"]
+
+[sub_resource type="Resource" id="Resource_7anbc"]
+script = ExtResource("2_1c83n")
+scope = 1
+event_id = "global"
+var_id = "companion_fox"
+value = "2"
+
+[sub_resource type="Resource" id="Resource_s8ipu"]
+script = ExtResource("7_ckeg8")
+_texture_path = "res://events/companions/fox/event_companion_fox_3.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_ajmsu"]
+script = ExtResource("9_w8rli")
+relic = ExtResource("8_gl7kq")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_grohw"]
+script = ExtResource("13_xobb6")
+aspect_type = ExtResource("14_ajmsu")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_32k5o"]
+script = ExtResource("6_7t3xg")
+markedup_text = "Build lanterns to keep the road lit."
+requirement = SubResource("Resource_grohw")
+outcome = SubResource("Resource_ajmsu")
+markedup_result_text = "The guards decide to let the foxes go this time, and instead invest in a long-term deterrent.
+
+They hire masons to erect stone lanterns along the path, lit every night. The foxes no longer show up, and the granaries remain quiet. Some townsfolk whisper that their spirits must have been appeased."
+
+[sub_resource type="Resource" id="Resource_7t3xg"]
+script = ExtResource("15_yk85k")
+bonus_type = ExtResource("12_1c83n")
+amount = -20
+extra_per_season = -20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_ouvaa"]
+script = ExtResource("14_pbvdl")
+bonus_type = ExtResource("12_1c83n")
+min_count = 20
+max_count = -1
+extra_per_season = 20
+metadata/_custom_type_script = "uid://dfaio0ey0wbra"
+
+[sub_resource type="Resource" id="Resource_cb64p"]
+script = ExtResource("6_7t3xg")
+markedup_text = "Set up baited traps."
+requirement = SubResource("Resource_ouvaa")
+outcome = SubResource("Resource_7t3xg")
+markedup_result_text = "The guards decide to let the foxes go this time, and instead invest in a long-term deterrent.
+
+Simple traps are set around the granaries and the path leading up the settlement.
+
+The very next night, all the traps are sprung, the food is gone, but the foxes are nowhere to be found.
+
+Food starts to go missing from the granaries."
+
+[sub_resource type="Resource" id="Resource_5w8rf"]
+script = ExtResource("15_a1mth")
+scope = 1
+event_id = "global"
+var_id = "companion_fox"
+value = "3"
+description = ""
+outcome_description = "The foxes have gained a new food source."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_a1mth"]
+script = ExtResource("12_gmkhe")
+companion = ExtResource("11_s8ipu")
+metadata/_custom_type_script = "uid://2you2r2oar48"
+
+[sub_resource type="Resource" id="Resource_1ufuf"]
+script = ExtResource("20_gl7kq")
+seen_event = ExtResource("21_ckeg8")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_yk85k"]
+script = ExtResource("20_gl7kq")
+seen_event = ExtResource("22_s8ipu")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_owrph"]
+script = ExtResource("20_gl7kq")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_ckeg8"]
+script = ExtResource("7_ouvaa")
+suboutcomes = Array[ExtResource("8_5w8rf")]([SubResource("Resource_5w8rf"), SubResource("Resource_a1mth"), SubResource("Resource_1ufuf"), SubResource("Resource_yk85k"), SubResource("Resource_owrph")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_gl7kq"]
+script = ExtResource("6_7t3xg")
+markedup_text = "Stalk them from a distance."
+outcome = SubResource("Resource_ckeg8")
+markedup_result_text = "The guards follow the foxes, keeping their distance.
+
+Once the foxes reach the settlement, they make a beeline for the granary. The guards wait patiently, and eventually spot the foxes running back into the marshes, carrying rats in their mouths."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_1kphp"]
+script = ExtResource("24_xobb6")
+card_type = ExtResource("23_gmkhe")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_xitp0"]
+script = ExtResource("6_7t3xg")
+markedup_text = "Chase them."
+outcome = SubResource("Resource_1kphp")
+markedup_result_text = "The guards rush at the foxes, but the beasts are far too fast, quickly scattering into the wilderness."
+
+[sub_resource type="Resource" id="Resource_c556b"]
+script = ExtResource("4_a1mth")
+markedup_text = "Settlers have been hearing rustling outside the granaries at night, though they are yet to notice anything missing.
+
+One evening, a patrol spots a group of foxes running up the road on the outskirts of the settlement. The guards suspect they are the ones responsible for the noise around the granaries."
+background_image = SubResource("Resource_s8ipu")
+background_credit = ExtResource("6_a1mth")
+choices = Array[ExtResource("6_7t3xg")]([SubResource("Resource_32k5o"), SubResource("Resource_cb64p"), SubResource("Resource_gl7kq")])
+exit_choice = SubResource("Resource_xitp0")
+
+[resource]
+script = ExtResource("3_pbvdl")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_pbvdl")
+event_id = "companion_fox_3"
+event_name = "Guarding the Granaries"
+requirement = SubResource("Resource_7anbc")
+steps = Array[ExtResource("4_a1mth")]([SubResource("Resource_c556b")])
+categories = Array[int]([0, 4])

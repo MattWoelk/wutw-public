@@ -1,0 +1,163 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://clcbp2b3ya5j3"]
+
+[ext_resource type="Resource" uid="uid://df0mbiisjudjg" path="res://stage/spots/swamp/upgrade_swamp_1_rice_paddy.tres" id="1_y1ufk"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_e0a3i"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_w3jd7"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_2t6c8"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="5_5ak0q"]
+[ext_resource type="Resource" uid="uid://c4b8l4k2pet4c" path="res://art/pieces/piece_hiroshige_mikawashima.tres" id="5_e0a3i"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_y5ee4"]
+[ext_resource type="Resource" uid="uid://oqni6hco277k" path="res://cards/tier2/card_flute.tres" id="7_lleuc"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="8_wjng4"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="9_hlub5"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="10_pxp4c"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="11_uaqjl"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="12_les1t"]
+[ext_resource type="Resource" uid="uid://dd8jmctdsxdms" path="res://cards/tier3/card_dance.tres" id="13_dxsnh"]
+[ext_resource type="Resource" uid="uid://1ejeychssuc7" path="res://companions/crane/companion_crane.tres" id="14_crgd3"]
+[ext_resource type="Script" uid="uid://2you2r2oar48" path="res://events/system/outcomes/unlock_companion/event_outcome_unlock_companion.gd" id="15_db2r2"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="16_mluuk"]
+[ext_resource type="Script" uid="uid://dnxdmp6ko2c00" path="res://events/system/outcomes/mark_all_choices_seen/event_outcome_mark_all_choices_seen.gd" id="17_k0ybo"]
+[ext_resource type="Resource" uid="uid://7etv84yushi1" path="res://events/companions/crane/event_companion_crane_1.tres" id="18_ei65v"]
+[ext_resource type="Resource" uid="uid://bik82or3ot4lx" path="res://events/companions/crane/event_companion_crane_2.tres" id="19_2tvfv"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="20_kg1hb"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="21_qh6rl"]
+[ext_resource type="Resource" uid="uid://8eab3roo5eqj" path="res://cards/tier2/card_nothing.tres" id="22_s1myj"]
+
+[sub_resource type="Resource" id="Resource_toytf"]
+script = ExtResource("2_e0a3i")
+scope = 1
+event_id = "global"
+var_id = "companion_crane"
+value = "2"
+
+[sub_resource type="Resource" id="Resource_8r3t7"]
+script = ExtResource("5_5ak0q")
+_texture_path = "res://events/companions/crane/companion_crane_3.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_ohork"]
+script = ExtResource("8_wjng4")
+card_type = ExtResource("7_lleuc")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_3etfu"]
+script = ExtResource("10_pxp4c")
+aspect_type = ExtResource("9_hlub5")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_simhe"]
+script = ExtResource("6_y5ee4")
+markedup_text = "Play the flute to accompany the dance."
+requirement = SubResource("Resource_3etfu")
+outcome = SubResource("Resource_ohork")
+markedup_result_text = "Moved by the display, a well-meaning farmer pulls a bamboo flute from his belt and plays a trilling melody.
+
+The sharp noise spooks the birds and they instantly take flight."
+
+[sub_resource type="Resource" id="Resource_ehi7f"]
+script = ExtResource("8_wjng4")
+card_type = ExtResource("13_dxsnh")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_hsbu8"]
+script = ExtResource("15_db2r2")
+companion = ExtResource("14_crgd3")
+metadata/_custom_type_script = "uid://2you2r2oar48"
+
+[sub_resource type="Resource" id="Resource_jn81x"]
+script = ExtResource("16_mluuk")
+scope = 1
+event_id = "global"
+var_id = "companion_crane"
+value = "3"
+description = "Learn from the cranes"
+outcome_description = "The settlers have learned from the cranes."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_hordk"]
+script = ExtResource("17_k0ybo")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_kcwpn"]
+script = ExtResource("17_k0ybo")
+seen_event = ExtResource("18_ei65v")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_c2p0u"]
+script = ExtResource("17_k0ybo")
+seen_event = ExtResource("19_2tvfv")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_jqge5"]
+script = ExtResource("11_uaqjl")
+suboutcomes = Array[ExtResource("12_les1t")]([SubResource("Resource_ehi7f"), SubResource("Resource_hsbu8"), SubResource("Resource_jn81x"), SubResource("Resource_hordk"), SubResource("Resource_kcwpn"), SubResource("Resource_c2p0u")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_j8rb5"]
+script = ExtResource("10_pxp4c")
+aspect_type = ExtResource("20_kg1hb")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_10wrw"]
+script = ExtResource("6_y5ee4")
+markedup_text = "Choreograph a dance based on their movements."
+requirement = SubResource("Resource_j8rb5")
+outcome = SubResource("Resource_jqge5")
+markedup_result_text = "The farmers watch the deep bows and elegant leaps in quiet awe, trying to memorize the pattern.
+
+They adapt the birds' motions into a graceful dance, which becomes a frequent sight during wedding ceremonies."
+
+[sub_resource type="Resource" id="Resource_quleu"]
+script = ExtResource("21_qh6rl")
+delta = 5
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_gydhs"]
+script = ExtResource("6_y5ee4")
+markedup_text = "Stand back and enjoy the show."
+outcome = SubResource("Resource_quleu")
+markedup_result_text = "The farmers lean on their tools, wiping the sweat from their brows, and watch.
+
+It is a rare moment of pure elegance in an otherwise muddy, backbreaking workday.
+
+They find the dedication of the mating pair inspiring."
+
+[sub_resource type="Resource" id="Resource_x66co"]
+script = ExtResource("8_wjng4")
+card_type = ExtResource("22_s1myj")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_8kg4k"]
+script = ExtResource("6_y5ee4")
+markedup_text = "Give them some privacy."
+outcome = SubResource("Resource_x66co")
+markedup_result_text = "The farmers decide that it is rude to stare at a private reunion.
+
+They gather their tools and move to the other side of the paddy to finish their chores.
+
+The elegant dancers are soon gone, and the episode is quickly forgotten."
+
+[sub_resource type="Resource" id="Resource_11ed1"]
+script = ExtResource("4_2t6c8")
+markedup_text = "A lone crane has been standing perfectly still in a shallow pool by the rice paddy all day.
+
+The bird refuses to hunt or move, looking like a slender statue rising from the water. The farmers are beginning to find its endless patience a bit eerie.
+
+Just before dusk, a second crane glides down from the sky, and the two immediately spring to life. They bow to one another, spread their wings, and begin a complex, leaping dance."
+background_image = SubResource("Resource_8r3t7")
+background_credit = ExtResource("5_e0a3i")
+choices = Array[ExtResource("6_y5ee4")]([SubResource("Resource_simhe"), SubResource("Resource_10wrw"), SubResource("Resource_gydhs")])
+exit_choice = SubResource("Resource_8kg4k")
+
+[resource]
+script = ExtResource("3_w3jd7")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_y1ufk")
+event_id = "companion_crane_3"
+event_name = "The Crane Dance"
+requirement = SubResource("Resource_toytf")
+steps = Array[ExtResource("4_2t6c8")]([SubResource("Resource_11ed1")])
+categories = Array[int]([0, 4])

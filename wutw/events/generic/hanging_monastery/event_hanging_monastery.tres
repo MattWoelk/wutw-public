@@ -1,0 +1,159 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://dmuumgp8avdp8"]
+
+[ext_resource type="Resource" uid="uid://dhsu0y2nvmlf4" path="res://stage/spots/canyon/upgrade_canyon_3_hanging_monastery.tres" id="1_0l1a1"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_fl8ea"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_2okkd"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_1h70n"]
+[ext_resource type="Resource" uid="uid://ty1vp72sdug8" path="res://art/pieces/piece_composed_hanging_monastery.tres" id="5_fl8ea"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_2okkd"]
+[ext_resource type="Resource" uid="uid://bvgcg02q1xghq" path="res://relics/uncommon/wisdom_bell/relic_wisdom_bell.tres" id="6_vbxhi"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="7_wqkfv"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="8_slmkj"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="9_4q1wm"]
+[ext_resource type="Resource" uid="uid://c6s7i0p2faf3s" path="res://relics/uncommon/bell_chain/relic_bell_chain.tres" id="10_ma6pf"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="11_6e61y"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="12_6m5t1"]
+[ext_resource type="Resource" uid="uid://bfcyiaunl5r02" path="res://relics/common/balance_cord/relic_balance_cord.tres" id="13_jtjy2"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="14_01ksu"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="15_wqkfv"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="15_wujrd"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="16_slmkj"]
+[ext_resource type="Resource" uid="uid://lgy2st27yh5v" path="res://relics/common/talisman_copper_ring/relic_talisman_copper_ring.tres" id="17_4q1wm"]
+[ext_resource type="Script" uid="uid://bbr46symu7hfi" path="res://events/system/requirements/event_requirement_has_relic.gd" id="18_ma6pf"]
+[ext_resource type="Script" uid="uid://bax3q3qv5pv3e" path="res://events/system/requirements/event_requirement_seen_relic.gd" id="19_6e61y"]
+
+[sub_resource type="Resource" id="Resource_fl8ea"]
+script = ExtResource("6_2okkd")
+_texture_path = "res://events/generic/hanging_monastery/hanging_monastery.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_f2op8"]
+script = ExtResource("7_wqkfv")
+relic = ExtResource("6_vbxhi")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_kio1v"]
+script = ExtResource("9_4q1wm")
+bonus_type = ExtResource("8_slmkj")
+min_count = 40
+max_count = -1
+extra_per_season = 40
+
+[sub_resource type="Resource" id="Resource_df5af"]
+script = ExtResource("5_1h70n")
+markedup_text = "Let the monk continue with the same responsibilities."
+requirement = SubResource("Resource_kio1v")
+outcome = SubResource("Resource_f2op8")
+markedup_result_text = "The snapped chain is entrusted to the very hand that broke it.
+
+The monk studies each link as though it were scripture. He will remember every scratch on the chain's surface for the rest of his life.
+
+When the monastery's Acceptance Bell is rung at dusk, the monks feel that a fracture has been avoided."
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("7_wqkfv")
+relic = ExtResource("10_ma6pf")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_ptcwf"]
+script = ExtResource("12_6m5t1")
+aspect_type = ExtResource("11_6e61y")
+min_count = 5
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_egt2j"]
+script = ExtResource("5_1h70n")
+markedup_text = "Make it a shared duty: four brothers at every check."
+requirement = SubResource("Resource_ptcwf")
+outcome = SubResource("Resource_4xuhh")
+markedup_result_text = "From now on, chain maintenance is never a lone task. Four pairs of eyes inspect each link, as it is passed from hand to hand.
+
+The chains hold steadier, and the inspection becomes a ritual of responsibility."
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("7_wqkfv")
+relic = ExtResource("13_jtjy2")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("5_1h70n")
+markedup_text = "Chastise the monk to sharpen his resolve."
+outcome = SubResource("Resource_tuogj")
+markedup_result_text = "The monk is admonished before his brothers and sisters, reminding him that a slip here could mean death.
+
+From now on his hammer strikes become measured and fearful. He ties his hammer to his sash with a cord, which he rubs before every strike."
+
+[sub_resource type="Resource" id="Resource_kd355"]
+script = ExtResource("7_wqkfv")
+relic = ExtResource("10_ma6pf")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_mfxkf"]
+script = ExtResource("7_wqkfv")
+relic = ExtResource("6_vbxhi")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_kj1sh"]
+script = ExtResource("15_wqkfv")
+suboutcomes = Array[ExtResource("16_slmkj")]([SubResource("Resource_kd355"), SubResource("Resource_mfxkf")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_e7hfo"]
+script = ExtResource("18_ma6pf")
+relic = ExtResource("17_4q1wm")
+metadata/_custom_type_script = "uid://bbr46symu7hfi"
+
+[sub_resource type="Resource" id="Resource_b7llu"]
+script = ExtResource("19_6e61y")
+relic = ExtResource("17_4q1wm")
+metadata/_custom_type_script = "uid://bax3q3qv5pv3e"
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("5_1h70n")
+markedup_text = "Prioritize unity."
+requirement = SubResource("Resource_e7hfo")
+show_condition = SubResource("Resource_b7llu")
+outcome = SubResource("Resource_kj1sh")
+markedup_result_text = "The abbot holds a meeting to address the incident.
+
+He explains that to blame a single individual betrays the very principle of unity that their rings symbolize.
+
+From now on, the monk who made the mistake is to lead a maintenance team, sharing with them the wisdom gained from his own mistake."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("15_wujrd")
+bonus_type = ExtResource("14_01ksu")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("5_1h70n")
+markedup_text = "Ignore the incident."
+outcome = SubResource("Resource_rx1a8")
+markedup_result_text = "Nothing is said aloud. Gossip passes among the brothers, but soon dissipates.
+
+In the days that follow, distant creaks can be heard in the hall, which are also ignored."
+
+[sub_resource type="Resource" id="Resource_ciwob"]
+script = ExtResource("3_2okkd")
+markedup_text = "During routine maintenance, one of the brothers slipped. A link in the chain securing the building to the cliff cracked and gave way beneath his hammer.
+
+Thankfully, the platform held.
+
+Together, the smiths forged a new link before dawn.
+
+Now, as the sunrise gilds the canyon walls, a heavy stillness settles over the common hall. It is time to decide what consequences should follow this mistake."
+background_image = SubResource("Resource_fl8ea")
+background_credit = ExtResource("5_fl8ea")
+choices = Array[ExtResource("5_1h70n")]([SubResource("Resource_df5af"), SubResource("Resource_egt2j"), SubResource("Resource_dpp3j"), SubResource("Resource_trtbi")])
+exit_choice = SubResource("Resource_06ahh")
+
+[resource]
+script = ExtResource("2_fl8ea")
+default_spot_upgrade = ExtResource("1_0l1a1")
+event_id = "hanging_monastery"
+event_name = "A Snap in the Chain"
+steps = Array[ExtResource("3_2okkd")]([SubResource("Resource_ciwob")])
+categories = Array[int]([3])

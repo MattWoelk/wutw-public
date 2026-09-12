@@ -1,0 +1,146 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://bwbghxo5nfywa"]
+
+[ext_resource type="Resource" uid="uid://giafyqbhomse" path="res://stage/spots/cliff/upgrade_cliff_2_silver_mine.tres" id="1_nqgs1"]
+[ext_resource type="Script" uid="uid://2sqheye7ri6u" path="res://events/system/requirements/event_requirement_num_settlements.gd" id="2_xkgwu"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_hv1xs"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_3120q"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="5_54nse"]
+[ext_resource type="Resource" uid="uid://biq8dntsmocli" path="res://art/pieces/piece_hiroshige_3_gold_mine.tres" id="5_xkgwu"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_13ipv"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="7_87hsd"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="8_kvou6"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="9_x5kyq"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="10_okbqc"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="11_xvuqs"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="12_1syvv"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="13_a1j5j"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="14_80uuh"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="15_viesc"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="16_ftpp0"]
+
+[sub_resource type="Resource" id="Resource_h4ifl"]
+script = ExtResource("2_xkgwu")
+min_count = 6
+
+[sub_resource type="Resource" id="Resource_lfmrl"]
+script = ExtResource("5_54nse")
+_texture_path = "res://events/generic/silver_mine/silver_mine.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_jiini"]
+script = ExtResource("10_okbqc")
+bonus_type = ExtResource("9_x5kyq")
+amount = -15
+extra_per_season = -15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_mm8jc"]
+script = ExtResource("10_okbqc")
+bonus_type = ExtResource("11_xvuqs")
+amount = 25
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_r0oeh"]
+script = ExtResource("7_87hsd")
+suboutcomes = Array[ExtResource("8_kvou6")]([SubResource("Resource_jiini"), SubResource("Resource_mm8jc")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_xcjhn"]
+script = ExtResource("12_1syvv")
+bonus_type = ExtResource("9_x5kyq")
+min_count = 30
+max_count = -1
+extra_per_season = 50
+
+[sub_resource type="Resource" id="Resource_4307i"]
+script = ExtResource("6_13ipv")
+markedup_text = "Leave this shaft and reinforce the rest."
+requirement = SubResource("Resource_xcjhn")
+outcome = SubResource("Resource_r0oeh")
+markedup_result_text = "The miners abandon the collapsed shaft and spend days carefully inspecting the remaining shafts, reinforcing any beams that are in need of repair.
+
+Much time and material is spent on the effort, but they are confident that it will prevent another collapse for a long time."
+
+[sub_resource type="Resource" id="Resource_ymvbb"]
+script = ExtResource("10_okbqc")
+bonus_type = ExtResource("9_x5kyq")
+amount = 15
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_ujtg1"]
+script = ExtResource("14_80uuh")
+aspect_type = ExtResource("13_a1j5j")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_wymns"]
+script = ExtResource("6_13ipv")
+markedup_text = "Inspect the collapsed shaft."
+requirement = SubResource("Resource_ujtg1")
+outcome = SubResource("Resource_ymvbb")
+markedup_result_text = "After the dust settles, the workers decide to investigate the cause of the collapse.
+
+The culprit turns out to be one badly knotted beam that went unnoticed when the mine was first dug.
+
+During their inspection, however, they are surprised to find a new seam running through the rock. This one, however, is golden."
+
+[sub_resource type="Resource" id="Resource_sdqv8"]
+script = ExtResource("10_okbqc")
+bonus_type = ExtResource("15_viesc")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_avoy8"]
+script = ExtResource("14_80uuh")
+aspect_type = ExtResource("16_ftpp0")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_vs02k"]
+script = ExtResource("6_13ipv")
+markedup_text = "Dig new shafts."
+requirement = SubResource("Resource_avoy8")
+outcome = SubResource("Resource_sdqv8")
+markedup_result_text = "The workers dig new shafts, leaving the cliff face full of gaping holes.
+
+Soon they find the local wells turning pale and gritty.
+
+\"A curse from the cliff spirit,\" the priest declares."
+
+[sub_resource type="Resource" id="Resource_f2bue"]
+script = ExtResource("10_okbqc")
+bonus_type = ExtResource("11_xvuqs")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_bg8po"]
+script = ExtResource("6_13ipv")
+markedup_text = "Ignore the incident."
+outcome = SubResource("Resource_f2bue")
+markedup_result_text = "The miners avoid the collapsed shaft but continue using the remaining ones.
+
+Production continues uninterrupted, but the workers begin to fear every creak and groan of the beams.
+"
+
+[sub_resource type="Resource" id="Resource_va5a3"]
+script = ExtResource("4_3120q")
+markedup_text = "The silver mine is the settlement's primary industry, supplying the whole region with gleaming rings and necklaces. The miners swing their picks from sunup to sundown to feed the hungry forges.
+
+This morning, the miners find the beams above their heads groaning. By the time an alarm is raised, bits of stone are raining from the ceiling. The miners barely make it out before the shaft collapses."
+background_image = SubResource("Resource_lfmrl")
+background_credit = ExtResource("5_xkgwu")
+choices = Array[ExtResource("6_13ipv")]([SubResource("Resource_4307i"), SubResource("Resource_wymns"), SubResource("Resource_vs02k")])
+exit_choice = SubResource("Resource_bg8po")
+
+[resource]
+script = ExtResource("3_hv1xs")
+default_spot_upgrade = ExtResource("1_nqgs1")
+event_id = "silver_mine"
+event_name = "The Collapsed Shaft"
+requirement = SubResource("Resource_h4ifl")
+steps = Array[ExtResource("4_3120q")]([SubResource("Resource_va5a3")])
+categories = Array[int]([3])

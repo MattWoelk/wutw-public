@@ -1,0 +1,128 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://2u1qndjvgx6i"]
+
+[ext_resource type="Resource" uid="uid://6d4qku0kl0mv" path="res://stage/spots/plains/upgrade_plains_2_kudzu_plantation.tres" id="1_rui5p"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_a4hru"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_oh3gi"]
+[ext_resource type="Resource" uid="uid://j2iwha4j65lk" path="res://art/pieces/piece_hiroshige_3_kudzu.tres" id="5_a4hru"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_ryhf4"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_oh3gi"]
+[ext_resource type="Resource" uid="uid://b64e2yeomlhfu" path="res://relics/common/kuzumochi/relic_kuzumochi.tres" id="6_sf855"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="7_g7yaj"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="8_jqois"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_ap3fy"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="10_07vke"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="11_0pc16"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="12_4ug0g"]
+[ext_resource type="Resource" uid="uid://dnu8bk5jlrtd" path="res://cards/tier2/card_paper.tres" id="13_6yh1t"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="14_jgdby"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="15_xridk"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="16_knwn6"]
+
+[sub_resource type="Resource" id="Resource_a4hru"]
+script = ExtResource("6_oh3gi")
+_texture_path = "res://events/generic/kudzu_harvest/kudzu_harvest.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_d0keq"]
+script = ExtResource("7_g7yaj")
+relic = ExtResource("6_sf855")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_t3nkt"]
+script = ExtResource("9_ap3fy")
+aspect_type = ExtResource("8_jqois")
+min_count = 3
+extra_per_season = 2
+
+[sub_resource type="Resource" id="Resource_nliq7"]
+script = ExtResource("5_ryhf4")
+markedup_text = "Refine the starch and make delicate cakes."
+requirement = SubResource("Resource_t3nkt")
+outcome = SubResource("Resource_d0keq")
+markedup_result_text = "The settlers grind the tubers and wash the starch repeatedly in fresh water until it is chalk-white.
+
+The starch is pressed into nuggets, steamed, and dusted with soybean flour, resulting in sweet, wobbly treats.
+
+\"It's like eating a cloud that fell in the mud,\" a child laughs, poking one of the cakes."
+
+[sub_resource type="Resource" id="Resource_l1gue"]
+script = ExtResource("11_0pc16")
+bonus_type = ExtResource("10_07vke")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_xxrg4"]
+script = ExtResource("9_ap3fy")
+aspect_type = ExtResource("12_4ug0g")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_nr4mk"]
+script = ExtResource("5_ryhf4")
+markedup_text = "Make baskets out of the vines."
+requirement = SubResource("Resource_xxrg4")
+outcome = SubResource("Resource_l1gue")
+markedup_result_text = "The tubers are left to compost, returning their nutrients to the soil.
+
+Instead, the settlers harvest the vines, splitting and boiling them to loosen the fibers.
+
+These are then made into sturdy baskets, perfect for holding harvests yet to come."
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("14_jgdby")
+card_type = ExtResource("13_6yh1t")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_p26hk"]
+script = ExtResource("15_xridk")
+bonus_type = ExtResource("10_07vke")
+min_count = 15
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_x0wto"]
+script = ExtResource("5_ryhf4")
+markedup_text = "Process the stems into paper."
+requirement = SubResource("Resource_p26hk")
+outcome = SubResource("Resource_06ahh")
+markedup_result_text = "The tubers are left untouched, ready to sprout again, while the vines are cut.
+
+The woody stems are boiled and beaten into a pulp, then mixed into a slurry. Craftspeople use screens to form thin sheets and dry them into paper.
+
+This paper will be used to make painted screens and sliding doors, perfect to keep houses cool while adding a touch of refinement."
+
+[sub_resource type="Resource" id="Resource_ciwob"]
+script = ExtResource("11_0pc16")
+bonus_type = ExtResource("16_knwn6")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_u5csk"]
+script = ExtResource("5_ryhf4")
+markedup_text = "Boil the tubers into a hearty survival paste."
+outcome = SubResource("Resource_ciwob")
+markedup_result_text = "There is no time for fancy sweets. The tubers are boiled down into a thick, flavorless, but incredibly filling glue.
+
+It is not a meal anyone will sing songs about, but it will keep the hunger away for a long time."
+
+[sub_resource type="Resource" id="Resource_fbr55"]
+script = ExtResource("3_oh3gi")
+markedup_text = "The kudzu harvest has been more than plentiful. The vines threatened to swallow the toolshed by the time they were ripe, and the tubers have grown to the size of a person's thigh.
+
+The tubers can be ground into starch, while the vines could be turned into fiber for baskets or paper.
+
+There aren't enough farmers to process everything, so the settlers have to decide what to focus on."
+background_image = SubResource("Resource_a4hru")
+background_credit = ExtResource("5_a4hru")
+choices = Array[ExtResource("5_ryhf4")]([SubResource("Resource_nliq7"), SubResource("Resource_nr4mk"), SubResource("Resource_x0wto")])
+exit_choice = SubResource("Resource_u5csk")
+
+[resource]
+script = ExtResource("2_a4hru")
+default_spot_upgrade = ExtResource("1_rui5p")
+event_id = "kudzu_harvest"
+event_name = "Kudzu Harvest"
+steps = Array[ExtResource("3_oh3gi")]([SubResource("Resource_fbr55")])
+categories = Array[int]([3])

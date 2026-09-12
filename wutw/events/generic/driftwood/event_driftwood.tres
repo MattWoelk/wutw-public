@@ -1,0 +1,154 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://bpmpitua2y52d"]
+
+[ext_resource type="Resource" uid="uid://cj2ytlvvp4wdt" path="res://stage/spots/seashore/upgrade_seashore_2_driftwood_cove.tres" id="1_cvsni"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_kkt1s"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_d1iet"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_2rw46"]
+[ext_resource type="Resource" uid="uid://d3af3dxx4a4ta" path="res://art/pieces/piece_hiroshige_genji_in_suma.tres" id="5_kkt1s"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_d1iet"]
+[ext_resource type="Resource" uid="uid://cb13shr80bibh" path="res://relics/common/old_coin/relic_old_coin.tres" id="6_uhtd7"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="7_q3yvt"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="8_e4v6s"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_hbqac"]
+[ext_resource type="Resource" uid="uid://c66wht86teulw" path="res://relics/common/waterlogged_dice/relic_waterlogged_dice.tres" id="10_45l1s"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="11_x0k4q"]
+[ext_resource type="Resource" uid="uid://cq627s8yrmu2r" path="res://cards/tier2/card_drift.tres" id="12_1f35j"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="13_pd0fj"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="15_hbqac"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="16_45l1s"]
+[ext_resource type="Resource" uid="uid://dw5bq8u8b02b1" path="res://relics/common/leaky_inkstick/relic_leaky_inkstick.tres" id="17_x0k4q"]
+[ext_resource type="Script" uid="uid://c526o6bgglybb" path="res://events/system/outcomes/remove_relic/event_outcome_remove_relic.gd" id="18_1f35j"]
+[ext_resource type="Resource" uid="uid://c8jjm71qv1lma" path="res://relics/uncommon/wooden_stake/relic_wooden_stake.tres" id="19_pd0fj"]
+[ext_resource type="Script" uid="uid://bbr46symu7hfi" path="res://events/system/requirements/event_requirement_has_relic.gd" id="20_pelgq"]
+[ext_resource type="Script" uid="uid://bax3q3qv5pv3e" path="res://events/system/requirements/event_requirement_seen_relic.gd" id="21_27m74"]
+
+[sub_resource type="Resource" id="Resource_kkt1s"]
+script = ExtResource("6_d1iet")
+_texture_path = "res://events/generic/driftwood/driftwood.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_d0keq"]
+script = ExtResource("7_q3yvt")
+relic = ExtResource("6_uhtd7")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_2stvf"]
+script = ExtResource("9_hbqac")
+aspect_type = ExtResource("8_e4v6s")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_xxhwh"]
+script = ExtResource("5_2rw46")
+markedup_text = "Leave a ceremonial gift in return."
+requirement = SubResource("Resource_2stvf")
+outcome = SubResource("Resource_d0keq")
+markedup_result_text = "The settlers leave bowls of rice and a cup of sake on the shore for the tide to claim.
+
+The offering is gone by morning.
+
+A few days later, a large tree branch washes onto the shore. Tucked between its forked twigs are several pre-Shattering coins."
+
+[sub_resource type="Resource" id="Resource_mxy6s"]
+script = ExtResource("7_q3yvt")
+relic = ExtResource("10_45l1s")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_kio1v"]
+script = ExtResource("9_hbqac")
+aspect_type = ExtResource("11_x0k4q")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_df5af"]
+script = ExtResource("5_2rw46")
+markedup_text = "Carve the odd driftwood into dice."
+requirement = SubResource("Resource_kio1v")
+outcome = SubResource("Resource_mxy6s")
+markedup_result_text = "The wood is waterlogged, yet satisfying to carve.
+
+A pair of dice is finished in no time.
+
+The first roll comes up six. So does the second."
+
+[sub_resource type="Resource" id="Resource_l1gue"]
+script = ExtResource("13_pd0fj")
+card_type = ExtResource("12_1f35j")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ptcwf"]
+script = ExtResource("5_2rw46")
+markedup_text = "Throw the pieces back."
+outcome = SubResource("Resource_l1gue")
+markedup_result_text = "One by one, the tools are cast into the waves.
+
+They float away, but some return later the same day.
+
+Other such tools keep showing up, but few pay them any mind.
+
+Perhaps a ship with a very creative carver on board had sunk into the sea."
+
+[sub_resource type="Resource" id="Resource_b7llu"]
+script = ExtResource("18_1f35j")
+relic = ExtResource("17_x0k4q")
+metadata/_custom_type_script = "uid://c526o6bgglybb"
+
+[sub_resource type="Resource" id="Resource_kd355"]
+script = ExtResource("7_q3yvt")
+relic = ExtResource("19_pd0fj")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_agcm7"]
+script = ExtResource("15_hbqac")
+suboutcomes = Array[ExtResource("16_45l1s")]([SubResource("Resource_b7llu"), SubResource("Resource_kd355")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_e7hfo"]
+script = ExtResource("20_pelgq")
+relic = ExtResource("17_x0k4q")
+metadata/_custom_type_script = "uid://bbr46symu7hfi"
+
+[sub_resource type="Resource" id="Resource_pakit"]
+script = ExtResource("21_27m74")
+relic = ExtResource("17_x0k4q")
+metadata/_custom_type_script = "uid://bax3q3qv5pv3e"
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("5_2rw46")
+markedup_text = "Throw the inkstick into the sea."
+requirement = SubResource("Resource_e7hfo")
+show_condition = SubResource("Resource_pakit")
+outcome = SubResource("Resource_agcm7")
+markedup_result_text = "The settlers cast a single inkstick into the waves, which quickly disappears.
+
+The next day a peculiarly sharpened stake is found on the beach."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_egt2j"]
+script = ExtResource("5_2rw46")
+markedup_text = "Leave them alone."
+markedup_result_text = "The tide rises and falls.
+
+The driftwood floats on, untouched.
+
+Over time, the tools disappear one by one, and the incident is forgotten."
+
+[sub_resource type="Resource" id="Resource_f2op8"]
+script = ExtResource("3_d1iet")
+markedup_text = "Over several days, new pieces of driftwood make it to the shoal with an uncanny regularity.
+
+They aren't the usual planks or branches, though, but solid wood shaped like tools. A mallet with no joints. A sickle with no metal parts.
+
+The driftwood gatherers swear they've never seen anything like this before, and say that sea spirits must be sharing tools with their new neighbors."
+background_image = SubResource("Resource_kkt1s")
+background_credit = ExtResource("5_kkt1s")
+choices = Array[ExtResource("5_2rw46")]([SubResource("Resource_xxhwh"), SubResource("Resource_df5af"), SubResource("Resource_ptcwf"), SubResource("Resource_trtbi")])
+exit_choice = SubResource("Resource_egt2j")
+
+[resource]
+script = ExtResource("2_kkt1s")
+default_spot_upgrade = ExtResource("1_cvsni")
+event_id = "driftwood"
+event_name = "Odd Driftwood"
+steps = Array[ExtResource("3_d1iet")]([SubResource("Resource_f2op8")])
+categories = Array[int]([3])

@@ -1,0 +1,153 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://bviwgjxh8pi4l"]
+
+[ext_resource type="Resource" uid="uid://drpvelhaxlff2" path="res://stage/spots/wasteland/upgrade_wasteland_3_endless_ruin.tres" id="1_injng"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="2_djxij"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_e11c8"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_jwj6n"]
+[ext_resource type="Script" uid="uid://btrwtj4v8ufn" path="res://events/system/requirements/event_requirement_has_skill.gd" id="3_a1pu3"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_jawht"]
+[ext_resource type="Resource" uid="uid://c3nswcelfxlu0" path="res://skills/relics/skill_relics_shop.tres" id="4_nwrj1"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_4vlme"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="6_jwj6n"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="6_rc2gp"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_xm7lb"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="8_djxij"]
+[ext_resource type="Resource" uid="uid://bkvho77ew7pkh" path="res://art/pieces/piece_hiroshige_3_gold_mining_sado_province.tres" id="10_a1pu3"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="11_nwrj1"]
+[ext_resource type="Resource" uid="uid://chjddqppwjodh" path="res://events/landmark/endless_ruin/endless_ruin_relics.tres" id="14_8tw8k"]
+[ext_resource type="Script" uid="uid://bbhwr4afafq2e" path="res://events/system/outcomes/unlock_shop/event_outcome_unlock_shop.gd" id="23_jawht"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="23_lv4b8"]
+[ext_resource type="Resource" uid="uid://bq55bwby645m6" path="res://shops/get_relics/shop_get_relics.tres" id="24_3cu67"]
+[ext_resource type="Resource" uid="uid://dykivuntvij36" path="res://cards/tier2/card_record.tres" id="24_d6xpt"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="25_eo8ry"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="26_q6isb"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="27_a77qp"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="27_djxij"]
+[ext_resource type="Resource" uid="uid://dvtqnk0xkd3uj" path="res://cards/tier2/card_fragment.tres" id="28_wpmeb"]
+
+[sub_resource type="Resource" id="Resource_auv5g"]
+script = ExtResource("3_a1pu3")
+skill = ExtResource("4_nwrj1")
+metadata/_custom_type_script = "uid://btrwtj4v8ufn"
+
+[sub_resource type="Resource" id="Resource_a1pu3"]
+script = ExtResource("2_jwj6n")
+var_id = "landmark_built"
+var_type = 1
+value = "false"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_yqahe"]
+script = ExtResource("6_rc2gp")
+all_requirements = Array[ExtResource("2_djxij")]([SubResource("Resource_auv5g"), SubResource("Resource_a1pu3")])
+metadata/_custom_type_script = "uid://15prcev7a3ta"
+
+[sub_resource type="Resource" id="Resource_nwrj1"]
+script = ExtResource("11_nwrj1")
+_texture_path = "res://events/landmark/endless_ruin/endless_ruin.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_4vlme"]
+script = ExtResource("23_jawht")
+shop_type = ExtResource("24_3cu67")
+metadata/_custom_type_script = "uid://bbhwr4afafq2e"
+
+[sub_resource type="Resource" id="Resource_rc2gp"]
+script = ExtResource("27_djxij")
+var_id = "landmark_built"
+var_type = 1
+value = "true"
+description = ""
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_4fpj6"]
+script = ExtResource("6_jwj6n")
+suboutcomes = Array[ExtResource("7_xm7lb")]([ExtResource("14_8tw8k"), SubResource("Resource_4vlme"), SubResource("Resource_rc2gp")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_ijqs6"]
+script = ExtResource("23_lv4b8")
+bonus_type = ExtResource("8_djxij")
+min_count = 40
+max_count = -1
+extra_per_season = 40
+
+[sub_resource type="Resource" id="Resource_pf411"]
+script = ExtResource("5_4vlme")
+markedup_text = "Explore the lower chambers."
+requirement = SubResource("Resource_ijqs6")
+outcome = SubResource("Resource_4fpj6")
+markedup_result_text = "A team rigs lines and descends. Echoes trail behind them: metal clangs, murmurs, and the crack of loosening stone.
+
+They emerge scraped and winded, but triumphant. One carries a bundle wrapped in old, frayed fabric.
+
+\"Worth it,\" they say."
+
+[sub_resource type="Resource" id="Resource_2rpah"]
+script = ExtResource("25_eo8ry")
+card_type = ExtResource("24_d6xpt")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_eyvo4"]
+script = ExtResource("27_a77qp")
+aspect_type = ExtResource("26_q6isb")
+min_count = 2
+
+[sub_resource type="Resource" id="Resource_658i2"]
+script = ExtResource("5_4vlme")
+markedup_text = "Catalog existing findings."
+requirement = SubResource("Resource_eyvo4")
+outcome = SubResource("Resource_2rpah")
+markedup_result_text = "Instead of braving the caves, the settlers dig through crates of neglected past findings.
+
+Pottery shards and unusually shaped stones are dusted and carefully recorded into a ledger.
+
+No grand discoveries today. Just orderly documenting and shared nods."
+
+[sub_resource type="Resource" id="Resource_3dyre"]
+script = ExtResource("25_eo8ry")
+card_type = ExtResource("28_wpmeb")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_o44fc"]
+script = ExtResource("5_4vlme")
+markedup_text = "Collect fragments from the upper tunnels."
+outcome = SubResource("Resource_3dyre")
+markedup_result_text = "The settlers collect chipped fragments of ancient tools and weapons, tablets with illegible markings, and pottery embedded in the cavern walls.
+
+None of these are useful by themselves, but someday they may fit into a larger puzzle."
+
+[sub_resource type="Resource" id="Resource_ch4xi"]
+script = ExtResource("5_4vlme")
+markedup_text = "Leave exploration for another day."
+markedup_result_text = "The sun sets with the ruins undisturbed.
+
+The wind whistles through ancient corridors and buried arches.
+
+They'll still be here tomorrow."
+
+[sub_resource type="Resource" id="Resource_1dxtn"]
+script = ExtResource("3_jawht")
+markedup_text = "The entrance yawns dark below the iron giant, leading into a catacomb of tunnels glimmering with buried glass and bits of metal.
+
+Down in the tunnels, makeshift beams strain under rope rigs and pulleys, as voices echo faintly from further below.
+
+\"This level's stable,\" an archaeologist says, as the ceiling groans in protest.
+\"We could keep descending, if enough of you are willing to hold the ropes.\"
+
+The deeper chambers promise ancient mechanisms and forgotten knowledge, but a slipped rope strike could mean a loss of lives."
+background_image = SubResource("Resource_nwrj1")
+background_credit = ExtResource("10_a1pu3")
+choices = Array[ExtResource("5_4vlme")]([SubResource("Resource_pf411"), SubResource("Resource_658i2"), SubResource("Resource_o44fc")])
+exit_choice = SubResource("Resource_ch4xi")
+
+[resource]
+script = ExtResource("2_e11c8")
+default_probability_weight = 0
+default_spot_upgrade = ExtResource("1_injng")
+repeatability = 2
+event_id = "endless_ruin"
+event_name = "Endless Ruin"
+requirement = SubResource("Resource_yqahe")
+steps = Array[ExtResource("3_jawht")]([SubResource("Resource_1dxtn")])
+categories = Array[int]([2])

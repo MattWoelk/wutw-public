@@ -1,0 +1,145 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://brwks6ok3bqf4"]
+
+[ext_resource type="Resource" uid="uid://cmfm1maginido" path="res://stage/spots/canyon/upgrade_canyon_3_rocks_reply.tres" id="1_0hb80"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_46hxp"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_eksga"]
+[ext_resource type="Resource" uid="uid://c6l4ff177ijgj" path="res://art/pieces/piece_hiroshige_enoshima_cave.tres" id="5_46hxp"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_xyuwe"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_eksga"]
+[ext_resource type="Resource" uid="uid://cjik8tpk2ixsj" path="res://relics/uncommon/stone_needle/relic_stone_needle.tres" id="6_f6q3q"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="7_srsj0"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="8_w1oum"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_bjnwa"]
+[ext_resource type="Resource" uid="uid://dvw5am2loxetp" path="res://cards/tier5/card_echo.tres" id="10_0hb80"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="11_63wcp"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="12_guy20"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="13_0taep"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="14_d44rw"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="15_o2j6s"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="16_nsy60"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="17_cmmn3"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="18_idixx"]
+[ext_resource type="Script" uid="uid://cbnw4a13y5x8c" path="res://events/system/outcomes/random/event_outcome_random.gd" id="19_5bxmx"]
+[ext_resource type="Script" uid="uid://gu7gcielbwdr" path="res://events/system/outcomes/choose_card/event_outcome_choose_card.gd" id="20_xwbw7"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="21_gsonj"]
+
+[sub_resource type="Resource" id="Resource_46hxp"]
+script = ExtResource("6_eksga")
+_texture_path = "res://events/generic/rocks_reply/rocks_reply.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("7_srsj0")
+relic = ExtResource("6_f6q3q")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_f2op8"]
+script = ExtResource("9_bjnwa")
+aspect_type = ExtResource("8_w1oum")
+min_count = 2
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("5_xyuwe")
+markedup_text = "Choose the one who fears death."
+requirement = SubResource("Resource_f2op8")
+outcome = SubResource("Resource_tuogj")
+markedup_result_text = "Their question is clear, almost clinical: when, how, and why.
+
+At dawn, the wall bears new cracks: five parallel lines. Just enough to know the stone understood.
+
+The settler says nothing and simply sits down, dejected. When he stands up, he has a little splinter of stone in his hand."
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("11_63wcp")
+card_type = ExtResource("10_0hb80")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_w2hpu"]
+script = ExtResource("9_bjnwa")
+aspect_type = ExtResource("12_guy20")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_3sdrw"]
+script = ExtResource("5_xyuwe")
+markedup_text = "Choose the one who wonders about the wall's nature."
+requirement = SubResource("Resource_w2hpu")
+outcome = SubResource("Resource_rx1a8")
+markedup_result_text = "\"What are you?\" the question reads, simple and to the point.
+
+The cracks that appear at dawn are complicated, but a scholar is willing to study them.
+
+After hours of tracing and comparison, she finally declares success. The cracks, she says, bear a striking resemblance to an ancient form of a familiar glyph."
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("16_nsy60")
+bonus_type = ExtResource("15_o2j6s")
+amount = 15
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("16_nsy60")
+bonus_type = ExtResource("17_cmmn3")
+amount = 15
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_ciwob"]
+script = ExtResource("13_0taep")
+suboutcomes = Array[ExtResource("14_d44rw")]([SubResource("Resource_dpp3j"), SubResource("Resource_06ahh")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_fmixu"]
+script = ExtResource("9_bjnwa")
+aspect_type = ExtResource("18_idixx")
+min_count = 4
+
+[sub_resource type="Resource" id="Resource_kojkx"]
+script = ExtResource("5_xyuwe")
+markedup_text = "Choose the one seeking safety."
+requirement = SubResource("Resource_fmixu")
+outcome = SubResource("Resource_ciwob")
+markedup_result_text = "The settler carves a careful plea: \"How do we best protect the expedition?\"
+
+That night, new cracks appear. At first no one is able to make any sense of them, but finally someone suggests that they are a map with a marked path. Once followed, the expedition finds itself on a ridge with perfect sightlines, ideal for studying the whole canyon."
+
+[sub_resource type="Resource" id="Resource_nthfn"]
+script = ExtResource("20_xwbw7")
+card_tier_bonus = 75
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_2myy3"]
+script = ExtResource("19_5bxmx")
+suboutcomes = Dictionary[ExtResource("14_d44rw"), float]({
+null: 0.8,
+SubResource("Resource_nthfn"): 0.2
+})
+description = "Chance of a choice of high rarity glyphs"
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_xh6l0"]
+script = ExtResource("5_xyuwe")
+markedup_text = "Watch the wall all night."
+outcome = SubResource("Resource_2myy3")
+markedup_result_text = "The expedition camps by the canyon wall, setting a watch through the night. When the dawn arrives, the wall appears unchanged.
+
+Some say they saw movement in the dust, and copy what they thought the pattern looked like."
+
+[sub_resource type="Resource" id="Resource_1stri"]
+script = ExtResource("3_eksga")
+markedup_text = "The cracks in the wall of this canyon look suspiciously like written characters. Folks claim that if one carves a question at dusk, by sunrise new cracks will appear as a response.
+
+Several of the settlers want to give this a try, each with a different question to ask."
+background_image = SubResource("Resource_46hxp")
+background_credit = ExtResource("5_46hxp")
+choices = Array[ExtResource("5_xyuwe")]([SubResource("Resource_4xuhh"), SubResource("Resource_3sdrw"), SubResource("Resource_kojkx")])
+exit_choice = SubResource("Resource_xh6l0")
+
+[resource]
+script = ExtResource("2_46hxp")
+default_spot_upgrade = ExtResource("1_0hb80")
+event_id = "rocks_reply"
+event_name = "The Rock's Reply"
+steps = Array[ExtResource("3_eksga")]([SubResource("Resource_1stri")])
+categories = Array[int]([3])

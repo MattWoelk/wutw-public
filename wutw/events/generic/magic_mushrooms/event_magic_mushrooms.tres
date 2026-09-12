@@ -1,0 +1,114 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://dghcokelolmn7"]
+
+[ext_resource type="Resource" uid="uid://cnk8qcthoxlj7" path="res://stage/spots/forest/upgrade_forest_1_forage.tres" id="1_qkjv1"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_c4u6w"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_o4mha"]
+[ext_resource type="Resource" uid="uid://8o7vvovmb765" path="res://art/pieces/piece_kunisada_mushrooms.tres" id="5_c4u6w"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_vg4ul"]
+[ext_resource type="Resource" uid="uid://gmgtv3q1b306" path="res://relics/rare/delicious_mushroom/relic_delicious_mushroom.tres" id="6_mj0ft"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_o4mha"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="7_1id5m"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="8_xsp6t"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="9_r7nks"]
+[ext_resource type="Resource" uid="uid://bfngpp0dfrldr" path="res://cards/tier2/card_omen.tres" id="10_f0ro3"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="11_pp6qy"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="12_8kbyh"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="13_7ilbi"]
+[ext_resource type="Resource" uid="uid://d3l51bvuenwrw" path="res://cards/tier2/card_forbid.tres" id="14_fyqd3"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="15_gjfr5"]
+
+[sub_resource type="Resource" id="Resource_c4u6w"]
+script = ExtResource("6_o4mha")
+_texture_path = "res://events/generic/magic_mushrooms/magic_mushrooms.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_8mfyw"]
+script = ExtResource("7_1id5m")
+relic = ExtResource("6_mj0ft")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_mlx4q"]
+script = ExtResource("9_r7nks")
+bonus_type = ExtResource("8_xsp6t")
+min_count = 50
+max_count = -1
+extra_per_season = 25
+
+[sub_resource type="Resource" id="Resource_1802j"]
+script = ExtResource("5_vg4ul")
+markedup_text = "Continue using the mushrooms as a staple food."
+requirement = SubResource("Resource_mlx4q")
+outcome = SubResource("Resource_8mfyw")
+markedup_result_text = "The settlers continue to harvest the mushrooms, consuming them almost daily.
+
+Only a few people suffer the strange visions, and once the novelty wears off, they mostly ignore them.
+
+The mushrooms do become a draw for pilgrims eager to commune with the spirits, though most are disappointed when they end up unaffected."
+
+[sub_resource type="Resource" id="Resource_40rqf"]
+script = ExtResource("11_pp6qy")
+card_type = ExtResource("10_f0ro3")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ekbn6"]
+script = ExtResource("13_7ilbi")
+aspect_type = ExtResource("12_8kbyh")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_gqh3h"]
+script = ExtResource("5_vg4ul")
+markedup_text = "Only use the mushrooms during spiritual ceremonies."
+requirement = SubResource("Resource_ekbn6")
+outcome = SubResource("Resource_40rqf")
+markedup_result_text = "The local priests adopt the mushrooms into their spirit communion ceremonies. The rare few who can see the spirits consult them about portents and omens, sharing their knowledge with the rest of the order, and incidentally quickly rising to positions of leadership.
+
+A little mushroom-shaped shrine is built, and pilgrims arrive regularly to pay their respects to the little blue people guarding this town."
+
+[sub_resource type="Resource" id="Resource_2stvf"]
+script = ExtResource("11_pp6qy")
+card_type = ExtResource("14_fyqd3")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_0w4cj"]
+script = ExtResource("9_r7nks")
+bonus_type = ExtResource("15_gjfr5")
+min_count = 15
+max_count = -1
+extra_per_season = 15
+
+[sub_resource type="Resource" id="Resource_uc6my"]
+script = ExtResource("5_vg4ul")
+markedup_text = "Ban the mushrooms completely."
+requirement = SubResource("Resource_0w4cj")
+outcome = SubResource("Resource_2stvf")
+markedup_result_text = "The healers insist that the mushrooms are dangerous. Who knows what these spirits might make people do.
+
+After some deliberation, the town council assents and consumption of these mushrooms is declared banned, punishable by exile."
+
+[sub_resource type="Resource" id="Resource_kc1aq"]
+script = ExtResource("5_vg4ul")
+markedup_text = "Discourage their use, but leave the decision up to each person."
+markedup_result_text = "Once the effects of the mushrooms become widely known, most settlers turn to other foods, wary of being among the few who get affected.
+
+Some who received visions from the mushrooms still consume them, but tend to do so in secret, afraid of being judged."
+
+[sub_resource type="Resource" id="Resource_owotm"]
+script = ExtResource("3_o4mha")
+markedup_text = "The foragers have discovered a new kind of mushroom in the glade. Plump, brown, and juicy, they sizzle when cooked and fill the air with a glorious aroma.
+
+As these mushrooms become a major food source in the budding settlement, several settlers report that they start seeing spirits after their meals, little blue figures flitting around.
+
+The priests are overjoyed at this window into the spirit world, but the healers claim that these visions are dangerous, and demand the mushrooms be banned."
+background_image = SubResource("Resource_c4u6w")
+background_credit = ExtResource("5_c4u6w")
+choices = Array[ExtResource("5_vg4ul")]([SubResource("Resource_1802j"), SubResource("Resource_gqh3h"), SubResource("Resource_uc6my")])
+exit_choice = SubResource("Resource_kc1aq")
+
+[resource]
+script = ExtResource("2_c4u6w")
+default_spot_upgrade = ExtResource("1_qkjv1")
+event_id = "magic_mushrooms"
+event_name = "Little Blue Figures"
+steps = Array[ExtResource("3_o4mha")]([SubResource("Resource_owotm")])
+categories = Array[int]([3])

@@ -1,0 +1,277 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://bcffmuoey3aik"]
+
+[ext_resource type="Resource" uid="uid://fbk64cyb0gk3" path="res://stage/spots/desert/upgrade_desert_2_mirage_gate.tres" id="1_bdyf7"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_5qgss"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_7ylhh"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="2_yexgr"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_d20yk"]
+[ext_resource type="Script" uid="uid://btrwtj4v8ufn" path="res://events/system/requirements/event_requirement_has_skill.gd" id="3_guyds"]
+[ext_resource type="Resource" uid="uid://boylx7l1ul646" path="res://skills/cards/skill_cards_shop_rare.tres" id="4_tt23y"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_xrgei"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="6_5ngv2"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="6_wrfiv"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_5jxrc"]
+[ext_resource type="Script" uid="uid://gu7gcielbwdr" path="res://events/system/outcomes/choose_card/event_outcome_choose_card.gd" id="8_hqyoi"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="9_yexgr"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="10_guyds"]
+[ext_resource type="Resource" uid="uid://i8vl8qcq1t48" path="res://art/pieces/piece_composed_mirage_gate.tres" id="10_tt23y"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="11_5ngv2"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="11_tt23y"]
+[ext_resource type="Script" uid="uid://cbnw4a13y5x8c" path="res://events/system/outcomes/random/event_outcome_random.gd" id="12_5ngv2"]
+[ext_resource type="Script" uid="uid://bbhwr4afafq2e" path="res://events/system/outcomes/unlock_shop/event_outcome_unlock_shop.gd" id="12_d20yk"]
+[ext_resource type="Script" uid="uid://yxgaymbbt8tk" path="res://events/system/outcomes/override_next_step/event_outcome_override_next_step.gd" id="13_5ivp2"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="14_s3bd8"]
+[ext_resource type="Resource" uid="uid://biemkdnrm7pl5" path="res://shops/get_rare_cards/shop_get_rare_card.tres" id="15_5qgss"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="15_62kaq"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="16_sw3se"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="17_ipob6"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="17_xrgei"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="18_l2mjb"]
+
+[sub_resource type="Resource" id="Resource_5ivp2"]
+script = ExtResource("3_guyds")
+skill = ExtResource("4_tt23y")
+metadata/_custom_type_script = "uid://btrwtj4v8ufn"
+
+[sub_resource type="Resource" id="Resource_a1pu3"]
+script = ExtResource("2_5qgss")
+var_id = "landmark_built"
+var_type = 1
+value = "false"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_s3bd8"]
+script = ExtResource("6_5ngv2")
+all_requirements = Array[ExtResource("2_yexgr")]([SubResource("Resource_5ivp2"), SubResource("Resource_a1pu3")])
+metadata/_custom_type_script = "uid://15prcev7a3ta"
+
+[sub_resource type="Resource" id="Resource_guyds"]
+script = ExtResource("11_5ngv2")
+_texture_path = "res://events/landmark/mirage_gate/mirage_gate.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_d0keq"]
+script = ExtResource("8_hqyoi")
+card_tier_bonus = 75
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_xrgei"]
+script = ExtResource("12_d20yk")
+shop_type = ExtResource("15_5qgss")
+metadata/_custom_type_script = "uid://bbhwr4afafq2e"
+
+[sub_resource type="Resource" id="Resource_8mfyw"]
+script = ExtResource("13_5ivp2")
+result_text = "Scholars study the inscriptions on the gate, cross-reference them with ancient texts, and prepare to activate its mechanism. It keeps the gate open for just a moment, but that's enough for the survey party to pass through.
+
+Days later, the party returns. They look haggard, fearful, and carrying something they did not have before.
+
+\"There was a staircase into darkness,\" one says. \"We descended for days before reaching a landing covered with strips of paper.\"
+
+\"We dropped a coin and never heard it land,\" another adds. \"That's when we knew it was time to turn back.\""
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_40rqf"]
+script = ExtResource("13_5ivp2")
+result_text = "Scholars study the inscriptions on the gate, cross-reference them with ancient texts, and prepare to activate its mechanism. It keeps the gate open for just a moment, but that's enough for the survey party to pass through.
+
+Days later, the party returns. They look haggard, fearful, and carrying something they did not have before.
+
+\"It was a desert, much like this,\" one says. \"But there were no rocks. Only giant bones scattered around the landscape.\"
+
+\"One of the bones, the biggest we saw, was completely covered in glyphs,\" another adds. \"By the time we copied it all down, we only had enough supplies to make it back to the gate.\""
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_2stvf"]
+script = ExtResource("13_5ivp2")
+result_text = "Scholars study the inscriptions on the gate, cross-reference them with ancient texts, and prepare to activate its mechanism. It keeps the gate open for just a moment, but that's enough for the survey party to pass through.
+
+Days later, the party returns. They look haggard, fearful, and carrying something they did not have before.
+
+\"It was a city,\" one says. \"At least we think it was.\"
+
+\"More of a warren, really,\" corrects another. \"All tunnels and stairs. We never saw the open sky.\"
+
+\"We could hear voices all around, but we couldn't tell where they came from,\" adds the first one."
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_xxhwh"]
+script = ExtResource("13_5ivp2")
+result_text = "Scholars study the inscriptions on the gate, cross-reference them with ancient texts, and prepare to activate its mechanism. It keeps the gate open for just a moment, but that's enough for the survey party to pass through.
+
+Days later, the party returns. They look haggard, fearful, and carrying something they did not have before.
+
+\"We walked for three days and saw no shadows,\" one says. \"Only once did we rest, and our fire made no smoke.\"
+
+\"The stars were wrong too,\" another adds. \"But at least by the time we were about to give up, we found ourselves back in front of the gate.\""
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_kio1v"]
+script = ExtResource("13_5ivp2")
+result_text = "Scholars study the inscriptions on the gate, cross-reference them with ancient texts, and prepare to activate its mechanism. It keeps the gate open for just a moment, but that's enough for the survey party to pass through.
+
+Days later, the party returns. They look haggard, fearful, and carrying something they did not have before.
+
+\"It was a garden of sorts,\" one says. \"Vines on trellises, just like back home.\"
+
+\"Yeah, but ours don't snap at you when you walk by,\" another objects."
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_df5af"]
+script = ExtResource("13_5ivp2")
+result_text = "Scholars study the inscriptions on the gate, cross-reference them with ancient texts, and prepare to activate its mechanism. It keeps the gate open for just a moment, but that's enough for the survey party to pass through.
+
+Days later, the party returns. They look haggard, fearful, and carrying something they did not have before.
+
+\"The entire place was made of glass,\" one says. \"The reflections almost blinded us.\"
+
+\"And the heat!\" another adds, \"If we hadn't packed all that water, we wouldn't be here.\""
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_ptcwf"]
+script = ExtResource("13_5ivp2")
+result_text = "Scholars study the inscriptions on the gate, cross-reference them with ancient texts, and prepare to activate its mechanism. It keeps the gate open for just a moment, but that's enough for the survey party to pass through.
+
+Days later, the party returns. They look haggard, fearful, and carrying something they did not have before.
+
+\"I think we should seal it,\" one says. \"No one needs to go through what we did.\"
+
+\"I wish I could forget it myself,\" another agrees."
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_egt2j"]
+script = ExtResource("12_5ngv2")
+suboutcomes = Dictionary[ExtResource("7_5jxrc"), float]({
+SubResource("Resource_8mfyw"): 1.0,
+SubResource("Resource_40rqf"): 1.0,
+SubResource("Resource_2stvf"): 1.0,
+SubResource("Resource_xxhwh"): 1.0,
+SubResource("Resource_kio1v"): 1.0,
+SubResource("Resource_df5af"): 1.0,
+SubResource("Resource_ptcwf"): 1.0
+})
+description = ""
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_rc2gp"]
+script = ExtResource("17_xrgei")
+var_id = "landmark_built"
+var_type = 1
+value = "true"
+description = ""
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_mxy6s"]
+script = ExtResource("6_wrfiv")
+suboutcomes = Array[ExtResource("7_5jxrc")]([SubResource("Resource_d0keq"), SubResource("Resource_xrgei"), SubResource("Resource_egt2j"), SubResource("Resource_rc2gp")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("14_s3bd8")
+bonus_type = ExtResource("10_guyds")
+min_count = 40
+max_count = -1
+extra_per_season = 40
+
+[sub_resource type="Resource" id="Resource_ciwob"]
+script = ExtResource("5_xrgei")
+markedup_text = "Send experienced adventurers and scholars on a survey."
+requirement = SubResource("Resource_06ahh")
+outcome = SubResource("Resource_mxy6s")
+markedup_result_text = "<overridden>"
+
+[sub_resource type="Resource" id="Resource_f2op8"]
+script = ExtResource("11_tt23y")
+bonus_type = ExtResource("15_62kaq")
+amount = -50
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("13_5ivp2")
+result_text = "After a quick preparation, one scholar triggers a mechanism at the bottom of the gate, buried in the sand.
+
+The gate shimmers for a moment, then drowns the desert with an ear-shattering boom.
+
+The rescue effort takes hours.
+
+The gate remains standing, with nary a mark on its weathered stone."
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("6_wrfiv")
+suboutcomes = Array[ExtResource("7_5jxrc")]([SubResource("Resource_f2op8"), SubResource("Resource_4xuhh")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("12_5ngv2")
+suboutcomes = Dictionary[ExtResource("7_5jxrc"), float]({
+SubResource("Resource_mxy6s"): 0.25,
+SubResource("Resource_tuogj"): 0.75
+})
+description = "A dangerous gamble"
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_nthfn"]
+script = ExtResource("14_s3bd8")
+bonus_type = ExtResource("10_guyds")
+min_count = 30
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_2myy3"]
+script = ExtResource("5_xrgei")
+markedup_text = "Attempt to force your way through."
+requirement = SubResource("Resource_nthfn")
+outcome = SubResource("Resource_rx1a8")
+markedup_result_text = "<overridden>"
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("11_tt23y")
+bonus_type = ExtResource("16_sw3se")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_w2hpu"]
+script = ExtResource("18_l2mjb")
+aspect_type = ExtResource("17_ipob6")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_3sdrw"]
+script = ExtResource("5_xrgei")
+markedup_text = "Copy the inscriptions from the gate."
+requirement = SubResource("Resource_w2hpu")
+outcome = SubResource("Resource_dpp3j")
+markedup_result_text = "A scholar traces faded markings etched into the base of the gate, lines that look like writing but change under different light.
+
+They don't know what it means, but now it's part of the records."
+
+[sub_resource type="Resource" id="Resource_fmixu"]
+script = ExtResource("5_xrgei")
+markedup_text = "Leave it alone."
+
+[sub_resource type="Resource" id="Resource_kojkx"]
+script = ExtResource("3_d20yk")
+markedup_text = "The gate is a simple doorway made of three enormous stones.
+
+From a distance, strange landscapes flicker within its opening - spires rising above alien cities, strange plants reaching for purple skies, lizards flying through the air.
+
+Up close, it's just weathered stone, half-sunken in sand.
+
+The more experienced adventurers among the expedition are sure that there's a way to pass through to the other side."
+background_image = SubResource("Resource_guyds")
+background_credit = ExtResource("10_tt23y")
+choices = Array[ExtResource("5_xrgei")]([SubResource("Resource_ciwob"), SubResource("Resource_2myy3"), SubResource("Resource_3sdrw")])
+exit_choice = SubResource("Resource_fmixu")
+
+[resource]
+script = ExtResource("2_7ylhh")
+default_probability_weight = 0
+default_spot_upgrade = ExtResource("1_bdyf7")
+repeatability = 2
+event_id = "mirage_gate"
+event_name = "Mirage Gate"
+requirement = SubResource("Resource_s3bd8")
+steps = Array[ExtResource("3_d20yk")]([SubResource("Resource_kojkx")])
+categories = Array[int]([2])

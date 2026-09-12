@@ -1,0 +1,138 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://b1xknvxutcith"]
+
+[ext_resource type="Resource" uid="uid://dervw2rmvo43" path="res://stage/spots/cliff/upgrade_cliff_1_nest.tres" id="1_grtev"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="2_6nmla"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_07p7r"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_p71ga"]
+[ext_resource type="Resource" uid="uid://x2krowwjt2ty" path="res://art/pieces/piece_hirosada_ducks.tres" id="6_0w1o7"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_6nmla"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="7_c83ds"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="8_5c1e1"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="9_l5gah"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="10_dn4vj"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="11_teo1j"]
+[ext_resource type="Resource" uid="uid://x387lgf0wkve" path="res://relics/uncommon/paper_wing/relic_paper_plumage.tres" id="12_p6e8r"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="13_e6whn"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="14_ylcma"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="15_inmn7"]
+[ext_resource type="Resource" uid="uid://c56144htcsrqp" path="res://cards/tier2/card_bird.tres" id="16_c44yi"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="17_hvy3g"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="18_urj1n"]
+[ext_resource type="Resource" uid="uid://ct7e05ru4yoh0" path="res://cards/tier2/card_nest.tres" id="19_t848a"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="20_baaab"]
+
+[sub_resource type="Resource" id="Resource_3bpdq"]
+script = ExtResource("2_6nmla")
+min_progress = 300
+max_progress = -1
+
+[sub_resource type="Resource" id="Resource_grtev"]
+script = ExtResource("7_6nmla")
+_texture_path = "res://events/generic/bird_man/bird_man.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_xxhwh"]
+script = ExtResource("11_teo1j")
+bonus_type = ExtResource("10_dn4vj")
+amount = -10
+extra_per_season = -15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_kio1v"]
+script = ExtResource("13_e6whn")
+relic = ExtResource("12_p6e8r")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_df5af"]
+script = ExtResource("8_5c1e1")
+suboutcomes = Array[ExtResource("9_l5gah")]([SubResource("Resource_xxhwh"), SubResource("Resource_kio1v")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_e85yy"]
+script = ExtResource("15_inmn7")
+aspect_type = ExtResource("14_ylcma")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_mskpm"]
+script = ExtResource("7_c83ds")
+markedup_text = "Have the artisans craft him proper plumage."
+requirement = SubResource("Resource_e85yy")
+outcome = SubResource("Resource_df5af")
+markedup_result_text = "If he is to be a bird, he shouldn't have to make do with a frayed robe.
+
+The artisans meticulously fold, layer, and dye paper to create a magnificent cloak of artificial feathers.
+
+When he spreads his arms against the wind, he cries with joy as his spirit soars."
+
+[sub_resource type="Resource" id="Resource_anomo"]
+script = ExtResource("17_hvy3g")
+card_type = ExtResource("16_c44yi")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_dyeih"]
+script = ExtResource("15_inmn7")
+aspect_type = ExtResource("18_urj1n")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_66tuy"]
+script = ExtResource("7_c83ds")
+markedup_text = "Formally recognize his spirit as a patron deity."
+requirement = SubResource("Resource_dyeih")
+outcome = SubResource("Resource_anomo")
+markedup_result_text = "The Enlightened One's blessings work in mysterious ways, the monks declare. Perhaps a sky-bound fragment of the divine spirit tumbled into a human frame.
+
+A small shrine is dedicated to the new avian patron god in a small ceremony.
+
+The settlers now awake each dawn to the trilling song of the bird man, out on the cliff."
+
+[sub_resource type="Resource" id="Resource_nbuck"]
+script = ExtResource("17_hvy3g")
+card_type = ExtResource("19_t848a")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_xera0"]
+script = ExtResource("15_inmn7")
+aspect_type = ExtResource("20_baaab")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_igaq2"]
+script = ExtResource("7_c83ds")
+markedup_text = "Ask if he needs help."
+requirement = SubResource("Resource_xera0")
+outcome = SubResource("Resource_nbuck")
+markedup_result_text = "When asked, the bird man indicates that he needs a nest for himself, one large enough for a human.
+
+His friends set to work under his guidance, bringing woven reeds, dried moss, and bits of cloth.
+
+The result is the strangest nest any of them had seen, but the bird man finds it perfectly comfortable."
+
+[sub_resource type="Resource" id="Resource_nt08v"]
+script = ExtResource("7_c83ds")
+markedup_text = "Leave him undisturbed."
+markedup_result_text = "The world is strange enough without demanding everyone fit into the same mold.
+
+The community agrees to let him be, ensuring someone checks up on him once in a while."
+
+[sub_resource type="Resource" id="Resource_btt8q"]
+script = ExtResource("4_p71ga")
+markedup_text = "When the expedition first encountered bird nests on the cliffs, one of the settlers felt a particular affinity with the birds.
+
+Only a few days later, he declared that he was a bird, reborn in the wrong vessel. He now spends his days crouching at the edge of the cliff, his robe shaped to resemble plumage.
+
+The other settlers are concerned, but though peculiar, he understands his physical limitations and seems harmless."
+background_image = SubResource("Resource_grtev")
+background_credit = ExtResource("6_0w1o7")
+choices = Array[ExtResource("7_c83ds")]([SubResource("Resource_mskpm"), SubResource("Resource_66tuy"), SubResource("Resource_igaq2")])
+exit_choice = SubResource("Resource_nt08v")
+
+[resource]
+script = ExtResource("3_07p7r")
+default_spot_upgrade = ExtResource("1_grtev")
+event_id = "bird_man"
+event_name = "The Bird Man"
+requirement = SubResource("Resource_3bpdq")
+steps = Array[ExtResource("4_p71ga")]([SubResource("Resource_btt8q")])
+categories = Array[int]([3])

@@ -1,0 +1,152 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://dsr54ucwpnxoh"]
+
+[ext_resource type="Resource" uid="uid://c0511h8unpsdb" path="res://stage/spots/building_small/upgrade_building_small_3_fermenter.tres" id="1_4t185"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_fwouk"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_cmiv8"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_bho5i"]
+[ext_resource type="Resource" uid="uid://bbhmy3frd1vew" path="res://art/pieces/piece_souzan_tanuki.tres" id="6_fwouk"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_ncm4o"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_cmiv8"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="7_odhak"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="8_x5mun"]
+[ext_resource type="Resource" uid="uid://s5v6umkpr30d" path="res://cards/tier2/card_release.tres" id="9_w2t0d"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="10_djgem"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="11_fqisn"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="12_hvmvi"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="13_3qajk"]
+[ext_resource type="Resource" uid="uid://dqjs6ku3af58h" path="res://cards/tier2/card_cut.tres" id="14_ensy2"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="15_rxwd6"]
+[ext_resource type="Resource" uid="uid://dhjg5km7rqeih" path="res://cards/tier6/card_vomit.tres" id="16_8xsur"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="17_macnl"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="18_5y63h"]
+[ext_resource type="Resource" uid="uid://dog6baakvktg8" path="res://cards/tier2/card_instruct.tres" id="19_i8l5w"]
+
+[sub_resource type="Resource" id="Resource_yeeuo"]
+script = ExtResource("2_fwouk")
+scope = 1
+event_id = "global"
+var_id = "companion_tanuki"
+value = "1"
+
+[sub_resource type="Resource" id="Resource_fwouk"]
+script = ExtResource("7_cmiv8")
+_texture_path = "res://events/companions/tanuki/event_companion_tanuki_2.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_5i823"]
+script = ExtResource("10_djgem")
+card_type = ExtResource("9_w2t0d")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_greao"]
+script = ExtResource("11_fqisn")
+scope = 1
+event_id = "global"
+var_id = "companion_tanuki"
+value = "2"
+description = "Help the tanuki"
+outcome_description = "The tanuki appreciates the help."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_jqd0k"]
+script = ExtResource("7_odhak")
+suboutcomes = Array[ExtResource("8_x5mun")]([SubResource("Resource_5i823"), SubResource("Resource_greao")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_audfa"]
+script = ExtResource("13_3qajk")
+aspect_type = ExtResource("12_hvmvi")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_lncp7"]
+script = ExtResource("6_ncm4o")
+markedup_text = "Untangle the little criminal."
+requirement = SubResource("Resource_audfa")
+outcome = SubResource("Resource_jqd0k")
+markedup_result_text = "A brave brewer steps forward, murmuring soft words of reassurance, and carefully unwinds the vines from the creature's legs.
+
+The animal freezes for a moment, but once freed, it gives the brewer a glazed look, then slowly ambles away into the darkness, hiccuping the entire time."
+
+[sub_resource type="Resource" id="Resource_ivl3n"]
+script = ExtResource("10_djgem")
+card_type = ExtResource("14_ensy2")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_nfw6v"]
+script = ExtResource("7_odhak")
+suboutcomes = Array[ExtResource("8_x5mun")]([SubResource("Resource_ivl3n"), SubResource("Resource_greao")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_25mnb"]
+script = ExtResource("13_3qajk")
+aspect_type = ExtResource("15_rxwd6")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_ejiuu"]
+script = ExtResource("6_ncm4o")
+markedup_text = "Cut away the vines."
+requirement = SubResource("Resource_25mnb")
+outcome = SubResource("Resource_nfw6v")
+markedup_result_text = "A brewer fetches her harvesting knife and snips the vines away.
+
+The animal freezes for a moment, but once freed, it gives the brewer a glazed look, then slowly ambles away into the darkness, hiccuping the entire time."
+
+[sub_resource type="Resource" id="Resource_uhtks"]
+script = ExtResource("10_djgem")
+card_type = ExtResource("16_8xsur")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_shebf"]
+script = ExtResource("18_5y63h")
+bonus_type = ExtResource("17_macnl")
+min_count = 30
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_jo6jf"]
+script = ExtResource("6_ncm4o")
+markedup_text = "Give it some food to go with the drink."
+requirement = SubResource("Resource_shebf")
+outcome = SubResource("Resource_uhtks")
+markedup_result_text = "A brewer takes pity on the creature and tosses it a dried plum to soak up the alcohol.
+
+The animal sniffs it, takes a tentative bite, and immediately throws up.
+
+Its belly having contracted, it finally gets through the vines and scrambles away in shame."
+
+[sub_resource type="Resource" id="Resource_e6cps"]
+script = ExtResource("10_djgem")
+card_type = ExtResource("19_i8l5w")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_8bsgh"]
+script = ExtResource("6_ncm4o")
+markedup_text = "Leave it tangled as a lesson."
+outcome = SubResource("Resource_e6cps")
+markedup_result_text = "The brewers decide that a night in the vines is exactly the sort of punishment a thief deserves.
+
+When morning comes, the creature is still there, having simply given up and fallen fast asleep."
+
+[sub_resource type="Resource" id="Resource_mjju6"]
+script = ExtResource("4_bho5i")
+markedup_text = "The brewers at the lodge have recently found some of their aging vats broken, the precious liquid spilled all around them.
+
+One night they hide, hoping to catch the thief. By midnight they hear a rustling from behind the lodge, and rush to find the culprit.
+
+They are greeted by a tanuki stumbling away into the dark, only to be caught in the vines. The animal turns around, a look of sheepish confusion on its face."
+background_image = SubResource("Resource_fwouk")
+background_credit = ExtResource("6_fwouk")
+choices = Array[ExtResource("6_ncm4o")]([SubResource("Resource_lncp7"), SubResource("Resource_ejiuu"), SubResource("Resource_jo6jf")])
+exit_choice = SubResource("Resource_8bsgh")
+
+[resource]
+script = ExtResource("3_cmiv8")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_4t185")
+event_id = "companion_tanuki_2"
+event_name = "Drunken Stumbling"
+requirement = SubResource("Resource_yeeuo")
+steps = Array[ExtResource("4_bho5i")]([SubResource("Resource_mjju6")])
+categories = Array[int]([0, 4])

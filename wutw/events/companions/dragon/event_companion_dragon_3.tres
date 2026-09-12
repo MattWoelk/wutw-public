@@ -1,0 +1,151 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://ctve2gccieiok"]
+
+[ext_resource type="Resource" uid="uid://bmbr0f72igpb2" path="res://stage/spots/mountain/upgrade_mountain_3_dragon_roost.tres" id="1_hbjkr"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_3e6pm"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_gc4wn"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_hvqro"]
+[ext_resource type="Resource" uid="uid://ns6dh6btwor7" path="res://art/pieces/piece_hokusai_mountain_climbers.tres" id="6_4ijrs"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_2amla"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="7_rtwii"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="8_f4sg2"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="9_or6jd"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="10_tcxno"]
+[ext_resource type="Resource" uid="uid://pe4klyths3xx" path="res://companions/dragon/companion_dragon.tres" id="11_aljaj"]
+[ext_resource type="Script" uid="uid://2you2r2oar48" path="res://events/system/outcomes/unlock_companion/event_outcome_unlock_companion.gd" id="12_eede8"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="13_74bv8"]
+[ext_resource type="Script" uid="uid://dnxdmp6ko2c00" path="res://events/system/outcomes/mark_all_choices_seen/event_outcome_mark_all_choices_seen.gd" id="13_hvqro"]
+[ext_resource type="Resource" uid="uid://chumw0v8kp54m" path="res://events/companions/dragon/event_companion_dragon_1.tres" id="14_2amla"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="14_h1qxu"]
+[ext_resource type="Resource" uid="uid://c6a270hovrkm" path="res://events/companions/dragon/event_companion_dragon_2.tres" id="15_4ijrs"]
+[ext_resource type="Resource" uid="uid://c8xf6t02mtmn" path="res://cards/tier3/card_bellow.tres" id="15_grr06"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="16_u2k0h"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="17_6lqfp"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="18_ycv7f"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="19_l0uj2"]
+
+[sub_resource type="Resource" id="Resource_jknen"]
+script = ExtResource("2_3e6pm")
+scope = 1
+event_id = "global"
+var_id = "companion_dragon"
+value = "2"
+
+[sub_resource type="Resource" id="Resource_hvqro"]
+script = ExtResource("7_2amla")
+_texture_path = "res://events/companions/dragon/companion_dragon_1.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_nthfn"]
+script = ExtResource("10_tcxno")
+scope = 1
+event_id = "global"
+var_id = "companion_dragon"
+value = "3"
+description = ""
+outcome_description = "Communed with the dragon spirit."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_odklu"]
+script = ExtResource("12_eede8")
+companion = ExtResource("11_aljaj")
+metadata/_custom_type_script = "uid://2you2r2oar48"
+
+[sub_resource type="Resource" id="Resource_rtwii"]
+script = ExtResource("13_hvqro")
+seen_event = ExtResource("14_2amla")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_f4sg2"]
+script = ExtResource("13_hvqro")
+seen_event = ExtResource("15_4ijrs")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_or6jd"]
+script = ExtResource("13_hvqro")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_mxkqw"]
+script = ExtResource("8_f4sg2")
+suboutcomes = Array[ExtResource("9_or6jd")]([SubResource("Resource_nthfn"), SubResource("Resource_odklu"), SubResource("Resource_rtwii"), SubResource("Resource_f4sg2"), SubResource("Resource_or6jd")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_j4026"]
+script = ExtResource("14_h1qxu")
+aspect_type = ExtResource("13_74bv8")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_fhxjv"]
+script = ExtResource("7_rtwii")
+markedup_text = "Explore the cave despite the miasma."
+requirement = SubResource("Resource_j4026")
+outcome = SubResource("Resource_mxkqw")
+markedup_result_text = "The monks venture into the cave, braving the miasma. After hours of waiting, their fellows suspect the worst and mount a rescue mission.
+
+They find the original explorers passed out, and quickly drag them out into fresh air. When the monks finally awaken, they share their story, punctuated by violent coughing fits.
+
+Soon after they entered the cave, they felt a divine presence. A sense of peace bloomed in their mind, and the dragon spirit appeared to them. It commended them on their courage, and spoke of the Enlightened One's commandments. If the world is to be restored, it said, the people must make an accord with nature, a vow to keep the balance and honor the spirits of the earth."
+
+[sub_resource type="Resource" id="Resource_hda7r"]
+script = ExtResource("16_u2k0h")
+card_type = ExtResource("15_grr06")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_473nj"]
+script = ExtResource("14_h1qxu")
+aspect_type = ExtResource("17_6lqfp")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_w1xlo"]
+script = ExtResource("7_rtwii")
+markedup_text = "Try to clear the air with bellows."
+requirement = SubResource("Resource_473nj")
+outcome = SubResource("Resource_hda7r")
+markedup_result_text = "The monks return back to the settlement and bring back with them many sets of bellows.
+
+They work for hours pumping the miasma out, but the moment they stop, the cave immediately starts filling back up with bad air.
+
+After a day of attempts, they give up and decide to leave the cave unexplored."
+
+[sub_resource type="Resource" id="Resource_hoe8e"]
+script = ExtResource("19_l0uj2")
+bonus_type = ExtResource("18_ycv7f")
+amount = -15
+extra_per_season = -15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_qrom4"]
+script = ExtResource("7_rtwii")
+markedup_text = "Cleanse the miasma with fire."
+outcome = SubResource("Resource_hoe8e")
+markedup_result_text = "The monks ignite torches and throw them into the cave.
+
+The results are immediate. A jet of flame erupts from the cave, blowing the hapless monks away.
+
+Thankfully everyone survives, but they wisely conclude that the dragon must not appreciate such forceful attempts to enter its abode."
+
+[sub_resource type="Resource" id="Resource_kq3a0"]
+script = ExtResource("7_rtwii")
+markedup_text = "Retreat to safety."
+markedup_result_text = "The monks leave the cave exploration for another day, hoping that the miasma will have cleared by then."
+
+[sub_resource type="Resource" id="Resource_2ti5x"]
+script = ExtResource("4_hvqro")
+markedup_text = "The Ember monks come upon what has become a famous sight. A cave entrance carved into the side of the volcano. Such caves have been found on many other shards, and have long been revered as the abodes of dragons.
+
+This particular cave is filled with a foul-smelling miasma."
+background_image = SubResource("Resource_hvqro")
+background_credit = ExtResource("6_4ijrs")
+choices = Array[ExtResource("7_rtwii")]([SubResource("Resource_fhxjv"), SubResource("Resource_w1xlo"), SubResource("Resource_qrom4")])
+exit_choice = SubResource("Resource_kq3a0")
+
+[resource]
+script = ExtResource("3_gc4wn")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_hbjkr")
+event_id = "companion_dragon_3"
+event_name = "A Vision of the Dragon"
+requirement = SubResource("Resource_jknen")
+steps = Array[ExtResource("4_hvqro")]([SubResource("Resource_2ti5x")])
+categories = Array[int]([0, 4, 1])

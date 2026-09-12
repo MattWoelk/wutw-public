@@ -1,0 +1,241 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://3k45hd0lq0uh"]
+
+[ext_resource type="Resource" uid="uid://gpnysm72dhii" path="res://stage/spots/swamp/upgrade_swamp_2_apothecary_hut.tres" id="1_ty4gd"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_8f1tl"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_cxwib"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_elrvq"]
+[ext_resource type="Resource" uid="uid://cqfqraokjloqi" path="res://art/pieces/piece_gekkou_sotoori_spider.tres" id="6_8f1tl"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_c3i2k"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="7_8t1sq"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_cxwib"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="8_x8q8h"]
+[ext_resource type="Resource" uid="uid://bnty6x6w71nkc" path="res://cards/tier3/card_medicine.tres" id="9_w6xgj"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="10_burte"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="11_xxwyr"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="12_wrwnl"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="13_82aac"]
+[ext_resource type="Resource" uid="uid://ccd8n4yhmtry4" path="res://companions/spider/companion_spider.tres" id="14_64iy1"]
+[ext_resource type="Script" uid="uid://2you2r2oar48" path="res://events/system/outcomes/unlock_companion/event_outcome_unlock_companion.gd" id="15_kgwe3"]
+[ext_resource type="Script" uid="uid://dnxdmp6ko2c00" path="res://events/system/outcomes/mark_all_choices_seen/event_outcome_mark_all_choices_seen.gd" id="16_v4shx"]
+[ext_resource type="Resource" uid="uid://3bie4sfywpkx" path="res://events/companions/spider/event_companion_spider_1.tres" id="17_jeyjr"]
+[ext_resource type="Resource" uid="uid://26hqi228tbyg" path="res://events/companions/spider/event_companion_spider_2.tres" id="18_3hx4w"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="19_fbx6v"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="20_kdj3s"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="21_3il01"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="22_se22x"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="23_28wri"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="24_k2ger"]
+
+[sub_resource type="Resource" id="Resource_mm2xc"]
+script = ExtResource("2_8f1tl")
+scope = 1
+event_id = "global"
+var_id = "companion_spider"
+value = "2"
+
+[sub_resource type="Resource" id="Resource_8f1tl"]
+script = ExtResource("7_cxwib")
+_texture_path = "res://events/companions/spider/event_companion_spider_3.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_abxgq"]
+script = ExtResource("10_burte")
+card_type = ExtResource("9_w6xgj")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_1wht3"]
+script = ExtResource("12_wrwnl")
+bonus_type = ExtResource("11_xxwyr")
+amount = 20
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_hd0bi"]
+script = ExtResource("13_82aac")
+scope = 1
+event_id = "global"
+var_id = "companion_spider"
+value = "3"
+description = ""
+outcome_description = "An uneasy alliance is forged."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_8llkr"]
+script = ExtResource("15_kgwe3")
+companion = ExtResource("14_64iy1")
+metadata/_custom_type_script = "uid://2you2r2oar48"
+
+[sub_resource type="Resource" id="Resource_rgmse"]
+script = ExtResource("16_v4shx")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_litrj"]
+script = ExtResource("16_v4shx")
+seen_event = ExtResource("17_jeyjr")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_04y7t"]
+script = ExtResource("16_v4shx")
+seen_event = ExtResource("18_3hx4w")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_a8nfe"]
+script = ExtResource("7_8t1sq")
+suboutcomes = Array[ExtResource("8_x8q8h")]([SubResource("Resource_abxgq"), SubResource("Resource_1wht3"), SubResource("Resource_hd0bi"), SubResource("Resource_8llkr"), SubResource("Resource_rgmse"), SubResource("Resource_litrj"), SubResource("Resource_04y7t")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_ymt2v"]
+script = ExtResource("20_kdj3s")
+aspect_type = ExtResource("19_fbx6v")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_jetgi"]
+script = ExtResource("6_c3i2k")
+markedup_text = "Coax it to bite a resin-coated stick."
+requirement = SubResource("Resource_ymt2v")
+outcome = SubResource("Resource_a8nfe")
+markedup_result_text = "The apothecary carefully agitates the spider until it strikes the stick, leaving heavy beads of precious venom behind on the resin.
+
+The apothecary collects it, and successfully produces a cure.
+
+The spider is kept around for future extractions, left mostly to its devices."
+
+[sub_resource type="Resource" id="Resource_i485o"]
+script = ExtResource("10_burte")
+card_type = ExtResource("9_w6xgj")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_n88pm"]
+script = ExtResource("21_3il01")
+delta = -15
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_0tjbm"]
+script = ExtResource("13_82aac")
+scope = 1
+event_id = "global"
+var_id = "companion_spider"
+value = "3"
+description = ""
+outcome_description = "An uneasy alliance is forged."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_q743t"]
+script = ExtResource("15_kgwe3")
+companion = ExtResource("14_64iy1")
+metadata/_custom_type_script = "uid://2you2r2oar48"
+
+[sub_resource type="Resource" id="Resource_eg7k1"]
+script = ExtResource("16_v4shx")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_hhk60"]
+script = ExtResource("16_v4shx")
+seen_event = ExtResource("17_jeyjr")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_kkhk4"]
+script = ExtResource("16_v4shx")
+seen_event = ExtResource("18_3hx4w")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_cnauk"]
+script = ExtResource("7_8t1sq")
+suboutcomes = Array[ExtResource("8_x8q8h")]([SubResource("Resource_i485o"), SubResource("Resource_n88pm"), SubResource("Resource_0tjbm"), SubResource("Resource_q743t"), SubResource("Resource_eg7k1"), SubResource("Resource_hhk60"), SubResource("Resource_kkhk4")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_e6qt7"]
+script = ExtResource("23_28wri")
+bonus_type = ExtResource("22_se22x")
+min_count = 40
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_hrsh3"]
+script = ExtResource("6_c3i2k")
+markedup_text = "Suffer a bite to extract the venom."
+requirement = SubResource("Resource_e6qt7")
+outcome = SubResource("Resource_cnauk")
+markedup_result_text = "The apothecary offers her bare arm to the spider.
+
+The bite is agonizing, and she has to push through an all-consuming feeling of hopelessness to continue the project.
+
+She squeezes enough of the venom out of the wound to successfully produce a cure, but spends the next week barely leaving the hut."
+
+[sub_resource type="Resource" id="Resource_iobfk"]
+script = ExtResource("10_burte")
+card_type = ExtResource("9_w6xgj")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ohjcy"]
+script = ExtResource("12_wrwnl")
+bonus_type = ExtResource("11_xxwyr")
+amount = 15
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_56eag"]
+script = ExtResource("12_wrwnl")
+bonus_type = ExtResource("24_k2ger")
+amount = -40
+extra_per_season = -20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_yiifo"]
+script = ExtResource("7_8t1sq")
+suboutcomes = Array[ExtResource("8_x8q8h")]([SubResource("Resource_iobfk"), SubResource("Resource_ohjcy"), SubResource("Resource_56eag")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_g5vag"]
+script = ExtResource("23_28wri")
+bonus_type = ExtResource("24_k2ger")
+min_count = -1
+max_count = 30
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_l0et7"]
+script = ExtResource("6_c3i2k")
+markedup_text = "Crush the spider to extract the venom."
+requirement = SubResource("Resource_g5vag")
+outcome = SubResource("Resource_yiifo")
+markedup_result_text = "It is messy work, but it gets the job done.
+
+The town gets an antidote, but the creature is destroyed."
+
+[sub_resource type="Resource" id="Resource_juwxj"]
+script = ExtResource("12_wrwnl")
+bonus_type = ExtResource("11_xxwyr")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_mnhbo"]
+script = ExtResource("6_c3i2k")
+markedup_text = "Release the spider far away."
+outcome = SubResource("Resource_juwxj")
+markedup_result_text = "The apothecary refuses to risk an extraction, dumping the spider back into the swamp.
+
+The town will simply have to endure the bites for the time being."
+
+[sub_resource type="Resource" id="Resource_4414k"]
+script = ExtResource("4_elrvq")
+markedup_text = "The town has been plagued by painful spider bites. What's worse, they seem to put victims into a depression that lasts for days.
+
+An apothecary has finally identified the exact type of spider responsible for the affliction, and one is now hanging on its web in her hut.
+
+She thinks she could use its venom to brew an antidote, but extracting it from such an aggressive creature is a delicate matter."
+background_image = SubResource("Resource_8f1tl")
+background_credit = ExtResource("6_8f1tl")
+choices = Array[ExtResource("6_c3i2k")]([SubResource("Resource_jetgi"), SubResource("Resource_hrsh3"), SubResource("Resource_l0et7")])
+exit_choice = SubResource("Resource_mnhbo")
+
+[resource]
+script = ExtResource("3_cxwib")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_ty4gd")
+event_id = "companion_spider_3"
+event_name = "The Antidote"
+requirement = SubResource("Resource_mm2xc")
+steps = Array[ExtResource("4_elrvq")]([SubResource("Resource_4414k")])
+categories = Array[int]([0, 4])

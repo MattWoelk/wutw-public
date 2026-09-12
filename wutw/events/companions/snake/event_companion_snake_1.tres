@@ -1,0 +1,165 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://chjfe5avxh1l2"]
+
+[ext_resource type="Resource" uid="uid://6d4qku0kl0mv" path="res://stage/spots/plains/upgrade_plains_2_kudzu_plantation.tres" id="1_8ap2b"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="2_isffb"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="3_ec3cn"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="4_wutk1"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="5_y0svm"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="6_ykypw"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="7_7ixqk"]
+[ext_resource type="Resource" uid="uid://cldhs06v2ox6b" path="res://art/pieces/piece_kuniyoshi_shotoku.tres" id="8_isffb"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="8_x6041"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="9_dvcb2"]
+[ext_resource type="Resource" uid="uid://b6dtme7vqnx5c" path="res://cards/tier2/card_mirror.tres" id="10_j4b0l"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="11_7pq50"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="12_gy47v"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="13_df7b3"]
+[ext_resource type="Resource" uid="uid://bntnxu2l12ofn" path="res://cards/tier2/card_stick.tres" id="14_nbl80"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="15_bqkmq"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="16_8fnsp"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="17_m3qxx"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="18_o3be4"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="19_wbxq6"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="20_mus6g"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="21_ihajt"]
+[ext_resource type="Resource" uid="uid://demdkyk2xpdvq" path="res://quests/companion/quest_companion_snake.tres" id="22_wc4fd"]
+[ext_resource type="Script" uid="uid://rlexviyd8sv7" path="res://events/system/outcomes/start_quest/event_outcome_start_quest.gd" id="23_n1yq1"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="24_wmkka"]
+
+[sub_resource type="Resource" id="Resource_nn5ke"]
+script = ExtResource("3_ec3cn")
+min_progress = 320
+max_progress = -1
+
+[sub_resource type="Resource" id="Resource_mdug1"]
+script = ExtResource("4_wutk1")
+scope = 1
+event_id = "global"
+var_id = "companion_snake"
+value = "0"
+
+[sub_resource type="Resource" id="Resource_jtc5l"]
+script = ExtResource("5_y0svm")
+all_requirements = Array[ExtResource("2_isffb")]([SubResource("Resource_nn5ke"), SubResource("Resource_mdug1")])
+
+[sub_resource type="Resource" id="Resource_puplv"]
+script = ExtResource("8_x6041")
+_texture_path = "res://events/companions/snake/companion_snake_1.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_u7iqv"]
+script = ExtResource("11_7pq50")
+card_type = ExtResource("10_j4b0l")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_aj18e"]
+script = ExtResource("13_df7b3")
+aspect_type = ExtResource("12_gy47v")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_tin4f"]
+script = ExtResource("9_dvcb2")
+markedup_text = "Use a mirror to scare the snake with a bright beam."
+requirement = SubResource("Resource_aj18e")
+outcome = SubResource("Resource_u7iqv")
+markedup_result_text = "An inventive woman among the crowd takes out a mirror and uses it to reflect the sunlight right into the snake's eyes.
+
+The snake startles, uncoils, and flees deeper into the field, clearly unhappy."
+
+[sub_resource type="Resource" id="Resource_cve28"]
+script = ExtResource("11_7pq50")
+card_type = ExtResource("14_nbl80")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_dte5b"]
+script = ExtResource("13_df7b3")
+aspect_type = ExtResource("15_bqkmq")
+min_count = 4
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_lrob3"]
+script = ExtResource("9_dvcb2")
+markedup_text = "Knock the snake off with a pole."
+requirement = SubResource("Resource_dte5b")
+outcome = SubResource("Resource_cve28")
+markedup_result_text = "Before the farmers can intervene, one of the townsfolk detaches a bamboo pole from the trellis and nudges the snake with it until it drops into the grass and slithers away.
+
+The crowd is satisfied, but the farm has lost a pest controller."
+
+[sub_resource type="Resource" id="Resource_xnywc"]
+script = ExtResource("17_m3qxx")
+bonus_type = ExtResource("16_8fnsp")
+amount = -25
+extra_per_season = -15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_gegyu"]
+script = ExtResource("19_wbxq6")
+bonus_type = ExtResource("18_o3be4")
+min_count = 30
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_rwd8s"]
+script = ExtResource("9_dvcb2")
+markedup_text = "Snatch the gourd."
+requirement = SubResource("Resource_gegyu")
+outcome = SubResource("Resource_xnywc")
+markedup_result_text = "Deciding to save the harvest from the creature, a bold onlooker reaches for the gourd.
+
+The snake strikes faster than the eye can follow, and the brave settler is left with a painful bite. At least he's lucky that this snake isn't venomous.
+
+The crowd learns its lesson and quickly disperses."
+
+[sub_resource type="Resource" id="Resource_t3oba"]
+script = ExtResource("23_n1yq1")
+quest = ExtResource("22_wc4fd")
+metadata/_custom_type_script = "uid://rlexviyd8sv7"
+
+[sub_resource type="Resource" id="Resource_twm65"]
+script = ExtResource("24_wmkka")
+scope = 1
+event_id = "global"
+var_id = "companion_snake"
+value = "1"
+description = ""
+outcome_description = "The dangerous situation is safely resolved."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_e8hox"]
+script = ExtResource("20_mus6g")
+suboutcomes = Array[ExtResource("21_ihajt")]([SubResource("Resource_t3oba"), SubResource("Resource_twm65")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_ujpsa"]
+script = ExtResource("9_dvcb2")
+markedup_text = "Keep away from the snake."
+outcome = SubResource("Resource_e8hox")
+markedup_result_text = "The farmers convince the crowd to let the snake be.
+
+The gourds are still unripe, they reason, and by the time harvest comes, the snake will have left.
+
+The crowd remains afraid, but eventually disperses, deciding to let the farmers be responsible for the problem."
+
+[sub_resource type="Resource" id="Resource_qvi6v"]
+script = ExtResource("7_7ixqk")
+markedup_text = "A part of the kudzu plantation has been sectioned off for growing bottle gourds. This morning, a crowd gathers around one of the trellises to gawk at an uninvited visitor.
+
+A large snake is curling around one of the bamboo poles, hissing whenever anyone approaches. It seems to be guarding a large unripe gourd, hanging heavy from the vines.
+
+The villagers are nervous and want the creature gone immediately."
+background_image = SubResource("Resource_puplv")
+background_credit = ExtResource("8_isffb")
+choices = Array[ExtResource("9_dvcb2")]([SubResource("Resource_tin4f"), SubResource("Resource_lrob3"), SubResource("Resource_rwd8s")])
+exit_choice = SubResource("Resource_ujpsa")
+
+[resource]
+script = ExtResource("6_ykypw")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_8ap2b")
+event_id = "companion_snake_1"
+event_name = "The Gourd Guardian"
+requirement = SubResource("Resource_jtc5l")
+steps = Array[ExtResource("7_7ixqk")]([SubResource("Resource_qvi6v")])
+categories = Array[int]([0, 4])

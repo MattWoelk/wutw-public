@@ -1,0 +1,136 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://yt1u2b4v4igy"]
+
+[ext_resource type="Resource" uid="uid://c7u2mcuw020le" path="res://stage/spots/hill/upgrade_hill_1_bamboo_grove.tres" id="1_hjkqa"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_lt1hu"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_c7try"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_3tl6q"]
+[ext_resource type="Resource" uid="uid://bs162xyvfdrdw" path="res://art/pieces/piece_hokusai_bamboo.tres" id="5_lt1hu"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_c7try"]
+[ext_resource type="Resource" uid="uid://dbq0p00odug11" path="res://cards/tier2/card_chopsticks.tres" id="6_p84tr"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="7_3lvlp"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="8_uobtr"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="9_rusf8"]
+[ext_resource type="Resource" uid="uid://cbi7kgdlwlain" path="res://relics/uncommon/shishi_odoshi/relic_shishi_odoshi.tres" id="10_f8bew"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="11_lwq7t"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="12_w7lfq"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="13_x1dg6"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="14_55mwo"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="15_r7icc"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="16_bympb"]
+[ext_resource type="Resource" uid="uid://oqni6hco277k" path="res://cards/tier2/card_flute.tres" id="17_0je4c"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="18_votwc"]
+[ext_resource type="Resource" uid="uid://co46um1dnbfc6" path="res://cards/tier2/card_bamboo.tres" id="19_g6x3l"]
+
+[sub_resource type="Resource" id="Resource_lt1hu"]
+script = ExtResource("6_c7try")
+_texture_path = "res://events/generic/broken_bamboo/broken_bamboo.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_nthfn"]
+script = ExtResource("7_3lvlp")
+card_type = ExtResource("6_p84tr")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ptcwf"]
+script = ExtResource("9_rusf8")
+bonus_type = ExtResource("8_uobtr")
+min_count = 20
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_egt2j"]
+script = ExtResource("5_3tl6q")
+markedup_text = "Whittle the broken bamboo into chopsticks."
+requirement = SubResource("Resource_ptcwf")
+outcome = SubResource("Resource_nthfn")
+markedup_result_text = "The settlers gather the fallen stalks, trimming them down into simple tools.
+
+A hundred slender pairs of chopsticks take shape.
+
+Whatever caused the damage, life must go on."
+
+[sub_resource type="Resource" id="Resource_2myy3"]
+script = ExtResource("11_lwq7t")
+relic = ExtResource("10_f8bew")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_f2op8"]
+script = ExtResource("14_55mwo")
+aspect_type = ExtResource("13_x1dg6")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("14_55mwo")
+aspect_type = ExtResource("15_r7icc")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("16_bympb")
+all_requirements = Array[ExtResource("12_w7lfq")]([SubResource("Resource_f2op8"), SubResource("Resource_4xuhh")])
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("5_3tl6q")
+markedup_text = "Build a tipping fountain."
+requirement = SubResource("Resource_tuogj")
+outcome = SubResource("Resource_2myy3")
+markedup_result_text = "A simple shishi-odoshi is built beside the grove's footpath: a hollow tube, filling with water until it tips with a sharp, deliberate knock. One can't help but listen for it."
+
+[sub_resource type="Resource" id="Resource_w2hpu"]
+script = ExtResource("7_3lvlp")
+card_type = ExtResource("17_0je4c")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("9_rusf8")
+bonus_type = ExtResource("18_votwc")
+min_count = 30
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("5_3tl6q")
+markedup_text = "Carve a shakuhachi flute from the bamboo."
+requirement = SubResource("Resource_dpp3j")
+outcome = SubResource("Resource_w2hpu")
+markedup_result_text = "A few stalks, strong and straight, are chosen with care.
+
+The soft rasp of carving blades soon gives way to the first tentative notes of a shakuhachi flute.
+
+Several musicians hold a performance in the grove at dusk."
+
+[sub_resource type="Resource" id="Resource_3sdrw"]
+script = ExtResource("7_3lvlp")
+card_type = ExtResource("19_g6x3l")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ciwob"]
+script = ExtResource("5_3tl6q")
+markedup_text = "Store the bamboo for future use."
+outcome = SubResource("Resource_3sdrw")
+markedup_result_text = "The broken pieces are bundled carefully and stacked at the foot of the hill.
+
+There they rest, waiting for future carvers to decide their fate."
+
+[sub_resource type="Resource" id="Resource_fmixu"]
+script = ExtResource("3_c7try")
+markedup_text = "At dawn, the bamboo grove lies unsettled. Several of the younger stalks have been snapped halfway up.
+
+No claw marks or footprints mar the ground. Only the wind whistles through hollowed joints, rustling the leaves in its wake.
+
+It could be last night's rainstorm, or wild beasts, or perhaps travelers taking a shortcut.
+
+The broken stalks lie waiting. It seems wrong to leave them untouched."
+background_image = SubResource("Resource_lt1hu")
+background_credit = ExtResource("5_lt1hu")
+choices = Array[ExtResource("5_3tl6q")]([SubResource("Resource_egt2j"), SubResource("Resource_rx1a8"), SubResource("Resource_06ahh")])
+exit_choice = SubResource("Resource_ciwob")
+
+[resource]
+script = ExtResource("2_lt1hu")
+default_spot_upgrade = ExtResource("1_hjkqa")
+event_id = "broken_bamboo"
+event_name = "Broken Stalks"
+steps = Array[ExtResource("3_c7try")]([SubResource("Resource_fmixu")])
+categories = Array[int]([3])

@@ -1,0 +1,125 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://d0oehkhqsu0nu"]
+
+[ext_resource type="Resource" uid="uid://bw82mwnqnc20j" path="res://stage/spots/cliff/upgrade_cliff_1_rock_mine.tres" id="1_m15t3"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_0dnxh"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_n54ep"]
+[ext_resource type="Resource" uid="uid://dupmmfxydef0e" path="res://art/pieces/piece_hiroshige_3_whetstone.tres" id="4_0dnxh"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="4_pr0wc"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_5n47g"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="6_slwur"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="7_yo0ng"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="8_8wlxb"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="9_emq05"]
+[ext_resource type="Resource" uid="uid://cg8t82o1jl2dt" path="res://cards/tier2/card_quiet.tres" id="10_vshoq"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="11_nuhf8"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="12_jg1d8"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="13_qmjp2"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="14_lw4ne"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="15_2baj8"]
+[ext_resource type="Resource" uid="uid://y82nrxajlceo" path="res://cards/tier2/card_cotton.tres" id="16_e50v5"]
+
+[sub_resource type="Resource" id="Resource_rkt6u"]
+script = ExtResource("4_pr0wc")
+_texture_path = "res://events/generic/singing_quarriers/singing_quarriers.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_772cm"]
+script = ExtResource("7_yo0ng")
+bonus_type = ExtResource("6_slwur")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_p6a6q"]
+script = ExtResource("9_emq05")
+bonus_type = ExtResource("8_8wlxb")
+min_count = -1
+max_count = 50
+extra_per_season = 40
+
+[sub_resource type="Resource" id="Resource_tty1q"]
+script = ExtResource("5_5n47g")
+markedup_text = "Throw pebbles at the singing workers."
+requirement = SubResource("Resource_p6a6q")
+outcome = SubResource("Resource_772cm")
+markedup_result_text = "The carriers, fed up with the relentless singing, begin throwing pebbles in the direction of the quarrymen.
+
+The songs stop at once and the workers hurl insults back.
+
+Soon the whole worksite is arguing, and very little work ends up finished by the end of the day."
+
+[sub_resource type="Resource" id="Resource_oxefd"]
+script = ExtResource("11_nuhf8")
+card_type = ExtResource("10_vshoq")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_7l5cn"]
+script = ExtResource("13_qmjp2")
+aspect_type = ExtResource("12_jg1d8")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_2iidw"]
+script = ExtResource("5_5n47g")
+markedup_text = "Let a passing monk mediate."
+requirement = SubResource("Resource_7l5cn")
+outcome = SubResource("Resource_oxefd")
+markedup_result_text = "One of the granite haulers spots a monk walking by the cliff, a basket of petals in his hand. The worker bows, and asks the monk to settle the dispute. 
+
+The monk considers, contemplating the blossoming tree standing nearby. He instructs the singers to work in silence while the tree is in bloom. Until the last petal falls from the tree, the workers must listen to the sound of birds, wind, and their picks hitting the stone."
+
+[sub_resource type="Resource" id="Resource_wcw36"]
+script = ExtResource("7_yo0ng")
+bonus_type = ExtResource("14_lw4ne")
+amount = 15
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_3kbwl"]
+script = ExtResource("9_emq05")
+bonus_type = ExtResource("15_2baj8")
+min_count = 20
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_dsvy1"]
+script = ExtResource("5_5n47g")
+markedup_text = "Challenge the singers."
+requirement = SubResource("Resource_3kbwl")
+outcome = SubResource("Resource_wcw36")
+markedup_result_text = "The carriers mock the singers' lack of imagination and challenge them to come up with something original.
+
+The two singing quarrymen make up a teasing verse about the sour-faced carriers and their love of cherry blossoms.
+
+At first the carriers are furious, but soon the song becomes so silly that even they can't suppress a smile."
+
+[sub_resource type="Resource" id="Resource_vrl6m"]
+script = ExtResource("11_nuhf8")
+card_type = ExtResource("16_e50v5")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_n44we"]
+script = ExtResource("5_5n47g")
+markedup_text = "Block out the noise."
+outcome = SubResource("Resource_vrl6m")
+markedup_result_text = "The carriers stuff cotton in their ears with grumpy sighs.
+
+They continue their work in muffled silence."
+
+[sub_resource type="Resource" id="Resource_mtxcs"]
+script = ExtResource("3_n54ep")
+markedup_text = "The quarry is busy today. Two men on a ledge above swing their picks, singing loudly to keep time with each strike. The song echoes off the cliff, scattering birds from the nearby trees.
+
+Below, two carriers are hauling stone down the path, their faces growing sourer with every [i]dokkoisho![/i] and [i]yoi-yoi![/i] reaching them from above. They say their work is already tiresome enough. They want to hear the birds sing instead, and admire the cherry blossoms in peace."
+background_image = SubResource("Resource_rkt6u")
+background_credit = ExtResource("4_0dnxh")
+choices = Array[ExtResource("5_5n47g")]([SubResource("Resource_tty1q"), SubResource("Resource_2iidw"), SubResource("Resource_dsvy1")])
+exit_choice = SubResource("Resource_n44we")
+
+[resource]
+script = ExtResource("2_0dnxh")
+default_spot_upgrade = ExtResource("1_m15t3")
+event_id = "singing_quarriers"
+event_name = "The Singing Quarriers"
+steps = Array[ExtResource("3_n54ep")]([SubResource("Resource_mtxcs")])
+categories = Array[int]([3])

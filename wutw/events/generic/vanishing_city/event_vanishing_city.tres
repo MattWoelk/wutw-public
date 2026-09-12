@@ -1,0 +1,234 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://bhmg41m5k24ct"]
+
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="1_q4db2"]
+[ext_resource type="Resource" uid="uid://0dcj8q0vlk5k" path="res://stage/spots/desert/upgrade_desert_3_vanishing_city.tres" id="1_tpm0g"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="2_jmo1r"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="2_myteg"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="3_g2bpn"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="4_4n0ji"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="5_7im1k"]
+[ext_resource type="Resource" uid="uid://i8vl8qcq1t48" path="res://art/pieces/piece_composed_mirage_gate.tres" id="8_4n0ji"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="8_egpic"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="9_fpfn6"]
+[ext_resource type="Resource" uid="uid://wei7hpp6rgo1" path="res://relics/uncommon/vanishing_city_scroll/relic_vanishing_city_scroll.tres" id="10_x24b1"]
+[ext_resource type="Script" uid="uid://bbr46symu7hfi" path="res://events/system/requirements/event_requirement_has_relic.gd" id="11_b1pv4"]
+[ext_resource type="Resource" uid="uid://cysxmdk2v3rj8" path="res://relics/common/unfamiliar_coin/relic_unfamiliar_coin.tres" id="12_3s1rx"]
+[ext_resource type="Resource" uid="uid://dptlbj36wgmbm" path="res://art/pieces/piece_bartlett_taj_mahal_moonlight.tres" id="13_7im1k"]
+[ext_resource type="Resource" uid="uid://bgwlkeaj0j4n0" path="res://relics/common/white_city_tale/relic_white_city_tale.tres" id="13_g7dra"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="14_qqy6i"]
+[ext_resource type="Resource" uid="uid://eaqcquxdmfr8" path="res://art/pieces/piece_composed_vanishing_city.tres" id="15_egpic"]
+
+[sub_resource type="Resource" id="Resource_nw3li"]
+script = ExtResource("3_g2bpn")
+min_progress = 430
+metadata/_custom_type_script = "uid://c50bhh4sr0g8o"
+
+[sub_resource type="Resource" id="Resource_qqy6i"]
+script = ExtResource("4_4n0ji")
+scope = 1
+var_id = "finished"
+var_type = 1
+value = "false"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_g7dra"]
+script = ExtResource("5_7im1k")
+all_requirements = Array[ExtResource("2_myteg")]([SubResource("Resource_nw3li"), SubResource("Resource_qqy6i")])
+metadata/_custom_type_script = "uid://15prcev7a3ta"
+
+[sub_resource type="Resource" id="Resource_tyeds"]
+script = ExtResource("8_egpic")
+_texture_path = "uid://drvsp52vosdy8"
+_is_horizontal = false
+metadata/_custom_type_script = "uid://c7u2t141hgkj5"
+
+[sub_resource type="Resource" id="Resource_ic1jr"]
+script = ExtResource("11_b1pv4")
+relic = ExtResource("10_x24b1")
+metadata/_custom_type_script = "uid://bbr46symu7hfi"
+
+[sub_resource type="Resource" id="Resource_24v2b"]
+script = ExtResource("9_fpfn6")
+markedup_text = "Insert the patterned tile."
+requirement = SubResource("Resource_ic1jr")
+markedup_result_text = "The settlers remove layers of sand to access the gate's navigation mechanism and insert the tile into the tablet slot. It fits snugly, and the image within the gate slowly stabilizes."
+result_event_step_id = "courtyard"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_emj5y"]
+script = ExtResource("9_fpfn6")
+markedup_text = "Leave the gate alone."
+markedup_result_text = "The expedition moves on, looking back now and then at the glimpses of white spires that can occasionally be seen through the gate."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_aj7eb"]
+script = ExtResource("2_jmo1r")
+markedup_text = "Recent studies of Mirage Gates suggest that although they usually lead to strange, alien worlds, it is possible to control the destination.
+
+It appears that an underground control mechanism can be activated by the insertion of specific stone tablets."
+background_image = SubResource("Resource_tyeds")
+background_credit = ExtResource("8_4n0ji")
+choices = Array[ExtResource("9_fpfn6")]([SubResource("Resource_24v2b")])
+exit_choice = SubResource("Resource_emj5y")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[sub_resource type="Resource" id="Resource_c0cyj"]
+script = ExtResource("8_egpic")
+_texture_path = "uid://pa6mrgp7pvbc"
+_is_horizontal = false
+metadata/_custom_type_script = "uid://c7u2t141hgkj5"
+
+[sub_resource type="Resource" id="Resource_tpm0g"]
+script = ExtResource("11_b1pv4")
+relic = ExtResource("12_3s1rx")
+metadata/_custom_type_script = "uid://bbr46symu7hfi"
+
+[sub_resource type="Resource" id="Resource_dxr1u"]
+script = ExtResource("9_fpfn6")
+markedup_text = "Show them a coin with the image of the palace."
+requirement = SubResource("Resource_tpm0g")
+markedup_result_text = "The guards' already unusually large eyes get even larger and they briefly talk among themselves. One points to a nearby bench and walks away."
+result_event_step_id = "bargain"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_w1sgm"]
+script = ExtResource("9_fpfn6")
+markedup_text = "Return empty-handed."
+markedup_result_text = "The scout is unable to argue, and meekly steps back through the gate.
+
+Perhaps someone else will uncover this mystery in the future."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_kj5so"]
+script = ExtResource("2_jmo1r")
+event_step_id = "courtyard"
+markedup_text = "A scout steps through and finds himself in the courtyard of a small palace. The entire place seems to be carved from pure white stone, and golden spires sparkle atop the domed roofs.
+
+Within moments, guards dressed in strange flowing outfits bar his way. Although their language is unfamiliar, it is clear that they are telling the scout to go back."
+background_image = SubResource("Resource_c0cyj")
+background_credit = ExtResource("13_7im1k")
+choices = Array[ExtResource("9_fpfn6")]([SubResource("Resource_dxr1u")])
+exit_choice = SubResource("Resource_w1sgm")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[sub_resource type="Resource" id="Resource_g2bpn"]
+script = ExtResource("8_egpic")
+_texture_path = "uid://6pr4caeskvrg"
+_is_horizontal = false
+metadata/_custom_type_script = "uid://c7u2t141hgkj5"
+
+[sub_resource type="Resource" id="Resource_egpic"]
+script = ExtResource("11_b1pv4")
+relic = ExtResource("13_g7dra")
+metadata/_custom_type_script = "uid://bbr46symu7hfi"
+
+[sub_resource type="Resource" id="Resource_7im1k"]
+script = ExtResource("9_fpfn6")
+markedup_text = "Leave him a familiar tale written in our language."
+requirement = SubResource("Resource_egpic")
+markedup_result_text = "The old man gets animated at the sight of the scroll. He hastily takes a tiny blank book and a small charcoal-tipped rod from inside a patch sewn onto his garment, then starts drawing glyphs.
+
+He thrusts the book in front of the scout's face, two glyphs clearly drawn on the paper. The glyph shapes are unusual, but they are recognizable: \"Good\" and \"Meeting\".
+
+The scout and the old man take turns writing in the strange little book.
+
+\"Explorer\", the scout writes.
+\"Origin location question\", the man responds.
+\"Desert gate\"
+\"Coin question\"
+\"Foreign man\"
+\"Origin palace no return\"
+
+It doesn't take long before they start communicating in simple sentences."
+result_event_step_id = "dialogue"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_4n0ji"]
+script = ExtResource("9_fpfn6")
+markedup_text = "Return empty-handed."
+markedup_result_text = "The scout is unable to find a common tongue, and meekly steps back through the gate.
+
+Perhaps someone else will uncover this mystery in the future."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_myteg"]
+script = ExtResource("2_jmo1r")
+event_step_id = "bargain"
+markedup_text = "She returns with an old man, his bushy, greying beard sticking out like a halo around his face. The man greets the scout in a language that sounds much closer to ours, but it is still incomprehensible.
+
+The scout tries to communicate, but despite efforts on both sides, no progress is made."
+background_image = SubResource("Resource_g2bpn")
+background_credit = ExtResource("15_egpic")
+choices = Array[ExtResource("9_fpfn6")]([SubResource("Resource_7im1k")])
+exit_choice = SubResource("Resource_4n0ji")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[sub_resource type="Resource" id="Resource_x24b1"]
+script = ExtResource("8_egpic")
+_texture_path = "uid://6pr4caeskvrg"
+_is_horizontal = false
+metadata/_custom_type_script = "uid://c7u2t141hgkj5"
+
+[sub_resource type="Resource" id="Resource_yc8on"]
+script = ExtResource("9_fpfn6")
+markedup_text = "Ask to explore the city."
+markedup_result_text = "The man writes \"Foreign person forbid\", followed by \"Isolation make peace\", then looks apologetic. \"Old fear\", he adds, underlining the glyphs."
+result_event_step_id = "dialogue"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_0dfyw"]
+script = ExtResource("9_fpfn6")
+markedup_text = "Ask what this place is."
+markedup_result_text = "The man writes \"Safe place ancestor flee big war\".
+
+He draws a crude sketch of one of the iron wrecks that explorers find in the wastelands, then makes \"shuuu-pkha\" sounds and waves his arms.
+
+\"Now thousand year peace,\" he writes."
+result_event_step_id = "dialogue"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_wda2j"]
+script = ExtResource("9_fpfn6")
+markedup_text = "Ask to establish future communications."
+markedup_result_text = "The man writes \"I want many person forbid\" and gives a sad smile. \"Safety yes knowledge no\", he adds. Then \"gate future closed\"."
+result_event_step_id = "dialogue"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_3s1rx"]
+script = ExtResource("14_qqy6i")
+scope = 1
+var_id = "finished"
+var_type = 1
+value = "true"
+description = "The gate will be closed forever."
+outcome_description = "The gate is closed forever."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_b1pv4"]
+script = ExtResource("9_fpfn6")
+markedup_text = "Leave the city forever."
+outcome = SubResource("Resource_3s1rx")
+markedup_result_text = "Having exhausted his questions, the scouts steps back through the gate.
+
+Moments later, the image of the city fades and the gate goes dormant."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_fpfn6"]
+script = ExtResource("2_jmo1r")
+event_step_id = "dialogue"
+markedup_text = "The old man looks at the scout expectantly."
+background_image = SubResource("Resource_x24b1")
+background_credit = ExtResource("15_egpic")
+choices = Array[ExtResource("9_fpfn6")]([SubResource("Resource_yc8on"), SubResource("Resource_0dfyw"), SubResource("Resource_wda2j")])
+exit_choice = SubResource("Resource_b1pv4")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[resource]
+script = ExtResource("1_q4db2")
+default_spot_upgrade = ExtResource("1_tpm0g")
+event_id = "vanishing_city"
+event_name = "The White City"
+requirement = SubResource("Resource_g7dra")
+steps = Array[ExtResource("2_jmo1r")]([SubResource("Resource_aj7eb"), SubResource("Resource_kj5so"), SubResource("Resource_myteg"), SubResource("Resource_fpfn6")])
+categories = Array[int]([3])
+metadata/_custom_type_script = "uid://b0ix465cqojf3"

@@ -1,0 +1,139 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://bsssnj2rehnkh"]
+
+[ext_resource type="Resource" uid="uid://vmqir3bk0osf" path="res://stage/spots/lake/upgrade_lake_3_master_dyer_workshop.tres" id="1_vuc55"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_paq7x"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_oy33g"]
+[ext_resource type="Resource" uid="uid://dapf1pyd66duf" path="res://art/pieces/piece_hiroshige_3_tie_dying.tres" id="5_dyr5f"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_g30xk"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_g30xk"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="6_sq64f"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_6bya0"]
+[ext_resource type="Resource" uid="uid://dwnannqnpu25r" path="res://relics/rare/last_thread/relic_last_thread.tres" id="8_07h7u"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="9_acgjb"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="10_88g7g"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="11_0p10h"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="12_ar808"]
+[ext_resource type="Resource" uid="uid://drlptn1ydg3y6" path="res://relics/common/weavers_comb/relic_weavers_comb.tres" id="13_jq3db"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="14_4sfpo"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="15_bhkqt"]
+[ext_resource type="Resource" uid="uid://dj2aw1vkxwpr5" path="res://cards/tier2/card_dye.tres" id="15_oy33g"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="16_dyr5f"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="16_nu4bf"]
+
+[sub_resource type="Resource" id="Resource_dyr5f"]
+script = ExtResource("6_g30xk")
+_texture_path = "res://events/generic/dyer_workshop/dyer_workshop.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("9_acgjb")
+relic = ExtResource("8_07h7u")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("10_88g7g")
+delta = -15
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_ciwob"]
+script = ExtResource("6_sq64f")
+suboutcomes = Array[ExtResource("7_6bya0")]([SubResource("Resource_dpp3j"), SubResource("Resource_06ahh")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_w2hpu"]
+script = ExtResource("12_ar808")
+aspect_type = ExtResource("11_0p10h")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_3sdrw"]
+script = ExtResource("5_g30xk")
+markedup_text = "Finish the tapestry."
+requirement = SubResource("Resource_w2hpu")
+outcome = SubResource("Resource_ciwob")
+markedup_result_text = "The apprentice meticulously gathers remnants, spindles, and half-finished bolts.
+
+No grand tapestry is made, but nothing is wasted.
+
+Perhaps one day these fragments will be put together into an even more impressive project."
+
+[sub_resource type="Resource" id="Resource_nthfn"]
+script = ExtResource("9_acgjb")
+relic = ExtResource("13_jq3db")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_fmixu"]
+script = ExtResource("12_ar808")
+aspect_type = ExtResource("14_4sfpo")
+min_count = 4
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_kojkx"]
+script = ExtResource("5_g30xk")
+markedup_text = "Carefully prepare the cloth for future projects."
+requirement = SubResource("Resource_fmixu")
+outcome = SubResource("Resource_nthfn")
+markedup_result_text = "The apprentice meticulously gathers remnants, spindles, and half-finished bolts.
+
+No grand tapestry is made, but nothing is wasted.
+
+Perhaps one day these fragments will serve as a canvas for an even more impressive project."
+
+[sub_resource type="Resource" id="Resource_g30xk"]
+script = ExtResource("16_dyr5f")
+card_type = ExtResource("15_oy33g")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_sq64f"]
+script = ExtResource("12_ar808")
+aspect_type = ExtResource("14_4sfpo")
+min_count = 3
+extra_per_season = 1
+metadata/_custom_type_script = "uid://cjdop1iab2efw"
+
+[sub_resource type="Resource" id="Resource_6bya0"]
+script = ExtResource("5_g30xk")
+markedup_text = "Save the dyes for more practical work."
+requirement = SubResource("Resource_sq64f")
+outcome = SubResource("Resource_g30xk")
+markedup_result_text = "The apprentice leaves the dyes untouched.
+
+No grand tapestry is made, but nothing is wasted.
+
+The saved dyes are destined to color many a settler's robe in the days ahead."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_2myy3"]
+script = ExtResource("16_nu4bf")
+bonus_type = ExtResource("15_bhkqt")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_xh6l0"]
+script = ExtResource("5_g30xk")
+markedup_text = "Hang the unfinished tapestry as it is."
+outcome = SubResource("Resource_2myy3")
+markedup_result_text = "The apprentice cuts her project short, leaving the tapestry with a simple indigo pattern.
+
+It hangs by the entrance now. Perhaps it is a reminder of dreams postponed, or of waste prevented."
+
+[sub_resource type="Resource" id="Resource_1stri"]
+script = ExtResource("3_oy33g")
+markedup_text = "The dyes from this workshop come out richer than any the locals have seen before.
+
+Inspired by them, a young apprentice wants to turn her humble tapestry project into a masterpiece, a great landscape depicting the whole lake and its surroundings, deep blue giving way to warm tans and lively greens, dotted with bright splashes of pink.
+
+Her mentor advocates restraint, as cloth and dyes are both precious."
+background_image = SubResource("Resource_dyr5f")
+background_credit = ExtResource("5_dyr5f")
+choices = Array[ExtResource("5_g30xk")]([SubResource("Resource_3sdrw"), SubResource("Resource_kojkx"), SubResource("Resource_6bya0")])
+exit_choice = SubResource("Resource_xh6l0")
+
+[resource]
+script = ExtResource("2_paq7x")
+default_spot_upgrade = ExtResource("1_vuc55")
+event_id = "dyer_workshop"
+event_name = "The Tapestry"
+steps = Array[ExtResource("3_oy33g")]([SubResource("Resource_1stri")])
+categories = Array[int]([3])

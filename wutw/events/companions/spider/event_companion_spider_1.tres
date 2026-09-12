@@ -1,0 +1,183 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://3bie4sfywpkx"]
+
+[ext_resource type="Resource" uid="uid://hrw4byexrnrj" path="res://stage/spots/hill/upgrade_hill_3_teahouse_pavilion.tres" id="1_dmvbb"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="2_vcbib"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="3_7vg5t"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="4_oecjd"]
+[ext_resource type="Resource" uid="uid://dqotyemouy5k" path="res://companions/cat/companion_cat.tres" id="5_cqcsb"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="5_wkxwv"]
+[ext_resource type="Script" uid="uid://c7rgvjmhtgrja" path="res://events/system/requirements/event_requirement_has_companion.gd" id="6_8rskm"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="6_ayybx"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="7_pyk6g"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="10_7tf88"]
+[ext_resource type="Resource" uid="uid://bm6fcwsdttfg5" path="res://cards/tier0/card_escape.tres" id="11_cdefu"]
+[ext_resource type="Resource" uid="uid://byskpfvpnemfs" path="res://art/pieces/piece_toukou_cat_spider.tres" id="11_cqcsb"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="12_8rskm"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="12_g8h1p"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="14_tnppm"]
+[ext_resource type="Resource" uid="uid://lgmt4clrm63h" path="res://quests/companion/quest_companion_spider.tres" id="15_46i3l"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="15_clms6"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="17_i04rb"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="18_23i2o"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="18_la0m6"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="19_jcepg"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="20_ip6tt"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="20_o3433"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="21_gfcjk"]
+[ext_resource type="Script" uid="uid://rlexviyd8sv7" path="res://events/system/outcomes/start_quest/event_outcome_start_quest.gd" id="23_6v8dg"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="24_71t5g"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="24_r5hm6"]
+
+[sub_resource type="Resource" id="Resource_0u2kj"]
+script = ExtResource("3_7vg5t")
+min_progress = 320
+metadata/_custom_type_script = "uid://c50bhh4sr0g8o"
+
+[sub_resource type="Resource" id="Resource_uj4kt"]
+script = ExtResource("4_oecjd")
+scope = 1
+event_id = "global"
+var_id = "companion_spider"
+value = "0"
+
+[sub_resource type="Resource" id="Resource_ty5is"]
+script = ExtResource("6_8rskm")
+companion = ExtResource("5_cqcsb")
+metadata/_custom_type_script = "uid://c7rgvjmhtgrja"
+
+[sub_resource type="Resource" id="Resource_ghb2s"]
+script = ExtResource("5_wkxwv")
+all_requirements = Array[ExtResource("2_vcbib")]([SubResource("Resource_0u2kj"), SubResource("Resource_uj4kt"), SubResource("Resource_ty5is")])
+
+[sub_resource type="Resource" id="Resource_cqcsb"]
+script = ExtResource("12_8rskm")
+_texture_path = "res://events/companions/spider/event_companion_spider_1.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_s07u3"]
+script = ExtResource("14_tnppm")
+delta = -5
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_bx3jl"]
+script = ExtResource("23_6v8dg")
+quest = ExtResource("15_46i3l")
+metadata/_custom_type_script = "uid://rlexviyd8sv7"
+
+[sub_resource type="Resource" id="Resource_315mi"]
+script = ExtResource("24_71t5g")
+scope = 1
+event_id = "global"
+var_id = "companion_spider"
+value = "1"
+description = ""
+outcome_description = "The spider is saved."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_fstow"]
+script = ExtResource("19_jcepg")
+suboutcomes = Array[ExtResource("20_o3433")]([SubResource("Resource_s07u3"), SubResource("Resource_bx3jl"), SubResource("Resource_315mi")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_d4vpm"]
+script = ExtResource("15_clms6")
+bonus_type = ExtResource("18_la0m6")
+min_count = 50
+max_count = -1
+extra_per_season = 25
+metadata/_custom_type_script = "uid://dfaio0ey0wbra"
+
+[sub_resource type="Resource" id="Resource_2sb8d"]
+script = ExtResource("10_7tf88")
+markedup_text = "Grab the spider and deposit it outside."
+requirement = SubResource("Resource_d4vpm")
+outcome = SubResource("Resource_fstow")
+markedup_result_text = "Despite her fear of spiders, the tea maker bends down and snatches the arachnid before the cat can strike.
+
+She endures the unsettling sensation of eight prickly legs scrambling over her bare skin, but calmly deposits the spider on the porch.
+
+The battle is finished, and the spider survives to spin another day."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_1vxhf"]
+script = ExtResource("21_gfcjk")
+bonus_type = ExtResource("20_ip6tt")
+amount = -15
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_058lx"]
+script = ExtResource("18_23i2o")
+aspect_type = ExtResource("17_i04rb")
+min_count = 2
+extra_per_season = 1
+metadata/_custom_type_script = "uid://cjdop1iab2efw"
+
+[sub_resource type="Resource" id="Resource_hqsr2"]
+script = ExtResource("10_7tf88")
+markedup_text = "Cheer the cat on."
+requirement = SubResource("Resource_058lx")
+outcome = SubResource("Resource_1vxhf")
+markedup_result_text = "The chase goes on for a while yet, but finally the cat pounces, sealing the spider's fate.
+
+The aftermath leaves a whole tea set strewn all around the tea house, and one of the paper screens seriously damaged.
+
+The cat looks exceedingly pleased with itself though."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_5tiqf"]
+script = ExtResource("21_gfcjk")
+bonus_type = ExtResource("24_r5hm6")
+amount = 5
+extra_per_season = 5
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_m5fys"]
+script = ExtResource("10_7tf88")
+markedup_text = "Trap the spider under a cup."
+outcome = SubResource("Resource_5tiqf")
+markedup_result_text = "The tea maker calmly places a cup over the creature, slides a thick piece of parchment underneath, and escorts the angry arachnid outside.
+
+It is a sensible, highly effective, and utterly unadventurous solution."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_r1prr"]
+script = ExtResource("12_g8h1p")
+card_type = ExtResource("11_cdefu")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_owrgg"]
+script = ExtResource("19_jcepg")
+suboutcomes = Array[ExtResource("20_o3433")]([SubResource("Resource_r1prr"), SubResource("Resource_1vxhf")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_r4lul"]
+script = ExtResource("10_7tf88")
+markedup_text = "Flee the pavilion."
+outcome = SubResource("Resource_owrgg")
+markedup_result_text = "The tea maker follows her instinct and flees, leaving the problem to her cat companion.
+
+Once the hubbub dies down, she returns to find a whole tea set strewn all around the tea house, and one of the paper screens seriously damaged.
+
+The cat looks exceedingly pleased with itself though."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_1ea03"]
+script = ExtResource("7_pyk6g")
+markedup_text = "Today, the tea pavilion is a battlefield. A cat is chasing a large, exceptionally hairy spider around the room, knocking cups and scratching the delicate paper screens.
+
+The spider seems to be winning so far, holding its ground against a beast fifty times its size, but the feline is not giving up."
+background_image = SubResource("Resource_cqcsb")
+background_credit = ExtResource("11_cqcsb")
+choices = Array[ExtResource("10_7tf88")]([SubResource("Resource_2sb8d"), SubResource("Resource_hqsr2"), SubResource("Resource_m5fys")])
+exit_choice = SubResource("Resource_r4lul")
+
+[resource]
+script = ExtResource("6_ayybx")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_dmvbb")
+event_id = "companion_spider_1"
+event_name = "Feline Pest Control"
+requirement = SubResource("Resource_ghb2s")
+steps = Array[ExtResource("7_pyk6g")]([SubResource("Resource_1ea03")])
+categories = Array[int]([0, 4])

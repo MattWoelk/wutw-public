@@ -1,0 +1,207 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://chuvruw7ypv1c"]
+
+[ext_resource type="Resource" uid="uid://bqc71a5j3t5qy" path="res://stage/spots/square/upgrade_square_2_poet_arena.tres" id="1_eo6jl"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_fumuh"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_uag1t"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_5e3q1"]
+[ext_resource type="Script" uid="uid://btrwtj4v8ufn" path="res://events/system/requirements/event_requirement_has_skill.gd" id="3_shrv1"]
+[ext_resource type="Resource" uid="uid://btg3iwee87j5j" path="res://skills/inspiration/skill_inspiration_shop.tres" id="4_shrv1"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_g852m"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="6_nbxl8"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_shrv1"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="8_kf6pg"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="9_c2jmo"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="10_0gm2q"]
+[ext_resource type="Resource" uid="uid://c276t6q0k577a" path="res://art/pieces/piece_gekkou_chapter33.tres" id="10_kf6pg"]
+[ext_resource type="Script" uid="uid://bbhwr4afafq2e" path="res://events/system/outcomes/unlock_shop/event_outcome_unlock_shop.gd" id="11_5e3q1"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="11_c2jmo"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="11_v3b86"]
+[ext_resource type="Resource" uid="uid://cvrawu223mabp" path="res://shops/heal/shop_heal.tres" id="12_fumuh"]
+[ext_resource type="Resource" uid="uid://d7rkplmn6k05" path="res://cards/tier2/card_poem.tres" id="12_sn6s2"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="13_r0tkg"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="14_axw67"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="14_g852m"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="15_cnayj"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="16_gjm3v"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="17_mf2x3"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="18_i1nv2"]
+[ext_resource type="Resource" uid="uid://bnmitcskctrr4" path="res://cards/tier2/card_song.tres" id="19_0l22w"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="20_4ghy1"]
+
+[sub_resource type="Resource" id="Resource_c2jmo"]
+script = ExtResource("3_shrv1")
+skill = ExtResource("4_shrv1")
+metadata/_custom_type_script = "uid://btrwtj4v8ufn"
+
+[sub_resource type="Resource" id="Resource_a1pu3"]
+script = ExtResource("2_fumuh")
+var_id = "landmark_built"
+var_type = 1
+value = "false"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_0gm2q"]
+script = ExtResource("17_mf2x3")
+all_requirements = Array[ExtResource("14_axw67")]([SubResource("Resource_c2jmo"), SubResource("Resource_a1pu3")])
+metadata/_custom_type_script = "uid://15prcev7a3ta"
+
+[sub_resource type="Resource" id="Resource_kf6pg"]
+script = ExtResource("11_c2jmo")
+_texture_path = "res://events/landmark/verse_arena/verse_arena.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_8mfyw"]
+script = ExtResource("10_0gm2q")
+delta = 10
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_g852m"]
+script = ExtResource("11_5e3q1")
+shop_type = ExtResource("12_fumuh")
+metadata/_custom_type_script = "uid://bbhwr4afafq2e"
+
+[sub_resource type="Resource" id="Resource_rc2gp"]
+script = ExtResource("14_g852m")
+var_id = "landmark_built"
+var_type = 1
+value = "true"
+description = ""
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_40rqf"]
+script = ExtResource("6_nbxl8")
+suboutcomes = Array[ExtResource("7_shrv1")]([SubResource("Resource_8mfyw"), SubResource("Resource_g852m"), SubResource("Resource_rc2gp")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_8xg25"]
+script = ExtResource("11_v3b86")
+bonus_type = ExtResource("8_kf6pg")
+min_count = 40
+max_count = -1
+extra_per_season = 40
+
+[sub_resource type="Resource" id="Resource_iriya"]
+script = ExtResource("5_g852m")
+markedup_text = "Hold a formal poetry contest."
+requirement = SubResource("Resource_8xg25")
+outcome = SubResource("Resource_40rqf")
+markedup_result_text = "As the poets start declaiming their verses, more and more settlers gather around them. Some sit on the benches, humming in time with the rhythm.
+
+By nightfall, the air holds more than words.
+
+Much of what was shared will fade, but it will inspire future beauty to bloom."
+
+[sub_resource type="Resource" id="Resource_2stvf"]
+script = ExtResource("10_0gm2q")
+delta = -10
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_xxhwh"]
+script = ExtResource("13_r0tkg")
+card_type = ExtResource("12_sn6s2")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_kio1v"]
+script = ExtResource("6_nbxl8")
+suboutcomes = Array[ExtResource("7_shrv1")]([SubResource("Resource_2stvf"), SubResource("Resource_xxhwh")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_taunc"]
+script = ExtResource("11_v3b86")
+bonus_type = ExtResource("8_kf6pg")
+min_count = 50
+max_count = -1
+extra_per_season = 50
+
+[sub_resource type="Resource" id="Resource_roptb"]
+script = ExtResource("16_gjm3v")
+aspect_type = ExtResource("15_cnayj")
+min_count = 4
+
+[sub_resource type="Resource" id="Resource_tf2pc"]
+script = ExtResource("17_mf2x3")
+all_requirements = Array[ExtResource("14_axw67")]([SubResource("Resource_taunc"), SubResource("Resource_roptb")])
+
+[sub_resource type="Resource" id="Resource_hj3b6"]
+script = ExtResource("5_g852m")
+markedup_text = "Preserve all the poems for future record."
+requirement = SubResource("Resource_tf2pc")
+outcome = SubResource("Resource_kio1v")
+markedup_result_text = "The scribes work through the night, recording all the verses composed by the settlement's poets.
+
+Each poem is copied down, line by line, stroke by stroke.
+
+The poets and scribes alike are exhausted, but the records remain."
+
+[sub_resource type="Resource" id="Resource_1stri"]
+script = ExtResource("9_c2jmo")
+bonus_type = ExtResource("18_i1nv2")
+amount = -30
+extra_per_season = -30
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_2me52"]
+script = ExtResource("13_r0tkg")
+card_type = ExtResource("19_0l22w")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_kjam1"]
+script = ExtResource("6_nbxl8")
+suboutcomes = Array[ExtResource("7_shrv1")]([SubResource("Resource_1stri"), SubResource("Resource_2me52")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_jsnag"]
+script = ExtResource("11_v3b86")
+bonus_type = ExtResource("8_kf6pg")
+min_count = 50
+max_count = -1
+extra_per_season = 50
+
+[sub_resource type="Resource" id="Resource_7y6is"]
+script = ExtResource("11_v3b86")
+bonus_type = ExtResource("20_4ghy1")
+min_count = 50
+max_count = -1
+extra_per_season = 50
+
+[sub_resource type="Resource" id="Resource_iherd"]
+script = ExtResource("17_mf2x3")
+all_requirements = Array[ExtResource("14_axw67")]([SubResource("Resource_jsnag"), SubResource("Resource_7y6is")])
+
+[sub_resource type="Resource" id="Resource_co8my"]
+script = ExtResource("5_g852m")
+markedup_text = "Set the poems to music."
+requirement = SubResource("Resource_iherd")
+outcome = SubResource("Resource_kjam1")
+markedup_result_text = "Musicians from the expedition join the aspiring poets, carrying string, reed, and drum.
+
+The verses are transformed, lifted, and carried further than words alone could reach.
+
+The evening is long and filled with merriment."
+
+[sub_resource type="Resource" id="Resource_0b4bk"]
+script = ExtResource("5_g852m")
+markedup_text = "Let the square remain quiet."
+
+[sub_resource type="Resource" id="Resource_aidwo"]
+script = ExtResource("3_5e3q1")
+markedup_text = "In the corner of the square several aspiring poets are gathered around a vase of flowers.
+
+They sit quietly, occasionally remarking on the sound of the drooping blossoms or the taste of the wind.
+
+Each is waiting for someone more daring to let the first verse drop."
+background_image = SubResource("Resource_kf6pg")
+background_credit = ExtResource("10_kf6pg")
+choices = Array[ExtResource("5_g852m")]([SubResource("Resource_iriya"), SubResource("Resource_hj3b6"), SubResource("Resource_co8my")])
+exit_choice = SubResource("Resource_0b4bk")
+
+[resource]
+script = ExtResource("2_uag1t")
+default_probability_weight = 0
+default_spot_upgrade = ExtResource("1_eo6jl")
+repeatability = 2
+event_id = "verse_arena"
+event_name = "Verse Arena"
+requirement = SubResource("Resource_0gm2q")
+steps = Array[ExtResource("3_5e3q1")]([SubResource("Resource_aidwo")])
+categories = Array[int]([2])

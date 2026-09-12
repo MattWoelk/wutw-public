@@ -1,0 +1,111 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://dy7pygpnx65qe"]
+
+[ext_resource type="Resource" uid="uid://bi58w1qhe5g5h" path="res://stage/spots/steppe/upgrade_steppe_2_cricket_choir.tres" id="1_mxjxm"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_4r7bv"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_p2fdq"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="4_wgvh1"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="5_na3kr"]
+[ext_resource type="Resource" uid="uid://qt0ccf85uuja" path="res://art/pieces/piece_hokusai_sparrow_cicadas.tres" id="5_wgvh1"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_na3kr"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="6_t4r7u"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="7_jy4ti"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="8_4r7bv"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="8_mlo2d"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="9_4r7bv"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="9_nmgxw"]
+
+[sub_resource type="Resource" id="Resource_na3kr"]
+script = ExtResource("6_na3kr")
+_texture_path = "res://events/generic/cicada/cicada_1.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_xxhwh"]
+script = ExtResource("5_na3kr")
+var_id = "continued"
+var_type = 1
+value = "true"
+description = "The cicada may return the favor"
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_p2fdq"]
+script = ExtResource("8_4r7bv")
+bonus_type = ExtResource("8_mlo2d")
+min_count = 25
+max_count = -1
+extra_per_season = 25
+metadata/_custom_type_script = "uid://dfaio0ey0wbra"
+
+[sub_resource type="Resource" id="Resource_ps5l8"]
+script = ExtResource("4_wgvh1")
+markedup_text = "Save the cicada from the sparrow."
+requirement = SubResource("Resource_p2fdq")
+outcome = SubResource("Resource_xxhwh")
+markedup_result_text = "Hands rise, clapping sharply.
+
+The sparrow startles, its quarry escapes, and the air fills with a self-satisfied cry of survival.
+
+It won't be the last cicada the settlers see on this shard."
+
+[sub_resource type="Resource" id="Resource_kio1v"]
+script = ExtResource("9_nmgxw")
+bonus_type = ExtResource("9_4r7bv")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_wgvh1"]
+script = ExtResource("7_jy4ti")
+aspect_type = ExtResource("6_t4r7u")
+min_count = 2
+metadata/_custom_type_script = "uid://cjdop1iab2efw"
+
+[sub_resource type="Resource" id="Resource_6at2x"]
+script = ExtResource("4_wgvh1")
+markedup_text = "Study the interaction."
+requirement = SubResource("Resource_wgvh1")
+outcome = SubResource("Resource_kio1v")
+markedup_result_text = "The cicada is easily caught mid-air, and the sparrow lands on the ground, the prey secure in its beak.
+
+After methodically pulling off the cicada's legs, the sparrow enjoys its meal, emits a satisfied chirrup, and flies away."
+
+[sub_resource type="Resource" id="Resource_df5af"]
+script = ExtResource("9_nmgxw")
+bonus_type = ExtResource("8_mlo2d")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_8mfyw"]
+script = ExtResource("4_wgvh1")
+markedup_text = "Meditate on the balance of nature."
+outcome = SubResource("Resource_df5af")
+markedup_result_text = "The cicada is caught. The sparrow flies on. The grass continues to sway in the wind.
+
+All things in nature rise and fall.
+
+Perhaps beauty lies in the transition."
+
+[sub_resource type="Resource" id="Resource_4r7bv"]
+script = ExtResource("4_wgvh1")
+markedup_text = "Ignore the chase."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_40rqf"]
+script = ExtResource("3_p2fdq")
+markedup_text = "A sparrow dives on a cicada in a sudden motion that seems to split the air in two.
+
+Settlers pause mid-step, enthralled. It is an everyday occurrence, yet it feels significant.
+
+There's a brief moment to intervene."
+background_image = SubResource("Resource_na3kr")
+background_credit = ExtResource("5_wgvh1")
+choices = Array[ExtResource("4_wgvh1")]([SubResource("Resource_ps5l8"), SubResource("Resource_6at2x"), SubResource("Resource_8mfyw")])
+exit_choice = SubResource("Resource_4r7bv")
+
+[resource]
+script = ExtResource("2_4r7bv")
+default_spot_upgrade = ExtResource("1_mxjxm")
+event_id = "cicada_1"
+event_name = "The Sparrow and the Cicada"
+steps = Array[ExtResource("3_p2fdq")]([SubResource("Resource_40rqf")])
+categories = Array[int]([3, 4])

@@ -1,0 +1,128 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://dlmt80ng1oudi"]
+
+[ext_resource type="Resource" uid="uid://gpnysm72dhii" path="res://stage/spots/swamp/upgrade_swamp_2_apothecary_hut.tres" id="1_odmpu"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="2_7ivl5"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_y7w4j"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_rmdpv"]
+[ext_resource type="Resource" uid="uid://dih8hnudttt2f" path="res://art/pieces/piece_hasui_omiya.tres" id="5_7ivl5"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="5_y27t1"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_7yudu"]
+[ext_resource type="Resource" uid="uid://b771eolnq2gc3" path="res://cards/tier2/card_darkness.tres" id="7_qcvd7"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="8_ryqc6"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="9_t1b87"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="10_5urhh"]
+[ext_resource type="Resource" uid="uid://cawvu8vhis2gh" path="res://relics/common/inspiring_tincture/relic_inspiring_tincture.tres" id="11_13pxk"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="12_ytmls"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="13_fp7ll"]
+[ext_resource type="Resource" uid="uid://bjck6fn33jmcq" path="res://cards/tier2/card_calm.tres" id="14_oo52i"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="15_nro24"]
+
+[sub_resource type="Resource" id="Resource_nq3mm"]
+script = ExtResource("2_7ivl5")
+min_progress = 320
+max_progress = -1
+
+[sub_resource type="Resource" id="Resource_7tijt"]
+script = ExtResource("5_y27t1")
+_texture_path = "res://events/generic/sick_apothecary/sick_apothecary.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_nrw5p"]
+script = ExtResource("8_ryqc6")
+card_type = ExtResource("7_qcvd7")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_fhdq1"]
+script = ExtResource("10_5urhh")
+aspect_type = ExtResource("9_t1b87")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_dx63b"]
+script = ExtResource("6_7yudu")
+markedup_text = "Question the cat."
+requirement = SubResource("Resource_fhdq1")
+outcome = SubResource("Resource_nrw5p")
+markedup_result_text = "The apothecary demands to know how the cat is able to speak.
+
+The cat only grins in response. Its shadow, dancing upon the wall in the firelight, keeps growing until it towers over her menacingly.
+
+The woman backs away from the dark spirit, huddling in the corner of the hut. She recites chants until dawn, when sleep finally overcomes her."
+
+[sub_resource type="Resource" id="Resource_aqvio"]
+script = ExtResource("12_ytmls")
+relic = ExtResource("11_13pxk")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_rndn8"]
+script = ExtResource("10_5urhh")
+aspect_type = ExtResource("13_fp7ll")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_nbfrc"]
+script = ExtResource("6_7yudu")
+markedup_text = "Look through her mother's book."
+requirement = SubResource("Resource_rndn8")
+outcome = SubResource("Resource_aqvio")
+markedup_result_text = "The woman looks from the cat to the bottle on the shelf, realizing she must have taken the wrong kind of medicine.
+
+Intent on learning what it is she has imbibed, she leafs through the worn and smudged pages of her mother's recipe book.
+
+Maybe if she combined that potion with a few drops of…
+
+Soon, her mind is buzzing with ideas. Inspired, she spends the rest of the night working out a new tincture."
+
+[sub_resource type="Resource" id="Resource_twrtr"]
+script = ExtResource("8_ryqc6")
+card_type = ExtResource("14_oo52i")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_c8ask"]
+script = ExtResource("10_5urhh")
+aspect_type = ExtResource("15_nro24")
+min_count = 4
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_hyddf"]
+script = ExtResource("6_7yudu")
+markedup_text = "Get some fresh air."
+requirement = SubResource("Resource_c8ask")
+outcome = SubResource("Resource_twrtr")
+markedup_result_text = "Longing to feel the wind on her face and the ground beneath her feet, the apothecary puts on a heavier robe and leaves the cat at the warm hearth.
+
+She looks up at the dark sky, the clouds low and heavy. Frogs croak in the distance as rain washes down her face.
+
+She stands there for a long while, slowly regaining a sense of inner peace."
+
+[sub_resource type="Resource" id="Resource_uh44u"]
+script = ExtResource("6_7yudu")
+markedup_text = "Wait until morning."
+markedup_result_text = "The apothecary decides to pretend that nothing is wrong.
+
+She sits up straight in her chair and pours herself some tea. She ignores the cat's commentary, which becomes increasingly rude.
+
+If she can remain calm, maybe the strange effects will pass by morning."
+
+[sub_resource type="Resource" id="Resource_aub3o"]
+script = ExtResource("4_rmdpv")
+markedup_text = "Lantern light burns dimly across the dark water outside the apothecary's hut, hidden by reeds that almost reach above the roof.
+
+The young apothecary, working late into the night, is nursing a persistent cough. Luckily, when she inherited the job, with it came shelves full of medicines, bundled herbs, and jars of bitter powders.
+
+As the night wears on, her cough fades, but the room begins to tilt. The black cat lounging beside the hearth blinks at her, its eyes narrowing.
+
+\"Good evening,\" it says."
+background_image = SubResource("Resource_7tijt")
+background_credit = ExtResource("5_7ivl5")
+choices = Array[ExtResource("6_7yudu")]([SubResource("Resource_dx63b"), SubResource("Resource_nbfrc"), SubResource("Resource_hyddf")])
+exit_choice = SubResource("Resource_uh44u")
+
+[resource]
+script = ExtResource("3_y7w4j")
+default_spot_upgrade = ExtResource("1_odmpu")
+event_id = "sick_apothecary"
+event_name = "The Sick Apothecary"
+requirement = SubResource("Resource_nq3mm")
+steps = Array[ExtResource("4_rmdpv")]([SubResource("Resource_aub3o")])
+categories = Array[int]([3])

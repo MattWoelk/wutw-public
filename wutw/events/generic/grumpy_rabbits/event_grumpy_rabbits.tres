@@ -1,0 +1,137 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://cbxccshocxmul"]
+
+[ext_resource type="Resource" uid="uid://btpcc1kny4v20" path="res://stage/spots/brushland/upgrade_brushland_2_rabbit_warren.tres" id="1_h1aou"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_4rcx1"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_hwdnx"]
+[ext_resource type="Resource" uid="uid://brsk0itiivtbh" path="res://art/pieces/piece_koson_rabbits.tres" id="4_4rcx1"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="4_dmpo8"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_aubqb"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="6_dsog8"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="7_u11fx"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="8_rjb63"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_kklvf"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="10_sfftd"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="11_cgsx2"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="12_wdv6l"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="13_tcach"]
+[ext_resource type="Resource" uid="uid://dt8o33odwhihj" path="res://cards/tier0/card_rabbit.tres" id="14_lreyb"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="15_xta35"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="16_ud31t"]
+[ext_resource type="Resource" uid="uid://d3s0d81ihlcm8" path="res://cards/tier6/card_guilt.tres" id="17_qgjop"]
+
+[sub_resource type="Resource" id="Resource_r5uyk"]
+script = ExtResource("4_dmpo8")
+_texture_path = "res://events/generic/grumpy_rabbits/grumpy_rabbits.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("7_u11fx")
+bonus_type = ExtResource("6_dsog8")
+amount = -15
+extra_per_season = -15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_u2nvd"]
+script = ExtResource("9_kklvf")
+aspect_type = ExtResource("8_rjb63")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_k1k5e"]
+script = ExtResource("5_aubqb")
+markedup_text = "Cancel the project."
+requirement = SubResource("Resource_u2nvd")
+outcome = SubResource("Resource_trtbi")
+markedup_result_text = "The architect decides to cancel the building project, afraid to disturb the burrows.
+
+The settlers complain, grumbling that they have been reduced to taking orders from rabbits."
+
+[sub_resource type="Resource" id="Resource_d174p"]
+script = ExtResource("7_u11fx")
+bonus_type = ExtResource("12_wdv6l")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_a6ufw"]
+script = ExtResource("7_u11fx")
+bonus_type = ExtResource("6_dsog8")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_0eiya"]
+script = ExtResource("10_sfftd")
+suboutcomes = Array[ExtResource("11_cgsx2")]([SubResource("Resource_d174p"), SubResource("Resource_a6ufw")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_xl1yp"]
+script = ExtResource("9_kklvf")
+aspect_type = ExtResource("13_tcach")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_31j6s"]
+script = ExtResource("5_aubqb")
+markedup_text = "Build around the burrows."
+requirement = SubResource("Resource_xl1yp")
+outcome = SubResource("Resource_0eiya")
+markedup_result_text = "The architect revises his plan. The warehouse will now stand on stilts, leaving the burrows beneath untouched.
+
+The design proves effective beyond its original intent. It keeps the grain away from hungry rodents, and the air gap prevents moisture from seeping through the floorboards and spreading rot."
+
+[sub_resource type="Resource" id="Resource_bgisj"]
+script = ExtResource("15_xta35")
+card_type = ExtResource("14_lreyb")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_5h1mt"]
+script = ExtResource("9_kklvf")
+aspect_type = ExtResource("16_ud31t")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_5ro8b"]
+script = ExtResource("5_aubqb")
+markedup_text = "Build a rabbit shrine instead."
+requirement = SubResource("Resource_5h1mt")
+outcome = SubResource("Resource_bgisj")
+markedup_result_text = "Haunted by the rabbits' accusing stares, the architect halts construction on the warehouse and begins a new project.
+
+The result is a set of tiny white shrines, marking the entrances to the rabbits' warren.
+
+Settlers leave little piles of hay in front of the shrines as offerings to the town's new patron deities."
+
+[sub_resource type="Resource" id="Resource_5mc6v"]
+script = ExtResource("15_xta35")
+card_type = ExtResource("17_qgjop")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_010lb"]
+script = ExtResource("5_aubqb")
+markedup_text = "Continue the project."
+outcome = SubResource("Resource_5mc6v")
+markedup_result_text = "The project continues as planned, and the settlement gains much-needed storage space.
+
+Still, the architect cannot shake the memory of the rabbits' glaring eyes."
+
+[sub_resource type="Resource" id="Resource_0letw"]
+script = ExtResource("3_hwdnx")
+markedup_text = "The settlement's architect is surveying the planned location for the town's new warehouse as a full moon rises above. Lost in thought, he catches movement out of the corner of his eye, and is startled to see two white rabbits glaring at him.
+
+They stand still as statues, their red eyes staring accusingly into his very soul. The man laughs nervously and steps past them, but the rabbits' gaze follows.
+
+Looking closely, he notices with a sinking feeling the dark mouths of several burrows.
+"
+background_image = SubResource("Resource_r5uyk")
+background_credit = ExtResource("4_4rcx1")
+choices = Array[ExtResource("5_aubqb")]([SubResource("Resource_k1k5e"), SubResource("Resource_31j6s"), SubResource("Resource_5ro8b")])
+exit_choice = SubResource("Resource_010lb")
+
+[resource]
+script = ExtResource("2_4rcx1")
+default_spot_upgrade = ExtResource("1_h1aou")
+event_id = "grumpy_rabbits"
+event_name = "The Grumpy Rabbits"
+steps = Array[ExtResource("3_hwdnx")]([SubResource("Resource_0letw")])
+categories = Array[int]([3])

@@ -1,0 +1,174 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://53ug6kgphyoa"]
+
+[ext_resource type="Resource" uid="uid://b61ux624jtmib" path="res://stage/spots/river/upgrade_river_3_floating_lantern_festival.tres" id="1_0y75x"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_1ex4l"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_wbymv"]
+[ext_resource type="Resource" uid="uid://c4w5ynav7kf1" path="res://art/pieces/piece_koto_flood.tres" id="5_1ex4l"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_it5ex"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_wbymv"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="6_yt42y"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_srvd6"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="8_l71bo"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="9_sdr4u"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="10_n04a7"]
+[ext_resource type="Resource" uid="uid://dplvsis6am1r8" path="res://cards/tier5/card_festival.tres" id="11_01clx"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="12_jaahk"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="13_grsmx"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="14_46so2"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="15_inwni"]
+[ext_resource type="Resource" uid="uid://clgw77kes1vmq" path="res://relics/uncommon/empty_lantern_frame/relic_empty_lantern_frame.tres" id="16_ss8xc"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="17_k7f4f"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="18_cgawu"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="19_uqg1h"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="20_d2sjh"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="21_jxpnn"]
+[ext_resource type="Script" uid="uid://bcr5mj5trowjm" path="res://events/system/requirements/event_requirement_any.gd" id="22_18kf0"]
+[ext_resource type="Resource" uid="uid://t1cdsa4u11ju" path="res://cards/tier3/card_celebrate.tres" id="23_pg7dn"]
+
+[sub_resource type="Resource" id="Resource_1ex4l"]
+script = ExtResource("6_wbymv")
+_texture_path = "res://events/generic/river_festival_flood/river_festival_flood.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_mxy6s"]
+script = ExtResource("9_sdr4u")
+bonus_type = ExtResource("8_l71bo")
+amount = -50
+extra_per_season = -40
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_ps5l8"]
+script = ExtResource("12_jaahk")
+card_type = ExtResource("11_01clx")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_6at2x"]
+script = ExtResource("6_yt42y")
+suboutcomes = Array[ExtResource("7_srvd6")]([SubResource("Resource_mxy6s"), SubResource("Resource_ps5l8")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("14_46so2")
+bonus_type = ExtResource("8_l71bo")
+min_count = 50
+max_count = -1
+extra_per_season = 40
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("14_46so2")
+bonus_type = ExtResource("10_n04a7")
+min_count = 50
+max_count = -1
+extra_per_season = 40
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("15_inwni")
+all_requirements = Array[ExtResource("13_grsmx")]([SubResource("Resource_tuogj"), SubResource("Resource_rx1a8")])
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("5_it5ex")
+markedup_text = "Use expedition resources to host the festival."
+requirement = SubResource("Resource_dpp3j")
+outcome = SubResource("Resource_6at2x")
+markedup_result_text = "Donations are gathered from across the land.
+
+The expedition members help shape the floats, craft new lanterns from spare scrolls, and pass bowls of simple but warm food along the river's edge.
+
+The festival is smaller in size, but not in spirit.
+
+Grief softens as singing resounds along the muddy banks."
+
+[sub_resource type="Resource" id="Resource_8mfyw"]
+script = ExtResource("17_k7f4f")
+relic = ExtResource("16_ss8xc")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_ciwob"]
+script = ExtResource("19_uqg1h")
+aspect_type = ExtResource("18_cgawu")
+max_count = 3
+
+[sub_resource type="Resource" id="Resource_nthfn"]
+script = ExtResource("19_uqg1h")
+aspect_type = ExtResource("20_d2sjh")
+max_count = 3
+
+[sub_resource type="Resource" id="Resource_2myy3"]
+script = ExtResource("19_uqg1h")
+aspect_type = ExtResource("21_jxpnn")
+max_count = 3
+
+[sub_resource type="Resource" id="Resource_3sdrw"]
+script = ExtResource("22_18kf0")
+any_requirements = Array[ExtResource("13_grsmx")]([SubResource("Resource_ciwob"), SubResource("Resource_nthfn"), SubResource("Resource_2myy3")])
+
+[sub_resource type="Resource" id="Resource_fmixu"]
+script = ExtResource("5_it5ex")
+markedup_text = "Cancel the festival to focus on recovery."
+requirement = SubResource("Resource_3sdrw")
+outcome = SubResource("Resource_8mfyw")
+markedup_result_text = "No lanterns are lit. No river songs are sung.
+
+Instead, walls are mended, floors swept, and water lines rerouted.
+
+Even the rice paper from the lanterns is recycled for screens, leaving behind empty frames resting by the riverside."
+
+[sub_resource type="Resource" id="Resource_40rqf"]
+script = ExtResource("12_jaahk")
+card_type = ExtResource("23_pg7dn")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_kojkx"]
+script = ExtResource("14_46so2")
+bonus_type = ExtResource("10_n04a7")
+min_count = 30
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_xh6l0"]
+script = ExtResource("5_it5ex")
+markedup_text = "Hold a tiny ceremony."
+requirement = SubResource("Resource_kojkx")
+outcome = SubResource("Resource_40rqf")
+markedup_result_text = "The ceremony is performed in the evening, with all th settlers gathered on the bank.
+
+It consists of a single lit lantern floating away down the stream, and a half-forgotten song chanted by the priest."
+
+[sub_resource type="Resource" id="Resource_2stvf"]
+script = ExtResource("9_sdr4u")
+bonus_type = ExtResource("10_n04a7")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_1stri"]
+script = ExtResource("5_it5ex")
+markedup_text = "Hold the festival as if nothing happened."
+outcome = SubResource("Resource_2stvf")
+markedup_result_text = "Decorations hang limp from broken rafters.
+
+The food runs out before sundown.
+
+A few lanterns sputter out, and more than a few sink.
+
+Whispers of \"this is a waste\" and \"we should've waited\" spread through the town."
+
+[sub_resource type="Resource" id="Resource_2me52"]
+script = ExtResource("3_wbymv")
+markedup_text = "The rains came hard this season.
+
+The river swelled, spilled, and took more than it should have. A few homes were washed away. Stores of grain, precious records, and whole crates of tools were swallowed up.
+
+As festival season arrives, settlers debate whether the celebration should be canceled, or if this is the time it is needed most."
+background_image = SubResource("Resource_1ex4l")
+background_credit = ExtResource("5_1ex4l")
+choices = Array[ExtResource("5_it5ex")]([SubResource("Resource_06ahh"), SubResource("Resource_fmixu"), SubResource("Resource_xh6l0")])
+exit_choice = SubResource("Resource_1stri")
+
+[resource]
+script = ExtResource("2_1ex4l")
+default_spot_upgrade = ExtResource("1_0y75x")
+event_id = "river_festival_flood"
+event_name = "When the River Rose"
+steps = Array[ExtResource("3_wbymv")]([SubResource("Resource_2me52")])
+categories = Array[int]([3])

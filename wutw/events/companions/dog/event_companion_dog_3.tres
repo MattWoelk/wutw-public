@@ -1,0 +1,169 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://m5eddsd0flnp"]
+
+[ext_resource type="Resource" uid="uid://jax4lg646pmt" path="res://stage/spots/building_large/upgrade_building_large_2_town_hall.tres" id="1_objn8"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_xef7c"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_blwsu"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_gbkxx"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_ec7aj"]
+[ext_resource type="Resource" uid="uid://bj3q32pmgvits" path="res://art/pieces/piece_gakutei_nobleman_and_dog.tres" id="6_xef7c"]
+[ext_resource type="Resource" uid="uid://dhal843mubr37" path="res://cards/tier6/card_wound.tres" id="7_40kq2"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_blwsu"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="8_2e6qv"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="9_51j4q"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="10_xsgct"]
+[ext_resource type="Resource" uid="uid://c1pvywklu45ke" path="res://cards/tier6/card_pass_away.tres" id="11_o2dgg"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="12_dpys7"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="13_hovra"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="14_m74r4"]
+[ext_resource type="Resource" uid="uid://dsjmc7wh3n0xb" path="res://companions/dog/companion_dog.tres" id="15_ucn5a"]
+[ext_resource type="Script" uid="uid://2you2r2oar48" path="res://events/system/outcomes/unlock_companion/event_outcome_unlock_companion.gd" id="16_ywxdr"]
+[ext_resource type="Script" uid="uid://dnxdmp6ko2c00" path="res://events/system/outcomes/mark_all_choices_seen/event_outcome_mark_all_choices_seen.gd" id="17_17jjy"]
+[ext_resource type="Resource" uid="uid://cdiaru4uf1x6l" path="res://events/companions/dog/event_companion_dog_1.tres" id="18_j1cgq"]
+[ext_resource type="Resource" uid="uid://crnqvjvox6ii6" path="res://events/companions/dog/event_companion_dog_2.tres" id="19_vywck"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="20_2qblj"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="21_t5an0"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="22_kfyj7"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="23_82jtu"]
+
+[sub_resource type="Resource" id="Resource_1nk2h"]
+script = ExtResource("2_xef7c")
+scope = 1
+event_id = "global"
+var_id = "companion_dog"
+value = "2"
+
+[sub_resource type="Resource" id="Resource_xef7c"]
+script = ExtResource("7_blwsu")
+_texture_path = "res://events/companions/dog/event_companion_dog_3.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_1stri"]
+script = ExtResource("8_2e6qv")
+card_type = ExtResource("7_40kq2")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_6x08g"]
+script = ExtResource("10_xsgct")
+bonus_type = ExtResource("9_51j4q")
+min_count = 40
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_0bb2h"]
+script = ExtResource("6_ec7aj")
+markedup_text = "Distract the dog with food."
+requirement = SubResource("Resource_6x08g")
+outcome = SubResource("Resource_1stri")
+markedup_result_text = "The chairman pours some beans into the dog's bowl. The dog hesitates, but then lets go of the robe.
+
+A moment later, the ground heaves as a mild earthquake rattles the hall.
+
+Both the man and the dog manage to scramble under a heavy desk, but end up with a few scrapes and bruises."
+
+[sub_resource type="Resource" id="Resource_2me52"]
+script = ExtResource("8_2e6qv")
+card_type = ExtResource("11_o2dgg")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_hewjp"]
+script = ExtResource("6_ec7aj")
+markedup_text = "Lock the dog in another room until it calms down."
+outcome = SubResource("Resource_2me52")
+markedup_result_text = "Deciding that the dog may be rabid, the chairman locks the animal in a sturdy storeroom.
+
+A moment later, the ground shakes.
+
+The chairman barely stumbles out of the hall before the ceiling caves in.
+
+The dog is less fortunate."
+
+[sub_resource type="Resource" id="Resource_kjam1"]
+script = ExtResource("14_m74r4")
+scope = 1
+event_id = "global"
+var_id = "companion_dog"
+value = "3"
+description = ""
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_r0oeh"]
+script = ExtResource("16_ywxdr")
+companion = ExtResource("15_ucn5a")
+metadata/_custom_type_script = "uid://2you2r2oar48"
+
+[sub_resource type="Resource" id="Resource_jiini"]
+script = ExtResource("17_17jjy")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_mm8jc"]
+script = ExtResource("17_17jjy")
+seen_event = ExtResource("18_j1cgq")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_ymvbb"]
+script = ExtResource("17_17jjy")
+seen_event = ExtResource("19_vywck")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_sdqv8"]
+script = ExtResource("12_dpys7")
+suboutcomes = Array[ExtResource("13_hovra")]([SubResource("Resource_kjam1"), SubResource("Resource_r0oeh"), SubResource("Resource_jiini"), SubResource("Resource_mm8jc"), SubResource("Resource_ymvbb")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_3y5bi"]
+script = ExtResource("21_t5an0")
+aspect_type = ExtResource("20_2qblj")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_bcijt"]
+script = ExtResource("6_ec7aj")
+markedup_text = "Follow the dog outside."
+requirement = SubResource("Resource_3y5bi")
+outcome = SubResource("Resource_sdqv8")
+markedup_result_text = "The chairman decides to trust the animal's sudden urgency over his own common sense.
+
+He lets the dog drag him out of the building, just as the ground starts shaking.
+
+They watch from a safe distance as the roof of the hall buckles and promptly caves in."
+
+[sub_resource type="Resource" id="Resource_f2bue"]
+script = ExtResource("23_82jtu")
+bonus_type = ExtResource("22_kfyj7")
+amount = -20
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_h0id1"]
+script = ExtResource("6_ec7aj")
+markedup_text = "Shout loudly to scare the dog away."
+outcome = SubResource("Resource_f2bue")
+markedup_result_text = "The chairman loses his patience, waving his arms and shouting for the dog to get out.
+
+Startled, the animal lets go of the robe and bolts out the door.
+
+A moment later, the ground shakes and the roof starts to buckle.
+
+The chairman scrambles outside, but not before a falling timber catches him on the shoulder."
+
+[sub_resource type="Resource" id="Resource_uputh"]
+script = ExtResource("4_gbkxx")
+markedup_text = "The town council chairman is organizing the records when his dog companion, usually a calm and friendly creature, suddenly becomes agitated.
+
+It barks loudly and keeps tugging at his robe, trying to drag him outside.
+
+Nothing the man does seems to calm the dog, and it is becoming more and more aggressive."
+background_image = SubResource("Resource_xef7c")
+background_credit = ExtResource("6_xef7c")
+choices = Array[ExtResource("6_ec7aj")]([SubResource("Resource_0bb2h"), SubResource("Resource_hewjp"), SubResource("Resource_bcijt")])
+exit_choice = SubResource("Resource_h0id1")
+
+[resource]
+script = ExtResource("3_blwsu")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_objn8")
+event_id = "companion_dog_3"
+event_name = "A Panicked Dog"
+requirement = SubResource("Resource_1nk2h")
+steps = Array[ExtResource("4_gbkxx")]([SubResource("Resource_uputh")])
+categories = Array[int]([0, 4])

@@ -1,0 +1,132 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://yw20322eafe3"]
+
+[ext_resource type="Resource" uid="uid://ctq4e2rher1a6" path="res://stage/spots/lake/upgrade_lake_1_hemp_retting_pond.tres" id="1_142u6"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="2_83imb"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="3_hu484"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="4_tiab2"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="5_ajcls"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="6_xcjgq"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="7_w5rwl"]
+[ext_resource type="Resource" uid="uid://ca4c8bna1ri1v" path="res://art/pieces/piece_hiroshige_3_planting_rushes.tres" id="9_4gesq"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="10_foms3"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="10_xcjgq"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="11_7en4o"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="12_hjud5"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="13_ajcls"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="13_nk3lb"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="14_xcjgq"]
+[ext_resource type="Resource" uid="uid://c4r0r2x8fctjx" path="res://quests/companion/quest_companion_koi.tres" id="15_w5rwl"]
+[ext_resource type="Script" uid="uid://rlexviyd8sv7" path="res://events/system/outcomes/start_quest/event_outcome_start_quest.gd" id="16_g32t2"]
+
+[sub_resource type="Resource" id="Resource_r7t18"]
+script = ExtResource("3_hu484")
+min_progress = 330
+metadata/_custom_type_script = "uid://c50bhh4sr0g8o"
+
+[sub_resource type="Resource" id="Resource_ot8r7"]
+script = ExtResource("4_tiab2")
+scope = 1
+event_id = "global"
+var_id = "companion_koi"
+value = "0"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_w5sg7"]
+script = ExtResource("5_ajcls")
+all_requirements = Array[ExtResource("2_83imb")]([SubResource("Resource_r7t18"), SubResource("Resource_ot8r7")])
+metadata/_custom_type_script = "uid://15prcev7a3ta"
+
+[sub_resource type="Resource" id="Resource_ajcls"]
+script = ExtResource("10_xcjgq")
+_texture_path = "res://events/companions/koi/companion_koi_1.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_w3xbw"]
+script = ExtResource("12_hjud5")
+bonus_type = ExtResource("11_7en4o")
+amount = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_q4scc"]
+script = ExtResource("10_foms3")
+markedup_text = "Drag all the hemp out before untangling it."
+outcome = SubResource("Resource_w3xbw")
+markedup_result_text = "The workers drag all the hemp onto dry land, and leave it to dry out.
+
+In the evening, the tangled bundles are unraveled to reveal a carp that had gotten caught in the long strands. Unfortunately, it is too late to save the fish."
+
+[sub_resource type="Resource" id="Resource_4gesq"]
+script = ExtResource("16_g32t2")
+quest = ExtResource("15_w5rwl")
+metadata/_custom_type_script = "uid://rlexviyd8sv7"
+
+[sub_resource type="Resource" id="Resource_27pns"]
+script = ExtResource("13_nk3lb")
+scope = 1
+event_id = "global"
+var_id = "companion_koi"
+value = "1"
+description = ""
+outcome_description = "The carp was saved."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_foms3"]
+script = ExtResource("13_ajcls")
+suboutcomes = Array[ExtResource("14_xcjgq")]([SubResource("Resource_4gesq"), SubResource("Resource_27pns")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_60802"]
+script = ExtResource("10_foms3")
+markedup_text = "Try to untangle the bundles in the water."
+outcome = SubResource("Resource_foms3")
+markedup_result_text = "One of the workers ties several layers of cloth around their face and wades into the water.
+
+It is hard work, but eventually the bundles are untangled, releasing a carp that was stuck between them, who eagerly swims away."
+
+[sub_resource type="Resource" id="Resource_1xbs5"]
+script = ExtResource("12_hjud5")
+bonus_type = ExtResource("11_7en4o")
+amount = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_nxn41"]
+script = ExtResource("10_foms3")
+markedup_text = "Cut the bundles apart."
+outcome = SubResource("Resource_1xbs5")
+markedup_result_text = "An impatient retter takes a large knife and hacks at the bundles, which quickly unravel.
+
+Whatever had gotten caught in the hemp remains a mystery."
+
+[sub_resource type="Resource" id="Resource_tycqh"]
+script = ExtResource("12_hjud5")
+bonus_type = ExtResource("11_7en4o")
+amount = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_aikom"]
+script = ExtResource("10_foms3")
+markedup_text = "Leave the tangled bundles alone."
+outcome = SubResource("Resource_tycqh")
+markedup_result_text = "The tangled bundles are left in the water, and eventually disappear into the lakebed.
+
+Whatever had gotten caught in the hemp remains a mystery."
+
+[sub_resource type="Resource" id="Resource_qhyrb"]
+script = ExtResource("7_w5rwl")
+markedup_text = "When the laborers come to collect the processed hemp, they find several of the bundles tangled together. Something appears to be caught in them, though it's hard to tell what.
+
+It would take a while to untangle the foul-smelling bundles, and the retters are loath to brave the stench for that long."
+background_image = SubResource("Resource_ajcls")
+background_credit = ExtResource("9_4gesq")
+choices = Array[ExtResource("10_foms3")]([SubResource("Resource_q4scc"), SubResource("Resource_60802"), SubResource("Resource_nxn41")])
+exit_choice = SubResource("Resource_aikom")
+
+[resource]
+script = ExtResource("6_xcjgq")
+default_probability_weight = 1
+default_spot_upgrade = ExtResource("1_142u6")
+event_id = "companion_koi_1"
+event_name = "Caught in the Hemp"
+requirement = SubResource("Resource_w5sg7")
+steps = Array[ExtResource("7_w5rwl")]([SubResource("Resource_qhyrb")])
+categories = Array[int]([0, 4, 1])

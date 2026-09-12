@@ -1,0 +1,127 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://c68525qgklrcy"]
+
+[ext_resource type="Resource" uid="uid://bihb7q846xdxp" path="res://stage/spots/steppe/upgrade_steppe_2_pottery_kiln.tres" id="1_hp8jf"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_wofjq"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_w02dd"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_u85t3"]
+[ext_resource type="Resource" uid="uid://chqwd1of6uh38" path="res://art/pieces/piece_hiroshige_3_imari_porcelain.tres" id="5_wofjq"]
+[ext_resource type="Resource" uid="uid://b2lx4u0nmpsob" path="res://cards/tier2/card_pot.tres" id="6_6b4h8"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_w02dd"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="7_pwywj"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="8_skof4"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_d0pid"]
+[ext_resource type="Resource" uid="uid://ctibvtg7ib1ms" path="res://cards/tier2/card_pottery.tres" id="10_3c8tv"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="11_pf5qi"]
+[ext_resource type="Resource" uid="uid://ccvkil0mbmfcg" path="res://relics/uncommon/alms_bowl/relic_alms_bowl.tres" id="12_b41e5"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="13_peg88"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="14_qtykq"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="15_tiwpv"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="16_w43hs"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="17_koqan"]
+
+[sub_resource type="Resource" id="Resource_wofjq"]
+script = ExtResource("6_w02dd")
+_texture_path = "res://events/generic/clay_basket/clay_basket.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_ps5l8"]
+script = ExtResource("7_pwywj")
+card_type = ExtResource("6_6b4h8")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_r2a6g"]
+script = ExtResource("9_d0pid")
+aspect_type = ExtResource("8_skof4")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_w6iug"]
+script = ExtResource("5_u85t3")
+markedup_text = "Suggest turning them into cooking pots."
+requirement = SubResource("Resource_r2a6g")
+outcome = SubResource("Resource_ps5l8")
+markedup_result_text = "The master potter inspects each piece, nods, and says, \"Not for tea. But these'll hold soup just fine.\"
+
+The teen laughs, then asks for more clay."
+
+[sub_resource type="Resource" id="Resource_6at2x"]
+script = ExtResource("7_pwywj")
+card_type = ExtResource("10_3c8tv")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_cqpl6"]
+script = ExtResource("9_d0pid")
+aspect_type = ExtResource("11_pf5qi")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_57nyf"]
+script = ExtResource("5_u85t3")
+markedup_text = "Offer to teach the kid."
+requirement = SubResource("Resource_cqpl6")
+outcome = SubResource("Resource_6at2x")
+markedup_result_text = "\"You've got a spark,\" the potter says. \"If you're willing to learn, I'll teach you to throw a bowl that sings.\"
+
+The teen blinks, then grins wider than the kiln mouth."
+
+[sub_resource type="Resource" id="Resource_8mfyw"]
+script = ExtResource("13_peg88")
+relic = ExtResource("12_b41e5")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_yssud"]
+script = ExtResource("15_tiwpv")
+bonus_type = ExtResource("14_qtykq")
+min_count = 30
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_1mffm"]
+script = ExtResource("5_u85t3")
+markedup_text = "Fire them all as-is and offer kind words."
+requirement = SubResource("Resource_yssud")
+outcome = SubResource("Resource_8mfyw")
+markedup_result_text = "The kiln glows late into the night.
+
+In the morning, the teen returns to find his clumsy bowls fired and neatly stacked.
+
+A note rests on top of the stack, thanking the youngster for his patronage.
+
+It won't be the last time he visits the kiln."
+
+[sub_resource type="Resource" id="Resource_40rqf"]
+script = ExtResource("17_koqan")
+bonus_type = ExtResource("16_w43hs")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_std70"]
+script = ExtResource("5_u85t3")
+markedup_text = "Tell the teen they aren't worth firing."
+outcome = SubResource("Resource_40rqf")
+markedup_result_text = "\"Not this time,\" the potter says. \"Maybe next.\"
+
+The teen shrugs and carries the crate back home."
+
+[sub_resource type="Resource" id="Resource_786kj"]
+script = ExtResource("3_w02dd")
+markedup_text = "A local teenager, cheeks dusted with clay, arrives at the kiln with a basket of handmade bowls, almost too large for him to carry alone.
+
+He is too timid to say anything. He just sets them down and looks hopeful.
+
+The bowls are crooked, thick-lipped, and none quite match.
+
+The master potter rubs her chin."
+background_image = SubResource("Resource_wofjq")
+background_credit = ExtResource("5_wofjq")
+choices = Array[ExtResource("5_u85t3")]([SubResource("Resource_w6iug"), SubResource("Resource_57nyf"), SubResource("Resource_1mffm")])
+exit_choice = SubResource("Resource_std70")
+
+[resource]
+script = ExtResource("2_wofjq")
+default_spot_upgrade = ExtResource("1_hp8jf")
+event_id = "clay_basket"
+event_name = "A Basket of Clay"
+steps = Array[ExtResource("3_w02dd")]([SubResource("Resource_786kj")])
+categories = Array[int]([3])

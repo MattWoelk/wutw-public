@@ -1,0 +1,129 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://2cgpc22bgf7f"]
+
+[ext_resource type="Resource" uid="uid://c312ffd27sl8e" path="res://stage/spots/cliff/upgrade_cliff_3_petroglyph_cave.tres" id="1_2pv4t"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_k42jv"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_c5m4p"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_e7ixb"]
+[ext_resource type="Resource" uid="uid://d80sab43nfg6" path="res://art/pieces/piece_hiroshige_3_coal_mine.tres" id="5_lgb1a"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_bumq1"]
+[ext_resource type="Resource" uid="uid://1pyjk5qbkyj4" path="res://cards/tier2/card_vortex.tres" id="6_wxn0b"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="7_bgiyq"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="8_hsdru"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="9_ggfsd"]
+[ext_resource type="Resource" uid="uid://s2g1kejry2yr" path="res://relics/common/spring_rune/relic_spring_rune.tres" id="10_4k50g"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="11_r2a3a"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="12_e2bkh"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="13_8aji2"]
+[ext_resource type="Resource" uid="uid://c62s4so2pr8yf" path="res://relics/common/stone_heart/relic_stone_heart.tres" id="14_1v86i"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="15_jdco3"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="16_lqjnm"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="17_ploc3"]
+
+[sub_resource type="Resource" id="Resource_lgb1a"]
+script = ExtResource("6_bumq1")
+_texture_path = "res://events/generic/petroglyph_cave/petroglyph_cave.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_40rqf"]
+script = ExtResource("7_bgiyq")
+card_type = ExtResource("6_wxn0b")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ptcwf"]
+script = ExtResource("9_ggfsd")
+bonus_type = ExtResource("8_hsdru")
+min_count = 50
+max_count = -1
+extra_per_season = 50
+
+[sub_resource type="Resource" id="Resource_egt2j"]
+script = ExtResource("5_e7ixb")
+markedup_text = "Follow the faint sound of water."
+requirement = SubResource("Resource_ptcwf")
+outcome = SubResource("Resource_40rqf")
+markedup_result_text = "The most adventurous of the group trace the drip, step by step. The passage narrows, then widens sharply.
+
+An underground river rushes through the stone, vanishing into a spiraling whirlpool.
+
+Etched above it is a glyph everyone recognizes."
+
+[sub_resource type="Resource" id="Resource_2stvf"]
+script = ExtResource("11_r2a3a")
+relic = ExtResource("10_4k50g")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_f2op8"]
+script = ExtResource("13_8aji2")
+aspect_type = ExtResource("12_e2bkh")
+min_count = 3
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("5_e7ixb")
+markedup_text = "Search for sources of light."
+requirement = SubResource("Resource_f2op8")
+outcome = SubResource("Resource_2stvf")
+markedup_result_text = "A few enterprising settlers block the way behind to shut out light, then wait.
+
+Slowly, a faint, greenish light becomes visible in the darkness.
+
+As they descend, glowing fungi mark a sloping tunnel. Beyond it are more glyphs carved into damp pebbles.
+
+One of the glyphs is glowing. It appears that a strange lichen has grown within the carving, giving it a soft green glow."
+
+[sub_resource type="Resource" id="Resource_xxhwh"]
+script = ExtResource("11_r2a3a")
+relic = ExtResource("14_1v86i")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("9_ggfsd")
+bonus_type = ExtResource("15_jdco3")
+min_count = 50
+max_count = -1
+extra_per_season = 50
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("5_e7ixb")
+markedup_text = "Secure a route downward."
+requirement = SubResource("Resource_tuogj")
+outcome = SubResource("Resource_xxhwh")
+markedup_result_text = "A crack in the rock quickly expands into a shaft disappearing into the darkness below.
+
+Safety experts rig a descent with rope and wedges. It's slow going, but steady.
+
+At the bottom is a new chamber. Half-finished statues litter the cave floor: animal limbs, human faces, and shapes none of the settlers recognize.
+
+One of these stands out in particular: a peculiarly accurate heart carved from a single piece of stone."
+
+[sub_resource type="Resource" id="Resource_kio1v"]
+script = ExtResource("17_ploc3")
+bonus_type = ExtResource("16_lqjnm")
+amount = 15
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("5_e7ixb")
+markedup_text = "Stay near the surface and record the findings."
+outcome = SubResource("Resource_kio1v")
+markedup_result_text = "Everyone remains in the main chamber, mapping every symbol and comparing their forms to modern glyphs.
+
+The mystery won't be solved yet, but the record will endure."
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("3_c5m4p")
+markedup_text = "Curious settlers shuffle into the petroglyph cave. The main chamber is large, the walls covered with a variety of glyphs. Someone in ages past has reinforced the ceiling, and the wood still holds despite the dampness.
+
+The cave narrows in the back, leading deeper into the dark. The symbols there are fainter, the carvings subtler, but it seems others once descended further."
+background_image = SubResource("Resource_lgb1a")
+background_credit = ExtResource("5_lgb1a")
+choices = Array[ExtResource("5_e7ixb")]([SubResource("Resource_egt2j"), SubResource("Resource_4xuhh"), SubResource("Resource_rx1a8")])
+exit_choice = SubResource("Resource_dpp3j")
+
+[resource]
+script = ExtResource("2_k42jv")
+default_spot_upgrade = ExtResource("1_2pv4t")
+event_id = "petroglyph_cave"
+event_name = "Into the Petroglyph Cave"
+steps = Array[ExtResource("3_c5m4p")]([SubResource("Resource_06ahh")])
+categories = Array[int]([3])

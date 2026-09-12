@@ -1,0 +1,82 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://dgfj6b655trn4"]
+
+[ext_resource type="Resource" uid="uid://dh1sy0fm46wde" path="res://stage/spots/building_large/upgrade_building_large_3_artisans_college.tres" id="1_jn0rq"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="2_84xuu"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_s3ihe"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_ftbgp"]
+[ext_resource type="Script" uid="uid://bsa120l75wd8g" path="res://art/art_piece_none.gd" id="5_eqqnl"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_tvhus"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="7_rl4t1"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="8_6i8j6"]
+
+[sub_resource type="Resource" id="Resource_3dlde"]
+script = ExtResource("2_84xuu")
+min_progress = 500
+max_progress = -1
+
+[sub_resource type="Resource" id="Resource_d174p"]
+script = ExtResource("5_eqqnl")
+metadata/_custom_type_script = "uid://bsa120l75wd8g"
+
+[sub_resource type="Resource" id="Resource_1hgwr"]
+script = ExtResource("6_tvhus")
+_texture_path = "res://events/generic/alekon/alekon.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_a6ufw"]
+script = ExtResource("8_6i8j6")
+delta = 100
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_myfod"]
+script = ExtResource("7_rl4t1")
+markedup_text = "Pay your respects."
+outcome = SubResource("Resource_a6ufw")
+markedup_result_text = "Each member of the expedition takes a turn to walk up to the statue and bow.
+
+Somehow, the sheer strangeness of the creature fills them with an immense feeling of inspiration and the desire to go out into the world and create unique and beautiful things."
+
+[sub_resource type="Resource" id="Resource_n63jx"]
+script = ExtResource("7_rl4t1")
+markedup_text = "Pay your respects."
+outcome = SubResource("Resource_a6ufw")
+markedup_result_text = "Each member of the expedition takes a turn to walk up to the statue and bow.
+
+Somehow, the sheer strangeness of the creature fills them with an immense feeling of inspiration and the desire to go out into the world and create unique and beautiful things."
+
+[sub_resource type="Resource" id="Resource_qcog6"]
+script = ExtResource("7_rl4t1")
+markedup_text = "Pay your respects."
+outcome = SubResource("Resource_a6ufw")
+markedup_result_text = "Each member of the expedition takes a turn to walk up to the statue and bow.
+
+Somehow, the sheer strangeness of the creature fills them with an immense feeling of inspiration and the desire to go out into the world and create unique and beautiful things."
+
+[sub_resource type="Resource" id="Resource_ddqxb"]
+script = ExtResource("7_rl4t1")
+markedup_text = "Pay your respects."
+outcome = SubResource("Resource_a6ufw")
+markedup_result_text = "Each member of the expedition takes a turn to walk up to the statue and bow.
+
+Somehow, the sheer strangeness of the creature fills them with an immense feeling of inspiration and the desire to go out into the world and create unique and beautiful things."
+
+[sub_resource type="Resource" id="Resource_s4wek"]
+script = ExtResource("4_ftbgp")
+markedup_text = "The lead artisan of the bureau was commissioned to carve a great statue of the Enlightened One. After a month of work he unveils his masterpiece, to the astonishment of everyone present.
+
+When questioned, the artisan claims that the Enlightened One had appeared to him in a dream in this exact shape, and asked him about the meaning of life."
+background_image = SubResource("Resource_1hgwr")
+background_credit = SubResource("Resource_d174p")
+choices = Array[ExtResource("7_rl4t1")]([SubResource("Resource_myfod"), SubResource("Resource_n63jx"), SubResource("Resource_qcog6")])
+exit_choice = SubResource("Resource_ddqxb")
+
+[resource]
+script = ExtResource("3_s3ihe")
+default_probability_weight = 6
+default_spot_upgrade = ExtResource("1_jn0rq")
+repeatability = 0
+event_id = "alekon"
+event_name = "The Enlightened One"
+requirement = SubResource("Resource_3dlde")
+steps = Array[ExtResource("4_ftbgp")]([SubResource("Resource_s4wek")])
+categories = Array[int]([3, 6])

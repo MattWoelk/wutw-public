@@ -1,0 +1,137 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://dk1sib1cd4gl"]
+
+[ext_resource type="Resource" uid="uid://bst3bt6wlkaic" path="res://stage/spots/lake/upgrade_lake_1_lotus_pond.tres" id="1_8cwqy"]
+[ext_resource type="Script" uid="uid://b87xjo1pfiqcm" path="res://events/system/requirements/event_requirement_season.gd" id="2_gy11a"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_ewwmv"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_tykps"]
+[ext_resource type="Resource" uid="uid://b6p4es3245gsd" path="res://art/pieces/piece_hasui_lotus.tres" id="6_gy11a"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_seua0"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_ewwmv"]
+[ext_resource type="Resource" uid="uid://bcexepixpxr8f" path="res://cards/tier2/card_love.tres" id="7_w48ao"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="8_ymofu"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="9_s280v"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="10_o8nud"]
+[ext_resource type="Resource" uid="uid://cp1tm8f5y17tu" path="res://relics/uncommon/red_string/relic_red_string.tres" id="11_l4gvh"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="12_1p2mr"]
+[ext_resource type="Resource" uid="uid://s6lmsv5xshro" path="res://cards/tier6/card_tears.tres" id="13_tag66"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="14_s8usb"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="15_6gulu"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="16_7ji03"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="17_7ncda"]
+[ext_resource type="Resource" uid="uid://bbr3etkycbxqc" path="res://cards/tier3/card_duty.tres" id="18_8kjaw"]
+
+[sub_resource type="Resource" id="Resource_w6oiw"]
+script = ExtResource("2_gy11a")
+min_index = 1
+
+[sub_resource type="Resource" id="Resource_gy11a"]
+script = ExtResource("7_ewwmv")
+_texture_path = "res://events/generic/lotus_lovers/lotus_lovers.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_7ovmn"]
+script = ExtResource("8_ymofu")
+card_type = ExtResource("7_w48ao")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_engkq"]
+script = ExtResource("10_o8nud")
+aspect_type = ExtResource("9_s280v")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_s3at4"]
+script = ExtResource("6_seua0")
+markedup_text = "Decline the position to stay together."
+requirement = SubResource("Resource_engkq")
+outcome = SubResource("Resource_7ovmn")
+markedup_result_text = "The scholar delivers her decision to the courier with a pang of grief, but the pain will soften in the warm embrace awaiting her at home.
+
+She has decided to lead a life of wistful, quiet contentment.
+
+The grand archives will have to be filled by someone else."
+
+[sub_resource type="Resource" id="Resource_t1n5e"]
+script = ExtResource("12_1p2mr")
+relic = ExtResource("11_l4gvh")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_rx8pe"]
+script = ExtResource("10_o8nud")
+aspect_type = ExtResource("9_s280v")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_eivrh"]
+script = ExtResource("6_seua0")
+markedup_text = "Attempt a long-distance relationship."
+requirement = SubResource("Resource_rx8pe")
+outcome = SubResource("Resource_t1n5e")
+markedup_result_text = "The desperate lovers refuse to say goodbye. They make a pact: one will go to the capital to secure a future, while the other stays to ensure her grandmother lives out her life in comfort.
+
+Before they part, they unspool a length of red thread and tie it around each other's wrists. The small gesture is a promise for them to hold onto when their love is far away."
+
+[sub_resource type="Resource" id="Resource_ivd4d"]
+script = ExtResource("8_ymofu")
+card_type = ExtResource("13_tag66")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_a3xh7"]
+script = ExtResource("15_6gulu")
+bonus_type = ExtResource("14_s8usb")
+min_count = 15
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_ymhky"]
+script = ExtResource("6_seua0")
+markedup_text = "Elope to the capital together."
+requirement = SubResource("Resource_a3xh7")
+outcome = SubResource("Resource_ivd4d")
+markedup_result_text = "In the dead of night, they pack a single bag and slip away. Their trip is uneventful, and the scholar promptly assumes her new position.
+
+Not a month passes before a letter arrives, announcing that the grandmother had passed away."
+
+[sub_resource type="Resource" id="Resource_nu35s"]
+script = ExtResource("8_ymofu")
+card_type = ExtResource("18_8kjaw")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_cmdcx"]
+script = ExtResource("8_ymofu")
+card_type = ExtResource("13_tag66")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_dwt7e"]
+script = ExtResource("16_7ji03")
+suboutcomes = Array[ExtResource("17_7ncda")]([SubResource("Resource_nu35s"), SubResource("Resource_cmdcx")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_jfrgx"]
+script = ExtResource("6_seua0")
+markedup_text = "End the relationship so each can fulfill their duty."
+outcome = SubResource("Resource_dwt7e")
+markedup_result_text = "They stand on the bridge and face the harsh reality of the world they live in. Love alone cannot cure the grandmother, or fill the archives.
+
+They hold each other one last time, tears falling onto the broad green leaves below, and walk away carrying the heavy, hollow weight of duty."
+
+[sub_resource type="Resource" id="Resource_qst14"]
+script = ExtResource("4_tykps")
+markedup_text = "The air above the lake is fresh with the sweet, subtle scent of lotus blooms. A couple is standing on the stone bridge, gazing silently at the green expanse below.
+
+A courier had arrived from the capital with extraordinary news: one of the women has been offered the position of Head Record-Keeper, her lifelong dream. However, her partner cannot leave her ailing grandmother, who is much too frail for a trek to the capital.
+
+Silence stretches as neither has the courage to voice the decision they must make before the courier departs at dawn."
+background_image = SubResource("Resource_gy11a")
+background_credit = ExtResource("6_gy11a")
+choices = Array[ExtResource("6_seua0")]([SubResource("Resource_s3at4"), SubResource("Resource_eivrh"), SubResource("Resource_ymhky")])
+exit_choice = SubResource("Resource_jfrgx")
+
+[resource]
+script = ExtResource("3_ewwmv")
+default_spot_upgrade = ExtResource("1_8cwqy")
+event_id = "lotus_lovers"
+event_name = "The Lotus Decision"
+requirement = SubResource("Resource_w6oiw")
+steps = Array[ExtResource("4_tykps")]([SubResource("Resource_qst14")])
+categories = Array[int]([3])

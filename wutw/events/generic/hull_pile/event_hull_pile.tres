@@ -1,0 +1,118 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://bepubmkced2gh"]
+
+[ext_resource type="Resource" uid="uid://dl31bton8ngdc" path="res://stage/spots/plains/upgrade_plains_1_farm.tres" id="1_e2kry"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_sw005"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_wjykd"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_jbj2b"]
+[ext_resource type="Resource" uid="uid://bouruff1f0vl3" path="res://art/pieces/piece_hokusai_tenji.tres" id="5_sw005"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_wjykd"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="9_cik0n"]
+[ext_resource type="Resource" uid="uid://dtmugkdjmcrar" path="res://relics/common/sobagara_pillow/relic_sobagara_pillow.tres" id="10_8qwj0"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="11_2t6ff"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="12_2165o"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="13_mciqf"]
+[ext_resource type="Resource" uid="uid://cw7psu6tdqpqe" path="res://cards/tier3/card_fertility.tres" id="14_bvrj8"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="14_vfrev"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="15_ry88k"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="16_3h4si"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="17_xcjcc"]
+
+[sub_resource type="Resource" id="Resource_sw005"]
+script = ExtResource("6_wjykd")
+_texture_path = "res://events/generic/hull_pile/hull_pile.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_6at2x"]
+script = ExtResource("11_2t6ff")
+relic = ExtResource("10_8qwj0")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_11e5e"]
+script = ExtResource("13_mciqf")
+aspect_type = ExtResource("12_2165o")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_fea22"]
+script = ExtResource("5_jbj2b")
+markedup_text = "Sew pillows for the community."
+requirement = SubResource("Resource_11e5e")
+outcome = SubResource("Resource_6at2x")
+markedup_result_text = "The seamstress works late, stitching rough cloth into sacks.
+
+The hulls are stuffed inside, creating firm, cool cushions that cradle the head.
+
+That night, for the first time, the farmers get a good night's sleep. The soil may be hungry, but the people are rested."
+
+[sub_resource type="Resource" id="Resource_f2op8"]
+script = ExtResource("15_ry88k")
+card_type = ExtResource("14_bvrj8")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_guqoh"]
+script = ExtResource("13_mciqf")
+aspect_type = ExtResource("16_3h4si")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_h2fiq"]
+script = ExtResource("5_jbj2b")
+markedup_text = "Plow the hulls back into the earth"
+requirement = SubResource("Resource_guqoh")
+outcome = SubResource("Resource_f2op8")
+markedup_result_text = "The farmers resist the temptation, and get to work again.
+
+The mountain of hulls is leveled and turned into the soil. Some look on wistfully as the potential comfort is buried in the mud.
+
+\"We eat first,\" a farmer says, rubbing a sore shoulder. \"We sleep later.\""
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("9_cik0n")
+bonus_type = ExtResource("14_vfrev")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_h6j88"]
+script = ExtResource("13_mciqf")
+aspect_type = ExtResource("17_xcjcc")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_8bk2h"]
+script = ExtResource("5_jbj2b")
+markedup_text = "Spread the hulls on the earthen floors."
+requirement = SubResource("Resource_h6j88")
+outcome = SubResource("Resource_4xuhh")
+markedup_result_text = "The hulls are spread inside every dwelling, carpets to soften the hard ground.
+
+The damp cold no longer seeps into the sleeping mats, but it is dusty, and the sound of skittering is now an ever-present nuisance."
+
+[sub_resource type="Resource" id="Resource_ht6bl"]
+script = ExtResource("5_jbj2b")
+markedup_text = "Burn the hulls."
+markedup_result_text = "The farmers are too tired to put it more effort. They opt for the quickest way to clear the field instead.
+
+The pile is lit, filling the settlement with heavy, pungent smoke for days."
+
+[sub_resource type="Resource" id="Resource_tlhrq"]
+script = ExtResource("3_wjykd")
+markedup_text = "The threshing is finished, the grain safely stored in the granary, and the hulls gathered in huge piles. The wind rattles through the piles with a dry, whispering sound.
+
+The settlers, exhausted from the harvest, complain of backaches, claiming that the straw mats offer little relief from the hard, cold ground of the new world.
+
+A seamstress offers to make pillows out of the hulls. \"They hold their shape,\" she explains, \"and they breathe.\"
+
+The farmers are tempted, but they could also compost the hulls so the soil remains fertile, though that will take some effort."
+background_image = SubResource("Resource_sw005")
+background_credit = ExtResource("5_sw005")
+choices = Array[ExtResource("5_jbj2b")]([SubResource("Resource_fea22"), SubResource("Resource_h2fiq"), SubResource("Resource_8bk2h")])
+exit_choice = SubResource("Resource_ht6bl")
+
+[resource]
+script = ExtResource("2_sw005")
+default_spot_upgrade = ExtResource("1_e2kry")
+event_id = "hull_pile"
+event_name = "The Hull Pile"
+steps = Array[ExtResource("3_wjykd")]([SubResource("Resource_tlhrq")])
+categories = Array[int]([3])

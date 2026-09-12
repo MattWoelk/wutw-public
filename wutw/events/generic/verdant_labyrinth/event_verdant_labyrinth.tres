@@ -1,0 +1,600 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://uqwut1h5fsrh"]
+
+[ext_resource type="Resource" uid="uid://bmpu6lf4an37v" path="res://stage/spots/forest/upgrade_forest_3_labyrinth.tres" id="1_1ywyd"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_smk76"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_br3hg"]
+[ext_resource type="Resource" uid="uid://uth0pmbyd6f7" path="res://art/pieces/piece_hasui_nikko_day.tres" id="4_5uu12"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="4_uafuy"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_scwy6"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="6_i8cvp"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="7_5ogxh"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="8_m286a"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="9_3d460"]
+[ext_resource type="Resource" uid="uid://b37qmpv3m5q7j" path="res://cards/tier6/card_astray.tres" id="10_d87m6"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="10_smk76"]
+[ext_resource type="Resource" uid="uid://br2bw61oc1bdq" path="res://cards/tier2/card_crow.tres" id="12_f6bj2"]
+[ext_resource type="Script" uid="uid://gu7gcielbwdr" path="res://events/system/outcomes/choose_card/event_outcome_choose_card.gd" id="13_sbnlt"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="14_xpjnn"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="15_qap65"]
+[ext_resource type="Resource" uid="uid://ehkpb8vyjktj" path="res://cards/tier2/card_fountain.tres" id="16_1ekye"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="17_8441f"]
+[ext_resource type="Resource" uid="uid://dkmfo5h7wwk0p" path="res://art/pieces/piece_yoshida_gingko.tres" id="17_l5xmn"]
+[ext_resource type="Resource" uid="uid://u2mmkakjkb26" path="res://cards/tier2/card_sleep.tres" id="18_djpx3"]
+[ext_resource type="Resource" uid="uid://batvyq2osfgvb" path="res://art/pieces/piece_eishou_owl.tres" id="18_rctiv"]
+[ext_resource type="Resource" uid="uid://bvv3oy2ah000c" path="res://art/pieces/piece_hasui_nikko_night.tres" id="19_bg442"]
+[ext_resource type="Resource" uid="uid://5oaus4i61734" path="res://cards/tier3/card_cedar.tres" id="19_gvkub"]
+[ext_resource type="Resource" uid="uid://2jbabti4m2e8" path="res://relics/uncommon/owl_figurine/relic_owl_figurine.tres" id="20_vxoy1"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="21_5uu12"]
+[ext_resource type="Resource" uid="uid://ggk3rmsgebsb" path="res://art/pieces/piece_shoutei_gamman_ga_fuchi.tres" id="21_ol2vl"]
+[ext_resource type="Resource" uid="uid://lrltsh1j53m1" path="res://cards/tier2/card_river.tres" id="22_l5xmn"]
+[ext_resource type="Resource" uid="uid://5bomb2op2gci" path="res://art/pieces/piece_yoshida_kurobe_river.tres" id="22_tge5d"]
+[ext_resource type="Resource" uid="uid://ehot4pp5s0jb" path="res://art/pieces/piece_shoutei_ashitakayama.tres" id="25_ipn6m"]
+[ext_resource type="Resource" uid="uid://d3pv2silwvr84" path="res://art/pieces/piece_hasui_pine_island.tres" id="27_ax2pp"]
+[ext_resource type="Resource" uid="uid://4ki3vsv4bk6w" path="res://art/pieces/piece_yoshida_ellara.tres" id="31_xmf1l"]
+[ext_resource type="Resource" uid="uid://cuoj2lpcjkt2g" path="res://art/pieces/piece_hasui_ioridani.tres" id="32_ftt2p"]
+
+[sub_resource type="Resource" id="Resource_fovyc"]
+script = ExtResource("4_uafuy")
+_texture_path = "res://events/generic/verdant_labyrinth/verdant_labyrinth_entry.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_6gv1c"]
+script = ExtResource("7_5ogxh")
+aspect_type = ExtResource("6_i8cvp")
+min_count = 4
+
+[sub_resource type="Resource" id="Resource_d4hnw"]
+script = ExtResource("5_scwy6")
+markedup_text = "Follow the birdsong."
+requirement = SubResource("Resource_6gv1c")
+result_event_step_id = "bird_choice"
+
+[sub_resource type="Resource" id="Resource_wc35l"]
+script = ExtResource("7_5ogxh")
+aspect_type = ExtResource("8_m286a")
+min_count = 2
+
+[sub_resource type="Resource" id="Resource_d87m6"]
+script = ExtResource("5_scwy6")
+markedup_text = "Continue down the path."
+requirement = SubResource("Resource_wc35l")
+result_event_step_id = "deep_forest"
+
+[sub_resource type="Resource" id="Resource_f6bj2"]
+script = ExtResource("7_5ogxh")
+aspect_type = ExtResource("9_3d460")
+min_count = 4
+
+[sub_resource type="Resource" id="Resource_sbnlt"]
+script = ExtResource("5_scwy6")
+markedup_text = "Follow the sound of water."
+requirement = SubResource("Resource_f6bj2")
+result_event_step_id = "stream_choice"
+
+[sub_resource type="Resource" id="Resource_xpjnn"]
+script = ExtResource("5_scwy6")
+markedup_text = "Try to backtrack."
+result_event_step_id = "give_up"
+
+[sub_resource type="Resource" id="Resource_qap65"]
+script = ExtResource("3_br3hg")
+markedup_text = "A group of settlers are on a stroll in the forest when they realize that they are surrounded by a dense maze of trees.
+
+The trunks grow so close together that the canopy blocks out the sunlight, and the trail becomes lost among ferns and winding roots.
+
+They can no longer tell whether the trail ahead is leading them deeper into the forest, or back toward the settlement."
+background_image = SubResource("Resource_fovyc")
+background_credit = ExtResource("4_5uu12")
+choices = Array[ExtResource("5_scwy6")]([SubResource("Resource_d4hnw"), SubResource("Resource_d87m6"), SubResource("Resource_sbnlt")])
+exit_choice = SubResource("Resource_xpjnn")
+
+[sub_resource type="Resource" id="Resource_gvkub"]
+script = ExtResource("4_uafuy")
+_texture_path = "uid://6e114fnmwjgb"
+_is_horizontal = false
+metadata/_custom_type_script = "uid://c7u2t141hgkj5"
+
+[sub_resource type="Resource" id="Resource_vxoy1"]
+script = ExtResource("10_smk76")
+card_type = ExtResource("10_d87m6")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_djpx3"]
+script = ExtResource("5_scwy6")
+markedup_text = "Find a way out."
+outcome = SubResource("Resource_vxoy1")
+markedup_result_text = "A settler watches a squirrel scramble up a nearby trunk, and decides to follow.
+
+He climbs up the towering tree, and sees the settlement only a small distance away.
+
+Follow his directions, the group eventually makes its way out of the labyrinth."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_1ekye"]
+script = ExtResource("3_br3hg")
+event_step_id = "give_up"
+markedup_text = "The settlers decide to abandon the maze and retrace their steps, but can't seem to agree on which way looks the most familiar.
+
+Paths seem to wind in all directions, and the same dense walls of greenery repeat endlessly."
+background_image = SubResource("Resource_gvkub")
+background_credit = ExtResource("4_5uu12")
+exit_choice = SubResource("Resource_djpx3")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("4_uafuy")
+_texture_path = "uid://6e114fnmwjgb"
+_is_horizontal = false
+metadata/_custom_type_script = "uid://c7u2t141hgkj5"
+
+[sub_resource type="Resource" id="Resource_bgisj"]
+script = ExtResource("10_smk76")
+card_type = ExtResource("12_f6bj2")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_pakit"]
+script = ExtResource("7_5ogxh")
+aspect_type = ExtResource("8_m286a")
+min_count = 3
+metadata/_custom_type_script = "uid://cjdop1iab2efw"
+
+[sub_resource type="Resource" id="Resource_0eiya"]
+script = ExtResource("5_scwy6")
+markedup_text = "Follow the crow caws."
+requirement = SubResource("Resource_pakit")
+outcome = SubResource("Resource_bgisj")
+result_event_step_id = "crow_house"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_b7llu"]
+script = ExtResource("13_sbnlt")
+card_tier_bonus = 25
+card_tag = 3
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_agcm7"]
+script = ExtResource("7_5ogxh")
+aspect_type = ExtResource("15_qap65")
+min_count = 5
+metadata/_custom_type_script = "uid://cjdop1iab2efw"
+
+[sub_resource type="Resource" id="Resource_d174p"]
+script = ExtResource("5_scwy6")
+markedup_text = "Follow the owl hoots."
+requirement = SubResource("Resource_agcm7")
+outcome = SubResource("Resource_b7llu")
+result_event_step_id = "owl_attack"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_a6ufw"]
+script = ExtResource("5_scwy6")
+markedup_text = "Try to backtrack."
+result_event_step_id = "give_up"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_8441f"]
+script = ExtResource("3_br3hg")
+event_step_id = "bird_choice"
+markedup_text = "The settlers pause, hearing several distinct bird calls coming from different directions.
+
+First comes the sharp and raspy cawing of a crow. It repeats, the sound echoing among the trees.
+
+In response comes the low hooting of an owl.
+
+The calls seem farther and farther away each time."
+background_image = SubResource("Resource_trtbi")
+background_credit = ExtResource("4_5uu12")
+choices = Array[ExtResource("5_scwy6")]([SubResource("Resource_0eiya"), SubResource("Resource_d174p")])
+exit_choice = SubResource("Resource_a6ufw")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[sub_resource type="Resource" id="Resource_q837o"]
+script = ExtResource("4_uafuy")
+_texture_path = "uid://p8hbg1brrwjr"
+_is_horizontal = false
+metadata/_custom_type_script = "uid://c7u2t141hgkj5"
+
+[sub_resource type="Resource" id="Resource_kd355"]
+script = ExtResource("5_scwy6")
+markedup_text = "Continue"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_7w45d"]
+script = ExtResource("3_br3hg")
+event_step_id = "crow_house"
+markedup_text = "Following the harsh cawing of crows, the settlers wander deeper into the forest. The birds soon approach them, flying from branch to branch and pausing every few minutes to observe.
+
+Before long, the path opens up to reveal a tiny house on top of a little hill. A single crow perches on the weathered orange roof.
+
+Inside, under layers of dust and leaves, they find a trapdoor.
+
+They pull and tug, but it doesn't budge."
+background_image = SubResource("Resource_q837o")
+background_credit = ExtResource("17_l5xmn")
+exit_choice = SubResource("Resource_kd355")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[sub_resource type="Resource" id="Resource_fdi0j"]
+script = ExtResource("4_uafuy")
+_texture_path = "uid://bok8f8xdk7qic"
+_is_horizontal = false
+metadata/_custom_type_script = "uid://c7u2t141hgkj5"
+
+[sub_resource type="Resource" id="Resource_kj1sh"]
+script = ExtResource("5_scwy6")
+markedup_text = "Continue"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_dmj6w"]
+script = ExtResource("3_br3hg")
+event_step_id = "owl_attack"
+markedup_text = "The settlers are led deeper into the forest. As time passes, the air grows cooler, and the trees on either side of their path slowly thin.
+
+By nightfall the trail ends in a grassy clearing surrounding a small pond.
+
+The animal tracks leading to the clearing abruptly disappear here, and dark stains cover the ground nearby.
+
+Looking up, the settlers see a large brown owl with enormous yellow eyes staring at them."
+background_image = SubResource("Resource_fdi0j")
+background_credit = ExtResource("18_rctiv")
+exit_choice = SubResource("Resource_kj1sh")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[sub_resource type="Resource" id="Resource_mfxkf"]
+script = ExtResource("4_uafuy")
+_texture_path = "uid://ck55ru37hefh5"
+_is_horizontal = false
+metadata/_custom_type_script = "uid://c7u2t141hgkj5"
+
+[sub_resource type="Resource" id="Resource_epglw"]
+script = ExtResource("13_sbnlt")
+card_tier_bonus = 25
+card_tag = 3
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_10tmq"]
+script = ExtResource("5_scwy6")
+markedup_text = "Follow the animal trail."
+outcome = SubResource("Resource_epglw")
+result_event_step_id = "owl_attack"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_r42ik"]
+script = ExtResource("5_scwy6")
+markedup_text = "Follow the thinnest path."
+result_event_step_id = "cedar_door"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_yo2lx"]
+script = ExtResource("10_smk76")
+card_type = ExtResource("16_1ekye")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_nbdxx"]
+script = ExtResource("5_scwy6")
+markedup_text = "Follow the widest path."
+outcome = SubResource("Resource_yo2lx")
+result_event_step_id = "stream_origin"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_2cj5p"]
+script = ExtResource("5_scwy6")
+markedup_text = "Try to backtrack."
+result_event_step_id = "give_up"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_bkxh3"]
+script = ExtResource("3_br3hg")
+event_step_id = "deep_forest"
+markedup_text = "The settlers follow the trail deeper into the forest.
+
+Trees grow closer and closer together, until the way is so dark that it is hard to tell the time of day.
+
+Finally, the path widens, revealing a sliver of the night sky, and splits into several distinct trails."
+background_image = SubResource("Resource_mfxkf")
+background_credit = ExtResource("19_bg442")
+choices = Array[ExtResource("5_scwy6")]([SubResource("Resource_10tmq"), SubResource("Resource_r42ik"), SubResource("Resource_nbdxx")])
+exit_choice = SubResource("Resource_2cj5p")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[sub_resource type="Resource" id="Resource_05q72"]
+script = ExtResource("4_uafuy")
+_texture_path = "uid://c8n5bkde5g2ai"
+_is_horizontal = false
+metadata/_custom_type_script = "uid://c7u2t141hgkj5"
+
+[sub_resource type="Resource" id="Resource_qp75g"]
+script = ExtResource("5_scwy6")
+markedup_text = "Continue"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_b6r23"]
+script = ExtResource("3_br3hg")
+event_step_id = "stream_origin"
+markedup_text = "The settlers follow a long path up a rocky slope.
+
+It takes them until dawn to reach their destination.
+
+Here, a crack in the hillside explodes into a rushing stream, the opening surrounded by slick, mossy stones."
+background_image = SubResource("Resource_05q72")
+background_credit = ExtResource("21_ol2vl")
+exit_choice = SubResource("Resource_qp75g")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[sub_resource type="Resource" id="Resource_ll243"]
+script = ExtResource("4_uafuy")
+_texture_path = "uid://ck1favuaqavvf"
+_is_horizontal = false
+metadata/_custom_type_script = "uid://c7u2t141hgkj5"
+
+[sub_resource type="Resource" id="Resource_c5kv8"]
+script = ExtResource("10_smk76")
+card_type = ExtResource("16_1ekye")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_h4taq"]
+script = ExtResource("7_5ogxh")
+aspect_type = ExtResource("6_i8cvp")
+min_count = 5
+metadata/_custom_type_script = "uid://cjdop1iab2efw"
+
+[sub_resource type="Resource" id="Resource_8dg77"]
+script = ExtResource("5_scwy6")
+markedup_text = "Follow the brook upstream."
+requirement = SubResource("Resource_h4taq")
+outcome = SubResource("Resource_c5kv8")
+result_event_step_id = "stream_origin"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_5xxnm"]
+script = ExtResource("7_5ogxh")
+aspect_type = ExtResource("17_8441f")
+min_count = 3
+metadata/_custom_type_script = "uid://cjdop1iab2efw"
+
+[sub_resource type="Resource" id="Resource_4x2lg"]
+script = ExtResource("5_scwy6")
+markedup_text = "Follow the brook downstream."
+requirement = SubResource("Resource_5xxnm")
+result_event_step_id = "stream_end"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_m6plk"]
+script = ExtResource("10_smk76")
+card_type = ExtResource("18_djpx3")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_c1qtp"]
+script = ExtResource("7_5ogxh")
+aspect_type = ExtResource("8_m286a")
+min_count = 3
+metadata/_custom_type_script = "uid://cjdop1iab2efw"
+
+[sub_resource type="Resource" id="Resource_my31n"]
+script = ExtResource("5_scwy6")
+markedup_text = "Set up camp."
+requirement = SubResource("Resource_c1qtp")
+outcome = SubResource("Resource_m6plk")
+markedup_result_text = "Thirst and exhaustion wins out, and the group settles in for the evening, making camp beside the stream.
+
+As the sun sets, they gather twigs and dry weeds to start a fire, which burns with a thick, fragrant smoke.
+
+Within minutes, warmth begins to spread throughout their bodies. As they lie down, the stars above twinkle brightly at them, as if wishing them goodnight."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_ur7ta"]
+script = ExtResource("5_scwy6")
+markedup_text = "Try to backtrack."
+result_event_step_id = "give_up"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_tnw5c"]
+script = ExtResource("3_br3hg")
+event_step_id = "stream_choice"
+markedup_text = "A merrily rushing brook cuts through the green maze of trees, rays of sunlight dancing off its blue waters.
+
+One of the settlers suggests camping here and backtracking in the morning.
+
+Others object, wanting to follow the stream instead, in the hope of finding a way out."
+background_image = SubResource("Resource_ll243")
+background_credit = ExtResource("22_tge5d")
+choices = Array[ExtResource("5_scwy6")]([SubResource("Resource_8dg77"), SubResource("Resource_4x2lg"), SubResource("Resource_my31n")])
+exit_choice = SubResource("Resource_ur7ta")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[sub_resource type="Resource" id="Resource_s5ui3"]
+script = ExtResource("4_uafuy")
+_texture_path = "uid://d37405n2bubi1"
+_is_horizontal = false
+metadata/_custom_type_script = "uid://c7u2t141hgkj5"
+
+[sub_resource type="Resource" id="Resource_q5as1"]
+script = ExtResource("13_sbnlt")
+card_tier_bonus = 25
+card_tag = 2
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_gyhxd"]
+script = ExtResource("7_5ogxh")
+aspect_type = ExtResource("6_i8cvp")
+min_count = 6
+metadata/_custom_type_script = "uid://cjdop1iab2efw"
+
+[sub_resource type="Resource" id="Resource_31fer"]
+script = ExtResource("5_scwy6")
+markedup_text = "Examine the plants."
+requirement = SubResource("Resource_gyhxd")
+outcome = SubResource("Resource_q5as1")
+markedup_result_text = "The settlers look around to find that not only are the mosses and grass unusual, but the trees around them are also different from anywhere else in the forest."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_5ody7"]
+script = ExtResource("10_smk76")
+card_type = ExtResource("19_gvkub")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_vw1jo"]
+script = ExtResource("7_5ogxh")
+aspect_type = ExtResource("9_3d460")
+min_count = 6
+metadata/_custom_type_script = "uid://cjdop1iab2efw"
+
+[sub_resource type="Resource" id="Resource_sgqki"]
+script = ExtResource("5_scwy6")
+markedup_text = "Climb the cliff."
+requirement = SubResource("Resource_vw1jo")
+outcome = SubResource("Resource_5ody7")
+markedup_result_text = "The settlers decide to climb up the rocky cliff, hoping to get a better view of the labyrinthine forest.
+
+When they reach the top, they can see the canopy spreading far beyond.
+
+Looking in the direction they came from, they see an enormous cedar rising far above the other trees."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_r1neh"]
+script = ExtResource("5_scwy6")
+markedup_text = "Try to backtrack."
+result_event_step_id = "give_up"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_c0th5"]
+script = ExtResource("3_br3hg")
+event_step_id = "stream_end"
+markedup_text = "Following the stream downhill, the settlers eventually reach a point where they can go no farther.
+
+The brook rushes in a waterfall down the side of a cliff. Above, the cliff rises further, towering over the landscape.
+
+In the damp ground surrounding the stream, however, is an abundance of green moss and unfamiliar plants."
+background_image = SubResource("Resource_s5ui3")
+background_credit = ExtResource("25_ipn6m")
+choices = Array[ExtResource("5_scwy6")]([SubResource("Resource_31fer"), SubResource("Resource_sgqki")])
+exit_choice = SubResource("Resource_r1neh")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[sub_resource type="Resource" id="Resource_nwyap"]
+script = ExtResource("4_uafuy")
+_texture_path = "uid://he72oq5c1t6b"
+_is_horizontal = false
+metadata/_custom_type_script = "uid://c7u2t141hgkj5"
+
+[sub_resource type="Resource" id="Resource_rtya1"]
+script = ExtResource("21_5uu12")
+relic = ExtResource("20_vxoy1")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_q0pd8"]
+script = ExtResource("7_5ogxh")
+aspect_type = ExtResource("8_m286a")
+min_count = 4
+metadata/_custom_type_script = "uid://cjdop1iab2efw"
+
+[sub_resource type="Resource" id="Resource_soubs"]
+script = ExtResource("5_scwy6")
+markedup_text = "Go toward the darkness."
+requirement = SubResource("Resource_q0pd8")
+outcome = SubResource("Resource_rtya1")
+result_event_step_id = "altar"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_bugy5"]
+script = ExtResource("10_smk76")
+card_type = ExtResource("22_l5xmn")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_bj2lx"]
+script = ExtResource("7_5ogxh")
+aspect_type = ExtResource("17_8441f")
+min_count = 4
+metadata/_custom_type_script = "uid://cjdop1iab2efw"
+
+[sub_resource type="Resource" id="Resource_y16w7"]
+script = ExtResource("5_scwy6")
+markedup_text = "Go toward the light."
+requirement = SubResource("Resource_bj2lx")
+outcome = SubResource("Resource_bugy5")
+result_event_step_id = "underground_river"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_hov1k"]
+script = ExtResource("5_scwy6")
+markedup_text = "Try to backtrack."
+result_event_step_id = "give_up"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_oq5cu"]
+script = ExtResource("3_br3hg")
+event_step_id = "cedar_door"
+markedup_text = "Following the thinnest trail the settlers reach a giant cedar tree with low, drooping branches.
+
+As they take shelter under them from the sudden downpour, they see a small opening in the trunk near the ground, a welcome refuge from the elements.
+
+They find themselves inside a chamber of living wood, the interior etched with winding vines and animal figures.
+
+Marveling at the strangeness of their shelter, one settler steps backward and stumbles. There, at the back of the chamber, is a series of steps leading underground. 
+
+The air grows cold and damp as they descend the ancient stone staircase. At the foot of the stairs is a cave, one side leading toward a faint light."
+background_image = SubResource("Resource_nwyap")
+background_credit = ExtResource("27_ax2pp")
+choices = Array[ExtResource("5_scwy6")]([SubResource("Resource_soubs"), SubResource("Resource_y16w7")])
+exit_choice = SubResource("Resource_hov1k")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[sub_resource type="Resource" id="Resource_7qlf8"]
+script = ExtResource("4_uafuy")
+_texture_path = "uid://clqj84dljxi7w"
+_is_horizontal = false
+metadata/_custom_type_script = "uid://c7u2t141hgkj5"
+
+[sub_resource type="Resource" id="Resource_8uipj"]
+script = ExtResource("5_scwy6")
+markedup_text = "Continue"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_fnvju"]
+script = ExtResource("3_br3hg")
+event_step_id = "altar"
+markedup_text = "The settlers walk deeper into the cave, away from the light, the steady pattering of their footsteps echoing into the distance. 
+
+They follow the smooth, cold walls until they round a corner and find themselves in a vast chamber.
+
+The hall is held up by thick pillars etched with intricate designs, their patterns gleaming in the torchlight.
+
+The gnarled, ancient roots of the great cedar have pushed through cracks in the ceiling, twisting around the pillars, and splitting several of them in two.
+
+At the far end of the chamber stands a stone altar. On it is a small figurine of an owl, covered with a layer of dust."
+background_image = SubResource("Resource_7qlf8")
+background_credit = ExtResource("31_xmf1l")
+exit_choice = SubResource("Resource_8uipj")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[sub_resource type="Resource" id="Resource_6vj4m"]
+script = ExtResource("4_uafuy")
+_texture_path = "uid://byhwtng7ym2i8"
+_is_horizontal = false
+metadata/_custom_type_script = "uid://c7u2t141hgkj5"
+
+[sub_resource type="Resource" id="Resource_lc6d7"]
+script = ExtResource("5_scwy6")
+markedup_text = "Continue"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_e8dbi"]
+script = ExtResource("3_br3hg")
+event_step_id = "underground_river"
+markedup_text = "As the settlers walk toward the distant light, they reach a wide underground stream.
+
+Following the flow of dark water, they find the stream picking up speed as it narrows. It winds its way among the slick stone, rushing past their feet toward the light.
+
+The pale glow in the distance gathers on the water's surface. Its source is soon revealed to be a crack in the cave's wall where the stream escapes into the forest outside."
+background_image = SubResource("Resource_6vj4m")
+background_credit = ExtResource("32_ftt2p")
+exit_choice = SubResource("Resource_lc6d7")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[resource]
+script = ExtResource("2_smk76")
+default_spot_upgrade = ExtResource("1_1ywyd")
+event_id = "verdant_labyrinth"
+event_name = "The Verdant Labyrinth"
+steps = Array[ExtResource("3_br3hg")]([SubResource("Resource_qap65"), SubResource("Resource_1ekye"), SubResource("Resource_8441f"), SubResource("Resource_7w45d"), SubResource("Resource_dmj6w"), SubResource("Resource_bkxh3"), SubResource("Resource_b6r23"), SubResource("Resource_tnw5c"), SubResource("Resource_c0th5"), SubResource("Resource_oq5cu"), SubResource("Resource_fnvju"), SubResource("Resource_e8dbi")])
+categories = Array[int]([3])

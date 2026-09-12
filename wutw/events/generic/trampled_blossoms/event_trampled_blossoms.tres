@@ -1,0 +1,224 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://wqjunrnvl085"]
+
+[ext_resource type="Resource" uid="uid://ca1fjn2ctneam" path="res://stage/spots/plains/upgrade_plains_1_wildflower_field.tres" id="1_e3151"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_svg4y"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_pe04q"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_34fwk"]
+[ext_resource type="Resource" uid="uid://k51b54q1lann" path="res://art/pieces/piece_hiroshige_kogane.tres" id="5_svg4y"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_pe04q"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="6_xfioq"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_vbsba"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="8_6t077"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="9_gpxb6"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="10_rjkui"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="11_00ya1"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="12_fsrrr"]
+[ext_resource type="Resource" uid="uid://ctbbms2p5usnv" path="res://relics/common/tuft_of_horsehair/relic_tuft_of_horsehair.tres" id="13_p17eh"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="14_3l5ss"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="15_3hcds"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="16_kmcu5"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="17_encaw"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="18_1656u"]
+[ext_resource type="Resource" uid="uid://cd1puhurknfd1" path="res://cards/tier2/card_manure.tres" id="19_ppdyu"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="20_0lxpg"]
+[ext_resource type="Resource" uid="uid://ckucj0goj7dbd" path="res://relics/common/golden_persimmon/relic_golden_persimmon.tres" id="20_xfioq"]
+[ext_resource type="Script" uid="uid://c526o6bgglybb" path="res://events/system/outcomes/remove_relic/event_outcome_remove_relic.gd" id="21_vbsba"]
+[ext_resource type="Script" uid="uid://bbr46symu7hfi" path="res://events/system/requirements/event_requirement_has_relic.gd" id="22_6t077"]
+[ext_resource type="Script" uid="uid://bax3q3qv5pv3e" path="res://events/system/requirements/event_requirement_seen_relic.gd" id="23_gpxb6"]
+
+[sub_resource type="Resource" id="Resource_svg4y"]
+script = ExtResource("6_pe04q")
+_texture_path = "res://events/generic/trampled_blossoms/trampled_blossoms.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_b1l5d"]
+script = ExtResource("9_gpxb6")
+bonus_type = ExtResource("8_6t077")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_3e2wx"]
+script = ExtResource("9_gpxb6")
+bonus_type = ExtResource("10_rjkui")
+amount = -20
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_6cu08"]
+script = ExtResource("6_xfioq")
+suboutcomes = Array[ExtResource("7_vbsba")]([SubResource("Resource_b1l5d"), SubResource("Resource_3e2wx")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_lm8a0"]
+script = ExtResource("12_fsrrr")
+aspect_type = ExtResource("11_00ya1")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_rksgb"]
+script = ExtResource("5_34fwk")
+markedup_text = "Capture the horses and put them to labor."
+requirement = SubResource("Resource_lm8a0")
+outcome = SubResource("Resource_6cu08")
+markedup_result_text = "Ropes are braided, and halters are fashioned. The boldest settlers approach, confidently surrounding the herd.
+
+In the ensuing scuffle, the horses express their opinion of employment with a precise application of their hind legs, leaving the hapless farmers bruised and scattered around the meadow.
+
+The herd disappears into the distance, leaving only hoofprints and resentment behind."
+
+[sub_resource type="Resource" id="Resource_gkixe"]
+script = ExtResource("9_gpxb6")
+bonus_type = ExtResource("10_rjkui")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_f6hh7"]
+script = ExtResource("14_3l5ss")
+relic = ExtResource("13_p17eh")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_vdhaj"]
+script = ExtResource("6_xfioq")
+suboutcomes = Array[ExtResource("7_vbsba")]([SubResource("Resource_gkixe"), SubResource("Resource_f6hh7")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_bg7yj"]
+script = ExtResource("16_kmcu5")
+bonus_type = ExtResource("15_3hcds")
+min_count = 20
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_xl33w"]
+script = ExtResource("5_34fwk")
+markedup_text = "Draw them away with a better offer."
+requirement = SubResource("Resource_bg7yj")
+outcome = SubResource("Resource_vdhaj")
+markedup_result_text = "Baskets of salted turnips are placed at the meadow's edge, leading away from the flowers.
+
+The herd politely agrees that turnips taste better, and even allows the settlers to walk among them.
+
+They do not stay, but before they leave, they rub against the trees, leaving tufts of coarse hair caught in the bark."
+
+[sub_resource type="Resource" id="Resource_b4yf1"]
+script = ExtResource("9_gpxb6")
+bonus_type = ExtResource("17_encaw")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_w4avr"]
+script = ExtResource("9_gpxb6")
+bonus_type = ExtResource("10_rjkui")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_0kiy2"]
+script = ExtResource("6_xfioq")
+suboutcomes = Array[ExtResource("7_vbsba")]([SubResource("Resource_b4yf1"), SubResource("Resource_w4avr")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_cvbe2"]
+script = ExtResource("12_fsrrr")
+aspect_type = ExtResource("18_1656u")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_ionoq"]
+script = ExtResource("5_34fwk")
+markedup_text = "Drive them off."
+requirement = SubResource("Resource_cvbe2")
+outcome = SubResource("Resource_0kiy2")
+markedup_result_text = "Settlers stand shoulder to shoulder, banging pots and singing chants. They see it as a personal boundary reinforced.
+
+The wall of noise pushes the herd back, away from the delicate blooms.
+
+The flowers are saved, but the horses are never seen again."
+
+[sub_resource type="Resource" id="Resource_b7llu"]
+script = ExtResource("21_vbsba")
+relic = ExtResource("20_xfioq")
+metadata/_custom_type_script = "uid://c526o6bgglybb"
+
+[sub_resource type="Resource" id="Resource_kd355"]
+script = ExtResource("14_3l5ss")
+relic = ExtResource("13_p17eh")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_agcm7"]
+script = ExtResource("6_xfioq")
+suboutcomes = Array[ExtResource("7_vbsba")]([SubResource("Resource_b7llu"), SubResource("Resource_kd355")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_e7hfo"]
+script = ExtResource("22_6t077")
+relic = ExtResource("20_xfioq")
+metadata/_custom_type_script = "uid://bbr46symu7hfi"
+
+[sub_resource type="Resource" id="Resource_pakit"]
+script = ExtResource("23_gpxb6")
+relic = ExtResource("20_xfioq")
+metadata/_custom_type_script = "uid://bax3q3qv5pv3e"
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("5_34fwk")
+markedup_text = "Feed them persimmons."
+requirement = SubResource("Resource_e7hfo")
+show_condition = SubResource("Resource_pakit")
+outcome = SubResource("Resource_agcm7")
+markedup_result_text = "Baskets of surplus persimmons are placed at the meadow's edge, leading away from the flowers.
+
+The herd descends on the baskets and within an hour all the persimmons are gone.
+
+When the horses depart, they leave behind tufts of coarse hair."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_n5xa8"]
+script = ExtResource("9_gpxb6")
+bonus_type = ExtResource("17_encaw")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_6b87q"]
+script = ExtResource("20_0lxpg")
+card_type = ExtResource("19_ppdyu")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_fwn8o"]
+script = ExtResource("6_xfioq")
+suboutcomes = Array[ExtResource("7_vbsba")]([SubResource("Resource_n5xa8"), SubResource("Resource_6b87q")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_xchr4"]
+script = ExtResource("5_34fwk")
+markedup_text = "Let them graze."
+outcome = SubResource("Resource_fwn8o")
+markedup_result_text = "The settlers leave the horses alone and watch the destruction.
+
+Soon, only stems remain of the wildflowers, and the meadow turns into a muddy trampled mess.
+
+But the horses are clearly content with their full bellies, and leave behind... fertilizer."
+
+[sub_resource type="Resource" id="Resource_rca3r"]
+script = ExtResource("3_pe04q")
+markedup_text = "A herd of wild horses has descended upon the meadow.
+
+Perhaps their ancestors were once beasts of burden, but little of that docility remains. They are currently treating the magnificent blooms with the same respect as one accords common weeds.
+
+\"They're ruining the view,\" a settler grumbles, watching a particularly chubby pony chew on a bellflower. \"And besides, we could put these beasts to good use.\""
+background_image = SubResource("Resource_svg4y")
+background_credit = ExtResource("5_svg4y")
+choices = Array[ExtResource("5_34fwk")]([SubResource("Resource_rksgb"), SubResource("Resource_xl33w"), SubResource("Resource_ionoq"), SubResource("Resource_trtbi")])
+exit_choice = SubResource("Resource_xchr4")
+
+[resource]
+script = ExtResource("2_svg4y")
+default_spot_upgrade = ExtResource("1_e3151")
+event_id = "trampled_blossoms"
+event_name = "Trampled Blossoms"
+steps = Array[ExtResource("3_pe04q")]([SubResource("Resource_rca3r")])
+categories = Array[int]([3])

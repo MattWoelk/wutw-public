@@ -1,0 +1,176 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://qqoknkkhpk3r"]
+
+[ext_resource type="Resource" uid="uid://ct50e1yg6won4" path="res://stage/spots/plains/upgrade_plains_3_endless_blossoms.tres" id="1_d5ier"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_d8ge7"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="2_nu75p"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_nu75p"]
+[ext_resource type="Resource" uid="uid://drfuamrppiys5" path="res://art/pieces/piece_hasui_irises.tres" id="5_nu75p"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_ubs0w"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="6_eh0s2"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_4f5d3"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_300r2"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="8_sutf6"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="9_bpyc8"]
+[ext_resource type="Resource" uid="uid://dibmpcq05y0wd" path="res://relics/common/twinned_seed/relic_twinned_seed.tres" id="10_h6c7m"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="11_e22jh"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="12_omx3q"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="13_v36xj"]
+[ext_resource type="Script" uid="uid://cbnw4a13y5x8c" path="res://events/system/outcomes/random/event_outcome_random.gd" id="14_heum7"]
+[ext_resource type="Script" uid="uid://yxgaymbbt8tk" path="res://events/system/outcomes/override_next_step/event_outcome_override_next_step.gd" id="15_6u2l3"]
+[ext_resource type="Resource" uid="uid://1pb5fsovy1f7" path="res://relics/uncommon/stubborn_bloom/relic_stubborn_bloom.tres" id="16_d5ier"]
+[ext_resource type="Resource" uid="uid://cfndwixfnoin0" path="res://cards/tier3/card_bloom.tres" id="17_8ixe3"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="18_7bvvx"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="19_8onep"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="20_up2pt"]
+
+[sub_resource type="Resource" id="Resource_300r2"]
+script = ExtResource("2_nu75p")
+min_progress = 300
+metadata/_custom_type_script = "uid://c50bhh4sr0g8o"
+
+[sub_resource type="Resource" id="Resource_nu75p"]
+script = ExtResource("7_300r2")
+_texture_path = "res://events/generic/blossom_study/blossom_study.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_nthfn"]
+script = ExtResource("9_bpyc8")
+bonus_type = ExtResource("8_sutf6")
+amount = -20
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_2myy3"]
+script = ExtResource("11_e22jh")
+relic = ExtResource("10_h6c7m")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_w2hpu"]
+script = ExtResource("6_eh0s2")
+suboutcomes = Array[ExtResource("7_4f5d3")]([SubResource("Resource_nthfn"), SubResource("Resource_2myy3")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_egt2j"]
+script = ExtResource("13_v36xj")
+aspect_type = ExtResource("12_omx3q")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_f2op8"]
+script = ExtResource("5_ubs0w")
+markedup_text = "Approve full excavation."
+requirement = SubResource("Resource_egt2j")
+outcome = SubResource("Resource_w2hpu")
+markedup_result_text = "The scholar gets her way, and digs with obsessive care.
+
+Her notes speak of twinned seeds, taking turns to sprout, one resting while the other blooms.
+
+But the flowers don't grow back. The seeds she replants remain inert, and the field loses some of its magic.
+
+Still, the seeds are preserved. Perhaps they will still sprout one day."
+
+[sub_resource type="Resource" id="Resource_3sdrw"]
+script = ExtResource("15_6u2l3")
+result_text = "The scholar spends hours with the plant, but finally shrugs in frustration.
+
+\"Too little to learn,\" she mutters.
+
+The flower withers within an hour."
+description = ""
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_fmixu"]
+script = ExtResource("11_e22jh")
+relic = ExtResource("16_d5ier")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_kojkx"]
+script = ExtResource("15_6u2l3")
+result_text = "The root reveals nothing, but someone in camp takes one of the blossoms as a memento.
+
+It isn't knowledge, but it carries the memory of the wondrous meadow."
+description = ""
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_xh6l0"]
+script = ExtResource("6_eh0s2")
+suboutcomes = Array[ExtResource("7_4f5d3")]([SubResource("Resource_fmixu"), SubResource("Resource_kojkx")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_1stri"]
+script = ExtResource("14_heum7")
+suboutcomes = Dictionary[ExtResource("7_4f5d3"), float]({
+SubResource("Resource_3sdrw"): 0.5,
+SubResource("Resource_xh6l0"): 0.5
+})
+description = "A chance of discovery"
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("5_ubs0w")
+markedup_text = "Allow study of a single plant."
+outcome = SubResource("Resource_1stri")
+markedup_result_text = "<overridden>"
+
+[sub_resource type="Resource" id="Resource_2me52"]
+script = ExtResource("18_7bvvx")
+card_type = ExtResource("17_8ixe3")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("19_8onep")
+bonus_type = ExtResource("8_sutf6")
+min_count = 25
+max_count = -1
+extra_per_season = 15
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("5_ubs0w")
+markedup_text = "Capture them in a painting."
+requirement = SubResource("Resource_tuogj")
+outcome = SubResource("Resource_2me52")
+markedup_result_text = "Painters set to work, capturing every angle and hue.
+
+Still, the scholar sighs, admitting sketches can't reveal the truth beneath the soil."
+
+[sub_resource type="Resource" id="Resource_kjam1"]
+script = ExtResource("9_bpyc8")
+bonus_type = ExtResource("20_up2pt")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("5_ubs0w")
+markedup_text = "Forbid any study."
+outcome = SubResource("Resource_kjam1")
+markedup_result_text = "The scholar is asked to leave the field untouched.
+
+She storms off with a few muttered protests.
+
+The blossoms continue their gentle sway."
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("3_nu75p")
+markedup_text = "The flowers here bloom without end. Even as petals fly off in the wind, new ones begin sprouting.
+
+Locals admire the view in awe, but a scholar claims the secret of this renewal lies under the soil.
+
+She proposes digging up the plants, stalk, root, and all.
+
+\"We might learn something to restore other lands,\" she argues.
+
+The ranger, however, worries that the flowers may stop growing back once disturbed."
+background_image = SubResource("Resource_nu75p")
+background_credit = ExtResource("5_nu75p")
+choices = Array[ExtResource("5_ubs0w")]([SubResource("Resource_f2op8"), SubResource("Resource_4xuhh"), SubResource("Resource_rx1a8")])
+exit_choice = SubResource("Resource_dpp3j")
+
+[resource]
+script = ExtResource("2_d8ge7")
+default_spot_upgrade = ExtResource("1_d5ier")
+event_id = "blossom_study"
+event_name = "Roots of Wonder"
+requirement = SubResource("Resource_300r2")
+steps = Array[ExtResource("3_nu75p")]([SubResource("Resource_06ahh")])
+categories = Array[int]([3])

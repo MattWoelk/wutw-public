@@ -1,0 +1,126 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://cmirxvhh6wi24"]
+
+[ext_resource type="Resource" uid="uid://c4geqaow8tvvd" path="res://stage/spots/building_large/upgrade_building_large_2_library.tres" id="1_cwys1"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_ubkje"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_kkidn"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_tsvnb"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="5_jgq84"]
+[ext_resource type="Resource" uid="uid://d1w6iqtyvwaql" path="res://art/pieces/piece_kuniyoshi_fukurokuju.tres" id="5_ubkje"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_mwanf"]
+[ext_resource type="Resource" uid="uid://drepm3jum013e" path="res://cards/tier2/card_ask.tres" id="7_cid1j"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="8_megm7"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="9_rdy6o"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="10_7mtyl"]
+[ext_resource type="Resource" uid="uid://bhcsxu245vmns" path="res://cards/tier2/card_pat.tres" id="11_hvp5r"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="12_bja0s"]
+[ext_resource type="Resource" uid="uid://u2mmkakjkb26" path="res://cards/tier2/card_sleep.tres" id="13_b84cl"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="14_xirfh"]
+
+[sub_resource type="Resource" id="Resource_eenw1"]
+script = ExtResource("2_ubkje")
+scope = 1
+event_id = "global"
+var_id = "companion_turtle"
+value = "1"
+
+[sub_resource type="Resource" id="Resource_uwm72"]
+script = ExtResource("5_jgq84")
+_texture_path = "res://events/companions/turtle/companion_turtle_2.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_xp3iw"]
+script = ExtResource("8_megm7")
+card_type = ExtResource("7_cid1j")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_yblw7"]
+script = ExtResource("10_7mtyl")
+aspect_type = ExtResource("9_rdy6o")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_jqiyx"]
+script = ExtResource("6_mwanf")
+markedup_text = "Ask the turtle for study advice."
+requirement = SubResource("Resource_yblw7")
+outcome = SubResource("Resource_xp3iw")
+markedup_result_text = "The delirious student asks the turtle to quiz him on the scroll's contents.
+
+The turtle completely ignores the man and continues its slow trek up the hill."
+
+[sub_resource type="Resource" id="Resource_fjswd"]
+script = ExtResource("8_megm7")
+card_type = ExtResource("11_hvp5r")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_23qvq"]
+script = ExtResource("10_7mtyl")
+aspect_type = ExtResource("12_bja0s")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_8hjpt"]
+script = ExtResource("6_mwanf")
+markedup_text = "Pet the turtle."
+requirement = SubResource("Resource_23qvq")
+outcome = SubResource("Resource_fjswd")
+markedup_result_text = "The student reaches out and pats the turtle on the shell.
+
+The turtle doesn't seem to notice, or perhaps chooses not to.
+
+The man sighs and goes back to staring blankly at the scroll."
+
+[sub_resource type="Resource" id="Resource_nte8m"]
+script = ExtResource("8_megm7")
+card_type = ExtResource("13_b84cl")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_80de1"]
+script = ExtResource("6_mwanf")
+markedup_text = "Continue studying through sheer willpower."
+outcome = SubResource("Resource_nte8m")
+markedup_result_text = "Inspired by the turtle's relentless progress, the student vows to finish reading.
+
+He forces his eyes open, reads two more lines, then passes out face-first into the hydrangea bush."
+
+[sub_resource type="Resource" id="Resource_dybbs"]
+script = ExtResource("14_xirfh")
+scope = 1
+event_id = "global"
+var_id = "companion_turtle"
+value = "2"
+description = "Learn not to rush"
+outcome_description = "The student has learned not to rush."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_aldqr"]
+script = ExtResource("6_mwanf")
+markedup_text = "Go to sleep."
+outcome = SubResource("Resource_dybbs")
+markedup_result_text = "Inspired by the turtle's unrushed effort, the student decides to pace himself.
+
+He rolls up his scroll and lies down, falling asleep within minutes.
+
+He will retain more knowledge after a good rest."
+
+[sub_resource type="Resource" id="Resource_xp747"]
+script = ExtResource("4_tsvnb")
+markedup_text = "A diligent student has been sitting outside the archives all night, frantically studying for his apprenticeship exam.
+
+He is exhausted, his eyes are blurry, and the words stopped making sense hours ago.
+
+A small turtle slowly climbs the slope beside him, moving at a remarkably consistent, unhurried pace."
+background_image = SubResource("Resource_uwm72")
+background_credit = ExtResource("5_ubkje")
+choices = Array[ExtResource("6_mwanf")]([SubResource("Resource_jqiyx"), SubResource("Resource_8hjpt"), SubResource("Resource_80de1")])
+exit_choice = SubResource("Resource_aldqr")
+
+[resource]
+script = ExtResource("3_kkidn")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_cwys1")
+event_id = "companion_turtle_2"
+event_name = "Studying All Night"
+requirement = SubResource("Resource_eenw1")
+steps = Array[ExtResource("4_tsvnb")]([SubResource("Resource_xp747")])
+categories = Array[int]([0, 4])

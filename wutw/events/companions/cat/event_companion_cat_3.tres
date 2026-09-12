@@ -1,0 +1,128 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://dyb477nk4oh3x"]
+
+[ext_resource type="Resource" uid="uid://dl31bton8ngdc" path="res://stage/spots/plains/upgrade_plains_1_farm.tres" id="1_dacta"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="4_vibau"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="6_34omx"]
+[ext_resource type="Resource" uid="uid://hw8lf75efi42" path="res://art/pieces/piece_hiroshige_asakusa.tres" id="6_y1mii"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="7_65f64"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_j0giq"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="10_7kapl"]
+[ext_resource type="Resource" uid="uid://dqotyemouy5k" path="res://companions/cat/companion_cat.tres" id="11_vxm1d"]
+[ext_resource type="Script" uid="uid://2you2r2oar48" path="res://events/system/outcomes/unlock_companion/event_outcome_unlock_companion.gd" id="12_d1iea"]
+[ext_resource type="Script" uid="uid://dnxdmp6ko2c00" path="res://events/system/outcomes/mark_all_choices_seen/event_outcome_mark_all_choices_seen.gd" id="15_16ua8"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="15_pimpy"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="16_6mtcn"]
+[ext_resource type="Resource" uid="uid://bjayvy8xf0q40" path="res://events/companions/cat/event_companion_cat_1.tres" id="16_j0giq"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="17_k7l7k"]
+[ext_resource type="Resource" uid="uid://0vvtvh0ghcm0" path="res://events/companions/cat/event_companion_cat_2.tres" id="17_k743i"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="18_lt452"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="21_hfpih"]
+
+[sub_resource type="Resource" id="Resource_16ua8"]
+script = ExtResource("4_vibau")
+scope = 1
+event_id = "global"
+var_id = "companion_cat"
+value = "2"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_vibau"]
+script = ExtResource("7_j0giq")
+_texture_path = "res://events/companions/cat/event_companion_cat_3.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_y1mii"]
+script = ExtResource("16_6mtcn")
+bonus_type = ExtResource("15_pimpy")
+amount = -5
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_02t1p"]
+script = ExtResource("10_7kapl")
+markedup_text = "Pet the cat."
+outcome = SubResource("Resource_y1mii")
+markedup_result_text = "One of the farmers tries to approach the cat.
+
+The cat gets up, gives the approaching farmer a judging look, shakes his paw, and jumps out of the window, never to be seen again."
+
+[sub_resource type="Resource" id="Resource_j0giq"]
+script = ExtResource("21_hfpih")
+scope = 1
+event_id = "global"
+var_id = "companion_cat"
+value = "3"
+description = "Adopt a cat"
+outcome_description = "The cat decided to live at the farmhouse from now on."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_k743i"]
+script = ExtResource("12_d1iea")
+companion = ExtResource("11_vxm1d")
+metadata/_custom_type_script = "uid://2you2r2oar48"
+
+[sub_resource type="Resource" id="Resource_veckg"]
+script = ExtResource("15_16ua8")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_uh1te"]
+script = ExtResource("15_16ua8")
+seen_event = ExtResource("16_j0giq")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_1jnx0"]
+script = ExtResource("15_16ua8")
+seen_event = ExtResource("17_k743i")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_ahho5"]
+script = ExtResource("17_k7l7k")
+suboutcomes = Array[ExtResource("18_lt452")]([SubResource("Resource_j0giq"), SubResource("Resource_k743i"), SubResource("Resource_veckg"), SubResource("Resource_uh1te"), SubResource("Resource_1jnx0")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_ybpct"]
+script = ExtResource("10_7kapl")
+markedup_text = "Put down a blanket on the windowsill."
+outcome = SubResource("Resource_ahho5")
+markedup_result_text = "The farmers wait for the cat to depart that night, and the next day put down a warm blanket on the windowsill.
+
+When the cat shows up, he seems taken aback for a moment, but soon settles in as usual.
+
+Later that night, a farmer finds the cat fast asleep on the blanket."
+
+[sub_resource type="Resource" id="Resource_5wq3a"]
+script = ExtResource("10_7kapl")
+markedup_text = "Keep the shutters closed in the future."
+outcome = SubResource("Resource_y1mii")
+markedup_result_text = "The farmers shoo the cat away and keep the second floor shutters closed from now on.
+
+The cat shows up a few more times, but finding no way in, eventually moves on."
+
+[sub_resource type="Resource" id="Resource_wt43v"]
+script = ExtResource("10_7kapl")
+markedup_text = "Leave the cat alone."
+outcome = SubResource("Resource_y1mii")
+markedup_result_text = "The farmers decide that the cat isn't ready for an introduction yet.
+
+They keep ignoring him, and one day he stops showing up."
+
+[sub_resource type="Resource" id="Resource_uedco"]
+script = ExtResource("7_65f64")
+markedup_text = "A grumpy-looking stray tomcat has been regularly showing up at the farmhouse.
+
+Every day at dusk he climbs up to the second floor, slips in through the open window, and makes himself comfortable on the windowsill. He spends the evening relaxed, looking over the fields with his eyes half-closed.
+
+The farmers haven't tried approaching the cat yet, wary of his grumpy looks, and he hasn't tried approaching anyone either."
+background_image = SubResource("Resource_vibau")
+background_credit = ExtResource("6_y1mii")
+choices = Array[ExtResource("10_7kapl")]([SubResource("Resource_02t1p"), SubResource("Resource_ybpct"), SubResource("Resource_5wq3a")])
+exit_choice = SubResource("Resource_wt43v")
+
+[resource]
+script = ExtResource("6_34omx")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_dacta")
+event_id = "companion_cat_3"
+event_name = "The Windowsill Cat"
+requirement = SubResource("Resource_16ua8")
+steps = Array[ExtResource("7_65f64")]([SubResource("Resource_uedco")])
+categories = Array[int]([0, 4])

@@ -1,0 +1,128 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://8cni15wh4ibq"]
+
+[ext_resource type="Resource" uid="uid://cv742rumu87mh" path="res://stage/spots/hill/upgrade_hill_1_signal_beacon.tres" id="1_7w3k5"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_somco"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_snr0b"]
+[ext_resource type="Resource" uid="uid://denqq1l1e5fn" path="res://art/pieces/piece_hiroshige_sumidagawa.tres" id="4_somco"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="4_wjoau"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_87w0p"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="6_et2pe"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="7_cscy3"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="8_7swwa"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="9_jgbaa"]
+[ext_resource type="Resource" uid="uid://bjck6fn33jmcq" path="res://cards/tier2/card_calm.tres" id="10_b4o1e"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="11_88k37"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="12_gdpd6"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="13_eld7c"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="14_4pu7n"]
+[ext_resource type="Script" uid="uid://doingr4y56xed" path="res://events/system/outcomes/remove_card/event_outcome_remove_card.gd" id="15_6ahbd"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="16_jd2mh"]
+[ext_resource type="Resource" uid="uid://cbd7chejrj48e" path="res://cards/tier6/card_worry.tres" id="17_mrfr7"]
+
+[sub_resource type="Resource" id="Resource_j3w3s"]
+script = ExtResource("4_wjoau")
+_texture_path = "res://events/generic/hill_beacon/hill_beacon.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_tmyk4"]
+script = ExtResource("7_cscy3")
+bonus_type = ExtResource("6_et2pe")
+amount = 10
+extra_per_season = 5
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_qnsxn"]
+script = ExtResource("9_jgbaa")
+bonus_type = ExtResource("8_7swwa")
+min_count = 10
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_qy53p"]
+script = ExtResource("5_87w0p")
+markedup_text = "Send a small party to investigate."
+requirement = SubResource("Resource_qnsxn")
+outcome = SubResource("Resource_tmyk4")
+markedup_result_text = "The scouts are reluctant to leave the feast, but the councilor urges them incessantly, insisting that waiting may cost lives.
+
+With festival lanterns in tow, they trudge through the dark path.
+
+When they finally reach the neighboring settlement, they find it safe. A recent landslide had made the hilltop inaccessible, and since the harvest was disappointing, the villagers didn't bother repairing the stairs to light their beacon."
+
+[sub_resource type="Resource" id="Resource_s1unc"]
+script = ExtResource("11_88k37")
+card_type = ExtResource("10_b4o1e")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_lyxgp"]
+script = ExtResource("13_eld7c")
+aspect_type = ExtResource("12_gdpd6")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_qp418"]
+script = ExtResource("5_87w0p")
+markedup_text = "Wait until morning."
+requirement = SubResource("Resource_lyxgp")
+outcome = SubResource("Resource_s1unc")
+markedup_result_text = "Cooler heads prevail and the anxious councilor is convinced to wait until morning to send out runners to the other settlement. Rushing into the darkness will only create more danger, they argue.
+
+As the first light creeps up the hill, a trader from the neighboring settlement arrives.
+
+She explains that her town is well, but a recent landslide had made the hilltop inaccessible, and since the harvest was disappointing, the villagers didn't bother repairing the stairs to light their beacon."
+
+[sub_resource type="Resource" id="Resource_l8cby"]
+script = ExtResource("15_6ahbd")
+aspect = ExtResource("14_4pu7n")
+metadata/_custom_type_script = "uid://doingr4y56xed"
+
+[sub_resource type="Resource" id="Resource_jeji1"]
+script = ExtResource("13_eld7c")
+aspect_type = ExtResource("16_jd2mh")
+min_count = 4
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_2ghbf"]
+script = ExtResource("5_87w0p")
+markedup_text = "Take drastic measures."
+requirement = SubResource("Resource_jeji1")
+outcome = SubResource("Resource_l8cby")
+markedup_result_text = "The anxious councilor declares the festival closed and sends a town crier through the village with an alarm bell, declaring that the neighboring town has mysteriously disappeared, perhaps taken over by an evil spirit.
+
+Families hurry indoors as the gates are barred, and the hillside paths are blocked with carts.
+
+Near dawn, an exhausted messenger from the neighboring town arrives bringing news. Spooked by the barricades, he ends up turning around and heading back home."
+
+[sub_resource type="Resource" id="Resource_3r7q7"]
+script = ExtResource("11_88k37")
+card_type = ExtResource("17_mrfr7")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_oijs2"]
+script = ExtResource("5_87w0p")
+markedup_text = "Continue the festival as if nothing happened."
+outcome = SubResource("Resource_3r7q7")
+markedup_result_text = "The revelry continues, but the councilor's anxiety spreads among the settlers.
+
+Even as they eat, drink, and sing beneath the hilltop flame, they can't help but glance uneasily, searching for a light among the dark landscape.
+"
+
+[sub_resource type="Resource" id="Resource_ww34s"]
+script = ExtResource("3_snr0b")
+markedup_text = "A festival is underway celebrating a successful harvest. The settlers dance and feast all day.
+
+Once the sun sinks below the horizon, they climb the tallest hill and light the beacon, a signal that all is well and the harvest was plentiful. They watch the darkening hills, waiting for the next town over to light their own flame, but no flame appears.
+
+An alarmed councilor, perhaps impelled by the feast's ample drinks, raises an alarm, certain that their neighbors must be in trouble."
+background_image = SubResource("Resource_j3w3s")
+background_credit = ExtResource("4_somco")
+choices = Array[ExtResource("5_87w0p")]([SubResource("Resource_qy53p"), SubResource("Resource_qp418"), SubResource("Resource_2ghbf")])
+exit_choice = SubResource("Resource_oijs2")
+
+[resource]
+script = ExtResource("2_somco")
+default_spot_upgrade = ExtResource("1_7w3k5")
+event_id = "hill_beacon"
+event_name = "The Missing Flame"
+steps = Array[ExtResource("3_snr0b")]([SubResource("Resource_ww34s")])
+categories = Array[int]([3])

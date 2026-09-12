@@ -1,0 +1,155 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://chumw0v8kp54m"]
+
+[ext_resource type="Resource" uid="uid://bmbr0f72igpb2" path="res://stage/spots/mountain/upgrade_mountain_3_dragon_roost.tres" id="1_xvhri"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="2_ff1fv"]
+[ext_resource type="Resource" uid="uid://cdspemalastd" path="res://companions/koi/companion_koi.tres" id="3_tulsw"]
+[ext_resource type="Script" uid="uid://c7rgvjmhtgrja" path="res://events/system/requirements/event_requirement_has_companion.gd" id="4_c7uyq"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="5_6t2xa"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="6_rfthx"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="7_ker12"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="8_333rd"]
+[ext_resource type="Resource" uid="uid://ns6dh6btwor7" path="res://art/pieces/piece_hokusai_mountain_climbers.tres" id="10_uc68o"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="11_rfthx"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="11_rjfon"]
+[ext_resource type="Resource" uid="uid://83qh03xketvs" path="res://relics/common/curious_stone/relic_curious_stone.tres" id="12_kjku4"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="13_503xe"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="14_aawy8"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="15_ekueo"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="16_6t2xa"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="16_s5y7n"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="17_br838"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="17_rfthx"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="18_d3k2x"]
+[ext_resource type="Resource" uid="uid://b180ul6v7ldnq" path="res://quests/companion/quest_companion_dragon.tres" id="18_ker12"]
+[ext_resource type="Script" uid="uid://rlexviyd8sv7" path="res://events/system/outcomes/start_quest/event_outcome_start_quest.gd" id="19_333rd"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="19_kkksx"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="20_o1e56"]
+
+[sub_resource type="Resource" id="Resource_p66vb"]
+script = ExtResource("4_c7uyq")
+companion = ExtResource("3_tulsw")
+metadata/_custom_type_script = "uid://c7rgvjmhtgrja"
+
+[sub_resource type="Resource" id="Resource_1aapt"]
+script = ExtResource("5_6t2xa")
+scope = 1
+event_id = "global"
+var_id = "companion_dragon"
+value = "0"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_w12ok"]
+script = ExtResource("6_rfthx")
+all_requirements = Array[ExtResource("2_ff1fv")]([SubResource("Resource_p66vb"), SubResource("Resource_1aapt")])
+metadata/_custom_type_script = "uid://15prcev7a3ta"
+
+[sub_resource type="Resource" id="Resource_6t2xa"]
+script = ExtResource("11_rfthx")
+_texture_path = "res://events/companions/dragon/companion_dragon_1.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_41oe5"]
+script = ExtResource("13_503xe")
+relic = ExtResource("12_kjku4")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_wc30y"]
+script = ExtResource("15_ekueo")
+aspect_type = ExtResource("14_aawy8")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_84ssb"]
+script = ExtResource("11_rjfon")
+markedup_text = "Preserve these as relics at the monastery."
+requirement = SubResource("Resource_wc30y")
+outcome = SubResource("Resource_41oe5")
+markedup_result_text = "The stones are carried back to the monastery.
+
+There they are placed on pedestals, and the whole area is sectioned off with sacred ropes.
+
+Visitors are not allowed to approach, and nosy scholars are particularly cautioned to stay away."
+
+[sub_resource type="Resource" id="Resource_hl4v7"]
+script = ExtResource("19_333rd")
+quest = ExtResource("18_ker12")
+metadata/_custom_type_script = "uid://rlexviyd8sv7"
+
+[sub_resource type="Resource" id="Resource_pur5p"]
+script = ExtResource("16_s5y7n")
+scope = 1
+event_id = "global"
+var_id = "companion_dragon"
+value = "1"
+description = ""
+outcome_description = "A dragon scale has been identified."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_uc68o"]
+script = ExtResource("16_6t2xa")
+suboutcomes = Array[ExtResource("17_rfthx")]([SubResource("Resource_hl4v7"), SubResource("Resource_pur5p")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_n3vr2"]
+script = ExtResource("15_ekueo")
+aspect_type = ExtResource("17_br838")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_08k3g"]
+script = ExtResource("11_rjfon")
+markedup_text = "Study the stones, even if it damages them."
+requirement = SubResource("Resource_n3vr2")
+outcome = SubResource("Resource_uc68o")
+markedup_result_text = "The monks study the rocks carefully back at the monastery.
+
+They chip away crusted-on sediment and wipe off the remaining dust with coarse brushes. Finally, they soak them in vinegar and rinse them in water.
+
+Once so cleaned, the shape and luster of the stones become unmistakable. These are clearly the scales of a very large creature. \"Dragonscales,\" the monks declare."
+
+[sub_resource type="Resource" id="Resource_eyvok"]
+script = ExtResource("19_kkksx")
+bonus_type = ExtResource("18_d3k2x")
+amount = 25
+extra_per_season = 25
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_afk41"]
+script = ExtResource("15_ekueo")
+aspect_type = ExtResource("20_o1e56")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_gsuf0"]
+script = ExtResource("11_rjfon")
+markedup_text = "Make the stones into rosaries."
+requirement = SubResource("Resource_afk41")
+outcome = SubResource("Resource_eyvok")
+markedup_result_text = "The stones are cleaned and polished smooth. Holes are drilled into them, and the resulting beads are strung onto strings, which the monks who had explored the cave now carry.
+
+Visitors to the monastery often comment on the beauty of the rosaries, which are unlike anything seen anywhere else on the shard."
+
+[sub_resource type="Resource" id="Resource_3mmkv"]
+script = ExtResource("11_rjfon")
+markedup_text = "Leave the stones in the cave."
+markedup_result_text = "The monks leave the stones in the cave and start their trek back down the slopes."
+
+[sub_resource type="Resource" id="Resource_7gc00"]
+script = ExtResource("8_333rd")
+markedup_text = "A few of the monks from the Ember Monastery opt for the long trek up the mountain to visit this cave, located just below the tip of the volcano.
+
+The cave is too hot to get very far in, but they do come upon a curious find: flat stones that shine with an iridescent gleam in the torchlight."
+background_image = SubResource("Resource_6t2xa")
+background_credit = ExtResource("10_uc68o")
+choices = Array[ExtResource("11_rjfon")]([SubResource("Resource_84ssb"), SubResource("Resource_08k3g"), SubResource("Resource_gsuf0")])
+exit_choice = SubResource("Resource_3mmkv")
+
+[resource]
+script = ExtResource("7_ker12")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_xvhri")
+event_id = "companion_dragon_1"
+event_name = "Curious Stones"
+requirement = SubResource("Resource_w12ok")
+steps = Array[ExtResource("8_333rd")]([SubResource("Resource_7gc00")])
+categories = Array[int]([0, 4, 1])

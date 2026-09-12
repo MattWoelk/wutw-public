@@ -1,0 +1,161 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://ce1wbsinom3dx"]
+
+[ext_resource type="Resource" uid="uid://buffbajf212d2" path="res://stage/spots/brushland/upgrade_brushland_2_silk_weaver_hut.tres" id="1_uow70"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_q6nui"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_uow70"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_l6jin"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_7dmo5"]
+[ext_resource type="Resource" uid="uid://dknvk4tcf6x7g" path="res://art/pieces/piece_shuuun_tanuki.tres" id="6_l6jin"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_7dmo5"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="7_ad2bg"]
+[ext_resource type="Resource" uid="uid://ch4spdw46no4j" path="res://cards/tier6/card_stink.tres" id="7_limqh"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="8_3svpc"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="10_r7ily"]
+[ext_resource type="Resource" uid="uid://sxe3178ffulg" path="res://cards/tier2/card_pray.tres" id="11_7dmo5"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="11_vaggx"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="12_ad2bg"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="12_kgxty"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="13_ck0eo"]
+[ext_resource type="Resource" uid="uid://fibmy80nsqqu" path="res://companions/tanuki/companion_tanuki.tres" id="16_3svpc"]
+[ext_resource type="Script" uid="uid://2you2r2oar48" path="res://events/system/outcomes/unlock_companion/event_outcome_unlock_companion.gd" id="17_bfekx"]
+[ext_resource type="Script" uid="uid://dnxdmp6ko2c00" path="res://events/system/outcomes/mark_all_choices_seen/event_outcome_mark_all_choices_seen.gd" id="18_r7ily"]
+[ext_resource type="Resource" uid="uid://c6xn56yk2hokx" path="res://events/companions/tanuki/event_companion_tanuki_1.tres" id="19_vaggx"]
+[ext_resource type="Resource" uid="uid://dsr54ucwpnxoh" path="res://events/companions/tanuki/event_companion_tanuki_2.tres" id="20_kgxty"]
+[ext_resource type="Resource" uid="uid://v1a7hlihu2q2" path="res://cards/tier3/card_illusion.tres" id="21_ck0eo"]
+
+[sub_resource type="Resource" id="Resource_582eg"]
+script = ExtResource("2_q6nui")
+scope = 1
+event_id = "global"
+var_id = "companion_tanuki"
+value = "2"
+
+[sub_resource type="Resource" id="Resource_l6jin"]
+script = ExtResource("7_7dmo5")
+_texture_path = "res://events/companions/tanuki/event_companion_tanuki_3.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_nqfme"]
+script = ExtResource("10_r7ily")
+card_type = ExtResource("7_limqh")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_dv1ip"]
+script = ExtResource("13_ck0eo")
+aspect_type = ExtResource("12_kgxty")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_vjvrl"]
+script = ExtResource("6_7dmo5")
+markedup_text = "Adopt it."
+requirement = SubResource("Resource_dv1ip")
+outcome = SubResource("Resource_nqfme")
+markedup_result_text = "The apprentice coaxes the creature inside.
+
+The animal accepts the hospitality, falling asleep by the loom. The moment the sun rises, though, it bolts out the door.
+
+It leaves behind a lingering, musky stench that takes days to dissipate."
+
+[sub_resource type="Resource" id="Resource_bjjns"]
+script = ExtResource("10_r7ily")
+card_type = ExtResource("11_7dmo5")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_pun4p"]
+script = ExtResource("13_ck0eo")
+aspect_type = ExtResource("12_ad2bg")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_t2i5h"]
+script = ExtResource("6_7dmo5")
+markedup_text = "Pray to it."
+requirement = SubResource("Resource_pun4p")
+outcome = SubResource("Resource_bjjns")
+markedup_result_text = "Overwhelmed by the eerie sight, the apprentice drops to his knees and begins loudly chanting a half-remembered prayer.
+
+The creature stops dead in its tracks, clearly unnerved by this strange human behavior.
+
+It turns around and rapidly scurries back into the woods, its headscarf flashing white in the moonlight."
+
+[sub_resource type="Resource" id="Resource_f6d24"]
+script = ExtResource("11_vaggx")
+scope = 1
+event_id = "global"
+var_id = "companion_tanuki"
+value = "3"
+description = ""
+outcome_description = "The tanuki is happy to be freed."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_e2b4m"]
+script = ExtResource("17_bfekx")
+companion = ExtResource("16_3svpc")
+metadata/_custom_type_script = "uid://2you2r2oar48"
+
+[sub_resource type="Resource" id="Resource_7wu0k"]
+script = ExtResource("18_r7ily")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_y124w"]
+script = ExtResource("18_r7ily")
+seen_event = ExtResource("19_vaggx")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_ixfvl"]
+script = ExtResource("18_r7ily")
+seen_event = ExtResource("20_kgxty")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_yr1uy"]
+script = ExtResource("7_ad2bg")
+suboutcomes = Array[ExtResource("8_3svpc")]([SubResource("Resource_f6d24"), SubResource("Resource_e2b4m"), SubResource("Resource_7wu0k"), SubResource("Resource_y124w"), SubResource("Resource_ixfvl")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_6ab2a"]
+script = ExtResource("6_7dmo5")
+markedup_text = "Examine the scarf."
+outcome = SubResource("Resource_yr1uy")
+markedup_result_text = "Gathering his courage, the apprentice steps closer and reaches for the cloth.
+
+The creature freezes, allowing him to carefully untie the knot. It turns out the animal had managed to get its head stuck in one of the silk cloths hung out to dry. Freed from its makeshift headwear, the animal chirps in relief and bounds away.
+
+Ever since, the weavers often hear it cheerfully rummaging around on the edge of the settlement at night."
+
+[sub_resource type="Resource" id="Resource_r5g82"]
+script = ExtResource("10_r7ily")
+card_type = ExtResource("21_ck0eo")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_0nc6e"]
+script = ExtResource("6_7dmo5")
+markedup_text = "Pretend it's not there."
+outcome = SubResource("Resource_r5g82")
+markedup_result_text = "The apprentice closes his eyes, rubs them vigorously, and decides that staying late has finally broken his mind.
+
+He turns his back and focuses on the work. When he finally dares to look again, the yard is empty.
+
+He will spend the rest of his life wondering if the tiny pilgrim was real."
+
+[sub_resource type="Resource" id="Resource_7dm7g"]
+script = ExtResource("4_l6jin")
+markedup_text = "An apprentice working late into the night is greeted by an odd sight. A tanuki approaches the door, walking on its hind legs, with a scarf tied around its head.
+
+The animal looks eerily human-like in the moonlight, a diminutive pilgrim who lost his way in the night.
+
+The apprentice wonders if it's a sign from the Enlightened One."
+background_image = SubResource("Resource_l6jin")
+background_credit = ExtResource("6_l6jin")
+choices = Array[ExtResource("6_7dmo5")]([SubResource("Resource_vjvrl"), SubResource("Resource_t2i5h"), SubResource("Resource_6ab2a")])
+exit_choice = SubResource("Resource_0nc6e")
+
+[resource]
+script = ExtResource("3_uow70")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_uow70")
+event_id = "companion_tanuki_3"
+event_name = "A Pilgrim By Moonlight"
+requirement = SubResource("Resource_582eg")
+steps = Array[ExtResource("4_l6jin")]([SubResource("Resource_7dm7g")])
+categories = Array[int]([0, 4])

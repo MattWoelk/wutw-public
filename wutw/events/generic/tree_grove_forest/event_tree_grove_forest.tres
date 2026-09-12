@@ -1,0 +1,132 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://df3jvbmt48xr"]
+
+[ext_resource type="Resource" uid="uid://bl3yqobwttr4n" path="res://stage/spots/forest/upgrade_forest_3_old_glade.tres" id="1_p6hb1"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="2_lr6q2"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_y5lti"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_4aklr"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_1f1kn"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="6_botsp"]
+[ext_resource type="Resource" uid="uid://b0jspbl7rxj2h" path="res://art/pieces/piece_yuhan_sugi.tres" id="6_u2tj4"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_2jv2h"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_wbn12"]
+[ext_resource type="Resource" uid="uid://cwjck6hsbxorj" path="res://cards/tier0/card_tree.tres" id="8_cviep"]
+[ext_resource type="Script" uid="uid://doingr4y56xed" path="res://events/system/outcomes/remove_card/event_outcome_remove_card.gd" id="9_pnwp4"]
+[ext_resource type="Resource" uid="uid://dcv72s0qgse1l" path="res://cards/tier3/card_thicket.tres" id="10_l1seg"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="11_45mgi"]
+[ext_resource type="Script" uid="uid://bb3k1uqy7knny" path="res://events/system/requirements/event_requirement_has_card.gd" id="12_xf5k1"]
+[ext_resource type="Resource" uid="uid://btlpadlt7sok7" path="res://cards/tier5/card_forest.tres" id="13_a4m45"]
+[ext_resource type="Resource" uid="uid://cvorh2ej42ffh" path="res://relics/uncommon/pine_curl/relic_pine_curl.tres" id="14_85ul7"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="15_atcg4"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="16_8gms7"]
+
+[sub_resource type="Resource" id="Resource_u2tj4"]
+script = ExtResource("2_lr6q2")
+min_progress = 300
+metadata/_custom_type_script = "uid://c50bhh4sr0g8o"
+
+[sub_resource type="Resource" id="Resource_wbn12"]
+script = ExtResource("7_wbn12")
+_texture_path = "res://events/main_quest/2_30_consecration_forest/event_consecration_forest_base.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("9_pnwp4")
+card_type = ExtResource("8_cviep")
+metadata/_custom_type_script = "uid://doingr4y56xed"
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("11_45mgi")
+card_type = ExtResource("10_l1seg")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("6_botsp")
+suboutcomes = Array[ExtResource("7_2jv2h")]([SubResource("Resource_4xuhh"), SubResource("Resource_rx1a8")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_4j3py"]
+script = ExtResource("12_xf5k1")
+card_type = ExtResource("8_cviep")
+
+[sub_resource type="Resource" id="Resource_202e1"]
+script = ExtResource("5_1f1kn")
+markedup_text = "Contemplate a single tree."
+requirement = SubResource("Resource_4j3py")
+outcome = SubResource("Resource_tuogj")
+markedup_result_text = "As branches rustle, ideas sprout in the settlers' minds. Many now feel more attuned to the forest."
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("9_pnwp4")
+card_type = ExtResource("10_l1seg")
+metadata/_custom_type_script = "uid://doingr4y56xed"
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("11_45mgi")
+card_type = ExtResource("13_a4m45")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ciwob"]
+script = ExtResource("6_botsp")
+suboutcomes = Array[ExtResource("7_2jv2h")]([SubResource("Resource_dpp3j"), SubResource("Resource_06ahh")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_swpsg"]
+script = ExtResource("12_xf5k1")
+card_type = ExtResource("10_l1seg")
+
+[sub_resource type="Resource" id="Resource_77ica"]
+script = ExtResource("5_1f1kn")
+markedup_text = "Contemplate the trees around the glade."
+requirement = SubResource("Resource_swpsg")
+outcome = SubResource("Resource_ciwob")
+markedup_result_text = "As the shade deepens, ideas rustle through the settlers' minds. Many now feel more attuned to the forest."
+
+[sub_resource type="Resource" id="Resource_nthfn"]
+script = ExtResource("15_atcg4")
+relic = ExtResource("14_85ul7")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_av4ci"]
+script = ExtResource("12_xf5k1")
+card_type = ExtResource("13_a4m45")
+
+[sub_resource type="Resource" id="Resource_66opb"]
+script = ExtResource("5_1f1kn")
+markedup_text = "Contemplate the entire forest."
+requirement = SubResource("Resource_av4ci")
+outcome = SubResource("Resource_nthfn")
+markedup_result_text = "A breeze stirs the cedar needles, spreading the scent of sap and sun-warmed bark.
+
+The settlers leave carrying a sprig. Somehow they know the forest wanted them to have it."
+
+[sub_resource type="Resource" id="Resource_2myy3"]
+script = ExtResource("16_8gms7")
+delta = 5
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_2bi2i"]
+script = ExtResource("5_1f1kn")
+markedup_text = "Bask in the peace of the glade."
+outcome = SubResource("Resource_2myy3")
+markedup_result_text = "The serene ambiance of the quiet glade inspires the group to forge ahead, and spread harmony around the shard."
+
+[sub_resource type="Resource" id="Resource_mslio"]
+script = ExtResource("3_4aklr")
+markedup_text = "Deep in the forest a little glade has formed around a furrow in the ground, hushed and dappled.
+
+The furrow is lined with ancient, towering cedars on both sides. Moss covers the ground in a thick, plush carpet.
+
+The settlers sit for a while, breathing in the smells of the deep forest."
+background_image = SubResource("Resource_wbn12")
+background_credit = ExtResource("6_u2tj4")
+choices = Array[ExtResource("5_1f1kn")]([SubResource("Resource_202e1"), SubResource("Resource_77ica"), SubResource("Resource_66opb")])
+exit_choice = SubResource("Resource_2bi2i")
+
+[resource]
+script = ExtResource("2_y5lti")
+default_spot_upgrade = ExtResource("1_p6hb1")
+event_id = "tree_grove_forest"
+event_name = "The Cedar Glen"
+requirement = SubResource("Resource_u2tj4")
+steps = Array[ExtResource("3_4aklr")]([SubResource("Resource_mslio")])
+categories = Array[int]([3])

@@ -1,0 +1,208 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://bdg4smly14i1w"]
+
+[ext_resource type="Resource" uid="uid://ct50e1yg6won4" path="res://stage/spots/plains/upgrade_plains_3_endless_blossoms.tres" id="1_u3i56"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="2_fqo2i"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_fqk2w"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_bomh3"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_5nvpy"]
+[ext_resource type="Resource" uid="uid://djsu5lqquogw7" path="res://art/pieces/piece_hiroshige_2_bellflower_field.tres" id="6_aa4gq"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="7_gxw3o"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_scrwq"]
+
+[sub_resource type="Resource" id="Resource_5gsv8"]
+script = ExtResource("2_fqo2i")
+min_progress = 220
+max_progress = 220
+
+[sub_resource type="Resource" id="Resource_5c3ku"]
+script = ExtResource("7_scrwq")
+_texture_path = "res://events/main_quest/2_30_consecration_field/event_consecration_field_base.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_jp4qm"]
+script = ExtResource("7_gxw3o")
+scope = 1
+event_id = "firefox"
+var_id = "salt"
+var_type = 1
+value = "true"
+
+[sub_resource type="Resource" id="Resource_mprds"]
+script = ExtResource("6_5nvpy")
+markedup_text = "Pour a circle of salt to mark the ground sacred."
+requirement = SubResource("Resource_jp4qm")
+markedup_requirement_hint = "A previous choice"
+markedup_requirement_tooltip = "A previous choice: purified the fox spirits' tree with salt"
+result_event_step_id = "salt"
+
+[sub_resource type="Resource" id="Resource_pxmfr"]
+script = ExtResource("7_gxw3o")
+scope = 1
+event_id = "firefox"
+var_id = "blood"
+var_type = 1
+value = "true"
+
+[sub_resource type="Resource" id="Resource_bco73"]
+script = ExtResource("6_5nvpy")
+markedup_text = "Offer blood to awaken the meadow."
+requirement = SubResource("Resource_pxmfr")
+markedup_requirement_hint = "A previous choice"
+markedup_requirement_tooltip = "A previous choice: banished the fox spirits' by spilling blood"
+result_event_step_id = "blood"
+
+[sub_resource type="Resource" id="Resource_hju2s"]
+script = ExtResource("7_gxw3o")
+scope = 1
+event_id = "firefox"
+var_id = "destroy"
+var_type = 1
+value = "true"
+
+[sub_resource type="Resource" id="Resource_o124c"]
+script = ExtResource("6_5nvpy")
+markedup_text = "Ignite the center to draw out the meadow's power."
+requirement = SubResource("Resource_hju2s")
+markedup_requirement_hint = "A previous choice"
+markedup_requirement_tooltip = "A previous choice: cut down the fox spirits' tree"
+result_event_step_id = "destroy"
+
+[sub_resource type="Resource" id="Resource_i4o5v"]
+script = ExtResource("7_gxw3o")
+scope = 1
+event_id = "firefox"
+var_id = "science"
+var_type = 1
+value = "true"
+
+[sub_resource type="Resource" id="Resource_a16w5"]
+script = ExtResource("6_5nvpy")
+markedup_text = "Raise a banner of constancy above the meadow."
+requirement = SubResource("Resource_i4o5v")
+markedup_requirement_hint = "A previous choice"
+markedup_requirement_tooltip = "A previous choice: left the fox spirits' tree alone"
+result_event_step_id = "science"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_vww8x"]
+script = ExtResource("4_bomh3")
+markedup_text = "The expedition gathers at the edge of a vast meadow where petals sway gently in the breeze, bright and unending. Even the insects seem hushed, afraid to disturb this eternal spring.
+
+This is the place the Scribe named in his plan, a field where the world refuses to change. A place of stillness, of [i]Stability[/i].
+
+Disciples prepare the consecration ritual, going over the Scribe's instructions again and again."
+background_image = SubResource("Resource_5c3ku")
+background_credit = ExtResource("6_aa4gq")
+choices = Array[ExtResource("6_5nvpy")]([SubResource("Resource_mprds"), SubResource("Resource_bco73"), SubResource("Resource_o124c"), SubResource("Resource_a16w5")])
+
+[sub_resource type="Resource" id="Resource_kf17a"]
+script = ExtResource("7_scrwq")
+_texture_path = "res://events/main_quest/2_30_consecration_field/event_consecration_field_salt.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_scrwq"]
+script = ExtResource("6_5nvpy")
+markedup_text = "Continue"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_fi5r8"]
+script = ExtResource("4_bomh3")
+event_step_id = "salt"
+markedup_text = "A ring of salt is poured around the center of the field, grains glittering in the sunlight on the petals.
+
+By morning, the blossoms on the edges of the ring have wilted. As days pass, the effect spreads, flowers bowing in turn.
+
+\"The power is draining into the Enlightened One's glyphs,\" the disciples declare. \"This place has given up its energies to aid in the Reunification.\""
+background_image = SubResource("Resource_kf17a")
+background_credit = ExtResource("6_aa4gq")
+exit_choice = SubResource("Resource_scrwq")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[sub_resource type="Resource" id="Resource_2cpbm"]
+script = ExtResource("7_scrwq")
+_texture_path = "res://events/main_quest/2_30_consecration_field/event_consecration_field_blood.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_dtrne"]
+script = ExtResource("6_5nvpy")
+markedup_text = "Continue"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_d5ak5"]
+script = ExtResource("4_bomh3")
+event_step_id = "blood"
+markedup_text = "A shallow cut is made across each disciple's palm, as they walk in a careful procession through the meadow, tracing a great glyph in a trail of red.
+
+Days pass as incantations are chanted. Soon, the effects begin to show.
+
+What once was a sea of purple begins to bloom with splotches of pale pink blossoms. The pink slowly deepens, and by the end of the week the whole meadow is ablush with scarlet.
+
+\"Our blood has opened the gate,\" the disciples agree. \"This place is now a channel of the Enlightened One's powers.\"
+
+The scent of iron hangs in the air, but none speak of it."
+background_image = SubResource("Resource_2cpbm")
+background_credit = ExtResource("6_aa4gq")
+exit_choice = SubResource("Resource_dtrne")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[sub_resource type="Resource" id="Resource_ka2gu"]
+script = ExtResource("7_scrwq")
+_texture_path = "res://events/main_quest/2_30_consecration_field/event_consecration_field_destroy.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_k0pmr"]
+script = ExtResource("6_5nvpy")
+markedup_text = "Continue"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_v6y3b"]
+script = ExtResource("4_bomh3")
+event_step_id = "destroy"
+markedup_text = "A circle of blossoms is cut. Leaf and petal alike are set ablaze.
+
+The fire digs greedily into its meal, burning without smoke despite the wet fuel.
+
+Disciples meditate, tracing glyphs they see in the waves of heat rippling through the air.
+
+\"The sacred flames have claimed this place in the Enlightened One's name,\" they agree. \"It will power the grand ritual to come.\""
+background_image = SubResource("Resource_ka2gu")
+background_credit = ExtResource("6_aa4gq")
+exit_choice = SubResource("Resource_k0pmr")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[sub_resource type="Resource" id="Resource_pircu"]
+script = ExtResource("7_scrwq")
+_texture_path = "res://events/main_quest/2_30_consecration_field/event_consecration_field_science.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_aa4gq"]
+script = ExtResource("6_5nvpy")
+markedup_text = "Continue"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_caj30"]
+script = ExtResource("4_bomh3")
+event_step_id = "science"
+markedup_text = "A great banner inscribed with the glyph of constancy is lifted above the meadow.
+
+The cloth flutters, lively in a sudden gust of wind.
+
+\"The Scribe told us to wait for a sign,\" one disciple remarks, \"but I didn't expect it so quickly.\"
+
+\"The Enlightened One approves,\" says another.
+
+They all agree that their glyphs resonate more deeply with the shard's energies now."
+background_image = SubResource("Resource_pircu")
+background_credit = ExtResource("6_aa4gq")
+exit_choice = SubResource("Resource_aa4gq")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[resource]
+script = ExtResource("3_fqk2w")
+default_probability_weight = 1
+default_spot_upgrade = ExtResource("1_u3i56")
+event_id = "consecration_field"
+event_name = "Consecration: Endless Blossoms"
+requirement = SubResource("Resource_5gsv8")
+steps = Array[ExtResource("4_bomh3")]([SubResource("Resource_vww8x"), SubResource("Resource_fi5r8"), SubResource("Resource_d5ak5"), SubResource("Resource_v6y3b"), SubResource("Resource_caj30")])
+categories = Array[int]([1])

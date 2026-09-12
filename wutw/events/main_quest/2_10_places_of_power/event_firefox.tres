@@ -1,0 +1,147 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://bvn2nygt0oynu"]
+
+[ext_resource type="Resource" uid="uid://bl3yqobwttr4n" path="res://stage/spots/forest/upgrade_forest_3_old_glade.tres" id="1_ht7eq"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="2_coknj"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_r3u8r"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_3hj8v"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_4w352"]
+[ext_resource type="Resource" uid="uid://d3h0rmxb008ui" path="res://art/pieces/piece_hiroshige_fox_fire_at_oji.tres" id="6_ht7eq"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="7_h30ah"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_r3u8r"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="8_ywr6y"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="9_flxxk"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="10_f0i1y"]
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("2_coknj")
+min_progress = 200
+max_progress = 200
+
+[sub_resource type="Resource" id="Resource_coknj"]
+script = ExtResource("7_r3u8r")
+_texture_path = "res://events/main_quest/2_10_places_of_power/event_firefox.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_df5af"]
+script = ExtResource("7_h30ah")
+scope = 1
+var_id = "blood"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("9_flxxk")
+bonus_type = ExtResource("8_ywr6y")
+min_count = 100
+max_count = -1
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("6_4w352")
+markedup_text = "Banish the spirits with a drop of blood."
+requirement = SubResource("Resource_tuogj")
+outcome = SubResource("Resource_df5af")
+markedup_outcome_hint = "This will leave a mark on history."
+markedup_result_text = "The Scribe and his disciples surround the tree.
+
+A shallow cut, a whispered incantation, and the foxes scatter like embers in the wind.
+
+\"With our lifeblood, we have cleansed these woods,\" the Scribe declares. \"No spirit will dare set foot here again.\""
+
+[sub_resource type="Resource" id="Resource_ptcwf"]
+script = ExtResource("7_h30ah")
+scope = 1
+var_id = "salt"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("9_flxxk")
+bonus_type = ExtResource("10_f0i1y")
+min_count = 100
+max_count = -1
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("6_4w352")
+markedup_text = "Purify the ground with salt."
+requirement = SubResource("Resource_dpp3j")
+outcome = SubResource("Resource_ptcwf")
+markedup_outcome_hint = "This will leave a mark on history."
+markedup_result_text = "Rings of salt are poured around the withered tree.
+
+The foxes watch from afar, silent, observing.
+
+\"We have claimed these woods,\" The Scribe declares. \"No spirit will dare set foot here again.\""
+
+[sub_resource type="Resource" id="Resource_egt2j"]
+script = ExtResource("7_h30ah")
+scope = 1
+var_id = "science"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_ciwob"]
+script = ExtResource("9_flxxk")
+bonus_type = ExtResource("10_f0i1y")
+min_count = 100
+max_count = -1
+
+[sub_resource type="Resource" id="Resource_nthfn"]
+script = ExtResource("6_4w352")
+markedup_text = "Record the event and leave the tree untouched."
+requirement = SubResource("Resource_ciwob")
+outcome = SubResource("Resource_egt2j")
+markedup_outcome_hint = "This will leave a mark on history."
+markedup_result_text = "With considerable efforts, the tired settlers convince the Scribe to let the spirits go.
+
+Detailed entries are made in the expedition log. Sketches are drawn.
+
+The foxes watch as the procession departs."
+
+[sub_resource type="Resource" id="Resource_f2op8"]
+script = ExtResource("7_h30ah")
+scope = 1
+var_id = "destroy"
+var_type = 1
+value = "true"
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_2myy3"]
+script = ExtResource("6_4w352")
+markedup_text = "Cut down the tree."
+outcome = SubResource("Resource_f2op8")
+markedup_outcome_hint = "This will leave a mark on history."
+markedup_result_text = "The foxes scatter as glyphs are inscribed onto axes.
+
+The settlers make short work of the tree. It cracks at the first touch of a blade, crumbling to the ground.
+
+\"Now these woods are cleansed,\" the Scribe declares."
+
+[sub_resource type="Resource" id="Resource_w2hpu"]
+script = ExtResource("4_3hj8v")
+markedup_text = "The expedition ventures deep into the forest, following signs interpreted by The Scribe.
+
+At last they reach a vast glade, quiet and bright beneath the canopy. Moss glows faintly in the filtered light, and the air smells of rain.
+
+The reverie is interrupted by movement among the trees. White tails flicker, darting like stray brushstrokes in the mist. The settlers follow, until the paths twist back upon themselves.
+
+By the time they find their way again, night has fallen. They emerge to see an old, dry tree surrounded by foxes, dozens of them, pale as moonlight. Some swear they shine faintly.
+
+\"This place is haunted,\" says the Scribe. \"We must act before the curse spreads.\""
+background_image = SubResource("Resource_coknj")
+background_credit = ExtResource("6_ht7eq")
+choices = Array[ExtResource("6_4w352")]([SubResource("Resource_rx1a8"), SubResource("Resource_06ahh"), SubResource("Resource_nthfn")])
+exit_choice = SubResource("Resource_2myy3")
+
+[resource]
+script = ExtResource("3_r3u8r")
+default_probability_weight = 1
+default_spot_upgrade = ExtResource("1_ht7eq")
+repeatability = 0
+event_id = "firefox"
+event_name = "Legacy Event: Fox-Haunted Tree"
+requirement = SubResource("Resource_4xuhh")
+steps = Array[ExtResource("4_3hj8v")]([SubResource("Resource_w2hpu")])
+categories = Array[int]([1, 5])

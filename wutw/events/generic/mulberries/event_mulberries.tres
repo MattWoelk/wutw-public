@@ -1,0 +1,175 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://bh0bch60bwbqu"]
+
+[ext_resource type="Resource" uid="uid://be68q217d3hp8" path="res://stage/spots/brushland/upgrade_brushland_1_mulberry_patch.tres" id="1_y6ckw"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_8e1fd"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_f55fb"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="4_3yhi3"]
+[ext_resource type="Resource" uid="uid://b21sl82l84tv4" path="res://art/pieces/piece_hiroshige_3_silkworms_5.tres" id="4_8e1fd"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_00o4p"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="6_u4q53"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_waicd"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="8_mtyi5"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="9_8ew14"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="10_fi8qv"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="11_v1cf1"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="12_t25ih"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="13_7uvri"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="14_or0at"]
+
+[sub_resource type="Resource" id="Resource_df5af"]
+script = ExtResource("4_3yhi3")
+_texture_path = "res://events/generic/mulberries/mulberries.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_hk6hd"]
+script = ExtResource("9_8ew14")
+bonus_type = ExtResource("8_mtyi5")
+amount = -10
+extra_per_season = -15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_go0yc"]
+script = ExtResource("9_8ew14")
+bonus_type = ExtResource("10_fi8qv")
+amount = 15
+extra_per_season = 20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_qq5wq"]
+script = ExtResource("6_u4q53")
+suboutcomes = Array[ExtResource("7_waicd")]([SubResource("Resource_hk6hd"), SubResource("Resource_go0yc")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_ptcwf"]
+script = ExtResource("5_00o4p")
+markedup_text = "Favor the silkworms."
+outcome = SubResource("Resource_qq5wq")
+markedup_result_text = "The settlers prioritize their silk production, and decide to risk a poor berry harvest.
+
+The bushes are stripped bare, the berries doomed to wither on the vine.
+
+The folks harvesting the leaves do manage to pluck the occasional early ripened ones as they work."
+
+[sub_resource type="Resource" id="Resource_it0td"]
+script = ExtResource("9_8ew14")
+bonus_type = ExtResource("8_mtyi5")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_dxde8"]
+script = ExtResource("9_8ew14")
+bonus_type = ExtResource("10_fi8qv")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_cconl"]
+script = ExtResource("9_8ew14")
+bonus_type = ExtResource("11_v1cf1")
+amount = -5
+extra_per_season = -5
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_k5hlc"]
+script = ExtResource("6_u4q53")
+suboutcomes = Array[ExtResource("7_waicd")]([SubResource("Resource_it0td"), SubResource("Resource_dxde8"), SubResource("Resource_cconl")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_egt2j"]
+script = ExtResource("13_7uvri")
+aspect_type = ExtResource("12_t25ih")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_f2op8"]
+script = ExtResource("5_00o4p")
+markedup_text = "Wait until the berry harvest before plucking the leaves."
+requirement = SubResource("Resource_egt2j")
+outcome = SubResource("Resource_k5hlc")
+markedup_result_text = "The settlers forbid leaf harvesting until the berries are ripe.
+
+Once the berries are gathered, the silkworm carers pluck the leaves.
+
+Unfortunately, the silkworms refuse these, unimpressed by their lack of freshness."
+
+[sub_resource type="Resource" id="Resource_dc6va"]
+script = ExtResource("9_8ew14")
+bonus_type = ExtResource("8_mtyi5")
+amount = 5
+extra_per_season = 5
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_myg6o"]
+script = ExtResource("9_8ew14")
+bonus_type = ExtResource("10_fi8qv")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_t0e50"]
+script = ExtResource("6_u4q53")
+suboutcomes = Array[ExtResource("7_waicd")]([SubResource("Resource_dc6va"), SubResource("Resource_myg6o")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("13_7uvri")
+aspect_type = ExtResource("14_or0at")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("5_00o4p")
+markedup_text = "Leave the bushes with the best berries unplucked."
+requirement = SubResource("Resource_4xuhh")
+outcome = SubResource("Resource_t0e50")
+markedup_result_text = "The farmers carefully inspect each bush and mark ones that seem likely to produce the most berries. The harvest will be meager, but it's an efficient use of resources.
+
+The unmarked bushes are sacrificed to the worms."
+
+[sub_resource type="Resource" id="Resource_ggole"]
+script = ExtResource("9_8ew14")
+bonus_type = ExtResource("8_mtyi5")
+amount = 15
+extra_per_season = 20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_tjrig"]
+script = ExtResource("9_8ew14")
+bonus_type = ExtResource("10_fi8qv")
+amount = -10
+extra_per_season = -15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_uqh56"]
+script = ExtResource("6_u4q53")
+suboutcomes = Array[ExtResource("7_waicd")]([SubResource("Resource_ggole"), SubResource("Resource_tjrig")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("5_00o4p")
+markedup_text = "Favor the berries."
+outcome = SubResource("Resource_uqh56")
+markedup_result_text = "The silkworms are put on a strict diet and indoctrinated into an ascetic lifestyle.
+
+When the berries ripen, the settlers will fill their pantries with mulberry wine and stuff themselves with millet dumplings topped with fresh berries."
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("3_f55fb")
+markedup_text = "The mulberry harvest is shared between the humans, who collect the berries, and the silkworms, who feast on the leaves.
+
+The silkworm carers want to pluck most of the leaves for their worms, but leaving the bushes bare risks stunting their growth and leading to a poor berry harvest.
+
+The mulberries are one of the only sweet treats that the scrubland provides, and the settlers are eagerly awaiting their arrival."
+background_image = SubResource("Resource_df5af")
+background_credit = ExtResource("4_8e1fd")
+choices = Array[ExtResource("5_00o4p")]([SubResource("Resource_ptcwf"), SubResource("Resource_f2op8"), SubResource("Resource_tuogj")])
+exit_choice = SubResource("Resource_rx1a8")
+
+[resource]
+script = ExtResource("2_8e1fd")
+default_spot_upgrade = ExtResource("1_y6ckw")
+event_id = "mulberries"
+event_name = "Multipurpose Mulberries"
+steps = Array[ExtResource("3_f55fb")]([SubResource("Resource_dpp3j")])
+categories = Array[int]([3])

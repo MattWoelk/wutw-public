@@ -1,0 +1,136 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://cv6x131ncwklk"]
+
+[ext_resource type="Resource" uid="uid://5ek42ppltea0" path="res://stage/spots/plains/upgrade_plains_2_storyteller_camp.tres" id="1_t7xae"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_oiy0n"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_ey7pm"]
+[ext_resource type="Resource" uid="uid://ctbisj3h6fih0" path="res://art/pieces/piece_gekkou_chapter44.tres" id="4_oiy0n"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_13dwf"]
+[ext_resource type="Resource" uid="uid://cbdr73elktxqr" path="res://relics/common/moistened_sleeve/relic_moistened_sleeve.tres" id="6_72kj7"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_ey7pm"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="7_dxu2c"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="8_tqptt"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_liycc"]
+[ext_resource type="Resource" uid="uid://bct34gwg33xrg" path="res://cards/tier2/card_koto.tres" id="10_ntx2e"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="11_lxscs"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="12_0blks"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="13_dcgv4"]
+[ext_resource type="Resource" uid="uid://dykivuntvij36" path="res://cards/tier2/card_record.tres" id="14_q0aqn"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="15_vuds3"]
+[ext_resource type="Resource" uid="uid://s6lmsv5xshro" path="res://cards/tier6/card_tears.tres" id="16_lw3jb"]
+
+[sub_resource type="Resource" id="Resource_oiy0n"]
+script = ExtResource("6_ey7pm")
+_texture_path = "res://events/generic/moistened_sleeves/moistened_sleeves.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_jcqxn"]
+script = ExtResource("7_dxu2c")
+relic = ExtResource("6_72kj7")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_df5af"]
+script = ExtResource("9_liycc")
+aspect_type = ExtResource("8_tqptt")
+min_count = 4
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_ptcwf"]
+script = ExtResource("5_13dwf")
+markedup_text = "Convince him that perfumed robes are out of fashion."
+requirement = SubResource("Resource_df5af")
+outcome = SubResource("Resource_jcqxn")
+markedup_result_text = "A few settlers quietly suggest that the floral cloud around him is actually [i]very last era[/i].
+
+This strikes him like a lightning bolt of revelation.
+
+The next time he arrives in stark undyed cloth, proclaiming a new era of \"pure scentlessness\" and \"emotionally astringent aestheticism\".
+
+He still cries into his sleeves, but now they're hempen."
+
+[sub_resource type="Resource" id="Resource_i5ayw"]
+script = ExtResource("11_lxscs")
+card_type = ExtResource("10_ntx2e")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_egt2j"]
+script = ExtResource("13_dcgv4")
+bonus_type = ExtResource("12_0blks")
+min_count = 25
+max_count = -1
+extra_per_season = 15
+
+[sub_resource type="Resource" id="Resource_f2op8"]
+script = ExtResource("5_13dwf")
+markedup_text = "Mention that his latest \"lost love\" is alive nearby."
+requirement = SubResource("Resource_egt2j")
+outcome = SubResource("Resource_i5ayw")
+markedup_result_text = "As he sobs while reciting \"Cicada Shells and the Echo of Her Name\", someone offhandedly remarks that the woman he's invoking - Lady Yukako, this week - is reportedly thriving in a nearby settlement.
+
+His eyes widen, his sleeve halfway to his face. \"Then... perhaps I must... make amends!\" he cries.
+
+He dramatically dons his travel cloak, weeps into his sleeve one final time, and sets off. In the direction away from the aforementioned settlement.
+
+He doesn't even stop to pick up his koto."
+
+[sub_resource type="Resource" id="Resource_d0keq"]
+script = ExtResource("11_lxscs")
+card_type = ExtResource("14_q0aqn")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("9_liycc")
+aspect_type = ExtResource("15_vuds3")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("5_13dwf")
+markedup_text = "Convince him that the poems must be recorded."
+requirement = SubResource("Resource_4xuhh")
+outcome = SubResource("Resource_d0keq")
+markedup_result_text = "A group of settlers, stone-faced, praise his genius and suggest the world is not ready to lose such brilliance.
+
+\"The verses... must be preserved!\" He gasps, and retreats to his tent for days.
+
+A week later, a bound manuscript appears at the campfire. The title reads: \"Moonlight on a Frozen Sleeve: 213 Verses of Divine Despair.\"
+
+No one musters the patience to read past the introduction."
+
+[sub_resource type="Resource" id="Resource_mxy6s"]
+script = ExtResource("11_lxscs")
+card_type = ExtResource("16_lw3jb")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("5_13dwf")
+markedup_text = "Grin and bear it."
+outcome = SubResource("Resource_mxy6s")
+markedup_result_text = "The performances continue.
+
+One morning he arrives wearing three layers of sleeves (\"to contain the moisture\").
+
+Another day, he presents a new form of poetry based on sobbing rhythm alone.
+
+Many stop coming to the campfire. Newcomers ask whether it's normal for poems to last over forty stanzas.
+
+The koto goes mysteriously missing."
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("3_ey7pm")
+markedup_text = "Every morning at the Storytellers Camp, the same young man takes the stage.
+
+The scion of a long, noble family from the Old World, he performs traditional koto pieces that sound suspiciously similar, recites breathless poetry about women whose names change nightly, and weeps loudly into the sleeves of his over-perfumed robes.
+
+At first, the settlers were sympathetic. Then the headaches started."
+background_image = SubResource("Resource_oiy0n")
+background_credit = ExtResource("4_oiy0n")
+choices = Array[ExtResource("5_13dwf")]([SubResource("Resource_ptcwf"), SubResource("Resource_f2op8"), SubResource("Resource_tuogj")])
+exit_choice = SubResource("Resource_rx1a8")
+
+[resource]
+script = ExtResource("2_oiy0n")
+default_spot_upgrade = ExtResource("1_t7xae")
+event_id = "moistened_sleeves"
+event_name = "The Tale of Moistened Sleeves"
+steps = Array[ExtResource("3_ey7pm")]([SubResource("Resource_dpp3j")])
+categories = Array[int]([3])

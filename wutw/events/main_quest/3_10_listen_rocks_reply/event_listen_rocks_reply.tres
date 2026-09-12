@@ -1,0 +1,158 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://17d2gpfpk25o"]
+
+[ext_resource type="Resource" uid="uid://cmfm1maginido" path="res://stage/spots/canyon/upgrade_canyon_3_rocks_reply.tres" id="1_fxgeb"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="2_p7kpf"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_qu3sj"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_r7vji"]
+[ext_resource type="Resource" uid="uid://bgtrnrg3bjc33" path="res://art/pieces/piece_kiyochika_oyashirazu_beach.tres" id="6_6g77o"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_p7kpf"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="7_ysv4j"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="8_qi76m"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="9_yumyf"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="10_ulapy"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="11_0tsln"]
+[ext_resource type="Resource" uid="uid://dmbx4ruvg6ls1" path="res://cards/tier5/card_diligence.tres" id="12_25xfg"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="13_b0l0d"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="14_iat15"]
+[ext_resource type="Resource" uid="uid://cfq3foko8paqp" path="res://cards/tier5/card_console.tres" id="15_4jqrt"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="16_0su03"]
+[ext_resource type="Resource" uid="uid://djvg8q462k2sw" path="res://cards/tier5/card_wisdom.tres" id="17_7g0ak"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="18_d6otv"]
+[ext_resource type="Resource" uid="uid://bggnpbtpw44ow" path="res://cards/tier5/card_holy.tres" id="19_du430"]
+
+[sub_resource type="Resource" id="Resource_3dyre"]
+script = ExtResource("2_p7kpf")
+min_progress = 300
+max_progress = -1
+
+[sub_resource type="Resource" id="Resource_fxgeb"]
+script = ExtResource("7_p7kpf")
+_texture_path = "res://events/main_quest/3_10_listen_rocks_reply/event_listen_rocks_reply.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_r0oeh"]
+script = ExtResource("11_0tsln")
+bonus_type = ExtResource("10_ulapy")
+amount = 50
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_jiini"]
+script = ExtResource("13_b0l0d")
+card_type = ExtResource("12_25xfg")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_mm8jc"]
+script = ExtResource("8_qi76m")
+suboutcomes = Array[ExtResource("9_yumyf")]([SubResource("Resource_r0oeh"), SubResource("Resource_jiini")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_ijqs6"]
+script = ExtResource("7_ysv4j")
+markedup_text = "Carve \"How do we rebuild the world?\""
+outcome = SubResource("Resource_mm8jc")
+markedup_result_text = "The question is carved at dusk. The expedition sets up camp and spends the night beneath walls.
+
+At dawn, new cracks have appeared around the carving.
+
+It takes the scholars a while to interpret them, but finally they realize that the glyph they are looking for is an ancient form, unused since long before the Shattering."
+
+[sub_resource type="Resource" id="Resource_ymvbb"]
+script = ExtResource("11_0tsln")
+bonus_type = ExtResource("14_iat15")
+amount = 50
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_sdqv8"]
+script = ExtResource("13_b0l0d")
+card_type = ExtResource("15_4jqrt")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_f2bue"]
+script = ExtResource("8_qi76m")
+suboutcomes = Array[ExtResource("9_yumyf")]([SubResource("Resource_ymvbb"), SubResource("Resource_sdqv8")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_pf411"]
+script = ExtResource("7_ysv4j")
+markedup_text = "Carve \"How do we keep our people safe?\""
+outcome = SubResource("Resource_f2bue")
+markedup_result_text = "The question is carved at dusk. The expedition sets up camp and spends the night beneath walls.
+
+At dawn, new cracks have appeared around the carving.
+
+It takes the scholars a while to interpret them, but finally they realize that the glyph they are looking for is an ancient form, unused since long before the Shattering."
+
+[sub_resource type="Resource" id="Resource_ixnmd"]
+script = ExtResource("11_0tsln")
+bonus_type = ExtResource("16_0su03")
+amount = 50
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_sst4b"]
+script = ExtResource("13_b0l0d")
+card_type = ExtResource("17_7g0ak")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_4a55s"]
+script = ExtResource("8_qi76m")
+suboutcomes = Array[ExtResource("9_yumyf")]([SubResource("Resource_ixnmd"), SubResource("Resource_sst4b")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_eyvo4"]
+script = ExtResource("7_ysv4j")
+markedup_text = "Carve \"How do we gain wisdom?\""
+outcome = SubResource("Resource_4a55s")
+markedup_result_text = "The question is carved at dusk. The expedition sets up camp and spends the night beneath walls.
+
+At dawn, new cracks have appeared around the carving.
+
+It takes the scholars a while to interpret them, but finally they realize that the glyph they are looking for is an ancient form, unused since long before the Shattering."
+
+[sub_resource type="Resource" id="Resource_hxi3y"]
+script = ExtResource("11_0tsln")
+bonus_type = ExtResource("18_d6otv")
+amount = 50
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_4fpj6"]
+script = ExtResource("13_b0l0d")
+card_type = ExtResource("19_du430")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_2rpah"]
+script = ExtResource("8_qi76m")
+suboutcomes = Array[ExtResource("9_yumyf")]([SubResource("Resource_hxi3y"), SubResource("Resource_4fpj6")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_658i2"]
+script = ExtResource("7_ysv4j")
+markedup_text = "Carve \"How do we regain your favor?\""
+outcome = SubResource("Resource_2rpah")
+markedup_result_text = "The question is carved at dusk. The expedition sets up camp and spends the night beneath the walls.
+
+At dawn, new cracks have appeared around the carving.
+
+It takes the scholars a while to interpret them, but finally they realize that the glyph they are looking for is an ancient form, unused since long before the Shattering."
+
+[sub_resource type="Resource" id="Resource_o44fc"]
+script = ExtResource("4_r7vji")
+markedup_text = "Scholars gather by the canyon walls to study the cracks in the rock face. Many of the cracks bear an uncanny resemblance to common glyphs.
+
+\"Look! This one says [b]temple[/b]! Or maybe [b]wait[/b]?\" a young scholar says, pointing at a jumble of cracks. \"This must be one of the signs the Scribe told us to look for! A place where the spirit of the Enlightened One speaks to us through cracks.\"
+
+The other scholars gather around her, eager to take a look. The decision is soon reached: we must carve a question and wait for the Enlightened One's answer."
+background_image = SubResource("Resource_fxgeb")
+background_credit = ExtResource("6_6g77o")
+choices = Array[ExtResource("7_ysv4j")]([SubResource("Resource_ijqs6"), SubResource("Resource_pf411"), SubResource("Resource_eyvo4")])
+exit_choice = SubResource("Resource_658i2")
+
+[resource]
+script = ExtResource("3_qu3sj")
+default_probability_weight = 1
+default_spot_upgrade = ExtResource("1_fxgeb")
+repeatability = 0
+event_id = "listen_rocks_reply"
+event_name = "The Canyon Spirit"
+requirement = SubResource("Resource_3dyre")
+steps = Array[ExtResource("4_r7vji")]([SubResource("Resource_o44fc")])
+categories = Array[int]([1])

@@ -1,0 +1,147 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://drcja7l50fxb7"]
+
+[ext_resource type="Resource" uid="uid://by41dcm0qpl02" path="res://stage/spots/building_small/upgrade_building_small_1_teahouse.tres" id="1_obo0s"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_iqd5m"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_6q8p0"]
+[ext_resource type="Resource" uid="uid://cb2dwnphlli0r" path="res://art/pieces/piece_hiroshige_akasaka_inn.tres" id="5_6q8p0"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_r42yy"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_cddst"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="6_xyrey"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_oko6p"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="8_dkcth"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="9_xly68"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="10_uxqn8"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="11_34anh"]
+[ext_resource type="Resource" uid="uid://bn00wawhqfdtg" path="res://cards/tier3/card_tea.tres" id="12_ui1ji"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="13_v8cab"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="14_iqd5m"]
+
+[sub_resource type="Resource" id="Resource_cddst"]
+script = ExtResource("6_cddst")
+_texture_path = "res://events/generic/tea_ceremony/tea_ceremony_1.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_xxhwh"]
+script = ExtResource("9_xly68")
+bonus_type = ExtResource("8_dkcth")
+amount = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_ptcwf"]
+script = ExtResource("10_uxqn8")
+var_id = "food"
+var_type = 1
+value = "true"
+description = "Establish a custom"
+outcome_description = "A custom has been established."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_egt2j"]
+script = ExtResource("6_xyrey")
+suboutcomes = Array[ExtResource("7_oko6p")]([SubResource("Resource_xxhwh"), SubResource("Resource_ptcwf")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_8mfyw"]
+script = ExtResource("5_r42yy")
+markedup_text = "Make it a proper feast."
+outcome = SubResource("Resource_egt2j")
+markedup_result_text = "Snacks and sweets are preceded by soup, rice, and grilled skewers.
+
+Tea bowls, once emptied, are refilled with beer and rice wine.
+
+The ceremony turns into a lively gathering, with laughter and seconds for all."
+
+[sub_resource type="Resource" id="Resource_kio1v"]
+script = ExtResource("9_xly68")
+bonus_type = ExtResource("11_34anh")
+amount = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_f2op8"]
+script = ExtResource("10_uxqn8")
+var_id = "beauty"
+var_type = 1
+value = "true"
+description = "Establish a custom"
+outcome_description = "A custom has been established."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("6_xyrey")
+suboutcomes = Array[ExtResource("7_oko6p")]([SubResource("Resource_kio1v"), SubResource("Resource_f2op8")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_40rqf"]
+script = ExtResource("5_r42yy")
+markedup_text = "Arrange it beautifully."
+outcome = SubResource("Resource_4xuhh")
+markedup_result_text = "Mats are re-aligned perfectly.
+
+Petals are gathered and arranged on the low table.
+
+The cups are placed carefully on folded cloth.
+
+Few dare to speak, afraid of interrupting the host's immaculate little ritual."
+
+[sub_resource type="Resource" id="Resource_df5af"]
+script = ExtResource("13_v8cab")
+card_type = ExtResource("12_ui1ji")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("10_uxqn8")
+var_id = "card"
+var_type = 1
+value = "true"
+description = "Establish a custom"
+outcome_description = "A custom has been established."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("6_xyrey")
+suboutcomes = Array[ExtResource("7_oko6p")]([SubResource("Resource_df5af"), SubResource("Resource_tuogj")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_2stvf"]
+script = ExtResource("5_r42yy")
+markedup_text = "Focus on simplicity."
+outcome = SubResource("Resource_rx1a8")
+markedup_result_text = "The group sits quietly, comfortable and relaxed.
+
+No ritual takes place, and no meal is served.
+
+Discussions of settling plans give way to shared memories and quoted poems."
+
+[sub_resource type="Resource" id="Resource_6q8p0"]
+script = ExtResource("9_xly68")
+bonus_type = ExtResource("14_iqd5m")
+amount = -5
+extra_per_season = -5
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("5_r42yy")
+markedup_text = "We don't have time for this."
+outcome = SubResource("Resource_6q8p0")
+markedup_result_text = "The fire is doused, and the vessels are set back on the shelves.
+
+The expedition moves on without stopping at the tea house."
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("3_6q8p0")
+markedup_text = "The new tea house is complete, its doors open to the breeze.
+
+An old couple is serving tea to those moving on with the expedition. They usually serve simple green tea with a few snacks and sweets, but maybe this occasion calls for something more elaborate?"
+background_image = SubResource("Resource_cddst")
+background_credit = ExtResource("5_6q8p0")
+choices = Array[ExtResource("5_r42yy")]([SubResource("Resource_8mfyw"), SubResource("Resource_40rqf"), SubResource("Resource_2stvf")])
+exit_choice = SubResource("Resource_dpp3j")
+
+[resource]
+script = ExtResource("2_iqd5m")
+default_probability_weight = 3
+default_spot_upgrade = ExtResource("1_obo0s")
+event_id = "tea_ceremony_1"
+event_name = "The First Tea"
+steps = Array[ExtResource("3_6q8p0")]([SubResource("Resource_06ahh")])
+categories = Array[int]([4])

@@ -1,0 +1,161 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://518jlka32a8f"]
+
+[ext_resource type="Resource" uid="uid://cem57n26te6mg" path="res://stage/spots/forest/upgrade_forest_2_fruit_grove.tres" id="1_lr2c5"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_ettik"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_g2tml"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_3xl68"]
+[ext_resource type="Resource" uid="uid://ct4semboranck" path="res://art/pieces/piece_utamaro_persimmons.tres" id="5_ettik"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_g2tml"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="6_vswv3"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_xs7gk"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="8_qdkla"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="9_5vfkm"]
+[ext_resource type="Resource" uid="uid://br87onrn3vqme" path="res://cards/tier0/card_fruit.tres" id="10_nrwt8"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="11_kg2il"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="12_baqh8"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="13_5nsxj"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="14_4chv3"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="15_opuwn"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="16_87k05"]
+[ext_resource type="Resource" uid="uid://ckucj0goj7dbd" path="res://relics/common/golden_persimmon/relic_golden_persimmon.tres" id="17_033og"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="18_p65iw"]
+
+[sub_resource type="Resource" id="Resource_ettik"]
+script = ExtResource("6_g2tml")
+_texture_path = "res://events/generic/persimmons/persimmons.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_xxhwh"]
+script = ExtResource("9_5vfkm")
+bonus_type = ExtResource("8_qdkla")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_kio1v"]
+script = ExtResource("11_kg2il")
+card_type = ExtResource("10_nrwt8")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_df5af"]
+script = ExtResource("6_vswv3")
+suboutcomes = Array[ExtResource("7_xs7gk")]([SubResource("Resource_xxhwh"), SubResource("Resource_kio1v")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("13_5nsxj")
+aspect_type = ExtResource("12_baqh8")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("5_3xl68")
+markedup_text = "Burn the fruit as a ceremonial offering."
+requirement = SubResource("Resource_rx1a8")
+outcome = SubResource("Resource_df5af")
+markedup_result_text = "The fallen fruit is gathered into neat mounds.
+
+Fire is lit, and prayers are murmured, some old, some invented on the spot.
+
+The ashes smell faintly of sugar.
+
+The elders shake their heads, saying at least it should have fed someone.
+
+The younger settlers mutter that spirits belong in the Old World."
+
+[sub_resource type="Resource" id="Resource_ptcwf"]
+script = ExtResource("9_5vfkm")
+bonus_type = ExtResource("8_qdkla")
+amount = 20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("14_4chv3")
+bonus_type = ExtResource("8_qdkla")
+min_count = 30
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_ciwob"]
+script = ExtResource("5_3xl68")
+markedup_text = "Leave the fruit for the animals."
+requirement = SubResource("Resource_06ahh")
+outcome = SubResource("Resource_ptcwf")
+markedup_result_text = "The fruit is left where it lies.
+
+Over the weeks, deer wander close. Birds come at dawn. A few wild boars dig in the piles.
+
+The locals avoid the grove until all the fruit is eaten."
+
+[sub_resource type="Resource" id="Resource_egt2j"]
+script = ExtResource("9_5vfkm")
+bonus_type = ExtResource("15_opuwn")
+amount = 20
+extra_per_season = 20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_nthfn"]
+script = ExtResource("13_5nsxj")
+aspect_type = ExtResource("16_87k05")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_2myy3"]
+script = ExtResource("5_3xl68")
+markedup_text = "Sort and mulch what can't be saved."
+requirement = SubResource("Resource_nthfn")
+outcome = SubResource("Resource_egt2j")
+markedup_result_text = "Settlers carefully gather the firm fruit and lay the rest in compost pits.
+
+The scent changes, inviting grumbles from the townspeople.
+
+When the soil is turned weeks later, it's already richer."
+
+[sub_resource type="Resource" id="Resource_f2op8"]
+script = ExtResource("9_5vfkm")
+bonus_type = ExtResource("15_opuwn")
+amount = 20
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("18_p65iw")
+relic = ExtResource("17_033og")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("6_vswv3")
+suboutcomes = Array[ExtResource("7_xs7gk")]([SubResource("Resource_f2op8"), SubResource("Resource_4xuhh")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_w2hpu"]
+script = ExtResource("5_3xl68")
+markedup_text = "Gather everything and store it."
+outcome = SubResource("Resource_tuogj")
+markedup_result_text = "The settlers work hard, filling baskets and jars and sealed clay urns.
+
+Some of the fruit is still good, but not much.
+
+By the end of the week, the smell of rot seeps into the granary, inviting flies. It is soon unofficially renamed \"the sticky room\"."
+
+[sub_resource type="Resource" id="Resource_3sdrw"]
+script = ExtResource("3_g2tml")
+markedup_text = "The harvest was late. By the time anyone noticed, the grove's bounty had begun to fall.
+
+Bright persimmons now lie bruised and soft beneath the trees, their skins splitting in the sun.
+
+There's enough food in the stores, but the elders remember lean winters, and say letting this much spoil is a betrayal.
+
+Youngsters point to the scent of ferment and the slowly gathering wasps, and suggest that the fruit has already chosen its fate."
+background_image = SubResource("Resource_ettik")
+background_credit = ExtResource("5_ettik")
+choices = Array[ExtResource("5_3xl68")]([SubResource("Resource_dpp3j"), SubResource("Resource_ciwob"), SubResource("Resource_2myy3")])
+exit_choice = SubResource("Resource_w2hpu")
+
+[resource]
+script = ExtResource("2_ettik")
+default_spot_upgrade = ExtResource("1_lr2c5")
+event_id = "persimmons"
+event_name = "The Fallen Fruit"
+steps = Array[ExtResource("3_g2tml")]([SubResource("Resource_3sdrw")])
+categories = Array[int]([3])

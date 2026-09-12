@@ -1,0 +1,164 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://ben5jqjjyv3l2"]
+
+[ext_resource type="Resource" uid="uid://75bddpshmqai" path="res://stage/spots/square/upgrade_square_2_bathhouse.tres" id="1_ogb5w"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="2_01j4p"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_6rkr7"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_lto1w"]
+[ext_resource type="Script" uid="uid://btrwtj4v8ufn" path="res://events/system/requirements/event_requirement_has_skill.gd" id="3_7tced"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_lto1w"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="4_oa3je"]
+[ext_resource type="Resource" uid="uid://dhuy7xvlr3irp" path="res://skills/cards/skill_cards_shop_remove.tres" id="4_u4gra"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_sbpf2"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="6_sgr3m"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_etl8c"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="8_p54c6"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="9_8faji"]
+[ext_resource type="Script" uid="uid://foju0o4i75rv" path="res://events/system/outcomes/choose_remove_card/event_outcome_choose_remove_card.gd" id="10_06e68"]
+[ext_resource type="Resource" uid="uid://dvius03klds4r" path="res://art/pieces/piece_kiyonaga_bathing_beauty.tres" id="10_u4gra"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="11_dp16a"]
+[ext_resource type="Script" uid="uid://bbhwr4afafq2e" path="res://events/system/outcomes/unlock_shop/event_outcome_unlock_shop.gd" id="11_k4xb4"]
+[ext_resource type="Resource" uid="uid://dytmgyvr0p7j1" path="res://shops/remove_cards/shop_remove_cards.tres" id="12_aiey4"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="13_b7ecx"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="14_hu5wq"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="14_lto1w"]
+[ext_resource type="Resource" uid="uid://binu8trinnt0j" path="res://cards/tier2/card_hotwater.tres" id="15_b5d6j"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="16_6yi1f"]
+[ext_resource type="Resource" uid="uid://cs5ymmx1crlbr" path="res://cards/tier3/card_bathe.tres" id="17_34ssv"]
+
+[sub_resource type="Resource" id="Resource_dp16a"]
+script = ExtResource("3_7tced")
+skill = ExtResource("4_u4gra")
+metadata/_custom_type_script = "uid://btrwtj4v8ufn"
+
+[sub_resource type="Resource" id="Resource_a1pu3"]
+script = ExtResource("2_lto1w")
+var_id = "landmark_built"
+var_type = 1
+value = "false"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_7tced"]
+script = ExtResource("4_oa3je")
+all_requirements = Array[ExtResource("2_01j4p")]([SubResource("Resource_dp16a"), SubResource("Resource_a1pu3")])
+metadata/_custom_type_script = "uid://15prcev7a3ta"
+
+[sub_resource type="Resource" id="Resource_u4gra"]
+script = ExtResource("11_dp16a")
+_texture_path = "res://events/landmark/communal_baths/communal_baths.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_f2op8"]
+script = ExtResource("10_06e68")
+metadata/_custom_type_script = "uid://foju0o4i75rv"
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("11_k4xb4")
+shop_type = ExtResource("12_aiey4")
+metadata/_custom_type_script = "uid://bbhwr4afafq2e"
+
+[sub_resource type="Resource" id="Resource_rc2gp"]
+script = ExtResource("14_lto1w")
+var_id = "landmark_built"
+var_type = 1
+value = "true"
+description = ""
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("6_sgr3m")
+suboutcomes = Array[ExtResource("7_etl8c")]([SubResource("Resource_f2op8"), SubResource("Resource_4xuhh"), SubResource("Resource_rc2gp")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_f8c4y"]
+script = ExtResource("13_b7ecx")
+bonus_type = ExtResource("8_p54c6")
+min_count = 40
+max_count = -1
+extra_per_season = 40
+
+[sub_resource type="Resource" id="Resource_odeuh"]
+script = ExtResource("5_sbpf2")
+markedup_text = "Build a proper bathhouse."
+requirement = SubResource("Resource_f8c4y")
+outcome = SubResource("Resource_tuogj")
+markedup_result_text = "The new bathhouse takes time to build, but it's finally finished. Pipes gurgle. Buckets clatter. The steam stays floating, confined by the ceiling.
+
+When someone leaves the water, they seem just a little lighter."
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("9_8faji")
+bonus_type = ExtResource("14_hu5wq")
+amount = -10
+extra_per_season = -20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("16_6yi1f")
+card_type = ExtResource("15_b5d6j")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("6_sgr3m")
+suboutcomes = Array[ExtResource("7_etl8c")]([SubResource("Resource_rx1a8"), SubResource("Resource_dpp3j")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_wq75o"]
+script = ExtResource("5_sbpf2")
+markedup_text = "Take turns soaking in the water."
+outcome = SubResource("Resource_06ahh")
+markedup_result_text = "The settlers take turns, most opting for a brisk, functional scrub. The elders, however, tend to soak until their skin prunes.
+
+By the next day, everyone is rested, but many grumble about the wait."
+
+[sub_resource type="Resource" id="Resource_ciwob"]
+script = ExtResource("16_6yi1f")
+card_type = ExtResource("17_34ssv")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_boqcy"]
+script = ExtResource("13_b7ecx")
+bonus_type = ExtResource("14_hu5wq")
+min_count = 25
+max_count = -1
+extra_per_season = 50
+
+[sub_resource type="Resource" id="Resource_5f07b"]
+script = ExtResource("5_sbpf2")
+markedup_text = "Let some run the baths while others bathe."
+requirement = SubResource("Resource_boqcy")
+outcome = SubResource("Resource_ciwob")
+markedup_result_text = "Buckets are passed in silence. Half the visitors fill them, heat them, and test the temperature with care. The other half lowers themselves into the pools with content sighs.
+
+Those who serve do not ask for thanks. Those who rest do not offer apologies. The roles shift naturally over the course of the day."
+
+[sub_resource type="Resource" id="Resource_1weil"]
+script = ExtResource("5_sbpf2")
+markedup_text = "Let the water rest."
+markedup_result_text = "The expedition leaves the baths behind.
+
+There is talk of trying again another day, but the plan is as substantial as the rising steam."
+
+[sub_resource type="Resource" id="Resource_ynifa"]
+script = ExtResource("3_lto1w")
+markedup_text = "Steam curls over the water's surface. Robes hang beside the changing screens. Buckets rest on worn floors.
+
+The baths are warm, but there's only space for one or two people at a time.
+
+\"The old baths weren't just for washing,\" someone says. \"They were for letting go of one's burdens. For clarifying one's thoughts.\"
+
+If we invest some effort, this humble bath could be turned into a large communal bathhouse."
+background_image = SubResource("Resource_u4gra")
+background_credit = ExtResource("10_u4gra")
+choices = Array[ExtResource("5_sbpf2")]([SubResource("Resource_odeuh"), SubResource("Resource_wq75o"), SubResource("Resource_5f07b")])
+exit_choice = SubResource("Resource_1weil")
+
+[resource]
+script = ExtResource("2_6rkr7")
+default_probability_weight = 0
+default_spot_upgrade = ExtResource("1_ogb5w")
+repeatability = 2
+event_id = "communal_baths"
+event_name = "Communal Baths"
+requirement = SubResource("Resource_7tced")
+steps = Array[ExtResource("3_lto1w")]([SubResource("Resource_ynifa")])
+categories = Array[int]([2])

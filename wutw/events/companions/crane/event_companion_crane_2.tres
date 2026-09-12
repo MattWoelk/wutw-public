@@ -1,0 +1,153 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://bik82or3ot4lx"]
+
+[ext_resource type="Resource" uid="uid://bphp08b0lalpe" path="res://stage/spots/forest/upgrade_forest_2_wildlife_sanctuary.tres" id="1_yhnyx"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_sx1ib"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_w0v2i"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_f2ymd"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="5_d62jl"]
+[ext_resource type="Resource" uid="uid://d21k0y1xwdl54" path="res://art/pieces/piece_koson_nest.tres" id="5_sx1ib"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_g2ppe"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="7_4q1lo"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="8_gcwv0"]
+[ext_resource type="Resource" uid="uid://fswtq7l1h7gf" path="res://cards/tier2/card_exchange.tres" id="9_8yoyh"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="10_ptbnp"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="11_wrleg"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="12_dkg6w"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="13_bved5"]
+[ext_resource type="Resource" uid="uid://ce0wtqn3cdg7q" path="res://cards/tier2/card_nurture.tres" id="14_53dpf"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="15_kiv3m"]
+[ext_resource type="Resource" uid="uid://c1pvywklu45ke" path="res://cards/tier6/card_pass_away.tres" id="16_ii5oy"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="17_2eemd"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="18_gmpld"]
+
+[sub_resource type="Resource" id="Resource_25b8w"]
+script = ExtResource("2_sx1ib")
+scope = 1
+event_id = "global"
+var_id = "companion_crane"
+value = "1"
+
+[sub_resource type="Resource" id="Resource_16gl5"]
+script = ExtResource("5_d62jl")
+_texture_path = "res://events/companions/crane/companion_crane_2.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_1r0rg"]
+script = ExtResource("10_ptbnp")
+card_type = ExtResource("9_8yoyh")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_8buva"]
+script = ExtResource("11_wrleg")
+scope = 1
+event_id = "global"
+var_id = "companion_crane"
+value = "2"
+description = "Save a crane chick"
+outcome_description = "A crane chick is saved."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_87aiy"]
+script = ExtResource("7_4q1lo")
+suboutcomes = Array[ExtResource("8_gcwv0")]([SubResource("Resource_1r0rg"), SubResource("Resource_8buva")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_ripdt"]
+script = ExtResource("13_bved5")
+aspect_type = ExtResource("12_dkg6w")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_cdx74"]
+script = ExtResource("6_g2ppe")
+markedup_text = "Swap the two chicks regularly."
+requirement = SubResource("Resource_ripdt")
+outcome = SubResource("Resource_87aiy")
+markedup_result_text = "The forester sets up a warm, padded basket at the base of the tree. Whenever the parent leaves to forage, she climbs up and swaps the bullied chick for the rested one.
+
+It is exhausting, precarious work, but she prevents the sibling fights, and manages to trick the parent into feeding both chicks equally until they are old enough to fend for themselves."
+
+[sub_resource type="Resource" id="Resource_6uk7q"]
+script = ExtResource("10_ptbnp")
+card_type = ExtResource("14_53dpf")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_js211"]
+script = ExtResource("7_4q1lo")
+suboutcomes = Array[ExtResource("8_gcwv0")]([SubResource("Resource_6uk7q"), SubResource("Resource_8buva")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_vbdcq"]
+script = ExtResource("13_bved5")
+aspect_type = ExtResource("15_kiv3m")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_ldoka"]
+script = ExtResource("6_g2ppe")
+markedup_text = "Take the weaker chick and raise it."
+requirement = SubResource("Resource_vbdcq")
+outcome = SubResource("Resource_js211")
+markedup_result_text = "Accepting that the two chicks will not cease fighting on their own, the forester carefully removes the weaker chick.
+
+She keeps it in a warm, padded basket and nurtures it carefully.
+
+The chick clearly thinks the forester is a strange, large bird, but it imprints on her completely and survives to fly off within a few months."
+
+[sub_resource type="Resource" id="Resource_1pgeq"]
+script = ExtResource("10_ptbnp")
+card_type = ExtResource("16_ii5oy")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_2x6s0"]
+script = ExtResource("18_gmpld")
+bonus_type = ExtResource("17_2eemd")
+min_count = 30
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_cspul"]
+script = ExtResource("6_g2ppe")
+markedup_text = "Regularly leave rice in the nest."
+requirement = SubResource("Resource_2x6s0")
+outcome = SubResource("Resource_1pgeq")
+markedup_result_text = "The forester pours portions of rice into the nest every day, hoping the extra food will keep both chicks full.
+
+Unfortunately, this diet proves inadequate for the hatchlings, and neither survives the season."
+
+[sub_resource type="Resource" id="Resource_nodvx"]
+script = ExtResource("10_ptbnp")
+card_type = ExtResource("16_ii5oy")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_k30gb"]
+script = ExtResource("6_g2ppe")
+markedup_text = "Let nature take its course."
+outcome = SubResource("Resource_nodvx")
+markedup_result_text = "The forester sighs and steps back, deciding it is not her place to interfere with the wild.
+
+Nature is highly efficient, but not always kind.
+
+The stronger chick thrives under the undivided attention of its parent, while the weaker one soon perishes."
+
+[sub_resource type="Resource" id="Resource_xxghv"]
+script = ExtResource("4_f2ymd")
+markedup_text = "Deep in the wildlife sanctuary, a forester has been observing a crane nest in an old pine.
+
+Two chicks have hatched, but they fight relentlessly. The forester notes that the parent crane seems to favor the stronger chick, offering it most of the food.
+
+It is a harsh reality of nature, but the forester is determined to see both of the fuzzy little creatures survive the season."
+background_image = SubResource("Resource_16gl5")
+background_credit = ExtResource("5_sx1ib")
+choices = Array[ExtResource("6_g2ppe")]([SubResource("Resource_cdx74"), SubResource("Resource_ldoka"), SubResource("Resource_cspul")])
+exit_choice = SubResource("Resource_k30gb")
+
+[resource]
+script = ExtResource("3_w0v2i")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_yhnyx")
+event_id = "companion_crane_2"
+event_name = "Sibling Rivalry"
+requirement = SubResource("Resource_25b8w")
+steps = Array[ExtResource("4_f2ymd")]([SubResource("Resource_xxghv")])
+categories = Array[int]([0, 4])

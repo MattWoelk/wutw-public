@@ -1,0 +1,139 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://bj6lkas4ufm01"]
+
+[ext_resource type="Resource" uid="uid://515h2qap8n77" path="res://stage/spots/plains/upgrade_plains_2_herb_garden.tres" id="1_6mcad"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_13oxs"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_8r7oa"]
+[ext_resource type="Resource" uid="uid://buydj0mjcitg2" path="res://art/pieces/piece_hiroshige_3_butterbur.tres" id="5_i3w4q"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_qv0b1"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="6_i3w4q"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_pgqs3"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="7_pgqs3"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="8_rlj34"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_vnoie"]
+[ext_resource type="Resource" uid="uid://bmxfymucm2kv5" path="res://relics/uncommon/butterbur_extract/relic_butterbur_extract.tres" id="10_4v5v0"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="10_mpccf"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="11_525dc"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="11_qv0b1"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="12_2fa52"]
+[ext_resource type="Resource" uid="uid://bvyltidk0bvfm" path="res://cards/tier2/card_seed.tres" id="13_gatu2"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="14_6ryrk"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="14_i3w4q"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="15_eumbu"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="16_jigde"]
+
+[sub_resource type="Resource" id="Resource_qv0b1"]
+script = ExtResource("6_pgqs3")
+_texture_path = "res://events/generic/giant_butterbur/giant_butterbur.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_qrspt"]
+script = ExtResource("7_pgqs3")
+bonus_type = ExtResource("6_i3w4q")
+amount = 15
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_ginix"]
+script = ExtResource("9_vnoie")
+aspect_type = ExtResource("8_rlj34")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_npbag"]
+script = ExtResource("5_qv0b1")
+markedup_text = "Process it into medicine for the town."
+requirement = SubResource("Resource_ginix")
+outcome = SubResource("Resource_qrspt")
+markedup_result_text = "The herbalist assembles a crew and brings ladders to harvest the leaves. They are dried, ground, and mixed with honey to temper the bitterness.
+
+The taste is still challenging, but the sheer volume means that every cough, ache, and fever in the settlement will be treated for the next year."
+
+[sub_resource type="Resource" id="Resource_a0bf2"]
+script = ExtResource("11_525dc")
+relic = ExtResource("10_4v5v0")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_pgqs3"]
+script = ExtResource("14_i3w4q")
+var_id = "extract"
+var_type = 1
+value = "true"
+description = "The shard culture may be affected"
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_rlj34"]
+script = ExtResource("10_mpccf")
+suboutcomes = Array[ExtResource("11_qv0b1")]([SubResource("Resource_a0bf2"), SubResource("Resource_pgqs3")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_ci1kh"]
+script = ExtResource("9_vnoie")
+aspect_type = ExtResource("12_2fa52")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_jbdhy"]
+script = ExtResource("5_qv0b1")
+markedup_text = "Distill into a potent extract."
+requirement = SubResource("Resource_ci1kh")
+outcome = SubResource("Resource_rlj34")
+markedup_result_text = "The herbalist selects the most potent roots and the juiciest leaves. They are boiled down, strained, and boiled again until only a thick, dark resin remains.
+
+There's enough to last the settlement for a long while, so some of the resin is packed into small jars to send on with the expedition."
+
+[sub_resource type="Resource" id="Resource_h54f5"]
+script = ExtResource("14_6ryrk")
+card_type = ExtResource("13_gatu2")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_fugsy"]
+script = ExtResource("9_vnoie")
+aspect_type = ExtResource("15_eumbu")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_w76o3"]
+script = ExtResource("5_qv0b1")
+markedup_text = "Harvest the seeds."
+requirement = SubResource("Resource_fugsy")
+outcome = SubResource("Resource_h54f5")
+markedup_result_text = "The flowers are the size of a person's head, heavy with pollen.
+
+The settlers carefully collect the seeds, wondering if they will grow so huge in other soils, or if this was a singular quirk of this specific place.
+
+Either way, the potential is now stored in a pouch, waiting for a new home."
+
+[sub_resource type="Resource" id="Resource_41fiy"]
+script = ExtResource("16_jigde")
+delta = -5
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_svhlh"]
+script = ExtResource("5_qv0b1")
+markedup_text = "Cook a feast for the whole settlement."
+outcome = SubResource("Resource_41fiy")
+markedup_result_text = "The stems are chopped like timber and boiled in the largest cauldrons available.
+
+The expectations are high, but the results are... educational. A settler describes it as similar to chewing on warm rope, and the bitterness lingers in the mouth long after the meal is finished.
+
+\"Well,\" the cook sighs, dumping the leftovers. \"At least we know why the rodents didn't eat it.\""
+
+[sub_resource type="Resource" id="Resource_7ivte"]
+script = ExtResource("3_8r7oa")
+markedup_text = "The butterbur plants were meant to be a modest patch for cough medicine. Something in the soil disagreed with that plan, though.
+
+The stems have surged to the height of a house, and the leaves are now vast green parasols, casting the entire garden in deep, cool shade.
+
+The herbalist measures a stem and notes that the hollow core could fit a kettle. \"Is it a miracle of vitality,\" she wonders, \"or a very large mistake?\""
+background_image = SubResource("Resource_qv0b1")
+background_credit = ExtResource("5_i3w4q")
+choices = Array[ExtResource("5_qv0b1")]([SubResource("Resource_npbag"), SubResource("Resource_jbdhy"), SubResource("Resource_w76o3")])
+exit_choice = SubResource("Resource_svhlh")
+
+[resource]
+script = ExtResource("2_13oxs")
+default_spot_upgrade = ExtResource("1_6mcad")
+event_id = "giant_butterbur"
+event_name = "The Giant Butterbur"
+steps = Array[ExtResource("3_8r7oa")]([SubResource("Resource_7ivte")])
+categories = Array[int]([3])

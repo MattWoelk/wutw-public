@@ -1,0 +1,163 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://cahl4g8nwrctc"]
+
+[ext_resource type="Resource" uid="uid://cqo4wx824aeep" path="res://stage/spots/forest/upgrade_forest_1_shrine.tres" id="1_u8wqe"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="2_xou1y"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="3_df6ka"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="4_vddpw"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="5_ecpsi"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="6_s1q33"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="7_3nn5f"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="8_3wmaw"]
+[ext_resource type="Resource" uid="uid://4nfrdtp62ook" path="res://art/pieces/piece_kyosai_tiger_screen.tres" id="8_xou1y"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="9_u2t6u"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="10_2fij7"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="11_i6vj6"]
+[ext_resource type="Resource" uid="uid://dognyha0tut4u" path="res://quests/companion/quest_companion_tiger.tres" id="12_t38qh"]
+[ext_resource type="Script" uid="uid://rlexviyd8sv7" path="res://events/system/outcomes/start_quest/event_outcome_start_quest.gd" id="13_m71p6"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="14_y8yni"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="15_q3h7g"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="16_jxgkn"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="17_vkr16"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="18_fsevw"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="19_g6w7p"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="20_noudg"]
+[ext_resource type="Resource" uid="uid://c1kcllkvw06ki" path="res://cards/tier2/card_fence.tres" id="21_4k6k4"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="22_p2mkv"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="23_moptp"]
+[ext_resource type="Resource" uid="uid://c8ykgnjdubwpm" path="res://cards/tier6/card_fear.tres" id="24_oys7q"]
+
+[sub_resource type="Resource" id="Resource_q4g27"]
+script = ExtResource("3_df6ka")
+min_progress = 320
+max_progress = -1
+
+[sub_resource type="Resource" id="Resource_rabi3"]
+script = ExtResource("4_vddpw")
+scope = 1
+event_id = "global"
+var_id = "companion_tiger"
+value = "0"
+
+[sub_resource type="Resource" id="Resource_mhwj5"]
+script = ExtResource("5_ecpsi")
+all_requirements = Array[ExtResource("2_xou1y")]([SubResource("Resource_q4g27"), SubResource("Resource_rabi3")])
+
+[sub_resource type="Resource" id="Resource_0kc1h"]
+script = ExtResource("8_3wmaw")
+_texture_path = "res://events/companions/tiger/companion_tiger_1.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_64icn"]
+script = ExtResource("13_m71p6")
+quest = ExtResource("12_t38qh")
+metadata/_custom_type_script = "uid://rlexviyd8sv7"
+
+[sub_resource type="Resource" id="Resource_f3774"]
+script = ExtResource("14_y8yni")
+scope = 1
+event_id = "global"
+var_id = "companion_tiger"
+value = "1"
+description = ""
+outcome_description = "Encountered a real live tiger."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_oonmf"]
+script = ExtResource("10_2fij7")
+suboutcomes = Array[ExtResource("11_i6vj6")]([SubResource("Resource_64icn"), SubResource("Resource_f3774")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_il2yw"]
+script = ExtResource("16_jxgkn")
+bonus_type = ExtResource("15_q3h7g")
+min_count = 35
+max_count = -1
+extra_per_season = 15
+
+[sub_resource type="Resource" id="Resource_7axqe"]
+script = ExtResource("9_u2t6u")
+markedup_text = "Keep watch in the dark to discover the truth."
+requirement = SubResource("Resource_il2yw")
+outcome = SubResource("Resource_oonmf")
+markedup_result_text = "A few brave settlers hide in the bushes near the shrine.
+
+Just past midnight, a massive, very real tiger walks into the clearing. It sniffs the painting, lets out a roar, and lays down to rest.
+
+The danger remains, but thanks to the settlers' bravery, they are now aware of their fearsome neighbor."
+
+[sub_resource type="Resource" id="Resource_vpjr2"]
+script = ExtResource("18_fsevw")
+bonus_type = ExtResource("17_vkr16")
+amount = -20
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_6l3ia"]
+script = ExtResource("20_noudg")
+aspect_type = ExtResource("19_g6w7p")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_7uunl"]
+script = ExtResource("9_u2t6u")
+markedup_text = "Remove the cursed painting."
+requirement = SubResource("Resource_6l3ia")
+outcome = SubResource("Resource_vpjr2")
+markedup_result_text = "Assuming the painting to be the source of the trouble, the settlers take it out and store it in a locked cellar.
+
+The next night, the same roars are heard from the forest, but sounding perhaps even louder and more annoyed."
+
+[sub_resource type="Resource" id="Resource_aaf3t"]
+script = ExtResource("22_p2mkv")
+card_type = ExtResource("21_4k6k4")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_6rxkk"]
+script = ExtResource("20_noudg")
+aspect_type = ExtResource("23_moptp")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_jk3xr"]
+script = ExtResource("9_u2t6u")
+markedup_text = "Build a fence around the shrine."
+requirement = SubResource("Resource_6rxkk")
+outcome = SubResource("Resource_aaf3t")
+markedup_result_text = "The settlers spend an afternoon erecting a bamboo fence to keep whatever is making the noise inside.
+
+The next morning they find the fence destroyed, splintered as if hit by a falling boulder."
+
+[sub_resource type="Resource" id="Resource_1usie"]
+script = ExtResource("22_p2mkv")
+card_type = ExtResource("24_oys7q")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_7ehyv"]
+script = ExtResource("9_u2t6u")
+markedup_text = "Avoid the shrine after dusk."
+outcome = SubResource("Resource_1usie")
+markedup_result_text = "The settlers decide to avoid the danger, but their imaginations continue to run wild.
+
+Soon folks are terrified of stepping into the woods even during the day, convinced that paper tigers are waiting to pounce."
+
+[sub_resource type="Resource" id="Resource_x5yph"]
+script = ExtResource("7_3nn5f")
+markedup_text = "A traveling artist recently painted a remarkably lifelike image of a tiger on a screen at the little forest shrine.
+
+The townsfolk greatly admire the masterful work, but lately, deep, rumbling roars have been heard coming from the shrine at night.
+
+Rumors are spreading, claiming that the painted beast steps out of its frame at night, and folks have been avoiding the shrine."
+background_image = SubResource("Resource_0kc1h")
+background_credit = ExtResource("8_xou1y")
+choices = Array[ExtResource("9_u2t6u")]([SubResource("Resource_7axqe"), SubResource("Resource_7uunl"), SubResource("Resource_jk3xr")])
+exit_choice = SubResource("Resource_7ehyv")
+
+[resource]
+script = ExtResource("6_s1q33")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_u8wqe")
+event_id = "companion_tiger_1"
+event_name = "A Painting Come to Life"
+requirement = SubResource("Resource_mhwj5")
+steps = Array[ExtResource("7_3nn5f")]([SubResource("Resource_x5yph")])
+categories = Array[int]([0, 4])

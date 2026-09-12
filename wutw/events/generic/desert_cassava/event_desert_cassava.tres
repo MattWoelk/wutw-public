@@ -1,0 +1,128 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://oqtworiaglox"]
+
+[ext_resource type="Resource" uid="uid://dyqj40hwoi8mg" path="res://stage/spots/desert/upgrade_desert_2_cassava_farm.tres" id="1_h7c0x"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_i1k7a"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_0u1ev"]
+[ext_resource type="Resource" uid="uid://dtvo3vqw8s72f" path="res://art/pieces/piece_hiroshige_2_burdock.tres" id="4_i1k7a"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="4_mycbs"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_6xn7f"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="6_ek7td"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="7_1cttl"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="8_a5boj"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_re5g2"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="10_1fh6o"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="11_puk6y"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="12_4sule"]
+[ext_resource type="Resource" uid="uid://c8ykgnjdubwpm" path="res://cards/tier6/card_fear.tres" id="13_uj54m"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="14_b3kin"]
+
+[sub_resource type="Resource" id="Resource_dtv6p"]
+script = ExtResource("4_mycbs")
+_texture_path = "res://events/generic/desert_cassava/desert_cassava.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_hjr8q"]
+script = ExtResource("7_1cttl")
+bonus_type = ExtResource("6_ek7td")
+amount = -15
+extra_per_season = -15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_bbaej"]
+script = ExtResource("9_re5g2")
+aspect_type = ExtResource("8_a5boj")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_uuoae"]
+script = ExtResource("5_6xn7f")
+markedup_text = "Listen to the priest."
+requirement = SubResource("Resource_bbaej")
+outcome = SubResource("Resource_hjr8q")
+markedup_result_text = "Panicked, the whole settlement rushes into the fields and tears up every cassava root they can find before sunset.
+
+When the storm strikes, the untouched crops remain undamaged, while the harvested roots are now bruised and already beginning to spoil."
+
+[sub_resource type="Resource" id="Resource_wh43h"]
+script = ExtResource("7_1cttl")
+bonus_type = ExtResource("10_1fh6o")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_8tqfq"]
+script = ExtResource("9_re5g2")
+aspect_type = ExtResource("11_puk6y")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_d4eu1"]
+script = ExtResource("5_6xn7f")
+markedup_text = "Trust the head farmer."
+requirement = SubResource("Resource_8tqfq")
+outcome = SubResource("Resource_wh43h")
+markedup_result_text = "The farmer agrees that the storm may occur, but insists that the safest place for most of the cassava is still underground.
+
+\"We should reinforce the granary walls and cover the irrigation channels instead,\" he says, \"before the storm reaches us.\"
+
+As winds howl through the village, the tubers remain safe underground, and the preparations save time spent on cleanup afterwards."
+
+[sub_resource type="Resource" id="Resource_ejd54"]
+script = ExtResource("7_1cttl")
+bonus_type = ExtResource("10_1fh6o")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_bat4u"]
+script = ExtResource("9_re5g2")
+aspect_type = ExtResource("12_4sule")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_eaxoo"]
+script = ExtResource("5_6xn7f")
+markedup_text = "Test the prophecy."
+requirement = SubResource("Resource_bat4u")
+outcome = SubResource("Resource_ejd54")
+markedup_result_text = "The settlers send scouts to the dunes to verify the priest's warning.
+
+By the time they see the storm headed for the village, it is too late to act.
+
+When the dust settles, the cassava roots remain mostly underground, but the irrigation channels are choked with sand."
+
+[sub_resource type="Resource" id="Resource_vnaq3"]
+script = ExtResource("14_b3kin")
+card_type = ExtResource("13_uj54m")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_blu6b"]
+script = ExtResource("5_6xn7f")
+markedup_text = "Wait out the storm inside."
+outcome = SubResource("Resource_vnaq3")
+markedup_result_text = "Too frightened to act, the villagers decide to shelter and wait for the storm to pass.
+
+No one risks being caught in the open, but the fields are left unprotected.
+
+When the dust settles, the cassava roots remain safe underground, but the irrigation channels are choked with sand."
+
+[sub_resource type="Resource" id="Resource_1pror"]
+script = ExtResource("3_0u1ev")
+markedup_text = "The settlement is halfway through the cassava harvest when the chief priest emerges from the shrine in distress. He has interpreted the color of the sky at dawn and the howling of the wind as a warning: a great sandstorm is coming and the village must pull out every cassava root by sunset.
+
+The head farmer disagrees. He has spent his life reading wind, soil, and plant signs. Storm or not, he insists that the cassava is safer left underground until it can be processed properly.
+
+The settlers are divided. The priest has been right before, but the farmer's experience is what keeps their granaries full.
+"
+background_image = SubResource("Resource_dtv6p")
+background_credit = ExtResource("4_i1k7a")
+choices = Array[ExtResource("5_6xn7f")]([SubResource("Resource_uuoae"), SubResource("Resource_d4eu1"), SubResource("Resource_eaxoo")])
+exit_choice = SubResource("Resource_blu6b")
+
+[resource]
+script = ExtResource("2_i1k7a")
+default_spot_upgrade = ExtResource("1_h7c0x")
+event_id = "desert_cassava"
+event_name = "The Sandstorm"
+steps = Array[ExtResource("3_0u1ev")]([SubResource("Resource_1pror")])
+categories = Array[int]([3])

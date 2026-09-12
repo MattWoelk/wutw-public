@@ -1,0 +1,177 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://bsfkg6o5avo7k"]
+
+[ext_resource type="Resource" uid="uid://cdnvkfgphgxvd" path="res://stage/spots/steppe/upgrade_steppe_1_painted_pillars.tres" id="1_qemcg"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_viu86"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_iytt8"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_bjt5s"]
+[ext_resource type="Resource" uid="uid://bojle4a76l3qx" path="res://art/pieces/piece_original_pillars.tres" id="5_viu86"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_iytt8"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="6_niioq"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_j3c78"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="8_6d2sp"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="9_3yxet"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="10_uh0wt"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="11_0dnto"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="12_140wv"]
+[ext_resource type="Resource" uid="uid://cw3qko8ol516y" path="res://cards/tier2/card_pillar.tres" id="13_fvbme"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="14_dtyjb"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="15_je5gm"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="16_tm0dk"]
+[ext_resource type="Resource" uid="uid://c2ymhj5o1js1g" path="res://relics/common/record_of_ruin/relic_record_of_ruin.tres" id="17_81ywh"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="18_348nl"]
+[ext_resource type="Resource" uid="uid://bj3dagh6q7bmm" path="res://cards/tier6/card_destroy.tres" id="19_k1b0d"]
+
+[sub_resource type="Resource" id="Resource_viu86"]
+script = ExtResource("6_iytt8")
+_texture_path = "res://events/generic/violent_pillar/violent_pillar.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("9_3yxet")
+bonus_type = ExtResource("8_6d2sp")
+amount = 20
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("9_3yxet")
+bonus_type = ExtResource("10_uh0wt")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_ciwob"]
+script = ExtResource("6_niioq")
+suboutcomes = Array[ExtResource("7_j3c78")]([SubResource("Resource_dpp3j"), SubResource("Resource_06ahh")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_1stri"]
+script = ExtResource("12_140wv")
+aspect_type = ExtResource("11_0dnto")
+min_count = 4
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_2me52"]
+script = ExtResource("5_bjt5s")
+markedup_text = "Preserve it intact."
+requirement = SubResource("Resource_1stri")
+outcome = SubResource("Resource_ciwob")
+markedup_result_text = "The pillar is cleaned, but not altered.
+
+A sign is posted: \"This stood before we arrived.\"
+
+The settlers who called for its removal grumble and refuse to visit the site.
+
+The scholars, however, consider this a victory."
+
+[sub_resource type="Resource" id="Resource_nthfn"]
+script = ExtResource("14_dtyjb")
+card_type = ExtResource("13_fvbme")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_2myy3"]
+script = ExtResource("9_3yxet")
+bonus_type = ExtResource("8_6d2sp")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_w2hpu"]
+script = ExtResource("6_niioq")
+suboutcomes = Array[ExtResource("7_j3c78")]([SubResource("Resource_nthfn"), SubResource("Resource_2myy3")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_kjam1"]
+script = ExtResource("16_tm0dk")
+bonus_type = ExtResource("15_je5gm")
+min_count = 30
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_r0oeh"]
+script = ExtResource("5_bjt5s")
+markedup_text = "Repaint the scene with a peaceful one, in the same style."
+requirement = SubResource("Resource_kjam1")
+outcome = SubResource("Resource_w2hpu")
+markedup_result_text = "The original image is painted over, preserving the brushwork and palette.
+
+It now shows a harvest procession and a bonfire feast. The pillar keeps its style, but not its story.
+
+The protesting settlers nod, satisfied.
+
+The scholars shake their heads.
+
+Most agree it's easier to visit now."
+
+[sub_resource type="Resource" id="Resource_3sdrw"]
+script = ExtResource("18_348nl")
+relic = ExtResource("17_81ywh")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_jiini"]
+script = ExtResource("16_tm0dk")
+bonus_type = ExtResource("15_je5gm")
+min_count = 50
+max_count = -1
+extra_per_season = 25
+
+[sub_resource type="Resource" id="Resource_mm8jc"]
+script = ExtResource("5_bjt5s")
+markedup_text = "Record it and repaint in a new style."
+requirement = SubResource("Resource_jiini")
+outcome = SubResource("Resource_3sdrw")
+markedup_result_text = "The violent image is sketched, annotated, and stored.
+
+The pillar is painted anew, replacing the dragon slayer with abstract shapes in green and silver.
+
+The style doesn't match the others. Artists call it dishonest, but visitors are no longer disturbed."
+
+[sub_resource type="Resource" id="Resource_kojkx"]
+script = ExtResource("14_dtyjb")
+card_type = ExtResource("19_k1b0d")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_fmixu"]
+script = ExtResource("9_3yxet")
+bonus_type = ExtResource("15_je5gm")
+amount = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_xh6l0"]
+script = ExtResource("6_niioq")
+suboutcomes = Array[ExtResource("7_j3c78")]([SubResource("Resource_kojkx"), SubResource("Resource_fmixu")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_ymvbb"]
+script = ExtResource("5_bjt5s")
+markedup_text = "Tear the pillar down."
+outcome = SubResource("Resource_xh6l0")
+markedup_result_text = "The stone cracks loudly as it falls. The painting shatters with it.
+
+The pieces are left on the grass.
+
+Those who opposed the pillar nod in relief.
+
+Scholars consider it a day of loss."
+
+[sub_resource type="Resource" id="Resource_sdqv8"]
+script = ExtResource("3_iytt8")
+markedup_text = "Most of the pillars are gentle: circles, flowers, birds, abstract waves.
+
+But one is not. Its surface is carved and painted with violence: an angry hero plunging a sword into a dragon's head.
+
+Opinions are split between those saying it celebrates the strife that led to the Shattering, and those who consider it a warning.
+
+The former group demands it be torn down, while the latter urges caution: to destroy it is to forget."
+background_image = SubResource("Resource_viu86")
+background_credit = ExtResource("5_viu86")
+choices = Array[ExtResource("5_bjt5s")]([SubResource("Resource_2me52"), SubResource("Resource_r0oeh"), SubResource("Resource_mm8jc")])
+exit_choice = SubResource("Resource_ymvbb")
+
+[resource]
+script = ExtResource("2_viu86")
+default_spot_upgrade = ExtResource("1_qemcg")
+event_id = "violent_pillar"
+event_name = "The Painted Wound"
+steps = Array[ExtResource("3_iytt8")]([SubResource("Resource_sdqv8")])
+categories = Array[int]([3])

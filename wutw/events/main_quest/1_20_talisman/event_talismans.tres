@@ -1,0 +1,99 @@
+[gd_resource type="Resource" script_class="Event" format=3 uid="uid://blpygb02om0bx"]
+
+[ext_resource type="Script" uid="uid://cidbfj8malng0" path="res://events/system/event.gd" id="1_bxb0y"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="2_8krv5"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="4_ijp3a"]
+[ext_resource type="Resource" uid="uid://ba2rw30i0e8bh" path="res://art/pieces/piece_gekkou_dragon_priest.tres" id="4_qlvo3"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="5_d5bnr"]
+[ext_resource type="Resource" uid="uid://cxwl0l6i8dpm6" path="res://relics/common/talisman_herbal_scent_bag/relic_talisman_herbal_scent_bag.tres" id="6_qlvo3"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="7_d5bnr"]
+[ext_resource type="Resource" uid="uid://c3wgj8qxnphek" path="res://relics/common/talisman_seed_pouch/relic_talisman_seed_pouch.tres" id="8_f3igu"]
+[ext_resource type="Resource" uid="uid://cwt7x3fd6ms86" path="res://relics/common/talisman_charcoal_bead/relic_talisman_charcoal_bead.tres" id="9_mwuy4"]
+[ext_resource type="Resource" uid="uid://lgy2st27yh5v" path="res://relics/common/talisman_copper_ring/relic_talisman_copper_ring.tres" id="10_iqhp4"]
+
+[sub_resource type="Resource" id="Resource_qlvo3"]
+script = ExtResource("5_d5bnr")
+_texture_path = "res://events/main_quest/1_20_talisman/event_talismans.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_1vpwc"]
+script = ExtResource("7_d5bnr")
+relic = ExtResource("6_qlvo3")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_s61ia"]
+script = ExtResource("4_ijp3a")
+markedup_text = "Choose an herbal scent bag."
+outcome = SubResource("Resource_1vpwc")
+markedup_outcome_hint = "This will leave a mark on history."
+markedup_result_text = "The monk gathers herbs from the shard's edge and wraps them in cloth. The smell is faint but calming.
+
+\"Let the faithful smell of the wilds,\" he hears in his mind. \"Not of the grand incense and decadence of the past.\"
+
+The sachet is simple linen, stitched shut, hanging on a rough cord. In days to come, monks will pack these with dried mugwort, mint, and cypress shavings, to share with anyone who comes asking."
+
+[sub_resource type="Resource" id="Resource_rldvg"]
+script = ExtResource("7_d5bnr")
+relic = ExtResource("8_f3igu")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_hp7f1"]
+script = ExtResource("4_ijp3a")
+markedup_text = "Choose a seed pouch."
+outcome = SubResource("Resource_rldvg")
+markedup_outcome_hint = "This will leave a mark on history."
+markedup_result_text = "The monk ties a few grains into a small pouch.
+
+\"Carry this pouch as a reminder: you are the seeds of this new world,\" he hears in his mind. \"Your ancestors harvested what they did not sow. You, instead, shall sow what you may not harvest.\"
+
+In days to come, pouches will be stitched from leftover strips of loosely woven cloth, and filled with a handful of seeds. Some will put in rice grains. Others will fill theirs with wildflower seeds. People will carry their pouches at the belt; light enough to forget, obvious enough to make a child ask what it means."
+
+[sub_resource type="Resource" id="Resource_efgpe"]
+script = ExtResource("7_d5bnr")
+relic = ExtResource("9_mwuy4")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_p86tr"]
+script = ExtResource("4_ijp3a")
+markedup_text = "Choose a charcoal bead."
+outcome = SubResource("Resource_efgpe")
+markedup_outcome_hint = "This will leave a mark on history."
+markedup_result_text = "From the ashes of old fires, the monk shapes tiny beads. Each one leaves a dark mark on his fingers.
+
+\"Remember the ashes of the old world, lest you lose humility,\" he hears in his mind. \"If the world is to be reunited, you will have to get your hands dirty.\"
+
+In days to come, beads will be pressed from pure charcoal, polished until they shine. Some will hang one at their throat. Others will adorn their belts with them. The beads will spread quickly through the new towns, the people feeling as if they carry embers still faintly glowing with purpose."
+
+[sub_resource type="Resource" id="Resource_kp8da"]
+script = ExtResource("7_d5bnr")
+relic = ExtResource("10_iqhp4")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_vw06x"]
+script = ExtResource("4_ijp3a")
+markedup_text = "Choose a copper ring."
+outcome = SubResource("Resource_kp8da")
+markedup_outcome_hint = "This will leave a mark on history."
+markedup_result_text = "The monk commissions simple rings hammered from scrap, rough and unadorned.
+
+\"Let these bands remind you that your line never ends,\" he hears in his mind. \"Though your world may have come apart, you will persevere to bring it back together.\"
+
+In days to come, elders and children alike will wear them. Some will even wear one on each hand. A few settlers will attach gems they carried from the Old World to theirs, but the practice won't last."
+
+[sub_resource type="Resource" id="Resource_it6df"]
+script = ExtResource("2_8krv5")
+markedup_text = "An old monk sits on a straw mat by the shard's edge, watching the Cloud Sea stretch to the horizon.
+
+He has prayed for guidance every morning since he came to this shard.
+
+Today, he thinks he hears an answer: the Enlightened One wants the people to carry a small reminder of their purpose."
+background_image = SubResource("Resource_qlvo3")
+background_credit = ExtResource("4_qlvo3")
+choices = Array[ExtResource("4_ijp3a")]([SubResource("Resource_s61ia"), SubResource("Resource_hp7f1"), SubResource("Resource_p86tr"), SubResource("Resource_vw06x")])
+
+[resource]
+script = ExtResource("1_bxb0y")
+event_id = "talismans"
+event_name = "Legacy Event: Talisman"
+steps = Array[ExtResource("2_8krv5")]([SubResource("Resource_it6df")])
+categories = Array[int]([1, 5])

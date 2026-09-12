@@ -1,0 +1,164 @@
+[gd_scene format=3 uid="uid://dk478y4ve02ta"]
+
+[ext_resource type="Script" uid="uid://djs2xa6sgijrx" path="res://events/system/scenes/event_step_scene.gd" id="1_j24y8"]
+[ext_resource type="Texture2D" uid="uid://dficvjinca55b" path="res://events/system/scenes/event_frame_edge.png" id="2_1qjnw"]
+[ext_resource type="Texture2D" uid="uid://dyfehkgxr10he" path="res://events/companions/fox/event_companion_fox_1.png" id="2_oqu5m"]
+[ext_resource type="PackedScene" uid="uid://c8cqt157t1rdx" path="res://glossary/marked_up_label.tscn" id="3_oqu5m"]
+[ext_resource type="PackedScene" uid="uid://dbkrwj5jf26v1" path="res://theme/credits_icon/credits_icon.tscn" id="4_7kuue"]
+[ext_resource type="Script" uid="uid://dm63mtrlfj005" path="res://theme/faded_scroll_container/faded_scroll_container.gd" id="5_xs48u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1qjnw"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7kuue"]
+
+[node name="EventStepScene" type="PanelContainer" unique_id=879709427]
+offset_right = 1260.0
+offset_bottom = 714.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1qjnw")
+script = ExtResource("1_j24y8")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=139420930]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer" unique_id=645700983]
+custom_minimum_size = Vector2(566, 714)
+layout_mode = 2
+theme_override_constants/margin_left = -15
+theme_override_constants/margin_top = -62
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = -20
+
+[node name="BGMask" type="TextureRect" parent="HBoxContainer/MarginContainer2" unique_id=832067366]
+clip_children = 1
+custom_minimum_size = Vector2(520, 714)
+layout_mode = 2
+texture = ExtResource("2_1qjnw")
+
+[node name="BG" type="TextureRect" parent="HBoxContainer/MarginContainer2/BGMask" unique_id=1824898742]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_oqu5m")
+expand_mode = 1
+
+[node name="CreditsIcon" parent="HBoxContainer/MarginContainer2/BGMask" unique_id=1066200620 instance=ExtResource("4_7kuue")]
+unique_name_in_owner = true
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 581.0
+offset_bottom = 796.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="HBoxContainer" unique_id=909579842]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = -62
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = -20
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/MarginContainer3" unique_id=178867996]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+color = Color(0.15, 0.05975001, 0.007500002, 1)
+
+[node name="Control" type="Control" parent="HBoxContainer" unique_id=561545101]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=1486595872]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer" unique_id=174248025]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=302379343]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 310)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 4
+script = ExtResource("5_xs48u")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer/VBoxContainer/ScrollContainer" unique_id=117833562]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 26
+
+[node name="MainText" parent="HBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=198281850 instance=ExtResource("3_oqu5m")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_colors/default_color = Color(0.09, 0.075825, 0.049500003, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+theme_override_font_sizes/italics_font_size = 18
+theme_override_font_sizes/mono_font_size = 18
+text = "A crack in the rock quickly expands into a shaft disappearing into the darkness below.
+
+At the bottom is a new chamber. Half-finished statues litter the cave floor: animal parts, human faces, and shapes none of you recognize.
+
+One of these stands out in particular: a peculiarly accurate heart carved from a single piece of stone. A crack in the rock quickly expands into a shaft disappearing into the darkness below. A crack in the rock quickly expands into a shaft disappearing into the darkness below."
+fit_content = true
+visible_characters_behavior = 1
+tooltip_directions = Array[int]([5, 0, 1, 3])
+
+[node name="OutcomeBox" type="PanelContainer" parent="HBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1700669510]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7kuue")
+
+[node name="Spacer" type="Control" parent="HBoxContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=585218587]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="ChoicesList" type="VBoxContainer" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=1299401200]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 0
+
+[node name="EventChoiceScene" parent="HBoxContainer/MarginContainer/VBoxContainer/ChoicesList" unique_id=210248823 instance_placeholder="res://events/system/scenes/event_choice_scene.tscn"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="EventChoiceScene4" parent="HBoxContainer/MarginContainer/VBoxContainer/ChoicesList" unique_id=119495888 instance_placeholder="res://events/system/scenes/event_choice_scene.tscn"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="EventChoiceScene5" parent="HBoxContainer/MarginContainer/VBoxContainer/ChoicesList" unique_id=626233392 instance_placeholder="res://events/system/scenes/event_choice_scene.tscn"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="EventChoiceScene6" parent="HBoxContainer/MarginContainer/VBoxContainer/ChoicesList" unique_id=1711205855 instance_placeholder="res://events/system/scenes/event_choice_scene.tscn"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="SkipButton" type="Button" parent="." unique_id=836194221]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 0)
+layout_mode = 2
+
+[connection signal="pressed" from="SkipButton" to="." method="_on_skip_button_pressed"]

@@ -1,0 +1,148 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://crnqvjvox6ii6"]
+
+[ext_resource type="Resource" uid="uid://dylnkfsaff13d" path="res://stage/spots/building_large/upgrade_building_large_1_dining_hall.tres" id="1_pyi5u"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_enrfs"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_2hbel"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_xkr87"]
+[ext_resource type="Resource" uid="uid://bgb11tj5awen" path="res://art/pieces/piece_ikkei_kanda_shrine.tres" id="6_enrfs"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_hihtd"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_2hbel"]
+[ext_resource type="Resource" uid="uid://d3s0d81ihlcm8" path="res://cards/tier6/card_guilt.tres" id="7_d8qnf"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="8_o4htq"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="9_3jjsx"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="10_d40qo"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="11_i4ig5"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="12_2pt3y"]
+[ext_resource type="Resource" uid="uid://fj7ntl7ooeqh" path="res://cards/tier3/card_loyalty.tres" id="13_cop4h"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="14_olymm"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="15_q3h8h"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="16_xn2ay"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="17_e8ehn"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="18_kta1u"]
+[ext_resource type="Resource" uid="uid://qfybllygwyox" path="res://cards/tier6/card_sad.tres" id="19_eiseq"]
+
+[sub_resource type="Resource" id="Resource_87njk"]
+script = ExtResource("2_enrfs")
+scope = 1
+event_id = "global"
+var_id = "companion_dog"
+value = "1"
+
+[sub_resource type="Resource" id="Resource_enrfs"]
+script = ExtResource("7_2hbel")
+_texture_path = "res://events/companions/dog/event_companion_dog_2.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_ydw5v"]
+script = ExtResource("8_o4htq")
+card_type = ExtResource("7_d8qnf")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_71l8t"]
+script = ExtResource("10_d40qo")
+bonus_type = ExtResource("9_3jjsx")
+min_count = 20
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_ra0k3"]
+script = ExtResource("6_hihtd")
+markedup_text = "Leave the dog outside the hall."
+requirement = SubResource("Resource_71l8t")
+outcome = SubResource("Resource_ydw5v")
+markedup_result_text = "The man takes the offer, leaving the dog by the entrance.
+
+The hearth is warm, and the floor is dry, but the man barely sleeps.
+
+Every time the wind howls, he looks toward the door, wondering how his friend is doing.
+
+By dawn the guilt overwhelms him and he takes off, with the dog walking alongside."
+
+[sub_resource type="Resource" id="Resource_g4xlt"]
+script = ExtResource("8_o4htq")
+card_type = ExtResource("13_cop4h")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ks43w"]
+script = ExtResource("14_olymm")
+scope = 1
+event_id = "global"
+var_id = "companion_dog"
+value = "2"
+description = "Remain loyal to the dog"
+outcome_description = "The dog appreciates the loyalty."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_7gkk8"]
+script = ExtResource("11_i4ig5")
+suboutcomes = Array[ExtResource("12_2pt3y")]([SubResource("Resource_g4xlt"), SubResource("Resource_ks43w")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_yoh70"]
+script = ExtResource("16_xn2ay")
+aspect_type = ExtResource("15_q3h8h")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_yx5gh"]
+script = ExtResource("6_hihtd")
+markedup_text = "Refuse the offer."
+requirement = SubResource("Resource_yoh70")
+outcome = SubResource("Resource_7gkk8")
+markedup_result_text = "The man shakes his head and pulls the straw mat a little higher over the dog.
+
+The guards sigh, muttering about stubborn fools, and walk away.
+
+The street is cold, but as the man curls tighter around the dog, the chill seems to lose its bite."
+
+[sub_resource type="Resource" id="Resource_wto37"]
+script = ExtResource("18_kta1u")
+bonus_type = ExtResource("17_e8ehn")
+amount = -20
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_kaqvs"]
+script = ExtResource("6_hihtd")
+markedup_text = "Accept then sneak the dog in."
+outcome = SubResource("Resource_wto37")
+markedup_result_text = "The man agrees, but the moment the guards walk away, he ushers the dog inside.
+
+The plan works perfectly until the dog spots a dropped rice cake under a table and makes a dive for it, upending a bench in the process.
+
+The guards promptly return, alarmed by the clatter, and the man ends up back on the street."
+
+[sub_resource type="Resource" id="Resource_kk5w8"]
+script = ExtResource("8_o4htq")
+card_type = ExtResource("19_eiseq")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_1mmtv"]
+script = ExtResource("6_hihtd")
+markedup_text = "Let the dog go."
+outcome = SubResource("Resource_kk5w8")
+markedup_result_text = "Deciding the street is no place for a loyal beast, the man stands up, points toward the edge of town, and firmly tells the dog to leave.
+
+The dog whines, confused, but eventually trots away into the dark, looking back over its shoulder."
+
+[sub_resource type="Resource" id="Resource_vpum7"]
+script = ExtResource("4_xkr87")
+markedup_text = "The night guards have stumbled upon an old man sleeping on the street, huddled beneath a frayed straw mat with a sorry-looking dog.
+
+They offer to let him sleep in the common dining hall, but they refuse to let the dog in, citing very strict rules about muddy paws and fleas.
+
+The man sits up, shivering, and looks between the warm glow of the hall and the steadfast animal at his side."
+background_image = SubResource("Resource_enrfs")
+background_credit = ExtResource("6_enrfs")
+choices = Array[ExtResource("6_hihtd")]([SubResource("Resource_ra0k3"), SubResource("Resource_yx5gh"), SubResource("Resource_kaqvs")])
+exit_choice = SubResource("Resource_1mmtv")
+
+[resource]
+script = ExtResource("3_2hbel")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_pyi5u")
+event_id = "companion_dog_2"
+event_name = "Sleeping Rough"
+requirement = SubResource("Resource_87njk")
+steps = Array[ExtResource("4_xkr87")]([SubResource("Resource_vpum7")])
+categories = Array[int]([0, 4])

@@ -1,0 +1,166 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://pxeaubbr4viv"]
+
+[ext_resource type="Resource" uid="uid://dlecugxwnhc15" path="res://stage/spots/lake/upgrade_lake_2_island_shrine.tres" id="1_jpand"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="2_ynudo"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="3_djqb2"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="4_7nxjq"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="5_fh8oo"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="6_ci1s3"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="7_fdiky"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="8_fluy5"]
+[ext_resource type="Resource" uid="uid://gch34s8u40tf" path="res://art/pieces/piece_hiroshige_3_toothpicks.tres" id="8_ynudo"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="9_vm687"]
+[ext_resource type="Resource" uid="uid://bfngpp0dfrldr" path="res://cards/tier2/card_omen.tres" id="10_h8idn"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="11_hv50b"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="12_5eo83"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="13_7xrhi"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="14_it5vn"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="15_hhsoh"]
+[ext_resource type="Resource" uid="uid://dn15axae6eqgs" path="res://quests/companion/quest_companion_monkey.tres" id="16_jxma8"]
+[ext_resource type="Script" uid="uid://rlexviyd8sv7" path="res://events/system/outcomes/start_quest/event_outcome_start_quest.gd" id="17_h58bi"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="18_fu7cv"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="19_4r20l"]
+[ext_resource type="Resource" uid="uid://cer6b18uutqkb" path="res://cards/tier6/card_refuse.tres" id="20_micf1"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="21_3msby"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="22_7dqql"]
+
+[sub_resource type="Resource" id="Resource_qboqi"]
+script = ExtResource("3_djqb2")
+min_progress = 320
+max_progress = -1
+
+[sub_resource type="Resource" id="Resource_jn8i4"]
+script = ExtResource("4_7nxjq")
+scope = 1
+event_id = "global"
+var_id = "companion_monkey"
+value = "0"
+
+[sub_resource type="Resource" id="Resource_2iqqc"]
+script = ExtResource("5_fh8oo")
+all_requirements = Array[ExtResource("2_ynudo")]([SubResource("Resource_qboqi"), SubResource("Resource_jn8i4")])
+
+[sub_resource type="Resource" id="Resource_7qq13"]
+script = ExtResource("8_fluy5")
+_texture_path = "res://events/companions/monkey/companion_monkey_1.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_n3hdh"]
+script = ExtResource("11_hv50b")
+card_type = ExtResource("10_h8idn")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_rwqck"]
+script = ExtResource("13_7xrhi")
+aspect_type = ExtResource("12_5eo83")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_5dxfe"]
+script = ExtResource("9_vm687")
+markedup_text = "Consider the offering inauspicious."
+requirement = SubResource("Resource_rwqck")
+outcome = SubResource("Resource_n3hdh")
+markedup_result_text = "The head priest concludes that the monkey is a divine messenger, sent to warn them that the fruit is impure.
+
+The priests carefully dispose of the offering and begin a lengthy purification ritual.
+
+The monkey watches them throw the fruit away, deeply disappointed in human intelligence."
+
+[sub_resource type="Resource" id="Resource_tajhb"]
+script = ExtResource("17_h58bi")
+quest = ExtResource("16_jxma8")
+metadata/_custom_type_script = "uid://rlexviyd8sv7"
+
+[sub_resource type="Resource" id="Resource_k61ul"]
+script = ExtResource("18_fu7cv")
+scope = 1
+event_id = "global"
+var_id = "companion_monkey"
+value = "1"
+description = ""
+outcome_description = "The monkeys are fed."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_5y1e2"]
+script = ExtResource("14_it5vn")
+suboutcomes = Array[ExtResource("15_hhsoh")]([SubResource("Resource_tajhb"), SubResource("Resource_k61ul")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_y1tg0"]
+script = ExtResource("13_7xrhi")
+aspect_type = ExtResource("19_4r20l")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_nm4nr"]
+script = ExtResource("9_vm687")
+markedup_text = "Give the fruit to the yelling monkey."
+requirement = SubResource("Resource_y1tg0")
+outcome = SubResource("Resource_5y1e2")
+markedup_result_text = "A settler walks up to the altar, grabs a pear, and tosses it to the monkey.
+
+The monkey catches the fruit, lets out a happy chirp, and begins to gnaw on it.
+
+The priests look mildly annoyed."
+
+[sub_resource type="Resource" id="Resource_r4yd3"]
+script = ExtResource("11_hv50b")
+card_type = ExtResource("20_micf1")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_3ulm8"]
+script = ExtResource("13_7xrhi")
+aspect_type = ExtResource("12_5eo83")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_ox11q"]
+script = ExtResource("9_vm687")
+markedup_text = "Dedicate the shrine to the monkey spirits."
+requirement = SubResource("Resource_3ulm8")
+outcome = SubResource("Resource_r4yd3")
+markedup_result_text = "The priests decide to name the monkeys the shrine's patron deities.
+
+They begin pampering the animals, presenting them with elaborate offerings and sweet treats.
+
+The monkeys grow progressively bolder. Soon they are stealing hats and throwing pinecones at the visitors, forcing the priests to start turning pilgrims away."
+
+[sub_resource type="Resource" id="Resource_xubn0"]
+script = ExtResource("22_7dqql")
+bonus_type = ExtResource("21_3msby")
+amount = -10
+extra_per_season = -5
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_cu0do"]
+script = ExtResource("9_vm687")
+markedup_text = "Ignore the monkeys."
+outcome = SubResource("Resource_xubn0")
+markedup_result_text = "The priests decide to ignore the distraction.
+
+The monkeys, offended by the lack of attention, escalate the tantrum.
+
+Before anyone can stop them, they grab several holy scrolls and an incense burner, and scatter them all around the courtyards before fleeing into the canopy."
+
+[sub_resource type="Resource" id="Resource_b0iri"]
+script = ExtResource("7_fdiky")
+markedup_text = "The island shrine is a popular spot for visitors, who arrive regularly to leave offerings and enjoy the breeze.
+
+Recently, a troop of monkeys has claimed the temple porch. One particularly vocal macaque has climbed a wooden pillar. It is shrieking and pointing frantically at a platter of fruit left as an offering on the altar.
+
+The priests are stroking their chins and debating the theological implications of the monkey's behavior."
+background_image = SubResource("Resource_7qq13")
+background_credit = ExtResource("8_ynudo")
+choices = Array[ExtResource("9_vm687")]([SubResource("Resource_5dxfe"), SubResource("Resource_nm4nr"), SubResource("Resource_ox11q")])
+exit_choice = SubResource("Resource_cu0do")
+
+[resource]
+script = ExtResource("6_ci1s3")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_jpand")
+event_id = "companion_monkey_1"
+event_name = "A Simian Omen"
+requirement = SubResource("Resource_2iqqc")
+steps = Array[ExtResource("7_fdiky")]([SubResource("Resource_b0iri")])
+categories = Array[int]([0, 4])

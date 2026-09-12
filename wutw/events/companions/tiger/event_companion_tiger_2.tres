@@ -1,0 +1,133 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://wg7n32fs58l6"]
+
+[ext_resource type="Resource" uid="uid://dervw2rmvo43" path="res://stage/spots/cliff/upgrade_cliff_1_nest.tres" id="1_wvmap"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_ao73i"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_8okqc"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_hgmom"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="5_4bli5"]
+[ext_resource type="Resource" uid="uid://dl5ws3vd370bx" path="res://art/pieces/piece_raijirou_tiger.tres" id="5_ao73i"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_fpjml"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="7_dolwn"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="8_3uj53"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_0iiv0"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="10_ux3l7"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="11_qh8ar"]
+[ext_resource type="Resource" uid="uid://d7rkplmn6k05" path="res://cards/tier2/card_poem.tres" id="12_vvrly"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="13_ief7q"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="14_bb1ap"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="15_xk2lr"]
+[ext_resource type="Resource" uid="uid://bm6fcwsdttfg5" path="res://cards/tier0/card_escape.tres" id="16_um4tj"]
+[ext_resource type="Resource" uid="uid://dhal843mubr37" path="res://cards/tier6/card_wound.tres" id="17_bkm56"]
+
+[sub_resource type="Resource" id="Resource_2cv3q"]
+script = ExtResource("2_ao73i")
+scope = 1
+event_id = "global"
+var_id = "companion_tiger"
+value = "1"
+
+[sub_resource type="Resource" id="Resource_u1ph2"]
+script = ExtResource("5_4bli5")
+_texture_path = "res://events/companions/tiger/companion_tiger_2.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_ob40c"]
+script = ExtResource("7_dolwn")
+scope = 1
+event_id = "global"
+var_id = "companion_tiger"
+value = "2"
+description = "Show the tiger courage"
+outcome_description = "The settlers have shown the tiger courage."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_1tihe"]
+script = ExtResource("9_0iiv0")
+aspect_type = ExtResource("8_3uj53")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_a5id8"]
+script = ExtResource("6_fpjml")
+markedup_text = "Remain on the cliff."
+requirement = SubResource("Resource_1tihe")
+outcome = SubResource("Resource_ob40c")
+markedup_result_text = "The poet swallows hard but remains still, unwilling to show the tiger a hint of fear.
+
+For an hour, human and beast sit side by side, admiring the moon.
+
+The experience provides the poet with enough inspiration for a long time."
+
+[sub_resource type="Resource" id="Resource_unnld"]
+script = ExtResource("13_ief7q")
+card_type = ExtResource("12_vvrly")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_17q2m"]
+script = ExtResource("10_ux3l7")
+suboutcomes = Array[ExtResource("11_qh8ar")]([SubResource("Resource_unnld"), SubResource("Resource_ob40c")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_enybh"]
+script = ExtResource("15_xk2lr")
+bonus_type = ExtResource("14_bb1ap")
+min_count = 30
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_fhgkg"]
+script = ExtResource("6_fpjml")
+markedup_text = "Recite a booming verse to the beast's majesty."
+requirement = SubResource("Resource_enybh")
+outcome = SubResource("Resource_17q2m")
+markedup_result_text = "The poet stands up and delivers a dramatic verse in a low growl, to match the tiger's fierce nature.
+
+The tiger listens intently and seems to relax long enough for the poet to slowly walk away."
+
+[sub_resource type="Resource" id="Resource_hv6og"]
+script = ExtResource("13_ief7q")
+card_type = ExtResource("16_um4tj")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_nbi8x"]
+script = ExtResource("6_fpjml")
+markedup_text = "Flee back down the path."
+outcome = SubResource("Resource_hv6og")
+markedup_result_text = "The poet jumps up and sprints toward the settlement.
+
+This triggers the tiger's hunting instinct, and it bounds after the terrified poet, effortlessly keeping pace all the way to the tree line before losing interest and wandering off."
+
+[sub_resource type="Resource" id="Resource_woamt"]
+script = ExtResource("13_ief7q")
+card_type = ExtResource("17_bkm56")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_v7q0p"]
+script = ExtResource("6_fpjml")
+markedup_text = "Jump down from the cliff."
+outcome = SubResource("Resource_woamt")
+markedup_result_text = "In a panic, the poet decides that the only way to survive the predator is to jump down.
+
+He survives the incident with a broken leg and a life-long fear of wildlife."
+
+[sub_resource type="Resource" id="Resource_2skm6"]
+script = ExtResource("4_hgmom")
+markedup_text = "A local poet likes to sit at the edge of the cliff to find inspiration in the night sky.
+
+Tonight, the view is particularly breathtaking, with red maple leaves dancing on the wind.
+
+However, the evening is interrupted when a tiger pads out onto the cliff's edge, playing with the leaves and staring at the moon."
+background_image = SubResource("Resource_u1ph2")
+background_credit = ExtResource("5_ao73i")
+choices = Array[ExtResource("6_fpjml")]([SubResource("Resource_a5id8"), SubResource("Resource_fhgkg"), SubResource("Resource_nbi8x")])
+exit_choice = SubResource("Resource_v7q0p")
+
+[resource]
+script = ExtResource("3_8okqc")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_wvmap")
+event_id = "companion_tiger_2"
+event_name = "Under the Same Moon"
+requirement = SubResource("Resource_2cv3q")
+steps = Array[ExtResource("4_hgmom")]([SubResource("Resource_2skm6")])
+categories = Array[int]([0, 4])

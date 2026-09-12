@@ -1,0 +1,165 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://n3b5fiqhlire"]
+
+[ext_resource type="Resource" uid="uid://o68y6vjowdg7" path="res://stage/spots/building_small/upgrade_building_small_2_garden.tres" id="1_qx717"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_igx6w"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_cqeyj"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_a0mbk"]
+[ext_resource type="Resource" uid="uid://tov8wgsb10wp" path="res://art/pieces/piece_chikanobu_ikebana.tres" id="5_igx6w"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_cqeyj"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="6_gapcy"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_mc1ye"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="8_rxi4f"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="9_rl1e7"]
+[ext_resource type="Resource" uid="uid://7wvfatiuylvt" path="res://cards/tier2/card_pine.tres" id="10_2wpau"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="11_oyj2m"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="12_ii24f"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="13_rja7s"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="14_r320v"]
+[ext_resource type="Resource" uid="uid://c1ndhi58notdt" path="res://cards/tier2/card_plum.tres" id="15_j547e"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="16_1kd6x"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="17_jqrih"]
+[ext_resource type="Resource" uid="uid://cu545r75jlnh0" path="res://cards/tier2/card_willow.tres" id="18_mfgq8"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="19_rhkxc"]
+[ext_resource type="Resource" uid="uid://8eab3roo5eqj" path="res://cards/tier2/card_nothing.tres" id="20_lnd2f"]
+
+[sub_resource type="Resource" id="Resource_igx6w"]
+script = ExtResource("6_cqeyj")
+_texture_path = "res://events/generic/ikebana/ikebana.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("9_rl1e7")
+bonus_type = ExtResource("8_rxi4f")
+amount = 10
+extra_per_season = 5
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("11_oyj2m")
+card_type = ExtResource("10_2wpau")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("6_gapcy")
+suboutcomes = Array[ExtResource("7_mc1ye")]([SubResource("Resource_4xuhh"), SubResource("Resource_tuogj")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_bxolv"]
+script = ExtResource("13_rja7s")
+aspect_type = ExtResource("12_ii24f")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_mwbmk"]
+script = ExtResource("5_a0mbk")
+markedup_text = "Choose the twisted pine, a strong, sacred vessel."
+requirement = SubResource("Resource_bxolv")
+outcome = SubResource("Resource_rx1a8")
+markedup_result_text = "The florist selects the heavy, gnarled pine branch. It is evergreen and unyielding, scarred by harsh seasons, yet stronger for it.
+
+She boldly angles this anchor branch upward, and to complement its harshness, adds a line of stiff, golden grass reaching out from the arrangement.
+
+Finally, she places a massive chrysanthemum on a bed of moss, the soft bloom safely sheltered beneath the protective canopy of the evergreen."
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("9_rl1e7")
+bonus_type = ExtResource("14_r320v")
+amount = 10
+extra_per_season = 5
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("11_oyj2m")
+card_type = ExtResource("15_j547e")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ciwob"]
+script = ExtResource("6_gapcy")
+suboutcomes = Array[ExtResource("7_mc1ye")]([SubResource("Resource_dpp3j"), SubResource("Resource_06ahh")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_ci7e5"]
+script = ExtResource("13_rja7s")
+aspect_type = ExtResource("16_1kd6x")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_b737w"]
+script = ExtResource("5_a0mbk")
+markedup_text = "Choose the budding plum, a promise of blooms to come."
+requirement = SubResource("Resource_ci7e5")
+outcome = SubResource("Resource_ciwob")
+markedup_result_text = "The florist selects the slender plum branch, dry but for a few tight, pink buds.
+
+She anchors it completely vertical, emphasizing the starkness of the wood, and supports it with a line of pale reeds bowing away leaving a wedge of empty space.
+
+Finally, she adds broad, dark green leaves just above the water level, drawing the eye to the tiny buds, waiting to bloom."
+
+[sub_resource type="Resource" id="Resource_nthfn"]
+script = ExtResource("9_rl1e7")
+bonus_type = ExtResource("17_jqrih")
+amount = 10
+extra_per_season = 5
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_2myy3"]
+script = ExtResource("11_oyj2m")
+card_type = ExtResource("18_mfgq8")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_w2hpu"]
+script = ExtResource("6_gapcy")
+suboutcomes = Array[ExtResource("7_mc1ye")]([SubResource("Resource_nthfn"), SubResource("Resource_2myy3")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_ounhi"]
+script = ExtResource("13_rja7s")
+aspect_type = ExtResource("19_rhkxc")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_1akde"]
+script = ExtResource("5_a0mbk")
+markedup_text = "Choose the supple willow, graceful in its resilience."
+requirement = SubResource("Resource_ounhi")
+outcome = SubResource("Resource_w2hpu")
+markedup_result_text = "The florist selects the supple willow. She coaxes the main stem upward before letting its trailing foliage cascade over the lip of the basin.
+
+To harmonize with the weeping figure, she adds bellflowers that trail closely along the willow's arch.
+
+Finally, she places a cluster of smooth, water-worn stones at the base, to emphasize the resilience in yielding to the flow."
+
+[sub_resource type="Resource" id="Resource_3sdrw"]
+script = ExtResource("11_oyj2m")
+card_type = ExtResource("20_lnd2f")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_hsrnq"]
+script = ExtResource("5_a0mbk")
+markedup_text = "Choose a dead branch of unclear origin."
+outcome = SubResource("Resource_3sdrw")
+markedup_result_text = "The florist selects the withered piece of wood, fated to never bloom again.
+
+She anchors it firmly, treating its twisted form with reverence. Around the base, she places fleshy succulents and tall, crimson wildflowers wrapped intimately around the lifeless wood.
+
+The result is a striking contrast, vibrant new life rising from the unchangeable bones of the past."
+
+[sub_resource type="Resource" id="Resource_mt2y1"]
+script = ExtResource("3_cqeyj")
+markedup_text = "The garden's master florist is preparing an arrangement for the township's founding ceremony.
+
+She must choose the anchor, a single strong branch reaching up into the heavens. Everything else will bend and flow around this anchor to complete the arrangement.
+
+She studies the available choices, noting the true essence of each branch."
+background_image = SubResource("Resource_igx6w")
+background_credit = ExtResource("5_igx6w")
+choices = Array[ExtResource("5_a0mbk")]([SubResource("Resource_mwbmk"), SubResource("Resource_b737w"), SubResource("Resource_1akde")])
+exit_choice = SubResource("Resource_hsrnq")
+
+[resource]
+script = ExtResource("2_igx6w")
+default_spot_upgrade = ExtResource("1_qx717")
+event_id = "ikebana"
+event_name = "Flower Arrangement"
+steps = Array[ExtResource("3_cqeyj")]([SubResource("Resource_mt2y1")])
+categories = Array[int]([3])

@@ -1,0 +1,147 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://du3a4x0ccb1m"]
+
+[ext_resource type="Resource" uid="uid://bcqm4q2pdjttn" path="res://stage/spots/plains/upgrade_plains_3_kite_field.tres" id="1_r7hxj"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_wpb01"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_4c8pp"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_5hxe2"]
+[ext_resource type="Resource" uid="uid://bpc5og30k7lu6" path="res://art/pieces/piece_hiroshige_2_kites.tres" id="5_wpb01"]
+[ext_resource type="Resource" uid="uid://dc3en5s2o7qbt" path="res://relics/uncommon/painted_kite/relic_painted_kite.tres" id="6_1ster"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_4c8pp"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="7_2xate"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="8_ldqdd"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_nq21l"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="10_dlotw"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="11_2rgrv"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="12_lwud3"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="13_nnk1q"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="14_xstf2"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="15_0cer8"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="16_yiqy7"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="17_xie20"]
+
+[sub_resource type="Resource" id="Resource_wpb01"]
+script = ExtResource("6_4c8pp")
+_texture_path = "res://events/generic/kite_fight/kite_fight.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_yoct5"]
+script = ExtResource("7_2xate")
+relic = ExtResource("6_1ster")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_rp32a"]
+script = ExtResource("9_nq21l")
+aspect_type = ExtResource("8_ldqdd")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_mn1kc"]
+script = ExtResource("5_5hxe2")
+markedup_text = "Turn it into an aesthetic competition."
+requirement = SubResource("Resource_rp32a")
+outcome = SubResource("Resource_yoct5")
+markedup_result_text = "The town chief intervenes, declaring that cutting strings is easy, but building a masterpiece is hard.
+
+The abrasive strings are replaced, and instead, the kites are judged on stability and paintwork.
+
+The millers end up victorious, with a massive kite depicting their old teacher comically glaring down on the field.
+
+The kite catches the wind perfectly, and is left floating motionless, as if pinned to the sky."
+
+[sub_resource type="Resource" id="Resource_ew87q"]
+script = ExtResource("11_2rgrv")
+bonus_type = ExtResource("10_dlotw")
+amount = 20
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_b8wfm"]
+script = ExtResource("13_nnk1q")
+bonus_type = ExtResource("12_lwud3")
+min_count = 30
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_10ls2"]
+script = ExtResource("5_5hxe2")
+markedup_text = "Ban the abrasive strings."
+requirement = SubResource("Resource_b8wfm")
+outcome = SubResource("Resource_ew87q")
+markedup_result_text = "\"We cannot afford injured hands,\" the safety warden declares. \"And this rivalry is bound to escalate.\"
+
+The jagged strings are confiscated and replaced with plain hemp. The wagered goods are returned to their owners.
+
+The settlers fly their kites in polite, distinct circles. It is undeniably safer, but many will miss the excitement that punctuated their months of hard labor."
+
+[sub_resource type="Resource" id="Resource_gcpio"]
+script = ExtResource("11_2rgrv")
+bonus_type = ExtResource("12_lwud3")
+amount = 20
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_twotf"]
+script = ExtResource("9_nq21l")
+aspect_type = ExtResource("14_xstf2")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_nx2w7"]
+script = ExtResource("5_5hxe2")
+markedup_text = "Coordinate a synchronized display."
+requirement = SubResource("Resource_twotf")
+outcome = SubResource("Resource_gcpio")
+markedup_result_text = "The competitors are challenged not to cut lines, but to line up their kites perfectly parallel.
+
+The new challenge requires intense focus and cooperation, but soon, more groups join in, and the sky is covered with kites dancing in perfect unison.
+
+When the display finally lands, an impromptu celebration breaks out, uniting the former rivals by the difficulty of the challenge."
+
+[sub_resource type="Resource" id="Resource_wkg8a"]
+script = ExtResource("11_2rgrv")
+bonus_type = ExtResource("17_xie20")
+amount = 20
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_v0v1m"]
+script = ExtResource("11_2rgrv")
+bonus_type = ExtResource("10_dlotw")
+amount = -15
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_w3tyb"]
+script = ExtResource("15_0cer8")
+suboutcomes = Array[ExtResource("16_yiqy7")]([SubResource("Resource_wkg8a"), SubResource("Resource_v0v1m")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_2rbrg"]
+script = ExtResource("5_5hxe2")
+markedup_text = "Let the rivalry play out."
+outcome = SubResource("Resource_w3tyb")
+markedup_result_text = "The crowd stands back and watches the kites dive and swoop like hawks.
+
+A sharp snap echoes across the field as the potters' line is severed, their kite drifting helplessly into the sky, as cheers and groans erupt.
+
+The rivalry is bound to escalate, but for a moment, everyone forgot the hardship of their daily labor in the thrill of the fight."
+
+[sub_resource type="Resource" id="Resource_u5rfg"]
+script = ExtResource("3_4c8pp")
+markedup_text = "The wind is strong today, but the mood on the field is heated.
+
+Two groups of settlers, the millers and the potters, are engaged in a kite battle. Their strings are coated in glue and crushed pottery shards, designed to saw through an opponent's line.
+
+Wagers are piling up on the sidelines. \"It's all in good fun,\" a young miller argues, bandaging a cut on his finger. \"And besides, they insulted our flour.\""
+background_image = SubResource("Resource_wpb01")
+background_credit = ExtResource("5_wpb01")
+choices = Array[ExtResource("5_5hxe2")]([SubResource("Resource_mn1kc"), SubResource("Resource_10ls2"), SubResource("Resource_nx2w7")])
+exit_choice = SubResource("Resource_2rbrg")
+
+[resource]
+script = ExtResource("2_wpb01")
+default_spot_upgrade = ExtResource("1_r7hxj")
+event_id = "kite_fight"
+event_name = "The Kite Fight"
+steps = Array[ExtResource("3_4c8pp")]([SubResource("Resource_u5rfg")])
+categories = Array[int]([3])

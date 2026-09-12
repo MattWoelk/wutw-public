@@ -1,0 +1,140 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://civhcyp1cj610"]
+
+[ext_resource type="Resource" uid="uid://bg32qkqbt7iyx" path="res://stage/spots/mountain/upgrade_mountain_2_lava_fed_forges.tres" id="1_7maqo"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="2_ptnh5"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="3_pa1wq"]
+[ext_resource type="Script" uid="uid://2sqheye7ri6u" path="res://events/system/requirements/event_requirement_num_settlements.gd" id="4_vymbu"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="5_8phh3"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="6_yh1eb"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="7_yw85d"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="8_bp7xi"]
+[ext_resource type="Resource" uid="uid://cvxog8rchj1h1" path="res://art/pieces/piece_kuniyoshi_tang_long.tres" id="8_ptnh5"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="9_j1ate"]
+[ext_resource type="Resource" uid="uid://ctp8hrsr6fbfx" path="res://cards/tier3/card_print.tres" id="10_duwyi"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="11_72xix"]
+[ext_resource type="Resource" uid="uid://srvrwyugm58e" path="res://relics/common/heavy_chunk/relic_heavy_chunk.tres" id="12_qyxtt"]
+[ext_resource type="Script" uid="uid://bbr46symu7hfi" path="res://events/system/requirements/event_requirement_has_relic.gd" id="13_q2824"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="14_ece8q"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="15_ppxey"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="16_n7igt"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="17_kmc6b"]
+[ext_resource type="Resource" uid="uid://brgyj5wvj852i" path="res://cards/tier3/card_bomb.tres" id="18_47mwy"]
+[ext_resource type="Resource" uid="uid://qbp1ubgqlly0" path="res://relics/common/metal_egg/relic_metal_egg.tres" id="19_ohlmy"]
+[ext_resource type="Resource" uid="uid://ba067gew0evov" path="res://cards/tier3/card_polish.tres" id="20_fw136"]
+[ext_resource type="Resource" uid="uid://83qh03xketvs" path="res://relics/common/curious_stone/relic_curious_stone.tres" id="21_ylckh"]
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("3_pa1wq")
+min_progress = 400
+max_progress = -1
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("4_vymbu")
+min_count = 3
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("5_8phh3")
+all_requirements = Array[ExtResource("2_ptnh5")]([SubResource("Resource_tuogj"), SubResource("Resource_rx1a8")])
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("8_bp7xi")
+_texture_path = "res://events/generic/material_science/material_science.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_0eiya"]
+script = ExtResource("11_72xix")
+card_type = ExtResource("10_duwyi")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ciwob"]
+script = ExtResource("13_q2824")
+relic = ExtResource("12_qyxtt")
+
+[sub_resource type="Resource" id="Resource_nthfn"]
+script = ExtResource("9_j1ate")
+markedup_text = "Contribute the Heavy Chunk."
+requirement = SubResource("Resource_ciwob")
+outcome = SubResource("Resource_0eiya")
+markedup_result_text = "The smith is immediately impressed by the malleability of the strange material, and the ease with which it melts, but he finds that it lacks the solidity needed for most practical applications.
+
+He tries mixing it into a variety of alloys, until he hit upon a discovery. Mixed with antimony, it retains its low melting point, and becomes sturdy when cooled.
+
+The scholars quickly find a use for the new alloy: a much more durable replacement for wooden printing blocks, which can be be cast into far more intricate shapes than a carver could ever hope to produce."
+
+[sub_resource type="Resource" id="Resource_kj1sh"]
+script = ExtResource("17_kmc6b")
+bonus_type = ExtResource("16_n7igt")
+amount = 25
+extra_per_season = 25
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_mfxkf"]
+script = ExtResource("11_72xix")
+card_type = ExtResource("18_47mwy")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_d174p"]
+script = ExtResource("14_ece8q")
+suboutcomes = Array[ExtResource("15_ppxey")]([SubResource("Resource_kj1sh"), SubResource("Resource_mfxkf")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_2myy3"]
+script = ExtResource("13_q2824")
+relic = ExtResource("19_ohlmy")
+
+[sub_resource type="Resource" id="Resource_w2hpu"]
+script = ExtResource("9_j1ate")
+markedup_text = "Contribute the Metal Egg."
+requirement = SubResource("Resource_2myy3")
+outcome = SubResource("Resource_d174p")
+markedup_result_text = "The smith studies the egg until he determines that the ring around its center is a much softer metal, removable with relative ease.
+
+Inside is a waxy substance of unknown composition that burns brightly when heated.
+
+Perhaps such eggs could be harvested to make fireworks."
+
+[sub_resource type="Resource" id="Resource_2cj5p"]
+script = ExtResource("11_72xix")
+card_type = ExtResource("20_fw136")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_3sdrw"]
+script = ExtResource("13_q2824")
+relic = ExtResource("21_ylckh")
+
+[sub_resource type="Resource" id="Resource_fmixu"]
+script = ExtResource("9_j1ate")
+markedup_text = "Contribute the Curious Stone."
+requirement = SubResource("Resource_3sdrw")
+outcome = SubResource("Resource_2cj5p")
+markedup_result_text = "The smith examines the scale-shaped stone and quickly determines that it isn't a metal, despite the sheen.
+
+The scholars go one step further, and confirm that the substance is incredibly hard, able to scratch any surface they try it on. However, it is brittle enough to be easily crushed. The resulting powder is a phenomenal abrasive, able to polish any other material without wearing over time."
+
+[sub_resource type="Resource" id="Resource_kojkx"]
+script = ExtResource("9_j1ate")
+markedup_text = "Leave them to their studies."
+markedup_result_text = "The group continues their studies.
+
+Perhaps in time they will revolutionize the technology on this shard."
+
+[sub_resource type="Resource" id="Resource_xh6l0"]
+script = ExtResource("7_yw85d")
+markedup_text = "The forge's master smith is hosting a group of scholars from another settlement. Together, they are studying a variety of metals and exploring ways to create new alloys.
+
+Although their learning is exemplary, their experiments are limited by the lack of raw materials.
+
+They would welcome contributions of exotic substances to study."
+background_image = SubResource("Resource_06ahh")
+background_credit = ExtResource("8_ptnh5")
+choices = Array[ExtResource("9_j1ate")]([SubResource("Resource_nthfn"), SubResource("Resource_w2hpu"), SubResource("Resource_fmixu")])
+exit_choice = SubResource("Resource_kojkx")
+
+[resource]
+script = ExtResource("6_yh1eb")
+default_spot_upgrade = ExtResource("1_7maqo")
+event_id = "material_science"
+event_name = "Material Science"
+requirement = SubResource("Resource_dpp3j")
+steps = Array[ExtResource("7_yw85d")]([SubResource("Resource_xh6l0")])
+categories = Array[int]([3])

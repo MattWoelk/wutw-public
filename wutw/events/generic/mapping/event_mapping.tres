@@ -1,0 +1,140 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://bwfe08cdv67of"]
+
+[ext_resource type="Resource" uid="uid://bxm0nh4ofcxan" path="res://stage/spots/building_large/upgrade_building_large_2_adventurer_guild.tres" id="1_2sh3k"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_qt5cw"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_76fnf"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_7wh20"]
+[ext_resource type="Resource" uid="uid://5hgc8smdf8fp" path="res://art/pieces/piece_hokusai_sazai_hall.tres" id="5_qt5cw"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_76fnf"]
+[ext_resource type="Script" uid="uid://dn8pkjcp04brm" path="res://events/system/outcomes/reveal_map/event_outcome_reveal_map.gd" id="6_gdi3e"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="7_w6jj2"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="8_4ulje"]
+[ext_resource type="Resource" uid="uid://cw7psu6tdqpqe" path="res://cards/tier3/card_fertility.tres" id="9_q24kp"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="10_l6gs4"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="11_jggeg"]
+[ext_resource type="Script" uid="uid://cbnw4a13y5x8c" path="res://events/system/outcomes/random/event_outcome_random.gd" id="12_60nca"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="13_atw0y"]
+[ext_resource type="Resource" uid="uid://b6mr077ab0rp7" path="res://cards/tier2/card_dare.tres" id="14_jwl8x"]
+[ext_resource type="Resource" uid="uid://csi7dp5b57g61" path="res://cards/tier2/card_perilous.tres" id="15_xulyq"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="16_av78u"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="17_nodjp"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="18_66tig"]
+
+[sub_resource type="Resource" id="Resource_qt5cw"]
+script = ExtResource("6_76fnf")
+_texture_path = "res://events/generic/mapping/mapping.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_i5ayw"]
+script = ExtResource("6_gdi3e")
+metadata/_custom_type_script = "uid://dn8pkjcp04brm"
+
+[sub_resource type="Resource" id="Resource_nthfn"]
+script = ExtResource("8_4ulje")
+aspect_type = ExtResource("7_w6jj2")
+min_count = 3
+
+[sub_resource type="Resource" id="Resource_2myy3"]
+script = ExtResource("5_7wh20")
+markedup_text = "Focus on accurate geography."
+requirement = SubResource("Resource_nthfn")
+outcome = SubResource("Resource_i5ayw")
+markedup_result_text = "Journals are unpacked, sketches compared, and arguments are held over the length of each stream.
+
+When the ink dries, the map is a marvel of precision, peaks, canyons, and trails laid out with confidence.
+
+It may not be exciting, but it will help travelers find their way."
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("10_l6gs4")
+card_type = ExtResource("9_q24kp")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_w2hpu"]
+script = ExtResource("8_4ulje")
+aspect_type = ExtResource("11_jggeg")
+min_count = 4
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_3sdrw"]
+script = ExtResource("5_7wh20")
+markedup_text = "Highlight the most fertile and habitable lands."
+requirement = SubResource("Resource_w2hpu")
+outcome = SubResource("Resource_tuogj")
+markedup_result_text = "The map blooms with green patches and golden marks: places where the soil is rich, the winds are kind, and fresh water flows.
+
+Paths between them are carefully drawn.
+
+It may not tempt explorers, but settlers will follow this map like a promise."
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("10_l6gs4")
+card_type = ExtResource("14_jwl8x")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("10_l6gs4")
+card_type = ExtResource("15_xulyq")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("12_60nca")
+suboutcomes = Dictionary[ExtResource("13_atw0y"), float]({
+SubResource("Resource_rx1a8"): 1.0,
+SubResource("Resource_dpp3j"): 0.0
+})
+description = "Get a <term:card.dare> or <term:card.perilous> <term_lower:glyph>"
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_fmixu"]
+script = ExtResource("17_nodjp")
+bonus_type = ExtResource("16_av78u")
+min_count = 30
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_kojkx"]
+script = ExtResource("5_7wh20")
+markedup_text = "Emphasize sites of danger, mystery, and excitement."
+requirement = SubResource("Resource_fmixu")
+outcome = SubResource("Resource_06ahh")
+markedup_result_text = "The map is filled with swirling marks and jagged notations: cave entrances, spots where past explorers disappeared, and alleged habitats of mythical beasts.
+
+Still, this mess of guesswork and outright fiction can't help but instill a thrill for exploration."
+
+[sub_resource type="Resource" id="Resource_ciwob"]
+script = ExtResource("18_66tig")
+bonus_type = ExtResource("16_av78u")
+amount = 20
+extra_per_season = 40
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_xh6l0"]
+script = ExtResource("5_7wh20")
+markedup_text = "Let each adventurer mark what they remember."
+outcome = SubResource("Resource_ciwob")
+markedup_result_text = "The map becomes a patchwork of memory: a wrong turn that led to a waterfall, a shortcut that required a rope, a pond that one settler insists is shaped like a bear.
+
+It's not consistent. It's not entirely useful. But it's genuine, in its own way."
+
+[sub_resource type="Resource" id="Resource_1stri"]
+script = ExtResource("3_76fnf")
+markedup_text = "The guild is planning its own expedition to map the shard, and compose one grand, official map.
+
+As the explorers look out across the landscape, a debate breaks out.
+
+Some argue the map should be precise, with every river and valley marked. Others say it must highlight fertile lands and safe routes. A few grin and suggest a more thrilling approach: mark the mysteries, the rumored beasts, the unexplained ruins.
+
+A veteran shrugs and says, \"Why not just let everyone draw what they've seen?\""
+background_image = SubResource("Resource_qt5cw")
+background_credit = ExtResource("5_qt5cw")
+choices = Array[ExtResource("5_7wh20")]([SubResource("Resource_2myy3"), SubResource("Resource_3sdrw"), SubResource("Resource_kojkx")])
+exit_choice = SubResource("Resource_xh6l0")
+
+[resource]
+script = ExtResource("2_qt5cw")
+default_spot_upgrade = ExtResource("1_2sh3k")
+event_id = "mapping"
+event_name = "Lines on a Map"
+steps = Array[ExtResource("3_76fnf")]([SubResource("Resource_1stri")])
+categories = Array[int]([3])

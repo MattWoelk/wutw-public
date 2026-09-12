@@ -1,0 +1,117 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://cj1mcfxk48mhp"]
+
+[ext_resource type="Resource" uid="uid://brjya5088ruvq" path="res://stage/spots/swamp/upgrade_swamp_2_glowing_lantern_path.tres" id="1_bg4tk"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_tgjsi"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_gitqq"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="4_8d7ia"]
+[ext_resource type="Resource" uid="uid://bh6u2d725fod0" path="res://art/pieces/piece_shoutei_night_rain.tres" id="4_tgjsi"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_kufry"]
+[ext_resource type="Resource" uid="uid://b771eolnq2gc3" path="res://cards/tier2/card_darkness.tres" id="6_vjwud"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="7_lgnmq"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="8_75qge"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_utqk7"]
+[ext_resource type="Resource" uid="uid://017w8pmin2u6" path="res://relics/common/soggy_acorn/relic_soggy_acorn.tres" id="10_fdgok"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="11_ex6a6"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="12_5gdhs"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="13_2hgoj"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="14_kh3jw"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="15_3csa1"]
+
+[sub_resource type="Resource" id="Resource_pn6jn"]
+script = ExtResource("4_8d7ia")
+_texture_path = "res://events/generic/swamp_lanterns/swamp_lanterns.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_0webk"]
+script = ExtResource("7_lgnmq")
+card_type = ExtResource("6_vjwud")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_6ls03"]
+script = ExtResource("9_utqk7")
+aspect_type = ExtResource("8_75qge")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_s8tvx"]
+script = ExtResource("5_kufry")
+markedup_text = "Ask the spirit for help."
+requirement = SubResource("Resource_6ls03")
+outcome = SubResource("Resource_0webk")
+markedup_result_text = "Hiroshi stops before the tallest lantern on the path. Moss covers its cracked surface, and it leans slightly, towering over the boy. Feeling a little foolish, Hiroshi bows before it and whispers a request to the swamp spirit. \"If my brother spoke the truth, show me enough to defend him.\"
+
+The flame in the lantern glows brighter for a second, and Hiroshi feels the hair on his neck rise. Above him, the trees whisper as a sudden gust of wind blows the flame out.
+
+Still, Hiroshi's hand lantern reveals nothing but darkness."
+
+[sub_resource type="Resource" id="Resource_maolp"]
+script = ExtResource("11_ex6a6")
+relic = ExtResource("10_fdgok")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_h3vx6"]
+script = ExtResource("9_utqk7")
+aspect_type = ExtResource("12_5gdhs")
+min_count = 4
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_2mpvt"]
+script = ExtResource("5_kufry")
+markedup_text = "Wait at the end of the path."
+requirement = SubResource("Resource_h3vx6")
+outcome = SubResource("Resource_maolp")
+markedup_result_text = "Remembering how Makoto's face brightened when he told his brother of the creature's enormous grin, Hiroshi resolves to be patient.
+
+He leaves his umbrella beneath a large tree and steps out into the rain, waiting for the spirit of the swamp to appear.
+
+When he finally gives up, he finds the umbrella missing, in its place a small pile of acorns."
+
+[sub_resource type="Resource" id="Resource_owmt7"]
+script = ExtResource("14_kh3jw")
+bonus_type = ExtResource("13_2hgoj")
+amount = 15
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_snkbq"]
+script = ExtResource("9_utqk7")
+aspect_type = ExtResource("15_3csa1")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_didtq"]
+script = ExtResource("5_kufry")
+markedup_text = "Venture off the main path."
+requirement = SubResource("Resource_snkbq")
+outcome = SubResource("Resource_owmt7")
+markedup_result_text = "Having walked past the last lantern with nothing to show for it, Hiroshi decides to step off the main path. He follows the sound of a croaking frog, his own little lantern lighting his way.
+
+He soon finds his feet ankle-deep in water. As he raises his lantern, he catches a glimpse of a dark slanted rooftop at the edge of the black pool, half-hidden by reeds."
+
+[sub_resource type="Resource" id="Resource_6siy8"]
+script = ExtResource("5_kufry")
+markedup_text = "Give up and return home."
+markedup_result_text = "Hiroshi grows ashamed of himself for chasing a child's story through the swamp and turns back.
+
+On the way home, he finds Makoto waiting at the edge of the settlement, worried about his brother. Before Hiroshi can speak, Makoto points behind him. But Hiroshi turns too late, and he sees nothing but an empty path among the dark trees."
+
+[sub_resource type="Resource" id="Resource_kubpu"]
+script = ExtResource("3_gitqq")
+markedup_text = "A young man, Hiroshi, is wandering through the rainy swamp at night, the dark trees towering over his head. The raindrops fall heavily on his sturdy umbrella as he passes between the glowing lanterns guiding him along the path.
+
+His younger brother, Makoto, spoke of meeting a giant, grinning spirit bounding through the trees one evening. The other children in the village are making fun of the boy, and calling him a liar.
+
+Hoping to uphold his brother's honor, Hiroshi presses further into the swamp's depth.
+"
+background_image = SubResource("Resource_pn6jn")
+background_credit = ExtResource("4_tgjsi")
+choices = Array[ExtResource("5_kufry")]([SubResource("Resource_s8tvx"), SubResource("Resource_2mpvt"), SubResource("Resource_didtq")])
+exit_choice = SubResource("Resource_6siy8")
+
+[resource]
+script = ExtResource("2_tgjsi")
+default_spot_upgrade = ExtResource("1_bg4tk")
+event_id = "swamp_lanterns"
+event_name = "The Spirit of the Swamp"
+steps = Array[ExtResource("3_gitqq")]([SubResource("Resource_kubpu")])
+categories = Array[int]([3])

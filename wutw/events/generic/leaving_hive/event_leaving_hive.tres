@@ -1,0 +1,119 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://cdffvajj4kx1c"]
+
+[ext_resource type="Resource" uid="uid://rxmafo8gn7ml" path="res://stage/spots/plains/upgrade_plains_2_apiary.tres" id="1_6nmjm"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_i45cl"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_lr00w"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_63bxa"]
+[ext_resource type="Resource" uid="uid://ba8vba7n1ppvl" path="res://art/pieces/piece_hiroshige_3_honey.tres" id="5_i45cl"]
+[ext_resource type="Resource" uid="uid://dmoj3ldoyhfv4" path="res://cards/tier3/card_bee.tres" id="6_dcaxk"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_lr00w"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="7_cr4gb"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="8_o2duw"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_tqh8e"]
+[ext_resource type="Resource" uid="uid://bapq2dia3o08d" path="res://relics/common/old_beehive/relic_old_beehive.tres" id="10_5finm"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="11_xnwnb"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="12_udmc1"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="13_qrvnx"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="14_ubto0"]
+[ext_resource type="Resource" uid="uid://8soei8jsb2ld" path="res://cards/tier2/card_honey.tres" id="15_nixdl"]
+
+[sub_resource type="Resource" id="Resource_i45cl"]
+script = ExtResource("6_lr00w")
+_texture_path = "res://events/generic/leaving_hive/leaving_hive.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_2stvf"]
+script = ExtResource("7_cr4gb")
+card_type = ExtResource("6_dcaxk")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ptcwf"]
+script = ExtResource("9_tqh8e")
+aspect_type = ExtResource("8_o2duw")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_egt2j"]
+script = ExtResource("5_63bxa")
+markedup_text = "Study the empty hive."
+requirement = SubResource("Resource_ptcwf")
+outcome = SubResource("Resource_2stvf")
+markedup_result_text = "The beekeepers inspect the empty hive for damage.
+
+There's no sign of mites or other parasites, but they find the cells uncapped and emptied, the wax caps jagged, as if chewed through. It appears that this hive has been robbed by bees from another hive.
+
+The remaining hives are spread further apart, to discourage such unneighborly conduct."
+
+[sub_resource type="Resource" id="Resource_xxhwh"]
+script = ExtResource("11_xnwnb")
+relic = ExtResource("10_5finm")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_f2op8"]
+script = ExtResource("9_tqh8e")
+aspect_type = ExtResource("12_udmc1")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("5_63bxa")
+markedup_text = "Set new hives to welcome the swarm."
+requirement = SubResource("Resource_f2op8")
+outcome = SubResource("Resource_xxhwh")
+markedup_result_text = "It is a scramble to fetch empty hives from storage and spread them around the meadow, but the keepers are fast enough.
+
+The bees stop on a nearby bush for a while, but eventually make their way to one of the new hives, the one furthest from their old home.
+
+The old, empty hive is retired."
+
+[sub_resource type="Resource" id="Resource_kio1v"]
+script = ExtResource("14_ubto0")
+bonus_type = ExtResource("13_qrvnx")
+amount = 25
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("5_63bxa")
+markedup_text = "Compose a poem for the occasion."
+outcome = SubResource("Resource_kio1v")
+markedup_result_text = "At twilight, the settlers gather near the old hive. One of them steps forward and recites a short verse:
+
+The hive is empty.
+Fragrant still, but echoless.
+One bee circles back
+As if to remind,
+Every ending is a start."
+
+[sub_resource type="Resource" id="Resource_df5af"]
+script = ExtResource("7_cr4gb")
+card_type = ExtResource("15_nixdl")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("5_63bxa")
+markedup_text = "Collect the leftover honey."
+outcome = SubResource("Resource_df5af")
+markedup_result_text = "The hive left behind is light. Still, a few honeycombs remain, sweet and clean.
+
+The harvest is very modest, but at least it isn't a complete loss."
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("3_lr00w")
+markedup_text = "At first, the beekeepers think it is a swarm, but more and more bees join in, producing a hum loud enough to wake the locals.
+
+One of the older hives is absconding. It isn't clear what prompted them to leave, but it's too late to stop them.
+
+Perhaps the hive had grown too full, or mites have infested their home. Or maybe the bees had simply decided they didn't like the scenery."
+background_image = SubResource("Resource_i45cl")
+background_credit = ExtResource("5_i45cl")
+choices = Array[ExtResource("5_63bxa")]([SubResource("Resource_egt2j"), SubResource("Resource_4xuhh"), SubResource("Resource_tuogj")])
+exit_choice = SubResource("Resource_rx1a8")
+
+[resource]
+script = ExtResource("2_i45cl")
+default_spot_upgrade = ExtResource("1_6nmjm")
+event_id = "leaving_hive"
+event_name = "A Hum in the Air"
+steps = Array[ExtResource("3_lr00w")]([SubResource("Resource_dpp3j")])
+categories = Array[int]([3])

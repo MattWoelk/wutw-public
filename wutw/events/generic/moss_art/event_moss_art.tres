@@ -1,0 +1,126 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://dywplf7t6jko0"]
+
+[ext_resource type="Resource" uid="uid://iymmciwie4ox" path="res://stage/spots/canyon/upgrade_canyon_1_moss_tapestry.tres" id="1_5fo77"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_1vqa3"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_iij3x"]
+[ext_resource type="Resource" uid="uid://bvxetofkvtb2g" path="res://art/pieces/piece_hiroshige_2_rock_tripe.tres" id="4_1vqa3"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="4_ihdct"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_acqq1"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="6_74aie"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="7_fb82t"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="8_84vme"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="9_pfjmg"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="10_4241g"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="11_aspx6"]
+[ext_resource type="Resource" uid="uid://ckh1okwy4ompd" path="res://cards/tier3/card_dragon.tres" id="12_ifgkb"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="13_be266"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="14_40lpe"]
+
+[sub_resource type="Resource" id="Resource_mi5n0"]
+script = ExtResource("4_ihdct")
+_texture_path = "res://events/generic/moss_art/moss_art.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_0eiya"]
+script = ExtResource("6_74aie")
+delta = 3
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_0vd6g"]
+script = ExtResource("8_84vme")
+bonus_type = ExtResource("7_fb82t")
+min_count = 20
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_l87xm"]
+script = ExtResource("5_acqq1")
+markedup_text = "Add to the image."
+requirement = SubResource("Resource_0vd6g")
+outcome = SubResource("Resource_0eiya")
+markedup_result_text = "The men's faces break out into grins, and they take turns adding details to the dragon.
+
+One scrapes away a line, forking it at the end, and suddenly the dragon has a long curled tongue.
+
+The other presses two clumps of moss into place and the dragon looks on, cross-eyed.
+
+They laugh so hard their baskets begin to sway."
+
+[sub_resource type="Resource" id="Resource_d174p"]
+script = ExtResource("9_pfjmg")
+bonus_type = ExtResource("7_fb82t")
+amount = 20
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_l2j2w"]
+script = ExtResource("11_aspx6")
+aspect_type = ExtResource("10_4241g")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_x6rnd"]
+script = ExtResource("5_acqq1")
+markedup_text = "Declare it a work of art."
+requirement = SubResource("Resource_l2j2w")
+outcome = SubResource("Resource_d174p")
+markedup_result_text = "The men decide that the image must be the work of a great artist.
+
+They return to the settlement to tell their fellow settlers of the strange artwork they found on the canyon wall.
+
+Before the day ends, there's a queue of people lined up for a chance to go down in the baskets and admire the sight."
+
+[sub_resource type="Resource" id="Resource_pakit"]
+script = ExtResource("13_be266")
+card_type = ExtResource("12_ifgkb")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_dkx1g"]
+script = ExtResource("11_aspx6")
+aspect_type = ExtResource("14_40lpe")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_weh2w"]
+script = ExtResource("5_acqq1")
+markedup_text = "Consider it a message from the spirits."
+requirement = SubResource("Resource_dkx1g")
+outcome = SubResource("Resource_pakit")
+markedup_result_text = "The men see a deeper message in the image.
+
+The canyon's spirit is widely known to grant wisdom through the cracks in the wall, so this pattern cannot be a coincidence.
+
+When they consult the local priestess, she confirms their guess. The dragon represents wisdom, she explains, so the spirit is saying that scholars have tied wisdom into knots, preventing the common people from learning."
+
+[sub_resource type="Resource" id="Resource_e7hfo"]
+script = ExtResource("9_pfjmg")
+bonus_type = ExtResource("7_fb82t")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_avonx"]
+script = ExtResource("5_acqq1")
+markedup_text = "Remove the moss dragon."
+outcome = SubResource("Resource_e7hfo")
+markedup_result_text = "After the initial surprise wears out, the men decide that some of the village youths must have tried to prank them.
+
+They grumble as they scrape every last bit of moss that makes up the pattern."
+
+[sub_resource type="Resource" id="Resource_h06kr"]
+script = ExtResource("3_iij3x")
+markedup_text = "Two men are gathering moss in the canyon, sitting in large baskets suspended by ropes. As one of them prepares to scrape another handful from the wet stone, he pauses and looks at the wall in surprise.
+
+Further along the cliff face the moss is cleared in a pattern that looks strikingly like a dragon tied into a knot, its scales clumps of raised moss."
+background_image = SubResource("Resource_mi5n0")
+background_credit = ExtResource("4_1vqa3")
+choices = Array[ExtResource("5_acqq1")]([SubResource("Resource_l87xm"), SubResource("Resource_x6rnd"), SubResource("Resource_weh2w")])
+exit_choice = SubResource("Resource_avonx")
+
+[resource]
+script = ExtResource("2_1vqa3")
+default_spot_upgrade = ExtResource("1_5fo77")
+event_id = "moss_art"
+event_name = "The Moss Dragon"
+steps = Array[ExtResource("3_iij3x")]([SubResource("Resource_h06kr")])
+categories = Array[int]([3])

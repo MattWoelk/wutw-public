@@ -1,0 +1,130 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://brxny55jbedyj"]
+
+[ext_resource type="Resource" uid="uid://d3l8k6g4pib6c" path="res://stage/spots/swamp/upgrade_swamp_2_reed_weaver_lodge.tres" id="1_0tug2"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_xptb0"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_r7hca"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="4_bxwmj"]
+[ext_resource type="Resource" uid="uid://dda6bhxll3w8" path="res://art/pieces/piece_hiroshige_3_wicker_trunks.tres" id="4_xptb0"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_6uo6p"]
+[ext_resource type="Resource" uid="uid://c8ykgnjdubwpm" path="res://cards/tier6/card_fear.tres" id="6_nt5vp"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="7_6wrwh"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="8_m248n"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_ele88"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="10_ea2gv"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="11_x8biu"]
+[ext_resource type="Resource" uid="uid://y2mcojkbnx52" path="res://cards/tier6/card_madness.tres" id="12_566fh"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="13_alux0"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="14_a5jtr"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="15_r0g2q"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="16_5bpb8"]
+
+[sub_resource type="Resource" id="Resource_6dirm"]
+script = ExtResource("4_bxwmj")
+_texture_path = "res://events/generic/basket_weaver/basket_weaver.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_m508n"]
+script = ExtResource("7_6wrwh")
+card_type = ExtResource("6_nt5vp")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_g6srq"]
+script = ExtResource("9_ele88")
+aspect_type = ExtResource("8_m248n")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_3fwpd"]
+script = ExtResource("5_6uo6p")
+markedup_text = "Show others the message."
+requirement = SubResource("Resource_g6srq")
+outcome = SubResource("Resource_m508n")
+markedup_result_text = "The master weaver summons his favorite apprentice and asks him to read the glyphs. The boy cocks his head, looking at the master in confusion.
+
+The master, suspecting a prank, grows angry. He holds the basket up in front of the entire hut, demanding that each worker step forward to inspect it.
+
+When nobody else admits to seeing the glyphs, he grows pale. He laughs, a bit too loudly, then asks everyone to return to work.
+
+For the rest of the day, his fingers keep returning to the basket, tracing the edge."
+
+[sub_resource type="Resource" id="Resource_28qwu"]
+script = ExtResource("10_ea2gv")
+delta = 3
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_gqavj"]
+script = ExtResource("9_ele88")
+aspect_type = ExtResource("11_x8biu")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_6lgqy"]
+script = ExtResource("5_6uo6p")
+markedup_text = "Compare the basket to other baskets."
+requirement = SubResource("Resource_gqavj")
+outcome = SubResource("Resource_28qwu")
+markedup_result_text = "The master lines all the baskets he has inspected into a row, and starts to compare them, searching for any sign of glyphs or hidden messages.
+
+The workers look on, glancing at the master nervously.
+
+By the time the inspection is done, the master realizes that many of the common weave patterns look like glyph shapes, if one tries hard enough to see the parallels. He laughs at his superstitiousness, and feels relieved for the rest of the day."
+
+[sub_resource type="Resource" id="Resource_7a4om"]
+script = ExtResource("7_6wrwh")
+card_type = ExtResource("12_566fh")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_37jtr"]
+script = ExtResource("14_a5jtr")
+bonus_type = ExtResource("13_alux0")
+min_count = 30
+max_count = -1
+extra_per_season = 40
+
+[sub_resource type="Resource" id="Resource_3wnob"]
+script = ExtResource("5_6uo6p")
+markedup_text = "Search for the lanterns."
+requirement = SubResource("Resource_37jtr")
+outcome = SubResource("Resource_7a4om")
+markedup_result_text = "The weaver, with trembling hands, writes the message down on a piece of paper and tucks it into his sleeve.
+
+Later, when the moon rises over the swamp, he steps out into the dark to begin his search.
+
+He is found the next morning at the edge of a bog, confused and mumbling to himself, the message still in his sleeve."
+
+[sub_resource type="Resource" id="Resource_huudo"]
+script = ExtResource("16_5bpb8")
+bonus_type = ExtResource("15_r0g2q")
+amount = -10
+extra_per_season = -15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_0eok6"]
+script = ExtResource("5_6uo6p")
+markedup_text = "Examine the message more closely."
+outcome = SubResource("Resource_huudo")
+markedup_result_text = "The weaver looks intently at the spot where he saw the strange message, twisting the edge of the basket this way and that to see more clearly.
+
+Startled, he watches as the glyphs morph into different shapes. First they appear as lanterns, then as a path through tall reeds.
+
+He is absorbed in watching the images for the rest of the day."
+
+[sub_resource type="Resource" id="Resource_nsyyc"]
+script = ExtResource("3_r7hca")
+markedup_text = "The basket weavers are working diligently, winding the slender yellow stalks into simple yet sturdy shapes.
+
+The master weaver inspects his apprentices' handiwork, setting another basket down when something around its rim catches his eye.
+
+He squints for a moment, then his eyes widen. The woven pattern seems to form tiny glyphs. They read: [i]\"lanterns follow not\"[/i]."
+background_image = SubResource("Resource_6dirm")
+background_credit = ExtResource("4_xptb0")
+choices = Array[ExtResource("5_6uo6p")]([SubResource("Resource_3fwpd"), SubResource("Resource_6lgqy"), SubResource("Resource_3wnob")])
+exit_choice = SubResource("Resource_0eok6")
+
+[resource]
+script = ExtResource("2_xptb0")
+default_spot_upgrade = ExtResource("1_0tug2")
+event_id = "basket_weaver"
+event_name = "An Ominous Basket"
+steps = Array[ExtResource("3_r7hca")]([SubResource("Resource_nsyyc")])
+categories = Array[int]([3])

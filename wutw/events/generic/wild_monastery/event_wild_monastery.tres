@@ -1,0 +1,168 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://m2elp737ewrx"]
+
+[ext_resource type="Resource" uid="uid://bhli4xwx0vayp" path="res://stage/spots/brushland/upgrade_brushland_3_monastery_of_the_wilds.tres" id="1_rafp6"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="2_vto4l"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_cb7gn"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_wbfk4"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="5_upe1i"]
+[ext_resource type="Resource" uid="uid://ibwjxwc7a8x1" path="res://art/pieces/piece_hasui_nigatsu_hall.tres" id="5_vto4l"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_7nk6e"]
+[ext_resource type="Resource" uid="uid://0km3iwmdmogg" path="res://relics/common/conch_trumpet/relic_conch_trumpet.tres" id="7_55r5h"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="8_wsawy"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="9_1qhms"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="10_ecso1"]
+[ext_resource type="Resource" uid="uid://c5yajko7b17q4" path="res://relics/common/incense_pellet/relic_incense_pellet.tres" id="11_op8st"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="12_iqf23"]
+[ext_resource type="Resource" uid="uid://cakfuomd8ja" path="res://relics/common/dark_feather/relic_dark_feather.tres" id="13_b8wrv"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="14_1n2k1"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="15_gkct5"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="17_55r5h"]
+[ext_resource type="Resource" uid="uid://cxwl0l6i8dpm6" path="res://relics/common/talisman_herbal_scent_bag/relic_talisman_herbal_scent_bag.tres" id="17_upe1i"]
+[ext_resource type="Script" uid="uid://bbr46symu7hfi" path="res://events/system/requirements/event_requirement_has_relic.gd" id="18_7nk6e"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="18_wsawy"]
+[ext_resource type="Script" uid="uid://bax3q3qv5pv3e" path="res://events/system/requirements/event_requirement_seen_relic.gd" id="19_55r5h"]
+
+[sub_resource type="Resource" id="Resource_agwjj"]
+script = ExtResource("2_vto4l")
+min_progress = 330
+max_progress = -1
+
+[sub_resource type="Resource" id="Resource_j6b2j"]
+script = ExtResource("5_upe1i")
+_texture_path = "res://events/generic/wild_monastery/wild_monastery.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_esjpc"]
+script = ExtResource("8_wsawy")
+relic = ExtResource("7_55r5h")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_d0qcu"]
+script = ExtResource("10_ecso1")
+aspect_type = ExtResource("9_1qhms")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_23650"]
+script = ExtResource("6_7nk6e")
+markedup_text = "Call the crows with a conch trumpet."
+requirement = SubResource("Resource_d0qcu")
+outcome = SubResource("Resource_esjpc")
+markedup_result_text = "The monks decide to blow their largest conch trumpet.
+
+One of the monks climbs to a high balcony and brings the shell to his lips, blowing with all his might into the wooden mouthpiece.
+
+An hour later the crows return. The flock is clearly disturbed, making low, knocking sounds instead of their usual lively caws. One of the birds seems to be missing."
+
+[sub_resource type="Resource" id="Resource_l0o0i"]
+script = ExtResource("8_wsawy")
+relic = ExtResource("11_op8st")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_hpplq"]
+script = ExtResource("10_ecso1")
+aspect_type = ExtResource("12_iqf23")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_ec5lu"]
+script = ExtResource("6_7nk6e")
+markedup_text = "Call them back by burning incense."
+requirement = SubResource("Resource_hpplq")
+outcome = SubResource("Resource_l0o0i")
+markedup_result_text = "The novices haul a brazier up to the temple's highest balcony, and fill it with coals and ash, placing several pellets of incense on top.
+
+The air instantly fills with the smell of juniper and mugwort, intimately familiar to the monks and the birds alike.
+
+An hour later the crows return. The flock is clearly disturbed, making low, knocking sounds instead of their usual lively caws. One of the birds seems to be missing."
+
+[sub_resource type="Resource" id="Resource_hlhy3"]
+script = ExtResource("8_wsawy")
+relic = ExtResource("13_b8wrv")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_mpu6r"]
+script = ExtResource("15_gkct5")
+bonus_type = ExtResource("14_1n2k1")
+min_count = 30
+max_count = -1
+extra_per_season = 50
+
+[sub_resource type="Resource" id="Resource_cowx3"]
+script = ExtResource("6_7nk6e")
+markedup_text = "Send a search party."
+requirement = SubResource("Resource_mpu6r")
+outcome = SubResource("Resource_hlhy3")
+markedup_result_text = "Two nuns and a monk pack bags of seeds and walk into the wilderness.
+
+They follow the direction in which the crows flew off in the morning, and eventually hear familiar caws in the distance.
+
+They find the birds agitated. The entire flock is gathered, some on bushes, others on the ground, and cawing loudly. In the center is a dead crow."
+
+[sub_resource type="Resource" id="Resource_e7hfo"]
+script = ExtResource("8_wsawy")
+relic = ExtResource("11_op8st")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_b7llu"]
+script = ExtResource("8_wsawy")
+relic = ExtResource("11_op8st")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("17_55r5h")
+suboutcomes = Array[ExtResource("18_wsawy")]([SubResource("Resource_e7hfo"), SubResource("Resource_b7llu")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_1qhms"]
+script = ExtResource("18_7nk6e")
+relic = ExtResource("17_upe1i")
+metadata/_custom_type_script = "uid://bbr46symu7hfi"
+
+[sub_resource type="Resource" id="Resource_ecso1"]
+script = ExtResource("19_55r5h")
+relic = ExtResource("17_upe1i")
+metadata/_custom_type_script = "uid://bax3q3qv5pv3e"
+
+[sub_resource type="Resource" id="Resource_op8st"]
+script = ExtResource("6_7nk6e")
+markedup_text = "Burn herbs from the scent bags to call them back."
+requirement = SubResource("Resource_1qhms")
+show_condition = SubResource("Resource_ecso1")
+outcome = SubResource("Resource_trtbi")
+markedup_result_text = "The novices haul a brazier up to the temple's highest balcony, and fill it with coals and ash, placing herbs from the scent bags on top.
+
+The air instantly fills with the smell of juniper and mugwort, intimately familiar to the monks and the birds alike.
+
+An hour later the crows return. The flock is clearly disturbed, making low, knocking sounds instead of their usual lively caws. One of the birds seems to be missing."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_ui61k"]
+script = ExtResource("6_7nk6e")
+markedup_text = "Wait for the crows to return."
+markedup_result_text = "The monks trust the birds to find their way back like they do every day.
+
+The crows only return by dawn. The flock is clearly disturbed, making low, knocking sounds instead of their usual lively caws.
+
+One of the birds seems to be missing."
+
+[sub_resource type="Resource" id="Resource_t76v4"]
+script = ExtResource("4_wbfk4")
+markedup_text = "This chapter of the Order of the Wilds has forged a bond with the local crows. The birds fly out to forage during the day, and return in the evening to roost on monastery grounds.
+
+Today, as the sun is setting, the flock is nowhere to be seen.
+
+The monks and nuns grow worried, proposing different plans to call the crows back, or go out looking for them in the wilderness."
+background_image = SubResource("Resource_j6b2j")
+background_credit = ExtResource("5_vto4l")
+choices = Array[ExtResource("6_7nk6e")]([SubResource("Resource_23650"), SubResource("Resource_ec5lu"), SubResource("Resource_cowx3"), SubResource("Resource_op8st")])
+exit_choice = SubResource("Resource_ui61k")
+
+[resource]
+script = ExtResource("3_cb7gn")
+default_spot_upgrade = ExtResource("1_rafp6")
+event_id = "wild_monastery"
+event_name = "The Missing Crows"
+requirement = SubResource("Resource_agwjj")
+steps = Array[ExtResource("4_wbfk4")]([SubResource("Resource_t76v4")])
+categories = Array[int]([3])

@@ -1,0 +1,163 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://cf81ycljpmedd"]
+
+[ext_resource type="Resource" uid="uid://b3uomyxnloscd" path="res://stage/spots/river/upgrade_river_1_waterwheel.tres" id="1_a2y6b"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_0gqet"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_f3mql"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_1odid"]
+[ext_resource type="Resource" uid="uid://outn5wpg006" path="res://art/pieces/piece_kuniyoshi_fukushima.tres" id="5_0gqet"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="5_0w8v3"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_d1nfr"]
+[ext_resource type="Resource" uid="uid://d2348x7wsalwi" path="res://cards/tier2/card_fast.tres" id="7_23e42"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="8_1bkmh"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="9_pedme"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="10_juwi1"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="11_jmadd"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="12_71ec4"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="13_2ohsp"]
+[ext_resource type="Resource" uid="uid://du61u7jirjjpu" path="res://companions/turtle/companion_turtle.tres" id="14_4mh76"]
+[ext_resource type="Script" uid="uid://2you2r2oar48" path="res://events/system/outcomes/unlock_companion/event_outcome_unlock_companion.gd" id="15_7qg1q"]
+[ext_resource type="Script" uid="uid://dnxdmp6ko2c00" path="res://events/system/outcomes/mark_all_choices_seen/event_outcome_mark_all_choices_seen.gd" id="16_2gw78"]
+[ext_resource type="Resource" uid="uid://byeachpfebupo" path="res://events/companions/turtle/event_companion_turtle_1.tres" id="17_un0yu"]
+[ext_resource type="Resource" uid="uid://cmirxvhh6wi24" path="res://events/companions/turtle/event_companion_turtle_2.tres" id="18_o44lx"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="19_j3pcl"]
+[ext_resource type="Resource" uid="uid://8r4fvd2homc7" path="res://cards/tier0/card_shift.tres" id="20_uleny"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="21_5xftm"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="22_ifym1"]
+
+[sub_resource type="Resource" id="Resource_emhhk"]
+script = ExtResource("2_0gqet")
+scope = 1
+event_id = "global"
+var_id = "companion_turtle"
+value = "2"
+
+[sub_resource type="Resource" id="Resource_xtkk8"]
+script = ExtResource("5_0w8v3")
+_texture_path = "res://events/companions/turtle/companion_turtle_3.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_s5xtg"]
+script = ExtResource("8_1bkmh")
+card_type = ExtResource("7_23e42")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_yweav"]
+script = ExtResource("10_juwi1")
+aspect_type = ExtResource("9_pedme")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_sq7cv"]
+script = ExtResource("6_d1nfr")
+markedup_text = "Downsize the project to be more manageable."
+requirement = SubResource("Resource_yweav")
+outcome = SubResource("Resource_s5xtg")
+markedup_result_text = "The architect lets go of the outer wall, then the inner one, then the towers, and ends up with little more than a rampart.
+
+It is a practical design, feasible to build in a few years, but he can't help feeling that he'd let his dream go."
+
+[sub_resource type="Resource" id="Resource_bvgy7"]
+script = ExtResource("13_2ohsp")
+scope = 1
+event_id = "global"
+var_id = "companion_turtle"
+value = "3"
+description = ""
+outcome_description = "The settlers have learned to take the long-term view."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_esd3x"]
+script = ExtResource("15_7qg1q")
+companion = ExtResource("14_4mh76")
+metadata/_custom_type_script = "uid://2you2r2oar48"
+
+[sub_resource type="Resource" id="Resource_srafd"]
+script = ExtResource("16_2gw78")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_dyfbh"]
+script = ExtResource("16_2gw78")
+seen_event = ExtResource("17_un0yu")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_wuywq"]
+script = ExtResource("16_2gw78")
+seen_event = ExtResource("18_o44lx")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_4wj1w"]
+script = ExtResource("11_jmadd")
+suboutcomes = Array[ExtResource("12_71ec4")]([SubResource("Resource_bvgy7"), SubResource("Resource_esd3x"), SubResource("Resource_srafd"), SubResource("Resource_dyfbh"), SubResource("Resource_wuywq")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_6rdjl"]
+script = ExtResource("10_juwi1")
+aspect_type = ExtResource("19_j3pcl")
+min_count = 5
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_nd1ll"]
+script = ExtResource("6_d1nfr")
+markedup_text = "Break the project down into stages."
+requirement = SubResource("Resource_6rdjl")
+outcome = SubResource("Resource_4wj1w")
+markedup_result_text = "Looking at the ancient turtle, the architect considers the long term.
+
+Even if he can't finish the project within his lifetime, he would leave behind a legacy for future generations.
+
+He starts breaking the design down into stages, imagining the plans he would have to hand down to his successors to ensure its success."
+
+[sub_resource type="Resource" id="Resource_w4r1p"]
+script = ExtResource("8_1bkmh")
+card_type = ExtResource("20_uleny")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_5duxa"]
+script = ExtResource("10_juwi1")
+aspect_type = ExtResource("21_5xftm")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_7cjke"]
+script = ExtResource("6_d1nfr")
+markedup_text = "Design a way for the castle to move on wheels."
+requirement = SubResource("Resource_5duxa")
+outcome = SubResource("Resource_w4r1p")
+markedup_result_text = "Inspired by the turtle carrying its home, the architect begins imagining a fortress that rolls on massive wooden wheels.
+
+It takes about five minutes of math for him to realize the idea is completely absurd, but the image is highly entertaining."
+
+[sub_resource type="Resource" id="Resource_0ri2n"]
+script = ExtResource("22_ifym1")
+delta = -5
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_7co7c"]
+script = ExtResource("6_d1nfr")
+markedup_text = "Abandon the project entirely."
+outcome = SubResource("Resource_0ri2n")
+markedup_result_text = "Defeated by the brevity of human existence, the architect discards the idea.
+
+He decides to stick to designing practical constructions, buildable in a month, and leaves the grand dreams behind."
+
+[sub_resource type="Resource" id="Resource_f6xqx"]
+script = ExtResource("4_1odid")
+markedup_text = "The architect of the waterwheel has been sitting by the town's resident turtle, daydreaming of future projects.
+
+In his imagination, a sprawling, magnificent castle rises from the ground.
+
+His daydream, however, is spoiled by realizing that such a project is bound to take multiple lifetimes to finish."
+background_image = SubResource("Resource_xtkk8")
+background_credit = ExtResource("5_0gqet")
+choices = Array[ExtResource("6_d1nfr")]([SubResource("Resource_sq7cv"), SubResource("Resource_nd1ll"), SubResource("Resource_7cjke")])
+exit_choice = SubResource("Resource_7co7c")
+
+[resource]
+script = ExtResource("3_f3mql")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_a2y6b")
+event_id = "companion_turtle_3"
+event_name = "A Grand Design"
+requirement = SubResource("Resource_emhhk")
+steps = Array[ExtResource("4_1odid")]([SubResource("Resource_f6xqx")])
+categories = Array[int]([0, 4])

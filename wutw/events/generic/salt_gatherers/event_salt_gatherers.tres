@@ -1,0 +1,139 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://cambnrulq7bw0"]
+
+[ext_resource type="Resource" uid="uid://du0yitl7bnm51" path="res://stage/spots/wasteland/upgrade_wasteland_1_salt_flat.tres" id="1_7g1vm"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_aldb4"]
+[ext_resource type="Script" uid="uid://2sqheye7ri6u" path="res://events/system/requirements/event_requirement_num_settlements.gd" id="2_hjr8q"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_tuhhk"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="4_2qj6u"]
+[ext_resource type="Resource" uid="uid://bd3u0ve6rhgso" path="res://art/pieces/piece_harunobu_yamabe.tres" id="5_rebnn"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_shas5"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="6_t5aam"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_lj65a"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="8_8xf8w"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="9_814x2"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="10_n71jh"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="11_0wuur"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="12_5c5xt"]
+[ext_resource type="Resource" uid="uid://ymyk05yro8n0" path="res://cards/tier2/card_marriage.tres" id="13_7hhbq"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="14_f3gk1"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="15_x8dak"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="16_cmwc4"]
+
+[sub_resource type="Resource" id="Resource_bn44d"]
+script = ExtResource("2_hjr8q")
+metadata/_custom_type_script = "uid://2sqheye7ri6u"
+
+[sub_resource type="Resource" id="Resource_vtr07"]
+script = ExtResource("4_2qj6u")
+_texture_path = "res://events/generic/salt_gatherers/salt_gatherers.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_0eiya"]
+script = ExtResource("9_814x2")
+bonus_type = ExtResource("8_8xf8w")
+amount = 15
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_d174p"]
+script = ExtResource("9_814x2")
+bonus_type = ExtResource("10_n71jh")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("6_t5aam")
+suboutcomes = Array[ExtResource("7_lj65a")]([SubResource("Resource_0eiya"), SubResource("Resource_d174p")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_83uqf"]
+script = ExtResource("12_5c5xt")
+aspect_type = ExtResource("11_0wuur")
+min_count = 4
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_r8upj"]
+script = ExtResource("5_shas5")
+markedup_text = "Akiko is right."
+requirement = SubResource("Resource_83uqf")
+outcome = SubResource("Resource_trtbi")
+markedup_result_text = "Akiko lays down her buckets and refuses to return to the flats until Haruko agrees to work beside her, even on market days.
+
+The buckets remain empty for a time, with neither sister agreeing to work at all. At last, Haruko rolls up her sleeves and joins in the work. She proves herself to be industrious, and soon she is bringing back more salt than most of the salters.
+
+Akiko's anger softens, but the merchants find no familiar face to greet them. Some pass through the town without even stopping."
+
+[sub_resource type="Resource" id="Resource_a6ufw"]
+script = ExtResource("14_f3gk1")
+card_type = ExtResource("13_7hhbq")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_lqp35"]
+script = ExtResource("12_5c5xt")
+aspect_type = ExtResource("15_x8dak")
+min_count = 4
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_r8bng"]
+script = ExtResource("5_shas5")
+markedup_text = "Haruko is right."
+requirement = SubResource("Resource_lqp35")
+outcome = SubResource("Resource_a6ufw")
+markedup_result_text = "Haruko is allowed to focus on trade while Akiko pairs up with another salter.
+
+Her new partner is a serious man, who says little and works steadily. In him she finds a kindred soul, who understands the importance of a worker's duty."
+
+[sub_resource type="Resource" id="Resource_bgisj"]
+script = ExtResource("9_814x2")
+bonus_type = ExtResource("8_8xf8w")
+amount = 15
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_qu2wf"]
+script = ExtResource("12_5c5xt")
+aspect_type = ExtResource("16_cmwc4")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_s5wdk"]
+script = ExtResource("5_shas5")
+markedup_text = "Consult a village elder."
+requirement = SubResource("Resource_qu2wf")
+outcome = SubResource("Resource_bgisj")
+markedup_result_text = "The sisters decide to seek advice from a village elder. The elder listens for a while, then proposes that they exchange responsibilities until the next full moon.
+
+Haruko returns home every day with aching shoulders, while Akiko quickly learns that merchants rarely agree on anything and that a single misplaced word can spoil an entire afternoon of bargaining.
+
+When the full moon finally rises, both sisters return to their tasks, never mentioning the argument again."
+
+[sub_resource type="Resource" id="Resource_skamp"]
+script = ExtResource("5_shas5")
+markedup_text = "Let the argument go unresolved."
+markedup_result_text = "The sisters fail to come to an agreement. Haruko continues to avoid work out on the salt flats, while Akiko grows more and more irate.
+
+The issue comes to a head one day, as the two sisters unload their resentment.
+
+They are still feuding to this day."
+
+[sub_resource type="Resource" id="Resource_76wk1"]
+script = ExtResource("3_tuhhk")
+markedup_text = "Every morning, salters head to the flats to fill their buckets with pale crystals and bring back the treasure to the village by sundown.
+
+Among these salters are two sisters. The elder, Akiko, works without complaint and returns home with salt crusting her sleeves and sandals every evening. The younger, Haruko, often leaves her bucket half-filled, and spends her time tracing patterns on the ground with a length of string. When merchants come into town, she often leaves her sister behind, and spends her day convincing the merchants to buy more salt.
+
+Akiko resents working alone on market days, while Haruko insists that a merchant's first impression is worth more than a bucket of salt."
+background_image = SubResource("Resource_vtr07")
+background_credit = ExtResource("5_rebnn")
+choices = Array[ExtResource("5_shas5")]([SubResource("Resource_r8upj"), SubResource("Resource_r8bng"), SubResource("Resource_s5wdk")])
+exit_choice = SubResource("Resource_skamp")
+
+[resource]
+script = ExtResource("2_aldb4")
+default_spot_upgrade = ExtResource("1_7g1vm")
+event_id = "salt_gatherers"
+event_name = "The Salt Sisters"
+requirement = SubResource("Resource_bn44d")
+steps = Array[ExtResource("3_tuhhk")]([SubResource("Resource_76wk1")])
+categories = Array[int]([3])

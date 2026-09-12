@@ -1,0 +1,148 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://bjayvy8xf0q40"]
+
+[ext_resource type="Resource" uid="uid://bst3bt6wlkaic" path="res://stage/spots/lake/upgrade_lake_1_lotus_pond.tres" id="1_oomnv"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="2_fgcqe"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="3_qlp1n"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="4_dlufe"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="5_xloqo"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="6_q3dgy"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="7_urm2b"]
+[ext_resource type="Resource" uid="uid://dvqmivt6wt0mi" path="res://art/pieces/piece_unknown_cat_and_toad.tres" id="9_witg6"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="10_d4c3j"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="10_fgcqe"]
+[ext_resource type="Resource" uid="uid://cdkl8x4gpqmfb" path="res://cards/tier6/card_foolish.tres" id="11_sid1m"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="12_hxl0i"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="13_gfna4"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="14_8v3ju"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="15_3e3hs"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="16_neavi"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="17_f4nm1"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="18_hq24e"]
+[ext_resource type="Resource" uid="uid://bs8ilplbhyh15" path="res://quests/companion/quest_companion_cat.tres" id="19_4ovc4"]
+[ext_resource type="Script" uid="uid://rlexviyd8sv7" path="res://events/system/outcomes/start_quest/event_outcome_start_quest.gd" id="20_83g0p"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="21_5gwtj"]
+
+[sub_resource type="Resource" id="Resource_2osks"]
+script = ExtResource("3_qlp1n")
+min_progress = 320
+metadata/_custom_type_script = "uid://c50bhh4sr0g8o"
+
+[sub_resource type="Resource" id="Resource_1covi"]
+script = ExtResource("4_dlufe")
+scope = 1
+event_id = "global"
+var_id = "companion_cat"
+value = "0"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_p7yt0"]
+script = ExtResource("5_xloqo")
+all_requirements = Array[ExtResource("2_fgcqe")]([SubResource("Resource_2osks"), SubResource("Resource_1covi")])
+metadata/_custom_type_script = "uid://15prcev7a3ta"
+
+[sub_resource type="Resource" id="Resource_oomnv"]
+script = ExtResource("10_fgcqe")
+_texture_path = "res://events/companions/cat/event_companion_cat_1.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_4bvs7"]
+script = ExtResource("12_hxl0i")
+card_type = ExtResource("11_sid1m")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_mhut4"]
+script = ExtResource("14_8v3ju")
+aspect_type = ExtResource("13_gfna4")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_02t1p"]
+script = ExtResource("10_d4c3j")
+markedup_text = "Learn patience from the cat."
+requirement = SubResource("Resource_mhut4")
+outcome = SubResource("Resource_4bvs7")
+markedup_result_text = "A monk among the settlers launches into a sermon illustrating the value of patience on the path to enlightenment.
+
+Before he can get a few words out, the cat makes a half-hearted swipe at the toad, misses entirely, and immediately begins grooming its paw with intense focus. It projects an air of absolute certainty that it meant to do exactly that."
+
+[sub_resource type="Resource" id="Resource_er7h7"]
+script = ExtResource("16_neavi")
+bonus_type = ExtResource("15_3e3hs")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_ybpct"]
+script = ExtResource("10_d4c3j")
+markedup_text = "Save the toad."
+outcome = SubResource("Resource_er7h7")
+markedup_result_text = "A settler yells out, trying to alert the toad, and succeeds in scaring both animals.
+
+The toad quickly disappears into the water.
+
+The cat, once recovered from a momentary panic, shoots the settlers a profound look of disapproval and slowly walks away."
+
+[sub_resource type="Resource" id="Resource_yu5w1"]
+script = ExtResource("16_neavi")
+bonus_type = ExtResource("15_3e3hs")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_5wq3a"]
+script = ExtResource("10_d4c3j")
+markedup_text = "Help the cat catch the toad."
+outcome = SubResource("Resource_yu5w1")
+markedup_result_text = "A settler approaches the toad, hoping to block its path of retreat.
+
+Instead, the toad is alerted by the movement and leaps off the rock, quickly disappearing into the water.
+
+The cat shoots the settlers a profound look of disapproval before slowly walking away."
+
+[sub_resource type="Resource" id="Resource_1gceb"]
+script = ExtResource("20_83g0p")
+quest = ExtResource("19_4ovc4")
+metadata/_custom_type_script = "uid://rlexviyd8sv7"
+
+[sub_resource type="Resource" id="Resource_qqs5j"]
+script = ExtResource("21_5gwtj")
+scope = 1
+event_id = "global"
+var_id = "companion_cat"
+value = "1"
+description = "Observe a cat hunting."
+outcome_description = "The cat is pleased to be left undisturbed."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_lcg14"]
+script = ExtResource("17_f4nm1")
+suboutcomes = Array[ExtResource("18_hq24e")]([SubResource("Resource_1gceb"), SubResource("Resource_qqs5j")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_wt43v"]
+script = ExtResource("10_d4c3j")
+markedup_text = "Leave the animals alone."
+outcome = SubResource("Resource_lcg14")
+markedup_result_text = "The settlers look on as the cat finally makes its move.
+
+Despite its lightning-fast swipe, the toad manages to escape. The cat looks sheepish for just a moment, before immediately beginning to groom its paw with intense focus. It projects an air of absolute certainty that it meant to do exactly that."
+
+[sub_resource type="Resource" id="Resource_uedco"]
+script = ExtResource("7_urm2b")
+markedup_text = "Ever since the Shattering, the cats of the shards have had to adapt to the new environment. The transition was surprisingly easy, especially for the strays, who were already used to foraging for food.
+
+The settlers notice one such cat standing motionless by the water's edge, waiting for just the right moment to pounce on a toad, who is blissfully unaware of the mortal danger it is in."
+background_image = SubResource("Resource_oomnv")
+background_credit = ExtResource("9_witg6")
+choices = Array[ExtResource("10_d4c3j")]([SubResource("Resource_02t1p"), SubResource("Resource_ybpct"), SubResource("Resource_5wq3a")])
+exit_choice = SubResource("Resource_wt43v")
+
+[resource]
+script = ExtResource("6_q3dgy")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_oomnv")
+event_id = "companion_cat_1"
+event_name = "A Small Hunt"
+requirement = SubResource("Resource_p7yt0")
+steps = Array[ExtResource("7_urm2b")]([SubResource("Resource_uedco")])
+categories = Array[int]([4, 0])

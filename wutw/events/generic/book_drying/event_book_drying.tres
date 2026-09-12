@@ -1,0 +1,122 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://df53dcc3r6sn1"]
+
+[ext_resource type="Resource" uid="uid://c4geqaow8tvvd" path="res://stage/spots/building_large/upgrade_building_large_2_library.tres" id="1_t02a5"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_jc8ko"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_r7wst"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="4_hqtur"]
+[ext_resource type="Resource" uid="uid://bq8e1kj2d00nb" path="res://art/pieces/piece_shunshou_airing_books.tres" id="4_jc8ko"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_t45cj"]
+[ext_resource type="Script" uid="uid://gu7gcielbwdr" path="res://events/system/outcomes/choose_card/event_outcome_choose_card.gd" id="6_7ofct"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="7_tdc72"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="8_6fs4p"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_1o25j"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="10_qg6py"]
+[ext_resource type="Resource" uid="uid://bkf47djsx453g" path="res://cards/tier4/card_illustration.tres" id="11_qn6ot"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="12_wrjbe"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="13_b0ifd"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="14_ejhj1"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="15_338nc"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="16_12dsg"]
+
+[sub_resource type="Resource" id="Resource_ljbhq"]
+script = ExtResource("4_hqtur")
+_texture_path = "res://events/generic/book_drying/book_drying.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_3xr84"]
+script = ExtResource("6_7ofct")
+card_tag = 17
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_8j4ln"]
+script = ExtResource("9_1o25j")
+aspect_type = ExtResource("8_6fs4p")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_saln1"]
+script = ExtResource("5_t45cj")
+markedup_text = "It is an evil spirit."
+requirement = SubResource("Resource_8j4ln")
+outcome = SubResource("Resource_3xr84")
+markedup_result_text = "The boy nods solemnly. He asks the local priests about spirits and ghosts, and begins studying old manuscripts describing possessions and exorcisms.
+
+Soon he sets out to seek a monastery and become a novice monk."
+
+[sub_resource type="Resource" id="Resource_plak7"]
+script = ExtResource("6_7ofct")
+card_tag = 13
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_aub17"]
+script = ExtResource("9_1o25j")
+aspect_type = ExtResource("10_qg6py")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_f0vj7"]
+script = ExtResource("5_t45cj")
+markedup_text = "It is an ancient beast."
+requirement = SubResource("Resource_aub17")
+outcome = SubResource("Resource_plak7")
+markedup_result_text = "The librarian admits that nobody here knows what those creatures are, but she thinks they are ancient beasts, ones who used to roam these lands before the Shattering.
+
+This sparks a lifelong passion of history in the boy. Someday he will uncover many mysteries lost in the mists of the past."
+
+[sub_resource type="Resource" id="Resource_xifkc"]
+script = ExtResource("12_wrjbe")
+card_type = ExtResource("11_qn6ot")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ymjb3"]
+script = ExtResource("14_ejhj1")
+bonus_type = ExtResource("13_b0ifd")
+min_count = 60
+max_count = -1
+extra_per_season = 60
+
+[sub_resource type="Resource" id="Resource_ct8ru"]
+script = ExtResource("5_t45cj")
+markedup_text = "It is an imaginary monster."
+requirement = SubResource("Resource_ymjb3")
+outcome = SubResource("Resource_xifkc")
+markedup_result_text = "The librarian explains that these are fairy-tale monsters that an artist imagined.
+
+Spurred by the revelation that one is free to come up with imaginary beasts, the boy starts spending his days drawing his own creatures. Dogs with wings, birds with books in their beaks, and brightly colored tigers with flowers around their necks."
+
+[sub_resource type="Resource" id="Resource_ah64o"]
+script = ExtResource("16_12dsg")
+bonus_type = ExtResource("15_338nc")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_5buu7"]
+script = ExtResource("5_t45cj")
+markedup_text = "Tell him to put the book away."
+outcome = SubResource("Resource_ah64o")
+markedup_result_text = "The librarian sternly instructs the boy to put the book back on its string, explaining that the paper is too damp to handle.
+
+The boy will not be back to the library for a long time."
+
+[sub_resource type="Resource" id="Resource_mjpnx"]
+script = ExtResource("3_r7wst")
+markedup_text = "The librarians are airing the entire archive, hanging books on strings to let the damp pages dry. 
+
+One of the helpers, a bright child, laughs in delight as one of the books reveals page upon page of colorful illustrations depicting strange-looking beasts. 
+
+One page shows a yellow squirrel with feathered wings. Another, a big blue horse with an improbably long snout. The boy, however, is most fascinated by a giant, wide-eyed creature with pointed ears peeking through a row of reeds.
+
+He asks a librarian what sort of creature this is."
+background_image = SubResource("Resource_ljbhq")
+background_credit = ExtResource("4_jc8ko")
+choices = Array[ExtResource("5_t45cj")]([SubResource("Resource_saln1"), SubResource("Resource_f0vj7"), SubResource("Resource_ct8ru")])
+exit_choice = SubResource("Resource_5buu7")
+
+[resource]
+script = ExtResource("2_jc8ko")
+default_spot_upgrade = ExtResource("1_t02a5")
+event_id = "book_drying"
+event_name = "The Book of Beasts"
+steps = Array[ExtResource("3_r7wst")]([SubResource("Resource_mjpnx")])
+categories = Array[int]([3])

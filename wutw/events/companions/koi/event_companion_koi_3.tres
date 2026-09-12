@@ -1,0 +1,192 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://d1xsdrluxv7lm"]
+
+[ext_resource type="Resource" uid="uid://botg0872tkx4r" path="res://stage/spots/cliff/upgrade_cliff_2_waterfall.tres" id="1_noa45"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_fplcp"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_53isr"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_lnsy8"]
+[ext_resource type="Resource" uid="uid://dx1ujnguqj3vo" path="res://art/pieces/piece_hiroshige_carp.tres" id="6_p0esq"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_7vqr6"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="7_q33js"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="8_mncsr"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="9_mub5b"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="10_4rkvl"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="11_y2l37"]
+[ext_resource type="Resource" uid="uid://cd5wpmao86pf3" path="res://cards/tier3/card_safe.tres" id="12_7b182"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="13_kq0up"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="14_wjusn"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="15_6hfj6"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="16_4hm2o"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="17_e8u23"]
+[ext_resource type="Resource" uid="uid://cdspemalastd" path="res://companions/koi/companion_koi.tres" id="18_ep53q"]
+[ext_resource type="Script" uid="uid://2you2r2oar48" path="res://events/system/outcomes/unlock_companion/event_outcome_unlock_companion.gd" id="19_baa7n"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="20_iu8a5"]
+[ext_resource type="Script" uid="uid://dnxdmp6ko2c00" path="res://events/system/outcomes/mark_all_choices_seen/event_outcome_mark_all_choices_seen.gd" id="20_lnsy8"]
+[ext_resource type="Resource" uid="uid://yw20322eafe3" path="res://events/companions/koi/event_companion_koi_1.tres" id="21_7vqr6"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="21_ik4g5"]
+[ext_resource type="Resource" uid="uid://pbci7a47vheu" path="res://events/companions/koi/event_companion_koi_2.tres" id="22_p0esq"]
+
+[sub_resource type="Resource" id="Resource_r0oeh"]
+script = ExtResource("2_fplcp")
+scope = 1
+event_id = "global"
+var_id = "companion_koi"
+value = "2"
+
+[sub_resource type="Resource" id="Resource_lnsy8"]
+script = ExtResource("7_7vqr6")
+_texture_path = "res://events/companions/koi/companion_koi_3.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_2myy3"]
+script = ExtResource("9_mub5b")
+bonus_type = ExtResource("8_mncsr")
+amount = -20
+extra_per_season = -20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_jiini"]
+script = ExtResource("11_y2l37")
+aspect_type = ExtResource("10_4rkvl")
+min_count = 4
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_mm8jc"]
+script = ExtResource("7_q33js")
+markedup_text = "Grab the fish and throw it up the waterfall."
+requirement = SubResource("Resource_jiini")
+outcome = SubResource("Resource_2myy3")
+markedup_result_text = "One of the settlers grabs the carp and hurls it upwards, hoping to help it along.
+
+Things do not go as planned. The fish hits a ledge, bounces back, and falls into a crack in the cliff wall. Efforts to get it out end in failure."
+
+[sub_resource type="Resource" id="Resource_w2hpu"]
+script = ExtResource("13_kq0up")
+card_type = ExtResource("12_7b182")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ymvbb"]
+script = ExtResource("7_q33js")
+markedup_text = "Keep the fish away from the waterfall."
+outcome = SubResource("Resource_w2hpu")
+markedup_result_text = "A child picks up a rice ball and uses it to lure the fish to the edge of the pond.
+
+Every time the fish swims back, the child repeats her tactic.
+
+Eventually the carp learns to associate food with staying away from the stream. It will probably be safe for now, but its dream is left forgotten."
+
+[sub_resource type="Resource" id="Resource_3sdrw"]
+script = ExtResource("16_4hm2o")
+delta = 10
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_fmixu"]
+script = ExtResource("17_e8u23")
+scope = 1
+event_id = "global"
+var_id = "companion_koi"
+value = "3"
+description = ""
+outcome_description = "The carp's dream remains alive."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_kojkx"]
+script = ExtResource("19_baa7n")
+companion = ExtResource("18_ep53q")
+metadata/_custom_type_script = "uid://2you2r2oar48"
+
+[sub_resource type="Resource" id="Resource_q33js"]
+script = ExtResource("20_lnsy8")
+seen_event = ExtResource("21_7vqr6")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_mncsr"]
+script = ExtResource("20_lnsy8")
+seen_event = ExtResource("22_p0esq")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_mub5b"]
+script = ExtResource("20_lnsy8")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_xh6l0"]
+script = ExtResource("14_wjusn")
+suboutcomes = Array[ExtResource("15_6hfj6")]([SubResource("Resource_3sdrw"), SubResource("Resource_fmixu"), SubResource("Resource_kojkx"), SubResource("Resource_q33js"), SubResource("Resource_mncsr"), SubResource("Resource_mub5b")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_sdqv8"]
+script = ExtResource("21_ik4g5")
+bonus_type = ExtResource("20_iu8a5")
+min_count = 20
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_f2bue"]
+script = ExtResource("7_q33js")
+markedup_text = "Draw the scene."
+requirement = SubResource("Resource_sdqv8")
+outcome = SubResource("Resource_xh6l0")
+markedup_result_text = "One of the settlers picks up a piece of charcoal and draws the carp, capturing its perseverance.
+
+This memento is sure to inspire the settlers to continue on their challenging journey."
+
+[sub_resource type="Resource" id="Resource_1stri"]
+script = ExtResource("17_e8u23")
+scope = 1
+event_id = "global"
+var_id = "companion_koi"
+value = "3"
+description = ""
+outcome_description = "The carp's dream remains alive."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_2me52"]
+script = ExtResource("19_baa7n")
+companion = ExtResource("18_ep53q")
+metadata/_custom_type_script = "uid://2you2r2oar48"
+
+[sub_resource type="Resource" id="Resource_4rkvl"]
+script = ExtResource("20_lnsy8")
+seen_event = ExtResource("21_7vqr6")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_y2l37"]
+script = ExtResource("20_lnsy8")
+seen_event = ExtResource("22_p0esq")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_7b182"]
+script = ExtResource("20_lnsy8")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_kjam1"]
+script = ExtResource("14_wjusn")
+suboutcomes = Array[ExtResource("15_6hfj6")]([SubResource("Resource_1stri"), SubResource("Resource_2me52"), SubResource("Resource_4rkvl"), SubResource("Resource_y2l37"), SubResource("Resource_7b182")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_ixnmd"]
+script = ExtResource("7_q33js")
+markedup_text = "Leave the fish to its attempts."
+outcome = SubResource("Resource_kjam1")
+markedup_result_text = "The settlers don't interfere.
+
+The carp continues its endless struggle."
+
+[sub_resource type="Resource" id="Resource_sst4b"]
+script = ExtResource("4_lnsy8")
+markedup_text = "Settlers having a picnic by the bottom of the cliff notice a curious scene. A carp has somehow gotten stuck in the little pool at the foot of the waterfall, and is desperately trying to swim up the torrent.
+
+The poor fish keeps jumping out into the falling stream only to plop back down into the water. It swims in a circle for a moment, then repeats its attempt. At one point it somehow ends up on a higher ledge, only to be immediately washed back down."
+background_image = SubResource("Resource_lnsy8")
+background_credit = ExtResource("6_p0esq")
+choices = Array[ExtResource("7_q33js")]([SubResource("Resource_mm8jc"), SubResource("Resource_ymvbb"), SubResource("Resource_f2bue")])
+exit_choice = SubResource("Resource_ixnmd")
+
+[resource]
+script = ExtResource("3_53isr")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_noa45")
+event_id = "companion_koi_3"
+event_name = "Braving the Waterfall"
+requirement = SubResource("Resource_r0oeh")
+steps = Array[ExtResource("4_lnsy8")]([SubResource("Resource_sst4b")])
+categories = Array[int]([0, 4, 1])

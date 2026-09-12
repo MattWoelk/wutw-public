@@ -1,0 +1,144 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://dls3px31nxs4q"]
+
+[ext_resource type="Resource" uid="uid://hrw4byexrnrj" path="res://stage/spots/hill/upgrade_hill_3_teahouse_pavilion.tres" id="1_rt55x"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_xfmwv"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_sgna1"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_tfh5k"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_0d60t"]
+[ext_resource type="Resource" uid="uid://b1danj1u7pmyp" path="res://art/pieces/piece_hiroshige_ushijima.tres" id="6_4jjkj"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="7_4jjkj"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_oflr3"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="8_oflr3"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="9_s81dh"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="10_wjx0p"]
+[ext_resource type="Resource" uid="uid://c6cgd6nqxpjwy" path="res://relics/uncommon/clay_teapot/relic_clay_teapot.tres" id="10_ywe2y"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="11_0d60t"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="11_tna8q"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="14_4jjkj"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="15_oflr3"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="16_0d60t"]
+
+[sub_resource type="Resource" id="Resource_egt2j"]
+script = ExtResource("2_xfmwv")
+event_id = "tea_ceremony_1"
+var_id = "food"
+var_type = 1
+value = "true"
+
+[sub_resource type="Resource" id="Resource_e1dej"]
+script = ExtResource("7_oflr3")
+_texture_path = "res://events/generic/tea_ceremony/tea_ceremony_2a.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_kio1v"]
+script = ExtResource("8_oflr3")
+bonus_type = ExtResource("7_4jjkj")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_0d60t"]
+script = ExtResource("8_oflr3")
+bonus_type = ExtResource("9_s81dh")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_oflr3"]
+script = ExtResource("10_wjx0p")
+suboutcomes = Array[ExtResource("11_0d60t")]([SubResource("Resource_kio1v"), SubResource("Resource_0d60t")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_f2op8"]
+script = ExtResource("6_0d60t")
+markedup_text = "Limit the number of guests."
+outcome = SubResource("Resource_oflr3")
+markedup_result_text = "The tea pavilion takes a day off to make new schedules.
+
+When it reopens, it's less bustling, but certainly better organized."
+
+[sub_resource type="Resource" id="Resource_df5af"]
+script = ExtResource("8_oflr3")
+bonus_type = ExtResource("9_s81dh")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("6_0d60t")
+markedup_text = "Make up for the disturbance with more food."
+outcome = SubResource("Resource_df5af")
+markedup_result_text = "The injured settler, plied with a tray of mochi, laughs it off.
+
+The host quickly regains composure and the feasts go on as usual."
+
+[sub_resource type="Resource" id="Resource_ptcwf"]
+script = ExtResource("11_tna8q")
+relic = ExtResource("10_ywe2y")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_s81dh"]
+script = ExtResource("8_oflr3")
+bonus_type = ExtResource("14_4jjkj")
+amount = -30
+extra_per_season = -20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_ywe2y"]
+script = ExtResource("10_wjx0p")
+suboutcomes = Array[ExtResource("11_0d60t")]([SubResource("Resource_ptcwf"), SubResource("Resource_s81dh")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_tna8q"]
+script = ExtResource("15_oflr3")
+bonus_type = ExtResource("14_4jjkj")
+min_count = 30
+max_count = -1
+extra_per_season = 20
+metadata/_custom_type_script = "uid://dfaio0ey0wbra"
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("6_0d60t")
+markedup_text = "Invest in more staff and better tools."
+requirement = SubResource("Resource_tna8q")
+outcome = SubResource("Resource_ywe2y")
+markedup_result_text = "A cook joins the staff, as do two more hosts.
+
+The teapots are replaced with fine new lacquerware.
+
+The old clay teapots are sent on with the expedition to make tea on the road."
+
+[sub_resource type="Resource" id="Resource_4jjkj"]
+script = ExtResource("8_oflr3")
+bonus_type = ExtResource("16_0d60t")
+amount = -10
+extra_per_season = -5
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("6_0d60t")
+markedup_text = "Ignore the issue and move on."
+outcome = SubResource("Resource_4jjkj")
+markedup_result_text = "The spilled kettle is righted, the burn wrapped, and the feast continues, albeit with less joy."
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("4_tfh5k")
+markedup_text = "The custom of turning tea breaks into feasts has traveled across the shard with the expedition. Now, each ceremony at the pavilion ends with more dishes than hands to carry, and more cups than lips to sip with.
+
+Someone pours water into three kettles at once, and another rushes to stack serving trays.
+
+Suddenly, a sharp cry cuts through the warm chatter. A kettle has spilled. The scald is minor, but the host is beginning to panic."
+background_image = SubResource("Resource_e1dej")
+background_credit = ExtResource("6_4jjkj")
+choices = Array[ExtResource("6_0d60t")]([SubResource("Resource_f2op8"), SubResource("Resource_4xuhh"), SubResource("Resource_tuogj")])
+exit_choice = SubResource("Resource_rx1a8")
+
+[resource]
+script = ExtResource("3_sgna1")
+default_probability_weight = 3
+default_spot_upgrade = ExtResource("1_rt55x")
+event_id = "tea_ceremony_2a"
+event_name = "Hearty Hospitality"
+requirement = SubResource("Resource_egt2j")
+steps = Array[ExtResource("4_tfh5k")]([SubResource("Resource_dpp3j")])
+categories = Array[int]([3])

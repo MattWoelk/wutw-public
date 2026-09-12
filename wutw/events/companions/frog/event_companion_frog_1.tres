@@ -1,0 +1,174 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://cse4ya1lspdui"]
+
+[ext_resource type="Resource" uid="uid://bp071rxo6yfaf" path="res://stage/spots/river/upgrade_river_1_weeping_willows.tres" id="1_jrikr"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="2_4kvse"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="3_pf01l"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="4_oggjo"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="5_l88fs"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="6_qxjyh"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="7_nm0ft"]
+[ext_resource type="Resource" uid="uid://berp33lkk4hqt" path="res://art/pieces/piece_hokkei_frog.tres" id="8_4kvse"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="8_lt2sh"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="9_y5dt8"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="10_di1b2"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="11_tnopk"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="12_7lomn"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="13_ljojc"]
+[ext_resource type="Resource" uid="uid://c8u0145egu04j" path="res://quests/companion/quest_companion_frog.tres" id="14_s4kww"]
+[ext_resource type="Script" uid="uid://rlexviyd8sv7" path="res://events/system/outcomes/start_quest/event_outcome_start_quest.gd" id="15_najsr"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="16_gmhpm"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="17_s7r2i"]
+[ext_resource type="Resource" uid="uid://dtgucmi5xdnk5" path="res://cards/tier6/card_cry.tres" id="18_sos3c"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="19_766xt"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="20_2uekm"]
+[ext_resource type="Resource" uid="uid://y2mcojkbnx52" path="res://cards/tier6/card_madness.tres" id="21_2ut26"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="22_31ng2"]
+[ext_resource type="Resource" uid="uid://d6d62exol8mf" path="res://cards/tier6/card_isolate.tres" id="23_hpcft"]
+
+[sub_resource type="Resource" id="Resource_4fpj6"]
+script = ExtResource("3_pf01l")
+min_progress = 330
+max_progress = -1
+
+[sub_resource type="Resource" id="Resource_2rpah"]
+script = ExtResource("4_oggjo")
+scope = 1
+event_id = "global"
+var_id = "companion_frog"
+value = "0"
+
+[sub_resource type="Resource" id="Resource_3dyre"]
+script = ExtResource("5_l88fs")
+all_requirements = Array[ExtResource("2_4kvse")]([SubResource("Resource_4fpj6"), SubResource("Resource_2rpah")])
+
+[sub_resource type="Resource" id="Resource_ijqs6"]
+script = ExtResource("8_lt2sh")
+_texture_path = "res://events/companions/frog/companion_frog_1.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_c8bok"]
+script = ExtResource("12_7lomn")
+delta = 5
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_cqnrn"]
+script = ExtResource("13_ljojc")
+scope = 1
+event_id = "global"
+var_id = "companion_frog"
+value = "1"
+description = ""
+outcome_description = "The man is inspired by the frog."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_xsgbx"]
+script = ExtResource("15_najsr")
+quest = ExtResource("14_s4kww")
+metadata/_custom_type_script = "uid://rlexviyd8sv7"
+
+[sub_resource type="Resource" id="Resource_psbho"]
+script = ExtResource("10_di1b2")
+suboutcomes = Array[ExtResource("11_tnopk")]([SubResource("Resource_c8bok"), SubResource("Resource_cqnrn"), SubResource("Resource_xsgbx")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_pf411"]
+script = ExtResource("17_s7r2i")
+aspect_type = ExtResource("16_gmhpm")
+min_count = 4
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_eyvo4"]
+script = ExtResource("9_y5dt8")
+markedup_text = "Write a poem about the frog."
+requirement = SubResource("Resource_pf411")
+outcome = SubResource("Resource_psbho")
+markedup_result_text = "The man decides to focus on the amphibian itself, rather than his lost love. He thinks for a moment, then writes:
+
+The river flowing
+The willow is still weeping
+Missed once again
+
+He chuckles at the pun, inspired by the frog's unbothered cycle. The creature doesn't seem to care that it keeps missing.
+
+He walks home, head filled with puns to incorporate into his future poems."
+
+[sub_resource type="Resource" id="Resource_qvx48"]
+script = ExtResource("19_766xt")
+card_type = ExtResource("18_sos3c")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_658i2"]
+script = ExtResource("17_s7r2i")
+aspect_type = ExtResource("20_2uekm")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_o44fc"]
+script = ExtResource("9_y5dt8")
+markedup_text = "Write a poem about the wife."
+requirement = SubResource("Resource_658i2")
+outcome = SubResource("Resource_qvx48")
+markedup_result_text = "The man embraces his grief, dedicating a poem to his wife's memory:
+
+The koto's sound
+had soothed the willow's weeping
+Now it is silent
+
+Tears well in his eyes, the verse only deepening his sorrow.
+
+He remains by the riverbank, lost in his memories, as the frog splashes into the water once more."
+
+[sub_resource type="Resource" id="Resource_kws1i"]
+script = ExtResource("19_766xt")
+card_type = ExtResource("21_2ut26")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ch4xi"]
+script = ExtResource("17_s7r2i")
+aspect_type = ExtResource("22_31ng2")
+min_count = 4
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_1dxtn"]
+script = ExtResource("9_y5dt8")
+markedup_text = "Marry the frog."
+requirement = SubResource("Resource_ch4xi")
+outcome = SubResource("Resource_kws1i")
+markedup_result_text = "The local priest is taken aback by the man's request. Still, he eventually agrees, hoping the ritual will help the poet move on from his sorrow.
+
+It does not. The man treats the ceremony with absolute solemnity, and as the days pass, his grip on reality slips further and further."
+
+[sub_resource type="Resource" id="Resource_rauco"]
+script = ExtResource("19_766xt")
+card_type = ExtResource("23_hpcft")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_kr64n"]
+script = ExtResource("9_y5dt8")
+markedup_text = "Try to move on."
+outcome = SubResource("Resource_rauco")
+markedup_result_text = "The man's friends gently but firmly tell him that his wife is gone, and getting obsessed with a frog will not bring her back.
+
+He bristles at their bluntness. To him, their practical advice just proves that no one understands the depth of his loss.
+
+He turns his back on friendship, isolating himself further in his grief."
+
+[sub_resource type="Resource" id="Resource_0b4ng"]
+script = ExtResource("7_nm0ft")
+markedup_text = "A local poet has become fascinated by a frog living on the riverbank. Every day, he stands by the river and watches it jumping up towards the willow branches. The frog misses every time, splashing back into the water with a dull plop.
+
+He has come to believe that the frog is a reincarnation of his late wife, who would often sit by this very willow, playing her koto."
+background_image = SubResource("Resource_ijqs6")
+background_credit = ExtResource("8_4kvse")
+choices = Array[ExtResource("9_y5dt8")]([SubResource("Resource_eyvo4"), SubResource("Resource_o44fc"), SubResource("Resource_1dxtn")])
+exit_choice = SubResource("Resource_kr64n")
+
+[resource]
+script = ExtResource("6_qxjyh")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_jrikr")
+event_id = "companion_frog_1"
+event_name = "Riverside Sorrow"
+requirement = SubResource("Resource_3dyre")
+steps = Array[ExtResource("7_nm0ft")]([SubResource("Resource_0b4ng")])
+categories = Array[int]([0, 4])

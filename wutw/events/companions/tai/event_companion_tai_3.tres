@@ -1,0 +1,151 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://cnulty2vhgkxg"]
+
+[ext_resource type="Resource" uid="uid://cx26kn6tnxr5y" path="res://stage/spots/seashore/upgrade_seashore_2_shipwright_yard.tres" id="1_ms76s"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_36mpf"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_yr8jf"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_katl1"]
+[ext_resource type="Resource" uid="uid://lccfulyqguks" path="res://art/pieces/piece_hiroshige_nagato.tres" id="5_36mpf"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="5_75nyt"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_f2nvm"]
+[ext_resource type="Resource" uid="uid://cqbb2jeletfdi" path="res://cards/tier3/card_carp.tres" id="7_y3dxp"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="8_lx6ln"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="9_aq2xi"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="10_kfjox"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="11_3btqk"]
+[ext_resource type="Resource" uid="uid://dqjy5ssba0gib" path="res://companions/tai/companion_tai.tres" id="12_nogj2"]
+[ext_resource type="Script" uid="uid://2you2r2oar48" path="res://events/system/outcomes/unlock_companion/event_outcome_unlock_companion.gd" id="13_dgou8"]
+[ext_resource type="Script" uid="uid://dnxdmp6ko2c00" path="res://events/system/outcomes/mark_all_choices_seen/event_outcome_mark_all_choices_seen.gd" id="14_yk4pm"]
+[ext_resource type="Resource" uid="uid://bp373vdtf33kq" path="res://events/companions/tai/event_companion_tai_1.tres" id="15_nddu0"]
+[ext_resource type="Resource" uid="uid://buhr327bkloft" path="res://events/companions/tai/event_companion_tai_2.tres" id="16_lmep6"]
+[ext_resource type="Resource" uid="uid://ckh1okwy4ompd" path="res://cards/tier3/card_dragon.tres" id="17_a78kv"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="18_34gx2"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="19_7s5ie"]
+[ext_resource type="Resource" uid="uid://duetvv4suw3ch" path="res://cards/tier2/card_blow.tres" id="20_hn0e3"]
+
+[sub_resource type="Resource" id="Resource_q3w4r"]
+script = ExtResource("2_36mpf")
+scope = 1
+event_id = "global"
+var_id = "companion_tai"
+value = "2"
+
+[sub_resource type="Resource" id="Resource_mg1wm"]
+script = ExtResource("5_75nyt")
+_texture_path = "res://events/companions/tai/companion_tai_3.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_7kadu"]
+script = ExtResource("8_lx6ln")
+card_type = ExtResource("7_y3dxp")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_w36sh"]
+script = ExtResource("6_f2nvm")
+markedup_text = "Name it after the carp."
+outcome = SubResource("Resource_7kadu")
+markedup_result_text = "The ship is named the Koi, to honor the persevering carp, in a loud ceremony full of celebratory toasts.
+
+As the cheering dies down, a young deckhand points out that carp live in fresh water, and taking one out to sea doesn't make much sense."
+
+[sub_resource type="Resource" id="Resource_rqaos"]
+script = ExtResource("11_3btqk")
+scope = 1
+event_id = "global"
+var_id = "companion_tai"
+value = "3"
+description = ""
+outcome_description = "The sea bream is honored."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_w0w8o"]
+script = ExtResource("13_dgou8")
+companion = ExtResource("12_nogj2")
+metadata/_custom_type_script = "uid://2you2r2oar48"
+
+[sub_resource type="Resource" id="Resource_tbcqs"]
+script = ExtResource("14_yk4pm")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_dqogr"]
+script = ExtResource("14_yk4pm")
+seen_event = ExtResource("15_nddu0")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_x2jo6"]
+script = ExtResource("14_yk4pm")
+seen_event = ExtResource("16_lmep6")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_211fg"]
+script = ExtResource("9_aq2xi")
+suboutcomes = Array[ExtResource("10_kfjox")]([SubResource("Resource_rqaos"), SubResource("Resource_w0w8o"), SubResource("Resource_tbcqs"), SubResource("Resource_dqogr"), SubResource("Resource_x2jo6")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_7jpru"]
+script = ExtResource("6_f2nvm")
+markedup_text = "Name it after the sea bream."
+outcome = SubResource("Resource_211fg")
+markedup_result_text = "The ship is named the Tai, after the plump red fish which has become a symbol of abundance.
+
+The name fits the wide, sturdy vessel perfectly as it sits low in the water, heavy with cargo.
+
+The sea bream is well on its way to being adopted as the patron spirit of good fortune."
+
+[sub_resource type="Resource" id="Resource_bjbvw"]
+script = ExtResource("8_lx6ln")
+card_type = ExtResource("17_a78kv")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_c7rj6"]
+script = ExtResource("19_7s5ie")
+aspect_type = ExtResource("18_34gx2")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_8eh3j"]
+script = ExtResource("6_f2nvm")
+markedup_text = "Name it after the dragon."
+requirement = SubResource("Resource_c7rj6")
+outcome = SubResource("Resource_bjbvw")
+markedup_result_text = "The ship is named the Ryū, after the sleek flowing shape of the sky dragons of legend.
+
+The name sounds impressive, and the workers spend a long time carving a magnificent figurehead to mount at the front of the bow.
+
+However, the heavy cargo ship makes for a very chubby, slow-moving dragon, and the crews of smaller vessels sometimes make fun of the Dragon for being slower than even their tiny boats."
+
+[sub_resource type="Resource" id="Resource_8tjya"]
+script = ExtResource("8_lx6ln")
+card_type = ExtResource("20_hn0e3")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_hncfj"]
+script = ExtResource("6_f2nvm")
+markedup_text = "Name it after the wind."
+outcome = SubResource("Resource_8tjya")
+markedup_result_text = "The ship is named the Kaze, after the wind that animates its sails.
+
+However, during its very first trip out of the harbor, a sudden gale catches the rigging and tears away the sail.
+
+It is quickly reattached, but the crew snicker about the irony of being foiled by one's own namesake."
+
+[sub_resource type="Resource" id="Resource_jmpfu"]
+script = ExtResource("4_katl1")
+markedup_text = "The shipwrights have finally finished their latest vessel.
+
+It is a sturdy, wide-bellied cargo ship built to haul heavy crates across the rougher waters of the shard.
+
+The workers are gathered around, debating what name will bring the ship the most fortune."
+background_image = SubResource("Resource_mg1wm")
+background_credit = ExtResource("5_36mpf")
+choices = Array[ExtResource("6_f2nvm")]([SubResource("Resource_w36sh"), SubResource("Resource_7jpru"), SubResource("Resource_8eh3j")])
+exit_choice = SubResource("Resource_hncfj")
+
+[resource]
+script = ExtResource("3_yr8jf")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_ms76s")
+event_id = "companion_tai_3"
+event_name = "Calling a Boat"
+requirement = SubResource("Resource_q3w4r")
+steps = Array[ExtResource("4_katl1")]([SubResource("Resource_jmpfu")])
+categories = Array[int]([0, 4])

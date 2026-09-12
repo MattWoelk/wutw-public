@@ -1,0 +1,153 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://ba6614c3qkms7"]
+
+[ext_resource type="Resource" uid="uid://g5vii58twf4u" path="res://stage/spots/hill/upgrade_hill_1_stone_quarry.tres" id="1_fee3o"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_p0i1p"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_hxge4"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_fee3o"]
+[ext_resource type="Resource" uid="uid://dgak1wf5r8dyo" path="res://art/pieces/piece_oukyo_tiger.tres" id="5_bp8nn"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="5_f2dk5"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_bp8nn"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="7_nga5s"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="8_baaum"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_ieos0"]
+[ext_resource type="Resource" uid="uid://rlmxwpkmw4ph" path="res://companions/tiger/companion_tiger.tres" id="10_f2dk5"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="10_uek88"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="11_7pkaw"]
+[ext_resource type="Script" uid="uid://2you2r2oar48" path="res://events/system/outcomes/unlock_companion/event_outcome_unlock_companion.gd" id="11_bp8nn"]
+[ext_resource type="Script" uid="uid://dnxdmp6ko2c00" path="res://events/system/outcomes/mark_all_choices_seen/event_outcome_mark_all_choices_seen.gd" id="12_nga5s"]
+[ext_resource type="Resource" uid="uid://cahl4g8nwrctc" path="res://events/companions/tiger/event_companion_tiger_1.tres" id="13_baaum"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="13_qja8r"]
+[ext_resource type="Resource" uid="uid://wg7n32fs58l6" path="res://events/companions/tiger/event_companion_tiger_2.tres" id="14_ieos0"]
+[ext_resource type="Resource" uid="uid://bm2bwav37g1li" path="res://cards/tier6/card_grief.tres" id="17_uek88"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="19_7pkaw"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="20_ptoyh"]
+
+[sub_resource type="Resource" id="Resource_qja8r"]
+script = ExtResource("2_p0i1p")
+scope = 1
+event_id = "global"
+var_id = "companion_tiger"
+value = "2"
+
+[sub_resource type="Resource" id="Resource_rqf0c"]
+script = ExtResource("5_f2dk5")
+_texture_path = "res://events/companions/tiger/companion_tiger_3.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_uo4hs"]
+script = ExtResource("7_nga5s")
+scope = 1
+event_id = "global"
+var_id = "companion_tiger"
+value = "3"
+description = ""
+outcome_description = "The tiger's spirit is reinvigorated."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_v1751"]
+script = ExtResource("11_bp8nn")
+companion = ExtResource("10_f2dk5")
+metadata/_custom_type_script = "uid://2you2r2oar48"
+
+[sub_resource type="Resource" id="Resource_wflgy"]
+script = ExtResource("12_nga5s")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_8577j"]
+script = ExtResource("12_nga5s")
+seen_event = ExtResource("13_baaum")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_g8q6f"]
+script = ExtResource("12_nga5s")
+seen_event = ExtResource("14_ieos0")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_0gamc"]
+script = ExtResource("10_uek88")
+suboutcomes = Array[ExtResource("11_7pkaw")]([SubResource("Resource_uo4hs"), SubResource("Resource_v1751"), SubResource("Resource_wflgy"), SubResource("Resource_8577j"), SubResource("Resource_g8q6f")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_p4k68"]
+script = ExtResource("9_ieos0")
+aspect_type = ExtResource("8_baaum")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_eb6hi"]
+script = ExtResource("6_bp8nn")
+markedup_text = "Roar a fierce challenge down into the quarry."
+requirement = SubResource("Resource_p4k68")
+outcome = SubResource("Resource_0gamc")
+markedup_result_text = "A brave settler steps to the edge of the pit, cups her hands, and lets out a booming roar.
+
+The tiger snaps to attention, its eyes flashing with renewed intensity.
+
+It rises to the challenge, and lets out a deafening roar, before proudly stalking away into the wilderness."
+
+[sub_resource type="Resource" id="Resource_uvt4r"]
+script = ExtResource("13_qja8r")
+card_type = ExtResource("17_uek88")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_1u8hi"]
+script = ExtResource("9_ieos0")
+aspect_type = ExtResource("19_7pkaw")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_2cv3q"]
+script = ExtResource("6_bp8nn")
+markedup_text = "Build a makeshift roof to keep the rain off."
+requirement = SubResource("Resource_1u8hi")
+outcome = SubResource("Resource_uvt4r")
+markedup_result_text = "The townsfolk tie some bamboo together into a canopy above the ivy overhang.
+
+The tiger doesn't seem to notice, and continues to sit in the cold dampness, whimpering once in a while.
+
+Rarely can a physical solution fix a mental problem."
+
+[sub_resource type="Resource" id="Resource_u1ph2"]
+script = ExtResource("9_ieos0")
+aspect_type = ExtResource("20_ptoyh")
+min_count = 5
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_1tihe"]
+script = ExtResource("6_bp8nn")
+markedup_text = "Scare the beast away."
+requirement = SubResource("Resource_u1ph2")
+outcome = SubResource("Resource_uvt4r")
+markedup_result_text = "The settlers throw pebbles down, trying to scare the tiger away.
+
+The beast watches the falling rocks with disinterest, shifts its position closer to the wall, but continues to sit in the cold dampness, whimpering once in a while."
+
+[sub_resource type="Resource" id="Resource_a5id8"]
+script = ExtResource("6_bp8nn")
+markedup_text = "Leave the beast to its misery."
+outcome = SubResource("Resource_uvt4r")
+markedup_result_text = "The settlers agree to stay out of the quarry until the tiger decides to leave.
+
+The tiger remains in the quarry for days, inconsolable in its grief.
+
+It leaves eventually, stepping softly, its shoulders hunched and its gaze fixed on the ground."
+
+[sub_resource type="Resource" id="Resource_enybh"]
+script = ExtResource("4_fee3o")
+markedup_text = "Heavy rains have turned the bottom of the quarry into a muddy pit. In this pit, huddled under a small overhang of ivy, is a tiger.
+
+The beast has been there for days, looking miserable, occasionally emitting sorrowful moans. A wildlife warden reports that it had recently lost its cubs to a rockslide."
+background_image = SubResource("Resource_rqf0c")
+background_credit = ExtResource("5_bp8nn")
+choices = Array[ExtResource("6_bp8nn")]([SubResource("Resource_eb6hi"), SubResource("Resource_2cv3q"), SubResource("Resource_1tihe")])
+exit_choice = SubResource("Resource_a5id8")
+
+[resource]
+script = ExtResource("3_hxge4")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_fee3o")
+event_id = "companion_tiger_3"
+event_name = "A Mourning Beast"
+requirement = SubResource("Resource_qja8r")
+steps = Array[ExtResource("4_fee3o")]([SubResource("Resource_enybh")])
+categories = Array[int]([0, 4])

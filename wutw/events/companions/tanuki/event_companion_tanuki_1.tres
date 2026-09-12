@@ -1,0 +1,170 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://c6xn56yk2hokx"]
+
+[ext_resource type="Resource" uid="uid://dl31bton8ngdc" path="res://stage/spots/plains/upgrade_plains_1_farm.tres" id="1_iykcs"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="2_x3q36"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="3_ejjly"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="4_ex5xs"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="5_brh4l"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="6_8o1qw"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="7_4qoui"]
+[ext_resource type="Resource" uid="uid://cj4oqvrkm0ehu" path="res://art/pieces/piece_koson_tanuki.tres" id="9_heifq"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="10_663ff"]
+[ext_resource type="Resource" uid="uid://bm6fcwsdttfg5" path="res://cards/tier0/card_escape.tres" id="10_ddg61"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="10_r3tsp"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="11_pqa2c"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="12_5yao3"]
+[ext_resource type="Resource" uid="uid://k4kbhgyv8xwq" path="res://cards/tier0/card_rest.tres" id="12_663ff"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="13_040oq"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="14_6y8bd"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="14_ho424"]
+[ext_resource type="Resource" uid="uid://40wgwqwq1e4u" path="res://cards/tier2/card_strange.tres" id="15_mx8k0"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="16_0pld6"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="17_rr67g"]
+[ext_resource type="Resource" uid="uid://d3ev5dpfc2i5h" path="res://cards/tier2/card_full.tres" id="20_bw2o7"]
+[ext_resource type="Script" uid="uid://rlexviyd8sv7" path="res://events/system/outcomes/start_quest/event_outcome_start_quest.gd" id="20_ycqt3"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="21_8piev"]
+[ext_resource type="Resource" uid="uid://b7ikes7tt6ieh" path="res://quests/companion/quest_companion_tanuki.tres" id="21_dg03p"]
+
+[sub_resource type="Resource" id="Resource_0u2kj"]
+script = ExtResource("3_ejjly")
+min_progress = 320
+metadata/_custom_type_script = "uid://c50bhh4sr0g8o"
+
+[sub_resource type="Resource" id="Resource_uj4kt"]
+script = ExtResource("4_ex5xs")
+scope = 1
+event_id = "global"
+var_id = "companion_tanuki"
+value = "0"
+
+[sub_resource type="Resource" id="Resource_ghb2s"]
+script = ExtResource("5_brh4l")
+all_requirements = Array[ExtResource("2_x3q36")]([SubResource("Resource_0u2kj"), SubResource("Resource_uj4kt")])
+
+[sub_resource type="Resource" id="Resource_heifq"]
+script = ExtResource("10_663ff")
+_texture_path = "res://events/companions/tanuki/event_companion_tanuki_1.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_t8nqq"]
+script = ExtResource("14_ho424")
+card_type = ExtResource("10_ddg61")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_2sb8d"]
+script = ExtResource("10_r3tsp")
+markedup_text = "Chase it away."
+outcome = SubResource("Resource_t8nqq")
+markedup_result_text = "The farmers wave their arms and shout.
+
+The creature attempts a dignified retreat, immediately foiled by its perfectly round shape. It awkwardly waddles into the brush, bouncing slightly with every step.
+
+A particularly stern farmer, having never seen a tanuki before, demands it be declared an Invasive Alien Species of Shard Concern."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_oye68"]
+script = ExtResource("14_ho424")
+card_type = ExtResource("12_663ff")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_vdtlr"]
+script = ExtResource("14_6y8bd")
+bonus_type = ExtResource("13_040oq")
+min_count = 20
+max_count = -1
+extra_per_season = 20
+metadata/_custom_type_script = "uid://dfaio0ey0wbra"
+
+[sub_resource type="Resource" id="Resource_hqsr2"]
+script = ExtResource("10_r3tsp")
+markedup_text = "Give it more food."
+requirement = SubResource("Resource_vdtlr")
+outcome = SubResource("Resource_oye68")
+markedup_result_text = "A farmer approaches the tanuki with a handful of grain.
+
+The creature slowly lowers its head, gives a deep sigh, then looks back at the moon.
+
+The farmer retreats, feeling slightly judged."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_d3ma4"]
+script = ExtResource("14_ho424")
+card_type = ExtResource("15_mx8k0")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_vkspb"]
+script = ExtResource("17_rr67g")
+aspect_type = ExtResource("16_0pld6")
+min_count = 2
+extra_per_season = 1
+metadata/_custom_type_script = "uid://cjdop1iab2efw"
+
+[sub_resource type="Resource" id="Resource_m5fys"]
+script = ExtResource("10_r3tsp")
+markedup_text = "Sit next to it."
+requirement = SubResource("Resource_vkspb")
+outcome = SubResource("Resource_d3ma4")
+markedup_result_text = "All four farmers sit next to it, mimicking its posture.
+
+The tanuki doesn't react immediately, but soon looks around, confused.
+
+It eventually decides to get away from these odd mimicking creatures."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_r1prr"]
+script = ExtResource("14_ho424")
+card_type = ExtResource("20_bw2o7")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_pvrtx"]
+script = ExtResource("20_ycqt3")
+quest = ExtResource("21_dg03p")
+metadata/_custom_type_script = "uid://rlexviyd8sv7"
+
+[sub_resource type="Resource" id="Resource_dtmmw"]
+script = ExtResource("21_8piev")
+scope = 1
+event_id = "global"
+var_id = "companion_tanuki"
+value = "1"
+description = ""
+outcome_description = "The tanuki enjoys its reverie."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_owrgg"]
+script = ExtResource("11_pqa2c")
+suboutcomes = Array[ExtResource("12_5yao3")]([SubResource("Resource_r1prr"), SubResource("Resource_pvrtx"), SubResource("Resource_dtmmw")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_r4lul"]
+script = ExtResource("10_r3tsp")
+markedup_text = "Let it be."
+outcome = SubResource("Resource_owrgg")
+markedup_result_text = "The farmers decide to leave the trespasser to its midnight digestion.
+
+The creature remains perfectly still, its paws resting on its round belly.
+
+As the moonlight hits its face, one farmer swears the plump little thief is smiling."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_1ea03"]
+script = ExtResource("7_4qoui")
+markedup_text = "One night, farmers stumble upon a chubby tanuki sitting in the middle of their field.
+
+The animal seems content, patting its belly and wistfully looking up at the moon. It is surrounded by a circle of trampled buckwheat, clearly picked clean of grain.
+
+On the one hand, the farmers want to banish the pest. On the other hand, many of them can empathize with the contented lethargy the animal must be experiencing."
+background_image = SubResource("Resource_heifq")
+background_credit = ExtResource("9_heifq")
+choices = Array[ExtResource("10_r3tsp")]([SubResource("Resource_2sb8d"), SubResource("Resource_hqsr2"), SubResource("Resource_m5fys")])
+exit_choice = SubResource("Resource_r4lul")
+
+[resource]
+script = ExtResource("6_8o1qw")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_iykcs")
+event_id = "companion_tanuki_1"
+event_name = "Contented Lethargy"
+requirement = SubResource("Resource_ghb2s")
+steps = Array[ExtResource("7_4qoui")]([SubResource("Resource_1ea03")])
+categories = Array[int]([0, 4])

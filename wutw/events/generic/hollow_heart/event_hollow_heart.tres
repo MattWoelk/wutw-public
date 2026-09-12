@@ -1,0 +1,166 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://dih5qm5ltv5n8"]
+
+[ext_resource type="Resource" uid="uid://cu5qb415c2riy" path="res://stage/spots/plains/upgrade_plains_2_sacred_grove.tres" id="1_el31m"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_vyg1i"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_3352s"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_66e8j"]
+[ext_resource type="Resource" uid="uid://ddnlii1bsysx6" path="res://art/pieces/piece_hiroshige_2_asukayama.tres" id="5_vyg1i"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_3352s"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="6_d5pgk"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="7_moqak"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="8_umgnc"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_gme8m"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="10_yqfb6"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="11_kgkd6"]
+[ext_resource type="Resource" uid="uid://dlbvvrpfogwx6" path="res://relics/common/ancient_bark/relic_ancient_bark.tres" id="12_qbor4"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="13_qw4pn"]
+[ext_resource type="Resource" uid="uid://13wana4nb67" path="res://aspects/types/life/aspect_life.tres" id="14_prlan"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="15_0g0em"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="16_q8207"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="17_ct3hx"]
+
+[sub_resource type="Resource" id="Resource_vyg1i"]
+script = ExtResource("6_3352s")
+_texture_path = "res://events/generic/hollow_heart/hollow_heart.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_q7u4g"]
+script = ExtResource("7_moqak")
+bonus_type = ExtResource("6_d5pgk")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_g6n8l"]
+script = ExtResource("9_gme8m")
+aspect_type = ExtResource("8_umgnc")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_yj1bw"]
+script = ExtResource("5_66e8j")
+markedup_text = "Pack the hollow with sand."
+requirement = SubResource("Resource_g6n8l")
+outcome = SubResource("Resource_q7u4g")
+markedup_result_text = "The void is filled with gravel and sand, packed tight until the trunk is solid again.
+
+It is safe from falling, anchored by its heavy new core.
+
+However, soon the leaves turn brown and drop, leaving a standing skeleton of branches. It remains as a monument, undeniable and sturdy, but it no longer sings in the wind."
+
+[sub_resource type="Resource" id="Resource_1t82r"]
+script = ExtResource("7_moqak")
+bonus_type = ExtResource("6_d5pgk")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_a88nx"]
+script = ExtResource("13_qw4pn")
+relic = ExtResource("12_qbor4")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_caumw"]
+script = ExtResource("10_yqfb6")
+suboutcomes = Array[ExtResource("11_kgkd6")]([SubResource("Resource_1t82r"), SubResource("Resource_a88nx")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_20h0a"]
+script = ExtResource("9_gme8m")
+aspect_type = ExtResource("14_prlan")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_vwblo"]
+script = ExtResource("5_66e8j")
+markedup_text = "Cut it down and replace it with a sapling."
+requirement = SubResource("Resource_20h0a")
+outcome = SubResource("Resource_caumw")
+markedup_result_text = "The cycle must turn. The old giant is felled with reverence, its fall shaking the whole grove.
+
+In the center of the fresh stump, a young sapling is planted, bathed in sunlight that hasn't touched this patch of earth for centuries.
+
+The wood of the elder is cut into small blocks and given to the settlers. \"A memento of the elder,\" the caretaker says, \"while we wait for the new one to grow.\""
+
+[sub_resource type="Resource" id="Resource_r8pej"]
+script = ExtResource("7_moqak")
+bonus_type = ExtResource("15_0g0em")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_8xvpc"]
+script = ExtResource("7_moqak")
+bonus_type = ExtResource("16_q8207")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_i0bdt"]
+script = ExtResource("10_yqfb6")
+suboutcomes = Array[ExtResource("11_kgkd6")]([SubResource("Resource_r8pej"), SubResource("Resource_8xvpc")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_r2oee"]
+script = ExtResource("9_gme8m")
+aspect_type = ExtResource("17_ct3hx")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_hiqpy"]
+script = ExtResource("5_66e8j")
+markedup_text = "Prop it up with bamboo crutches."
+requirement = SubResource("Resource_r2oee")
+outcome = SubResource("Resource_i0bdt")
+markedup_result_text = "A lattice of bamboo poles is constructed, tucked under the heaviest boughs like crutches.
+
+The tree leans on them, looking like a weary elder supported by dutiful grandchildren.
+
+It is frail, but it lives on to witness years to come."
+
+[sub_resource type="Resource" id="Resource_1b00j"]
+script = ExtResource("7_moqak")
+bonus_type = ExtResource("6_d5pgk")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_g84qq"]
+script = ExtResource("7_moqak")
+bonus_type = ExtResource("15_0g0em")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_hor8d"]
+script = ExtResource("10_yqfb6")
+suboutcomes = Array[ExtResource("11_kgkd6")]([SubResource("Resource_1b00j"), SubResource("Resource_g84qq")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_tducl"]
+script = ExtResource("5_66e8j")
+markedup_text = "Fell the tree before it hurts someone."
+outcome = SubResource("Resource_hor8d")
+markedup_result_text = "Axes ring out, and the giant is quickly felled.
+
+The danger is gone, but there is a conspicuous gap in the canopy now, a scar of light among the rustling crowns."
+
+[sub_resource type="Resource" id="Resource_m3yus"]
+script = ExtResource("3_3352s")
+markedup_text = "The grandfather of the grove, a massive tree that has sheltered countless picnics, has begun to lean.
+
+On closer inspection the caretaker finds that the trunk has rotted, and much of it is hollow. It now stands as an empty shell, waiting for the first strong gale to snap it like a dried reed.
+
+Opinions on how to deal with it are divided: a builder wants to fill it, a gardener wants to prop it, and nervous visitors just want it gone before it falls and hurts someone."
+background_image = SubResource("Resource_vyg1i")
+background_credit = ExtResource("5_vyg1i")
+choices = Array[ExtResource("5_66e8j")]([SubResource("Resource_yj1bw"), SubResource("Resource_vwblo"), SubResource("Resource_hiqpy")])
+exit_choice = SubResource("Resource_tducl")
+
+[resource]
+script = ExtResource("2_vyg1i")
+default_spot_upgrade = ExtResource("1_el31m")
+event_id = "hollow_heart"
+event_name = "The Hollow Heart"
+steps = Array[ExtResource("3_3352s")]([SubResource("Resource_m3yus")])
+categories = Array[int]([3])

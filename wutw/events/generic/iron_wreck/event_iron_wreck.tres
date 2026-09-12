@@ -1,0 +1,116 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://cblfa6127io5q"]
+
+[ext_resource type="Resource" uid="uid://dga4w1l5u1fnv" path="res://stage/spots/wasteland/upgrade_wasteland_2_wreck.tres" id="1_sarwv"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="2_7l6xg"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_8ldp0"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_t36ij"]
+[ext_resource type="Resource" uid="uid://2fovmuf41gtk" path="res://art/pieces/piece_original_iron_wreck.tres" id="5_jx6bw"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_f8nsu"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="7_hj3uc"]
+[ext_resource type="Resource" uid="uid://qbp1ubgqlly0" path="res://relics/common/metal_egg/relic_metal_egg.tres" id="8_t76ps"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="9_h0ckm"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="10_y570j"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="11_3srqj"]
+[ext_resource type="Resource" uid="uid://cfg3a323hwq8" path="res://cards/tier2/card_strong.tres" id="12_bafhu"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="13_vd1w0"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="14_tsscl"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="15_hhg3u"]
+[ext_resource type="Resource" uid="uid://bqhmrqu63w4w5" path="res://relics/common/indecipherable_schematics/relic_indecipherable_schematics.tres" id="16_gae6a"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="17_6h1od"]
+
+[sub_resource type="Resource" id="Resource_t35vt"]
+script = ExtResource("2_7l6xg")
+min_progress = 400
+max_progress = -1
+
+[sub_resource type="Resource" id="Resource_fb7ua"]
+script = ExtResource("6_f8nsu")
+_texture_path = "res://events/generic/iron_wreck/iron_wreck.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_asjfx"]
+script = ExtResource("9_h0ckm")
+relic = ExtResource("8_t76ps")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_i82jg"]
+script = ExtResource("11_3srqj")
+bonus_type = ExtResource("10_y570j")
+min_count = 30
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_bm1ui"]
+script = ExtResource("7_hj3uc")
+markedup_text = "Retrieve an egg."
+requirement = SubResource("Resource_i82jg")
+outcome = SubResource("Resource_asjfx")
+markedup_result_text = "The settlers pick the heaviest, best-preserved egg. Its surface is ridged, and a ring of raised metal runs along the middle.
+
+The egg is packed carefully and sent off with the expedition for further study."
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("13_vd1w0")
+card_type = ExtResource("12_bafhu")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_tgx7h"]
+script = ExtResource("15_hhg3u")
+aspect_type = ExtResource("14_tsscl")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_k5vk7"]
+script = ExtResource("7_hj3uc")
+markedup_text = "Study the construction."
+requirement = SubResource("Resource_tgx7h")
+outcome = SubResource("Resource_trtbi")
+markedup_result_text = "The scholars among the group study the structure of the walls. They find them made of two layers of thick metal plates, held together by rivets as thick as a person's arm.
+
+The metal from which the plates are made is covered with a layer of grime, but once cleaned, the rough surface gleams with a dull silvery sheen. Attempts to scratch it yield no results."
+
+[sub_resource type="Resource" id="Resource_o5rge"]
+script = ExtResource("9_h0ckm")
+relic = ExtResource("16_gae6a")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_ok84n"]
+script = ExtResource("15_hhg3u")
+aspect_type = ExtResource("17_6h1od")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_ko0nn"]
+script = ExtResource("7_hj3uc")
+markedup_text = "Search for inscriptions."
+requirement = SubResource("Resource_ok84n")
+outcome = SubResource("Resource_o5rge")
+markedup_result_text = "The scholars among the group study the inside of the giant beast looking for sign of writing, but if any inscriptions ever graced the walls, they no longer survive.
+
+Further search, however, uncovers a compartment with several sheets of a thick, waxy material that resembles smooth paper. On it are detailed drawings of complex mechanisms."
+
+[sub_resource type="Resource" id="Resource_2hk7u"]
+script = ExtResource("7_hj3uc")
+markedup_text = "Leave it alone."
+markedup_result_text = "The group decides to leave the beast alone, letting it continue its vigil over the wasteland."
+
+[sub_resource type="Resource" id="Resource_yaxsg"]
+script = ExtResource("4_t36ij")
+markedup_text = "The huge metal beast stands forlorn among the dry cracks of the wasteland. Even before the Shattering, these giants were considered ancient, the remnants of a civilization long gone.
+
+Until recently, settlers have avoided coming near them, afraid to disturb ancient curses, but today a group of adventurers and scholars have decided to explore one.
+
+Inside they find the decayed remains of levers and gears, most now fused to the metal walls. One wall is full of racks containing large metal eggs. A few are noticeably heavier."
+background_image = SubResource("Resource_fb7ua")
+background_credit = ExtResource("5_jx6bw")
+choices = Array[ExtResource("7_hj3uc")]([SubResource("Resource_bm1ui"), SubResource("Resource_k5vk7"), SubResource("Resource_ko0nn")])
+exit_choice = SubResource("Resource_2hk7u")
+
+[resource]
+script = ExtResource("3_8ldp0")
+default_spot_upgrade = ExtResource("1_sarwv")
+event_id = "iron_wreck"
+event_name = "The Iron Wreck"
+requirement = SubResource("Resource_t35vt")
+steps = Array[ExtResource("4_t36ij")]([SubResource("Resource_yaxsg")])
+categories = Array[int]([3])

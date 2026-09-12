@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://b6p7eqhmqfvwc"]
+
+[ext_resource type="Resource" uid="uid://dqw66dei6x0a" path="res://stage/spots/square/upgrade_square_1_festival_grounds.tres" id="1_2gwe4"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="2_plvje"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="3_go43r"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="6_glmw4"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="7_5kmx5"]
+[ext_resource type="Resource" uid="uid://bxxrkffhb6goc" path="res://art/pieces/piece_hiroshige_asakusa_market.tres" id="8_4gww4"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="8_ruvv4"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="9_go43r"]
+[ext_resource type="Resource" uid="uid://b8s8xlkfbc2b7" path="res://shops/accord_monument/shop_accord_monument.tres" id="11_3o7b8"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="11_iaot0"]
+[ext_resource type="Script" uid="uid://bbhwr4afafq2e" path="res://events/system/outcomes/unlock_shop/event_outcome_unlock_shop.gd" id="15_jy7yw"]
+
+[sub_resource type="Resource" id="Resource_44vvr"]
+script = ExtResource("3_go43r")
+min_progress = 340
+max_progress = 340
+metadata/_custom_type_script = "uid://c50bhh4sr0g8o"
+
+[sub_resource type="Resource" id="Resource_0gm2q"]
+script = ExtResource("6_glmw4")
+all_requirements = Array[ExtResource("2_plvje")]([SubResource("Resource_44vvr")])
+metadata/_custom_type_script = "uid://15prcev7a3ta"
+
+[sub_resource type="Resource" id="Resource_2gwe4"]
+script = ExtResource("9_go43r")
+_texture_path = "res://shops/accord_monument/accord_base.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_v5qfv"]
+script = ExtResource("15_jy7yw")
+shop_type = ExtResource("11_3o7b8")
+metadata/_custom_type_script = "uid://bbhwr4afafq2e"
+
+[sub_resource type="Resource" id="Resource_iriya"]
+script = ExtResource("11_iaot0")
+markedup_text = "Start the project."
+outcome = SubResource("Resource_v5qfv")
+markedup_result_text = "The project is started.
+
+Significant resources will have to be dedicated to bring it to completion."
+
+[sub_resource type="Resource" id="Resource_0b4bk"]
+script = ExtResource("11_iaot0")
+markedup_text = "Leave the project for another shard."
+
+[sub_resource type="Resource" id="Resource_aidwo"]
+script = ExtResource("8_ruvv4")
+markedup_text = "This town square seems like a great place to start setting up the Accord Monument. It will take a lot of work, but we can get started right now."
+background_image = SubResource("Resource_2gwe4")
+background_credit = ExtResource("8_4gww4")
+choices = Array[ExtResource("11_iaot0")]([SubResource("Resource_iriya")])
+exit_choice = SubResource("Resource_0b4bk")
+
+[resource]
+script = ExtResource("7_5kmx5")
+default_probability_weight = 0
+default_spot_upgrade = ExtResource("1_2gwe4")
+event_id = "accord_monuiment"
+event_name = "The Accord Monument"
+requirement = SubResource("Resource_0gm2q")
+steps = Array[ExtResource("8_ruvv4")]([SubResource("Resource_aidwo")])
+categories = Array[int]([2, 1])

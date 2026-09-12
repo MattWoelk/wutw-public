@@ -1,0 +1,145 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://bu7uwnsaofulg"]
+
+[ext_resource type="Resource" uid="uid://bfjhperid285q" path="res://stage/spots/lake/upgrade_lake_2_cloth_rinsing_station.tres" id="1_ui34i"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_i4umi"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_oi8po"]
+[ext_resource type="Resource" uid="uid://pkn4bfqjjc08" path="res://art/pieces/piece_hiroshige_musashi_chofu.tres" id="4_28qwu"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="4_m508n"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_28qwu"]
+[ext_resource type="Resource" uid="uid://cfska2oa28ko7" path="res://relics/common/clean_veil/relic_clean_veil.tres" id="6_7a4om"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="6_m508n"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="7_3nrog"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_28qwu"]
+[ext_resource type="Resource" uid="uid://b0jubij0mroq7" path="res://relics/common/dirty_veil/relic_dirty_veil.tres" id="8_dwqid"]
+[ext_resource type="Script" uid="uid://c526o6bgglybb" path="res://events/system/outcomes/remove_relic/event_outcome_remove_relic.gd" id="9_7a4om"]
+[ext_resource type="Script" uid="uid://bbr46symu7hfi" path="res://events/system/requirements/event_requirement_has_relic.gd" id="9_mwh3o"]
+[ext_resource type="Resource" uid="uid://dmehfjvxb0jtq" path="res://relics/common/clean_sleeve/relic_clean_sleeve.tres" id="10_x7x1g"]
+[ext_resource type="Resource" uid="uid://cbdr73elktxqr" path="res://relics/common/moistened_sleeve/relic_moistened_sleeve.tres" id="11_mar6s"]
+[ext_resource type="Resource" uid="uid://qgol8b0f5o5f" path="res://relics/common/clean_robe/relic_clean_robe.tres" id="12_c1moe"]
+[ext_resource type="Resource" uid="uid://d2eeui54ibxw3" path="res://relics/common/lettered_robe/relic_lettered_robe.tres" id="13_ttq5v"]
+[ext_resource type="Resource" uid="uid://217aj45ippt7" path="res://cards/tier2/card_cleanse.tres" id="14_htux4"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="15_65yex"]
+
+[sub_resource type="Resource" id="Resource_3nrog"]
+script = ExtResource("4_m508n")
+_texture_path = "res://events/generic/laundry/laundry.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_elpe0"]
+script = ExtResource("9_7a4om")
+relic = ExtResource("8_dwqid")
+metadata/_custom_type_script = "uid://c526o6bgglybb"
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("7_3nrog")
+relic = ExtResource("6_7a4om")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_4qtvf"]
+script = ExtResource("6_m508n")
+suboutcomes = Array[ExtResource("7_28qwu")]([SubResource("Resource_elpe0"), SubResource("Resource_trtbi")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_dwqid"]
+script = ExtResource("9_mwh3o")
+relic = ExtResource("8_dwqid")
+
+[sub_resource type="Resource" id="Resource_mwh3o"]
+script = ExtResource("5_28qwu")
+markedup_text = "Wash the dirty veil."
+requirement = SubResource("Resource_dwqid")
+outcome = SubResource("Resource_4qtvf")
+markedup_result_text = "The rinsers are puzzled when the only garment they receive is a wedding veil.
+
+Perhaps an explorer couple married during the expedition, they suppose.
+
+The veil is quickly washed in the lake, rinsed again in a bucket of well water, and finally rubbed with yuzu peel. It has never been cleaner."
+
+[sub_resource type="Resource" id="Resource_hglef"]
+script = ExtResource("9_7a4om")
+relic = ExtResource("11_mar6s")
+metadata/_custom_type_script = "uid://c526o6bgglybb"
+
+[sub_resource type="Resource" id="Resource_0eiya"]
+script = ExtResource("7_3nrog")
+relic = ExtResource("10_x7x1g")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_ua5wu"]
+script = ExtResource("6_m508n")
+suboutcomes = Array[ExtResource("7_28qwu")]([SubResource("Resource_hglef"), SubResource("Resource_0eiya")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_x7x1g"]
+script = ExtResource("9_mwh3o")
+relic = ExtResource("11_mar6s")
+
+[sub_resource type="Resource" id="Resource_mar6s"]
+script = ExtResource("5_28qwu")
+markedup_text = "Wash the overperfumed sleeve."
+requirement = SubResource("Resource_x7x1g")
+outcome = SubResource("Resource_ua5wu")
+markedup_result_text = "The rinsers are confused when presented with a single sleeve, not even attached to a robe.
+
+It takes all day to wash away the stench of perfume clinging to the cloth, and by the end there's still a trace remaining, but it is certainly a big improvement."
+
+[sub_resource type="Resource" id="Resource_f75cp"]
+script = ExtResource("9_7a4om")
+relic = ExtResource("13_ttq5v")
+metadata/_custom_type_script = "uid://c526o6bgglybb"
+
+[sub_resource type="Resource" id="Resource_d174p"]
+script = ExtResource("7_3nrog")
+relic = ExtResource("12_c1moe")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_3eiwn"]
+script = ExtResource("6_m508n")
+suboutcomes = Array[ExtResource("7_28qwu")]([SubResource("Resource_f75cp"), SubResource("Resource_d174p")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_c1moe"]
+script = ExtResource("9_mwh3o")
+relic = ExtResource("13_ttq5v")
+
+[sub_resource type="Resource" id="Resource_ttq5v"]
+script = ExtResource("5_28qwu")
+markedup_text = "Wash the ink off a robe."
+requirement = SubResource("Resource_c1moe")
+outcome = SubResource("Resource_3eiwn")
+markedup_result_text = "The rinsers are surprised to receive only a single robe, and surprised again to find it covered in strange and unfamiliar glyphs.
+
+Still, they have a job, and they take it seriously.
+
+After a few washes the ink is mostly gone. It looks more like a single abstract pattern now."
+
+[sub_resource type="Resource" id="Resource_a6ufw"]
+script = ExtResource("15_65yex")
+card_type = ExtResource("14_htux4")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_htux4"]
+script = ExtResource("5_28qwu")
+markedup_text = "Wash assorted robes and underclothes."
+outcome = SubResource("Resource_a6ufw")
+markedup_result_text = "The settlers are taken aback by the mountain of garments they receive, but they persevere.
+
+They work late into the night, and the expeditions members are amazed to wake up to stacks and stacks of clean, neatly folded clothes."
+
+[sub_resource type="Resource" id="Resource_65yex"]
+script = ExtResource("3_oi8po")
+markedup_text = "The cloth rinsers are done with their work early today.
+
+They offer to handle the expedition's laundry."
+background_image = SubResource("Resource_3nrog")
+background_credit = ExtResource("4_28qwu")
+choices = Array[ExtResource("5_28qwu")]([SubResource("Resource_mwh3o"), SubResource("Resource_mar6s"), SubResource("Resource_ttq5v")])
+exit_choice = SubResource("Resource_htux4")
+
+[resource]
+script = ExtResource("2_i4umi")
+default_spot_upgrade = ExtResource("1_ui34i")
+event_id = "laundry"
+event_name = "Laundry Service"
+steps = Array[ExtResource("3_oi8po")]([SubResource("Resource_65yex")])
+categories = Array[int]([3])

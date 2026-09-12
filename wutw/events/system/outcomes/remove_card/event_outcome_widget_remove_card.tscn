@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ceudg8lai137o"]
+
+[ext_resource type="Script" uid="uid://eo6lkiybtfwl" path="res://events/system/outcomes/remove_card/event_outcome_widget_remove_card.gd" id="1_cd80j"]
+[ext_resource type="FontFile" uid="uid://4akk8wkhg56y" path="res://theme/fonts/Merienda/static/Merienda-ExtraBold.ttf" id="10_h5br6"]
+[ext_resource type="PackedScene" uid="uid://dgmyeosmc67d7" path="res://cards/card.tscn" id="13_drx55"]
+
+[node name="EventOutcomeWidget_RemoveCard" type="VBoxContainer" unique_id=373557963]
+custom_minimum_size = Vector2(0, 280)
+offset_right = 238.0
+offset_bottom = 61.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_cd80j")
+
+[node name="Label" type="Label" parent="." unique_id=943913550]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_h5br6")
+text = "Glyph Removed"
+horizontal_alignment = 1
+
+[node name="Card" parent="." unique_id=269468893 instance=ExtResource("13_drx55")]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
+
+[connection signal="selected" from="Card" to="." method="_on_card_selected"]

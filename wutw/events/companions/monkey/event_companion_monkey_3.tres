@@ -1,0 +1,168 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://eylvub43p4rt"]
+
+[ext_resource type="Resource" uid="uid://hohy7ifwvu0x" path="res://stage/spots/river/upgrade_river_2_sakura_riverbank.tres" id="1_8dkxa"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_fkwdt"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_lxj20"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_avpef"]
+[ext_resource type="Resource" uid="uid://d22nt457tpeaq" path="res://art/pieces/piece_koson_playing_monkeys.tres" id="5_fkwdt"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="5_sy7dd"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_ml7uw"]
+[ext_resource type="Resource" uid="uid://dd2xmq5p51ch3" path="res://cards/tier6/card_anger.tres" id="7_gvufa"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="8_jkylo"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="9_lgu4g"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="10_sxeu5"]
+[ext_resource type="Resource" uid="uid://s37j1sxgg0j1" path="res://cards/tier2/card_butterfly.tres" id="11_8rd7u"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="12_w31q8"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="13_at3fu"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="14_rxyqy"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="15_jio1n"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="16_40nap"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="17_a687q"]
+[ext_resource type="Resource" uid="uid://4tvgcsdp7yn4" path="res://companions/monkey/companion_monkey.tres" id="18_ohvpw"]
+[ext_resource type="Script" uid="uid://2you2r2oar48" path="res://events/system/outcomes/unlock_companion/event_outcome_unlock_companion.gd" id="19_tyuxx"]
+[ext_resource type="Script" uid="uid://dnxdmp6ko2c00" path="res://events/system/outcomes/mark_all_choices_seen/event_outcome_mark_all_choices_seen.gd" id="20_h5y03"]
+[ext_resource type="Resource" uid="uid://pxeaubbr4viv" path="res://events/companions/monkey/event_companion_monkey_1.tres" id="21_xtnxy"]
+[ext_resource type="Resource" uid="uid://cprx48kjy0tjx" path="res://events/companions/monkey/event_companion_monkey_2.tres" id="22_m2bed"]
+
+[sub_resource type="Resource" id="Resource_3x6vd"]
+script = ExtResource("2_fkwdt")
+scope = 1
+event_id = "global"
+var_id = "companion_monkey"
+value = "2"
+
+[sub_resource type="Resource" id="Resource_5utsc"]
+script = ExtResource("5_sy7dd")
+_texture_path = "res://events/companions/monkey/companion_monkey_3.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_u8fp7"]
+script = ExtResource("8_jkylo")
+card_type = ExtResource("7_gvufa")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_eqj0l"]
+script = ExtResource("10_sxeu5")
+aspect_type = ExtResource("9_lgu4g")
+min_count = 5
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_lpbr2"]
+script = ExtResource("6_ml7uw")
+markedup_text = "Break up the fight."
+requirement = SubResource("Resource_eqj0l")
+outcome = SubResource("Resource_u8fp7")
+markedup_result_text = "A stern settler steps forward and tries to pull the animals apart.
+
+The monkeys immediately stop fighting each other, and turn their attention to the human instead.
+
+The settler spends the rest of the picnic running up and down the riverbank, relentlessly chased by two little angry macaques."
+
+[sub_resource type="Resource" id="Resource_4cqxb"]
+script = ExtResource("8_jkylo")
+card_type = ExtResource("11_8rd7u")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_0gxbx"]
+script = ExtResource("13_at3fu")
+bonus_type = ExtResource("12_w31q8")
+min_count = 30
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_8uymi"]
+script = ExtResource("6_ml7uw")
+markedup_text = "Take bets on the winner."
+requirement = SubResource("Resource_0gxbx")
+outcome = SubResource("Resource_4cqxb")
+markedup_result_text = "The settlers gather around, cheering and placing wagers on which monkey will pin the other.
+
+Just as the bets are finalized, a large butterfly flutters over the grass.
+
+Both monkeys stop, release their grips, and chase the insect back into the bushes."
+
+[sub_resource type="Resource" id="Resource_rtn7q"]
+script = ExtResource("8_jkylo")
+card_type = ExtResource("7_gvufa")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_bjr1s"]
+script = ExtResource("10_sxeu5")
+aspect_type = ExtResource("14_rxyqy")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_c82u7"]
+script = ExtResource("6_ml7uw")
+markedup_text = "Study their grappling techniques."
+requirement = SubResource("Resource_bjr1s")
+outcome = SubResource("Resource_rtn7q")
+markedup_result_text = "A local monk observes the brawl with intense focus, praising the animals' fluid movements and calling on the picnickers to learn from their natural technique.
+
+Once the monkeys notice a strange man pointing at them, they seem to take offense and charge at him.
+
+The monk spends the rest of the picnic running up and down the riverbank, relentlessly chased by two little angry macaques."
+
+[sub_resource type="Resource" id="Resource_xvh04"]
+script = ExtResource("17_a687q")
+scope = 1
+event_id = "global"
+var_id = "companion_monkey"
+value = "3"
+description = ""
+outcome_description = "The settlers have join in with the monkeys' antics."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_o8rmv"]
+script = ExtResource("19_tyuxx")
+companion = ExtResource("18_ohvpw")
+metadata/_custom_type_script = "uid://2you2r2oar48"
+
+[sub_resource type="Resource" id="Resource_w7cf6"]
+script = ExtResource("20_h5y03")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_r0m7a"]
+script = ExtResource("20_h5y03")
+seen_event = ExtResource("21_xtnxy")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_b40up"]
+script = ExtResource("20_h5y03")
+seen_event = ExtResource("22_m2bed")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_bukou"]
+script = ExtResource("15_jio1n")
+suboutcomes = Array[ExtResource("16_40nap")]([SubResource("Resource_xvh04"), SubResource("Resource_o8rmv"), SubResource("Resource_w7cf6"), SubResource("Resource_r0m7a"), SubResource("Resource_b40up")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_xtehq"]
+script = ExtResource("6_ml7uw")
+markedup_text = "Start wrestling too."
+outcome = SubResource("Resource_bukou")
+markedup_result_text = "Deciding to join in on the fun, two young settlers drop to the grass and begin their own exaggerated, comical wrestling match.
+
+The onlookers burst into laughter, distracting the monkeys, who are instantly interested and promptly sit down to join the audience in watching the show."
+
+[sub_resource type="Resource" id="Resource_n2qfj"]
+script = ExtResource("4_avpef")
+markedup_text = "Several settlers are enjoying a picnic on the riverbank under the blooming cherry trees.
+
+The peaceful atmosphere is abruptly interrupted when two monkeys tumble out of the bushes, locked in a wrestling match.
+
+They roll around on the petals, tugging at each other's ears and kicking up dirt right next to the picnic blankets."
+background_image = SubResource("Resource_5utsc")
+background_credit = ExtResource("5_fkwdt")
+choices = Array[ExtResource("6_ml7uw")]([SubResource("Resource_lpbr2"), SubResource("Resource_8uymi"), SubResource("Resource_c82u7")])
+exit_choice = SubResource("Resource_xtehq")
+
+[resource]
+script = ExtResource("3_lxj20")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_8dkxa")
+event_id = "companion_monkey_3"
+event_name = "A Wrestling Match"
+requirement = SubResource("Resource_3x6vd")
+steps = Array[ExtResource("4_avpef")]([SubResource("Resource_n2qfj")])
+categories = Array[int]([0, 4])

@@ -1,0 +1,167 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://duin12a8wym3c"]
+
+[ext_resource type="Resource" uid="uid://g7kkyf8uir6n" path="res://stage/spots/wasteland/upgrade_wasteland_2_outpost.tres" id="1_p5g0e"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_iqkpl"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_tmakr"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_vcaat"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="5_2ibqa"]
+[ext_resource type="Resource" uid="uid://s6nb7tq6qvbs" path="res://art/pieces/piece_yoshitoshi_tsunade.tres" id="5_iqkpl"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_ukdfx"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="7_riotb"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="8_rokyv"]
+[ext_resource type="Resource" uid="uid://0e58x1q5kvi5" path="res://companions/snake/companion_snake.tres" id="9_lxwrr"]
+[ext_resource type="Script" uid="uid://2you2r2oar48" path="res://events/system/outcomes/unlock_companion/event_outcome_unlock_companion.gd" id="10_dq120"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="11_uod5u"]
+[ext_resource type="Script" uid="uid://dnxdmp6ko2c00" path="res://events/system/outcomes/mark_all_choices_seen/event_outcome_mark_all_choices_seen.gd" id="12_wx24d"]
+[ext_resource type="Resource" uid="uid://chjfe5avxh1l2" path="res://events/companions/snake/event_companion_snake_1.tres" id="13_b2742"]
+[ext_resource type="Resource" uid="uid://dsdnf52fe5w0j" path="res://events/companions/snake/event_companion_snake_2.tres" id="14_pnmli"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="15_w7cpy"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="16_urrql"]
+[ext_resource type="Resource" uid="uid://dhal843mubr37" path="res://cards/tier6/card_wound.tres" id="17_6osmq"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="18_7csac"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="19_e2x5l"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="20_l7o1h"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="21_3c5t3"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="22_p44ln"]
+[ext_resource type="Resource" uid="uid://c8ykgnjdubwpm" path="res://cards/tier6/card_fear.tres" id="23_5garw"]
+
+[sub_resource type="Resource" id="Resource_5m7u3"]
+script = ExtResource("2_iqkpl")
+scope = 1
+event_id = "global"
+var_id = "companion_snake"
+value = "2"
+
+[sub_resource type="Resource" id="Resource_mv7dw"]
+script = ExtResource("5_2ibqa")
+_texture_path = "res://events/companions/snake/companion_snake_3.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_vdemp"]
+script = ExtResource("10_dq120")
+companion = ExtResource("9_lxwrr")
+metadata/_custom_type_script = "uid://2you2r2oar48"
+
+[sub_resource type="Resource" id="Resource_34t0w"]
+script = ExtResource("11_uod5u")
+scope = 1
+event_id = "global"
+var_id = "companion_snake"
+value = "3"
+description = ""
+outcome_description = "The snake is left with its hoard."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_oadia"]
+script = ExtResource("12_wx24d")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_ppmia"]
+script = ExtResource("12_wx24d")
+seen_event = ExtResource("13_b2742")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_yyt8k"]
+script = ExtResource("12_wx24d")
+seen_event = ExtResource("14_pnmli")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_81khs"]
+script = ExtResource("7_riotb")
+suboutcomes = Array[ExtResource("8_rokyv")]([SubResource("Resource_vdemp"), SubResource("Resource_34t0w"), SubResource("Resource_oadia"), SubResource("Resource_ppmia"), SubResource("Resource_yyt8k")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_w5duh"]
+script = ExtResource("16_urrql")
+bonus_type = ExtResource("15_w7cpy")
+min_count = 40
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_tklk7"]
+script = ExtResource("6_ukdfx")
+markedup_text = "Leave the treasure to its guardian."
+requirement = SubResource("Resource_w5duh")
+outcome = SubResource("Resource_81khs")
+markedup_result_text = "The settlers bow respectfully and back away, deciding that some treasures are not meant to be claimed.
+
+They adopt the patient, watchful snake as a symbol of keeping things hidden until the time is right."
+
+[sub_resource type="Resource" id="Resource_kbckf"]
+script = ExtResource("18_7csac")
+card_type = ExtResource("17_6osmq")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_1kqwe"]
+script = ExtResource("16_urrql")
+bonus_type = ExtResource("19_e2x5l")
+min_count = 30
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_jy6u1"]
+script = ExtResource("6_ukdfx")
+markedup_text = "Leave the screen and take the rest."
+requirement = SubResource("Resource_1kqwe")
+outcome = SubResource("Resource_kbckf")
+markedup_result_text = "The settlers rush to claim the furniture, but the snake is faster.
+
+A scuffle ensues.
+
+The snake is wounded, one of the settlers is injured, and the treasures remain untouched."
+
+[sub_resource type="Resource" id="Resource_piwdq"]
+script = ExtResource("20_l7o1h")
+bonus_type = ExtResource("15_w7cpy")
+amount = -20
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_78vlq"]
+script = ExtResource("22_p44ln")
+aspect_type = ExtResource("21_3c5t3")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_qkoiq"]
+script = ExtResource("6_ukdfx")
+markedup_text = "Drive the snake away with torches."
+requirement = SubResource("Resource_78vlq")
+outcome = SubResource("Resource_piwdq")
+markedup_result_text = "The settlers wave open flames at the snake.
+
+It hisses and retreats into a corner of the room.
+
+The treasure is claimed, but the room is now full of smoke, no longer a welcoming habitat for the reptile."
+
+[sub_resource type="Resource" id="Resource_5iak3"]
+script = ExtResource("18_7csac")
+card_type = ExtResource("23_5garw")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ima5m"]
+script = ExtResource("6_ukdfx")
+markedup_text = "Flee in terror."
+outcome = SubResource("Resource_5iak3")
+markedup_result_text = "The settlers run screaming from the outpost, declaring it a monster's den.
+
+It will be a while before anyone will brave these rooms again."
+
+[sub_resource type="Resource" id="Resource_2luf3"]
+script = ExtResource("4_vcaat")
+markedup_text = "While exploring the dusty halls of the ruined outpost, the settlers find a room filled with remarkably preserved furniture, decorated with gold and jeweled inlays.
+
+Just as they are about to collect all this treasure, a massive snake slithers out from behind a painted screen."
+background_image = SubResource("Resource_mv7dw")
+background_credit = ExtResource("5_iqkpl")
+choices = Array[ExtResource("6_ukdfx")]([SubResource("Resource_tklk7"), SubResource("Resource_jy6u1"), SubResource("Resource_qkoiq")])
+exit_choice = SubResource("Resource_ima5m")
+
+[resource]
+script = ExtResource("3_tmakr")
+default_spot_upgrade = ExtResource("1_p5g0e")
+event_id = "companion_snake_3"
+event_name = "A Guarded Treasure"
+requirement = SubResource("Resource_5m7u3")
+steps = Array[ExtResource("4_vcaat")]([SubResource("Resource_2luf3")])
+categories = Array[int]([0, 4])

@@ -1,0 +1,144 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://csj6whhd3rsta"]
+
+[ext_resource type="Resource" uid="uid://utv78s02n3bx" path="res://stage/spots/forest/upgrade_forest_1_woodcutter.tres" id="1_uy5hl"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_0qvpj"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_na4gp"]
+[ext_resource type="Resource" uid="uid://dqesd1scilj3a" path="res://art/pieces/piece_kiyochika_cherry_tree.tres" id="5_0qvpj"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_o2csi"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_na4gp"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="6_wn1lf"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_0dq3x"]
+[ext_resource type="Resource" uid="uid://cs0734ygxtja6" path="res://cards/tier2/card_timber.tres" id="8_g25yx"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="9_1s1ld"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="10_c5q8y"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="11_g2c12"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="12_hn2eg"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="13_qkl3j"]
+[ext_resource type="Resource" uid="uid://c020mkut5oops" path="res://cards/tier2/card_prune.tres" id="14_t85h0"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="15_4y5j7"]
+[ext_resource type="Resource" uid="uid://bwq6ens5iq38t" path="res://relics/common/forester_staff/relic_forester_staff.tres" id="16_qdhpb"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="17_62y13"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="18_vmv7v"]
+
+[sub_resource type="Resource" id="Resource_0qvpj"]
+script = ExtResource("6_na4gp")
+_texture_path = "res://events/generic/big_dry_tree/big_dry_tree.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_2stvf"]
+script = ExtResource("9_1s1ld")
+card_type = ExtResource("8_g25yx")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_xxhwh"]
+script = ExtResource("11_g2c12")
+bonus_type = ExtResource("10_c5q8y")
+amount = -20
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_kio1v"]
+script = ExtResource("6_wn1lf")
+suboutcomes = Array[ExtResource("7_0dq3x")]([SubResource("Resource_2stvf"), SubResource("Resource_xxhwh")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("13_qkl3j")
+aspect_type = ExtResource("12_hn2eg")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("5_o2csi")
+markedup_text = "Fell the tree for timber."
+requirement = SubResource("Resource_4xuhh")
+outcome = SubResource("Resource_kio1v")
+markedup_result_text = "The work takes all day.
+
+The trunk cracks like thunder, and its fall shakes the forest floor.
+
+The wood is strong, aged, and clean.
+
+But something changes. Birds avoid the clearing now."
+
+[sub_resource type="Resource" id="Resource_df5af"]
+script = ExtResource("9_1s1ld")
+card_type = ExtResource("14_t85h0")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ptcwf"]
+script = ExtResource("11_g2c12")
+bonus_type = ExtResource("10_c5q8y")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_egt2j"]
+script = ExtResource("6_wn1lf")
+suboutcomes = Array[ExtResource("7_0dq3x")]([SubResource("Resource_df5af"), SubResource("Resource_ptcwf")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("13_qkl3j")
+aspect_type = ExtResource("15_4y5j7")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("5_o2csi")
+markedup_text = "Prune just enough to help it grow."
+requirement = SubResource("Resource_rx1a8")
+outcome = SubResource("Resource_egt2j")
+markedup_result_text = "The dead limbs are removed with care, no more than necessary.
+
+When the last one falls, the young shoots already look freer. The sun reaches the bark in places it hasn't touched in years."
+
+[sub_resource type="Resource" id="Resource_f2op8"]
+script = ExtResource("17_62y13")
+relic = ExtResource("16_qdhpb")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("18_vmv7v")
+bonus_type = ExtResource("10_c5q8y")
+min_count = 30
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_ciwob"]
+script = ExtResource("5_o2csi")
+markedup_text = "Establish a care routine."
+requirement = SubResource("Resource_06ahh")
+outcome = SubResource("Resource_f2op8")
+markedup_result_text = "A schedule is made. Each week, a few woodcutters visit to check the roots and trim dead branches.
+
+They put a small sign to mark the tree as maintained.
+
+Soon, such signs start appearing all around the forest."
+
+[sub_resource type="Resource" id="Resource_nthfn"]
+script = ExtResource("5_o2csi")
+markedup_text = "Leave the tree untouched."
+markedup_result_text = "The woodcutters continue on.
+
+The tree stands unchanged, or perhaps changing too slowly to notice."
+
+[sub_resource type="Resource" id="Resource_2myy3"]
+script = ExtResource("3_na4gp")
+markedup_text = "Deep in the forest, the woodcutters pause at the foot of a towering tree, easily the largest they've ever seen.
+
+The bark is scarred, and most of the limbs are either broken or bare. A few birds nest in hollows once shaped by age or lightning.
+
+The tree is not dead, though. Two thin branches are lush with pink petals, reaching for the light."
+background_image = SubResource("Resource_0qvpj")
+background_credit = ExtResource("5_0qvpj")
+choices = Array[ExtResource("5_o2csi")]([SubResource("Resource_tuogj"), SubResource("Resource_dpp3j"), SubResource("Resource_ciwob")])
+exit_choice = SubResource("Resource_nthfn")
+
+[resource]
+script = ExtResource("2_0qvpj")
+default_spot_upgrade = ExtResource("1_uy5hl")
+event_id = "big_dry_tree"
+event_name = "The Old Cherry Tree"
+steps = Array[ExtResource("3_na4gp")]([SubResource("Resource_2myy3")])
+categories = Array[int]([3])

@@ -1,0 +1,170 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://bkwqn3fpmcmsx"]
+
+[ext_resource type="Resource" uid="uid://g7kkyf8uir6n" path="res://stage/spots/wasteland/upgrade_wasteland_2_outpost.tres" id="1_xxqix"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_5nsoh"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_oln24"]
+[ext_resource type="Resource" uid="uid://cy0jpoigt356p" path="res://art/pieces/piece_hokusai_suruga_street.tres" id="5_5nsoh"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_dxnvu"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="6_abkcp"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_oln24"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_63tnh"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="8_4v7mn"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="9_fol6f"]
+[ext_resource type="Resource" uid="uid://y6fmm1drk2gr" path="res://relics/common/jade_shard/relic_jade_shard.tres" id="10_fgrc1"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="11_hxdvw"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="12_2uwla"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="13_yxuh5"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="14_u8cii"]
+[ext_resource type="Resource" uid="uid://bhir17fi4wsg4" path="res://relics/common/roof_tile/relic_roof_tile.tres" id="15_006bp"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="16_yrx8u"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="17_chbip"]
+
+[sub_resource type="Resource" id="Resource_5nsoh"]
+script = ExtResource("6_oln24")
+_texture_path = "res://events/generic/leaning_rampart/leaning_rampart.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("9_fol6f")
+bonus_type = ExtResource("8_4v7mn")
+amount = -5
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("11_hxdvw")
+relic = ExtResource("10_fgrc1")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("6_abkcp")
+suboutcomes = Array[ExtResource("7_63tnh")]([SubResource("Resource_4xuhh"), SubResource("Resource_tuogj")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_kojkx"]
+script = ExtResource("13_yxuh5")
+aspect_type = ExtResource("12_2uwla")
+min_count = 4
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_xh6l0"]
+script = ExtResource("5_dxnvu")
+markedup_text = "Dismantle it."
+requirement = SubResource("Resource_kojkx")
+outcome = SubResource("Resource_rx1a8")
+markedup_result_text = "The collapse is carefully planned: bracing, guiding, and disassembling one layer at a time.
+
+It's dirty, brutal work, but when the last stone is pried loose, something glimmers within the wall's hollow: a green, sharp-edged lump of jade."
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("9_fol6f")
+bonus_type = ExtResource("14_u8cii")
+amount = -15
+extra_per_season = -15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("11_hxdvw")
+relic = ExtResource("15_006bp")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_ciwob"]
+script = ExtResource("6_abkcp")
+suboutcomes = Array[ExtResource("7_63tnh")]([SubResource("Resource_dpp3j"), SubResource("Resource_06ahh")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_1stri"]
+script = ExtResource("13_yxuh5")
+aspect_type = ExtResource("16_yrx8u")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_2me52"]
+script = ExtResource("5_dxnvu")
+markedup_text = "Patch it with scavenged pieces."
+requirement = SubResource("Resource_1stri")
+outcome = SubResource("Resource_ciwob")
+markedup_result_text = "Workers scour the ruins for usable remnants: broken tiles, crooked beams, and stones just the right size to fit the cracks.
+
+It isn't elegant, but it holds.
+
+In the end, more tiles are found than needed."
+
+[sub_resource type="Resource" id="Resource_nthfn"]
+script = ExtResource("9_fol6f")
+bonus_type = ExtResource("14_u8cii")
+amount = -20
+extra_per_season = -20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_2myy3"]
+script = ExtResource("9_fol6f")
+bonus_type = ExtResource("8_4v7mn")
+amount = 15
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_w2hpu"]
+script = ExtResource("11_hxdvw")
+relic = ExtResource("15_006bp")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_3sdrw"]
+script = ExtResource("6_abkcp")
+suboutcomes = Array[ExtResource("7_63tnh")]([SubResource("Resource_nthfn"), SubResource("Resource_2myy3"), SubResource("Resource_w2hpu")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_kjam1"]
+script = ExtResource("17_chbip")
+bonus_type = ExtResource("14_u8cii")
+min_count = 40
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_r0oeh"]
+script = ExtResource("5_dxnvu")
+markedup_text = "Rebuild it properly."
+requirement = SubResource("Resource_kjam1")
+outcome = SubResource("Resource_3sdrw")
+markedup_result_text = "Resources are brought from the nearby settlement. Proper tools, sturdy timber, hewn stone.
+
+As the final tile is laid, the workers look on in pride.
+
+This piece of the past is no longer a ruin."
+
+[sub_resource type="Resource" id="Resource_fmixu"]
+script = ExtResource("9_fol6f")
+bonus_type = ExtResource("8_4v7mn")
+amount = -5
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_jiini"]
+script = ExtResource("5_dxnvu")
+markedup_text = "Do nothing."
+outcome = SubResource("Resource_fmixu")
+markedup_result_text = "The wall groans, shivers, then settles.
+
+For a while, it still stands. But weeks later, during a windstorm, it collapses with a crack like thunder.
+
+No one is hurt, but some of the shelters lose their windbreak."
+
+[sub_resource type="Resource" id="Resource_mm8jc"]
+script = ExtResource("3_oln24")
+markedup_text = "One of the old ramparts was too ramshackle to restore when the outpost was resettled, but now it has started to crumble piece by piece.
+
+The stones shift underfoot, and each gust of wind brings a faint groan from the structure. If left alone, it will fall.
+
+Shall we let it fall on our terms, or its own?"
+background_image = SubResource("Resource_5nsoh")
+background_credit = ExtResource("5_5nsoh")
+choices = Array[ExtResource("5_dxnvu")]([SubResource("Resource_xh6l0"), SubResource("Resource_2me52"), SubResource("Resource_r0oeh")])
+exit_choice = SubResource("Resource_jiini")
+
+[resource]
+script = ExtResource("2_5nsoh")
+default_spot_upgrade = ExtResource("1_xxqix")
+event_id = "leaning_rampart"
+event_name = "The Crumbling Rampart"
+steps = Array[ExtResource("3_oln24")]([SubResource("Resource_mm8jc")])
+categories = Array[int]([3])

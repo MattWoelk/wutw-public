@@ -1,0 +1,177 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://dtjgcu81gj020"]
+
+[ext_resource type="Resource" uid="uid://d1l87hqrhkyty" path="res://stage/spots/swamp/upgrade_swamp_3_sunken_fortress.tres" id="1_dd8e7"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="2_7bft4"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_eavm5"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_01lkg"]
+[ext_resource type="Resource" uid="uid://bfwwcdj7tpevm" path="res://art/pieces/piece_yoshida_himeji_castle.tres" id="5_etune"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_cjp3y"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="7_77xuw"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="8_os4mu"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="9_tw3dm"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="10_l8nu6"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="11_7ycmo"]
+[ext_resource type="Resource" uid="uid://017w8pmin2u6" path="res://relics/common/soggy_acorn/relic_soggy_acorn.tres" id="12_j8bby"]
+[ext_resource type="Script" uid="uid://c526o6bgglybb" path="res://events/system/outcomes/remove_relic/event_outcome_remove_relic.gd" id="13_bvtc2"]
+[ext_resource type="Resource" uid="uid://bhitavnyua1g0" path="res://relics/common/paw_print/relic_paw_print.tres" id="14_u01ql"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="15_7n6q3"]
+[ext_resource type="Script" uid="uid://bbr46symu7hfi" path="res://events/system/requirements/event_requirement_has_relic.gd" id="16_w8kqr"]
+[ext_resource type="Resource" uid="uid://bhrtdhk65fhge" path="res://cards/tier2/card_protect.tres" id="17_vwk5t"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="18_cp6td"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="19_ggxcy"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="20_jet3q"]
+[ext_resource type="Resource" uid="uid://ch4spdw46no4j" path="res://cards/tier6/card_stink.tres" id="21_j63da"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="22_kg30m"]
+
+[sub_resource type="Resource" id="Resource_r0f7y"]
+script = ExtResource("2_7bft4")
+min_progress = 210
+max_progress = -1
+
+[sub_resource type="Resource" id="Resource_78psp"]
+script = ExtResource("6_cjp3y")
+_texture_path = "res://events/generic/swamp_fortress/swamp_fortress.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_5yb2y"]
+script = ExtResource("9_tw3dm")
+bonus_type = ExtResource("8_os4mu")
+min_count = 100
+max_count = -1
+extra_per_season = 50
+
+[sub_resource type="Resource" id="Resource_smgwy"]
+script = ExtResource("7_77xuw")
+markedup_text = "Investigate the fortress."
+requirement = SubResource("Resource_5yb2y")
+result_event_step_id = "search"
+
+[sub_resource type="Resource" id="Resource_l8nu6"]
+script = ExtResource("7_77xuw")
+markedup_text = "Leave well enough alone."
+markedup_result_text = "The settlers continue to avoid the fortress, leaving it to its slow journey down into the center of the shard.
+
+Rumors will keep spreading until someone summons the bravery to venture inside."
+
+[sub_resource type="Resource" id="Resource_7ycmo"]
+script = ExtResource("4_01lkg")
+markedup_text = "In the swamp on the outskirts of town lies an old fortress. Maybe it was founded on unstable soil, or perhaps the Shattering has turned the area into a swamp later.
+
+Several floors have already been claimed by the muck, and the rest of the structure is leaning precariously to one side.
+
+Lately, rumors have been spreading of strange noises coming from this fortress at night, and settlers suspect that spirits have claimed the place."
+background_image = SubResource("Resource_78psp")
+background_credit = ExtResource("5_etune")
+choices = Array[ExtResource("7_77xuw")]([SubResource("Resource_smgwy")])
+exit_choice = SubResource("Resource_l8nu6")
+
+[sub_resource type="Resource" id="Resource_cp6td"]
+script = ExtResource("13_bvtc2")
+relic = ExtResource("12_j8bby")
+metadata/_custom_type_script = "uid://c526o6bgglybb"
+
+[sub_resource type="Resource" id="Resource_ggxcy"]
+script = ExtResource("15_7n6q3")
+relic = ExtResource("14_u01ql")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_vwk5t"]
+script = ExtResource("10_l8nu6")
+suboutcomes = Array[ExtResource("11_7ycmo")]([SubResource("Resource_cp6td"), SubResource("Resource_ggxcy")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_w8kqr"]
+script = ExtResource("16_w8kqr")
+relic = ExtResource("12_j8bby")
+metadata/_custom_type_script = "uid://bbr46symu7hfi"
+
+[sub_resource type="Resource" id="Resource_7n6q3"]
+script = ExtResource("7_77xuw")
+markedup_text = "Leave an offering."
+requirement = SubResource("Resource_w8kqr")
+outcome = SubResource("Resource_vwk5t")
+markedup_result_text = "The settlers decide to pacify the spirit with an offering. They put a sheet of paper on the floor and each person places a small offering: a pile of salt, a carving of the Enlightened One, and a few acorns.
+
+As soon as they turn around, they hear the approaching sound of rapid pattering, followed by a swoosh.
+
+They turn around to find the salt scattered, the carving tipped over, and the acorns gone. The paper now bears a muddy print."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_kg30m"]
+script = ExtResource("18_cp6td")
+card_type = ExtResource("17_vwk5t")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_j63da"]
+script = ExtResource("20_jet3q")
+aspect_type = ExtResource("19_ggxcy")
+min_count = 2
+extra_per_season = 1
+metadata/_custom_type_script = "uid://cjdop1iab2efw"
+
+[sub_resource type="Resource" id="Resource_jet3q"]
+script = ExtResource("7_77xuw")
+markedup_text = "Chant a protective incantation."
+requirement = SubResource("Resource_j63da")
+outcome = SubResource("Resource_kg30m")
+markedup_result_text = "The settlers bow deeply and clap their hands, announcing themselves to the spirits inhabiting the fortress.
+
+They chant a loud incantation asking for protection, and the rustling sounds from within the hall go quiet.
+
+Their mission accomplished, the settlers return back to the settlement triumphant, only for the sounds to return the following night."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_kxavi"]
+script = ExtResource("18_cp6td")
+card_type = ExtResource("21_j63da")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_cgsut"]
+script = ExtResource("20_jet3q")
+aspect_type = ExtResource("22_kg30m")
+min_count = 2
+extra_per_season = 1
+metadata/_custom_type_script = "uid://cjdop1iab2efw"
+
+[sub_resource type="Resource" id="Resource_3ujsx"]
+script = ExtResource("7_77xuw")
+markedup_text = "Explore the hall with torches."
+requirement = SubResource("Resource_cgsut")
+outcome = SubResource("Resource_kxavi")
+markedup_result_text = "The settlers light torches and walk deeper into the hall.
+
+The rustling sounds continue, but the source stays just out of reach.
+
+When they reach the collapsed door at the end of the hall, their nostrils are assaulted by a foul, musky stench without a clear source.
+
+Their path barred, the settlers return empty-handed."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_u01ql"]
+script = ExtResource("7_77xuw")
+markedup_text = "Retreat."
+markedup_result_text = "The settlers decide that they've had enough adventure for the night and quickly climb back out, leaving whoever is inside undisturbed."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_j8bby"]
+script = ExtResource("4_01lkg")
+event_step_id = "search"
+markedup_text = "A small group of adventurous settlers sets out one night to investigate the rumored noises, carrying satchels of auspicious amulets. The crumbling fortress stares them down with its dark windows, daring them to approach.
+
+As they climb inside through a hole left by collapsed masonry, they are greeted with a pitch-black hall, large enough that none of the other walls are visible.
+
+The sound of footsteps from the depth of the hall echoes against the ancient stones."
+background_image = SubResource("Resource_78psp")
+background_credit = ExtResource("5_etune")
+choices = Array[ExtResource("7_77xuw")]([SubResource("Resource_7n6q3"), SubResource("Resource_jet3q"), SubResource("Resource_3ujsx")])
+exit_choice = SubResource("Resource_u01ql")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[resource]
+script = ExtResource("3_eavm5")
+default_spot_upgrade = ExtResource("1_dd8e7")
+event_id = "swamp_fortress"
+event_name = "The Sunken Fortress"
+requirement = SubResource("Resource_r0f7y")
+steps = Array[ExtResource("4_01lkg")]([SubResource("Resource_7ycmo"), SubResource("Resource_j8bby")])
+categories = Array[int]([3])

@@ -1,0 +1,194 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://bsmi0lvx64a2j"]
+
+[ext_resource type="Resource" uid="uid://bl3yqobwttr4n" path="res://stage/spots/forest/upgrade_forest_3_old_glade.tres" id="1_u75bj"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="2_h73y2"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_pul5d"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_utf66"]
+[ext_resource type="Resource" uid="uid://b0jspbl7rxj2h" path="res://art/pieces/piece_yuhan_sugi.tres" id="6_50hmy"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_giekt"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="7_3hv6a"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_6qb5k"]
+
+[sub_resource type="Resource" id="Resource_lojyp"]
+script = ExtResource("2_h73y2")
+min_progress = 220
+max_progress = 220
+
+[sub_resource type="Resource" id="Resource_e0kji"]
+script = ExtResource("7_6qb5k")
+_texture_path = "res://events/main_quest/2_30_consecration_forest/event_consecration_forest_base.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_gp1dv"]
+script = ExtResource("7_3hv6a")
+scope = 1
+event_id = "firefox"
+var_id = "salt"
+var_type = 1
+value = "true"
+
+[sub_resource type="Resource" id="Resource_qynpt"]
+script = ExtResource("6_giekt")
+markedup_text = "Pour holy water to consecrate the trees."
+requirement = SubResource("Resource_gp1dv")
+markedup_requirement_hint = "A previous choice"
+markedup_requirement_tooltip = "A previous choice: purified the fox spirits' tree with salt"
+result_event_step_id = "salt"
+
+[sub_resource type="Resource" id="Resource_k5aps"]
+script = ExtResource("7_3hv6a")
+scope = 1
+event_id = "firefox"
+var_id = "blood"
+var_type = 1
+value = "true"
+
+[sub_resource type="Resource" id="Resource_y5nml"]
+script = ExtResource("6_giekt")
+markedup_text = "Draw sap from the trees as an offering."
+requirement = SubResource("Resource_k5aps")
+markedup_requirement_hint = "A previous choice"
+markedup_requirement_tooltip = "A previous choice: banished the fox spirits' by spilling blood"
+result_event_step_id = "blood"
+
+[sub_resource type="Resource" id="Resource_58nin"]
+script = ExtResource("7_3hv6a")
+scope = 1
+event_id = "firefox"
+var_id = "destroy"
+var_type = 1
+value = "true"
+
+[sub_resource type="Resource" id="Resource_yyr3p"]
+script = ExtResource("6_giekt")
+markedup_text = "Ignite the forest to cleanse it with fire."
+requirement = SubResource("Resource_58nin")
+markedup_requirement_hint = "A previous choice"
+markedup_requirement_tooltip = "A previous choice: cut down the fox spirits' tree"
+result_event_step_id = "destroy"
+
+[sub_resource type="Resource" id="Resource_dasqf"]
+script = ExtResource("7_3hv6a")
+scope = 1
+event_id = "firefox"
+var_id = "science"
+var_type = 1
+value = "true"
+
+[sub_resource type="Resource" id="Resource_63ro7"]
+script = ExtResource("6_giekt")
+markedup_text = "Test and record the trees' resonance."
+requirement = SubResource("Resource_dasqf")
+markedup_requirement_hint = "A previous choice"
+markedup_requirement_tooltip = "A previous choice: left the fox spirits' tree alone"
+result_event_step_id = "science"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_sphbv"]
+script = ExtResource("4_utf66")
+markedup_text = "Not far from the Eternal Glade the Scribe's disciples find the vein of the forest, a narrow trough lined with ancient, towering trees on both sides. Moss covers the ground in a thick, plush carpet.
+
+This is the place the Scribe named in his plan, where roots draw the shard's life force to the surface. A place of [i]Life[/i], now free from the haunting of the fox spirits."
+background_image = SubResource("Resource_e0kji")
+background_credit = ExtResource("6_50hmy")
+choices = Array[ExtResource("6_giekt")]([SubResource("Resource_qynpt"), SubResource("Resource_y5nml"), SubResource("Resource_yyr3p"), SubResource("Resource_63ro7")])
+
+[sub_resource type="Resource" id="Resource_hcqv8"]
+script = ExtResource("7_6qb5k")
+_texture_path = "res://events/main_quest/2_30_consecration_forest/event_consecration_forest_salt.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_fltmf"]
+script = ExtResource("6_giekt")
+markedup_text = "Continue"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_hyaad"]
+script = ExtResource("4_utf66")
+event_step_id = "salt"
+markedup_text = "The disciples boil herbs in salty sea water, filling pots inscribed with glyphs of life and purity. They pour the water slowly, neatly following along the forest's vein. Steam rises where the water falls, spreading into the air in ghostly ribbons.
+
+The trees appear unscathed, but by the next morning, the moss carpeting the forest floor darkens, curling into a slimy, brown sludge.
+
+\"The impurities are purged,\" the disciples declare. \"The life force now flows pure and concentrated, no longer sapped by lesser growth.\""
+background_image = SubResource("Resource_hcqv8")
+background_credit = ExtResource("6_50hmy")
+exit_choice = SubResource("Resource_fltmf")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[sub_resource type="Resource" id="Resource_k86kc"]
+script = ExtResource("7_6qb5k")
+_texture_path = "res://events/main_quest/2_30_consecration_forest/event_consecration_forest_blood.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_m8kax"]
+script = ExtResource("6_giekt")
+markedup_text = "Continue"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_76ena"]
+script = ExtResource("4_utf66")
+event_step_id = "blood"
+markedup_text = "Sharp stakes are driven into the oldest trees, their sap gathered in flasks beneath the punctures. The liquid runs thick, almost opaque.
+
+\"The trees offer their own tribute to the Enlightened One,\" a disciple declares. \"Their blood carries the power of life itself.\""
+background_image = SubResource("Resource_k86kc")
+background_credit = ExtResource("6_50hmy")
+exit_choice = SubResource("Resource_m8kax")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[sub_resource type="Resource" id="Resource_0kyfl"]
+script = ExtResource("7_6qb5k")
+_texture_path = "res://events/main_quest/2_30_consecration_forest/event_consecration_forest_destroy.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_1c3qd"]
+script = ExtResource("6_giekt")
+markedup_text = "Continue"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_ixcym"]
+script = ExtResource("4_utf66")
+event_step_id = "destroy"
+markedup_text = "Torches are lit, and flames soon start creeping along the underbrush. The fire burns fiercely, clouds of smoke hanging like a curtain among the trees, but it doesn't spread.
+
+When it finally goes out, the air is thick with ash. Charred shapes are left behind in the bark, which the disciples inscribe in their scrolls.
+
+\"Through the purifying fire, the Enlightened One has sent down a message for us,\" the disciples whisper. \"These glyphs will power the ritual to come.\""
+background_image = SubResource("Resource_0kyfl")
+background_credit = ExtResource("6_50hmy")
+exit_choice = SubResource("Resource_1c3qd")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[sub_resource type="Resource" id="Resource_50hmy"]
+script = ExtResource("7_6qb5k")
+_texture_path = "res://events/main_quest/2_30_consecration_forest/event_consecration_forest_science.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_242uo"]
+script = ExtResource("6_giekt")
+markedup_text = "Continue"
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_u8tnk"]
+script = ExtResource("4_utf66")
+event_step_id = "science"
+markedup_text = "The disciples move carefully among the trees, tracing glyphs in the air and waiting for a response. Some leaves rustle, others fall. Each movement is faithfully recorded as evidence of resonance.
+
+By the end of the day, strips of paper hang from the tree trunks, each marked with the glyphs that resonated with each tree.
+
+\"We have learned which glyphs resonate with Life,\" the disciples conclude. \"The Enlightened One's grand design is becoming clearer each day.\""
+background_image = SubResource("Resource_50hmy")
+background_credit = ExtResource("6_50hmy")
+exit_choice = SubResource("Resource_242uo")
+metadata/_custom_type_script = "uid://b3ryo56yig0k3"
+
+[resource]
+script = ExtResource("3_pul5d")
+default_probability_weight = 1
+default_spot_upgrade = ExtResource("1_u75bj")
+event_id = "consecration_forest"
+event_name = "Consecration: Eternal Glade"
+requirement = SubResource("Resource_lojyp")
+steps = Array[ExtResource("4_utf66")]([SubResource("Resource_sphbv"), SubResource("Resource_hyaad"), SubResource("Resource_76ena"), SubResource("Resource_ixcym"), SubResource("Resource_u8tnk")])
+categories = Array[int]([1])

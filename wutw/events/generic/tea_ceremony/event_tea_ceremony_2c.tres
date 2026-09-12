@@ -1,0 +1,118 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://djscg053ft17p"]
+
+[ext_resource type="Resource" uid="uid://hrw4byexrnrj" path="res://stage/spots/hill/upgrade_hill_3_teahouse_pavilion.tres" id="1_vpu3v"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="1_yt5s6"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_vpu3v"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_mtd1m"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_ehx26"]
+[ext_resource type="Resource" uid="uid://cpkmjjj0kee3c" path="res://art/pieces/piece_hiroshige_mariko_teahouse.tres" id="6_sfl38"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="7_17gcy"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_yt5s6"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="8_gmu33"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_dabnd"]
+[ext_resource type="Resource" uid="uid://bdsxmu3ins87a" path="res://relics/uncommon/mended_teacup/relic_mended_teacup.tres" id="10_wrrcd"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="11_pc77e"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="14_qhfta"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="15_o1uwh"]
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("1_yt5s6")
+event_id = "tea_ceremony_1"
+var_id = "card"
+var_type = 1
+value = "true"
+
+[sub_resource type="Resource" id="Resource_sfl38"]
+script = ExtResource("7_yt5s6")
+_texture_path = "res://events/generic/tea_ceremony/tea_ceremony_2c.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_i5ayw"]
+script = ExtResource("7_17gcy")
+bonus_type = ExtResource("14_qhfta")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("5_ehx26")
+markedup_text = "Use the cracked cups."
+outcome = SubResource("Resource_i5ayw")
+markedup_result_text = "The tea service goes on as normal, with the cracks ignored.
+
+The host is relieved."
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("11_pc77e")
+relic = ExtResource("10_wrrcd")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("9_dabnd")
+aspect_type = ExtResource("8_gmu33")
+min_count = 2
+
+[sub_resource type="Resource" id="Resource_nthfn"]
+script = ExtResource("5_ehx26")
+markedup_text = "Offer to mend her cups."
+requirement = SubResource("Resource_dpp3j")
+outcome = SubResource("Resource_4xuhh")
+markedup_result_text = "After tea service is finished, an artisan mixes lacquer with rice flour to fill in the chips and cracks.
+
+Once the paste cures, each crack is polished with gold powder.
+
+The host insists that the guests take one cup as a memento."
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("7_17gcy")
+bonus_type = ExtResource("14_qhfta")
+amount = 30
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_2myy3"]
+script = ExtResource("9_dabnd")
+aspect_type = ExtResource("15_o1uwh")
+min_count = 2
+
+[sub_resource type="Resource" id="Resource_w2hpu"]
+script = ExtResource("5_ehx26")
+markedup_text = "Offer her cups carried by the expedition."
+requirement = SubResource("Resource_2myy3")
+outcome = SubResource("Resource_tuogj")
+markedup_result_text = "The host bows deeply and accepts the gift.
+
+The old cups go on a higher shelf, and the new ones are used for the tea service.
+
+When the expedition departs, there is a basket of packed lunches prepared for them."
+
+[sub_resource type="Resource" id="Resource_vpu3v"]
+script = ExtResource("7_17gcy")
+bonus_type = ExtResource("14_qhfta")
+amount = -10
+extra_per_season = -5
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_3sdrw"]
+script = ExtResource("5_ehx26")
+markedup_text = "Refuse the inadequate vessels."
+outcome = SubResource("Resource_vpu3v")
+markedup_result_text = "The host does not press. The cups are returned to their shelf, still waiting."
+
+[sub_resource type="Resource" id="Resource_fmixu"]
+script = ExtResource("3_mtd1m")
+markedup_text = "Tea Pavilions are now a place of humble, warm gatherings. At this one, a hunchbacked old woman welcomes settlers with warm tea in cracked cups.
+
+\"These are the only ones I have,\" she apologizes. \"Better ones might arrive next month, but I would rather share tea, even if in cracked cups.\""
+background_image = SubResource("Resource_sfl38")
+background_credit = ExtResource("6_sfl38")
+choices = Array[ExtResource("5_ehx26")]([SubResource("Resource_06ahh"), SubResource("Resource_nthfn"), SubResource("Resource_w2hpu")])
+exit_choice = SubResource("Resource_3sdrw")
+
+[resource]
+script = ExtResource("2_vpu3v")
+default_spot_upgrade = ExtResource("1_vpu3v")
+event_id = "tea_ceremony_2c"
+event_name = "A Warm Shared Moment"
+requirement = SubResource("Resource_rx1a8")
+steps = Array[ExtResource("3_mtd1m")]([SubResource("Resource_fmixu")])
+categories = Array[int]([3])

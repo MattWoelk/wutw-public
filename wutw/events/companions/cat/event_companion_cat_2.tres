@@ -1,0 +1,162 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://0vvtvh0ghcm0"]
+
+[ext_resource type="Resource" uid="uid://bneroyflus0ar" path="res://stage/spots/square/upgrade_square_2_market.tres" id="1_7hbe5"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_2mmwg"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_hf6f8"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_ik4t3"]
+[ext_resource type="Resource" uid="uid://d2xrxp54s0rom" path="res://art/pieces/piece_chikanobu_cats.tres" id="6_ef84h"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="7_7hbe5"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_ef84h"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="8_7w82j"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="9_ef84h"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="10_rt6sj"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="11_snuvc"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="12_a8wdc"]
+[ext_resource type="Resource" uid="uid://b6hm4nctd1grw" path="res://cards/tier2/card_conflict.tres" id="12_rt6sj"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="13_snuvc"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="14_a8wdc"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="15_barxa"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="17_n3l5r"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="18_2r6ws"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="19_tqxgo"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="20_0aboy"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="21_7w82j"]
+
+[sub_resource type="Resource" id="Resource_16ua8"]
+script = ExtResource("2_2mmwg")
+scope = 1
+event_id = "global"
+var_id = "companion_cat"
+value = "1"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_7w82j"]
+script = ExtResource("7_ef84h")
+_texture_path = "res://events/companions/cat/event_companion_cat_2.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_2pfx3"]
+script = ExtResource("13_snuvc")
+card_type = ExtResource("12_rt6sj")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_y1mii"]
+script = ExtResource("9_ef84h")
+bonus_type = ExtResource("8_7w82j")
+amount = -25
+extra_per_season = -15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_bs8v5"]
+script = ExtResource("10_rt6sj")
+suboutcomes = Array[ExtResource("11_snuvc")]([SubResource("Resource_2pfx3"), SubResource("Resource_y1mii")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_nswlb"]
+script = ExtResource("15_barxa")
+aspect_type = ExtResource("14_a8wdc")
+min_count = 2
+extra_per_season = 1
+metadata/_custom_type_script = "uid://cjdop1iab2efw"
+
+[sub_resource type="Resource" id="Resource_02t1p"]
+script = ExtResource("7_7hbe5")
+markedup_text = "Declare the luckiest cat the town's patron spirit."
+requirement = SubResource("Resource_nswlb")
+outcome = SubResource("Resource_bs8v5")
+markedup_result_text = "The mayor declares that the luckiest cat is to be the town's patron spirit.
+
+As a result, traders start baiting the cats into fights, each eager to be associated with the town mascot.
+
+Folks begin putting wagers on the fights. Some traders begin to file their cats' claws, or even dress them in armor.
+
+The competition continues to escalate until finally, the local monks decide that a line has been crossed, and usher all the cats back to the wilderness."
+
+[sub_resource type="Resource" id="Resource_j0giq"]
+script = ExtResource("12_a8wdc")
+scope = 1
+event_id = "global"
+var_id = "companion_cat"
+value = "2"
+description = "Get the cats fed"
+outcome_description = "The cats feel pampered and appreciative."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_m7qo2"]
+script = ExtResource("18_2r6ws")
+bonus_type = ExtResource("17_n3l5r")
+min_count = 20
+max_count = -1
+extra_per_season = 20
+metadata/_custom_type_script = "uid://dfaio0ey0wbra"
+
+[sub_resource type="Resource" id="Resource_ybpct"]
+script = ExtResource("7_7hbe5")
+markedup_text = "Mandate compensation for the cats."
+requirement = SubResource("Resource_m7qo2")
+outcome = SubResource("Resource_j0giq")
+markedup_result_text = "The town council declares that the cats must be compensated for their blessings with at least two meals per day.
+
+The merchants grumble but acquiesce, afraid of losing patronage.
+
+Soon the cats grow plump and lazy, and the fights gradually dwindle."
+
+[sub_resource type="Resource" id="Resource_4s7vr"]
+script = ExtResource("9_ef84h")
+bonus_type = ExtResource("19_tqxgo")
+amount = 20
+extra_per_season = 20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_y6s55"]
+script = ExtResource("15_barxa")
+aspect_type = ExtResource("20_0aboy")
+min_count = 2
+extra_per_season = 1
+metadata/_custom_type_script = "uid://cjdop1iab2efw"
+
+[sub_resource type="Resource" id="Resource_5wq3a"]
+script = ExtResource("7_7hbe5")
+markedup_text = "Merge stalls to pool the blessings."
+requirement = SubResource("Resource_y6s55")
+outcome = SubResource("Resource_4s7vr")
+markedup_result_text = "An enterprising merchant comes up with an idea: if two stalls are merged, they will have two cats, and therefore double the blessings.
+
+At first she has trouble convincing the others, but after the first merged stall ends up with a monopoly on sake sales, the rest of the merchants catch on, planting the seeds of a cartel economy in the shard's future."
+
+[sub_resource type="Resource" id="Resource_ef84h"]
+script = ExtResource("9_ef84h")
+bonus_type = ExtResource("21_7w82j")
+amount = 20
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_wt43v"]
+script = ExtResource("7_7hbe5")
+markedup_text = "Ask scholars to explain the symbolism."
+outcome = SubResource("Resource_ef84h")
+markedup_result_text = "Scholars are called to study the cats' blessings. They consult old books and come back with an explanation.
+
+They claim that the cats are fighting over territory and food, not to bestow divine economic favor.
+
+Most merchants refuse to believe this, but the excitement surrounding the fights soon fades, and few people pay attention to it anymore."
+
+[sub_resource type="Resource" id="Resource_uedco"]
+script = ExtResource("4_ik4t3")
+markedup_text = "The market's roofs have become a home for many stray cats. They started showing up out of the wilderness one by one, and by now every stall has its own stall cat.
+
+The merchants consider the cats to be good luck charms, spirits blessing their businesses. As such, whenever cats from competing shops squabble, everyone watches with bated breath; the winning cat is thought to bring great luck to the business it patronizes."
+background_image = SubResource("Resource_7w82j")
+background_credit = ExtResource("6_ef84h")
+choices = Array[ExtResource("7_7hbe5")]([SubResource("Resource_02t1p"), SubResource("Resource_ybpct"), SubResource("Resource_5wq3a")])
+exit_choice = SubResource("Resource_wt43v")
+
+[resource]
+script = ExtResource("3_hf6f8")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_7hbe5")
+event_id = "companion_cat_2"
+event_name = "Market Cats"
+requirement = SubResource("Resource_16ua8")
+steps = Array[ExtResource("4_ik4t3")]([SubResource("Resource_uedco")])
+categories = Array[int]([0, 4])

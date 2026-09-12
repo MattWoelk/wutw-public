@@ -1,0 +1,223 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://cn3udk0mpy4px"]
+
+[ext_resource type="Resource" uid="uid://dmokfbf36hs3u" path="res://stage/spots/building_small/upgrade_building_small_2_restaurant.tres" id="1_ygs7v"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="2_6tt5d"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_8b53x"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_0ywqo"]
+[ext_resource type="Resource" uid="uid://btsjf2h54xjtv" path="res://art/pieces/piece_kuniyoshi_daruma.tres" id="5_6tt5d"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_j4ysv"]
+[ext_resource type="Resource" uid="uid://tymaihfaaxrc" path="res://relics/uncommon/empty_box/relic_empty_box.tres" id="6_6tt5d"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_fd8dg"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="7_fd8dg"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="7_omw8n"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="8_5oxwt"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="9_otqvh"]
+[ext_resource type="Resource" uid="uid://c6ndos1xs15md" path="res://cards/tier2/card_spicy.tres" id="10_e2n37"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="11_tp7l6"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="12_4wsfi"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="13_cnsbt"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="14_rtxhn"]
+[ext_resource type="Resource" uid="uid://wy88wbko1ue2" path="res://cards/tier2/card_fee.tres" id="15_fd8dg"]
+[ext_resource type="Resource" uid="uid://8eab3roo5eqj" path="res://cards/tier2/card_nothing.tres" id="16_4c3xh"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="16_j4ysv"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="17_6tt5d"]
+
+[sub_resource type="Resource" id="Resource_t8gsi"]
+script = ExtResource("2_6tt5d")
+min_progress = 120
+metadata/_custom_type_script = "uid://c50bhh4sr0g8o"
+
+[sub_resource type="Resource" id="Resource_e2n37"]
+script = ExtResource("6_fd8dg")
+_texture_path = "res://events/generic/hungry_monk/hungry_monk.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_5oxwt"]
+script = ExtResource("7_omw8n")
+bonus_type = ExtResource("8_5oxwt")
+amount = -20
+extra_per_season = -20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_hohge"]
+script = ExtResource("9_otqvh")
+bonus_type = ExtResource("8_5oxwt")
+min_count = 20
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_ygs7v"]
+script = ExtResource("5_j4ysv")
+markedup_text = "Serve him another box."
+requirement = SubResource("Resource_hohge")
+outcome = SubResource("Resource_5oxwt")
+markedup_outcome_hint = "The feast continues..."
+result_event_step_id = "full1"
+
+[sub_resource type="Resource" id="Resource_3sdrw"]
+script = ExtResource("11_tp7l6")
+card_type = ExtResource("10_e2n37")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_hrf5k"]
+script = ExtResource("9_otqvh")
+bonus_type = ExtResource("8_5oxwt")
+min_count = 20
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_axdlb"]
+script = ExtResource("9_otqvh")
+bonus_type = ExtResource("13_cnsbt")
+min_count = -1
+max_count = 50
+extra_per_season = -1
+
+[sub_resource type="Resource" id="Resource_tdkim"]
+script = ExtResource("14_rtxhn")
+all_requirements = Array[ExtResource("12_4wsfi")]([SubResource("Resource_hrf5k"), SubResource("Resource_axdlb")])
+
+[sub_resource type="Resource" id="Resource_odw4m"]
+script = ExtResource("5_j4ysv")
+markedup_text = "Mix a lot of wasabi into the next box."
+requirement = SubResource("Resource_tdkim")
+outcome = SubResource("Resource_3sdrw")
+markedup_result_text = "The cook grinds a massive pile of wasabi and mixes it straight into the noodles.
+
+The monk takes a hearty slurp. His eyes bulge, his face turns red, and he abruptly remembers an urgent appointment, fleeing the stall."
+
+[sub_resource type="Resource" id="Resource_fmixu"]
+script = ExtResource("11_tp7l6")
+card_type = ExtResource("15_fd8dg")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_b5cog"]
+script = ExtResource("9_otqvh")
+bonus_type = ExtResource("13_cnsbt")
+min_count = -1
+max_count = 50
+extra_per_season = -1
+
+[sub_resource type="Resource" id="Resource_2f7jm"]
+script = ExtResource("5_j4ysv")
+markedup_text = "Curtly demand payment for the food already consumed."
+requirement = SubResource("Resource_b5cog")
+outcome = SubResource("Resource_fmixu")
+markedup_result_text = "The cook taps the counter and points at the staggering stack of empty boxes.
+
+The monk blinks in surprise, as if the concept of currency had never occurred to him.
+
+He rummages through his deep robes, produces a handful of coins, and leaves with a slightly wounded expression."
+
+[sub_resource type="Resource" id="Resource_kojkx"]
+script = ExtResource("11_tp7l6")
+card_type = ExtResource("16_4c3xh")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_b2v2u"]
+script = ExtResource("5_j4ysv")
+markedup_text = "Serve him an empty box."
+outcome = SubResource("Resource_kojkx")
+markedup_result_text = "The cook places an empty wooden box before the monk with absolute solemnity.
+
+The monk stares at it for a moment, then lets out a booming laugh.
+
+He bows to the cook, and declares his hunger completely cured."
+
+[sub_resource type="Resource" id="Resource_5pap3"]
+script = ExtResource("3_0ywqo")
+markedup_text = "A monk has been at the noodle stall for hours, eating box after box of noodles.
+
+The cook is starting to look at him askance as a towering stack of empty boxes continues to grow, but is wary of offending a customer.
+
+Before long, the monk requests yet another serving."
+background_image = SubResource("Resource_e2n37")
+background_credit = ExtResource("5_6tt5d")
+choices = Array[ExtResource("5_j4ysv")]([SubResource("Resource_ygs7v"), SubResource("Resource_odw4m"), SubResource("Resource_2f7jm")])
+exit_choice = SubResource("Resource_b2v2u")
+
+[sub_resource type="Resource" id="Resource_tp7l6"]
+script = ExtResource("6_fd8dg")
+_texture_path = "res://events/generic/hungry_monk/hungry_monk.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_8b53x"]
+script = ExtResource("5_j4ysv")
+markedup_text = "Serve him another box."
+requirement = SubResource("Resource_hohge")
+outcome = SubResource("Resource_5oxwt")
+markedup_outcome_hint = "The feast still continues..."
+result_event_step_id = "full2"
+
+[sub_resource type="Resource" id="Resource_0ywqo"]
+script = ExtResource("3_0ywqo")
+event_step_id = "full1"
+markedup_text = "The monk quickly polishes off the noodles and asks for another box."
+background_image = SubResource("Resource_tp7l6")
+background_credit = ExtResource("5_6tt5d")
+choices = Array[ExtResource("5_j4ysv")]([SubResource("Resource_8b53x"), SubResource("Resource_odw4m"), SubResource("Resource_2f7jm")])
+exit_choice = SubResource("Resource_b2v2u")
+
+[sub_resource type="Resource" id="Resource_4wsfi"]
+script = ExtResource("6_fd8dg")
+_texture_path = "res://events/generic/hungry_monk/hungry_monk.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_omw8n"]
+script = ExtResource("5_j4ysv")
+markedup_text = "Serve him another box."
+requirement = SubResource("Resource_hohge")
+outcome = SubResource("Resource_5oxwt")
+markedup_outcome_hint = "Will the feast ever end?"
+result_event_step_id = "full3"
+
+[sub_resource type="Resource" id="Resource_j4ysv"]
+script = ExtResource("3_0ywqo")
+event_step_id = "full2"
+markedup_text = "The monk eats this portion as well, but remains hungry, asking for another portion."
+background_image = SubResource("Resource_4wsfi")
+background_credit = ExtResource("5_6tt5d")
+choices = Array[ExtResource("5_j4ysv")]([SubResource("Resource_omw8n"), SubResource("Resource_odw4m"), SubResource("Resource_2f7jm")])
+exit_choice = SubResource("Resource_b2v2u")
+
+[sub_resource type="Resource" id="Resource_cnsbt"]
+script = ExtResource("6_fd8dg")
+_texture_path = "res://events/generic/hungry_monk/hungry_monk.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_w2hpu"]
+script = ExtResource("7_fd8dg")
+relic = ExtResource("6_6tt5d")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_otqvh"]
+script = ExtResource("16_j4ysv")
+suboutcomes = Array[ExtResource("17_6tt5d")]([SubResource("Resource_5oxwt"), SubResource("Resource_w2hpu")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_6tt5d"]
+script = ExtResource("5_j4ysv")
+markedup_text = "Serve him another box."
+requirement = SubResource("Resource_hohge")
+outcome = SubResource("Resource_otqvh")
+markedup_result_text = "After this final box, the monk finally lets out a contented sigh.
+
+He stacks the box atop the tower and waddles away towards the horizon."
+
+[sub_resource type="Resource" id="Resource_fd8dg"]
+script = ExtResource("3_0ywqo")
+event_step_id = "full3"
+markedup_text = "The monk seems almost done, but asks for another box to properly end the meal."
+background_image = SubResource("Resource_cnsbt")
+background_credit = ExtResource("5_6tt5d")
+choices = Array[ExtResource("5_j4ysv")]([SubResource("Resource_6tt5d"), SubResource("Resource_odw4m"), SubResource("Resource_2f7jm")])
+exit_choice = SubResource("Resource_b2v2u")
+
+[resource]
+script = ExtResource("2_8b53x")
+default_spot_upgrade = ExtResource("1_ygs7v")
+event_id = "hungry_monk"
+event_name = "The Hungry Monk"
+requirement = SubResource("Resource_t8gsi")
+steps = Array[ExtResource("3_0ywqo")]([SubResource("Resource_5pap3"), SubResource("Resource_0ywqo"), SubResource("Resource_j4ysv"), SubResource("Resource_fd8dg")])
+categories = Array[int]([3])

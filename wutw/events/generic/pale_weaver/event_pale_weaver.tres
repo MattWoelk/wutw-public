@@ -1,0 +1,114 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://d113ayggrrapy"]
+
+[ext_resource type="Resource" uid="uid://d3l8k6g4pib6c" path="res://stage/spots/swamp/upgrade_swamp_2_reed_weaver_lodge.tres" id="1_1gkl0"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_8cubl"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_fgmqv"]
+[ext_resource type="Resource" uid="uid://43ahhbqvxbvm" path="res://art/pieces/piece_hiroshige_3_tatami.tres" id="4_8cubl"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="4_naeld"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_pida8"]
+[ext_resource type="Resource" uid="uid://itdvaibnm8vv" path="res://cards/tier3/card_travel.tres" id="6_f3k2g"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="7_fqk5f"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="8_voud4"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_elucr"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="10_tdedd"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="11_j5keh"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="12_tngee"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="13_ysauv"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="14_eotty"]
+
+[sub_resource type="Resource" id="Resource_hlbni"]
+script = ExtResource("4_naeld")
+_texture_path = "res://events/generic/pale_weaver/pale_weaver.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_3fjh1"]
+script = ExtResource("7_fqk5f")
+card_type = ExtResource("6_f3k2g")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_e7or3"]
+script = ExtResource("9_elucr")
+aspect_type = ExtResource("8_voud4")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_d3da3"]
+script = ExtResource("5_pida8")
+markedup_text = "Confront her."
+requirement = SubResource("Resource_e7or3")
+outcome = SubResource("Resource_3fjh1")
+markedup_result_text = "The weavers confront their friend about her sickness. The pale woman smiles gently, looking relieved. \"I suppose there's no use hiding it,\" she says.
+
+The next day, she is not there at her usual spot.
+
+At her hut, the weavers find her heavy traveling robe missing, and the rice sacks suspiciously light."
+
+[sub_resource type="Resource" id="Resource_4l2h7"]
+script = ExtResource("11_j5keh")
+bonus_type = ExtResource("10_tdedd")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_x2cvc"]
+script = ExtResource("9_elucr")
+aspect_type = ExtResource("12_tngee")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_bm2ma"]
+script = ExtResource("5_pida8")
+markedup_text = "Lighten her workload."
+requirement = SubResource("Resource_x2cvc")
+outcome = SubResource("Resource_4l2h7")
+markedup_result_text = "The pale weaver's friends pretend not to notice when she coughs or pauses to catch her breath.
+
+They give her the lightest bundles, and pass her the softest reeds to weave. A small mercy."
+
+[sub_resource type="Resource" id="Resource_qck1n"]
+script = ExtResource("11_j5keh")
+bonus_type = ExtResource("13_ysauv")
+amount = 5
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_npn1d"]
+script = ExtResource("9_elucr")
+aspect_type = ExtResource("14_eotty")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_ywboy"]
+script = ExtResource("5_pida8")
+markedup_text = "Isolate her."
+requirement = SubResource("Resource_npn1d")
+outcome = SubResource("Resource_qck1n")
+markedup_result_text = "The women love their friend, but they fear contagion.
+
+They inform the settlement's healer, who gently instructs the ailing woman to stay away from public places until she gets better.
+
+The funeral is held the following month."
+
+[sub_resource type="Resource" id="Resource_33knq"]
+script = ExtResource("5_pida8")
+markedup_text = "Let her keep her peace."
+markedup_result_text = "The friends are careful not to speak of sadness or endings. The women let her laugh, weave, and pretend as long as she can."
+
+[sub_resource type="Resource" id="Resource_anbcg"]
+script = ExtResource("3_fgmqv")
+markedup_text = "Women are weaving tatami mats as the cool evening breeze rustles the trees, scattering a flock of birds into the sunset. Each woman warms her fingers inside her sleeve before taking up a new bundle of reeds.
+
+They laugh softly as they discuss the latest happenings, exchanging comments and little jokes. Despite their light manner, all but one of them are hiding grief.
+
+One smiles faintly, however, her skin pale yet her nose and cheeks bright red. She coughs into her sleeve before joining in the laughter."
+background_image = SubResource("Resource_hlbni")
+background_credit = ExtResource("4_8cubl")
+choices = Array[ExtResource("5_pida8")]([SubResource("Resource_d3da3"), SubResource("Resource_bm2ma"), SubResource("Resource_ywboy")])
+exit_choice = SubResource("Resource_33knq")
+
+[resource]
+script = ExtResource("2_8cubl")
+default_spot_upgrade = ExtResource("1_1gkl0")
+event_id = "pale_weaver"
+event_name = "The Pale Weaver"
+steps = Array[ExtResource("3_fgmqv")]([SubResource("Resource_anbcg")])
+categories = Array[int]([3])

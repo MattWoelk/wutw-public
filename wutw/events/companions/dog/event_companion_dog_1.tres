@@ -1,0 +1,165 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://cdiaru4uf1x6l"]
+
+[ext_resource type="Resource" uid="uid://bv5uoj724kc1o" path="res://stage/spots/forest/upgrade_forest_2_logging_mill.tres" id="1_356mq"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="2_frjlv"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="3_c2rqo"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="3_uaueo"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="4_c2rqo"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="5_i8imy"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="6_0u2kj"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="8_8oh54"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="9_c1vea"]
+[ext_resource type="Resource" uid="uid://dbq7ott8y5bex" path="res://art/pieces/piece_kuniyoshi_toi_crystal_river.tres" id="9_i8imy"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="10_0u2kj"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="10_n8no8"]
+[ext_resource type="Resource" uid="uid://bhi58nliy35ls" path="res://cards/tier2/card_lock.tres" id="11_fafn3"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="12_uf0qx"]
+[ext_resource type="Resource" uid="uid://qfybllygwyox" path="res://cards/tier6/card_sad.tres" id="13_y6p2g"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="14_xbm1p"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="15_tfhju"]
+[ext_resource type="Resource" uid="uid://bhrtdhk65fhge" path="res://cards/tier2/card_protect.tres" id="16_68534"]
+[ext_resource type="Resource" uid="uid://d2tptfdwv7qe5" path="res://quests/companion/quest_companion_dog.tres" id="17_uaueo"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="17_yxicu"]
+[ext_resource type="Script" uid="uid://rlexviyd8sv7" path="res://events/system/outcomes/start_quest/event_outcome_start_quest.gd" id="18_c2rqo"]
+[ext_resource type="Resource" uid="uid://cxvs8kjmqlbjk" path="res://cards/tier6/card_failure.tres" id="18_r4q5f"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="19_a7lcm"]
+
+[sub_resource type="Resource" id="Resource_0u2kj"]
+script = ExtResource("3_c2rqo")
+min_progress = 320
+metadata/_custom_type_script = "uid://c50bhh4sr0g8o"
+
+[sub_resource type="Resource" id="Resource_uj4kt"]
+script = ExtResource("3_uaueo")
+scope = 1
+event_id = "global"
+var_id = "companion_dog"
+value = "0"
+
+[sub_resource type="Resource" id="Resource_ghb2s"]
+script = ExtResource("4_c2rqo")
+all_requirements = Array[ExtResource("2_frjlv")]([SubResource("Resource_0u2kj"), SubResource("Resource_uj4kt")])
+
+[sub_resource type="Resource" id="Resource_mclkw"]
+script = ExtResource("10_0u2kj")
+_texture_path = "res://events/companions/dog/event_companion_dog_1.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_m7m2k"]
+script = ExtResource("12_uf0qx")
+card_type = ExtResource("11_fafn3")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_mk2eo"]
+script = ExtResource("12_uf0qx")
+card_type = ExtResource("13_y6p2g")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_16g0s"]
+script = ExtResource("9_c1vea")
+suboutcomes = Array[ExtResource("10_n8no8")]([SubResource("Resource_m7m2k"), SubResource("Resource_mk2eo")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_isfme"]
+script = ExtResource("15_tfhju")
+aspect_type = ExtResource("14_xbm1p")
+min_count = 4
+
+[sub_resource type="Resource" id="Resource_htdcv"]
+script = ExtResource("8_8oh54")
+markedup_text = "Leave it at home."
+requirement = SubResource("Resource_isfme")
+outcome = SubResource("Resource_16g0s")
+markedup_result_text = "The dog is locked inside all day while the woman is working.
+
+Neighbors report hearing quiet whining coming from the house all day, only punctuated by the occasional mournful howl."
+
+[sub_resource type="Resource" id="Resource_p7aex"]
+script = ExtResource("12_uf0qx")
+card_type = ExtResource("16_68534")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_i8imy"]
+script = ExtResource("18_c2rqo")
+quest = ExtResource("17_uaueo")
+metadata/_custom_type_script = "uid://rlexviyd8sv7"
+
+[sub_resource type="Resource" id="Resource_sx1b1"]
+script = ExtResource("17_yxicu")
+scope = 1
+event_id = "global"
+var_id = "companion_dog"
+value = "1"
+description = ""
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_wy5a4"]
+script = ExtResource("9_c1vea")
+suboutcomes = Array[ExtResource("10_n8no8")]([SubResource("Resource_p7aex"), SubResource("Resource_i8imy"), SubResource("Resource_sx1b1")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_ldbl8"]
+script = ExtResource("8_8oh54")
+markedup_text = "Set it to guard the lumber yard."
+outcome = SubResource("Resource_wy5a4")
+markedup_result_text = "The woman asks the dog to stand guard outside of the lumber yard, showering it with praise at the end of each day.
+
+The dog seems excited to remain useful despite its advanced age."
+
+[sub_resource type="Resource" id="Resource_5ck20"]
+script = ExtResource("12_uf0qx")
+card_type = ExtResource("18_r4q5f")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_kpq5r"]
+script = ExtResource("15_tfhju")
+aspect_type = ExtResource("19_a7lcm")
+min_count = 3
+
+[sub_resource type="Resource" id="Resource_m0sij"]
+script = ExtResource("8_8oh54")
+markedup_text = "Teach it to pull a saw."
+requirement = SubResource("Resource_kpq5r")
+outcome = SubResource("Resource_5ck20")
+markedup_result_text = "The woman spends several days trying to train the dog in the art of sawing.
+
+The dog listens politely, wags its tail, but completely fails to follow the instructions.
+
+Most of the time it gets bored and ends up falling asleep on a pile of logs."
+
+[sub_resource type="Resource" id="Resource_5js2u"]
+script = ExtResource("12_uf0qx")
+card_type = ExtResource("13_y6p2g")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_aox5c"]
+script = ExtResource("8_8oh54")
+markedup_text = "Give the dog away."
+outcome = SubResource("Resource_5js2u")
+markedup_result_text = "The woman decides that she is no longer able to take care of an elderly dog, given her busy job.
+
+The dog is rehomed to a nice family on the other side of the settlement.
+
+It looks on mournfully as the woman walks away for the last time."
+
+[sub_resource type="Resource" id="Resource_1ea03"]
+script = ExtResource("6_0u2kj")
+markedup_text = "One of the woodworkers has inherited an old dog from her father, who has become her constant companion.
+
+In its younger days, the dog helped drag logs to the lumber yard, and carry planks to the storage shed, but now it's too old to do such hard labor. Still, it insists on following the woodworker around.
+
+The woman has to decide how to deal with the mild annoyance of a dog always getting in the way."
+background_image = SubResource("Resource_mclkw")
+background_credit = ExtResource("9_i8imy")
+choices = Array[ExtResource("8_8oh54")]([SubResource("Resource_htdcv"), SubResource("Resource_ldbl8"), SubResource("Resource_m0sij")])
+exit_choice = SubResource("Resource_aox5c")
+
+[resource]
+script = ExtResource("5_i8imy")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_356mq")
+event_id = "companion_dog_1"
+event_name = "Lumber Yard Assistant"
+requirement = SubResource("Resource_ghb2s")
+steps = Array[ExtResource("6_0u2kj")]([SubResource("Resource_1ea03")])
+categories = Array[int]([0, 4])

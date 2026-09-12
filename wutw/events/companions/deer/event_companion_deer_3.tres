@@ -1,0 +1,142 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://chp3b4xc75y3h"]
+
+[ext_resource type="Resource" uid="uid://bxfsnqpj2fir0" path="res://stage/spots/forest/upgrade_forest_2_hermit.tres" id="1_3pw1p"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_70ryo"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_p8chl"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_grph5"]
+[ext_resource type="Resource" uid="uid://sr0557cvfxpg" path="res://art/pieces/piece_hasui_deer.tres" id="6_3tleo"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_io7bj"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="7_3tleo"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_epoof"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="8_epoof"]
+[ext_resource type="Script" uid="uid://gu7gcielbwdr" path="res://events/system/outcomes/choose_card/event_outcome_choose_card.gd" id="8_yhtrs"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="9_epoof"]
+[ext_resource type="Resource" uid="uid://bj0p5k4u5mj41" path="res://companions/deer/companion_deer.tres" id="10_etdam"]
+[ext_resource type="Script" uid="uid://2you2r2oar48" path="res://events/system/outcomes/unlock_companion/event_outcome_unlock_companion.gd" id="11_83kks"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="12_etdam"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="13_5gcrv"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="13_83kks"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="14_312te"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="14_bx4lq"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="15_ryqbk"]
+[ext_resource type="Script" uid="uid://dnxdmp6ko2c00" path="res://events/system/outcomes/mark_all_choices_seen/event_outcome_mark_all_choices_seen.gd" id="17_yhtrs"]
+[ext_resource type="Resource" uid="uid://cd7ej4oa1wydx" path="res://events/companions/deer/event_companion_deer_1.tres" id="18_epoof"]
+[ext_resource type="Resource" uid="uid://cehb2em4f73f8" path="res://events/companions/deer/event_companion_deer_2.tres" id="19_etdam"]
+
+[sub_resource type="Resource" id="Resource_nyxgl"]
+script = ExtResource("2_70ryo")
+scope = 1
+event_id = "global"
+var_id = "companion_deer"
+value = "2"
+
+[sub_resource type="Resource" id="Resource_yhtrs"]
+script = ExtResource("7_epoof")
+_texture_path = "res://events/companions/deer/companion_deer_3.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_5gcrv"]
+script = ExtResource("13_5gcrv")
+bonus_type = ExtResource("8_epoof")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_70ryo"]
+script = ExtResource("15_ryqbk")
+aspect_type = ExtResource("7_3tleo")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_p8chl"]
+script = ExtResource("6_io7bj")
+markedup_text = "Leave offerings of incense."
+requirement = SubResource("Resource_70ryo")
+outcome = SubResource("Resource_5gcrv")
+markedup_result_text = "The hermit visits the local town to trade most of his supplies for incense, and leaves bowls of it slowly smoldering by the shrine.
+
+The deer vanish the very next day, driven away by the strong scent."
+
+[sub_resource type="Resource" id="Resource_bx4lq"]
+script = ExtResource("14_312te")
+scope = 1
+event_id = "global"
+var_id = "companion_deer"
+value = "3"
+description = ""
+outcome_description = "The deer feel comfortable."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("11_83kks")
+companion = ExtResource("10_etdam")
+metadata/_custom_type_script = "uid://2you2r2oar48"
+
+[sub_resource type="Resource" id="Resource_83kks"]
+script = ExtResource("17_yhtrs")
+seen_event = ExtResource("18_epoof")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_312te"]
+script = ExtResource("17_yhtrs")
+seen_event = ExtResource("19_etdam")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_xtyn0"]
+script = ExtResource("17_yhtrs")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_ryqbk"]
+script = ExtResource("12_etdam")
+suboutcomes = Array[ExtResource("13_83kks")]([SubResource("Resource_bx4lq"), SubResource("Resource_rx1a8"), SubResource("Resource_83kks"), SubResource("Resource_312te"), SubResource("Resource_xtyn0")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_grph5"]
+script = ExtResource("6_io7bj")
+markedup_text = "Let the deer roam undisturbed."
+outcome = SubResource("Resource_ryqbk")
+markedup_result_text = "The shrine remains untouched, and the deer continue their visits.
+
+One particularly friendly deer starts sleeping on the hermit's porch."
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("8_yhtrs")
+card_tier_bonus = 75
+aspect = ExtResource("7_3tleo")
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_3pw1p"]
+script = ExtResource("15_ryqbk")
+aspect_type = ExtResource("14_bx4lq")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_io7bj"]
+script = ExtResource("6_io7bj")
+markedup_text = "Carve the shrine in the shape of the deer."
+requirement = SubResource("Resource_3pw1p")
+outcome = SubResource("Resource_tuogj")
+markedup_result_text = "The hermit works long hours to reshape the stone. The result may not be a masterpiece, but no one could mistake it for anything but a deer.
+
+Once the locals learn of the new deer shrine, many visit to pay their respects.
+
+Ironically, all the activity ends up driving the deer back into the forest."
+
+[sub_resource type="Resource" id="Resource_3tleo"]
+script = ExtResource("4_grph5")
+markedup_text = "The hermit maintaining the shrine has noticed deer regularly wandering out of the forest to graze nearby. He is sure that these are no ordinary animals, but spirits staking a claim on the area.
+
+Perhaps the shrine could be dedicated to them, or their interest could be acknowledged with offerings."
+background_image = SubResource("Resource_yhtrs")
+background_credit = ExtResource("6_3tleo")
+choices = Array[ExtResource("6_io7bj")]([SubResource("Resource_p8chl"), SubResource("Resource_grph5"), SubResource("Resource_io7bj")])
+
+[resource]
+script = ExtResource("3_p8chl")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_3pw1p")
+event_id = "companion_deer_3"
+event_name = "Deer at the Shrine"
+requirement = SubResource("Resource_nyxgl")
+steps = Array[ExtResource("4_grph5")]([SubResource("Resource_3tleo")])
+categories = Array[int]([0, 4])

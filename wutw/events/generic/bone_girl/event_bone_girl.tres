@@ -1,0 +1,124 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://dk5mw0lagjevd"]
+
+[ext_resource type="Resource" uid="uid://bliu3rh51wlmo" path="res://stage/spots/wasteland/upgrade_wasteland_1_boneyard.tres" id="1_mkmnw"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_x8auo"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_2mwq7"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="4_1erd8"]
+[ext_resource type="Resource" uid="uid://boepqxtsmy4wf" path="res://art/pieces/piece_toshikata_spring_sea.tres" id="4_x8auo"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_o10bj"]
+[ext_resource type="Resource" uid="uid://c3lqm5twcoed3" path="res://relics/common/ancient_bone/relic_ancient_bone.tres" id="6_v3jxm"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="7_n8k64"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="8_mikyf"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_7k3cq"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="10_tx40i"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="11_fobnv"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="12_vyglp"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="13_r5x3v"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="14_np1d2"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="15_s4w7b"]
+
+[sub_resource type="Resource" id="Resource_p0fch"]
+script = ExtResource("4_1erd8")
+_texture_path = "res://events/generic/bone_girl/bone_girl.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_xnbwu"]
+script = ExtResource("7_n8k64")
+relic = ExtResource("6_v3jxm")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_xgr1x"]
+script = ExtResource("9_7k3cq")
+aspect_type = ExtResource("8_mikyf")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_u7rl7"]
+script = ExtResource("5_o10bj")
+markedup_text = "Continue visiting the boneyard."
+requirement = SubResource("Resource_xgr1x")
+outcome = SubResource("Resource_xnbwu")
+markedup_result_text = "Unconcerned with public image, the young woman refuses to give up her visits, and they grow longer and more frequent instead.
+
+Her most exciting discovery comes when she starts noticing bits of metal embedded in many of the bones. Some look like splinters, while others resemble little jagged flowers."
+
+[sub_resource type="Resource" id="Resource_wva7x"]
+script = ExtResource("11_fobnv")
+bonus_type = ExtResource("10_tx40i")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_n8fdv"]
+script = ExtResource("9_7k3cq")
+aspect_type = ExtResource("12_vyglp")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_nvf6m"]
+script = ExtResource("5_o10bj")
+markedup_text = "Try to make the visits practical."
+requirement = SubResource("Resource_n8fdv")
+outcome = SubResource("Resource_wva7x")
+markedup_result_text = "The woman tries to make her trips to the boneyard more practical.
+
+She chooses the largest, heaviest bones and brings them to the artisans to be made into tools.
+
+The settlers become more accepting of her eccentricity, but she worries that the mysterious creatures are being reduced to scrap."
+
+[sub_resource type="Resource" id="Resource_182w5"]
+script = ExtResource("13_r5x3v")
+delta = -5
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_mg51f"]
+script = ExtResource("9_7k3cq")
+aspect_type = ExtResource("14_np1d2")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_arkyb"]
+script = ExtResource("5_o10bj")
+markedup_text = "Seek advice."
+requirement = SubResource("Resource_mg51f")
+outcome = SubResource("Resource_182w5")
+markedup_result_text = "The woman turns to a passing scholar for advice.
+
+She is surprised when he shows great interest in her sketches and discusses her ideas with clear excitement. They spend days studying the bones together, before he has to leave.
+
+She will one day hear of the great bone scholar who had discovered a treasure trove of bones in the wasteland, all by himself."
+
+[sub_resource type="Resource" id="Resource_3666r"]
+script = ExtResource("11_fobnv")
+bonus_type = ExtResource("15_s4w7b")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_ig61n"]
+script = ExtResource("5_o10bj")
+markedup_text = "Stop going to the boneyard."
+outcome = SubResource("Resource_3666r")
+markedup_result_text = "The young woman gives in to the social pressure and stops wandering among the ancient bones.
+
+She resolves to take up more acceptable pastimes, like cooking and mending clothes."
+
+[sub_resource type="Resource" id="Resource_55jvu"]
+script = ExtResource("3_2mwq7")
+markedup_text = "A young woman has taken to spending all her time at the ancient boneyard out in the wasteland.
+
+As soon as she finishes her morning chores, she arrives to wander among the bones, lost in thought, imagining the great creatures that once walked these lands.
+
+She begins sketching the giant bones, and fitting fragments together. Before long the settlers are giving her strange looks and calling her Bone Girl behind her back."
+background_image = SubResource("Resource_p0fch")
+background_credit = ExtResource("4_x8auo")
+choices = Array[ExtResource("5_o10bj")]([SubResource("Resource_u7rl7"), SubResource("Resource_nvf6m"), SubResource("Resource_arkyb")])
+exit_choice = SubResource("Resource_ig61n")
+
+[resource]
+script = ExtResource("2_x8auo")
+default_spot_upgrade = ExtResource("1_mkmnw")
+event_id = "bone_girl"
+event_name = "Bone Research"
+steps = Array[ExtResource("3_2mwq7")]([SubResource("Resource_55jvu")])
+categories = Array[int]([3])

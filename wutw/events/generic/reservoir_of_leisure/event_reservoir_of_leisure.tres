@@ -1,0 +1,172 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://ug57j46jehdn"]
+
+[ext_resource type="Resource" uid="uid://b6ghgkv80qtr2" path="res://stage/spots/plains/upgrade_plains_2_firebreak_reservoir.tres" id="1_8sbdo"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_es5j5"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_lbnye"]
+[ext_resource type="Resource" uid="uid://ck6a0mjokk0q" path="res://art/pieces/piece_hiroshige_reservoir.tres" id="5_es5j5"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_jputc"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_lbnye"]
+[ext_resource type="Resource" uid="uid://bc3igarpoejno" path="res://relics/common/overflow_jar/relic_overflow_jar.tres" id="6_oc1ps"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="7_euwsw"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="8_pf0v3"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_umo73"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="10_y4jee"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="11_veenh"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="12_mt8ik"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="13_g1n8c"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="14_xfau4"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="15_dijqd"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="16_xxc0j"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="17_4lv00"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="18_re3v3"]
+
+[sub_resource type="Resource" id="Resource_umo73"]
+script = ExtResource("6_lbnye")
+_texture_path = "res://events/generic/reservoir_of_leisure/reservoir_of_leisure.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_3cxsd"]
+script = ExtResource("7_euwsw")
+relic = ExtResource("6_oc1ps")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_8sbdo"]
+script = ExtResource("9_umo73")
+aspect_type = ExtResource("8_pf0v3")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_es5j5"]
+script = ExtResource("5_jputc")
+markedup_text = "Let the stalls remain."
+requirement = SubResource("Resource_8sbdo")
+outcome = SubResource("Resource_3cxsd")
+markedup_result_text = "The safety warden shrugs his shoulders and plops down onto a crowded bench.
+
+The stall keeper serves tea for the whole crowd, pouring from a huge jug until the tea spills into the saucers below.
+
+\"There is time for strictness,\" he says, \"but there must also be time for excess.\""
+
+[sub_resource type="Resource" id="Resource_mv7rs"]
+script = ExtResource("13_g1n8c")
+bonus_type = ExtResource("12_mt8ik")
+amount = 15
+extra_per_season = 12
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_yo1ja"]
+script = ExtResource("13_g1n8c")
+bonus_type = ExtResource("14_xfau4")
+amount = 15
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_knqvc"]
+script = ExtResource("10_y4jee")
+suboutcomes = Array[ExtResource("11_veenh")]([SubResource("Resource_mv7rs"), SubResource("Resource_yo1ja")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_lbnye"]
+script = ExtResource("9_umo73")
+aspect_type = ExtResource("15_dijqd")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_7gp6c"]
+script = ExtResource("5_jputc")
+markedup_text = "Move the stalls onto floating platforms."
+requirement = SubResource("Resource_lbnye")
+outcome = SubResource("Resource_knqvc")
+markedup_result_text = "A craftswoman from the crowd comes up with a compromise: lash empty barrels and timber together, pushing the stalls out onto the water itself.
+
+Customers now balance on makeshift pontoons, dipping their feet directly into the cool reservoir while they eat.
+
+The banks are clear for the fire brigade, and the floating tea stalls quickly become the talk of the town."
+
+[sub_resource type="Resource" id="Resource_rrohl"]
+script = ExtResource("13_g1n8c")
+bonus_type = ExtResource("16_xxc0j")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_g1cco"]
+script = ExtResource("13_g1n8c")
+bonus_type = ExtResource("12_mt8ik")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_rdn40"]
+script = ExtResource("10_y4jee")
+suboutcomes = Array[ExtResource("11_veenh")]([SubResource("Resource_rrohl"), SubResource("Resource_g1cco")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_jputc"]
+script = ExtResource("18_re3v3")
+bonus_type = ExtResource("17_4lv00")
+min_count = 20
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_oc1ps"]
+script = ExtResource("5_jputc")
+markedup_text = "Rearrange the stalls to ensure access."
+requirement = SubResource("Resource_jputc")
+outcome = SubResource("Resource_rdn40")
+markedup_result_text = "The stalls are allowed to remain, but the wardens insist that they be moved to leave clear access paths.
+
+Fire lanes are set up with bamboo fences, which soon become adorned with festive lanterns.
+
+The crowd flows smoothly, the wardens have their clear paths, and the stall owners find they can serve customers even faster."
+
+[sub_resource type="Resource" id="Resource_oadyp"]
+script = ExtResource("13_g1n8c")
+bonus_type = ExtResource("16_xxc0j")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_xim0w"]
+script = ExtResource("13_g1n8c")
+bonus_type = ExtResource("14_xfau4")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_aberr"]
+script = ExtResource("10_y4jee")
+suboutcomes = Array[ExtResource("11_veenh")]([SubResource("Resource_oadyp"), SubResource("Resource_xim0w")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_euwsw"]
+script = ExtResource("5_jputc")
+markedup_text = "Clear all stalls from the banks."
+outcome = SubResource("Resource_aberr")
+markedup_result_text = "The warden remains unconvinced and orders the stalls moved away.
+
+\"The risk is too great to ignore,\" he insists.
+
+Reluctantly, the settlers help the stall keepers pack up their bowls and carts, and the crowd soon disperses, grumbling about the heat."
+
+[sub_resource type="Resource" id="Resource_pf0v3"]
+script = ExtResource("3_lbnye")
+markedup_text = "The reservoir was built to hold back disaster, but it has grown to serve as a place of leisure instead.
+
+Stalls line the banks, selling juicy dumplings and cold barley tea. The air is filled with the rustle of leaves and relaxed chatter.
+
+A safety warden frowns at the crowd, tapping his ledger. \"If a fire starts, these benches will block the bucket brigade. This is a hazard, not a park.\"
+
+\"If a fire starts, we'll douse it with tea!\" the keeper laughs. \"Come, sit!\""
+background_image = SubResource("Resource_umo73")
+background_credit = ExtResource("5_es5j5")
+choices = Array[ExtResource("5_jputc")]([SubResource("Resource_es5j5"), SubResource("Resource_7gp6c"), SubResource("Resource_oc1ps")])
+exit_choice = SubResource("Resource_euwsw")
+
+[resource]
+script = ExtResource("2_es5j5")
+default_spot_upgrade = ExtResource("1_8sbdo")
+event_id = "reservoir_of_leisure"
+event_name = "A Reservoir of Leisure"
+steps = Array[ExtResource("3_lbnye")]([SubResource("Resource_pf0v3")])
+categories = Array[int]([3])

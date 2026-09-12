@@ -1,0 +1,140 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://dru0l4vephike"]
+
+[ext_resource type="Resource" uid="uid://buffbajf212d2" path="res://stage/spots/brushland/upgrade_brushland_2_silk_weaver_hut.tres" id="1_swhw0"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_ptldf"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_jm8w5"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_dmlww"]
+[ext_resource type="Resource" uid="uid://bhi8mnuy24fj" path="res://art/pieces/piece_hiroshige_3_woven_items.tres" id="5_ptldf"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_jm8w5"]
+[ext_resource type="Script" uid="uid://cbnw4a13y5x8c" path="res://events/system/outcomes/random/event_outcome_random.gd" id="6_xnfiy"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_jj6yl"]
+[ext_resource type="Resource" uid="uid://cautk7cltfpcu" path="res://relics/common/silk_loop/relic_silk_loop.tres" id="8_ar033"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="9_abw36"]
+[ext_resource type="Resource" uid="uid://ca1dut67jkov3" path="res://relics/uncommon/silk_thread/relic_silk_thread.tres" id="10_ejq4j"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="11_b0y82"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="12_05t41"]
+[ext_resource type="Resource" uid="uid://dmuen1lcfqff4" path="res://cards/tier2/card_silk.tres" id="13_7x4wp"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="14_6xs51"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="15_d1kp1"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="16_6i2os"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="17_xdmvj"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="18_f44cu"]
+[ext_resource type="Resource" uid="uid://bf7dnflmcttox" path="res://cards/tier3/card_obey.tres" id="19_w88dp"]
+
+[sub_resource type="Resource" id="Resource_ar033"]
+script = ExtResource("6_jm8w5")
+_texture_path = "res://events/generic/silk_weaver/silk_weaver.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_40rqf"]
+script = ExtResource("9_abw36")
+relic = ExtResource("8_ar033")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_2stvf"]
+script = ExtResource("9_abw36")
+relic = ExtResource("10_ejq4j")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_xxhwh"]
+script = ExtResource("6_xnfiy")
+suboutcomes = Dictionary[ExtResource("7_jj6yl"), float]({
+SubResource("Resource_40rqf"): 0.75,
+SubResource("Resource_2stvf"): 0.25
+})
+description = "Gain one of two silk relics<related_term:relic.silk_loop><related_term:relic.silk_thread>"
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_swhw0"]
+script = ExtResource("12_05t41")
+bonus_type = ExtResource("11_b0y82")
+min_count = 30
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_ptldf"]
+script = ExtResource("5_dmlww")
+markedup_text = "Use their cloth in the hut's banner."
+requirement = SubResource("Resource_swhw0")
+outcome = SubResource("Resource_xxhwh")
+markedup_result_text = "The brightest piece is cut and stitched together with more traditional pieces into a banner above the door.
+
+Settlers nod as they pass beneath it, some stopping to trace the threads.
+
+The weaver continues to experiment, weaving strands of gold and silver into the next piece."
+
+[sub_resource type="Resource" id="Resource_kio1v"]
+script = ExtResource("14_6xs51")
+card_type = ExtResource("13_7x4wp")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_jm8w5"]
+script = ExtResource("16_6i2os")
+aspect_type = ExtResource("15_d1kp1")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_nra34"]
+script = ExtResource("5_dmlww")
+markedup_text = "Ask them why they weave this way."
+requirement = SubResource("Resource_jm8w5")
+outcome = SubResource("Resource_kio1v")
+markedup_result_text = "The weaver pauses.
+
+\"Because it feels like me,\" they say. \"And I want to make something that feels like me... and still holds.\"
+
+They offer a small piece of thread. \"It's strong. Even if it's soft.\""
+
+[sub_resource type="Resource" id="Resource_df5af"]
+script = ExtResource("18_f44cu")
+bonus_type = ExtResource("11_b0y82")
+amount = -20
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_ptcwf"]
+script = ExtResource("14_6xs51")
+card_type = ExtResource("19_w88dp")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_egt2j"]
+script = ExtResource("17_xdmvj")
+suboutcomes = Array[ExtResource("7_jj6yl")]([SubResource("Resource_df5af"), SubResource("Resource_ptcwf")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_dmlww"]
+script = ExtResource("5_dmlww")
+markedup_text = "Discourage the weaver, gently but firmly."
+outcome = SubResource("Resource_egt2j")
+markedup_result_text = "The community asks for uniformity, as customers shun such garish cloth. The weaver unrolls and unravels it by hand.
+
+No one challenges the decision, and before long the town has one less weaver."
+
+[sub_resource type="Resource" id="Resource_xnfiy"]
+script = ExtResource("5_dmlww")
+markedup_text = "Let them keep weaving."
+markedup_result_text = "The colorful cloths dry behind the hut, where the wind still finds them, even if the settlers do not.
+
+They don't ask for any further accommodation.
+
+The loom continues to spin."
+
+[sub_resource type="Resource" id="Resource_jj6yl"]
+script = ExtResource("3_jm8w5")
+markedup_text = "One of the weavers spins thread that doesn't match. Unlike the traditional reserved palette, they weave a rainbow of threads in wild patterns.
+
+They don't boast or argue, but they don't follow the traditions either. Their cloth shimmers with iridescent silk: garish to some, beautiful to others.
+
+Murmurs spread among the workers. Someone asks if it's time to decide what kind of weaving belongs here."
+background_image = SubResource("Resource_ar033")
+background_credit = ExtResource("5_ptldf")
+choices = Array[ExtResource("5_dmlww")]([SubResource("Resource_ptldf"), SubResource("Resource_nra34"), SubResource("Resource_dmlww")])
+exit_choice = SubResource("Resource_xnfiy")
+
+[resource]
+script = ExtResource("2_ptldf")
+default_spot_upgrade = ExtResource("1_swhw0")
+event_id = "silk_weaver"
+event_name = "A Different Weave"
+steps = Array[ExtResource("3_jm8w5")]([SubResource("Resource_jj6yl")])
+categories = Array[int]([3])

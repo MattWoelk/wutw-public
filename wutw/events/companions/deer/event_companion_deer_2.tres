@@ -1,0 +1,125 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://cehb2em4f73f8"]
+
+[ext_resource type="Resource" uid="uid://dl672t0a8m46g" path="res://stage/spots/building_small/upgrade_building_small_2_watchpost.tres" id="1_kl7h0"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_qd11l"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_l2bho"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_3l7fq"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_gvlip"]
+[ext_resource type="Resource" uid="uid://d0u4rvm4k8aed" path="res://art/pieces/piece_koson_deer.tres" id="6_qd11l"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_l2bho"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="7_r1wg8"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="8_28jlt"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="9_enx0a"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="10_a71vl"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="11_3bu8w"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="12_wap68"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="13_c1l5i"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="14_v1w53"]
+
+[sub_resource type="Resource" id="Resource_rs0lh"]
+script = ExtResource("2_qd11l")
+scope = 1
+event_id = "global"
+var_id = "companion_deer"
+value = "1"
+
+[sub_resource type="Resource" id="Resource_qd11l"]
+script = ExtResource("7_l2bho")
+_texture_path = "res://events/companions/deer/companion_deer_2.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_egt2j"]
+script = ExtResource("7_r1wg8")
+scope = 1
+event_id = "global"
+var_id = "companion_deer"
+value = "2"
+description = "Welcome the deer into the town"
+outcome_description = "The deer feel welcomed."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_jv5s7"]
+script = ExtResource("9_enx0a")
+bonus_type = ExtResource("8_28jlt")
+min_count = 50
+max_count = -1
+extra_per_season = 50
+
+[sub_resource type="Resource" id="Resource_jpktp"]
+script = ExtResource("6_gvlip")
+markedup_text = "Remove the fences entirely."
+requirement = SubResource("Resource_jv5s7")
+outcome = SubResource("Resource_egt2j")
+markedup_result_text = "The fence is taken down.
+
+For a while, the deer continue to stay by the watchpost, but eventually they grow more confident and start roaming the streets.
+
+A few townspeople grumble, but most find the new neighbors charming."
+
+[sub_resource type="Resource" id="Resource_f2op8"]
+script = ExtResource("11_3bu8w")
+bonus_type = ExtResource("10_a71vl")
+amount = 10
+extra_per_season = 20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_u6y16"]
+script = ExtResource("13_c1l5i")
+aspect_type = ExtResource("12_wap68")
+min_count = 3
+
+[sub_resource type="Resource" id="Resource_6ye15"]
+script = ExtResource("6_gvlip")
+markedup_text = "Raise the fence to block the view."
+requirement = SubResource("Resource_u6y16")
+outcome = SubResource("Resource_f2op8")
+markedup_result_text = "The fence is rebuilt, taller and harder to see through.
+
+The deer eventually stop coming, but more importantly, the new fence keeps the more dangerous wildlife away as well."
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("11_3bu8w")
+bonus_type = ExtResource("8_28jlt")
+amount = 10
+extra_per_season = 20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_7js2d"]
+script = ExtResource("9_enx0a")
+bonus_type = ExtResource("14_v1w53")
+min_count = 50
+max_count = -1
+extra_per_season = 50
+
+[sub_resource type="Resource" id="Resource_qafew"]
+script = ExtResource("6_gvlip")
+markedup_text = "Place a feeding trough outside the watchpost."
+requirement = SubResource("Resource_7js2d")
+outcome = SubResource("Resource_4xuhh")
+markedup_result_text = "A trough is placed by the wall and the guards refill it with leftovers once in a while.
+
+The deer still come every night, but rather than staring at the settlers, they eat and leave."
+
+[sub_resource type="Resource" id="Resource_h8uf2"]
+script = ExtResource("6_gvlip")
+markedup_text = "Do nothing and let things be."
+
+[sub_resource type="Resource" id="Resource_1e1wx"]
+script = ExtResource("4_3l7fq")
+markedup_text = "Each evening a pair of deer approach the watchpost and stand looking at the settlers going about their tasks. They never cross into the town proper, although a leap could easily carry them across the simple bamboo fences.
+
+Several townspeople find the behavior odd, perhaps even eerie, and have complained to the guards, asking them to keep wildlife away."
+background_image = SubResource("Resource_qd11l")
+background_credit = ExtResource("6_qd11l")
+choices = Array[ExtResource("6_gvlip")]([SubResource("Resource_jpktp"), SubResource("Resource_6ye15"), SubResource("Resource_qafew")])
+exit_choice = SubResource("Resource_h8uf2")
+
+[resource]
+script = ExtResource("3_l2bho")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_kl7h0")
+event_id = "companion_deer_2"
+event_name = "Boundaries"
+requirement = SubResource("Resource_rs0lh")
+steps = Array[ExtResource("4_3l7fq")]([SubResource("Resource_1e1wx")])
+categories = Array[int]([0, 4])

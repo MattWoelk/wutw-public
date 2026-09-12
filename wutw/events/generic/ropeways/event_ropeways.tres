@@ -1,0 +1,125 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://b4mkjskawsws2"]
+
+[ext_resource type="Resource" uid="uid://bpnvfj1wrw2kk" path="res://stage/spots/mountain/upgrade_mountain_2_sky_ropeways.tres" id="1_0r88p"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_qes2l"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_onmye"]
+[ext_resource type="Resource" uid="uid://bl6qx2njfu23t" path="res://art/pieces/piece_hiroshige_hida.tres" id="4_qes2l"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="4_rt5l4"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_t3uxx"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="6_f83v2"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="7_e1puc"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="8_llnj0"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="9_mfk5w"]
+[ext_resource type="Resource" uid="uid://cmkosn6ql8hv2" path="res://relics/common/ropeway_basket/relic_ropeway_basket.tres" id="10_d4dm8"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="11_gqghd"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="12_fdepv"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="13_60u4w"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="14_dfmc0"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="15_c56uo"]
+
+[sub_resource type="Resource" id="Resource_eybaj"]
+script = ExtResource("4_rt5l4")
+_texture_path = "res://events/generic/ropeways/ropeways.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_goqhh"]
+script = ExtResource("7_e1puc")
+bonus_type = ExtResource("6_f83v2")
+amount = 15
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_hrod0"]
+script = ExtResource("9_mfk5w")
+bonus_type = ExtResource("8_llnj0")
+min_count = 10
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_tt0g2"]
+script = ExtResource("5_t3uxx")
+markedup_text = "Allow the children to continue."
+requirement = SubResource("Resource_hrod0")
+outcome = SubResource("Resource_goqhh")
+markedup_result_text = "The settlers decide that the ropeways belong to all of the village, not just the farmers.
+
+The children delight in their freedom, racing across the valley like birds in their flying baskets.
+
+One child in particular becomes highly skilled at maintaining the ropes and pulleys, having spent so much time fiddling with them."
+
+[sub_resource type="Resource" id="Resource_rebnn"]
+script = ExtResource("11_gqghd")
+relic = ExtResource("10_d4dm8")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_ys2ow"]
+script = ExtResource("9_mfk5w")
+bonus_type = ExtResource("6_f83v2")
+min_count = 20
+max_count = -1
+extra_per_season = 40
+
+[sub_resource type="Resource" id="Resource_tr52n"]
+script = ExtResource("5_t3uxx")
+markedup_text = "Craft additional baskets."
+requirement = SubResource("Resource_ys2ow")
+outcome = SubResource("Resource_rebnn")
+markedup_result_text = "The farmers gather wood and rope, and commission extra baskets from the artisans.
+
+The work takes time, but soon there are enough baskets to carry both harvests and children with no delays, making the sky ropeways busier than ever."
+
+[sub_resource type="Resource" id="Resource_hujbs"]
+script = ExtResource("12_fdepv")
+delta = 5
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_iqxrh"]
+script = ExtResource("14_dfmc0")
+aspect_type = ExtResource("13_60u4w")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_ua32x"]
+script = ExtResource("5_t3uxx")
+markedup_text = "Give the children responsibilities."
+requirement = SubResource("Resource_iqxrh")
+outcome = SubResource("Resource_hujbs")
+markedup_result_text = "Rather than banning the games, the villagers appoint the children as keepers of the ropeways. It becomes their duty to ensure the baskets are available whenever the harvests arrive.
+
+At first the children complain about the responsibility. But soon, they begin competing to see who can move the most loads across the valley each day. The adults and children alike look on with pride at the ingenuity.
+"
+
+[sub_resource type="Resource" id="Resource_4spnk"]
+script = ExtResource("7_e1puc")
+bonus_type = ExtResource("15_c56uo")
+amount = -15
+extra_per_season = -15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_8t6fe"]
+script = ExtResource("5_t3uxx")
+markedup_text = "Forbid the games."
+outcome = SubResource("Resource_4spnk")
+markedup_result_text = "The villagers prohibit the children from using the sky ropeways for games anymore.
+
+The harvest work resumes as it always has, but the farmers miss the sound of the merry laughter that used to echo among the rocks."
+
+[sub_resource type="Resource" id="Resource_ntft6"]
+script = ExtResource("3_onmye")
+markedup_text = "The settlement is separated from its fields by a deep valley. The villagers have stretched ropes between the cliffs and attached baskets that could be pulled from one side to the other. 
+
+As harvest time approaches, the villagers face a new problem. The children of the settlement have discovered that playing in the baskets is their favorite way to pass the time. They spend their entire days racing each other across the gorge and inventing new games in their baskets.
+
+The farmers shake their heads in exasperation as baskets are left stranded on the wrong side of the valley. Their harvest loads end up delayed, the fruits and vegetables left to wilt in the sun."
+background_image = SubResource("Resource_eybaj")
+background_credit = ExtResource("4_qes2l")
+choices = Array[ExtResource("5_t3uxx")]([SubResource("Resource_tt0g2"), SubResource("Resource_tr52n"), SubResource("Resource_ua32x")])
+exit_choice = SubResource("Resource_8t6fe")
+
+[resource]
+script = ExtResource("2_qes2l")
+default_spot_upgrade = ExtResource("1_0r88p")
+event_id = "ropeways"
+event_name = "The Flying Baskets"
+steps = Array[ExtResource("3_onmye")]([SubResource("Resource_ntft6")])
+categories = Array[int]([3])

@@ -1,0 +1,138 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://cym7u30yf8vmx"]
+
+[ext_resource type="Resource" uid="uid://jax4lg646pmt" path="res://stage/spots/building_large/upgrade_building_large_2_town_hall.tres" id="1_xd10m"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_bh5dt"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_l6lrt"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_5xtx1"]
+[ext_resource type="Resource" uid="uid://bxjmi7d1kqt82" path="res://art/pieces/piece_hiroshige_theater.tres" id="5_6sb1g"]
+[ext_resource type="Resource" uid="uid://nvullv4xmecf" path="res://relics/common/inheritance_scroll/relic_inheritance_scroll.tres" id="6_6sb1g"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="6_8yrao"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_mode7"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_5xtx1"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="7_mode7"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="8_n1avg"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_14xky"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="10_6sb1g"]
+[ext_resource type="Resource" uid="uid://b4cm3bai8y4gd" path="res://relics/common/census_tag/relic_census_tag.tres" id="10_tq24m"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="11_ldx7n"]
+[ext_resource type="Resource" uid="uid://dxvt45ov6u7s4" path="res://relics/common/seal_paste/relic_seal_paste.tres" id="12_xd10m"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="13_22f4a"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="14_xd10m"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="15_woxfk"]
+
+[sub_resource type="Resource" id="Resource_5xtx1"]
+script = ExtResource("6_mode7")
+_texture_path = "res://events/generic/census/census.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_8mfyw"]
+script = ExtResource("7_mode7")
+relic = ExtResource("6_6sb1g")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_mode7"]
+script = ExtResource("10_6sb1g")
+var_id = "autocracy"
+var_type = 1
+value = "true"
+description = "Shard culture may be affected"
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_n1avg"]
+script = ExtResource("6_8yrao")
+suboutcomes = Array[ExtResource("7_5xtx1")]([SubResource("Resource_8mfyw"), SubResource("Resource_mode7")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_kpnif"]
+script = ExtResource("9_14xky")
+aspect_type = ExtResource("8_n1avg")
+min_count = 4
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_0yq4w"]
+script = ExtResource("5_5xtx1")
+markedup_text = "Respect the old claim."
+requirement = SubResource("Resource_kpnif")
+outcome = SubResource("Resource_n1avg")
+markedup_result_text = "The scroll is added to the public record as precedent, and a copy is sent on with the expedition for redundancy.
+
+The claimant is assigned to manage land allocation at will, and trusted to dole out lots fairly and impartially.
+
+Most of the gathered express doubts."
+
+[sub_resource type="Resource" id="Resource_40rqf"]
+script = ExtResource("7_mode7")
+relic = ExtResource("10_tq24m")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_t8ppm"]
+script = ExtResource("9_14xky")
+aspect_type = ExtResource("11_ldx7n")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_om0mo"]
+script = ExtResource("5_5xtx1")
+markedup_text = "Share everything and let the census track balance."
+requirement = SubResource("Resource_t8ppm")
+outcome = SubResource("Resource_40rqf")
+markedup_result_text = "Wooden tags are inscribed with parcel numbers and kept at the assembly hall.
+
+Anyone can take a tag to start a farm or dig a well.
+
+Progress will be audited at a regular schedule, and when tags run out, the assembly will decide which ones should be returned to the pool, to give others a chance to do something different with the land."
+
+[sub_resource type="Resource" id="Resource_2stvf"]
+script = ExtResource("7_mode7")
+relic = ExtResource("12_xd10m")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_7sx4l"]
+script = ExtResource("9_14xky")
+aspect_type = ExtResource("13_22f4a")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_ew7ln"]
+script = ExtResource("5_5xtx1")
+markedup_text = "Impose a fixed record. Equal parcels, equal weight."
+requirement = SubResource("Resource_7sx4l")
+outcome = SubResource("Resource_2stvf")
+markedup_result_text = "Most of the land is divided among those present. It will be bought, sold, or passed on from parent to child. Those not present for the meeting are assigned parcels at random.
+
+Precise records of ownership are stamped with official seals and stored in the Assembly Hall for future magistrates to resolve disputes."
+
+[sub_resource type="Resource" id="Resource_xxhwh"]
+script = ExtResource("15_woxfk")
+bonus_type = ExtResource("14_xd10m")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_bqdb8"]
+script = ExtResource("5_5xtx1")
+markedup_text = "Move on without making a decision."
+outcome = SubResource("Resource_xxhwh")
+markedup_result_text = "The meeting continues long into the night, but the debate remains unresolved.
+
+For now, whoever has laid a claim keeps their land, but future assemblies are sure to challenge them again and again."
+
+[sub_resource type="Resource" id="Resource_ldiju"]
+script = ExtResource("3_l6lrt")
+markedup_text = "The first official act of the new Assembly Hall is to conduct a census of the population. It's time to record who settled down, who moved on with the expedition, and how the land will be tended.
+
+One settler brings a preserved scroll to show they've stewarded land before. Another proposes communal use, with simple census tags to track imbalance. A third calls for precise allotments, granting full ownership.
+
+They disagree, but all seek a system that endures."
+background_image = SubResource("Resource_5xtx1")
+background_credit = ExtResource("5_6sb1g")
+choices = Array[ExtResource("5_5xtx1")]([SubResource("Resource_0yq4w"), SubResource("Resource_om0mo"), SubResource("Resource_ew7ln")])
+exit_choice = SubResource("Resource_bqdb8")
+
+[resource]
+script = ExtResource("2_bh5dt")
+default_spot_upgrade = ExtResource("1_xd10m")
+event_id = "census"
+event_name = "The Census"
+steps = Array[ExtResource("3_l6lrt")]([SubResource("Resource_ldiju")])
+categories = Array[int]([3])

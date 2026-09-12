@@ -1,0 +1,78 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://bt2m3hekn6ltg"]
+
+[ext_resource type="Resource" uid="uid://c0511h8unpsdb" path="res://stage/spots/building_small/upgrade_building_small_3_fermenter.tres" id="1_iqh7f"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_1148b"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_3e34k"]
+[ext_resource type="Resource" uid="uid://cgy7yrdn5bfyr" path="res://art/pieces/piece_harunobu_vinegar_tasters.tres" id="4_1148b"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="4_ngxg1"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_5vv4d"]
+[ext_resource type="Resource" uid="uid://dj2udylgwroo4" path="res://cards/tier2/card_accept.tres" id="6_v56pg"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="7_y348j"]
+[ext_resource type="Resource" uid="uid://c3pynml32dqi1" path="res://cards/tier2/card_flow.tres" id="8_kd2g5"]
+[ext_resource type="Resource" uid="uid://bfb65jh6bfgvb" path="res://cards/tier2/card_measure.tres" id="9_k2kkm"]
+
+[sub_resource type="Resource" id="Resource_vnxpy"]
+script = ExtResource("4_ngxg1")
+_texture_path = "res://events/generic/vinegar_tasters/vinegar_tasters.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_3j3l5"]
+script = ExtResource("7_y348j")
+card_type = ExtResource("6_v56pg")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_etxp1"]
+script = ExtResource("5_5vv4d")
+markedup_text = "It is bitter."
+outcome = SubResource("Resource_3j3l5")
+markedup_result_text = "The chief tastes a spoonful and agrees that the vinegar has a bitter note.
+
+\"To expect vinegar to taste sweet is only to invite disappointment,\" she says."
+
+[sub_resource type="Resource" id="Resource_cnhaa"]
+script = ExtResource("7_y348j")
+card_type = ExtResource("8_kd2g5")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_up1rf"]
+script = ExtResource("5_5vv4d")
+markedup_text = "It is sweet."
+outcome = SubResource("Resource_cnhaa")
+markedup_result_text = "The chief tastes a spoonful and smiles. She thinks the vinegar tastes perfect as it is.
+
+\"This has brewed naturally for centuries,\" she says. \"To forcefully dilute it will only spoil it.\""
+
+[sub_resource type="Resource" id="Resource_sw3x0"]
+script = ExtResource("7_y348j")
+card_type = ExtResource("9_k2kkm")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_7iygd"]
+script = ExtResource("5_5vv4d")
+markedup_text = "It is sour."
+outcome = SubResource("Resource_sw3x0")
+markedup_result_text = "The chief tastes a spoonful and puckers her lips.
+
+\"This simply won't do,\" she says. \"It is unrefined, left to grow wild for too long.\"
+
+She instructs her employees to institute a daily regimen of measuring the acidity and maintaining a specific storage temperature. She follows it with a list of rules for the proper handling of jars, split into subsections based on jar size and material."
+
+[sub_resource type="Resource" id="Resource_45idx"]
+script = ExtResource("3_3e34k")
+markedup_text = "The fermentation lodge was established by restoring an old ruin where huge jars of vinegar were found. Today, the fermenters open one such jar and taste the vinegar.
+
+This results in a disagreement. One woman claims it is too sweet. Another that it is too sour. And the third that it is too bitter.
+
+They ask the chief fermenter to resolve their disagreement."
+background_image = SubResource("Resource_vnxpy")
+background_credit = ExtResource("4_1148b")
+choices = Array[ExtResource("5_5vv4d")]([SubResource("Resource_etxp1"), SubResource("Resource_up1rf")])
+exit_choice = SubResource("Resource_7iygd")
+
+[resource]
+script = ExtResource("2_1148b")
+default_spot_upgrade = ExtResource("1_iqh7f")
+event_id = "vinegar_tasters"
+event_name = "The Vinegar Tasters"
+steps = Array[ExtResource("3_3e34k")]([SubResource("Resource_45idx")])
+categories = Array[int]([3])

@@ -1,0 +1,138 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://wuhkp63g4lms"]
+
+[ext_resource type="Resource" uid="uid://bp071rxo6yfaf" path="res://stage/spots/river/upgrade_river_1_weeping_willows.tres" id="1_lkwib"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_lkwib"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_8xpy2"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_psxsg"]
+[ext_resource type="Resource" uid="uid://2j1brltbxp5h" path="res://art/pieces/piece_kuniyoshi_foxes.tres" id="6_8xpy2"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_aqgc1"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="7_08nym"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_8xpy2"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="8_lkwib"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="8_va8cn"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_umiy1"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="11_8rwud"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="13_7qfg4"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="13_8xpy2"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="14_psxsg"]
+
+[sub_resource type="Resource" id="Resource_fmixu"]
+script = ExtResource("2_lkwib")
+scope = 1
+event_id = "global"
+var_id = "companion_fox"
+value = "1"
+
+[sub_resource type="Resource" id="Resource_lkwib"]
+script = ExtResource("7_8xpy2")
+_texture_path = "res://events/companions/fox/event_companion_fox_2.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_bxpl3"]
+script = ExtResource("11_8rwud")
+bonus_type = ExtResource("8_lkwib")
+amount = -10
+extra_per_season = -15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_kojkx"]
+script = ExtResource("9_umiy1")
+aspect_type = ExtResource("8_va8cn")
+min_count = 3
+
+[sub_resource type="Resource" id="Resource_xh6l0"]
+script = ExtResource("6_aqgc1")
+markedup_text = "Send a scouting team in the pointed direction."
+requirement = SubResource("Resource_kojkx")
+outcome = SubResource("Resource_bxpl3")
+markedup_result_text = "The settlers consider the fox's pointing a sign from the Enlightened One.
+
+Early the next morning, a group of settlers gathers bags of rations, crosses the river, and takes off in the pointed direction.
+
+Days later they return empty-handed, having failed to find anything of note."
+
+[sub_resource type="Resource" id="Resource_w2hpu"]
+script = ExtResource("11_8rwud")
+bonus_type = ExtResource("13_7qfg4")
+amount = 15
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_1stri"]
+script = ExtResource("9_umiy1")
+aspect_type = ExtResource("13_8xpy2")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_2me52"]
+script = ExtResource("6_aqgc1")
+markedup_text = "Build a bridge over the spot the fox is pointing to."
+requirement = SubResource("Resource_1stri")
+outcome = SubResource("Resource_w2hpu")
+markedup_result_text = "The settlers consider the fox's pointing a sign from the Enlightened One.
+
+Early the next morning they gather their tools and start building a new bridge over the exact spot that the fox was pointing at.
+
+Once finished, the bridge will surely make the river safer to cross, but all the construction noises end up driving the foxes away."
+
+[sub_resource type="Resource" id="Resource_3sdrw"]
+script = ExtResource("11_8rwud")
+bonus_type = ExtResource("14_psxsg")
+amount = -10
+extra_per_season = -20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_kjam1"]
+script = ExtResource("9_umiy1")
+aspect_type = ExtResource("8_va8cn")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_r0oeh"]
+script = ExtResource("6_aqgc1")
+markedup_text = "Approach the foxes."
+requirement = SubResource("Resource_kjam1")
+outcome = SubResource("Resource_3sdrw")
+markedup_result_text = "The foxes have other ideas. It seems that they consider the humans a danger to their home, so most of them snarl and stand their ground.
+
+As the settlers get closer, though, they scatter. The fox which was pointing is noticeably limping."
+
+[sub_resource type="Resource" id="Resource_aqgc1"]
+script = ExtResource("7_08nym")
+scope = 1
+event_id = "global"
+var_id = "companion_fox"
+value = "2"
+description = "Get a fox to trust humans"
+outcome_description = "Some foxes begin to see people as potential allies."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_jiini"]
+script = ExtResource("6_aqgc1")
+markedup_text = "Stay hidden and observe the foxes."
+outcome = SubResource("Resource_aqgc1")
+markedup_result_text = "The settlers hide behind the willows, away from the foxes, and observe.
+
+By midnight, most of the foxes depart, but the one who was pointing remains sitting. Soon the reason becomes apparent. There's a large splinter stuck in the fox's front paw, and it is trying to get it out, unsuccessfully.
+
+It's too tired and hurt to run away when one of the settlers approaches, so after a minor struggle, the splinter is removed and the fox hobbles away, presumably grateful."
+
+[sub_resource type="Resource" id="Resource_mm8jc"]
+script = ExtResource("4_psxsg")
+markedup_text = "Rumors spread about foxes appearing at night by the riverside. Townspeople suspect they have a burrow nearby, but the more interesting rumors claim that these foxes are spirits, guarding the trees.
+
+One night, someone notices a group of foxes gathered under a willow. They seem to be plotting something, and one of them appears to be pointing towards the stream with its paw."
+background_image = SubResource("Resource_lkwib")
+background_credit = ExtResource("6_8xpy2")
+choices = Array[ExtResource("6_aqgc1")]([SubResource("Resource_xh6l0"), SubResource("Resource_2me52"), SubResource("Resource_r0oeh")])
+exit_choice = SubResource("Resource_jiini")
+
+[resource]
+script = ExtResource("3_8xpy2")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_lkwib")
+event_id = "companion_fox_2"
+event_name = "A Fox Pointer"
+requirement = SubResource("Resource_fmixu")
+steps = Array[ExtResource("4_psxsg")]([SubResource("Resource_mm8jc")])
+categories = Array[int]([0, 4])

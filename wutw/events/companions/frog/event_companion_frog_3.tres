@@ -1,0 +1,174 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://mm74dncqa857"]
+
+[ext_resource type="Resource" uid="uid://d07vn6xcgf3aj" path="res://stage/spots/swamp/upgrade_swamp_1_murky_trail.tres" id="1_sddcg"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_8xs3i"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_8n72h"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_4okvm"]
+[ext_resource type="Resource" uid="uid://duqmqutu5m7kb" path="res://art/pieces/piece_koson_tadpoles.tres" id="5_8xs3i"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="5_lbu77"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_1rdcd"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="7_hofvg"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="8_73mn2"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="9_0iy5e"]
+[ext_resource type="Resource" uid="uid://cxlpge2x4sj3r" path="res://companions/frog/companion_frog.tres" id="10_abldp"]
+[ext_resource type="Script" uid="uid://2you2r2oar48" path="res://events/system/outcomes/unlock_companion/event_outcome_unlock_companion.gd" id="11_qm4ty"]
+[ext_resource type="Script" uid="uid://dnxdmp6ko2c00" path="res://events/system/outcomes/mark_all_choices_seen/event_outcome_mark_all_choices_seen.gd" id="12_iuerl"]
+[ext_resource type="Resource" uid="uid://cse4ya1lspdui" path="res://events/companions/frog/event_companion_frog_1.tres" id="13_o0jim"]
+[ext_resource type="Resource" uid="uid://cv81ijnostv3d" path="res://events/companions/frog/event_companion_frog_2.tres" id="14_yiuqr"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="15_lremf"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="16_j6x5y"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="17_412h8"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="18_5d40f"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="19_xjdfg"]
+[ext_resource type="Resource" uid="uid://ceismq0ioep4k" path="res://cards/tier3/card_rescue.tres" id="20_61k0s"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="21_m4xnl"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="22_2rlbo"]
+
+[sub_resource type="Resource" id="Resource_pwxtb"]
+script = ExtResource("2_8xs3i")
+scope = 1
+event_id = "global"
+var_id = "companion_frog"
+value = "2"
+
+[sub_resource type="Resource" id="Resource_8k5ij"]
+script = ExtResource("5_lbu77")
+_texture_path = "res://events/companions/frog/companion_frog_3.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_s6k4q"]
+script = ExtResource("9_0iy5e")
+scope = 1
+event_id = "global"
+var_id = "companion_frog"
+value = "3"
+description = ""
+outcome_description = "Some settlers gain an appreciation for natural cycles."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_ebl7b"]
+script = ExtResource("11_qm4ty")
+companion = ExtResource("10_abldp")
+metadata/_custom_type_script = "uid://2you2r2oar48"
+
+[sub_resource type="Resource" id="Resource_qmyh0"]
+script = ExtResource("12_iuerl")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_v2l58"]
+script = ExtResource("12_iuerl")
+seen_event = ExtResource("13_o0jim")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_h6rgi"]
+script = ExtResource("12_iuerl")
+seen_event = ExtResource("14_yiuqr")
+metadata/_custom_type_script = "uid://dnxdmp6ko2c00"
+
+[sub_resource type="Resource" id="Resource_7iuum"]
+script = ExtResource("7_hofvg")
+suboutcomes = Array[ExtResource("8_73mn2")]([SubResource("Resource_s6k4q"), SubResource("Resource_ebl7b"), SubResource("Resource_qmyh0"), SubResource("Resource_v2l58"), SubResource("Resource_h6rgi")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_ip8a8"]
+script = ExtResource("16_j6x5y")
+aspect_type = ExtResource("15_lremf")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_kfxy4"]
+script = ExtResource("6_1rdcd")
+markedup_text = "Explain it as practical animal behavior."
+requirement = SubResource("Resource_ip8a8")
+outcome = SubResource("Resource_7iuum")
+markedup_result_text = "A scholar explains that animals do not follow human sensibilities, and in nature, a dead tadpole would just go to waste.
+
+Rather than accuse the frog of cannibalism, she commends it for making the best use of its resources.
+
+The settlers nod, but few are truly convinced."
+
+[sub_resource type="Resource" id="Resource_567kd"]
+script = ExtResource("18_5d40f")
+bonus_type = ExtResource("17_412h8")
+amount = 10
+extra_per_season = 5
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_5iqy7"]
+script = ExtResource("7_hofvg")
+suboutcomes = Array[ExtResource("8_73mn2")]([SubResource("Resource_567kd")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_p8nng"]
+script = ExtResource("16_j6x5y")
+aspect_type = ExtResource("19_xjdfg")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_5t88q"]
+script = ExtResource("6_1rdcd")
+markedup_text = "Identify the frog as an evil spirit."
+requirement = SubResource("Resource_p8nng")
+outcome = SubResource("Resource_5iqy7")
+markedup_result_text = "A priest is quick to resolve the confusion. This frog, he explains, is nothing but an evil spirit.
+
+He throws a handful of mud towards the animal, and it quickly hops away, disappearing into the reeds.
+
+The monster thus banished, the settlers breathe a sigh of relief."
+
+[sub_resource type="Resource" id="Resource_18sub"]
+script = ExtResource("21_m4xnl")
+card_type = ExtResource("20_61k0s")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_qqhu1"]
+script = ExtResource("16_j6x5y")
+aspect_type = ExtResource("22_2rlbo")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_jsi1l"]
+script = ExtResource("6_1rdcd")
+markedup_text = "Rescue the remaining tadpoles."
+requirement = SubResource("Resource_qqhu1")
+outcome = SubResource("Resource_18sub")
+markedup_result_text = "Horrified by the cannibalism, a few settlers scoop up the living tadpoles into a bucket and relocate them to a pond on the other side of the path.
+
+It makes them feel good to have rescued the helpless victims."
+
+[sub_resource type="Resource" id="Resource_8nriu"]
+script = ExtResource("18_5d40f")
+bonus_type = ExtResource("17_412h8")
+amount = 10
+extra_per_season = 5
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_aovay"]
+script = ExtResource("6_1rdcd")
+markedup_text = "Chase the frog away."
+outcome = SubResource("Resource_8nriu")
+markedup_result_text = "A settler throws a handful of mud towards the animal, appalled by its behavior, but it quickly hops away, disappearing into the reeds.
+
+Saved from confronting the bizarre behavior, the settlers breathe a sigh of relief."
+
+[sub_resource type="Resource" id="Resource_6464n"]
+script = ExtResource("4_4okvm")
+markedup_text = "By the side of the trail is a murky pond teeming with tadpoles. One of the tadpoles floats lifelessly on the surface.
+
+A nearby frog suddenly lashes out its tongue, snaps up the dead tadpole, and swallows it whole.
+
+The settlers are horrified by this act of cannibalism."
+background_image = SubResource("Resource_8k5ij")
+background_credit = ExtResource("5_8xs3i")
+choices = Array[ExtResource("6_1rdcd")]([SubResource("Resource_kfxy4"), SubResource("Resource_5t88q"), SubResource("Resource_jsi1l")])
+exit_choice = SubResource("Resource_aovay")
+
+[resource]
+script = ExtResource("3_8n72h")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_sddcg")
+event_id = "companion_frog_3"
+event_name = "A Grim Feast"
+requirement = SubResource("Resource_pwxtb")
+steps = Array[ExtResource("4_4okvm")]([SubResource("Resource_6464n")])
+categories = Array[int]([0, 4])

@@ -1,0 +1,161 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://bp373vdtf33kq"]
+
+[ext_resource type="Resource" uid="uid://da8fydkwec5g3" path="res://stage/spots/seashore/upgrade_seashore_1_kelp_farm.tres" id="1_pdyal"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="2_du8ll"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="3_akorv"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="4_3u4fx"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="5_otn4e"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="6_50ldp"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="7_ijcwg"]
+[ext_resource type="Resource" uid="uid://no74ymc51l8m" path="res://art/pieces/piece_unknown_sea_bream.tres" id="8_du8ll"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="8_eh0xe"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="9_bcm17"]
+[ext_resource type="Resource" uid="uid://c8ykgnjdubwpm" path="res://cards/tier6/card_fear.tres" id="10_oi44t"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="11_35i7j"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="12_w1rkq"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="13_qmuqb"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="14_imfkg"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="15_s6i4g"]
+[ext_resource type="Resource" uid="uid://baxfeq8wclgms" path="res://cards/tier3/card_fortune.tres" id="16_rmbmc"]
+[ext_resource type="Resource" uid="uid://bm0j0xw74yepb" path="res://quests/companion/quest_companion_tai.tres" id="17_rmn55"]
+[ext_resource type="Script" uid="uid://rlexviyd8sv7" path="res://events/system/outcomes/start_quest/event_outcome_start_quest.gd" id="18_thl0w"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="19_ssgu4"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="20_ati6b"]
+[ext_resource type="Resource" uid="uid://tysp6y0sdwfh" path="res://cards/tier6/card_harm.tres" id="21_ksddk"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="22_g8pjp"]
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("3_akorv")
+min_progress = 320
+max_progress = -1
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("4_3u4fx")
+scope = 1
+event_id = "global"
+var_id = "companion_tai"
+value = "0"
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("5_otn4e")
+all_requirements = Array[ExtResource("2_du8ll")]([SubResource("Resource_tuogj"), SubResource("Resource_rx1a8")])
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("8_eh0xe")
+_texture_path = "res://events/companions/tai/companion_tai_1.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_3d1rm"]
+script = ExtResource("11_35i7j")
+card_type = ExtResource("10_oi44t")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ciwob"]
+script = ExtResource("13_qmuqb")
+aspect_type = ExtResource("12_w1rkq")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_nthfn"]
+script = ExtResource("9_bcm17")
+markedup_text = "Leave the next harvest to the spirits."
+requirement = SubResource("Resource_ciwob")
+outcome = SubResource("Resource_3d1rm")
+markedup_result_text = "The workers decide that red is the color of fire, blood, and things that do not belong underwater. The spirits must be making a threat.
+
+They take the next few days off, hoping the flashes will disappear.
+
+They do not."
+
+[sub_resource type="Resource" id="Resource_o754y"]
+script = ExtResource("11_35i7j")
+card_type = ExtResource("16_rmbmc")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_otow6"]
+script = ExtResource("18_thl0w")
+quest = ExtResource("17_rmn55")
+metadata/_custom_type_script = "uid://rlexviyd8sv7"
+
+[sub_resource type="Resource" id="Resource_fgnt5"]
+script = ExtResource("19_ssgu4")
+scope = 1
+event_id = "global"
+var_id = "companion_tai"
+value = "1"
+description = ""
+outcome_description = "The settlers encounter the sea bream."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_g8ipw"]
+script = ExtResource("14_imfkg")
+suboutcomes = Array[ExtResource("15_s6i4g")]([SubResource("Resource_o754y"), SubResource("Resource_otow6"), SubResource("Resource_fgnt5")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_2myy3"]
+script = ExtResource("13_qmuqb")
+aspect_type = ExtResource("20_ati6b")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_w2hpu"]
+script = ExtResource("9_bcm17")
+markedup_text = "Consider the flashes a lucky sign."
+requirement = SubResource("Resource_2myy3")
+outcome = SubResource("Resource_g8ipw")
+markedup_result_text = "A few workers spend the afternoon leaning over the edge of their boats, looking for the flashes.
+
+The source turns out to be large, very red fish: sea bream.
+
+Something else they notice is that the kelp grows thickest wherever these sea bream gather, marking these fish as a sign of abundance among the kelp gatherers."
+
+[sub_resource type="Resource" id="Resource_mtuyc"]
+script = ExtResource("11_35i7j")
+card_type = ExtResource("21_ksddk")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_3sdrw"]
+script = ExtResource("13_qmuqb")
+aspect_type = ExtResource("22_g8pjp")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_fmixu"]
+script = ExtResource("9_bcm17")
+markedup_text = "Try to get rid of them."
+requirement = SubResource("Resource_3sdrw")
+outcome = SubResource("Resource_mtuyc")
+markedup_result_text = "The workers decide that whatever these flashes are, they must be harmful.
+
+On their next trip out, they jab their oars down into the water, trying to push the flashes away.
+
+This turns out to be effective, and within days, the flashes stop showing up."
+
+[sub_resource type="Resource" id="Resource_kojkx"]
+script = ExtResource("9_bcm17")
+markedup_text = "Ignore the flashes."
+markedup_result_text = "The workers agree that whatever is flashing down there is none of their business.
+
+They haul up their kelp and keep their eyes on the horizon."
+
+[sub_resource type="Resource" id="Resource_xh6l0"]
+script = ExtResource("7_ijcwg")
+markedup_text = "Kelp gatherers pulling up their daily harvest are reporting sudden red flashes darting deep among the dark green fronds below.
+
+Some fear it is a warning from the sea spirits, unwilling to share the bounty, while others find the colorful display quite festive.
+
+Neither group has yet been able to identify what exactly these flashes are."
+background_image = SubResource("Resource_06ahh")
+background_credit = ExtResource("8_du8ll")
+choices = Array[ExtResource("9_bcm17")]([SubResource("Resource_nthfn"), SubResource("Resource_w2hpu"), SubResource("Resource_fmixu")])
+exit_choice = SubResource("Resource_kojkx")
+
+[resource]
+script = ExtResource("6_50ldp")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_pdyal")
+event_id = "companion_tai_1"
+event_name = "Flashes in the Deep"
+requirement = SubResource("Resource_dpp3j")
+steps = Array[ExtResource("7_ijcwg")]([SubResource("Resource_xh6l0")])
+categories = Array[int]([0, 4])

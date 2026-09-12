@@ -1,0 +1,121 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://bf8vg2kcuq4hl"]
+
+[ext_resource type="Resource" uid="uid://clsrghb2yqa3r" path="res://stage/spots/seashore/upgrade_seashore_1_bonded_rocks.tres" id="1_5ls8b"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_tgj2c"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_o8lj8"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_07nl5"]
+[ext_resource type="Resource" uid="uid://6qjeu5gholmh" path="res://art/pieces/piece_hokuju_bonded_rocks.tres" id="5_tgj2c"]
+[ext_resource type="Resource" uid="uid://mcngbw1gt4bi" path="res://cards/tier2/card_together.tres" id="6_8p6gm"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_o8lj8"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="7_k6ii7"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="8_6djr7"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="9_473bt"]
+[ext_resource type="Resource" uid="uid://d38q3yxtnh4qu" path="res://cards/tier2/card_parent.tres" id="10_nle7o"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="11_0qspe"]
+[ext_resource type="Resource" uid="uid://v31fvb5yia6m" path="res://cards/tier2/card_equal.tres" id="12_s5sb6"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="13_tmaky"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="14_mco5d"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="15_4jokh"]
+
+[sub_resource type="Resource" id="Resource_tgj2c"]
+script = ExtResource("6_o8lj8")
+_texture_path = "res://events/generic/bonded_rocks/bonded_rocks.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_40rqf"]
+script = ExtResource("7_k6ii7")
+card_type = ExtResource("6_8p6gm")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_7rs64"]
+script = ExtResource("9_473bt")
+bonus_type = ExtResource("8_6djr7")
+min_count = 20
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_hywt7"]
+script = ExtResource("5_07nl5")
+markedup_text = "Let a poet resolve it."
+requirement = SubResource("Resource_7rs64")
+outcome = SubResource("Resource_40rqf")
+markedup_result_text = "The poet stands before the crowd and recites a verse declaring that harmony is found not in being the same, but in being together.
+
+The crowd doesn't seem entirely convinced, but they seem content with having been acknowledged."
+
+[sub_resource type="Resource" id="Resource_2stvf"]
+script = ExtResource("7_k6ii7")
+card_type = ExtResource("10_nle7o")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_86vmg"]
+script = ExtResource("9_473bt")
+bonus_type = ExtResource("11_0qspe")
+min_count = 20
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_ms120"]
+script = ExtResource("5_07nl5")
+markedup_text = "Let a scribe resolve it."
+requirement = SubResource("Resource_86vmg")
+outcome = SubResource("Resource_2stvf")
+markedup_result_text = "The scribe drafts some documents and holds a small ceremony in front of the rocks.
+
+Henceforth, he declares, these rocks are to be called the Mother and Child."
+
+[sub_resource type="Resource" id="Resource_xxhwh"]
+script = ExtResource("7_k6ii7")
+card_type = ExtResource("12_s5sb6")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_uscyl"]
+script = ExtResource("9_473bt")
+bonus_type = ExtResource("13_tmaky")
+min_count = 20
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_v628d"]
+script = ExtResource("5_07nl5")
+markedup_text = "Let a mason resolve it."
+requirement = SubResource("Resource_uscyl")
+outcome = SubResource("Resource_xxhwh")
+markedup_result_text = "The mason is eager to get to work. He gathers his crew and they set to carving the bigger rock down.
+
+Days later, the two rocks are exactly the same size, though one is covered in chisel marks."
+
+[sub_resource type="Resource" id="Resource_kio1v"]
+script = ExtResource("15_4jokh")
+bonus_type = ExtResource("14_mco5d")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_iqp8b"]
+script = ExtResource("5_07nl5")
+markedup_text = "Ignore the complaints."
+outcome = SubResource("Resource_kio1v")
+markedup_result_text = "The town council declares the issue invalid and refuses to address it.
+
+The complaints soon dissipate, but an air of dissatisfaction remains."
+
+[sub_resource type="Resource" id="Resource_o4a42"]
+script = ExtResource("3_o8lj8")
+markedup_text = "Soon after the great rocks were tied with a rope and declared to be a married couple, some settlers began to complain.
+
+Since the rocks are unequal in size, they say, they represent an unequal relationship.
+
+Several people volunteer to resolve the problem."
+background_image = SubResource("Resource_tgj2c")
+background_credit = ExtResource("5_tgj2c")
+choices = Array[ExtResource("5_07nl5")]([SubResource("Resource_hywt7"), SubResource("Resource_ms120"), SubResource("Resource_v628d")])
+exit_choice = SubResource("Resource_iqp8b")
+
+[resource]
+script = ExtResource("2_tgj2c")
+default_spot_upgrade = ExtResource("1_5ls8b")
+event_id = "bonded_rocks"
+event_name = "Unequal Rocks"
+steps = Array[ExtResource("3_o8lj8")]([SubResource("Resource_o4a42")])
+categories = Array[int]([3])

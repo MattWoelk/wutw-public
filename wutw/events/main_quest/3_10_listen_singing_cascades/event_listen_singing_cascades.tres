@@ -1,0 +1,114 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://dpi5hfk0pw658"]
+
+[ext_resource type="Resource" uid="uid://c2qusom5in7ra" path="res://stage/spots/cliff/upgrade_cliff_3_song_waterfall.tres" id="1_oamoh"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="2_2vpkn"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_jcg24"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_dg5bt"]
+[ext_resource type="Resource" uid="uid://bdhie5nthy5jq" path="res://art/pieces/piece_hokusai_kirifuri.tres" id="6_h8wkw"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_2vpkn"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="7_54fbb"]
+[ext_resource type="Script" uid="uid://dadces6knf8fj" path="res://events/system/outcomes/run_var/event_outcome_run_var.gd" id="8_ng6g8"]
+
+[sub_resource type="Resource" id="Resource_xxhwh"]
+script = ExtResource("2_2vpkn")
+min_progress = 300
+max_progress = -1
+
+[sub_resource type="Resource" id="Resource_oamoh"]
+script = ExtResource("7_2vpkn")
+_texture_path = "res://events/main_quest/3_10_listen_singing_cascades/event_listen_singing_cascades.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_6at2x"]
+script = ExtResource("8_ng6g8")
+run_var = 6
+delta = 25
+preview_description = "Gain 25 maximum <term:inspiration> for the rest of the <term:run>"
+outcome_description = "Gained 25 maximum <term:inspiration> for the rest of the <term:run>."
+metadata/_custom_type_script = "uid://dadces6knf8fj"
+
+[sub_resource type="Resource" id="Resource_kio1v"]
+script = ExtResource("7_54fbb")
+markedup_text = "It is an uplifting hymn."
+outcome = SubResource("Resource_6at2x")
+markedup_result_text = "The scholar who first heard the hymn hums along to help the rest of the group recognize it.
+
+Soon everyone can hear it, and some invent verses on the spot to go with the melody.
+
+By the time the expedition moves on, they are newly inspired, confident that the Enlightened One had blessed their path."
+
+[sub_resource type="Resource" id="Resource_8mfyw"]
+script = ExtResource("8_ng6g8")
+delta = 1
+preview_description = "Increase <term:hand_size> by 1 for the rest of the <term:run>"
+outcome_description = "Increased <term:hand_size> by 1 for the rest of the <term:run>."
+metadata/_custom_type_script = "uid://dadces6knf8fj"
+
+[sub_resource type="Resource" id="Resource_df5af"]
+script = ExtResource("7_54fbb")
+markedup_text = "It is a rowing song."
+outcome = SubResource("Resource_8mfyw")
+markedup_result_text = "The retired sailor starts tapping his foot, and soon scholars are common folk alike are clapping along to the thunderous beat.
+
+The rhythm is relentless, driving, and incredibly catchy. The expedition adopts the beat for their labor, finding that they can handle more work when everyone is moving in perfect sync."
+
+[sub_resource type="Resource" id="Resource_40rqf"]
+script = ExtResource("8_ng6g8")
+run_var = 21
+delta = 1
+preview_description = "Gain an extra <term_lower:glyph> reward after each <term:foray> the rest of the <term:run>"
+outcome_description = "Gained an extra <term_lower:glyph> reward after each <term:foray> the rest of the <term:run>."
+metadata/_custom_type_script = "uid://dadces6knf8fj"
+
+[sub_resource type="Resource" id="Resource_ptcwf"]
+script = ExtResource("7_54fbb")
+markedup_text = "It is words of wisdom."
+outcome = SubResource("Resource_40rqf")
+markedup_result_text = "Ink splatters in time with the water, as the scholars frantically brush symbols onto their scrolls, transcribing what they hear.
+
+By the time the sun sets, they have compiled a massive list.
+
+Although the meaning is not immediately intelligible, the scholars are bound to find wisdom in the glyphs once they've had time to study them."
+
+[sub_resource type="Resource" id="Resource_2stvf"]
+script = ExtResource("8_ng6g8")
+run_var = 20
+delta = 1
+preview_description = "The <term:draw_pile> will appear in order for the rest of the <term:run>"
+outcome_description = "The <term:draw_pile> will appear in order for the rest of the <term:run>."
+metadata/_custom_type_script = "uid://dadces6knf8fj"
+
+[sub_resource type="Resource" id="Resource_egt2j"]
+script = ExtResource("7_54fbb")
+markedup_text = "It is a mathematical pattern."
+outcome = SubResource("Resource_2stvf")
+markedup_result_text = "One of the scholars, a mathematician, begins counting the seconds between the heaviest cascades. \"Three, then five, then two,\" she mutters, drawing charts in the mud.
+
+Although she can't yet pinpoint the meaning in the repeating pattern, she insists that the Enlightened One must be showing them the importance of keeping precise order. \"That is how we stay in harmony with the world,\" she explains."
+
+[sub_resource type="Resource" id="Resource_f2op8"]
+script = ExtResource("4_dg5bt")
+markedup_text = "The waterfall tumbles over countless rocky ledges with a deafening roar. Several scholars from the expedition have gathered by the pool at the foot of the falls, listening intently.
+
+\"This melody... a hymn from the Old World,\" one scholar whispers reverently.
+
+\"I can hear words,\" another says.
+
+\"It sounds just like the rowing songs we used to keep the rhythm,\" a retired sailor chimes in.
+
+The scholars are all convinced that the Enlightened One's fractured spirit is sending a message through the cascade, but none can agree what it is."
+background_image = SubResource("Resource_oamoh")
+background_credit = ExtResource("6_h8wkw")
+choices = Array[ExtResource("7_54fbb")]([SubResource("Resource_kio1v"), SubResource("Resource_df5af"), SubResource("Resource_ptcwf")])
+exit_choice = SubResource("Resource_egt2j")
+
+[resource]
+script = ExtResource("3_jcg24")
+default_probability_weight = 1
+default_spot_upgrade = ExtResource("1_oamoh")
+repeatability = 0
+event_id = "listen_singing_cascades"
+event_name = "The Voice of Water"
+requirement = SubResource("Resource_xxhwh")
+steps = Array[ExtResource("4_dg5bt")]([SubResource("Resource_f2op8")])
+categories = Array[int]([1])

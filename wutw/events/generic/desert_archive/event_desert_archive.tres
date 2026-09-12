@@ -1,0 +1,161 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://b78j0xorlb0ts"]
+
+[ext_resource type="Resource" uid="uid://df7pgqp7godaa" path="res://stage/spots/desert/upgrade_desert_2_subterranean_archive.tres" id="1_0827r"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_8jsmc"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_4qwhu"]
+[ext_resource type="Resource" uid="uid://c3wqsiagvu46s" path="res://art/pieces/piece_shinsai_scrolls.tres" id="5_8jsmc"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_sw23g"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="6_68fut"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_0827r"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_hth4o"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="8_olrs6"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="9_igc06"]
+[ext_resource type="Script" uid="uid://foju0o4i75rv" path="res://events/system/outcomes/choose_remove_card/event_outcome_choose_remove_card.gd" id="10_si1g2"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="11_v562a"]
+[ext_resource type="Resource" uid="uid://d2eeui54ibxw3" path="res://relics/common/lettered_robe/relic_lettered_robe.tres" id="12_snjto"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="13_kkfje"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="14_iqy6i"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="15_mxsn3"]
+[ext_resource type="Resource" uid="uid://wei7hpp6rgo1" path="res://relics/uncommon/vanishing_city_scroll/relic_vanishing_city_scroll.tres" id="19_8jsmc"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="19_pbd6d"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="20_bk1on"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="21_yxjgv"]
+[ext_resource type="Resource" uid="uid://duskou3rjc6hq" path="res://relics/common/archivist_seal/relic_archivist_seal.tres" id="22_0827r"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="23_2m035"]
+
+[sub_resource type="Resource" id="Resource_xabec"]
+script = ExtResource("6_0827r")
+_texture_path = "res://events/generic/desert_archive/desert_archive.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_kio1v"]
+script = ExtResource("9_igc06")
+bonus_type = ExtResource("8_olrs6")
+amount = -20
+extra_per_season = -40
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_df5af"]
+script = ExtResource("10_si1g2")
+metadata/_custom_type_script = "uid://foju0o4i75rv"
+
+[sub_resource type="Resource" id="Resource_ptcwf"]
+script = ExtResource("6_68fut")
+suboutcomes = Array[ExtResource("7_hth4o")]([SubResource("Resource_kio1v"), SubResource("Resource_df5af")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("11_v562a")
+bonus_type = ExtResource("8_olrs6")
+min_count = 40
+max_count = -1
+extra_per_season = 40
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("5_sw23g")
+markedup_text = "Leave a mark and seal the place once more."
+requirement = SubResource("Resource_rx1a8")
+outcome = SubResource("Resource_ptcwf")
+markedup_result_text = "The settlers leave a scroll of their own, a contribution to this treasure trove of knowledge.
+
+The chamber is then resealed, the entrance hidden again under the sand.
+
+Someday people wiser than us will make use of this archive."
+
+[sub_resource type="Resource" id="Resource_egt2j"]
+script = ExtResource("13_kkfje")
+relic = ExtResource("12_snjto")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_ciwob"]
+script = ExtResource("15_mxsn3")
+aspect_type = ExtResource("14_iqy6i")
+min_count = 2
+
+[sub_resource type="Resource" id="Resource_nthfn"]
+script = ExtResource("5_sw23g")
+markedup_text = "Let an eager scholar copy everything she can."
+requirement = SubResource("Resource_ciwob")
+outcome = SubResource("Resource_egt2j")
+markedup_result_text = "The scholar starts frantically transcribing every record she sees.
+
+When she runs out of paper, she starts writing directly on the fabric of her robe.
+
+\"I don't understand it all,\" she says. \"But I'll find someone who will.\""
+
+[sub_resource type="Resource" id="Resource_4qwhu"]
+script = ExtResource("13_kkfje")
+relic = ExtResource("19_8jsmc")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_w2hpu"]
+script = ExtResource("15_mxsn3")
+aspect_type = ExtResource("14_iqy6i")
+min_count = 3
+
+[sub_resource type="Resource" id="Resource_3sdrw"]
+script = ExtResource("11_v562a")
+bonus_type = ExtResource("20_bk1on")
+min_count = 50
+max_count = -1
+extra_per_season = 50
+
+[sub_resource type="Resource" id="Resource_fmixu"]
+script = ExtResource("21_yxjgv")
+all_requirements = Array[ExtResource("19_pbd6d")]([SubResource("Resource_w2hpu"), SubResource("Resource_3sdrw")])
+
+[sub_resource type="Resource" id="Resource_kojkx"]
+script = ExtResource("5_sw23g")
+markedup_text = "Explore deeper into the archive."
+requirement = SubResource("Resource_fmixu")
+outcome = SubResource("Resource_4qwhu")
+markedup_result_text = "The scholars clear the rubble of a collapsed wall and find a stair leading down into the darkness.
+
+At the bottom they find another chamber. This one is filled with stacks of stone tiles, many covered in unusual geometric patterns.
+
+It seems that the tiles were once part of a mosaic, but too many are missing to even guess at what the full image was meant to depict."
+
+[sub_resource type="Resource" id="Resource_f2op8"]
+script = ExtResource("13_kkfje")
+relic = ExtResource("22_0827r")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("9_igc06")
+bonus_type = ExtResource("23_2m035")
+amount = -15
+extra_per_season = -15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("6_68fut")
+suboutcomes = Array[ExtResource("7_hth4o")]([SubResource("Resource_f2op8"), SubResource("Resource_4xuhh")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_2myy3"]
+script = ExtResource("5_sw23g")
+markedup_text = "Let the lead scholar decide."
+outcome = SubResource("Resource_tuogj")
+markedup_result_text = "The lead scholar steps forward without asking. He lifts a wooden seal from among the scrolls and drops it into his sleeve.
+
+\"This will make a wonderful addition to my collection,\" he says."
+
+[sub_resource type="Resource" id="Resource_xh6l0"]
+script = ExtResource("3_4qwhu")
+markedup_text = "Buried in the sand behind a storage space of an old ruin is a chamber full of scrolls. Most appear to be from shortly before the Shattering, but a few fragments are much older, written in an unfamiliar script.
+
+It seems that historians were researching an even older civilization here. Translated fragments declare strange laws banning weapons of unclear nature. Redrawn maps show cities the size of a shard.
+
+The settlement's scholars ponder what to do with this treasure trove."
+background_image = SubResource("Resource_xabec")
+background_credit = ExtResource("5_8jsmc")
+choices = Array[ExtResource("5_sw23g")]([SubResource("Resource_dpp3j"), SubResource("Resource_nthfn"), SubResource("Resource_kojkx")])
+exit_choice = SubResource("Resource_2myy3")
+
+[resource]
+script = ExtResource("2_8jsmc")
+default_spot_upgrade = ExtResource("1_0827r")
+event_id = "desert_archive"
+event_name = "Beneath the Sands"
+steps = Array[ExtResource("3_4qwhu")]([SubResource("Resource_xh6l0")])
+categories = Array[int]([3])

@@ -1,0 +1,141 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://cngm5kfsw0vbx"]
+
+[ext_resource type="Resource" uid="uid://g5vii58twf4u" path="res://stage/spots/hill/upgrade_hill_1_stone_quarry.tres" id="1_xwnbq"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_ee2bl"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_chm36"]
+[ext_resource type="Resource" uid="uid://bap1e5oyjgg8l" path="res://art/pieces/piece_hiroshige_nissaka2.tres" id="4_ee2bl"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="4_uf4op"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_64d7v"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="6_3p0pv"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="7_ouvhn"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="8_86luh"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_qcniq"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="10_fov36"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="11_yww8p"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="12_tq0y5"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="13_b4vyf"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="14_cftil"]
+[ext_resource type="Resource" uid="uid://b51stnxioqc2r" path="res://cards/tier2/card_law.tres" id="15_orvke"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="16_cpwoi"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="17_mi4wj"]
+
+[sub_resource type="Resource" id="Resource_gf5wr"]
+script = ExtResource("4_uf4op")
+_texture_path = "res://events/generic/stone_quarry/stone_quarry.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_0dnxh"]
+script = ExtResource("7_ouvhn")
+bonus_type = ExtResource("6_3p0pv")
+amount = -20
+extra_per_season = -20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_206c7"]
+script = ExtResource("9_qcniq")
+aspect_type = ExtResource("8_86luh")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_a10y6"]
+script = ExtResource("5_64d7v")
+markedup_text = "Let the nearly crushed settler decide."
+requirement = SubResource("Resource_206c7")
+outcome = SubResource("Resource_0dnxh")
+markedup_result_text = "The shaken firewood hauler is asked to speak in front of a crowd. He declares that the quarry is a danger to everyone, and demands that work stop immediately.
+
+The resulting angry mob raids the worksite, confiscating all the tools and setting fire to the storage sheds."
+
+[sub_resource type="Resource" id="Resource_slwur"]
+script = ExtResource("7_ouvhn")
+bonus_type = ExtResource("6_3p0pv")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_5n47g"]
+script = ExtResource("7_ouvhn")
+bonus_type = ExtResource("12_tq0y5")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_pr0wc"]
+script = ExtResource("7_ouvhn")
+bonus_type = ExtResource("13_b4vyf")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_n54ep"]
+script = ExtResource("10_fov36")
+suboutcomes = Array[ExtResource("11_yww8p")]([SubResource("Resource_slwur"), SubResource("Resource_5n47g"), SubResource("Resource_pr0wc")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_tf8vh"]
+script = ExtResource("9_qcniq")
+aspect_type = ExtResource("14_cftil")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_bmlkn"]
+script = ExtResource("5_64d7v")
+markedup_text = "Move the quarry."
+requirement = SubResource("Resource_tf8vh")
+outcome = SubResource("Resource_n54ep")
+markedup_result_text = "The settlers convince the quarriers to move their work to the other side of the hill, away from the settlement.
+
+It takes a while to set up the new worksite, but the noise complaints dwindle and no more accidents occur."
+
+[sub_resource type="Resource" id="Resource_yo0ng"]
+script = ExtResource("16_cpwoi")
+card_type = ExtResource("15_orvke")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ldgjy"]
+script = ExtResource("9_qcniq")
+aspect_type = ExtResource("17_mi4wj")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_x41sx"]
+script = ExtResource("5_64d7v")
+markedup_text = "Hold a meeting about the issue."
+requirement = SubResource("Resource_ldgjy")
+outcome = SubResource("Resource_yo0ng")
+markedup_result_text = "The town council calls a meeting to hear all sides of the argument and help calm tensions between the settlers.
+
+The result is a new law, maintaining that the quarry is only allowed to operate during the middle of the day, when most settlers are away from their homes and the roads are empty."
+
+[sub_resource type="Resource" id="Resource_8wlxb"]
+script = ExtResource("7_ouvhn")
+bonus_type = ExtResource("12_tq0y5")
+amount = -15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_83r3c"]
+script = ExtResource("5_64d7v")
+markedup_text = "Ignore the protesting villagers."
+outcome = SubResource("Resource_8wlxb")
+markedup_result_text = "The quarry foremen ignore the settlers' complaints and instruct the workers to continue as usual.
+
+People have to learn to live with the incessant deafening booms and the risk of getting crushed by a stray boulder.
+"
+
+[sub_resource type="Resource" id="Resource_hymtl"]
+script = ExtResource("3_chm36")
+markedup_text = "The quarriers have developed a time-saving technique of rolling the stones they cut out down the hill instead of dragging them by hand. All day, boulders tumble down the hillside with a roaring boom.
+
+When one boulder rolls to a stop at the center of the settlement's main road, narrowly missing a settler towing a cart of firewood, the neighbors declare that they've had enough."
+background_image = SubResource("Resource_gf5wr")
+background_credit = ExtResource("4_ee2bl")
+choices = Array[ExtResource("5_64d7v")]([SubResource("Resource_a10y6"), SubResource("Resource_bmlkn"), SubResource("Resource_x41sx")])
+exit_choice = SubResource("Resource_83r3c")
+
+[resource]
+script = ExtResource("2_ee2bl")
+default_spot_upgrade = ExtResource("1_xwnbq")
+event_id = "stone_quarry"
+event_name = "The Rolling Boulder"
+steps = Array[ExtResource("3_chm36")]([SubResource("Resource_hymtl")])
+categories = Array[int]([3])

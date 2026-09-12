@@ -1,0 +1,137 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://dnx8egmc1fsmk"]
+
+[ext_resource type="Resource" uid="uid://da8fydkwec5g3" path="res://stage/spots/seashore/upgrade_seashore_1_kelp_farm.tres" id="1_m5740"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="2_xn8ry"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_2opky"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_pj8wo"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="5_71jpc"]
+[ext_resource type="Resource" uid="uid://dfhbnn6jiiwac" path="res://art/pieces/piece_hiroshige_3_nori.tres" id="5_xn8ry"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_priba"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="7_qmmio"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="8_xx3ac"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="9_f10yt"]
+[ext_resource type="Resource" uid="uid://bqr2mxlkyigq3" path="res://relics/common/flavorful_stone/relic_flavorful_stone.tres" id="10_3fo38"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="11_d7f8h"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="12_gpuof"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="13_pkftj"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="14_4xg08"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="15_vy4jq"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="16_7na3e"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="17_m266l"]
+
+[sub_resource type="Resource" id="Resource_ll6ky"]
+script = ExtResource("2_xn8ry")
+min_progress = 320
+max_progress = -1
+
+[sub_resource type="Resource" id="Resource_u2mrr"]
+script = ExtResource("5_71jpc")
+_texture_path = "res://events/generic/stone_soup/stone_soup.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_cmcip"]
+script = ExtResource("8_xx3ac")
+bonus_type = ExtResource("7_qmmio")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_x2gv5"]
+script = ExtResource("9_f10yt")
+bonus_type = ExtResource("7_qmmio")
+min_count = 20
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_s3q1v"]
+script = ExtResource("6_priba")
+markedup_text = "Give the traveler nori scraps."
+requirement = SubResource("Resource_x2gv5")
+outcome = SubResource("Resource_cmcip")
+markedup_result_text = "The settlers give the travelers torn scraps of the seaweed, their intact sheets too valuable to waste on a beggar's soup.
+
+The traveler sips the broth and suggests that it needs a bit of earthiness. The settlers, now curious, hand over a withered carrot.
+
+\"Almost there,\" the traveler reassures them. \"Just needs a drop of soy sauce to reach perfection.\"
+
+By the time the chef is finished, the soup is flavored with miso, full of mushrooms and tofu, and has a mound of scallions on top."
+
+[sub_resource type="Resource" id="Resource_d1arc"]
+script = ExtResource("11_d7f8h")
+relic = ExtResource("10_3fo38")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_omq3n"]
+script = ExtResource("13_pkftj")
+aspect_type = ExtResource("12_gpuof")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_g4wdp"]
+script = ExtResource("6_priba")
+markedup_text = "Offer the traveler some stew instead."
+requirement = SubResource("Resource_omq3n")
+outcome = SubResource("Resource_d1arc")
+markedup_result_text = "Some of the settlers take pity on the traveler, and offer them the same rich stew the workers eat, along with a steamed bun.
+
+The traveler eats ravenously while warming up by the fire.
+
+When they continue on their way, they leave the stone behind."
+
+[sub_resource type="Resource" id="Resource_x1gg7"]
+script = ExtResource("8_xx3ac")
+bonus_type = ExtResource("16_7na3e")
+amount = -20
+extra_per_season = -20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_s13el"]
+script = ExtResource("11_d7f8h")
+relic = ExtResource("10_3fo38")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_1a7fo"]
+script = ExtResource("14_4xg08")
+suboutcomes = Array[ExtResource("15_vy4jq")]([SubResource("Resource_x1gg7"), SubResource("Resource_s13el")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_1de8r"]
+script = ExtResource("13_pkftj")
+aspect_type = ExtResource("17_m266l")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_lqnfo"]
+script = ExtResource("6_priba")
+markedup_text = "Trade the stone for supper."
+requirement = SubResource("Resource_1de8r")
+outcome = SubResource("Resource_1a7fo")
+markedup_result_text = "A local merchant is quick to jump on the opportunity, offering a box of nori in return for the miraculous stone.
+
+The traveler haggles, reluctant to part with the treasure, but eventually agrees to the trade."
+
+[sub_resource type="Resource" id="Resource_7h0lc"]
+script = ExtResource("6_priba")
+markedup_text = "Send the traveler away. "
+markedup_result_text = "The villagers laugh at the traveler, dismissing them as delusional.
+
+The settlement is too busy to bother with their nonsense."
+
+[sub_resource type="Resource" id="Resource_cymd0"]
+script = ExtResource("4_pj8wo")
+markedup_text = "It is the height of the nori harvest along the seashore. Everyone contributes to the harvest. Workers with chilled fingers, their pants tied above their knees, wade between the brushwood. Children carry baskets of wet seaweed to the sorting mats. Dogs wander hopefully among the drying racks.
+
+Amid the bustle, a weatherworn traveler arrives, carrying an empty pot and a smooth black stone. They introduce themself as a master chef, and claim that their stone can turn any soup into culinary perfection. They ask for some nori to demonstrate."
+background_image = SubResource("Resource_u2mrr")
+background_credit = ExtResource("5_xn8ry")
+choices = Array[ExtResource("6_priba")]([SubResource("Resource_s3q1v"), SubResource("Resource_g4wdp"), SubResource("Resource_lqnfo")])
+exit_choice = SubResource("Resource_7h0lc")
+
+[resource]
+script = ExtResource("3_2opky")
+default_spot_upgrade = ExtResource("1_m5740")
+event_id = "stone_soup"
+event_name = "The Master Chef"
+requirement = SubResource("Resource_ll6ky")
+steps = Array[ExtResource("4_pj8wo")]([SubResource("Resource_cymd0")])
+categories = Array[int]([3])

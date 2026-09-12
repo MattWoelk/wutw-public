@@ -1,0 +1,178 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://x5v47y77dhcf"]
+
+[ext_resource type="Resource" uid="uid://bi3q0q8mk0b41" path="res://stage/spots/mountain/upgrade_mountain_2_ember_monastery.tres" id="1_hflgf"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_0ni0u"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="2_6kim2"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_6kim2"]
+[ext_resource type="Resource" uid="uid://b05vqgwklk0ah" path="res://art/pieces/piece_hiroshige_2_mount_hirakido.tres" id="5_0ni0u"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_vbuhp"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_6kim2"]
+[ext_resource type="Resource" uid="uid://c7y02jnxa1jw8" path="res://relics/common/oracle_bone/relic_oracle_bone.tres" id="6_851yt"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="7_f04eu"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="8_66jca"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_o55j2"]
+[ext_resource type="Resource" uid="uid://barme0hyqd48f" path="res://relics/uncommon/paper_charm/relic_paper_charm.tres" id="10_3xkb5"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="11_2rvp6"]
+[ext_resource type="Resource" uid="uid://c4shtfdm8gspl" path="res://relics/uncommon/molten_pin/relic_molten_pin.tres" id="12_cobcm"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="13_uely5"]
+[ext_resource type="Script" uid="uid://cbnw4a13y5x8c" path="res://events/system/outcomes/random/event_outcome_random.gd" id="16_66jca"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="17_o55j2"]
+[ext_resource type="Resource" uid="uid://cwt7x3fd6ms86" path="res://relics/common/talisman_charcoal_bead/relic_talisman_charcoal_bead.tres" id="18_3xkb5"]
+[ext_resource type="Script" uid="uid://bbr46symu7hfi" path="res://events/system/requirements/event_requirement_has_relic.gd" id="19_2rvp6"]
+[ext_resource type="Script" uid="uid://bax3q3qv5pv3e" path="res://events/system/requirements/event_requirement_seen_relic.gd" id="20_cobcm"]
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("2_6kim2")
+min_progress = 200
+metadata/_custom_type_script = "uid://c50bhh4sr0g8o"
+
+[sub_resource type="Resource" id="Resource_0ni0u"]
+script = ExtResource("6_6kim2")
+_texture_path = "res://events/generic/ember_monastery/ember_monastery.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_ptcwf"]
+script = ExtResource("7_f04eu")
+relic = ExtResource("6_851yt")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("9_o55j2")
+aspect_type = ExtResource("8_66jca")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("5_vbuhp")
+markedup_text = "Judge the heat by the cracks in the bones."
+requirement = SubResource("Resource_4xuhh")
+outcome = SubResource("Resource_ptcwf")
+markedup_result_text = "One settler kneels at the edge and studies the coals.
+
+Patterns emerge where heat has split the bone-flecked stones.
+
+\"The future may seem obscure, but there are always signs for us to read,\" he says, as he steps on the path."
+
+[sub_resource type="Resource" id="Resource_egt2j"]
+script = ExtResource("7_f04eu")
+relic = ExtResource("10_3xkb5")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("9_o55j2")
+aspect_type = ExtResource("11_2rvp6")
+min_count = 4
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("5_vbuhp")
+markedup_text = "Inscribe protective charms on paper before stepping forward."
+requirement = SubResource("Resource_rx1a8")
+outcome = SubResource("Resource_egt2j")
+markedup_result_text = "Each settler draws a single line on a strip of paper.
+
+They fold them gently, and carry them as they step onto the glowing path.
+
+\"With this protection,\" a settler says, \"we will remember that the pain will pass.\""
+
+[sub_resource type="Resource" id="Resource_f2op8"]
+script = ExtResource("7_f04eu")
+relic = ExtResource("12_cobcm")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("9_o55j2")
+aspect_type = ExtResource("13_uely5")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_ciwob"]
+script = ExtResource("5_vbuhp")
+markedup_text = "Throw tools onto the coals and walk on them."
+requirement = SubResource("Resource_06ahh")
+outcome = SubResource("Resource_f2op8")
+markedup_result_text = "The settlers throw pins, fasteners, and scraps of iron onto the path.
+
+The metal digs into skin, but it grants them just enough time to escape the heat.
+
+On the other side, one settler retrieves a single molten pin.
+
+\"We'll shape it again,\" she says. \"We'll shape everything again.\""
+
+[sub_resource type="Resource" id="Resource_kd355"]
+script = ExtResource("7_f04eu")
+relic = ExtResource("12_cobcm")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_kj1sh"]
+script = ExtResource("7_f04eu")
+relic = ExtResource("10_3xkb5")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_mfxkf"]
+script = ExtResource("7_f04eu")
+relic = ExtResource("6_851yt")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_b7llu"]
+script = ExtResource("16_66jca")
+suboutcomes = Dictionary[ExtResource("17_o55j2"), float]({
+SubResource("Resource_kd355"): 1.0,
+SubResource("Resource_kj1sh"): 1.0,
+SubResource("Resource_mfxkf"): 1.0
+})
+description = "Get one of the Ember Order relics."
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_e7hfo"]
+script = ExtResource("19_2rvp6")
+relic = ExtResource("18_3xkb5")
+metadata/_custom_type_script = "uid://bbr46symu7hfi"
+
+[sub_resource type="Resource" id="Resource_pakit"]
+script = ExtResource("20_cobcm")
+relic = ExtResource("18_3xkb5")
+metadata/_custom_type_script = "uid://bax3q3qv5pv3e"
+
+[sub_resource type="Resource" id="Resource_uely5"]
+script = ExtResource("5_vbuhp")
+markedup_text = "Spread ash over the coals and walk on them."
+requirement = SubResource("Resource_e7hfo")
+show_condition = SubResource("Resource_pakit")
+outcome = SubResource("Resource_b7llu")
+markedup_result_text = "One of the expedition members is an initiate in the Ember Order.
+
+She knows the trick the monks are expected to perform, and simply covers the glowing stones with a layer of ash, leaving a safe path for her comrades to follow.
+
+The monks send her off with one of the monastery's relics to spread the teachings."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_nthfn"]
+script = ExtResource("5_vbuhp")
+markedup_text = "Step away from the coals."
+markedup_result_text = "The nun bows.
+
+\"Another time,\" she says."
+
+[sub_resource type="Resource" id="Resource_2myy3"]
+script = ExtResource("3_6kim2")
+markedup_text = "The path to the Ember Monastery is a long one, and the final approach requires more than just walking.
+
+This last stretch of the path is made of old fossils, glowing with heat.
+
+A solemn nun is standing on one of the glowing stones.
+
+She explains that visitors are invited to steel their resolve and make their own choice for how to traverse this path."
+background_image = SubResource("Resource_0ni0u")
+background_credit = ExtResource("5_0ni0u")
+choices = Array[ExtResource("5_vbuhp")]([SubResource("Resource_tuogj"), SubResource("Resource_dpp3j"), SubResource("Resource_ciwob"), SubResource("Resource_uely5")])
+exit_choice = SubResource("Resource_nthfn")
+
+[resource]
+script = ExtResource("2_0ni0u")
+default_spot_upgrade = ExtResource("1_hflgf")
+event_id = "ember_monastery"
+event_name = "The Ember Trial"
+requirement = SubResource("Resource_trtbi")
+steps = Array[ExtResource("3_6kim2")]([SubResource("Resource_2myy3")])
+categories = Array[int]([3])

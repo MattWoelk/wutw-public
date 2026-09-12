@@ -1,0 +1,159 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://byeachpfebupo"]
+
+[ext_resource type="Resource" uid="uid://gia5p2avy13r" path="res://stage/spots/seashore/upgrade_seashore_2_coral_garden.tres" id="1_e6tnf"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="2_100ig"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="3_oxjpq"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="4_po5qq"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="5_prlfe"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="6_2t5vp"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="7_emh6c"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="8_8omfn"]
+[ext_resource type="Resource" uid="uid://bv05d4maqcya6" path="res://art/pieces/piece_hokusai_turtles.tres" id="8_100ig"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="9_ssmio"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="10_ke3ks"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="11_mh7q7"]
+[ext_resource type="Resource" uid="uid://q6lku15k1yel" path="res://cards/tier2/card_turtle.tres" id="12_b4kqy"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="13_vrye1"]
+[ext_resource type="Resource" uid="uid://crs8hqhkeqv0w" path="res://quests/companion/quest_companion_turtle.tres" id="14_4qcuv"]
+[ext_resource type="Script" uid="uid://rlexviyd8sv7" path="res://events/system/outcomes/start_quest/event_outcome_start_quest.gd" id="15_y1f2g"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="16_05bip"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="17_pao1w"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="18_kc45q"]
+[ext_resource type="Resource" uid="uid://b5dg76yfpc5e6" path="res://cards/tier2/card_seaweed.tres" id="19_qts7t"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="20_vbvff"]
+[ext_resource type="Resource" uid="uid://blm4y3tx0euaa" path="res://cards/tier2/card_picture.tres" id="21_bgbth"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="22_2x8gl"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="23_3xl5l"]
+
+[sub_resource type="Resource" id="Resource_lnhqt"]
+script = ExtResource("3_oxjpq")
+min_progress = 320
+max_progress = -1
+
+[sub_resource type="Resource" id="Resource_j5owh"]
+script = ExtResource("4_po5qq")
+scope = 1
+event_id = "global"
+var_id = "companion_turtle"
+value = "0"
+
+[sub_resource type="Resource" id="Resource_gowui"]
+script = ExtResource("5_prlfe")
+all_requirements = Array[ExtResource("2_100ig")]([SubResource("Resource_lnhqt"), SubResource("Resource_j5owh")])
+
+[sub_resource type="Resource" id="Resource_d1oop"]
+script = ExtResource("8_8omfn")
+_texture_path = "res://events/companions/turtle/companion_turtle_1.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_1evd5"]
+script = ExtResource("13_vrye1")
+card_type = ExtResource("12_b4kqy")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_68hp5"]
+script = ExtResource("15_y1f2g")
+quest = ExtResource("14_4qcuv")
+metadata/_custom_type_script = "uid://rlexviyd8sv7"
+
+[sub_resource type="Resource" id="Resource_dauau"]
+script = ExtResource("16_05bip")
+scope = 1
+event_id = "global"
+var_id = "companion_turtle"
+value = "1"
+description = ""
+outcome_description = "The tale of the straw cape turtle is told."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_77ynk"]
+script = ExtResource("10_ke3ks")
+suboutcomes = Array[ExtResource("11_mh7q7")]([SubResource("Resource_1evd5"), SubResource("Resource_68hp5"), SubResource("Resource_dauau")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_w84c1"]
+script = ExtResource("18_kc45q")
+aspect_type = ExtResource("17_pao1w")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_hip1w"]
+script = ExtResource("9_ssmio")
+markedup_text = "Tell the tale of the straw cape turtle."
+requirement = SubResource("Resource_w84c1")
+outcome = SubResource("Resource_77ynk")
+markedup_result_text = "A young diver recounts the old tale, as told to her by her grandparents.
+
+According to legend, a turtle which lives ten thousand years grows a tail of seaweed that looks like a straw cape. This cape is proof that the turtle had reached complete harmony with nature and became enlightened.
+
+So can humans, the story seems to suggest, attain enlightenment by moving slowly and carefully through life."
+
+[sub_resource type="Resource" id="Resource_brxw1"]
+script = ExtResource("13_vrye1")
+card_type = ExtResource("19_qts7t")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_cohi5"]
+script = ExtResource("18_kc45q")
+aspect_type = ExtResource("20_vbvff")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_4bnqf"]
+script = ExtResource("9_ssmio")
+markedup_text = "Clean the algae off the turtle's shell."
+requirement = SubResource("Resource_cohi5")
+outcome = SubResource("Resource_brxw1")
+markedup_result_text = "A few well-meaning swimmers carefully catch the turtle and scrape the heavy algae away.
+
+The turtle looks completely unbothered, but it doesn't seem to benefit from the grooming in any way either."
+
+[sub_resource type="Resource" id="Resource_6cptf"]
+script = ExtResource("13_vrye1")
+card_type = ExtResource("21_bgbth")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ue0h0"]
+script = ExtResource("23_3xl5l")
+bonus_type = ExtResource("22_2x8gl")
+min_count = 30
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_hii5v"]
+script = ExtResource("9_ssmio")
+markedup_text = "Capture the sight in a painting."
+requirement = SubResource("Resource_ue0h0")
+outcome = SubResource("Resource_6cptf")
+markedup_result_text = "An artist quickly mixes some green and brown ink, capturing the majestic creature on parchment.
+
+The work is easy, as the subject was moving so slowly that it might as well have been still."
+
+[sub_resource type="Resource" id="Resource_phg7y"]
+script = ExtResource("9_ssmio")
+markedup_text = "Leave the turtles to their swim."
+markedup_result_text = "The settlers watch until the turtles slowly disappear behind a reef.
+
+It is a peaceful sight, but there is work to be done."
+
+[sub_resource type="Resource" id="Resource_0wiv2"]
+script = ExtResource("7_emh6c")
+markedup_text = "The waters of the coral garden are clear enough to spot several turtles swimming lazily among the reefs.
+
+One of the turtles is sporting a long cape of green algae trailing from its shell.
+
+The settlers are greatly impressed by the unusual sight, and someone mentions hearing stories from their grandparents about such turtles."
+background_image = SubResource("Resource_d1oop")
+background_credit = ExtResource("8_100ig")
+choices = Array[ExtResource("9_ssmio")]([SubResource("Resource_hip1w"), SubResource("Resource_4bnqf"), SubResource("Resource_hii5v")])
+exit_choice = SubResource("Resource_phg7y")
+
+[resource]
+script = ExtResource("6_2t5vp")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_e6tnf")
+event_id = "companion_turtle_1"
+event_name = "Trailing Seaweed"
+requirement = SubResource("Resource_gowui")
+steps = Array[ExtResource("7_emh6c")]([SubResource("Resource_0wiv2")])
+categories = Array[int]([0, 4])

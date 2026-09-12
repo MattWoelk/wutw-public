@@ -1,0 +1,121 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://cdjkbp0bb13mj"]
+
+[ext_resource type="Resource" uid="uid://dsf7ab0570nf5" path="res://stage/spots/brushland/upgrade_brushland_2_firewood_coppice.tres" id="1_4vjnk"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_orlpl"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_2ovke"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_mylvb"]
+[ext_resource type="Resource" uid="uid://dnoi0fjq2xuur" path="res://art/pieces/piece_eizan_firewood_gatherers.tres" id="5_orlpl"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_2ovke"]
+[ext_resource type="Resource" uid="uid://dlye2f185gh5n" path="res://relics/common/charcoal_rod/relic_charcoal_rod.tres" id="6_4vjnk"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="7_d2lwb"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="8_uf0v3"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_njts7"]
+[ext_resource type="Resource" uid="uid://bwke464koe61r" path="res://relics/uncommon/glowing_ember/relic_glowing_ember.tres" id="10_728ji"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="11_q2skw"]
+[ext_resource type="Resource" uid="uid://lxwn4kblwgk5" path="res://cards/tier3/card_blaze.tres" id="12_nm107"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="13_v2f7w"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="14_ohol0"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="15_d1a1h"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="16_uwdue"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="17_2qbe0"]
+
+[sub_resource type="Resource" id="Resource_orlpl"]
+script = ExtResource("6_2ovke")
+_texture_path = "res://events/generic/firewood_coppice/firewood_coppice.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("7_d2lwb")
+relic = ExtResource("6_4vjnk")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_ptcwf"]
+script = ExtResource("9_njts7")
+aspect_type = ExtResource("8_uf0v3")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_egt2j"]
+script = ExtResource("5_mylvb")
+markedup_text = "Char it carefully into ritual sticks."
+requirement = SubResource("Resource_ptcwf")
+outcome = SubResource("Resource_4xuhh")
+markedup_result_text = "Slow fires are set in shallow pits, turning the excess wood into light, porous charcoal rods.
+
+Artists keep some to draw with."
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("7_d2lwb")
+relic = ExtResource("10_728ji")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_f2op8"]
+script = ExtResource("9_njts7")
+aspect_type = ExtResource("11_q2skw")
+min_count = 5
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("5_mylvb")
+markedup_text = "Tend a long, low flame."
+requirement = SubResource("Resource_f2op8")
+outcome = SubResource("Resource_tuogj")
+markedup_result_text = "The fire is banked in a clay ring and fed just enough. It smolders for days: no blaze, just embers and smoke.
+
+It becomes a place to warm hands and share stories. Some say it will keep burning long after the wood is gone."
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("13_v2f7w")
+card_type = ExtResource("12_nm107")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ciwob"]
+script = ExtResource("15_d1a1h")
+bonus_type = ExtResource("14_ohol0")
+min_count = 20
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_nthfn"]
+script = ExtResource("5_mylvb")
+markedup_text = "Burn it all in a great communal bonfire."
+requirement = SubResource("Resource_ciwob")
+outcome = SubResource("Resource_rx1a8")
+markedup_result_text = "Flames leap high into the dusk. Someone starts a song. Soon, drums join in. The coppice glows, keeping shadows and worries away.
+
+Little is left of the wood by the time the fire dies, but the settlers will long remember this bonfire."
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("17_2qbe0")
+bonus_type = ExtResource("16_uwdue")
+amount = 10
+extra_per_season = 15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_2myy3"]
+script = ExtResource("5_mylvb")
+markedup_text = "Use it to lay a wooden path into the coppice."
+outcome = SubResource("Resource_dpp3j")
+markedup_result_text = "The logs are split and laid with care. By morning, there's a dry, clear path from the settlement to the grove.
+
+It may be mundane, but it gets people where they need to go."
+
+[sub_resource type="Resource" id="Resource_w2hpu"]
+script = ExtResource("3_2ovke")
+markedup_text = "The gatherers worked hard, perhaps too hard. Piles of firewood line the coppice edge, and bundles of kindling have replaced chairs and tables in the camp.
+
+There's more wood than the settlers can store in the sheds, and more than the kitchens can use in a year. It will rot if left in the open.
+
+Some suggest burning it now, while others want to put it to better use."
+background_image = SubResource("Resource_orlpl")
+background_credit = ExtResource("5_orlpl")
+choices = Array[ExtResource("5_mylvb")]([SubResource("Resource_egt2j"), SubResource("Resource_06ahh"), SubResource("Resource_nthfn")])
+exit_choice = SubResource("Resource_2myy3")
+
+[resource]
+script = ExtResource("2_orlpl")
+default_spot_upgrade = ExtResource("1_4vjnk")
+event_id = "firewood_coppice"
+event_name = "What the Fire Leaves"
+steps = Array[ExtResource("3_2ovke")]([SubResource("Resource_w2hpu")])
+categories = Array[int]([3])

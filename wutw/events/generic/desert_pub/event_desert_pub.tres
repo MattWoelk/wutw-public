@@ -1,0 +1,119 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://khiwfar12n41"]
+
+[ext_resource type="Resource" uid="uid://bohwr5tfpehw6" path="res://stage/spots/desert/upgrade_desert_2_caravanserai.tres" id="1_qrfse"]
+[ext_resource type="Script" uid="uid://2sqheye7ri6u" path="res://events/system/requirements/event_requirement_num_settlements.gd" id="2_jgbxx"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_loegf"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_ujcwv"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="5_eny1g"]
+[ext_resource type="Resource" uid="uid://cehjm5jk4a65r" path="res://art/pieces/piece_keith_malacca.tres" id="5_jgbxx"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_rrpys"]
+[ext_resource type="Resource" uid="uid://bgwlkeaj0j4n0" path="res://relics/common/white_city_tale/relic_white_city_tale.tres" id="7_kss52"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="8_fr3i8"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="9_v35mo"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="10_alof6"]
+[ext_resource type="Resource" uid="uid://cysxmdk2v3rj8" path="res://relics/common/unfamiliar_coin/relic_unfamiliar_coin.tres" id="11_vqm30"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="12_d18ox"]
+[ext_resource type="Script" uid="uid://gu7gcielbwdr" path="res://events/system/outcomes/choose_card/event_outcome_choose_card.gd" id="13_hjfci"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="14_xgmc3"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="15_xt3pe"]
+
+[sub_resource type="Resource" id="Resource_a3dw0"]
+script = ExtResource("2_jgbxx")
+min_count = 5
+
+[sub_resource type="Resource" id="Resource_c8w73"]
+script = ExtResource("5_eny1g")
+_texture_path = "res://events/generic/desert_pub/desert_pub.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_kojkx"]
+script = ExtResource("8_fr3i8")
+relic = ExtResource("7_kss52")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_oiyam"]
+script = ExtResource("10_alof6")
+aspect_type = ExtResource("9_v35mo")
+min_count = 4
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_pdn6x"]
+script = ExtResource("6_rrpys")
+markedup_text = "Let the storyteller continue."
+requirement = SubResource("Resource_oiyam")
+outcome = SubResource("Resource_kojkx")
+markedup_result_text = "Most of the patrons are too deep in their cups, but the innkeeper keeps her ears open.
+
+She lets the storyteller speak until his cup drops from his hand, writing down every word she can remember of his tale."
+
+[sub_resource type="Resource" id="Resource_xh6l0"]
+script = ExtResource("8_fr3i8")
+relic = ExtResource("11_vqm30")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_3lt82"]
+script = ExtResource("10_alof6")
+aspect_type = ExtResource("12_d18ox")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_vbe3t"]
+script = ExtResource("6_rrpys")
+markedup_text = "Keep the storyteller safe."
+requirement = SubResource("Resource_3lt82")
+outcome = SubResource("Resource_xh6l0")
+markedup_result_text = "Noticing the heaviness of the storyteller's sleeve, several shady characters continue plying him with drink. When he is finally unable to stand, they offer to take him to his lodging.
+
+The innkeeper intervenes, however, claiming that this honored guest is her responsibility. She shoos the other patrons away and walks him back herself.
+
+As the strange man leaves the next morning, he deposits several coins with unfamiliar writing in the innkeeper's hand. \"I've no more use for these,\" he says."
+
+[sub_resource type="Resource" id="Resource_1stri"]
+script = ExtResource("13_hjfci")
+card_tag = 7
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_akulg"]
+script = ExtResource("10_alof6")
+aspect_type = ExtResource("15_xt3pe")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_vyq5a"]
+script = ExtResource("6_rrpys")
+markedup_text = "Ask the storyteller about his brothers."
+requirement = SubResource("Resource_akulg")
+outcome = SubResource("Resource_1stri")
+markedup_result_text = "Curious, the innkeeper asks to hear more about the stranger's family. \"I wish I could go back,\" he says, as tears fill his eyes.
+
+He suddenly looks up from his drink, his eyes regaining focus. With a nod at the innkeeper, he excuses himself and walks back to his lodgings."
+
+[sub_resource type="Resource" id="Resource_b8qe8"]
+script = ExtResource("6_rrpys")
+markedup_text = "Ignore the drunkard."
+markedup_result_text = "The innkeeper lets the stories pass with the night.
+
+Some of the patrons speak amongst themselves, wondering about the strange tale, but the traveler is gone as the first sunrays shine through the palms."
+
+[sub_resource type="Resource" id="Resource_pc8ys"]
+script = ExtResource("4_ujcwv")
+markedup_text = "This evening the pub is full. Locals drift in, eager for news from the road from merchants in dusty robes.
+
+A stranger sits in the corner, ignored as the drink and conversation flow. His long face remains shadowed, only a prominent nose sticking out, and oddly large eyes catching the lamplight. Finally, he stands up and begins to tell a story.
+
+The patrons roar with laughter at his retelling of the Magic Teapot, and refill his cup time and again.
+
+As his tongue loosens, the tales begin to change. He now speaks of a white city, its turrets shimmering in the sunlight, its lotus ponds filling the air with a sweet fragrance. His eyes get misty as he describes the scent of rain on white stone and the brothers he left behind."
+background_image = SubResource("Resource_c8w73")
+background_credit = ExtResource("5_jgbxx")
+choices = Array[ExtResource("6_rrpys")]([SubResource("Resource_pdn6x"), SubResource("Resource_vbe3t"), SubResource("Resource_vyq5a")])
+exit_choice = SubResource("Resource_b8qe8")
+
+[resource]
+script = ExtResource("3_loegf")
+default_spot_upgrade = ExtResource("1_qrfse")
+event_id = "desert_pub"
+event_name = "The Desert Pub"
+requirement = SubResource("Resource_a3dw0")
+steps = Array[ExtResource("4_ujcwv")]([SubResource("Resource_pc8ys")])
+categories = Array[int]([3])

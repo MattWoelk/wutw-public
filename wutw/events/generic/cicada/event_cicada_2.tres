@@ -1,0 +1,94 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://o63fp3x2tg0d"]
+
+[ext_resource type="Resource" uid="uid://bp071rxo6yfaf" path="res://stage/spots/river/upgrade_river_1_weeping_willows.tres" id="1_22n80"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_22n80"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_o7f1p"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_2wxp5"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_76s7u"]
+[ext_resource type="Resource" uid="uid://clmjcfxm3ojyu" path="res://relics/uncommon/cicada_shell/relic_cicada_shell.tres" id="6_1aakj"]
+[ext_resource type="Resource" uid="uid://b0mw0pvcfr2ql" path="res://art/pieces/piece_koson_cicada.tres" id="6_o7f1p"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_2wxp5"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="7_7rxkm"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="8_gqwdm"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_vgxsg"]
+[ext_resource type="Resource" uid="uid://cen7a8itnudx1" path="res://cards/tier4/card_cicada.tres" id="10_japej"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="11_fd0ui"]
+[ext_resource type="Script" uid="uid://ccdhemnw1w5pf" path="res://events/system/outcomes/insights/event_outcome_insights.gd" id="12_cwhgr"]
+
+[sub_resource type="Resource" id="Resource_f2op8"]
+script = ExtResource("2_22n80")
+event_id = "cicada_1"
+var_id = "continued"
+var_type = 1
+value = "true"
+
+[sub_resource type="Resource" id="Resource_o7f1p"]
+script = ExtResource("7_2wxp5")
+_texture_path = "res://events/generic/cicada/cicada_2.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_df5af"]
+script = ExtResource("7_7rxkm")
+relic = ExtResource("6_1aakj")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("9_vgxsg")
+aspect_type = ExtResource("8_gqwdm")
+min_count = 3
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("5_76s7u")
+markedup_text = "Take the shell as a memento."
+requirement = SubResource("Resource_4xuhh")
+outcome = SubResource("Resource_df5af")
+markedup_result_text = "The shell remains intact.
+
+It is bound to inspire the expedition later."
+
+[sub_resource type="Resource" id="Resource_ptcwf"]
+script = ExtResource("11_fd0ui")
+card_type = ExtResource("10_japej")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("5_76s7u")
+markedup_text = "Study the shell."
+outcome = SubResource("Resource_ptcwf")
+markedup_result_text = "A painter smudges ink onto the shell and takes an imprint.
+
+The lines are sharp and precise, as if the cicada is alive on the paper."
+
+[sub_resource type="Resource" id="Resource_egt2j"]
+script = ExtResource("12_cwhgr")
+amount = 10
+metadata/_custom_type_script = "uid://ccdhemnw1w5pf"
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("5_76s7u")
+markedup_text = "Meditate on the transformation."
+outcome = SubResource("Resource_egt2j")
+markedup_result_text = "A monk sits by the willow, meditating on the husk.
+
+Although the shell is empty, what grew from it lives elsewhere, freer for the dropped burden."
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("4_2wxp5")
+markedup_text = "At the base of a willow, a fragile cicada shell clings to the bark.
+
+The cicada is gone. In its place is a perfect empty husk, intact and light as paper.
+
+The wind is whistling faintly through it."
+background_image = SubResource("Resource_o7f1p")
+background_credit = ExtResource("6_o7f1p")
+choices = Array[ExtResource("5_76s7u")]([SubResource("Resource_tuogj"), SubResource("Resource_rx1a8"), SubResource("Resource_dpp3j")])
+
+[resource]
+script = ExtResource("3_o7f1p")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_22n80")
+event_id = "cicada_2"
+event_name = "An Empty Husk"
+requirement = SubResource("Resource_f2op8")
+steps = Array[ExtResource("4_2wxp5")]([SubResource("Resource_06ahh")])
+categories = Array[int]([3, 4])

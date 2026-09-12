@@ -1,0 +1,128 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://cprx48kjy0tjx"]
+
+[ext_resource type="Resource" uid="uid://1d5p5isd42ha" path="res://stage/spots/mountain/upgrade_mountain_2_natural_hot_spring.tres" id="1_5n3yp"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_0dm8x"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_8q40w"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_qp04q"]
+[ext_resource type="Resource" uid="uid://dn8p1tnwfl4jq" path="res://art/pieces/piece_koson_monkey_moon.tres" id="5_0dm8x"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="5_44s0o"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_qijx8"]
+[ext_resource type="Resource" uid="uid://dkbuldunntb08" path="res://cards/tier2/card_discern.tres" id="7_voba3"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="8_cbln2"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="9_2pfox"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="10_hm5j3"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="11_7l7ra"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="12_xhtnd"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="13_fet67"]
+[ext_resource type="Resource" uid="uid://btssho2uc31h2" path="res://cards/tier6/card_break.tres" id="14_mhy4h"]
+
+[sub_resource type="Resource" id="Resource_s4jdl"]
+script = ExtResource("2_0dm8x")
+scope = 1
+event_id = "global"
+var_id = "companion_monkey"
+value = "1"
+
+[sub_resource type="Resource" id="Resource_hqs7k"]
+script = ExtResource("5_44s0o")
+_texture_path = "res://events/companions/monkey/companion_monkey_2.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_8pb08"]
+script = ExtResource("8_cbln2")
+card_type = ExtResource("7_voba3")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_4ec7n"]
+script = ExtResource("10_hm5j3")
+aspect_type = ExtResource("9_2pfox")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_b7bul"]
+script = ExtResource("6_qijx8")
+markedup_text = "Discuss the illusory nature of ambition."
+requirement = SubResource("Resource_4ec7n")
+outcome = SubResource("Resource_8pb08")
+markedup_result_text = "A scholar seizes the moment to deliver an impromptu lecture.
+
+\"Behold,\" he announces to the bathers, \"a perfect metaphor for human craving. We reach for illusions, grasping...\"
+
+His speech is cut short when the monkey loses its grip and plummets into the spring, splashing water all over the scholar's robes and eliciting a few stifled chuckles from his audience."
+
+[sub_resource type="Resource" id="Resource_32kva"]
+script = ExtResource("11_7l7ra")
+scope = 1
+event_id = "global"
+var_id = "companion_monkey"
+value = "2"
+description = "Amuse the monkey"
+outcome_description = "The monkey is amused."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_egc2n"]
+script = ExtResource("10_hm5j3")
+aspect_type = ExtResource("12_xhtnd")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_br0a8"]
+script = ExtResource("6_qijx8")
+markedup_text = "Splash water at the monkey."
+requirement = SubResource("Resource_egc2n")
+outcome = SubResource("Resource_32kva")
+markedup_result_text = "A playful settler scoops up a handful of water and splashes the monkey.
+
+The animal reaches into the water and splashes it right back at the settlers.
+
+A chaotic water fight breaks out, leaving everyone soaked and laughing."
+
+[sub_resource type="Resource" id="Resource_f72rq"]
+script = ExtResource("10_hm5j3")
+aspect_type = ExtResource("13_fet67")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_lbfhb"]
+script = ExtResource("6_qijx8")
+markedup_text = "Give the monkey a mirror."
+requirement = SubResource("Resource_f72rq")
+outcome = SubResource("Resource_32kva")
+markedup_result_text = "A settler fetches a hand mirror and angles it to reflect the moon directly into the monkey's face.
+
+The monkey promptly snatches the mirror.
+
+It spends the next hour completely mesmerized, tilting it this way and that and occasionally trying to bite its own reflection."
+
+[sub_resource type="Resource" id="Resource_2i6xr"]
+script = ExtResource("8_cbln2")
+card_type = ExtResource("14_mhy4h")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ab2sl"]
+script = ExtResource("6_qijx8")
+markedup_text = "Throw a pebble to shatter the image."
+outcome = SubResource("Resource_2i6xr")
+markedup_result_text = "Annoyed by the distraction, a settler tosses a pebble into the center of the reflection, shattering the moon into a dozen ripples.
+
+The monkey chitters in annoyance and retreats high into the canopy."
+
+[sub_resource type="Resource" id="Resource_ubtyj"]
+script = ExtResource("4_qp04q")
+markedup_text = "The evening air around the hot springs is thick with steam. A few settlers are relaxing by the water, watching a monkey hanging precariously from a low branch.
+
+The creature is stretching its long arm downward, desperately trying to grab the bright reflection of the moon on the still surface of the pool."
+background_image = SubResource("Resource_hqs7k")
+background_credit = ExtResource("5_0dm8x")
+choices = Array[ExtResource("6_qijx8")]([SubResource("Resource_b7bul"), SubResource("Resource_br0a8"), SubResource("Resource_lbfhb")])
+exit_choice = SubResource("Resource_ab2sl")
+
+[resource]
+script = ExtResource("3_8q40w")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_5n3yp")
+event_id = "companion_monkey_2"
+event_name = "The Moon Reflected"
+requirement = SubResource("Resource_s4jdl")
+steps = Array[ExtResource("4_qp04q")]([SubResource("Resource_ubtyj")])
+categories = Array[int]([0, 4])

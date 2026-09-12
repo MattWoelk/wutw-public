@@ -1,0 +1,148 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://ej48oykcjcmx"]
+
+[ext_resource type="Resource" uid="uid://cqo4wx824aeep" path="res://stage/spots/forest/upgrade_forest_1_shrine.tres" id="1_hsme5"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="2_scd4f"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_p0604"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_fute0"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_trgiv"]
+[ext_resource type="Resource" uid="uid://cgbgs1uukxtip" path="res://art/pieces/piece_original_forest_shrine.tres" id="6_48pdk"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="6_j116e"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="7_4gfuf"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_bfs1g"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="8_v7sgp"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="9_scd4f"]
+
+[sub_resource type="Resource" id="Resource_m3wxi"]
+script = ExtResource("2_scd4f")
+min_progress = 125
+max_progress = 125
+
+[sub_resource type="Resource" id="Resource_8hh1b"]
+script = ExtResource("7_bfs1g")
+_texture_path = "res://events/main_quest/1_30_defiled_shrine/event_defiled_shrine.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_smijh"]
+script = ExtResource("6_j116e")
+scope = 1
+var_id = "cull_animals"
+var_type = 1
+value = "true"
+description = ""
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_esg6e"]
+script = ExtResource("5_trgiv")
+markedup_text = "Cull the wild animals."
+outcome = SubResource("Resource_smijh")
+markedup_outcome_hint = "This will leave a mark on history."
+markedup_result_text = "Hunters are called. Traps are set at the forest's edge, arrows loosed into the brush.
+
+Soon the shrine grounds fall quieter. No shuffling can be heard from the undergrowth. No pawprints disturb the soil.
+
+The monks breathe easier, their peace no longer disturbed."
+
+[sub_resource type="Resource" id="Resource_qid86"]
+script = ExtResource("6_j116e")
+scope = 1
+var_id = "guards"
+var_type = 1
+value = "true"
+description = ""
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_c5dec"]
+script = ExtResource("8_v7sgp")
+bonus_type = ExtResource("7_4gfuf")
+min_count = 50
+max_count = -1
+
+[sub_resource type="Resource" id="Resource_tv6vb"]
+script = ExtResource("5_trgiv")
+markedup_text = "Station guards and only admit monks."
+requirement = SubResource("Resource_c5dec")
+outcome = SubResource("Resource_qid86")
+markedup_outcome_hint = "This will leave a mark on history."
+markedup_result_text = "Fences are rebuilt taller, with gates that open only to monks.
+
+Guards are hired to stand watch with staves at all hours.
+
+The sacred grounds remain protected, villagers and animals alike maintaining their distance.
+
+The monks breathe easier, their peace no longer disturbed."
+
+[sub_resource type="Resource" id="Resource_8m1fb"]
+script = ExtResource("6_j116e")
+scope = 1
+var_id = "questioning"
+var_type = 1
+value = "true"
+description = ""
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_6dhhf"]
+script = ExtResource("5_trgiv")
+markedup_text = "Question the locals."
+outcome = SubResource("Resource_8m1fb")
+markedup_outcome_hint = "This will leave a mark on history."
+markedup_result_text = "The monks summon the village in, one household at a time.
+
+Sharp questions fall, faces pale, and denials echo hollow.
+
+Finally some admit the drink had erased last night's memory. Their friends confirm the crime, eager to be spared suspicion.
+
+The culprits are made to clean the shrine for the next month, and no further incidents occur.
+
+The monks breathe easier, their peace no longer disturbed."
+
+[sub_resource type="Resource" id="Resource_t01g5"]
+script = ExtResource("6_j116e")
+scope = 1
+var_id = "forgiven"
+var_type = 1
+value = "true"
+description = ""
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_p0604"]
+script = ExtResource("8_v7sgp")
+bonus_type = ExtResource("9_scd4f")
+min_count = 50
+max_count = -1
+metadata/_custom_type_script = "uid://dfaio0ey0wbra"
+
+[sub_resource type="Resource" id="Resource_j44wq"]
+script = ExtResource("5_trgiv")
+markedup_text = "Forgive and move on."
+requirement = SubResource("Resource_p0604")
+outcome = SubResource("Resource_t01g5")
+markedup_outcome_hint = "This will leave a mark on history."
+markedup_result_text = "The fences are raised again, and the grounds are swept clean.
+
+Those who drank in excess are the most eager to volunteer help.
+
+The incident is soon forgotten.
+
+The monks breathe easier, their peace no longer disturbed."
+
+[sub_resource type="Resource" id="Resource_3v022"]
+script = ExtResource("4_fute0")
+markedup_text = "Morning finds the shrine defiled. Fences crushed, offerings overturned, and sacred ground soiled.
+
+Rumors mutter of drunk settlers, stumbling home from the shrine dedication. Those formerly drunk settlers point the finger at wild beasts, drawn by food left over from the celebration.
+
+Monks discuss whether to set guards at the shrine, question the people, or deter the animals. Unable to settle on a solution, they meditate to receive the Enlightened One's wisdom."
+background_image = SubResource("Resource_8hh1b")
+background_credit = ExtResource("6_48pdk")
+choices = Array[ExtResource("5_trgiv")]([SubResource("Resource_esg6e"), SubResource("Resource_tv6vb"), SubResource("Resource_6dhhf"), SubResource("Resource_j44wq")])
+
+[resource]
+script = ExtResource("3_p0604")
+default_probability_weight = 1
+default_spot_upgrade = ExtResource("1_hsme5")
+repeatability = 0
+event_id = "defiled_shrine"
+event_name = "Legacy Event: Defiled Shrine"
+requirement = SubResource("Resource_m3wxi")
+steps = Array[ExtResource("4_fute0")]([SubResource("Resource_3v022")])
+categories = Array[int]([1, 5])

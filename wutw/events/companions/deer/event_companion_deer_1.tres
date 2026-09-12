@@ -1,0 +1,148 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://cd7ej4oa1wydx"]
+
+[ext_resource type="Resource" uid="uid://cem57n26te6mg" path="res://stage/spots/forest/upgrade_forest_2_fruit_grove.tres" id="1_ci5ft"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="2_ci5ft"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_u4ahg"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_0xf22"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="4_x8eo4"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_ygj25"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="6_uvoue"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="6_x8eo4"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="7_c67r8"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_ci5ft"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="9_c67r8"]
+[ext_resource type="Resource" uid="uid://cr11kj46qseyf" path="res://art/pieces/piece_yoshida_deer.tres" id="9_uvoue"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="10_c67r8"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="10_kxy8q"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="11_xd2fv"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="12_jjdmv"]
+[ext_resource type="Resource" uid="uid://dlu6bxbvhwhf7" path="res://quests/companion/quest_companion_deer.tres" id="13_uvoue"]
+[ext_resource type="Script" uid="uid://rlexviyd8sv7" path="res://events/system/outcomes/start_quest/event_outcome_start_quest.gd" id="14_c67r8"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="15_nk8c5"]
+[ext_resource type="Resource" uid="uid://hvwsyxw6ktoi" path="res://cards/tier2/card_feed.tres" id="17_kxy8q"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="18_xd2fv"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="19_jjdmv"]
+
+[sub_resource type="Resource" id="Resource_kxy8q"]
+script = ExtResource("6_uvoue")
+min_progress = 320
+metadata/_custom_type_script = "uid://c50bhh4sr0g8o"
+
+[sub_resource type="Resource" id="Resource_ci5ft"]
+script = ExtResource("4_x8eo4")
+scope = 1
+event_id = "global"
+var_id = "companion_deer"
+value = "0"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_xd2fv"]
+script = ExtResource("7_c67r8")
+all_requirements = Array[ExtResource("2_ci5ft")]([SubResource("Resource_kxy8q"), SubResource("Resource_ci5ft")])
+metadata/_custom_type_script = "uid://15prcev7a3ta"
+
+[sub_resource type="Resource" id="Resource_uvoue"]
+script = ExtResource("10_c67r8")
+_texture_path = "res://events/companions/deer/companion_deer_1.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_mhw2s"]
+script = ExtResource("14_c67r8")
+quest = ExtResource("13_uvoue")
+metadata/_custom_type_script = "uid://rlexviyd8sv7"
+
+[sub_resource type="Resource" id="Resource_6at2x"]
+script = ExtResource("10_kxy8q")
+scope = 1
+event_id = "global"
+var_id = "companion_deer"
+value = "1"
+description = ""
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_f6ieo"]
+script = ExtResource("6_x8eo4")
+suboutcomes = Array[ExtResource("7_ci5ft")]([SubResource("Resource_mhw2s"), SubResource("Resource_6at2x")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_2stvf"]
+script = ExtResource("12_jjdmv")
+aspect_type = ExtResource("11_xd2fv")
+min_count = 2
+
+[sub_resource type="Resource" id="Resource_xxhwh"]
+script = ExtResource("5_ygj25")
+markedup_text = "Let the deer stay, but withhold the fruit."
+requirement = SubResource("Resource_2stvf")
+outcome = SubResource("Resource_f6ieo")
+markedup_result_text = "The deer eventually learn that the only fruit they're getting is what they can find on the ground.
+
+They still visit the grove regularly, but they eventually stop pestering the workers."
+
+[sub_resource type="Resource" id="Resource_nk8c5"]
+script = ExtResource("18_xd2fv")
+card_type = ExtResource("17_kxy8q")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_kio1v"]
+script = ExtResource("12_jjdmv")
+aspect_type = ExtResource("11_xd2fv")
+min_count = 2
+
+[sub_resource type="Resource" id="Resource_df5af"]
+script = ExtResource("5_ygj25")
+markedup_text = "Share the fruit willingly."
+requirement = SubResource("Resource_kio1v")
+outcome = SubResource("Resource_nk8c5")
+markedup_result_text = "The deer are encouraged by the easily obtained food, and continue to frequent the grove.
+
+Now that the fruit has become their main diet, who knows how they'll fare when the harvest season passes..."
+
+[sub_resource type="Resource" id="Resource_gv0ex"]
+script = ExtResource("9_c67r8")
+bonus_type = ExtResource("19_jjdmv")
+amount = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_7gwgg"]
+script = ExtResource("12_jjdmv")
+aspect_type = ExtResource("15_nk8c5")
+min_count = 2
+metadata/_custom_type_script = "uid://cjdop1iab2efw"
+
+[sub_resource type="Resource" id="Resource_aqw7m"]
+script = ExtResource("5_ygj25")
+markedup_text = "Build fences around the grove."
+requirement = SubResource("Resource_7gwgg")
+outcome = SubResource("Resource_gv0ex")
+markedup_result_text = "Simple bamboo fences are built, surrounding the grove.
+
+At first the deterrent seems to work, but soon the deer learn to simply leap over them, and the pestering persists."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_ptcwf"]
+script = ExtResource("5_ygj25")
+markedup_text = "Gently shoo the deer out of the grove."
+markedup_result_text = "The deer flee into the woods.
+
+Work resumes."
+
+[sub_resource type="Resource" id="Resource_egt2j"]
+script = ExtResource("3_0xf22")
+markedup_text = "The fruit trees hang heavy with pears and plums. So heavy, in fact, that some have fallen on the ground and attracted deer from the nearby forest. The fruit pickers are now constantly accosted by hungry deer asking for sweet treats.
+
+They have long stopped being skittish, and have all but claimed the grove as their home. The fruit pickers are getting more annoyed by the day."
+background_image = SubResource("Resource_uvoue")
+background_credit = ExtResource("9_uvoue")
+choices = Array[ExtResource("5_ygj25")]([SubResource("Resource_xxhwh"), SubResource("Resource_df5af"), SubResource("Resource_aqw7m")])
+exit_choice = SubResource("Resource_ptcwf")
+
+[resource]
+script = ExtResource("2_u4ahg")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_ci5ft")
+event_id = "companion_deer_1"
+event_name = "Deer Incursion"
+requirement = SubResource("Resource_xd2fv")
+steps = Array[ExtResource("3_0xf22")]([SubResource("Resource_egt2j")])
+categories = Array[int]([0, 4])

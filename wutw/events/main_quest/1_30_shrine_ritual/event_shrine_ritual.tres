@@ -1,0 +1,151 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://vspp3bck8ll6"]
+
+[ext_resource type="Resource" uid="uid://dlecugxwnhc15" path="res://stage/spots/lake/upgrade_lake_2_island_shrine.tres" id="1_5cawb"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="2_2kdh3"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="2_2wdie"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_gdvec"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_taq6b"]
+[ext_resource type="Script" uid="uid://pmf38agotvat" path="res://events/system/requirements/event_requirement_event_triggered.gd" id="4_5rr0n"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="4_5xrqp"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="5_eruld"]
+[ext_resource type="Resource" uid="uid://ej48oykcjcmx" path="res://events/main_quest/1_30_defiled_shrine/event_defiled_shrine.tres" id="5_yx53e"]
+[ext_resource type="Resource" uid="uid://bgbdqueaf5fah" path="res://art/pieces/piece_original_lake_shrine.tres" id="6_5xcej"]
+[ext_resource type="Script" uid="uid://by0k6el1c7rlc" path="res://events/system/requirements/event_requirement_not.gd" id="6_364tf"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="7_usj8o"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="12_yx53e"]
+
+[sub_resource type="Resource" id="Resource_jjbbr"]
+script = ExtResource("2_2wdie")
+min_progress = 125
+max_progress = 125
+metadata/_custom_type_script = "uid://c50bhh4sr0g8o"
+
+[sub_resource type="Resource" id="Resource_c4wr5"]
+script = ExtResource("4_5rr0n")
+triggered_event = ExtResource("5_yx53e")
+allow_previous_run = true
+metadata/_custom_type_script = "uid://pmf38agotvat"
+
+[sub_resource type="Resource" id="Resource_1gibp"]
+script = ExtResource("4_5rr0n")
+triggered_event = ExtResource("5_yx53e")
+metadata/_custom_type_script = "uid://pmf38agotvat"
+
+[sub_resource type="Resource" id="Resource_lb55l"]
+script = ExtResource("6_364tf")
+negated_requirement = SubResource("Resource_1gibp")
+metadata/_custom_type_script = "uid://by0k6el1c7rlc"
+
+[sub_resource type="Resource" id="Resource_07esr"]
+script = ExtResource("7_usj8o")
+all_requirements = Array[ExtResource("2_2kdh3")]([SubResource("Resource_jjbbr"), SubResource("Resource_c4wr5"), SubResource("Resource_lb55l")])
+metadata/_custom_type_script = "uid://15prcev7a3ta"
+
+[sub_resource type="Resource" id="Resource_5rr0n"]
+script = ExtResource("12_yx53e")
+_texture_path = "res://events/main_quest/1_30_shrine_ritual/event_shrine_ritual.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_smijh"]
+script = ExtResource("5_eruld")
+scope = 1
+var_id = "incense"
+var_type = 1
+value = "true"
+description = "This will leave a mark on history."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_d0keq"]
+script = ExtResource("4_5xrqp")
+markedup_text = "Burn incense to appease the spirits."
+outcome = SubResource("Resource_smijh")
+markedup_outcome_hint = "This will leave a mark on history."
+markedup_result_text = "Each visitor arrives with a stick of incense, crafted by their own hand or acquired from artisans.
+
+It is burned before the altar, a curl of smoke rising to meld with the others.
+
+The scent will cling to robes and hallways, a reminder that the spirit world is never far."
+
+[sub_resource type="Resource" id="Resource_h5mfv"]
+script = ExtResource("5_eruld")
+scope = 1
+var_id = "rice_pot"
+var_type = 1
+value = "true"
+description = "This will leave a mark on history."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_mxy6s"]
+script = ExtResource("4_5xrqp")
+markedup_text = "Contribute to a communal rice pot."
+outcome = SubResource("Resource_h5mfv")
+markedup_outcome_hint = "This will leave a mark on history."
+markedup_result_text = "Each day, a monk is tasked with tending the giant cauldron.
+
+Visitors bring their grain in the morning, and return with bowls by lunchtime.
+
+No one counts what is brought or what is taken, and the shrine's blessing keeps bellies fed across the settlement."
+
+[sub_resource type="Resource" id="Resource_jcqxn"]
+script = ExtResource("5_eruld")
+scope = 1
+var_id = "compost"
+var_type = 1
+value = "true"
+description = "This will leave a mark on history."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_l1gue"]
+script = ExtResource("4_5xrqp")
+markedup_text = "Bring fallen leaves and petals to the shrine."
+outcome = SubResource("Resource_jcqxn")
+markedup_outcome_hint = "This will leave a mark on history."
+markedup_result_text = "Each visitor picks up stray debris on the way to the shrine, and deposits them into a shared basket.
+
+The basket changes with the seasons, burning orange in the fall, and blush pink in the spring. Even in winter, twigs and acorns find their way into the basket.
+
+What one person drops is hardly noticed. Yet together the offerings form a living tapestry."
+
+[sub_resource type="Resource" id="Resource_i5ayw"]
+script = ExtResource("5_eruld")
+scope = 1
+var_id = "waterline"
+var_type = 1
+value = "true"
+description = "This will leave a mark on history."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_ps5l8"]
+script = ExtResource("4_5xrqp")
+markedup_text = "Meditate on where the water meets the gate."
+outcome = SubResource("Resource_i5ayw")
+markedup_outcome_hint = "This will leave a mark on history."
+markedup_result_text = "Each visitor pauses at the shore, eyes resting on where the waterline meets the gate.
+
+Some days the water is below the foundation stones, ground peeking through. In rainy months the gate appears to float, the lake rising halfway up the pillars.
+
+Although no one keeps a record, everyone seems aware of where the line was even weeks ago."
+
+[sub_resource type="Resource" id="Resource_6at2x"]
+script = ExtResource("3_taq6b")
+markedup_text = "The shrine is raised, its roof tiles tied and its gate painted, but the monks murmur uneasily.
+
+\"Faith is not in the wooden beams,\" says one. \"It must be kept alive with action.\"
+
+The day is spent in meditation, attuning to the Enlightened One's presence.
+
+A ritual is needed. A simple act the people should weave into their visits. A way for the shrine to bind the people together."
+background_image = SubResource("Resource_5rr0n")
+background_credit = ExtResource("6_5xcej")
+choices = Array[ExtResource("4_5xrqp")]([SubResource("Resource_d0keq"), SubResource("Resource_mxy6s"), SubResource("Resource_l1gue"), SubResource("Resource_ps5l8")])
+
+[resource]
+script = ExtResource("2_gdvec")
+default_probability_weight = 1
+default_spot_upgrade = ExtResource("1_5cawb")
+repeatability = 0
+event_id = "shrine_ritual"
+event_name = "Legacy Event: Shrine Ritual"
+requirement = SubResource("Resource_07esr")
+steps = Array[ExtResource("3_taq6b")]([SubResource("Resource_6at2x")])
+categories = Array[int]([1, 5])

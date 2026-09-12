@@ -1,0 +1,159 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://bjywneak6q2dt"]
+
+[ext_resource type="Resource" uid="uid://c56dxbu1pjfbl" path="res://stage/spots/forest/upgrade_forest_3_monastery.tres" id="1_tnacj"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="2_52y53"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_368x0"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_gu55d"]
+[ext_resource type="Resource" uid="uid://bq53r6nqbecfj" path="res://art/pieces/piece_shoutei_ueno_kiyomizu_dou.tres" id="5_52y53"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="5_sqoef"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_cfxf4"]
+[ext_resource type="Resource" uid="uid://c2oiykws0j88s" path="res://relics/common/cherry_pit/relic_cherry_pit.tres" id="7_2bl0q"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="8_t4wpb"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="9_kt7mi"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="10_b3ovg"]
+[ext_resource type="Resource" uid="uid://c4rxohlqbukrh" path="res://relics/common/shimenawa/relic_shimenawa.tres" id="11_47xnf"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="12_gu6s8"]
+[ext_resource type="Resource" uid="uid://bte4tsxhmr02y" path="res://relics/common/dead_branch/relic_dead_branch.tres" id="13_j6skp"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="14_4iygb"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="15_ftdbc"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="16_1gspl"]
+[ext_resource type="Resource" uid="uid://dibmpcq05y0wd" path="res://relics/common/twinned_seed/relic_twinned_seed.tres" id="16_cfxf4"]
+[ext_resource type="Resource" uid="uid://c3wgj8qxnphek" path="res://relics/common/talisman_seed_pouch/relic_talisman_seed_pouch.tres" id="16_sqoef"]
+[ext_resource type="Script" uid="uid://bbr46symu7hfi" path="res://events/system/requirements/event_requirement_has_relic.gd" id="17_cfxf4"]
+[ext_resource type="Script" uid="uid://bax3q3qv5pv3e" path="res://events/system/requirements/event_requirement_seen_relic.gd" id="18_2bl0q"]
+
+[sub_resource type="Resource" id="Resource_8ki8f"]
+script = ExtResource("2_52y53")
+min_progress = 200
+max_progress = -1
+
+[sub_resource type="Resource" id="Resource_sjgf2"]
+script = ExtResource("5_sqoef")
+_texture_path = "res://events/generic/forest_monastery/forest_monastery.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_ijskt"]
+script = ExtResource("8_t4wpb")
+relic = ExtResource("7_2bl0q")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_br6wm"]
+script = ExtResource("10_b3ovg")
+aspect_type = ExtResource("9_kt7mi")
+min_count = 4
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_e1bbd"]
+script = ExtResource("6_cfxf4")
+markedup_text = "Replace them with traditional cedar."
+requirement = SubResource("Resource_br6wm")
+outcome = SubResource("Resource_ijskt")
+markedup_result_text = "The trees are felled and cut into logs for the temple hearths.
+
+In their place, cedar saplings are planted. Perhaps in ten years, the monastery will be surrounded by trees again.
+
+Some of the monks who objected to the plan save the cherry pits, hoping to revive the copse elsewhere someday."
+
+[sub_resource type="Resource" id="Resource_ebb86"]
+script = ExtResource("8_t4wpb")
+relic = ExtResource("11_47xnf")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_pygo0"]
+script = ExtResource("10_b3ovg")
+aspect_type = ExtResource("12_gu6s8")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_tvr55"]
+script = ExtResource("6_cfxf4")
+markedup_text = "Sanctify the existing trees."
+requirement = SubResource("Resource_pygo0")
+outcome = SubResource("Resource_ebb86")
+markedup_result_text = "The monks wrap moss-green robes around the cherry trees and tie them with heavy braided ropes, symbolically ordaining them as part of the order.
+
+The trees do not seem to mind, and it deters vermin."
+
+[sub_resource type="Resource" id="Resource_lrhyg"]
+script = ExtResource("8_t4wpb")
+relic = ExtResource("13_j6skp")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_c8jlg"]
+script = ExtResource("10_b3ovg")
+aspect_type = ExtResource("14_4iygb")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_xt7nv"]
+script = ExtResource("6_cfxf4")
+markedup_text = "Graft cedar branches onto the trees."
+requirement = SubResource("Resource_c8jlg")
+outcome = SubResource("Resource_lrhyg")
+markedup_result_text = "The monks make cuts in the cherry trees, and bind branches from sacred cedars to the wounds.
+
+Within days, the bound branches wither.
+
+\"Of the pine tree learn from the pine tree. Of the bamboo learn from the bamboo,\" quotes one of the monks."
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("8_t4wpb")
+relic = ExtResource("16_cfxf4")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_b7llu"]
+script = ExtResource("17_cfxf4")
+relic = ExtResource("16_sqoef")
+metadata/_custom_type_script = "uid://bbr46symu7hfi"
+
+[sub_resource type="Resource" id="Resource_e7hfo"]
+script = ExtResource("18_2bl0q")
+relic = ExtResource("16_sqoef")
+metadata/_custom_type_script = "uid://bax3q3qv5pv3e"
+
+[sub_resource type="Resource" id="Resource_2bl0q"]
+script = ExtResource("6_cfxf4")
+markedup_text = "Plant the grounds with seeds from the talisman pouch."
+requirement = SubResource("Resource_b7llu")
+show_condition = SubResource("Resource_e7hfo")
+outcome = SubResource("Resource_trtbi")
+markedup_result_text = "One of the monks reminds the abbot that the Enlightened One had entrusted them with their seed pouches for just such an occasion.
+
+Instead of felling the cherry trees or planting cedars, the initiates walk the grounds emptying surplus seed pouches to let divine will guide regrowth.
+
+One of the pouches turns out to be filled with odd twinned seeds that the monks had never seen before."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_psisq"]
+script = ExtResource("16_1gspl")
+bonus_type = ExtResource("15_ftdbc")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_x3moh"]
+script = ExtResource("6_cfxf4")
+markedup_text = "Leave the trees as is."
+outcome = SubResource("Resource_psisq")
+markedup_result_text = "The monks endlessly debate the plan, but failing to come to a consensus, they leave the trees alone.
+
+\"The forest is not there to serve us,\" the head monk concedes. \"We should let nature take its course.\""
+
+[sub_resource type="Resource" id="Resource_jevc1"]
+script = ExtResource("4_gu55d")
+markedup_text = "This monastery of the Order of Growth was established in a copse of cherry trees, perhaps cultivated once, but wild now. They bloom briefly and produce bitter fruit.
+
+Many of the monks argue that they should instead replant the area with traditional cedar trees. Some object to needlessly cutting wild trees, suggesting that it should be enough to just sanctify them, or even to graft cedar branches."
+background_image = SubResource("Resource_sjgf2")
+background_credit = ExtResource("5_52y53")
+choices = Array[ExtResource("6_cfxf4")]([SubResource("Resource_e1bbd"), SubResource("Resource_tvr55"), SubResource("Resource_xt7nv"), SubResource("Resource_2bl0q")])
+exit_choice = SubResource("Resource_x3moh")
+
+[resource]
+script = ExtResource("3_368x0")
+default_spot_upgrade = ExtResource("1_tnacj")
+event_id = "forest_monastery"
+event_name = "Insufficiently Holy Trees"
+requirement = SubResource("Resource_8ki8f")
+steps = Array[ExtResource("4_gu55d")]([SubResource("Resource_jevc1")])
+categories = Array[int]([3])

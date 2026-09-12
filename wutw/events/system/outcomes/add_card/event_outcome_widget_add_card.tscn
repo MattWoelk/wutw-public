@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c6w6tqejppqwe"]
+
+[ext_resource type="Script" uid="uid://c8afhpwnqs813" path="res://events/system/outcomes/add_card/event_outcome_widget_add_card.gd" id="1_n6rdr"]
+[ext_resource type="FontFile" uid="uid://4akk8wkhg56y" path="res://theme/fonts/Merienda/static/Merienda-ExtraBold.ttf" id="2_3ot4v"]
+[ext_resource type="PackedScene" uid="uid://dgmyeosmc67d7" path="res://cards/card.tscn" id="3_p8myr"]
+
+[node name="EventOutcomeWidget_AddCard" type="VBoxContainer" unique_id=373557963]
+offset_right = 214.0
+offset_bottom = 232.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_n6rdr")
+
+[node name="Label" type="Label" parent="." unique_id=1143031096]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3ot4v")
+text = "New Glyph Received!"
+horizontal_alignment = 1
+
+[node name="Card" parent="." unique_id=1513109824 instance=ExtResource("3_p8myr")]
+unique_name_in_owner = true
+layout_mode = 2
+allow_select = false
+allow_unselect = false
+
+[connection signal="selected" from="Card" to="." method="_on_card_selected"]

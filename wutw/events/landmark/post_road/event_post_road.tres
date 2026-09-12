@@ -1,0 +1,171 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://bkiivrvgqedjv"]
+
+[ext_resource type="Resource" uid="uid://by3ikcdc6h5j4" path="res://stage/spots/plains/upgrade_plains_2_road.tres" id="1_5crys"]
+[ext_resource type="Script" uid="uid://b87xjo1pfiqcm" path="res://events/system/requirements/event_requirement_season.gd" id="2_3bxsm"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="2_c85cf"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_p6nsy"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_3bxsm"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="3_l2yuy"]
+[ext_resource type="Script" uid="uid://btrwtj4v8ufn" path="res://events/system/requirements/event_requirement_has_skill.gd" id="3_u38hl"]
+[ext_resource type="Resource" uid="uid://c0wl7rvf5df5c" path="res://skills/capital/skill_capital_shop_connect.tres" id="4_anxfv"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_c85cf"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="5_u38hl"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="6_l2yuy"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_u38hl"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="8_anxfv"]
+[ext_resource type="Script" uid="uid://d2jqnk7k8vswi" path="res://events/system/outcomes/connect_settlement/event_outcome_connect_settlement.gd" id="10_t5t6n"]
+[ext_resource type="Resource" uid="uid://dxuhg1iuq41k2" path="res://art/pieces/piece_hiroshige_fujikawa.tres" id="11_anxfv"]
+[ext_resource type="Script" uid="uid://bbhwr4afafq2e" path="res://events/system/outcomes/unlock_shop/event_outcome_unlock_shop.gd" id="11_l2w87"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="12_fqocb"]
+[ext_resource type="Resource" uid="uid://c0e183uyj0ox3" path="res://shops/connect_settlements/shop_connect_settlements.tres" id="12_x8no6"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="13_f6yki"]
+[ext_resource type="Resource" uid="uid://ddbnyw43emm2d" path="res://cards/tier2/card_road.tres" id="14_b3020"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="15_8qrn6"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="16_etsi2"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="17_l2yuy"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="17_qi3vd"]
+[ext_resource type="Resource" uid="uid://itdvaibnm8vv" path="res://cards/tier3/card_travel.tres" id="18_p7083"]
+[ext_resource type="Resource" uid="uid://j5k23kvamui4" path="res://bonuses/types/bonus_adventure.tres" id="19_03m1t"]
+
+[sub_resource type="Resource" id="Resource_t5t6n"]
+script = ExtResource("3_u38hl")
+skill = ExtResource("4_anxfv")
+metadata/_custom_type_script = "uid://btrwtj4v8ufn"
+
+[sub_resource type="Resource" id="Resource_a1pu3"]
+script = ExtResource("3_l2yuy")
+var_id = "landmark_built"
+var_type = 1
+value = "false"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_anxfv"]
+script = ExtResource("2_3bxsm")
+min_index = 1
+metadata/_custom_type_script = "uid://b87xjo1pfiqcm"
+
+[sub_resource type="Resource" id="Resource_fqocb"]
+script = ExtResource("5_u38hl")
+all_requirements = Array[ExtResource("2_c85cf")]([SubResource("Resource_t5t6n"), SubResource("Resource_a1pu3"), SubResource("Resource_anxfv")])
+metadata/_custom_type_script = "uid://15prcev7a3ta"
+
+[sub_resource type="Resource" id="Resource_l2w87"]
+script = ExtResource("12_fqocb")
+_texture_path = "res://events/landmark/post_road/post_road.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_40rqf"]
+script = ExtResource("10_t5t6n")
+metadata/_custom_type_script = "uid://d2jqnk7k8vswi"
+
+[sub_resource type="Resource" id="Resource_l1gue"]
+script = ExtResource("11_l2w87")
+shop_type = ExtResource("12_x8no6")
+metadata/_custom_type_script = "uid://bbhwr4afafq2e"
+
+[sub_resource type="Resource" id="Resource_rc2gp"]
+script = ExtResource("17_l2yuy")
+var_id = "landmark_built"
+var_type = 1
+value = "true"
+description = ""
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_ps5l8"]
+script = ExtResource("6_l2yuy")
+suboutcomes = Array[ExtResource("7_u38hl")]([SubResource("Resource_40rqf"), SubResource("Resource_l1gue"), SubResource("Resource_rc2gp")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_xwjmn"]
+script = ExtResource("13_f6yki")
+bonus_type = ExtResource("8_anxfv")
+min_count = 40
+max_count = -1
+extra_per_season = 40
+
+[sub_resource type="Resource" id="Resource_yqh1a"]
+script = ExtResource("5_c85cf")
+markedup_text = "Extend the road all the way to the capital."
+requirement = SubResource("Resource_xwjmn")
+outcome = SubResource("Resource_ps5l8")
+markedup_result_text = "The final stakes are driven in. The surface is leveled. Signposts are set up.
+
+Several houses will soon be converted into inns for travelers.
+
+\"It's open,\" someone says. \"It begins now.\""
+
+[sub_resource type="Resource" id="Resource_2stvf"]
+script = ExtResource("15_8qrn6")
+card_type = ExtResource("14_b3020")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_r07ey"]
+script = ExtResource("17_qi3vd")
+aspect_type = ExtResource("16_etsi2")
+min_count = 2
+
+[sub_resource type="Resource" id="Resource_ogssy"]
+script = ExtResource("5_c85cf")
+markedup_text = "Expand the road within the settlement."
+requirement = SubResource("Resource_r07ey")
+outcome = SubResource("Resource_2stvf")
+markedup_result_text = "Rather than optimize for speed or state control, the group reroutes the road through gardens, commons, and gathering spots.
+
+The path becomes slower, but warmer. People pause more. Talk more.
+
+\"A road doesn't have to get you there fast. It just has to keep you together.\""
+
+[sub_resource type="Resource" id="Resource_xxhwh"]
+script = ExtResource("15_8qrn6")
+card_type = ExtResource("18_p7083")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_4rbn6"]
+script = ExtResource("13_f6yki")
+bonus_type = ExtResource("19_03m1t")
+min_count = 25
+max_count = -1
+extra_per_season = 25
+
+[sub_resource type="Resource" id="Resource_7lpxr"]
+script = ExtResource("5_c85cf")
+markedup_text = "Split the road into forks leading into the wilderness."
+requirement = SubResource("Resource_4rbn6")
+outcome = SubResource("Resource_xxhwh")
+markedup_result_text = "Instead of a single road, the path now splits into many forks. Some end in scenic vistas, others disappear into the rough wilderness.
+
+Travel is not as efficient, but it carries folks off the beaten path.
+
+\"The straight line was fastest. But this way, we'll actually see something.\""
+
+[sub_resource type="Resource" id="Resource_l4pg3"]
+script = ExtResource("5_c85cf")
+markedup_text = "Leave the road in its humble state."
+markedup_result_text = "The stakes stay where they are. The grass grows back slowly.
+
+\"Maybe the stillness was the point,\" someone says. \"For now.\""
+
+[sub_resource type="Resource" id="Resource_uw5fo"]
+script = ExtResource("3_3bxsm")
+markedup_text = "The path stretches further than it did yesterday.
+
+Settlers have begun marking it with wooden stakes and bits of painted cloth. An inn is being planned.
+
+An enterprising settler sets up a stall accepting messages to be delivered.
+
+\"If we extend the road further, there's no telling who will come,\" one settler mutters."
+background_image = SubResource("Resource_l2w87")
+background_credit = ExtResource("11_anxfv")
+choices = Array[ExtResource("5_c85cf")]([SubResource("Resource_yqh1a"), SubResource("Resource_ogssy"), SubResource("Resource_7lpxr")])
+exit_choice = SubResource("Resource_l4pg3")
+
+[resource]
+script = ExtResource("2_p6nsy")
+default_probability_weight = 0
+default_spot_upgrade = ExtResource("1_5crys")
+repeatability = 2
+event_id = "post_road"
+event_name = "Post Road"
+requirement = SubResource("Resource_fqocb")
+steps = Array[ExtResource("3_3bxsm")]([SubResource("Resource_uw5fo")])
+categories = Array[int]([2])

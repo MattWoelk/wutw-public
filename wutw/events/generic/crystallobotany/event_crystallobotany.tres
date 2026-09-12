@@ -1,0 +1,245 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://c7qh1whs4jrqi"]
+
+[ext_resource type="Resource" uid="uid://dgamb21ubiatw" path="res://stage/spots/swamp/upgrade_swamp_3_alchemist_retreat.tres" id="1_x30cj"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_3lj2l"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_ukb65"]
+[ext_resource type="Resource" uid="uid://c8fd4kuf4g2ge" path="res://art/pieces/piece_gekkou_takenouchi_sukune.tres" id="5_3lj2l"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_tc14c"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_ukb65"]
+[ext_resource type="Script" uid="uid://cbnw4a13y5x8c" path="res://events/system/outcomes/random/event_outcome_random.gd" id="6_x30cj"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_w4aov"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="8_wbl45"]
+[ext_resource type="Resource" uid="uid://ccw8l2yx74uwu" path="res://relics/common/crystal_twig/relic_crystal_twig.tres" id="9_70qbh"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="10_i5ygm"]
+[ext_resource type="Script" uid="uid://yxgaymbbt8tk" path="res://events/system/outcomes/override_next_step/event_outcome_override_next_step.gd" id="11_42s7m"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="12_6dfxd"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="13_xpr30"]
+[ext_resource type="Resource" uid="uid://cvw5384dhhxp7" path="res://relics/uncommon/crystal_petal/relic_crystal_petal.tres" id="14_c5xvp"]
+[ext_resource type="Resource" uid="uid://8sulc1f7pr5m" path="res://cards/tier6/card_wither.tres" id="15_qapeo"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="16_qkgdb"]
+[ext_resource type="Resource" uid="uid://bfg8kmwlrwtwt" path="res://relics/rare/crystal_blossom/relic_crystal_blossom.tres" id="17_cdw7g"]
+[ext_resource type="Resource" uid="uid://bte4tsxhmr02y" path="res://relics/common/dead_branch/relic_dead_branch.tres" id="19_tc14c"]
+[ext_resource type="Script" uid="uid://bbr46symu7hfi" path="res://events/system/requirements/event_requirement_has_relic.gd" id="20_efsx6"]
+[ext_resource type="Script" uid="uid://c526o6bgglybb" path="res://events/system/outcomes/remove_relic/event_outcome_remove_relic.gd" id="20_w4aov"]
+[ext_resource type="Script" uid="uid://bax3q3qv5pv3e" path="res://events/system/requirements/event_requirement_seen_relic.gd" id="21_w4aov"]
+
+[sub_resource type="Resource" id="Resource_3lj2l"]
+script = ExtResource("6_ukb65")
+_texture_path = "res://events/generic/crystallobotany/crystallobotany.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_2stvf"]
+script = ExtResource("10_i5ygm")
+relic = ExtResource("9_70qbh")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_xxhwh"]
+script = ExtResource("11_42s7m")
+result_text = "The cauldron hisses softly. A thin crystal tendril curls out and solidifies. The alchemist nods, satisfied.
+
+\"A modest input. A modest output.\""
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_kio1v"]
+script = ExtResource("8_wbl45")
+suboutcomes = Array[ExtResource("7_w4aov")]([SubResource("Resource_2stvf"), SubResource("Resource_xxhwh")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_f2op8"]
+script = ExtResource("13_xpr30")
+bonus_type = ExtResource("12_6dfxd")
+amount = -20
+extra_per_season = -15
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("11_42s7m")
+result_text = "The twig splinters as it hits the liquid. The mixture boils over, spitting glassy shards across the ground.
+
+\"Hmm,\" the alchemist says. \"Should've grounded it better.\""
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("8_wbl45")
+suboutcomes = Array[ExtResource("7_w4aov")]([SubResource("Resource_f2op8"), SubResource("Resource_4xuhh")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_df5af"]
+script = ExtResource("6_x30cj")
+suboutcomes = Dictionary[ExtResource("7_w4aov"), float]({
+SubResource("Resource_kio1v"): 0.7,
+SubResource("Resource_tuogj"): 0.3
+})
+description = "A mild gamble"
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_r0oeh"]
+script = ExtResource("5_tc14c")
+markedup_text = "Throw a twig into the cauldron."
+outcome = SubResource("Resource_df5af")
+markedup_result_text = "<will be overridden>"
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("10_i5ygm")
+relic = ExtResource("14_c5xvp")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("11_42s7m")
+result_text = "The petal turns translucent instantly. Within minutes crystals grow over its surface, perfectly matching every curve.
+
+\"Not bad for a first try!\" The alchemist beams."
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("8_wbl45")
+suboutcomes = Array[ExtResource("7_w4aov")]([SubResource("Resource_rx1a8"), SubResource("Resource_dpp3j")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_ciwob"]
+script = ExtResource("16_qkgdb")
+card_type = ExtResource("15_qapeo")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_nthfn"]
+script = ExtResource("11_42s7m")
+result_text = "The cauldron lets out a faint screech, the liquid turning a dull gray.
+
+\"I suppose it's one of those blooms that don't like crystals. You never know with these things,\" the alchemist sighs.
+
+As the settlers walk away, they can't help but notice the swamp grasses dying beneath their feet."
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_2myy3"]
+script = ExtResource("8_wbl45")
+suboutcomes = Array[ExtResource("7_w4aov")]([SubResource("Resource_ciwob"), SubResource("Resource_ciwob"), SubResource("Resource_nthfn")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_w2hpu"]
+script = ExtResource("6_x30cj")
+suboutcomes = Dictionary[ExtResource("7_w4aov"), float]({
+SubResource("Resource_06ahh"): 0.5,
+SubResource("Resource_2myy3"): 0.5
+})
+description = "A medium gamble"
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_jiini"]
+script = ExtResource("5_tc14c")
+markedup_text = "Tear off a petal and throw it into the cauldron."
+outcome = SubResource("Resource_w2hpu")
+markedup_result_text = "<will be overridden>"
+
+[sub_resource type="Resource" id="Resource_3sdrw"]
+script = ExtResource("10_i5ygm")
+relic = ExtResource("17_cdw7g")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_fmixu"]
+script = ExtResource("11_42s7m")
+result_text = "The branch dissolves and the surface grows still.
+
+Then, with a deep thrum, a blossom floats up, now made of intricate, glimmering crystal.
+
+\"That,\" the alchemist gasps, \"was beautiful!\""
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_kojkx"]
+script = ExtResource("8_wbl45")
+suboutcomes = Array[ExtResource("7_w4aov")]([SubResource("Resource_3sdrw"), SubResource("Resource_fmixu")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_xh6l0"]
+script = ExtResource("13_xpr30")
+bonus_type = ExtResource("12_6dfxd")
+amount = -40
+extra_per_season = -20
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_1stri"]
+script = ExtResource("11_42s7m")
+result_text = "The reaction comes fast, with a burst of steam knocking several settlers back.
+
+\"Ah, I forgot to protect against overflow there,\" the alchemist says, recording a note.
+
+As the settlers walk away, they can't help but notice the trees around them withering as they pass. Their leaves curl inwards, turning lifeless and dark."
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_2me52"]
+script = ExtResource("8_wbl45")
+suboutcomes = Array[ExtResource("7_w4aov")]([SubResource("Resource_ciwob"), SubResource("Resource_ciwob"), SubResource("Resource_ciwob"), SubResource("Resource_xh6l0"), SubResource("Resource_1stri")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_kjam1"]
+script = ExtResource("6_x30cj")
+suboutcomes = Dictionary[ExtResource("7_w4aov"), float]({
+SubResource("Resource_kojkx"): 0.3,
+SubResource("Resource_2me52"): 0.7
+})
+description = "A risky gamble"
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_mm8jc"]
+script = ExtResource("5_tc14c")
+markedup_text = "Throw the entire branch into the cauldron."
+outcome = SubResource("Resource_kjam1")
+
+[sub_resource type="Resource" id="Resource_0eiya"]
+script = ExtResource("20_w4aov")
+relic = ExtResource("19_tc14c")
+metadata/_custom_type_script = "uid://c526o6bgglybb"
+
+[sub_resource type="Resource" id="Resource_a6ufw"]
+script = ExtResource("10_i5ygm")
+relic = ExtResource("9_70qbh")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("8_wbl45")
+suboutcomes = Array[ExtResource("7_w4aov")]([SubResource("Resource_0eiya"), SubResource("Resource_a6ufw")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_d174p"]
+script = ExtResource("20_efsx6")
+relic = ExtResource("19_tc14c")
+metadata/_custom_type_script = "uid://bbr46symu7hfi"
+
+[sub_resource type="Resource" id="Resource_wbl45"]
+script = ExtResource("21_w4aov")
+relic = ExtResource("19_tc14c")
+metadata/_custom_type_script = "uid://bax3q3qv5pv3e"
+
+[sub_resource type="Resource" id="Resource_70qbh"]
+script = ExtResource("5_tc14c")
+markedup_text = "Use the Dead Branch."
+requirement = SubResource("Resource_d174p")
+show_condition = SubResource("Resource_wbl45")
+outcome = SubResource("Resource_trtbi")
+markedup_result_text = "The branch doesn't seem to react at first, but a minute later crystals start growing around its tip.
+
+\"Smart,\" the alchemist nods, \"it must be safer with a dead one.\""
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_ymvbb"]
+script = ExtResource("5_tc14c")
+markedup_text = "Do not engage with the madman."
+
+[sub_resource type="Resource" id="Resource_sdqv8"]
+script = ExtResource("3_ukb65")
+markedup_text = "The swamp path turns rigid underfoot. A crystal-crusted lily pad shimmers on stagnant water. A crystal squirrel perches motionless on a branch. A settler cries out after stepping on a bed of crystallized mushrooms.
+
+In front of a ramshackle hut, the alchemist is elbow-deep in a great steaming cauldron.
+
+\"It began with moss. Then algae. Now root, stem, flower, and beast!\" He breaks off a branch and gestures excitedly. \"Try it! The bigger the ingredient, the bigger the reaction!\""
+background_image = SubResource("Resource_3lj2l")
+background_credit = ExtResource("5_3lj2l")
+choices = Array[ExtResource("5_tc14c")]([SubResource("Resource_r0oeh"), SubResource("Resource_jiini"), SubResource("Resource_mm8jc"), SubResource("Resource_70qbh")])
+exit_choice = SubResource("Resource_ymvbb")
+
+[resource]
+script = ExtResource("2_3lj2l")
+default_spot_upgrade = ExtResource("1_x30cj")
+event_id = "crystallobotany"
+event_name = "A Breakthrough in Crystallobotany"
+steps = Array[ExtResource("3_ukb65")]([SubResource("Resource_sdqv8")])
+categories = Array[int]([3])

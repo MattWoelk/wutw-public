@@ -1,0 +1,167 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://dfevh3b1f2mm4"]
+
+[ext_resource type="Resource" uid="uid://cgp5r3snudilt" path="res://stage/spots/building_large/upgrade_building_large_1_school.tres" id="1_422ec"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_gcfm2"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_24xmn"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="4_1l54c"]
+[ext_resource type="Resource" uid="uid://dl270nd7x4o1s" path="res://art/pieces/piece_kuniyoshi_calligraphy_gathering.tres" id="4_gcfm2"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_qts6t"]
+[ext_resource type="Resource" uid="uid://dxay40odoudsw" path="res://relics/common/extra_homework/relic_extra_homework.tres" id="6_3pd22"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="7_b2pox"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="8_7eita"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="9_hgh1x"]
+[ext_resource type="Resource" uid="uid://b6o5q6dtmt8t2" path="res://relics/common/sweet_honeycomb/relic_sweet_honeycomb.tres" id="10_1l37i"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="11_ro5x0"]
+[ext_resource type="Script" uid="uid://cbnw4a13y5x8c" path="res://events/system/outcomes/random/event_outcome_random.gd" id="12_qdewx"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="13_hapit"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="14_1xld7"]
+[ext_resource type="Script" uid="uid://yxgaymbbt8tk" path="res://events/system/outcomes/override_next_step/event_outcome_override_next_step.gd" id="15_yxknh"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="16_200qh"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="17_ylmtq"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="18_7aqdv"]
+
+[sub_resource type="Resource" id="Resource_jxohx"]
+script = ExtResource("4_1l54c")
+_texture_path = "res://events/generic/school/school.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_128l5"]
+script = ExtResource("7_b2pox")
+relic = ExtResource("6_3pd22")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_uvutl"]
+script = ExtResource("9_hgh1x")
+bonus_type = ExtResource("8_7eita")
+min_count = 30
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_2ui5q"]
+script = ExtResource("5_qts6t")
+markedup_text = "Choose the scholar."
+requirement = SubResource("Resource_uvutl")
+outcome = SubResource("Resource_128l5")
+markedup_result_text = "The parents decide to invest in rigor, discipline, and a future outside of the settlement.
+
+The cleverest students thrive under the monk's strict instruction, but the ones less interested in scholarship begin to dread their lessons, and resent being sent home with scrolls full of assignments."
+
+[sub_resource type="Resource" id="Resource_smijh"]
+script = ExtResource("7_b2pox")
+relic = ExtResource("10_1l37i")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_5xwl3"]
+script = ExtResource("9_hgh1x")
+bonus_type = ExtResource("11_ro5x0")
+min_count = 20
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_6qx3d"]
+script = ExtResource("5_qts6t")
+markedup_text = "Choose the beekeeper."
+requirement = SubResource("Resource_5xwl3")
+outcome = SubResource("Resource_smijh")
+markedup_result_text = "The parents prioritize the children's peace of mind, and hope that by choosing the wise woman, they would preserve the old folk wisdom.
+
+The new teacher is gentle. She gives extra attention to the most anxious students, and brings honeycomb to class.
+
+The more ambitious pupils, however, soon grow restless."
+
+[sub_resource type="Resource" id="Resource_i5ayw"]
+script = ExtResource("15_yxknh")
+result_text = "The children spend a week with each teacher, and are then asked to choose who they like best.
+
+The majority choose the gentle teacher, whose warmth makes the school feel joyful. She gives extra attention to the most anxious students, and brings honeycomb to class.
+
+Some parents grumble, worried that their children will grow up lacking discipline."
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_d0keq"]
+script = ExtResource("7_b2pox")
+relic = ExtResource("10_1l37i")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_jcqxn"]
+script = ExtResource("14_1xld7")
+suboutcomes = Array[ExtResource("13_hapit")]([SubResource("Resource_i5ayw"), SubResource("Resource_d0keq")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_h14ge"]
+script = ExtResource("15_yxknh")
+result_text = "The children spend a week with each teacher, and are then asked to choose who they like best.
+
+Impressed by the monk's scholarly credentials, they decide to choose him as their instructor. They are rewarded with extra assignments to work on at home.
+
+Some parents grumble, worried that their children will have no time left to experience real life, the kind not found in archives and scrolls."
+metadata/_custom_type_script = "uid://yxgaymbbt8tk"
+
+[sub_resource type="Resource" id="Resource_qfhh4"]
+script = ExtResource("7_b2pox")
+relic = ExtResource("6_3pd22")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_2nan2"]
+script = ExtResource("14_1xld7")
+suboutcomes = Array[ExtResource("13_hapit")]([SubResource("Resource_h14ge"), SubResource("Resource_qfhh4")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_h5mfv"]
+script = ExtResource("12_qdewx")
+suboutcomes = Dictionary[ExtResource("13_hapit"), float]({
+SubResource("Resource_jcqxn"): 0.5,
+SubResource("Resource_2nan2"): 0.5
+})
+description = "A random teacher is chosen"
+metadata/_custom_type_script = "uid://cbnw4a13y5x8c"
+
+[sub_resource type="Resource" id="Resource_wxwww"]
+script = ExtResource("17_ylmtq")
+aspect_type = ExtResource("16_200qh")
+min_count = 3
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_gmlto"]
+script = ExtResource("5_qts6t")
+markedup_text = "Let the children decide."
+requirement = SubResource("Resource_wxwww")
+outcome = SubResource("Resource_h5mfv")
+markedup_result_text = "<overridden>"
+
+[sub_resource type="Resource" id="Resource_6at2x"]
+script = ExtResource("18_7aqdv")
+bonus_type = ExtResource("11_ro5x0")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_k0xtm"]
+script = ExtResource("5_qts6t")
+markedup_text = "Ask them to share the duties."
+outcome = SubResource("Resource_6at2x")
+markedup_result_text = "The parents ask the two candidates to teach together.
+
+By the third day, half of the lesson is taken up by the teachers arguing about the best way to run a school.
+
+The constant disagreement leaves the children confused, eroding their trust in education before they have a chance to start learning."
+
+[sub_resource type="Resource" id="Resource_3xt1n"]
+script = ExtResource("3_24xmn")
+markedup_text = "A ruin has been renovated into a brand new school, and all that remains is to choose the head teacher.
+
+One option is the local beekeeper, a soft-spoken woman who knows songs and stories, and has herbs to soothe any ailment.
+
+The other candidate is a monk trained at the Haven, a master of rhetoric and arithmetic. He believes the children are capable of more, but he is strict and often impatient."
+background_image = SubResource("Resource_jxohx")
+background_credit = ExtResource("4_gcfm2")
+choices = Array[ExtResource("5_qts6t")]([SubResource("Resource_2ui5q"), SubResource("Resource_6qx3d"), SubResource("Resource_gmlto")])
+exit_choice = SubResource("Resource_k0xtm")
+
+[resource]
+script = ExtResource("2_gcfm2")
+default_spot_upgrade = ExtResource("1_422ec")
+event_id = "school"
+event_name = "The Future of Education"
+steps = Array[ExtResource("3_24xmn")]([SubResource("Resource_3xt1n")])
+categories = Array[int]([3])

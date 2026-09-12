@@ -1,0 +1,125 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://25yjmvakwreu"]
+
+[ext_resource type="Resource" uid="uid://hrw4byexrnrj" path="res://stage/spots/hill/upgrade_hill_3_teahouse_pavilion.tres" id="1_hej4n"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="1_k11dx"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_hej4n"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_i1mbn"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_i00lh"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="6_3x30p"]
+[ext_resource type="Resource" uid="uid://cg14rrnvhfevi" path="res://art/pieces/piece_hiroshige_fujimi_teahouse.tres" id="6_i00lh"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_3x30p"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="7_iu7gc"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="7_xar1y"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="8_8i4ig"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="8_i00lh"]
+[ext_resource type="Resource" uid="uid://d2ym8jihpu76t" path="res://relics/common/tea_whisk/relic_tea_whisk.tres" id="9_dhvse"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="10_ekp3u"]
+
+[sub_resource type="Resource" id="Resource_ps5l8"]
+script = ExtResource("1_k11dx")
+event_id = "tea_ceremony_1"
+var_id = "beauty"
+var_type = 1
+value = "true"
+
+[sub_resource type="Resource" id="Resource_i00lh"]
+script = ExtResource("7_3x30p")
+_texture_path = "res://events/generic/tea_ceremony/tea_ceremony_2b.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_i5ayw"]
+script = ExtResource("7_iu7gc")
+bonus_type = ExtResource("6_3x30p")
+amount = 20
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_3x30p"]
+script = ExtResource("7_iu7gc")
+bonus_type = ExtResource("8_8i4ig")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_iu7gc"]
+script = ExtResource("7_xar1y")
+suboutcomes = Array[ExtResource("8_i00lh")]([SubResource("Resource_i5ayw"), SubResource("Resource_3x30p")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_6at2x"]
+script = ExtResource("5_i00lh")
+markedup_text = "Simplify things."
+outcome = SubResource("Resource_iu7gc")
+markedup_result_text = "The ritual is limited to the first serving. Cups are refilled without fanfare.
+
+Jokes and laughter break the stiffness of the atmosphere.
+
+The custom evolves."
+
+[sub_resource type="Resource" id="Resource_d0keq"]
+script = ExtResource("7_iu7gc")
+bonus_type = ExtResource("8_8i4ig")
+amount = 20
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_8mfyw"]
+script = ExtResource("5_i00lh")
+markedup_text = "Preserve the ritual. It will grow meaningful again."
+outcome = SubResource("Resource_d0keq")
+markedup_result_text = "The guests remain silent as the ritual continues.
+
+When the tea hits their lips, followed by exquisite little morsels, their eyes soften.
+
+\"Now I see...\" one guest murmurs."
+
+[sub_resource type="Resource" id="Resource_mxy6s"]
+script = ExtResource("10_ekp3u")
+relic = ExtResource("9_dhvse")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_40rqf"]
+script = ExtResource("5_i00lh")
+markedup_text = "Let the guests perform the ceremony."
+outcome = SubResource("Resource_mxy6s")
+markedup_result_text = "The host sets the whisk down into its special stand and invites a guest to try.
+
+The moment is awkward, unrefined, but there's a new air of excitement.
+
+From the drawer, the host retrieves a whisk and offers it to the guests as a memento."
+
+[sub_resource type="Resource" id="Resource_8i4ig"]
+script = ExtResource("7_iu7gc")
+bonus_type = ExtResource("6_3x30p")
+amount = -20
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_2stvf"]
+script = ExtResource("5_i00lh")
+markedup_text = "Suggest the guests visit a different establishment."
+outcome = SubResource("Resource_8i4ig")
+markedup_result_text = "The tea is left to go cold.
+
+The guests leave in a huff.
+
+The host's pride is preserved."
+
+[sub_resource type="Resource" id="Resource_xxhwh"]
+script = ExtResource("3_i1mbn")
+markedup_text = "Tea Pavilions have become places of refined elegance. Hosts in full traditional dress now guide every tea ceremony with deliberate grace: folding the cloth, whisking the foam, waiting for waterdrops to evaporate from the kettle's surface.
+
+But today, something feels off. The tea is the same, the gestures flawless, and yet the guests hesitate: \"This felt warmer, before...\""
+background_image = SubResource("Resource_i00lh")
+background_credit = ExtResource("6_i00lh")
+choices = Array[ExtResource("5_i00lh")]([SubResource("Resource_6at2x"), SubResource("Resource_8mfyw"), SubResource("Resource_40rqf")])
+exit_choice = SubResource("Resource_2stvf")
+
+[resource]
+script = ExtResource("2_hej4n")
+default_spot_upgrade = ExtResource("1_hej4n")
+event_id = "tea_ceremony_2b"
+event_name = "Perfect Form"
+requirement = SubResource("Resource_ps5l8")
+steps = Array[ExtResource("3_i1mbn")]([SubResource("Resource_xxhwh")])
+categories = Array[int]([3])

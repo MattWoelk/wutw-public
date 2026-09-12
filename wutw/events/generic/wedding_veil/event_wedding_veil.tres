@@ -1,0 +1,113 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://cyfstb22no66j"]
+
+[ext_resource type="Resource" uid="uid://c686q2ob3lxch" path="res://stage/spots/steppe/upgrade_steppe_3_migratory_crossroads.tres" id="1_hiayc"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_mr54r"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_y1njx"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="4_0degr"]
+[ext_resource type="Resource" uid="uid://dwkm3r2ctpchr" path="res://art/pieces/piece_zaisei_cranes.tres" id="4_mr54r"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_jcp1q"]
+[ext_resource type="Resource" uid="uid://b0jubij0mroq7" path="res://relics/common/dirty_veil/relic_dirty_veil.tres" id="6_hfx0x"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="7_dq5wb"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="8_dms30"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_xmdoc"]
+[ext_resource type="Script" uid="uid://gu7gcielbwdr" path="res://events/system/outcomes/choose_card/event_outcome_choose_card.gd" id="10_uri5e"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="11_g5hbg"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="12_uxu5n"]
+[ext_resource type="Resource" uid="uid://b65102aej4qxe" path="res://relics/common/grass_crown/relic_grass_crown.tres" id="13_kiqyc"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="14_dtpf3"]
+
+[sub_resource type="Resource" id="Resource_oksgv"]
+script = ExtResource("4_0degr")
+_texture_path = "res://events/generic/wedding_veil/wedding_veil.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_3sdrw"]
+script = ExtResource("7_dq5wb")
+relic = ExtResource("6_hfx0x")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_pk1ig"]
+script = ExtResource("9_xmdoc")
+aspect_type = ExtResource("8_dms30")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_fl7n7"]
+script = ExtResource("5_jcp1q")
+markedup_text = "Retrieve the veil."
+requirement = SubResource("Resource_pk1ig")
+outcome = SubResource("Resource_3sdrw")
+markedup_result_text = "The groom sends out runners to chase down the bird and retrieve the veil.
+
+Panicked, the bird manages to free itself before the men catch up to it, but the veil is torn and muddy.
+
+The spectacle manages to startle the entire flock. They take flight, loudly croaking their complaints."
+
+[sub_resource type="Resource" id="Resource_2me52"]
+script = ExtResource("10_uri5e")
+aspect = ExtResource("8_dms30")
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_qlb2o"]
+script = ExtResource("9_xmdoc")
+aspect_type = ExtResource("12_uxu5n")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_1fp57"]
+script = ExtResource("5_jcp1q")
+markedup_text = "Defuse the situation."
+requirement = SubResource("Resource_qlb2o")
+outcome = SubResource("Resource_2me52")
+markedup_result_text = "The bride is quick to reassure the guests that the mishap is no cause for concern. She asks them to wait in peace, hoping the silence will soothe the trapped creature.
+
+The crowd watches intently as the bird flaps its wings a few times and takes flight, letting the veil flutter free.
+
+The priest in attendance remarks that it is an auspicious omen for the couple's future."
+
+[sub_resource type="Resource" id="Resource_kjam1"]
+script = ExtResource("7_dq5wb")
+relic = ExtResource("13_kiqyc")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_kg1kv"]
+script = ExtResource("9_xmdoc")
+aspect_type = ExtResource("14_dtpf3")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_2h0mf"]
+script = ExtResource("5_jcp1q")
+markedup_text = "Find a replacement."
+requirement = SubResource("Resource_kg1kv")
+outcome = SubResource("Resource_kjam1")
+markedup_result_text = "The bride's sisters weave a delicate crown out of soft grass and place it on their sister's head.
+
+The lost veil is quickly forgotten and the ceremony proceeds with no further mishaps."
+
+[sub_resource type="Resource" id="Resource_elj6t"]
+script = ExtResource("5_jcp1q")
+markedup_text = "Ignore the mishap."
+markedup_result_text = "The priest warns that losing a veil is a highly inauspicious omen, advising the couple to wait until next year's festival to wed.
+
+The bride and groom object, however, and the ceremony goes on despite the lost veil."
+
+[sub_resource type="Resource" id="Resource_3qtuf"]
+script = ExtResource("3_y1njx")
+markedup_text = "Cranes gather in the tall grasses, bowing and calling to each other. They eat their fill of insects and rest, drinking from the shallow steppe pools.
+
+Today the town celebrates the birds in a Crane Festival, an auspicious day for weddings. As the sun is setting, a bride waits for the ceremony to begin. A thin white veil embroidered with cranes covers her hair, falling down her white robes.
+
+As she steps out beneath the streamers, a gust of wind carries the veil away, depositing it on top of a crane, who promptly gets tangled in it."
+background_image = SubResource("Resource_oksgv")
+background_credit = ExtResource("4_mr54r")
+choices = Array[ExtResource("5_jcp1q")]([SubResource("Resource_fl7n7"), SubResource("Resource_1fp57"), SubResource("Resource_2h0mf")])
+exit_choice = SubResource("Resource_elj6t")
+
+[resource]
+script = ExtResource("2_mr54r")
+default_spot_upgrade = ExtResource("1_hiayc")
+event_id = "wedding_veil"
+event_name = "The Lost Veil"
+steps = Array[ExtResource("3_y1njx")]([SubResource("Resource_3qtuf")])
+categories = Array[int]([3])

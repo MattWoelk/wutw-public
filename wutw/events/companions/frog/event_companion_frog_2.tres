@@ -1,0 +1,148 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://cv81ijnostv3d"]
+
+[ext_resource type="Resource" uid="uid://f8g65yh2nfpu" path="res://stage/spots/lake/upgrade_lake_2_lotus_silk_farm.tres" id="1_jvvw7"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_ul123"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_eosx2"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_bh3y5"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="5_c5yvs"]
+[ext_resource type="Resource" uid="uid://c82d7v48cispv" path="res://art/pieces/piece_koson_frog.tres" id="5_ul123"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_koc0d"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="7_b1lee"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="8_ck8pu"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_lggco"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="10_h04ha"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="11_fmi4v"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="12_tlg45"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="13_lni83"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="14_lg01k"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="15_apjn6"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="16_4dhiw"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="17_rnkjx"]
+
+[sub_resource type="Resource" id="Resource_pa3f7"]
+script = ExtResource("2_ul123")
+scope = 1
+event_id = "global"
+var_id = "companion_frog"
+value = "1"
+
+[sub_resource type="Resource" id="Resource_v8cfp"]
+script = ExtResource("5_c5yvs")
+_texture_path = "res://events/companions/frog/companion_frog_2.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_s6k4q"]
+script = ExtResource("7_b1lee")
+scope = 1
+event_id = "global"
+var_id = "companion_frog"
+value = "2"
+description = "Learn from the frog"
+outcome_description = "The artisans learn from the frog."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_ixnya"]
+script = ExtResource("9_lggco")
+aspect_type = ExtResource("8_ck8pu")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_66cdk"]
+script = ExtResource("6_koc0d")
+markedup_text = "Study the behavior."
+requirement = SubResource("Resource_ixnya")
+outcome = SubResource("Resource_s6k4q")
+markedup_result_text = "The artisan fixes her eyes on the frog, unwilling to let irrational disgust rule her behavior.
+
+As she sees the creature avoiding waste to such an extent, she contemplates her work. To weave a single thread of lotus silk, they break hundreds of stems, discarding a huge amount of plant matter.
+
+She resolves to find a use for the byproducts of her craft."
+
+[sub_resource type="Resource" id="Resource_567kd"]
+script = ExtResource("13_lni83")
+bonus_type = ExtResource("12_tlg45")
+amount = -10
+extra_per_season = -5
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_tf7v7"]
+script = ExtResource("13_lni83")
+bonus_type = ExtResource("14_lg01k")
+amount = -15
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_5iqy7"]
+script = ExtResource("10_h04ha")
+suboutcomes = Array[ExtResource("11_fmi4v")]([SubResource("Resource_567kd"), SubResource("Resource_tf7v7")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_awwqo"]
+script = ExtResource("9_lggco")
+aspect_type = ExtResource("15_apjn6")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_gbl3t"]
+script = ExtResource("6_koc0d")
+markedup_text = "Rid the pond of these unclean creatures."
+requirement = SubResource("Resource_awwqo")
+outcome = SubResource("Resource_5iqy7")
+markedup_result_text = "The artisan calls her fellow workers and describes the foul scene she witnessed.
+
+With some effort, they are convinced that the foul creatures cannot be allowed to remain.
+
+Instead of following the regular work schedule, they spend the next day wading through the pond and shooing away every frog that can be found."
+
+[sub_resource type="Resource" id="Resource_2sccb"]
+script = ExtResource("13_lni83")
+bonus_type = ExtResource("12_tlg45")
+amount = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_8ar5j"]
+script = ExtResource("16_4dhiw")
+bonus_type = ExtResource("12_tlg45")
+min_count = 10
+max_count = -1
+extra_per_season = 10
+
+[sub_resource type="Resource" id="Resource_hlcrb"]
+script = ExtResource("6_koc0d")
+markedup_text = "Let the creature finish its meal in peace."
+requirement = SubResource("Resource_8ar5j")
+outcome = SubResource("Resource_2sccb")
+markedup_result_text = "The artisan shrugs at the odd behavior and moves on, letting nature take its course."
+
+[sub_resource type="Resource" id="Resource_fkhth"]
+script = ExtResource("17_rnkjx")
+delta = -5
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_28h8g"]
+script = ExtResource("6_koc0d")
+markedup_text = "Look away in mild disgust."
+outcome = SubResource("Resource_fkhth")
+markedup_result_text = "The artisan cringes and looks away.
+
+The image stays in her mind, though. She wakes up at night from a nightmare of eating a bowl of noodles and realizing that she is slurping up moist, sticky frog skin."
+
+[sub_resource type="Resource" id="Resource_nfn3c"]
+script = ExtResource("4_bh3y5")
+markedup_text = "The lotus plantation has become home to a large number of frogs. Every other leaf seems to harbor a tiny amphibian.
+
+One of the artisans notices a frog molting. Rather than discarding an empty husk, the frog pulls the skin off its limbs and stuffs it right back into its mouth."
+background_image = SubResource("Resource_v8cfp")
+background_credit = ExtResource("5_ul123")
+choices = Array[ExtResource("6_koc0d")]([SubResource("Resource_66cdk"), SubResource("Resource_gbl3t"), SubResource("Resource_hlcrb")])
+exit_choice = SubResource("Resource_28h8g")
+
+[resource]
+script = ExtResource("3_eosx2")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_jvvw7")
+event_id = "companion_frog_2"
+event_name = "Nothing Goes to Waste"
+requirement = SubResource("Resource_pa3f7")
+steps = Array[ExtResource("4_bh3y5")]([SubResource("Resource_nfn3c")])
+categories = Array[int]([0, 4])

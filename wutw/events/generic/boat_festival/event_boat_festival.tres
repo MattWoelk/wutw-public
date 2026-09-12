@@ -1,0 +1,127 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://b0xvkr7vtmbug"]
+
+[ext_resource type="Resource" uid="uid://rwd7lndpjibx" path="res://stage/spots/lake/upgrade_lake_3_boat_festival.tres" id="1_41gpa"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_dwqyc"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_dkqqg"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_dhimx"]
+[ext_resource type="Resource" uid="uid://bvtha3ol8q5ea" path="res://art/pieces/piece_hiroshige_kuroto_bay.tres" id="5_wyxwf"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_nfudw"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="6_vrum1"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_qy73k"]
+[ext_resource type="Script" uid="uid://ky4fjyjjevpq" path="res://events/system/outcomes/make_card_innate/event_outcome_make_card_innate.gd" id="8_162dn"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="9_213b2"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="10_d40x6"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="11_m706h"]
+[ext_resource type="Resource" uid="uid://baoooybaan06c" path="res://cards/tier2/card_sail.tres" id="12_3gftb"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="13_12b4w"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="14_0rqem"]
+[ext_resource type="Resource" uid="uid://be60pfiwe1lip" path="res://cards/tier2/card_boat.tres" id="15_nautb"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="16_2fgrf"]
+
+[sub_resource type="Resource" id="Resource_wyxwf"]
+script = ExtResource("6_nfudw")
+_texture_path = "res://events/generic/boat_festival/boat_festival.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_40rqf"]
+script = ExtResource("8_162dn")
+metadata/_custom_type_script = "uid://ky4fjyjjevpq"
+
+[sub_resource type="Resource" id="Resource_2stvf"]
+script = ExtResource("10_d40x6")
+bonus_type = ExtResource("9_213b2")
+amount = -50
+extra_per_season = -50
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_xxhwh"]
+script = ExtResource("6_vrum1")
+suboutcomes = Array[ExtResource("7_qy73k")]([SubResource("Resource_40rqf"), SubResource("Resource_2stvf")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_ptcwf"]
+script = ExtResource("11_m706h")
+bonus_type = ExtResource("9_213b2")
+min_count = 50
+max_count = -1
+extra_per_season = 50
+
+[sub_resource type="Resource" id="Resource_egt2j"]
+script = ExtResource("5_dhimx")
+markedup_text = "Host a guiding boat festival."
+requirement = SubResource("Resource_ptcwf")
+outcome = SubResource("Resource_xxhwh")
+markedup_result_text = "The settlers sing as they sew.
+
+The sails are painted with a guiding glyph to carry forward.
+
+As the sun sets, boats are pushed out into the lake, floating away.
+
+\"We'll remember that one,\" an old shipwright remarks."
+
+[sub_resource type="Resource" id="Resource_kio1v"]
+script = ExtResource("13_12b4w")
+card_type = ExtResource("12_3gftb")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_f2op8"]
+script = ExtResource("11_m706h")
+bonus_type = ExtResource("14_0rqem")
+min_count = 20
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("5_dhimx")
+markedup_text = "Paint the sailcloth for a future festival."
+requirement = SubResource("Resource_f2op8")
+outcome = SubResource("Resource_kio1v")
+markedup_result_text = "New sails are painted and hung to dry, flapping in the breeze.
+
+It will be a while before they are used. Perhaps by next year there'll be enough boats to host the festival."
+
+[sub_resource type="Resource" id="Resource_df5af"]
+script = ExtResource("13_12b4w")
+card_type = ExtResource("15_nautb")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("11_m706h")
+bonus_type = ExtResource("16_2fgrf")
+min_count = 20
+max_count = -1
+extra_per_season = 20
+
+[sub_resource type="Resource" id="Resource_rx1a8"]
+script = ExtResource("5_dhimx")
+markedup_text = "Host a small gathering to share stories of old boat festivals."
+requirement = SubResource("Resource_tuogj")
+outcome = SubResource("Resource_df5af")
+markedup_result_text = "Settlers gather to hear old festival tales, how boats once symbolized promises to future generations.
+
+Someone traces a glyph in the dirt."
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("5_dhimx")
+markedup_text = "Pass the day in quiet contemplation."
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("3_dkqqg")
+markedup_text = "The lake is still in the pale light of dawn. A few settlers have taken sailboats out to catch the morning breeze.
+
+Several canoes are tied by the shore, one loaded with baskets and sailcloth.
+
+\"In the Old World, we used to launch boats with painted sails to mark a year's guiding glyph.\" One settler reminisces. \"But perhaps it is not yet time for such extravagance.\""
+background_image = SubResource("Resource_wyxwf")
+background_credit = ExtResource("5_wyxwf")
+choices = Array[ExtResource("5_dhimx")]([SubResource("Resource_egt2j"), SubResource("Resource_4xuhh"), SubResource("Resource_rx1a8")])
+exit_choice = SubResource("Resource_dpp3j")
+
+[resource]
+script = ExtResource("2_dwqyc")
+default_probability_weight = 5
+default_spot_upgrade = ExtResource("1_41gpa")
+event_id = "boat_festival"
+event_name = "Boat Festival"
+steps = Array[ExtResource("3_dkqqg")]([SubResource("Resource_06ahh")])
+categories = Array[int]([3])

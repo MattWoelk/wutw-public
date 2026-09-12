@@ -1,0 +1,107 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://buhr327bkloft"]
+
+[ext_resource type="Resource" uid="uid://dnhhvetp8rmye" path="res://stage/spots/building_small/upgrade_building_small_2_bakery.tres" id="1_nh0vs"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_butd0"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_b5ngt"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_s635n"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="5_brcpv"]
+[ext_resource type="Resource" uid="uid://c3ihkg3j4njfi" path="res://art/pieces/piece_kunisada_mochi.tres" id="5_butd0"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="6_dshd5"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="7_i60nj"]
+[ext_resource type="Resource" uid="uid://cudn485k7g13b" path="res://cards/tier2/card_lotus.tres" id="8_jvu52"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="9_xogxf"]
+[ext_resource type="Resource" uid="uid://ddw1qkqg1bnao" path="res://cards/tier2/card_round.tres" id="10_311d4"]
+[ext_resource type="Script" uid="uid://c23hf0l6630h1" path="res://events/system/outcomes/inspiration/event_outcome_inspiration.gd" id="11_jvs8p"]
+
+[sub_resource type="Resource" id="Resource_1qk48"]
+script = ExtResource("2_butd0")
+scope = 1
+event_id = "global"
+var_id = "companion_tai"
+value = "1"
+
+[sub_resource type="Resource" id="Resource_epl37"]
+script = ExtResource("5_brcpv")
+_texture_path = "res://events/companions/tai/companion_tai_2.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_2fipl"]
+script = ExtResource("7_i60nj")
+scope = 1
+event_id = "global"
+var_id = "companion_tai"
+value = "2"
+description = "Make the sea bream a symbol of celebration"
+outcome_description = "The sea bream becomes a symbol of celebration."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_32nvl"]
+script = ExtResource("6_dshd5")
+markedup_text = "Shape it into a sea bream."
+outcome = SubResource("Resource_2fipl")
+markedup_result_text = "The bakers shape the buns into the plump, red fish often seen near the kelp farms.
+
+The first few customers are puzzled by the choice, but it sparks interest, and soon the townsfolk are lining up in queues every morning to get their fresh fish-shaped buns.
+
+The treat is now a staple at festivals, and the sea bream becomes a common symbol of celebration."
+
+[sub_resource type="Resource" id="Resource_jn3ma"]
+script = ExtResource("9_xogxf")
+card_type = ExtResource("8_jvu52")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_4sfn7"]
+script = ExtResource("6_dshd5")
+markedup_text = "Shape it into a lotus flower."
+outcome = SubResource("Resource_jn3ma")
+markedup_result_text = "The buns are shaped then snipped in a circular pattern that creates petals once the dough rises.
+
+The result is a beautiful, elegant bun that many consider too pretty to actually eat."
+
+[sub_resource type="Resource" id="Resource_65631"]
+script = ExtResource("9_xogxf")
+card_type = ExtResource("10_311d4")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_hqxk5"]
+script = ExtResource("6_dshd5")
+markedup_text = "Shape it perfectly round, like the moon."
+outcome = SubResource("Resource_65631")
+markedup_result_text = "The bakers stick to the classics. The round buns sell well enough, but they lack novelty.
+
+Within days the interest wanes and the townsfolk are in the grip of a new snack fad, completely forgetting about the perfectly adequate bean buns."
+
+[sub_resource type="Resource" id="Resource_ahcpn"]
+script = ExtResource("11_jvs8p")
+delta = 5
+metadata/_custom_type_script = "uid://c23hf0l6630h1"
+
+[sub_resource type="Resource" id="Resource_c66a7"]
+script = ExtResource("6_dshd5")
+markedup_text = "Shape it into a maple leaf."
+outcome = SubResource("Resource_ahcpn")
+markedup_result_text = "The leaf shape is a modest success, particularly among the local scholars and priests who appreciate the seasonal poetry of it.
+
+It becomes a refined snack meant for quiet contemplation, but the common townsfolk consider it pretentious."
+
+[sub_resource type="Resource" id="Resource_x17o7"]
+script = ExtResource("4_s635n")
+markedup_text = "The local bakers have spent the past month coming up with a perfect steamed bun.
+
+They have grown an exceptional yeast that produces soft, fluffy dough, and perfected a rich sweet red bean paste as a filling.
+
+All that remains is to decide how to shape the bun to ensure its popularity."
+background_image = SubResource("Resource_epl37")
+background_credit = ExtResource("5_butd0")
+choices = Array[ExtResource("6_dshd5")]([SubResource("Resource_32nvl"), SubResource("Resource_4sfn7"), SubResource("Resource_hqxk5")])
+exit_choice = SubResource("Resource_c66a7")
+
+[resource]
+script = ExtResource("3_b5ngt")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_nh0vs")
+event_id = "companion_tai_2"
+event_name = "Delicious Shapes"
+requirement = SubResource("Resource_1qk48")
+steps = Array[ExtResource("4_s635n")]([SubResource("Resource_x17o7")])
+categories = Array[int]([0, 4])

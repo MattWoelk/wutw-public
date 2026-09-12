@@ -1,0 +1,160 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://dalchdv6unsx"]
+
+[ext_resource type="Resource" uid="uid://ckascrqbwrpsy" path="res://stage/spots/building_large/upgrade_building_large_3_printer.tres" id="1_7xywg"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="2_1e1n1"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="3_oauft"]
+[ext_resource type="Resource" uid="uid://cckygspreu2hv" path="res://skills/craft/skill_craft_shop_recall.tres" id="4_7xywg"]
+[ext_resource type="Script" uid="uid://btrwtj4v8ufn" path="res://events/system/requirements/event_requirement_has_skill.gd" id="4_fr3df"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="6_cfwgc"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="7_bjf4w"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="8_7dqvq"]
+[ext_resource type="Resource" uid="uid://bktna1eh0bnph" path="res://art/pieces/piece_hiroshige_3_nishikie.tres" id="10_1e1n1"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="10_4cd6q"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="11_oauft"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="11_p2301"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="12_8pcqm"]
+[ext_resource type="Script" uid="uid://kcb76omgwhy5" path="res://events/system/outcomes/recall_cards/event_outcome_recall_cards.gd" id="13_f80ps"]
+[ext_resource type="Script" uid="uid://bbhwr4afafq2e" path="res://events/system/outcomes/unlock_shop/event_outcome_unlock_shop.gd" id="14_ygwqa"]
+[ext_resource type="Resource" uid="uid://bmj4eadtou0ry" path="res://shops/recall_cards/shop_recall_cards.tres" id="15_mugts"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="16_d8165"]
+[ext_resource type="Resource" uid="uid://rysapqd7fyjl" path="res://bonuses/types/bonus_knowledge.tres" id="17_qpmr3"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="18_mrqev"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="19_2y3je"]
+[ext_resource type="Resource" uid="uid://c1q7ycgoyodvr" path="res://bonuses/types/bonus_beauty.tres" id="20_7xywg"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="20_s2roi"]
+
+[sub_resource type="Resource" id="Resource_phknx"]
+script = ExtResource("4_fr3df")
+skill = ExtResource("4_7xywg")
+metadata/_custom_type_script = "uid://btrwtj4v8ufn"
+
+[sub_resource type="Resource" id="Resource_a1pu3"]
+script = ExtResource("3_oauft")
+var_id = "landmark_built"
+var_type = 1
+value = "false"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_xbe3e"]
+script = ExtResource("6_cfwgc")
+all_requirements = Array[ExtResource("2_1e1n1")]([SubResource("Resource_phknx"), SubResource("Resource_a1pu3")])
+metadata/_custom_type_script = "uid://15prcev7a3ta"
+
+[sub_resource type="Resource" id="Resource_fr3df"]
+script = ExtResource("11_oauft")
+_texture_path = "res://events/landmark/print_studio/print_studio.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_f2op8"]
+script = ExtResource("13_f80ps")
+metadata/_custom_type_script = "uid://kcb76omgwhy5"
+
+[sub_resource type="Resource" id="Resource_isciq"]
+script = ExtResource("14_ygwqa")
+shop_type = ExtResource("15_mugts")
+metadata/_custom_type_script = "uid://bbhwr4afafq2e"
+
+[sub_resource type="Resource" id="Resource_rc2gp"]
+script = ExtResource("16_d8165")
+var_id = "landmark_built"
+var_type = 1
+value = "true"
+description = ""
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_ptcwf"]
+script = ExtResource("11_p2301")
+suboutcomes = Array[ExtResource("12_8pcqm")]([SubResource("Resource_f2op8"), SubResource("Resource_isciq"), SubResource("Resource_rc2gp")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_ww0g6"]
+script = ExtResource("18_mrqev")
+bonus_type = ExtResource("17_qpmr3")
+min_count = 40
+max_count = -1
+extra_per_season = 40
+
+[sub_resource type="Resource" id="Resource_lw3he"]
+script = ExtResource("10_4cd6q")
+markedup_text = "Reproduce past records."
+requirement = SubResource("Resource_ww0g6")
+outcome = SubResource("Resource_ptcwf")
+markedup_result_text = "Old scrolls are unrolled, their ink faded and their meaning almost forgotten.
+
+The carvers trace every mark with reverence, careful to make perfect copies.
+
+When the blocks are inked and pressed, memory survives another generation."
+
+[sub_resource type="Resource" id="Resource_4xuhh"]
+script = ExtResource("20_s2roi")
+bonus_type = ExtResource("17_qpmr3")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_u6a4q"]
+script = ExtResource("10_4cd6q")
+markedup_text = "Focus on recording local customs and events."
+outcome = SubResource("Resource_4xuhh")
+markedup_result_text = "Artists visit farmers, masons, and monks in their research, capturing ceremonies, labor methods, and local architecture.
+
+The carvers transform the sketches into blocks and the printers dutifully set them to paper.
+
+Each sheet is dated and signed."
+
+[sub_resource type="Resource" id="Resource_tuogj"]
+script = ExtResource("20_s2roi")
+bonus_type = ExtResource("20_7xywg")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_wdu67"]
+script = ExtResource("10_4cd6q")
+markedup_text = "Focus on landscape paintings."
+outcome = SubResource("Resource_tuogj")
+markedup_result_text = "The carvers hike out into the wilderness and return with stories of endless hills and uncooperative clouds.
+
+The resulting prints are richly colored, mist rolling in with the gradients.
+
+One could swear they can smell the rain when looking at one of these."
+
+[sub_resource type="Resource" id="Resource_1e1n1"]
+script = ExtResource("20_s2roi")
+bonus_type = ExtResource("19_2y3je")
+amount = 10
+extra_per_season = 10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_oauft"]
+script = ExtResource("10_4cd6q")
+markedup_text = "Focus on scenes of daily life."
+outcome = SubResource("Resource_1e1n1")
+markedup_result_text = "The artists linger in kitchens and marketplaces, sketching laughter, spilled tea, and the tilt of tired shoulders.
+
+When the prints are hung to dry, the whole settlement gathers to point and chuckle. Everyone recognizes someone they know.
+
+Perhaps one way to make art beloved is to make it familiar."
+metadata/_custom_type_script = "uid://ch6bcu3nqxr1j"
+
+[sub_resource type="Resource" id="Resource_owcjq"]
+script = ExtResource("8_7dqvq")
+markedup_text = "The studio hums with the sound of chisels hitting wood and brushes swiping rapidly across wet paper.
+
+Artists, carvers, and printers are working in perfect concert to make woodblock prints worth spreading all across the shard.
+
+Today, they are deciding on their next project."
+background_image = SubResource("Resource_fr3df")
+background_credit = ExtResource("10_1e1n1")
+choices = Array[ExtResource("10_4cd6q")]([SubResource("Resource_lw3he"), SubResource("Resource_u6a4q"), SubResource("Resource_wdu67"), SubResource("Resource_oauft")])
+
+[resource]
+script = ExtResource("7_bjf4w")
+default_probability_weight = 0
+default_spot_upgrade = ExtResource("1_7xywg")
+repeatability = 2
+event_id = "print_studio"
+event_name = "Woodblock Print Studio"
+requirement = SubResource("Resource_xbe3e")
+steps = Array[ExtResource("8_7dqvq")]([SubResource("Resource_owcjq")])
+categories = Array[int]([2])

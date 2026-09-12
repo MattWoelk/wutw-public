@@ -1,0 +1,168 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://crgbrjv1w7xcy"]
+
+[ext_resource type="Resource" uid="uid://mdv0suhkkuqr" path="res://stage/spots/square/upgrade_square_2_monument.tres" id="1_xsu8s"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_5qnhh"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="2_nr87j"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_qe61s"]
+[ext_resource type="Script" uid="uid://btrwtj4v8ufn" path="res://events/system/requirements/event_requirement_has_skill.gd" id="3_c6pbj"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_wafbl"]
+[ext_resource type="Resource" uid="uid://cevnoaukd8h6h" path="res://skills/cards/skill_cards_shop_innate.tres" id="4_apd60"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_obykk"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="6_8y82o"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="6_lcobb"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="7_ppng4"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="8_elxje"]
+[ext_resource type="Resource" uid="uid://dkq73mih3kraa" path="res://art/pieces/piece_composed_stone_of_remembrance.tres" id="10_c6pbj"]
+[ext_resource type="Script" uid="uid://ky4fjyjjevpq" path="res://events/system/outcomes/make_card_innate/event_outcome_make_card_innate.gd" id="10_wxhgg"]
+[ext_resource type="Script" uid="uid://bbhwr4afafq2e" path="res://events/system/outcomes/unlock_shop/event_outcome_unlock_shop.gd" id="11_6vjeo"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="11_apd60"]
+[ext_resource type="Resource" uid="uid://nlb67mxr682e" path="res://shops/make_innate_cards/shop_make_innate_cards.tres" id="12_d7g71"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="13_ro3tg"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="14_i0lyq"]
+[ext_resource type="Resource" uid="uid://bm6pq7ssonjxh" path="res://cards/tier3/card_recollection.tres" id="14_yiyx7"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="15_kcdyw"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="16_jeigo"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="17_60pgl"]
+[ext_resource type="Resource" uid="uid://cqcg42j7dd2e0" path="res://cards/tier2/card_memorize.tres" id="18_trspm"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="19_kb01w"]
+
+[sub_resource type="Resource" id="Resource_6l78l"]
+script = ExtResource("3_c6pbj")
+skill = ExtResource("4_apd60")
+metadata/_custom_type_script = "uid://btrwtj4v8ufn"
+
+[sub_resource type="Resource" id="Resource_a1pu3"]
+script = ExtResource("2_5qnhh")
+var_id = "landmark_built"
+var_type = 1
+value = "false"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_555sl"]
+script = ExtResource("6_8y82o")
+all_requirements = Array[ExtResource("2_nr87j")]([SubResource("Resource_6l78l"), SubResource("Resource_a1pu3")])
+metadata/_custom_type_script = "uid://15prcev7a3ta"
+
+[sub_resource type="Resource" id="Resource_c6pbj"]
+script = ExtResource("11_apd60")
+_texture_path = "res://events/landmark/stone_of_remembrance/stone_of_remembrance.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_2myy3"]
+script = ExtResource("10_wxhgg")
+metadata/_custom_type_script = "uid://ky4fjyjjevpq"
+
+[sub_resource type="Resource" id="Resource_w2hpu"]
+script = ExtResource("11_6vjeo")
+shop_type = ExtResource("12_d7g71")
+metadata/_custom_type_script = "uid://bbhwr4afafq2e"
+
+[sub_resource type="Resource" id="Resource_rc2gp"]
+script = ExtResource("14_i0lyq")
+var_id = "landmark_built"
+var_type = 1
+value = "true"
+description = ""
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_3sdrw"]
+script = ExtResource("6_lcobb")
+suboutcomes = Array[ExtResource("7_ppng4")]([SubResource("Resource_2myy3"), SubResource("Resource_w2hpu"), SubResource("Resource_rc2gp")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_xh6l0"]
+script = ExtResource("13_ro3tg")
+bonus_type = ExtResource("8_elxje")
+min_count = 40
+max_count = -1
+extra_per_season = 40
+
+[sub_resource type="Resource" id="Resource_1stri"]
+script = ExtResource("5_obykk")
+markedup_text = "Host a remembrance feast."
+requirement = SubResource("Resource_xh6l0")
+outcome = SubResource("Resource_3sdrw")
+markedup_result_text = "Food is shared until everyone is full, and then full again.
+
+A single glyph is carved into the stone.
+
+\"Let this guide us,\" a council leader declares. \"Until the stone wears smooth.\""
+
+[sub_resource type="Resource" id="Resource_fmixu"]
+script = ExtResource("15_kcdyw")
+card_type = ExtResource("14_yiyx7")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_2me52"]
+script = ExtResource("17_60pgl")
+aspect_type = ExtResource("16_jeigo")
+min_count = 3
+
+[sub_resource type="Resource" id="Resource_kjam1"]
+script = ExtResource("5_obykk")
+markedup_text = "Share stories about the inscribed names."
+requirement = SubResource("Resource_2me52")
+outcome = SubResource("Resource_fmixu")
+markedup_result_text = "Everyone sits close to the stone.
+
+The names are read in order, settlers sharing what they know about each person.
+
+The stories range from proud tales of great artisans, to memories of folks who had too much rice wine and fell asleep up in a tree. Some names remain a mystery, unknown to anyone present.
+
+At the end of the evening, the carvings carry a new, richer significance to the settlers."
+
+[sub_resource type="Resource" id="Resource_kojkx"]
+script = ExtResource("15_kcdyw")
+card_type = ExtResource("18_trspm")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_r0oeh"]
+script = ExtResource("13_ro3tg")
+bonus_type = ExtResource("19_kb01w")
+min_count = 20
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_jiini"]
+script = ExtResource("5_obykk")
+markedup_text = "Chant the names together."
+requirement = SubResource("Resource_r0oeh")
+outcome = SubResource("Resource_kojkx")
+markedup_result_text = "The chanting begins awkwardly, stumbling over names whose pronunciation has been lost to history.
+
+Soon it gains a rhythm, as pronunciations are invented on the spot, and the more puzzling names are simply skipped.
+
+Nothing new is learned about the lives of the ancestors, but a unity is forged among the townspeople, as keepers of this long and shared history."
+
+[sub_resource type="Resource" id="Resource_mm8jc"]
+script = ExtResource("5_obykk")
+markedup_text = "Leave the monument undisturbed."
+markedup_result_text = "The stone remains untouched.
+
+Occasionally, someone clears the moss.
+
+Bowls of rice appear as offerings at the foot of the stone now and then."
+
+[sub_resource type="Resource" id="Resource_ymvbb"]
+script = ExtResource("3_wafbl")
+markedup_text = "The plaza smells of hot chestnuts and old wood. Someone has swept the dust from the names chiseled into the stone monument.
+
+\"We remember them,\" a settler says.
+\"Well, some of them. And not always fondly,\" another corrects.
+
+A few of the younger settlers carve new names, earning glares from their elders."
+background_image = SubResource("Resource_c6pbj")
+background_credit = ExtResource("10_c6pbj")
+choices = Array[ExtResource("5_obykk")]([SubResource("Resource_1stri"), SubResource("Resource_kjam1"), SubResource("Resource_jiini")])
+exit_choice = SubResource("Resource_mm8jc")
+
+[resource]
+script = ExtResource("2_qe61s")
+default_probability_weight = 0
+default_spot_upgrade = ExtResource("1_xsu8s")
+repeatability = 2
+event_id = "stone_of_remembrance"
+event_name = "Stone of Remembrance"
+requirement = SubResource("Resource_555sl")
+steps = Array[ExtResource("3_wafbl")]([SubResource("Resource_ymvbb")])
+categories = Array[int]([2])

@@ -1,0 +1,129 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://cwcoapa1snl8d"]
+
+[ext_resource type="Resource" uid="uid://wrwfkgwvgoie" path="res://stage/spots/square/upgrade_square_3_theater.tres" id="1_uhnow"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_1quea"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_ntqyf"]
+[ext_resource type="Resource" uid="uid://cbwyvkpjof2ca" path="res://art/pieces/piece_kogyo_noh_stage.tres" id="5_1quea"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_kfg61"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="6_ntqyf"]
+[ext_resource type="Resource" uid="uid://c1ady1jtmekxh" path="res://relics/common/quiet_drum/relic_quiet_drum.tres" id="6_yyvn4"]
+[ext_resource type="Script" uid="uid://c72da5id7avtu" path="res://events/system/outcomes/add_relic/event_outcome_add_relic.gd" id="7_javtj"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="8_o6x5y"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="9_6lkh4"]
+[ext_resource type="Resource" uid="uid://crmu3kvpcfu0e" path="res://cards/tier3/card_drama.tres" id="10_53xhr"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="11_8qfjl"]
+[ext_resource type="Resource" uid="uid://bs3kd38ehlkw" path="res://aspects/types/illumination/aspect_illumination.tres" id="12_0n6ff"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="13_fbx0u"]
+[ext_resource type="Resource" uid="uid://by7vebaon40py" path="res://cards/tier2/card_acting.tres" id="14_mmc7t"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="15_nfa8o"]
+[ext_resource type="Resource" uid="uid://bvftq8aivni7l" path="res://aspects/types/stability/aspect_stability.tres" id="16_df4j6"]
+[ext_resource type="Script" uid="uid://gu7gcielbwdr" path="res://events/system/outcomes/choose_card/event_outcome_choose_card.gd" id="17_8whmy"]
+[ext_resource type="Script" uid="uid://gay6daqawghm" path="res://cards/card_type.gd" id="18_3fqi8"]
+
+[sub_resource type="Resource" id="Resource_6lkh4"]
+script = ExtResource("6_ntqyf")
+_texture_path = "res://events/generic/vacant_role/vacant_role.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_dpp3j"]
+script = ExtResource("7_javtj")
+relic = ExtResource("6_yyvn4")
+metadata/_custom_type_script = "uid://c72da5id7avtu"
+
+[sub_resource type="Resource" id="Resource_uhnow"]
+script = ExtResource("9_6lkh4")
+bonus_type = ExtResource("8_o6x5y")
+min_count = 30
+max_count = -1
+extra_per_season = 30
+
+[sub_resource type="Resource" id="Resource_1quea"]
+script = ExtResource("5_kfg61")
+markedup_text = "Quietly bang a drum in place of his lines."
+requirement = SubResource("Resource_uhnow")
+outcome = SubResource("Resource_dpp3j")
+markedup_result_text = "When the founder's lines arrive, no one steps forward.
+
+Instead, a soft, deliberate beat echoes through the stage. One strike for a greeting, two for a remark, and a triplet for a farewell.
+
+The crowd is surprised, but soon the news spreads among them in nudges and whispers."
+
+[sub_resource type="Resource" id="Resource_06ahh"]
+script = ExtResource("11_8qfjl")
+card_type = ExtResource("10_53xhr")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ntqyf"]
+script = ExtResource("13_fbx0u")
+aspect_type = ExtResource("12_0n6ff")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_vrioe"]
+script = ExtResource("5_kfg61")
+markedup_text = "Perform a new play about his life instead."
+requirement = SubResource("Resource_ntqyf")
+outcome = SubResource("Resource_06ahh")
+markedup_result_text = "The troupe rewrites everything.
+
+From his childhood among traveling bards to the day he put together his first stage with salvaged planks.
+
+The show is unpolished, and a little too dramatized, but the feeling carries through and when the final bow comes, the whole crowd erupts in shouts of \"Dragonfly!\" and a rain of paper-wrapped coins showers the stage."
+
+[sub_resource type="Resource" id="Resource_ciwob"]
+script = ExtResource("11_8qfjl")
+card_type = ExtResource("14_mmc7t")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_kfg61"]
+script = ExtResource("13_fbx0u")
+aspect_type = ExtResource("15_nfa8o")
+min_count = 4
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_yyvn4"]
+script = ExtResource("5_kfg61")
+markedup_text = "Let troupe members take turns performing his roles."
+requirement = SubResource("Resource_kfg61")
+outcome = SubResource("Resource_ciwob")
+markedup_result_text = "Each performance is slightly different.
+
+Sometimes his lines are echoed, sometimes adjusted, but always delivered with care. A remembered gesture is repeated, or a familiar facial expression mimicked.
+
+The spirit of the founder lives on in the details."
+
+[sub_resource type="Resource" id="Resource_nthfn"]
+script = ExtResource("17_8whmy")
+card_tier_bonus = 50
+aspect = ExtResource("16_df4j6")
+metadata/_custom_type_script = "uid://gu7gcielbwdr"
+
+[sub_resource type="Resource" id="Resource_javtj"]
+script = ExtResource("5_kfg61")
+markedup_text = "Have his protégé take on the roles from now on."
+outcome = SubResource("Resource_nthfn")
+markedup_result_text = "The protégé bows once before stepping into costume.
+
+Their voice is different, their timing sharper, but the air around them shifts in that familiar way.
+
+The founder's most ardent admirers say the transition is too seamless, but the average audience member considers it perfect."
+
+[sub_resource type="Resource" id="Resource_o6x5y"]
+script = ExtResource("3_ntqyf")
+markedup_text = "The founder of this shard's Dragonfly Troupe passed away just the other day.
+
+In his later years, he only took small roles: a shopkeeper here, a wandering monk there, sometimes a silent passerby. Nonetheless, he never missed a rehearsal or let a show go unperformed.
+
+Now, the troupe prepares their next production. His roles are already written in, but now no one is there to perform them."
+background_image = SubResource("Resource_6lkh4")
+background_credit = ExtResource("5_1quea")
+choices = Array[ExtResource("5_kfg61")]([SubResource("Resource_1quea"), SubResource("Resource_vrioe"), SubResource("Resource_yyvn4")])
+exit_choice = SubResource("Resource_javtj")
+
+[resource]
+script = ExtResource("2_1quea")
+default_spot_upgrade = ExtResource("1_uhnow")
+event_id = "vacant_role"
+event_name = "The Vacant Role"
+steps = Array[ExtResource("3_ntqyf")]([SubResource("Resource_o6x5y")])
+categories = Array[int]([3])

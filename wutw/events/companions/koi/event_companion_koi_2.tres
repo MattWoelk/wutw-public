@@ -1,0 +1,133 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://pbci7a47vheu"]
+
+[ext_resource type="Resource" uid="uid://s25wshjp34v7" path="res://stage/spots/river/upgrade_river_2_pontoon_bridge.tres" id="1_xossu"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="2_wh0jq"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="3_kpsvi"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="4_2aqet"]
+[ext_resource type="Resource" uid="uid://bypo3h7e0prdn" path="res://art/pieces/piece_hiroshige_pontoons.tres" id="6_pd4nd"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="7_hkwuj"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="7_wh0jq"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="8_ip2fl"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="9_6ygqt"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="10_s5ky1"]
+[ext_resource type="Resource" uid="uid://bvf0fdy10l400" path="res://bonuses/types/bonus_productivity.tres" id="11_q0ekf"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="12_1fb2q"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="13_vwkrv"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="14_l46gm"]
+[ext_resource type="Resource" uid="uid://c66puv2koldp1" path="res://bonuses/types/bonus_food.tres" id="15_4ybla"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="16_gk24l"]
+
+[sub_resource type="Resource" id="Resource_1r7gh"]
+script = ExtResource("2_wh0jq")
+scope = 1
+event_id = "global"
+var_id = "companion_koi"
+value = "1"
+
+[sub_resource type="Resource" id="Resource_xossu"]
+script = ExtResource("7_wh0jq")
+_texture_path = "res://events/companions/koi/companion_koi_2.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_otadw"]
+script = ExtResource("10_s5ky1")
+scope = 1
+event_id = "global"
+var_id = "companion_koi"
+value = "2"
+description = "Let the carp through"
+outcome_description = "The carp continues its journey."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_cat6g"]
+script = ExtResource("12_1fb2q")
+bonus_type = ExtResource("11_q0ekf")
+amount = -10
+extra_per_season = -10
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_ong41"]
+script = ExtResource("8_ip2fl")
+suboutcomes = Array[ExtResource("9_6ygqt")]([SubResource("Resource_otadw"), SubResource("Resource_cat6g")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_dbcjg"]
+script = ExtResource("14_l46gm")
+aspect_type = ExtResource("13_vwkrv")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_te3ja"]
+script = ExtResource("7_hkwuj")
+markedup_text = "Untie the boats to let the carp through."
+requirement = SubResource("Resource_dbcjg")
+outcome = SubResource("Resource_ong41")
+markedup_result_text = "The settlers untie one of the boats to make a gap for the carp to get through.
+
+This works, and the carp safely passes the bridge, continuing its journey upstream.
+
+However, the action comes at a cost. Before the settlers are able to tie the boats back together, the river pushes them apart, the two sections quickly ending up on opposing banks. Although no one is hurt, it takes considerable effort to put the bridge back together."
+
+[sub_resource type="Resource" id="Resource_7vboy"]
+script = ExtResource("10_s5ky1")
+scope = 1
+event_id = "global"
+var_id = "companion_koi"
+value = "2"
+description = "Let the carp through"
+outcome_description = "The carp continues its journey."
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_h0xwx"]
+script = ExtResource("7_hkwuj")
+markedup_text = "Catch the carp and move it over."
+outcome = SubResource("Resource_7vboy")
+markedup_result_text = "It takes the settlers some time to catch the slippery fish, but once they do, it is quickly transported to the other side, and continues its journey upstream."
+
+[sub_resource type="Resource" id="Resource_hykqj"]
+script = ExtResource("12_1fb2q")
+bonus_type = ExtResource("15_4ybla")
+amount = -5
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_5ftnh"]
+script = ExtResource("16_gk24l")
+bonus_type = ExtResource("15_4ybla")
+min_count = 10
+max_count = -1
+
+[sub_resource type="Resource" id="Resource_u24rx"]
+script = ExtResource("7_hkwuj")
+markedup_text = "Throw some rice into the water."
+requirement = SubResource("Resource_5ftnh")
+outcome = SubResource("Resource_hykqj")
+markedup_result_text = "The carp is distracted by the rice, and starts eating.
+
+By the time it's full, it decides to abandon its quest and turns back downstream."
+
+[sub_resource type="Resource" id="Resource_qgy5n"]
+script = ExtResource("7_hkwuj")
+markedup_text = "Leave the carp alone."
+markedup_result_text = "The settlers laugh and keep walking.
+
+The fish continues its struggle."
+
+[sub_resource type="Resource" id="Resource_tbae2"]
+script = ExtResource("4_2aqet")
+markedup_text = "Folks crossing the pontoon bridge notice a carp trying to swim upstream past them. Since the boats are tied together so tightly, the carp is unable to get through.
+
+For some reason the stubborn fish hasn't realized that it can swim under the boats, and instead keeps ramming them, trying to get them to move out of its way."
+background_image = SubResource("Resource_xossu")
+background_credit = ExtResource("6_pd4nd")
+choices = Array[ExtResource("7_hkwuj")]([SubResource("Resource_te3ja"), SubResource("Resource_h0xwx"), SubResource("Resource_u24rx")])
+exit_choice = SubResource("Resource_qgy5n")
+
+[resource]
+script = ExtResource("3_kpsvi")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_xossu")
+event_id = "companion_koi_2"
+event_name = "Swimming Past the Boats"
+requirement = SubResource("Resource_1r7gh")
+steps = Array[ExtResource("4_2aqet")]([SubResource("Resource_tbae2")])
+categories = Array[int]([0, 4, 1])

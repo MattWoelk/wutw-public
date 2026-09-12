@@ -1,0 +1,122 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://c2b2qm7gvb20l"]
+
+[ext_resource type="Resource" uid="uid://wshj2f4ifaju" path="res://stage/spots/swamp/upgrade_swamp_2_footbridge_network.tres" id="1_n3nku"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="2_660av"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="3_aet83"]
+[ext_resource type="Resource" uid="uid://c26ylasgxtyw6" path="res://art/pieces/piece_hokusai_yatsuhashi.tres" id="4_660av"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="4_sqafr"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="5_r38fd"]
+[ext_resource type="Resource" uid="uid://ddp3f5lll121p" path="res://aspects/types/connection/aspect_connection.tres" id="6_4xjqc"]
+[ext_resource type="Script" uid="uid://doingr4y56xed" path="res://events/system/outcomes/remove_card/event_outcome_remove_card.gd" id="7_flk57"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="8_v336i"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="9_dxqiq"]
+[ext_resource type="Resource" uid="uid://bskn65mne77xr" path="res://cards/tier3/card_chat.tres" id="10_teali"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="11_3lq6i"]
+[ext_resource type="Resource" uid="uid://c6itkj7qwdavt" path="res://bonuses/types/bonus_harmony.tres" id="12_db158"]
+[ext_resource type="Script" uid="uid://dfaio0ey0wbra" path="res://events/system/requirements/event_requirement_run_bonus.gd" id="13_l6ckw"]
+[ext_resource type="Resource" uid="uid://cy2dl2p38ij23" path="res://bonuses/types/bonus_safety.tres" id="14_qxksx"]
+[ext_resource type="Script" uid="uid://dkas1jvkeluf4" path="res://events/system/outcomes/bonus/event_outcome_bonus.gd" id="15_1r1cl"]
+
+[sub_resource type="Resource" id="Resource_4cgrn"]
+script = ExtResource("4_sqafr")
+_texture_path = "res://events/generic/swamp_bridge/swamp_bridge.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_nobrr"]
+script = ExtResource("7_flk57")
+aspect = ExtResource("6_4xjqc")
+metadata/_custom_type_script = "uid://doingr4y56xed"
+
+[sub_resource type="Resource" id="Resource_3tb14"]
+script = ExtResource("9_dxqiq")
+aspect_type = ExtResource("8_v336i")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_qdolg"]
+script = ExtResource("5_r38fd")
+markedup_text = "Repair the bridge alone."
+requirement = SubResource("Resource_3tb14")
+outcome = SubResource("Resource_nobrr")
+markedup_result_text = "Eager to deliver his letter and certain that few people come this way, the young confectioner sets out to repair the bridge himself. 
+
+He puts his basket down and gathers spare bamboo. Halfway through his repair attempt, his knee bumps his basket and it tips over, spilling the contents into the muddy water.
+
+He watches in dismay as the carefully wrapped poem is swallowed up by the mud."
+
+[sub_resource type="Resource" id="Resource_q6yhn"]
+script = ExtResource("11_3lq6i")
+card_type = ExtResource("10_teali")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_va2x4"]
+script = ExtResource("13_l6ckw")
+bonus_type = ExtResource("12_db158")
+min_count = 10
+max_count = -1
+extra_per_season = 10
+
+[sub_resource type="Resource" id="Resource_q4swg"]
+script = ExtResource("5_r38fd")
+markedup_text = "Recruit help."
+requirement = SubResource("Resource_va2x4")
+outcome = SubResource("Resource_q6yhn")
+markedup_result_text = "Reluctant to put his meager building skills to the test, the confectioner looks around for help. 
+
+He finds a basket weaver, who hurries over and assesses the damage, her hand on her chin.
+
+She calls over her friend, who recounts in detail the last time the bridge collapsed.
+
+The friend calls his brother, who agrees that collapsing bridges are certainly a problem.
+
+The bridge remains unrepaired."
+
+[sub_resource type="Resource" id="Resource_t2ras"]
+script = ExtResource("15_1r1cl")
+bonus_type = ExtResource("14_qxksx")
+amount = -5
+metadata/_custom_type_script = "uid://dkas1jvkeluf4"
+
+[sub_resource type="Resource" id="Resource_8crnk"]
+script = ExtResource("9_dxqiq")
+aspect_type = ExtResource("6_4xjqc")
+min_count = 1
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_prsjv"]
+script = ExtResource("5_r38fd")
+markedup_text = "Deliver the letter some other way."
+requirement = SubResource("Resource_8crnk")
+outcome = SubResource("Resource_t2ras")
+markedup_result_text = "The young man gives up on the bridge and looks for alternatives.
+
+He ties the letter to a pebble and hurls it with all his might towards the other side. The pebble flies through the air and disappears into the dark.
+
+He hopes his lover will appreciate the romantic gesture."
+
+[sub_resource type="Resource" id="Resource_ye87h"]
+script = ExtResource("5_r38fd")
+markedup_text = "Wait for someone else to repair the bridge."
+markedup_result_text = "The confectioner bemoans his lack of bridge-mending experience and starts his trek back.
+
+He is already running late for his other deliveries.
+
+He is sure his lover will understand."
+
+[sub_resource type="Resource" id="Resource_8e07r"]
+script = ExtResource("3_aet83")
+markedup_text = "A narrow bridge raised on stilts winds through the swamp, connecting the dry islands that comprise the settlement. A young confectioner has been walking the oldest, least used, section of the bridge every dawn. Each day a new folded poem is hidden under the sweets in his basket, bound for a lucky recipient.
+
+This morning, just before sunrise, he finds one of the stilts rotted, and the whole section around it collapsed."
+background_image = SubResource("Resource_4cgrn")
+background_credit = ExtResource("4_660av")
+choices = Array[ExtResource("5_r38fd")]([SubResource("Resource_qdolg"), SubResource("Resource_q4swg"), SubResource("Resource_prsjv")])
+exit_choice = SubResource("Resource_ye87h")
+
+[resource]
+script = ExtResource("2_660av")
+default_spot_upgrade = ExtResource("1_n3nku")
+event_id = "swamp_bridge"
+event_name = "The Confectioner's Letter"
+steps = Array[ExtResource("3_aet83")]([SubResource("Resource_8e07r")])
+categories = Array[int]([3])

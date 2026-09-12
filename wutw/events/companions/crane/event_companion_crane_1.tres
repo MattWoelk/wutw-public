@@ -1,0 +1,163 @@
+[gd_resource type="Resource" script_class="Event_Stage" format=3 uid="uid://7etv84yushi1"]
+
+[ext_resource type="Resource" uid="uid://cj2ytlvvp4wdt" path="res://stage/spots/seashore/upgrade_seashore_2_driftwood_cove.tres" id="1_d31wv"]
+[ext_resource type="Script" uid="uid://pyad6w22lri1" path="res://events/system/requirements/event_requirement.gd" id="2_sny0a"]
+[ext_resource type="Script" uid="uid://c50bhh4sr0g8o" path="res://events/system/requirements/event_requirement_main_quest_progress.gd" id="3_l1i8k"]
+[ext_resource type="Script" uid="uid://d16r7o1hw8apt" path="res://events/system/requirements/event_requirement_event_state.gd" id="4_qxt77"]
+[ext_resource type="Script" uid="uid://15prcev7a3ta" path="res://events/system/requirements/event_requirement_all.gd" id="5_o2das"]
+[ext_resource type="Script" uid="uid://b0ix465cqojf3" path="res://events/system/event_stage.gd" id="6_upylv"]
+[ext_resource type="Script" uid="uid://b3ryo56yig0k3" path="res://events/system/event_step.gd" id="7_fetss"]
+[ext_resource type="Script" uid="uid://c7u2t141hgkj5" path="res://art/lazy_texture.gd" id="8_s04vm"]
+[ext_resource type="Resource" uid="uid://bwgy4hwm3m1v6" path="res://art/pieces/piece_hiroshige_kii.tres" id="8_sny0a"]
+[ext_resource type="Script" uid="uid://ch6bcu3nqxr1j" path="res://events/system/event_choice.gd" id="9_5cyru"]
+[ext_resource type="Resource" uid="uid://b7k6q8e8cdl8r" path="res://cards/tier2/card_smoke.tres" id="10_r5vik"]
+[ext_resource type="Script" uid="uid://cqnoecri6xisf" path="res://events/system/outcomes/add_card/event_outcome_add_card.gd" id="11_phjt6"]
+[ext_resource type="Resource" uid="uid://o80v148lfiri" path="res://aspects/types/change/aspect_change.tres" id="12_mi80w"]
+[ext_resource type="Script" uid="uid://cjdop1iab2efw" path="res://events/system/requirements/event_requirement_num_aspects.gd" id="13_a1w3a"]
+[ext_resource type="Resource" uid="uid://dgpkey862g2f7" path="res://cards/tier3/card_kite.tres" id="14_g4xwj"]
+[ext_resource type="Resource" uid="uid://begvnkwoyu3nf" path="res://aspects/types/craft/aspect_craft.tres" id="15_3bf1x"]
+[ext_resource type="Script" uid="uid://us3vhbuc1tdq" path="res://events/system/outcomes/all/event_outcome_all.gd" id="16_6728b"]
+[ext_resource type="Script" uid="uid://djcv8lbjfjg6e" path="res://events/system/outcomes/event_outcome.gd" id="17_3l3gi"]
+[ext_resource type="Resource" uid="uid://cbposnmk3c0jp" path="res://quests/companion/quest_companion_crane.tres" id="18_3a0om"]
+[ext_resource type="Script" uid="uid://rlexviyd8sv7" path="res://events/system/outcomes/start_quest/event_outcome_start_quest.gd" id="19_f3wfy"]
+[ext_resource type="Script" uid="uid://cgvcpdtoqk4ff" path="res://events/system/outcomes/var/event_outcome_var.gd" id="20_6qp34"]
+[ext_resource type="Resource" uid="uid://dgd4xg64jr3k0" path="res://aspects/types/spirit/aspect_spirit.tres" id="21_nuj7h"]
+[ext_resource type="Resource" uid="uid://bmgqeem7cnoar" path="res://cards/tier3/card_clamor.tres" id="22_mxvck"]
+
+[sub_resource type="Resource" id="Resource_qpl8s"]
+script = ExtResource("3_l1i8k")
+min_progress = 320
+metadata/_custom_type_script = "uid://c50bhh4sr0g8o"
+
+[sub_resource type="Resource" id="Resource_3lqs2"]
+script = ExtResource("4_qxt77")
+scope = 1
+event_id = "global"
+var_id = "companion_crane"
+value = "0"
+metadata/_custom_type_script = "uid://d16r7o1hw8apt"
+
+[sub_resource type="Resource" id="Resource_yhwox"]
+script = ExtResource("5_o2das")
+all_requirements = Array[ExtResource("2_sny0a")]([SubResource("Resource_qpl8s"), SubResource("Resource_3lqs2")])
+metadata/_custom_type_script = "uid://15prcev7a3ta"
+
+[sub_resource type="Resource" id="Resource_fx40s"]
+script = ExtResource("8_s04vm")
+_texture_path = "res://events/companions/crane/companion_crane_1.png"
+_is_horizontal = false
+
+[sub_resource type="Resource" id="Resource_trtbi"]
+script = ExtResource("11_phjt6")
+card_type = ExtResource("10_r5vik")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_phq3l"]
+script = ExtResource("13_a1w3a")
+aspect_type = ExtResource("12_mi80w")
+min_count = 4
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_yhvln"]
+script = ExtResource("9_5cyru")
+markedup_text = "Use smoke to drive them away."
+requirement = SubResource("Resource_phq3l")
+outcome = SubResource("Resource_trtbi")
+markedup_result_text = "The villagers pile damp seaweed onto fire pits to create clouds of thick smoke that fill the beach.
+
+The tactic works, and the birds adjust their route to avoid the noxious hazard.
+
+However, the wind blows the smoke directly back into the village, leaving everyone's eyes watering."
+
+[sub_resource type="Resource" id="Resource_0eiya"]
+script = ExtResource("11_phjt6")
+card_type = ExtResource("14_g4xwj")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_ofcva"]
+script = ExtResource("13_a1w3a")
+aspect_type = ExtResource("15_3bf1x")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_gyan4"]
+script = ExtResource("9_5cyru")
+markedup_text = "Fly kites shaped like large birds of prey."
+requirement = SubResource("Resource_ofcva")
+outcome = SubResource("Resource_0eiya")
+markedup_result_text = "The craftspeople quickly assemble kites painted with fierce eyes and sharp beaks.
+
+The false predators easily spook the cranes into avoiding the area."
+
+[sub_resource type="Resource" id="Resource_a6ufw"]
+script = ExtResource("19_f3wfy")
+quest = ExtResource("18_3a0om")
+metadata/_custom_type_script = "uid://rlexviyd8sv7"
+
+[sub_resource type="Resource" id="Resource_bgisj"]
+script = ExtResource("20_6qp34")
+scope = 1
+event_id = "global"
+var_id = "companion_crane"
+value = "1"
+description = ""
+metadata/_custom_type_script = "uid://cgvcpdtoqk4ff"
+
+[sub_resource type="Resource" id="Resource_d174p"]
+script = ExtResource("16_6728b")
+suboutcomes = Array[ExtResource("17_3l3gi")]([SubResource("Resource_a6ufw"), SubResource("Resource_bgisj")])
+metadata/_custom_type_script = "uid://us3vhbuc1tdq"
+
+[sub_resource type="Resource" id="Resource_dvew1"]
+script = ExtResource("13_a1w3a")
+aspect_type = ExtResource("21_nuj7h")
+min_count = 2
+extra_per_season = 1
+
+[sub_resource type="Resource" id="Resource_sd4c2"]
+script = ExtResource("9_5cyru")
+markedup_text = "Declare the bird calls to be voices of spirits."
+requirement = SubResource("Resource_dvew1")
+outcome = SubResource("Resource_d174p")
+markedup_result_text = "Instead of fighting the flock, the priests declare the sudden arrival to be an auspicious sign.
+
+They call on the locals to appease the spirits by folding intricate paper cranes, and leaving them as offerings at the shrine.
+
+The real birds remain just as loud, but the villagers find the noise much more tolerable now that it is considered holy."
+
+[sub_resource type="Resource" id="Resource_pakit"]
+script = ExtResource("11_phjt6")
+card_type = ExtResource("22_mxvck")
+metadata/_custom_type_script = "uid://cqnoecri6xisf"
+
+[sub_resource type="Resource" id="Resource_fdpua"]
+script = ExtResource("9_5cyru")
+markedup_text = "Make a lot of noise to scare them off."
+outcome = SubResource("Resource_pakit")
+markedup_result_text = "The settlers grab pots, pans, and wooden spoons, marching down to the beach to create a terrible racket.
+
+The cranes are offended by the commotion and eventually fly away.
+
+The villagers win the battle for the beach, but end up with even worse headaches than they started with."
+
+[sub_resource type="Resource" id="Resource_uga4j"]
+script = ExtResource("7_fetss")
+markedup_text = "The sky above the beach is filled with cranes, crossing the sea to their feeding grounds.
+
+The massive flock is incredibly loud, their constant calls echoing off the rocks all day.
+
+The villagers are rubbing their temples and debating how to reclaim their peace and quiet."
+background_image = SubResource("Resource_fx40s")
+background_credit = ExtResource("8_sny0a")
+choices = Array[ExtResource("9_5cyru")]([SubResource("Resource_yhvln"), SubResource("Resource_gyan4"), SubResource("Resource_sd4c2")])
+exit_choice = SubResource("Resource_fdpua")
+
+[resource]
+script = ExtResource("6_upylv")
+default_probability_weight = 2
+default_spot_upgrade = ExtResource("1_d31wv")
+event_id = "companion_crane_1"
+event_name = "A Noisy Flock"
+requirement = SubResource("Resource_yhwox")
+steps = Array[ExtResource("7_fetss")]([SubResource("Resource_uga4j")])
+categories = Array[int]([0, 4])

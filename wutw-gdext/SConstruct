@@ -1,0 +1,40 @@
+#!/usr/bin/env python
+import os
+import sys
+
+env = SConscript("godot-cpp/SConstruct")
+
+# For reference:
+# - CCFLAGS are compilation flags shared between C and C++
+# - CFLAGS are for C-specific compilation flags
+# - CXXFLAGS are for C++-specific compilation flags
+# - CPPFLAGS are for pre-processor flags
+# - CPPDEFINES are for pre-processor defines
+# - LINKFLAGS are for linking flags
+
+env.Append(CPPPATH=["src/"])
+if env["platform"] == "windows":
+    # Strict float math for map determinism.
+    env.Append(CCFLAGS=["/Zi", "/FS", "/fp:strict"])
+    env.Append(LINKFLAGS=["/DEBUG:FULL"])
+elif sys.platform == "darwin" or env.get("platform") == "macos":
+    # Tell clang to build for both Intel and Apple Silicon simultaneously.
+    # Strict float math for map determinism.
+    env.Append(CCFLAGS=["-arch", "x86_64", "-arch", "arm64", "-ffp-model=strict", "-ffp-contract=off"])
+    env.Append(LINKFLAGS=["-arch", "x86_64", "-arch", "arm64"])
+    
+    # Target a reasonably modern macOS version for compatibility
+    env.Append(CCFLAGS=["-mmacosx-version-min=10.13"])
+    env.Append(LINKFLAGS=["-mmacosx-version-min=10.13"])
+else:
+    # -g for debug symbols, -fPIC for shared libs.
+    # Strict float math for map determinism.
+    env.Append(CCFLAGS=["-g", "-fPIC", "-ffp-contract=off", "-fno-fast-math"])
+sources = Glob("src/*.cpp")
+
+library = env.SharedLibrary(
+    "../wutw/bin/libwutw-gdext{}{}".format(env["suffix"], env["SHLIBSUFFIX"]),
+    source=sources,
+)
+
+Default(library)

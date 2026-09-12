@@ -3,9 +3,9 @@
 [![Steam Page](https://img.shields.io/badge/Steam-black?logo=steam)](https://store.steampowered.com/app/3640430/Worlds_Upon_The_Wind/)
 [![License: CC0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
 
-This is the public domain (CC0) release of **Worlds Upon The Wind**, a peaceful roguelite deckbuilder [available on Steam](https://store.steampowered.com/app/3640430/Worlds_Upon_The_Wind/).
+This is the public domain release of **Worlds Upon The Wind**, a peaceful roguelite deckbuilder [available on Steam](https://store.steampowered.com/app/3640430/Worlds_Upon_The_Wind/).
 
-![Screenshot](https://worldsuponthewind.com/press-kit/assets/screenshots/convergence.png)
+![Screenshot](screenshot.png)
 
 Worlds Upon The Wind is a peaceful roguelite deckbuilder where you resettle the shards of a shattered world. Its art is based on public domain historical Japanese art, mainly ukiyo-e woodblock prints and e-maki (picture scrolls).
 

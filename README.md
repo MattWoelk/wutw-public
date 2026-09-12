@@ -1,6 +1,7 @@
 # Worlds Upon The Wind
 
 [![Steam Page](https://img.shields.io/badge/Steam-black?logo=steam)](https://store.steampowered.com/app/3640430/Worlds_Upon_The_Wind/)
+[![Discord](https://img.shields.io/badge/Discord-navy?logo=discord)](https://discord.gg/TEkakx6xDB)
 [![License: CC0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
 
 This is the public domain release of **Worlds Upon The Wind**, a peaceful roguelite deckbuilder [available on Steam](https://store.steampowered.com/app/3640430/Worlds_Upon_The_Wind/).

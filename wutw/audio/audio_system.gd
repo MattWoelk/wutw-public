@@ -121,7 +121,7 @@ var _unfocus_fade_tween: Tween
 func _ready() -> void:
 	if Utils.is_in_editor():
 		return
-	if not DirAccess.dir_exists_absolute('res://audio/generated_soundbanks'):
+	if not DirAccess.dir_exists_absolute('res://audio/generated_sound_banks'):
 		_audio_stubbed_out = true
 		set_process(false)
 		return

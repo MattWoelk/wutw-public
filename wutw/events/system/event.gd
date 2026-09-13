@@ -47,7 +47,8 @@ func is_requirement_satisfied(run: Run) -> bool:
 	return not requirement or requirement.is_satisfied(run, self)
 
 func has_triggered(run_data: RunData) -> bool:
-	return run_data.events_state.get_int_or_default(event_id, TRIGGERED_STAGE_INDEX_VAR, -1) >= 0
+	var stage_index := run_data.events_state.get_int_or_default(event_id, TRIGGERED_STAGE_INDEX_VAR, -1)
+	return stage_index >= 0 and stage_index < run_data.settlement_states.size()
 
 func should_mark_all_choices_seen() -> bool:
 	return false

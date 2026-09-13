@@ -12,7 +12,7 @@ func get_description(_mode: HauntingTrigger.Mode) -> String:
 
 func get_short_description(_mode: HauntingTrigger.Mode) -> String:
 	if aspect_type:
-		return '<term:discard>[img width=1.5em height=1.5em]%s[/img]' % aspect_type.get_used_icon().resource_path
+		return '<term:discard> [img width=1.5em height=1.5em]%s[/img]' % aspect_type.get_used_icon().resource_path
 	else:
 		return '<term:discard>'
 

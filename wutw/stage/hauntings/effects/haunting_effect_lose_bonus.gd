@@ -18,7 +18,7 @@ func get_short_description(_mode: HauntingTrigger.Mode) -> String:
 	var run := Utils.get_active_run()
 	if run:
 		amount += run.get_current_season_index() * extra_amount_per_season
-	return tr('Lose %d') + ' [img width=1.5em height=1.5em]%s[/img]' % [amount, bonus_type.icon.resource_path]
+	return (tr('Lose %d') % amount) + ' [img width=1.5em height=1.5em]%s[/img]' % [bonus_type.icon.resource_path]
 
 func scales() -> bool:
 	return extra_amount_per_season != 0

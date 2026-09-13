@@ -24,7 +24,9 @@ func format_history_text(index: int, past_run: PastRun, text_override: String = 
 					shrine_town = settlement_state.settlement_name
 					break
 	if not Utils.ensure(shrine_town != null):
-		return text
+		# Observed in the wild - the player died in the same foray where the shrine was built,
+		# so the town wasn't finished. Fixed now, but this is for backward-compatibility.
+		shrine_town = past_run.get_random_town_name(2)
 	var random_town1 := past_run.get_random_town_name(0)
 	var nonshrine_town := random_town1 if random_town1 != shrine_town else past_run.get_random_town_name(1)
 	return _apply_replacements(text, {

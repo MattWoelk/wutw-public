@@ -48,6 +48,7 @@ func describe(_run: Run) -> String:
 			CardType.Tag.THEME_SOCIAL: tag_label = 'a social'
 			CardType.Tag.THEME_WEATHER: tag_label = 'a weather'
 			CardType.Tag.THEME_LANDSCAPE: tag_label = 'a landscape'
+			CardType.Tag.NO_TAG: tag_label = 'a'
 			# WARNING: Should be kept in sync with cards tag list, but not crucial.
 		var text := tr('Choose %s <term_lower:glyph>') % tag_label
 		if aspect:

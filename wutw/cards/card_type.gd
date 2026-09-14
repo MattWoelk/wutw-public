@@ -127,7 +127,7 @@ static func get_card_type_by_name_or_symbol(name_or_symbol: String) -> CardType:
 
 static func compare(a: CardType, b: CardType, prioritize_negative: bool = false) -> bool:
 	if a.rarity != b.rarity:
-		if prioritize_negative and a.rarity == Rarity.NEGATIVE or b.rarity == Rarity.NEGATIVE:
+		if prioritize_negative and (a.rarity == Rarity.NEGATIVE or b.rarity == Rarity.NEGATIVE):
 			return a.rarity == Rarity.NEGATIVE
 		return a.rarity < b.rarity
 	if a.aspects.size() != b.aspects.size():
@@ -141,7 +141,6 @@ static func compare(a: CardType, b: CardType, prioritize_negative: bool = false)
 		if sorted_aspects_a[i].sort_order != sorted_aspects_b[i].sort_order:
 			return sorted_aspects_a[i].sort_order < sorted_aspects_b[i].sort_order
 	return a.abilities.size() < b.abilities.size()
-
 
 static func _get_tag_label(tag: Tag) -> String:
 	match tag:

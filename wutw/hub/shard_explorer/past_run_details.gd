@@ -66,20 +66,25 @@ func _update() -> void:
 	Utils.clear_node(%SettlementsList)
 	var iterated_past_run := past_run  # If this is changed while we wait, bail.
 	for i in past_run.run_data.settlement_states.size():
-		if iterated_past_run != past_run:
-			break
 		var survey := past_run.run_data.finished_episodes.get(i, []) as Array
 		if survey:
 			var survey_widget := PAST_RUN_SURVEY_SCENE.instantiate_loaded_scene() as PastRunSurvey
 			survey_widget.episodes.assign(survey)
 			%SettlementsList.add_child(survey_widget)
+
 			await get_tree().process_frame
+			if iterated_past_run != past_run:
+				break
+
 		var settlement_state := past_run.run_data.settlement_states[i]
 		var settlement := PAST_RUN_SETTLEMENT_SCENE.instantiate_loaded_scene() as PastRunSettlement
 		settlement.settlement_state = settlement_state
 		settlement.events = _get_events(i)
 		%SettlementsList.add_child(settlement)
+
 		await get_tree().process_frame
+		if iterated_past_run != past_run:
+			break
 
 func _on_type_button_pressed() -> void:
 	request_shard_type.emit()

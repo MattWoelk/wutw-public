@@ -146,7 +146,11 @@ func _on_pin_event_pressed(button: RunSetupEventButton) -> void:
 	)
 	dialog.buttons.append(empty_choice)
 
-	for event: Event in GlobalSaveGame.get_seen_event_choices().keys():
+	for event: Event in Event.get_all_events().values():
+		if not GlobalSaveGame.has_seen_event(event):
+			continue
+		if Event.Category.SECRET in event.categories:
+			continue
 		if Event.Category.MAIN_STORY in event.categories:
 			continue
 		if Event.Category.RECORD in event.categories:

@@ -47,6 +47,7 @@ func cast(_card: Card) -> void:
 				var slot := stage.get_card_deck().get_random_state().pick(slot_pool) as AspectSlot
 				await stage.ensure_slot_visible(slot)
 				await slot.animate_fill()
+				slots_filled[0] += 1
 			else:
 				if not error_shown[0]:
 					if slots_filled[0]:

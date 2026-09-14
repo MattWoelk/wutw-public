@@ -88,6 +88,7 @@
 [ext_resource type="Resource" uid="uid://cnx8wr2njwnlb" path="res://skills/settlement/skill_settlement_spots_per_season.tres" id="71_xiwne"]
 [ext_resource type="Resource" uid="uid://b7uo8tmae57q3" path="res://skills/survey/skill_survey_episodes_1.tres" id="72_24cw7"]
 [ext_resource type="Resource" uid="uid://djyt3pjytmyew" path="res://skills/settlement/skill_settlement_create_spot_small_building.tres" id="72_eunu8"]
+[ext_resource type="Resource" uid="uid://bridi2srl0y7g" path="res://skills/relics/skill_relics_shop_remove.tres" id="73_a8v6r"]
 [ext_resource type="Resource" uid="uid://drkpc00xi55pj" path="res://skills/survey/skill_survey_preps_1.tres" id="73_e4857"]
 [ext_resource type="Resource" uid="uid://ckjvfmf3jbglm" path="res://skills/settlement/skill_settlement_insights_per_yield.tres" id="73_i60y0"]
 [ext_resource type="Resource" uid="uid://bpv7ajk0b3niu" path="res://skills/survey/skill_survey_reveal_1.tres" id="74_2i74d"]
@@ -142,7 +143,7 @@ color_ramp = SubResource("Gradient_0fvof")
 seamless = true
 seamless_blend_skirt = 0.27
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nm8my"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kidfd"]
 shader = ExtResource("3_gyvxu")
 shader_parameter/size = Vector2(1675, 49)
 shader_parameter/scroll_offset = 1.0
@@ -179,7 +180,7 @@ shader_parameter/swish_left_tex = ExtResource("39_jre03")
 shader_parameter/swish_left_transform = Vector4(0, 0, 106.982, 42.958)
 shader_parameter/hover_distance = 2.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a8v6r"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_atggr"]
 shader = ExtResource("3_gyvxu")
 shader_parameter/size = Vector2(1673, 49)
 shader_parameter/scroll_offset = 1.0
@@ -206,7 +207,7 @@ custom_minimum_size = Vector2(1775, 0)
 layout_mode = 2
 
 [node name="TopDowelWood" parent="CenterContainer/ScrollPanel/TopDowelContainer" index="0"]
-material = SubResource("ShaderMaterial_nm8my")
+material = SubResource("ShaderMaterial_kidfd")
 
 [node name="Scroller" parent="CenterContainer/ScrollPanel" index="1"]
 custom_minimum_size = Vector2(0, 835)
@@ -936,7 +937,6 @@ mouse_filter = 2
 [node name="SkillNode7" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/RelicsTree" unique_id=2087057720 instance=ExtResource("9_uleh4")]
 layout_mode = 2
 up = false
-down = false
 left = false
 right = false
 up_left = true
@@ -957,11 +957,14 @@ right = false
 up_left = true
 skill = ExtResource("14_k4lfo")
 
-[node name="SkillNode10" type="Control" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/RelicsTree" unique_id=2103479885]
-layout_mode = 2
-mouse_filter = 2
-
 [node name="SkillNode11" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/RelicsTree" unique_id=1957447621 instance=ExtResource("9_uleh4")]
+layout_mode = 2
+down = false
+left = false
+right = false
+skill = ExtResource("73_a8v6r")
+
+[node name="SkillNode12" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/RelicsTree" unique_id=213045558 instance=ExtResource("9_uleh4")]
 layout_mode = 2
 down = false
 left = false
@@ -1049,7 +1052,7 @@ left = false
 right = false
 skill = ExtResource("80_nm8my")
 
-[node name="SkillNode11" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SurveyTree" unique_id=213045558 instance=ExtResource("9_uleh4")]
+[node name="SkillNode11" parent="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/TreesList/SurveyTree" unique_id=1751344778 instance=ExtResource("9_uleh4")]
 layout_mode = 2
 up = false
 down = false
@@ -1349,7 +1352,7 @@ script = ExtResource("42_n7th8")
 metadata/_custom_type_script = "uid://tmvhmuymumhk"
 
 [node name="BottomDowelWood" parent="CenterContainer/ScrollPanel/BottomDowelContainer" index="0"]
-material = SubResource("ShaderMaterial_a8v6r")
+material = SubResource("ShaderMaterial_atggr")
 
 [connection signal="pressed" from="CenterContainer/ScrollPanel/Scroller/ScrollMargin/ContentPanel/ContentContainer/VBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]
 

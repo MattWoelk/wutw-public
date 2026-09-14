@@ -109,6 +109,8 @@ enum Var {
 
 	PREVIEW_MAP,  # Survey tree
 	REROLL_MAP,  # Survey tree
+
+	REMOVE_RELIC,  # Relics tree
 }
 
 static var _skill_group_loader := AsyncLoadedGroup.new('res://skills/resourcegroup_skills.tres')

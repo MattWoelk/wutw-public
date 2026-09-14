@@ -20,6 +20,9 @@ func _ready() -> void:
 
 func _on_button_pressed() -> void:
 	var run := Utils.get_active_run()
+	var modifier_tag := Utils.generate_guid()
+	run.get_vars().add_modifier(RunVars.Var.CARD_TIER_BONUS_PERCENT, card_tier_bonus, modifier_tag)
+
 	var choices: Array[CardType]
 	if specific_card_types:
 		choices = specific_card_types
@@ -32,10 +35,7 @@ func _on_button_pressed() -> void:
 			return true
 		var count := run.get_var(RunVars.Var.CARD_REWARD_CHOICES)
 		var tier_weights := run.get_current_card_reward_weights()
-		var modifier_tag := Utils.generate_guid()
-		run.get_vars().add_modifier(RunVars.Var.CARD_TIER_BONUS_PERCENT, card_tier_bonus, modifier_tag)
 		choices = Utils.choose_card_rewards(run, tier_weights, count, true, is_acceptable)
-		run.get_vars().remove_modifier(modifier_tag)
 
 	var card_reward := CARD_REWARD_SCENE.instantiate_loaded_scene() as CardRewardChoice
 	card_reward.specific_card_types = choices
@@ -49,6 +49,7 @@ func _on_button_pressed() -> void:
 		if stage:
 			stage.get_card_deck().add_card_to_hand(card_type, CardDeck.CardDrawReason.EVENT)
 		card_reward.close()
+		_clear_modifier()
 		finished.emit()
 	)
 	card_reward.canceled.connect(func() -> void:
@@ -56,6 +57,12 @@ func _on_button_pressed() -> void:
 		(%Button as Button).visible = false
 		(%Label as Label).text = tr('Chose not to add a glyph.')
 		card_reward.close()
+		_clear_modifier()
 		finished.emit()
 	)
 	GlobalUI.add_layer_content(card_reward, ui_layer)
+
+func _clear_modifier() -> void:
+	var run := Utils.get_active_run()
+	var modifier_tag := Utils.generate_guid()
+	run.get_vars().remove_modifier(modifier_tag)

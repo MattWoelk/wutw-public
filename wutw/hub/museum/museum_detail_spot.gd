@@ -73,7 +73,7 @@ func _recreate() -> void:
 					var is_last_l3_child := upgrade2.child_upgrades.find(upgrade3) == upgrade2.child_upgrades.size() - 1
 					if is_last_l3_child:
 						(connector22.get_child(0) as TextureRect).texture = load('res://stage/spots/tree_connection_end.png')
-		if _recipes:
+		if Utils.ensure(not _recipes.is_empty()):
 			select_upgrade(_recipes[0].spot_upgrade)
 
 		# Warning about upgrade availability.
@@ -94,7 +94,8 @@ func _recreate() -> void:
 						seen_any_haunting = true
 			if haunting_types:
 				if seen_any_haunting:
-					description += tr('\n\nThis site can feature the following special <term_lower:haunting>s:')
+					description += '\n\n'
+					description += tr('This site can feature the following special <term_lower:haunting>s:')
 					description += '[ul]'
 					for haunting_type in haunting_types:
 						description += '<haunting:%s>\n' % haunting_type.haunting_id
@@ -102,7 +103,9 @@ func _recreate() -> void:
 				else:
 					description += '\n\n'
 					description += tr('This site can feature not yet discovered <term_lower:haunting>s.')
+
 	else:
+		select_upgrade(null)
 		(%UpgradesContainer as Control).visible = false
 		description = tr('Look for this <term_lower:spot> out there on the shards...')
 
@@ -123,6 +126,10 @@ func _create_recipe_node(upgrade: SpotUpgrade) -> Control:
 		return UNKNOWN_SPOT_RECIPE_SCENE.instantiate_loaded_scene() as Control
 
 func select_upgrade(upgrade: SpotUpgrade) -> void:
+	(%EventsText as MarkedUpLabel).visible = false
+	if not upgrade:
+		return
+
 	(%SpotUpgradePreview as SpotUpgradePreview).spot_upgrade = upgrade
 	(%UpgradeText as MarkedUpLabel).set_markedup_text(tr(upgrade.description))
 	for recipe in _recipes:
@@ -130,3 +137,36 @@ func select_upgrade(upgrade: SpotUpgrade) -> void:
 			recipe.state = SpotRecipe.State.ACTIVE
 		else:
 			recipe.state = SpotRecipe.State.AVAILABLE
+
+	# Events
+	var applicable_events: Array[Event_Stage]
+	for event: Event in Event.get_all_events().values():
+		if Event.Category.SECRET in event.categories:
+			continue
+		var event_stage := event as Event_Stage
+		if event_stage and event_stage.default_spot_upgrade == upgrade:
+			applicable_events.append(event_stage)
+	if applicable_events:
+		applicable_events.sort_custom(func(a: Event, b: Event) -> bool:
+			var a_seen := GlobalSaveGame.has_seen_event(a)
+			var b_seen := GlobalSaveGame.has_seen_event(b)
+			if a_seen != b_seen:
+				return a_seen
+			var a_generic := Event.Category.GENERIC in a.categories
+			var b_generic := Event.Category.GENERIC in b.categories
+			if a_generic != b_generic:
+				return a_generic
+			return a.event_id < b.event_id
+		)
+		var description := ''
+		var num_undiscovered := 0
+		for event in applicable_events:
+			if GlobalSaveGame.has_seen_event(event):
+				description += '<event:%s>\n' % event.event_id
+			else:
+				num_undiscovered += 1
+		if num_undiscovered:
+			description += tr_n('%d Undiscovered Event', '%d Undiscovered Events', num_undiscovered) % num_undiscovered
+		(%EventsText as MarkedUpLabel).visible = true
+		(%EventsText as MarkedUpLabel).set_markedup_text(
+			description.strip_edges(), MarkedUpLabel.LinkMode.LINK)

@@ -1,7 +1,7 @@
 # Worlds Upon The Wind
 
 [![Steam Page](https://img.shields.io/badge/Steam-black?logo=steam)](https://store.steampowered.com/app/3640430/Worlds_Upon_The_Wind/)
-[![Discord](https://img.shields.io/badge/Discord-navy?logo=discord)](https://discord.gg/TEkakx6xDB)
+[![Discord](https://img.shields.io/badge/Discord-36373A?logo=discord&logoColor=white)
 [![License: CC0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
 
 This is the public domain release of **Worlds Upon The Wind**, a peaceful roguelite deckbuilder [available on Steam](https://store.steampowered.com/app/3640430/Worlds_Upon_The_Wind/).
@@ -50,14 +50,19 @@ The code is intentionally kept as simple as possible while supporting efficient 
 
 * Scripts in the root folder handle building the game on all platforms and publishing it to Steam.
 * `art_src`: Source files for art assets. Mostly PSDs, plus a few Inkscape SVGs.
+  * `sprites`: This contains giant PSDs with hundreds of layers for the map sprite atlasses.
 * `wutw-gdext`: The C++ GDExtension for generating and managing the game's map, including creating biome SDFs and managing sprites for both cosmetic and gameplay objects as a MultiMeshInstance2D. A simple build script is included which will put the binaries in the right place within the Godot project.
 * `wutw`: The Godot project, split roughly by system:
-  * `res://_dev_tools/`: Editor scripts and scenes for more efficiently creating content such as new cards, events, and encounters. Also includes scenes that generate Steam screenshots and trailer segments.
+  * `main.tscn`: A tiny main scene, which mainly manages the switching between core scenes like MainMenu, Hub, and Run.
   * `res://achievements/`: Steam achievements implementation.
   * `res://addons/`: Several small addons, some third-party, some custom.
-    * `wutw_i18n_export` exports strings for localization from Resource instances and Nodes embedded in scenes.
+    * `console` is a third-party addon that adds a customizable ingame debug console.
+    * `godotsteam` is a third-party addon for Steam integration.
+    * `godot_resource_groups` is a third-party addon for defining sets of Resources using path patterns. The loading aspect of it is unused.
     * `wutw_editor` adds an editor dock to start the game from various story points and with various progression states.
-  * `res://art/`: The art wiki, including the UI and all data for the various art pieces, artists, art styles, etc.
+    * `wutw_exporter` embeds the git commit and tag to when exporting the game for distribution.
+    * `wutw_i18n_export` exports strings for localization from Resource instances and Nodes embedded in scenes.
+  * `res://art/`: The art wiki, including the UI and all data for the various historical and original art pieces, artists, art styles, etc.
   * `res://aspects`: The Essences and Slots system which is the core mechanic of the game.
   * `res://audio`: A simple Wwise-based audio system that handles SFX, music, and ambient audio. The audio files themselves are not included due to licensing restrictions, so it is essentially a no-op at runtime, but all the code is there.
   * `res://bin`: Windows, Linux, and MacOS binaries for the GDExtension in `wutw-gdext`.
@@ -67,7 +72,7 @@ The code is intentionally kept as simple as possible while supporting efficient 
   * `res://companions`: The Animal Companions system, including gameplay and hub support.
   * `res://cutscenes`: The game's fullscreen cutscenes including their Scenes, art, and voice audio.
   * `res://debate`: A small system for handling the Debate feature that takes place in the game's final section.
-  * `res://dialogue`: A simple dialogue (really, monologue) system, including support for playing dialogues during runs (expeditions) and on the hub, as well as barks (semi-random one-liners for hub NPCs).
+  * `res://dialogue`: A simple dialogue system, including support for playing dialogues during runs (expeditions) and on the hub, as well as barks (semi-random one-liners for hub NPCs). This doesn't handle any player choices.
   * `res://events`: The Events (interactive vignettes) system, as well as the definition of all events in the game as individual Resources.
   * `res://glossary`: A system for linkable gameplay terms used throughout the game to show tooltips and various gameplay-related text. This folder includes "standalone" terms, and many other parts of the game (cards, relics, etc.) are themselves Terms.
   * `res://hub`: The game's hub area system, including all the related UIs (museum, skills, crafting, shard cultures, etc.).
@@ -99,7 +104,9 @@ The code is intentionally kept as simple as possible while supporting efficient 
     * `save_game.gd` is the most important file here. It handles saving and loading, but more importantly, it serves as the persistent source of truth for game state which all other systems read from and write to.
     * `utils.gd` has a bunch of common utility functions used in almost every other script.
     * `random_state.gd` is a deterministic seeded random generator used throughout the game.
+    * `bug_reporter` is a simple UI for sending feedback reports from within the game. It bundles the logs, the savegame, and a screenshot and sends them off via HTTP POST to a server (which just forwards it as an email).
   * `res://visuals`: A few reusable art assets and scenes, such as shader includes and transition scenes.
+  * `res://_dev_tools/`: Editor scripts and scenes for more efficiently creating content such as new cards, events, and encounters. Also includes scenes that generate Steam screenshots and trailer segments.
 
 ## Contributing
 
@@ -120,6 +127,9 @@ You are even welcome to translate and sell the game without any royalties, thoug
 ## Third Party Licenses
 
 - [Godot](https://godotengine.org/) engine: MIT License.
+- [GodotSteam](https://codeberg.org/godotsteam/godotsteam/) addon: MIT License.
+- [Godot Resource Groups](https://github.com/derkork/godot-resource-groups) addon: MIT License.
+- [godot-console](https://github.com/jitspoe/godot-console) addon: MIT License.
 - [Yuji Mai](https://fonts.google.com/specimen/Yuji+Mai), [Merienda](https://fonts.google.com/specimen/Merienda?preview.script=Latn), and [Noto](https://fonts.google.com/noto) fonts: SIL Open Font License.
 - [KANJIDIC2](https://www.edrdg.org/wiki/index.php/KANJIDIC_Project) dictionary: CC-BY-SA 4.0 License.
 - [JMdict](https://www.edrdg.org/edrdg/licence.html) dictionary: CC-BY-SA 4.0 License.

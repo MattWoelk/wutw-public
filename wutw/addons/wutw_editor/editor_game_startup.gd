@@ -10,23 +10,35 @@ var _companions: Array[Companion] = []
 var _quests: Array[Quest] = []
 @export var _templates: Array[EditorGameStartupConfig] = []
 
+@onready var drop_down_main_quest: OptionButton = %DropDown_MainQuest
+@onready var drop_down_state: OptionButton = %DropDown_State
+@onready var drop_down_companion: OptionButton = %DropDown_Companion
+@onready var drop_down_starting_quest: OptionButton = %DropDown_StartingQuest
+@onready var drop_down_load_template: OptionButton = %DropDown_LoadTemplate
+
+@onready var check_box_run_seed: CheckBox = %CheckBox_RunSeed
+@onready var slider_stages_per_season: HSlider = %Slider_StagesPerSeason
+@onready var check_box_stages_per_season: CheckBox = %CheckBox_StagesPerSeason
+@onready var check_box_temp_save: CheckBox = %CheckBox_TempSave
+@onready var check_box_load: CheckBox = %CheckBox_Load
+
 func _ready() -> void:
-	(%DropDown_State as OptionButton).clear()
+	drop_down_state.clear()
 	_states.clear()
 	for state_name in Main.State:
-		(%DropDown_State as OptionButton).add_item(state_name, Main.State[state_name])
+		drop_down_state.add_item(state_name, Main.State[state_name])
 		_states.append(Main.State[state_name])
 
-	(%DropDown_MainQuest as OptionButton).clear()
+	drop_down_main_quest.clear()
 	_main_quest_states.clear()
 	for state_name in SaveGame.MainQuestProgress:
-		(%DropDown_MainQuest as OptionButton).add_item(state_name, SaveGame.MainQuestProgress[state_name])
+		drop_down_main_quest.add_item(state_name, SaveGame.MainQuestProgress[state_name])
 		_main_quest_states.append(SaveGame.MainQuestProgress[state_name])
 
-	(%DropDown_Companion as OptionButton).clear()
+	drop_down_companion.clear()
 	_companions.clear()
 	for companion in Companion.get_all_companions():
-		(%DropDown_Companion as OptionButton).add_item(companion.companion_name)
+		drop_down_companion.add_item(companion.companion_name)
 		_companions.append(companion)
 
 	Utils.clear_node(%VBox_Skills)
@@ -36,12 +48,12 @@ func _ready() -> void:
 		skill_checkbox.pressed.connect(_on_ui_changed)
 		%VBox_Skills.add_child(skill_checkbox)
 
-	(%DropDown_StartingQuest as OptionButton).clear()
-	(%DropDown_StartingQuest as OptionButton).add_item('-----')
+	drop_down_starting_quest.clear()
+	drop_down_starting_quest.add_item('-----')
 	_quests.clear()
 	_quests.append(null)
 	for quest: Quest in Quest.get_all_quests().values():
-		(%DropDown_StartingQuest as OptionButton).add_item(quest.quest_id)
+		drop_down_starting_quest.add_item(quest.quest_id)
 		_quests.append(quest)
 
 	%DropDown_LoadTemplate.clear()
@@ -58,15 +70,15 @@ func _ready() -> void:
 	_update_ui()
 
 func _apply_from_file(config: EditorGameStartupConfig) -> void:
-	(%CheckBox_Load as CheckBox).button_pressed = config.load_savegame
-	(%DropDown_State as OptionButton).selected = _states.find(config.start_state)
-	(%CheckBox_TempSave as CheckBox).button_pressed = config.use_temporary_savegame
+	check_box_load.button_pressed = config.load_savegame
+	drop_down_state.selected = _states.find(config.start_state)
+	check_box_temp_save.button_pressed = config.use_temporary_savegame
 	(%CheckBox_MainQuest as CheckBox).button_pressed = config.main_quest_state >= 0
 	if config.main_quest_state >= 0:
-		(%DropDown_MainQuest as OptionButton).selected = _main_quest_states.find(config.main_quest_state)
-	(%CheckBox_StagesPerSeason as CheckBox).button_pressed = config.stages_per_season >= 0
+		drop_down_main_quest.selected = _main_quest_states.find(config.main_quest_state)
+	check_box_stages_per_season.button_pressed = config.stages_per_season >= 0
 	if config.stages_per_season >= 0:
-		(%Slider_StagesPerSeason as HSlider).value = config.stages_per_season
+		slider_stages_per_season.value = config.stages_per_season
 	(%CheckBox_StagesBeforeSurvey as CheckBox).button_pressed = config.stages_before_survey >= 0
 	if config.stages_before_survey >= 0:
 		(%Slider_StagesBeforeSurvey as HSlider).value = config.stages_before_survey
@@ -75,8 +87,8 @@ func _apply_from_file(config: EditorGameStartupConfig) -> void:
 		(%Slider_HauntingChance as HSlider).value = config.haunting_probability
 	(%CheckBox_Companion as CheckBox).button_pressed = config.companion != null
 	if config.companion:
-		(%DropDown_Companion as OptionButton).selected = _companions.find(config.companion)
-	(%CheckBox_RunSeed as CheckBox).button_pressed = config.run_seed >= 0
+		drop_down_companion.selected = _companions.find(config.companion)
+	check_box_run_seed.button_pressed = config.run_seed >= 0
 	if config.run_seed >= 0:
 		(%SpinBox_RunSeed as SpinBox).value = config.run_seed
 	(%CheckBox_MapSeed as CheckBox).button_pressed = config.map_seed >= 0
@@ -86,7 +98,7 @@ func _apply_from_file(config: EditorGameStartupConfig) -> void:
 	for checkbox: CheckBox in %VBox_Skills.get_children():
 		checkbox.button_pressed = Skill.get_skill_by_id(checkbox.text) in config.skills
 	(%CheckBox_StartingQuest as CheckBox).button_pressed = config.starting_quest != null
-	(%DropDown_StartingQuest as OptionButton).selected = _quests.find(config.starting_quest)
+	drop_down_starting_quest.selected = _quests.find(config.starting_quest)
 	(%CheckBox_StartingQuestActive as CheckBox).button_pressed = config.starting_quest_active
 	(%CheckBox_MuseumUnlocks as CheckBox).button_pressed = config.full_museum_unlocks
 
@@ -94,17 +106,17 @@ func _save_to_file() -> void:
 	await get_tree().process_frame  # Debounce.
 	var config := EditorGameStartupConfig.new()
 
-	config.load_savegame = (%CheckBox_Load as CheckBox).button_pressed
-	config.use_temporary_savegame = (%CheckBox_TempSave as CheckBox).button_pressed
-	config.start_state = _states[(%DropDown_State as OptionButton).selected]
+	config.load_savegame = check_box_load.button_pressed
+	config.use_temporary_savegame = check_box_temp_save.button_pressed
+	config.start_state = _states[drop_down_state.selected]
 
 	if (%CheckBox_MainQuest as CheckBox).button_pressed:
-		config.main_quest_state = _main_quest_states[(%DropDown_MainQuest as OptionButton).selected]
+		config.main_quest_state = _main_quest_states[drop_down_main_quest.selected]
 	else:
 		config.main_quest_state = -1
 
-	if (%CheckBox_StagesPerSeason as CheckBox).button_pressed:
-		config.stages_per_season = (%Slider_StagesPerSeason as HSlider).value
+	if check_box_stages_per_season.button_pressed:
+		config.stages_per_season = slider_stages_per_season.value
 	else:
 		config.stages_per_season = -1
 
@@ -119,11 +131,11 @@ func _save_to_file() -> void:
 		config.haunting_probability = -1
 
 	if (%CheckBox_Companion as CheckBox).button_pressed:
-		config.companion = _companions[(%DropDown_Companion as OptionButton).selected]
+		config.companion = _companions[drop_down_companion.selected]
 	else:
 		config.companion = null
 
-	if (%CheckBox_RunSeed as CheckBox).button_pressed:
+	if check_box_run_seed.button_pressed:
 		config.run_seed = (%SpinBox_RunSeed as SpinBox).value
 	else:
 		config.run_seed = -1
@@ -140,7 +152,7 @@ func _save_to_file() -> void:
 			config.skills.append(Skill.get_skill_by_id(checkbox.text))
 
 	if (%CheckBox_StartingQuest as CheckBox).button_pressed:
-		config.starting_quest = _quests[(%DropDown_StartingQuest as OptionButton).selected]
+		config.starting_quest = _quests[drop_down_starting_quest.selected]
 		config.starting_quest_active = (%CheckBox_StartingQuestActive as CheckBox).button_pressed
 	else:
 		config.starting_quest = null
@@ -151,14 +163,14 @@ func _save_to_file() -> void:
 		push_warning('Failed to save WutW startup config.')
 
 func _update_ui() -> void:
-	(%DropDown_MainQuest as OptionButton).disabled = not (%CheckBox_MainQuest as CheckBox).button_pressed
-	(%Slider_StagesPerSeason as HSlider).editable = (%CheckBox_StagesPerSeason as CheckBox).button_pressed
+	drop_down_main_quest.disabled = not (%CheckBox_MainQuest as CheckBox).button_pressed
+	slider_stages_per_season.editable = check_box_stages_per_season.button_pressed
 	(%Slider_StagesBeforeSurvey as HSlider).editable = (%CheckBox_StagesBeforeSurvey as CheckBox).button_pressed
 	(%Slider_HauntingChance as HSlider).editable = (%CheckBox_HauntingChance as CheckBox).button_pressed
-	(%DropDown_Companion as OptionButton).disabled = not (%CheckBox_Companion as CheckBox).button_pressed
-	(%SpinBox_RunSeed as SpinBox).editable = (%CheckBox_RunSeed as CheckBox).button_pressed
+	drop_down_companion.disabled = not (%CheckBox_Companion as CheckBox).button_pressed
+	(%SpinBox_RunSeed as SpinBox).editable = check_box_run_seed.button_pressed
 	(%SpinBox_MapSeed as SpinBox).editable = (%CheckBox_MapSeed as CheckBox).button_pressed
-	(%DropDown_StartingQuest as OptionButton).disabled = not (%CheckBox_StartingQuest as CheckBox).button_pressed
+	drop_down_starting_quest.disabled = not (%CheckBox_StartingQuest as CheckBox).button_pressed
 	(%CheckBox_StartingQuestActive as CheckBox).disabled = not (%CheckBox_StartingQuest as CheckBox).button_pressed
 	for checkbox: CheckBox in %VBox_Skills.get_children():
 		checkbox.disabled = not (%CheckBox_Skills as CheckBox).button_pressed
@@ -170,8 +182,8 @@ func _update_ui() -> void:
 			get_child(i).visible = false
 	else:
 		for i in range(8, get_child_count()):
-			get_child(i).visible = _states[(%DropDown_State as OptionButton).selected] != Main.State.MAIN_MENU
-		if _states[(%DropDown_State as OptionButton).selected] != Main.State.RUN:
+			get_child(i).visible = _states[drop_down_state.selected] != Main.State.MAIN_MENU
+		if _states[drop_down_state.selected] != Main.State.RUN:
 			%Label_StagesPerSeason.visible = false
 			%HBox_StagesPerSeason.visible = false
 			%Label_StagesBeforeSurvey.visible = false

@@ -10,9 +10,9 @@
 [ext_resource type="Shader" uid="uid://lpjj2djk1br2" path="res://cards/art/card_dowel.gdshader" id="10_iuhy6"]
 [ext_resource type="Texture2D" uid="uid://bbve8bkg6kx4f" path="res://cards/art/dowel_color.png" id="11_aydp7"]
 [ext_resource type="Texture2D" uid="uid://bmxrghuyk8hjk" path="res://cards/art/dowel_lines.png" id="12_ht3k3"]
+[ext_resource type="Material" uid="uid://cktp1jk7jhu" path="res://theme/scroll_panel/scroll_shadow_material.tres" id="13_g62ri"]
 [ext_resource type="Texture2D" uid="uid://cu3b23fafni3r" path="res://cards/art/dowel_shade.png" id="13_hlalk"]
 [ext_resource type="Texture2D" uid="uid://bged7v8k4r7ty" path="res://cards/art/dowel_mask.png" id="14_063yr"]
-[ext_resource type="Shader" uid="uid://gpgadexvoqm8" path="res://visuals/shaders/multiply.gdshader" id="15_8ygtm"]
 
 [sub_resource type="Gradient" id="Gradient_iruc6"]
 interpolation_mode = 2
@@ -24,7 +24,7 @@ gradient = SubResource("Gradient_iruc6")
 fill_from = Vector2(1, 1)
 repeat = 1
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_g62ri"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vqmod"]
 shader = ExtResource("4_575b2")
 shader_parameter/gradient = SubResource("GradientTexture2D_mpdjx")
 shader_parameter/power = 2.2
@@ -73,7 +73,7 @@ shader_parameter/shine_amount = Vector2(0.21, -0.04)
 shader_parameter/shine_color = Color(1.0249712, 0.8560658, 0.3493494, 0.77254903)
 shader_parameter/size = Vector2(157, 99)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vqmod"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wykft"]
 shader = ExtResource("10_iuhy6")
 shader_parameter/color_tex = ExtResource("11_aydp7")
 shader_parameter/lines_tex = ExtResource("12_ht3k3")
@@ -83,9 +83,6 @@ shader_parameter/shade_uv_transform = Vector4(0.93, 1, 0.035, -0.4)
 shader_parameter/lines_uv_transform = Vector4(0.985, 1.06, 0.002, -0.12)
 shader_parameter/reveal_lines_margin = 0.15
 shader_parameter/reveal_margin = 0.15
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_acvkr"]
-shader = ExtResource("15_8ygtm")
 
 [sub_resource type="Gradient" id="Gradient_kbqer"]
 offsets = PackedFloat32Array(0, 0.30957, 0.484375)
@@ -466,7 +463,7 @@ mouse_filter = 2
 [node name="RarityOverlay" type="TextureRect" parent="VBoxContainer/Control/MaskContainer/MainContainer/Control" unique_id=1505576686]
 unique_name_in_owner = true
 self_modulate = Color(0.47, 0.742, 0.98, 1)
-material = SubResource("ShaderMaterial_g62ri")
+material = SubResource("ShaderMaterial_vqmod")
 instance_shader_parameters/factor = 0.0
 layout_mode = 1
 anchors_preset = 15
@@ -485,7 +482,7 @@ expand_mode = 1
 [node name="RarityOverlay2" type="TextureRect" parent="VBoxContainer/Control/MaskContainer/MainContainer/Control" unique_id=472590646]
 unique_name_in_owner = true
 self_modulate = Color(0.47, 0.742, 0.98, 1)
-material = SubResource("ShaderMaterial_g62ri")
+material = SubResource("ShaderMaterial_vqmod")
 instance_shader_parameters/factor = 0.0
 layout_mode = 1
 anchors_preset = 15
@@ -543,7 +540,7 @@ mouse_filter = 2
 
 [node name="Dowel" type="TextureRect" parent="VBoxContainer/Control" unique_id=404530162]
 unique_name_in_owner = true
-material = SubResource("ShaderMaterial_vqmod")
+material = SubResource("ShaderMaterial_wykft")
 instance_shader_parameters/anim_offset = 3.1999999284736
 layout_mode = 1
 anchors_preset = 1
@@ -562,7 +559,7 @@ expand_mode = 2
 
 [node name="Shadow" type="TextureRect" parent="VBoxContainer/Control/Dowel" unique_id=1036062035]
 show_behind_parent = true
-material = SubResource("ShaderMaterial_acvkr")
+material = ExtResource("13_g62ri")
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0

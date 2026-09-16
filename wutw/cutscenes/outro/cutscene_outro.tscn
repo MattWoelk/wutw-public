@@ -32,7 +32,6 @@
 [ext_resource type="Texture2D" uid="uid://5ol8hlcykd1n" path="res://cutscenes/outro/slides/5.labor.png" id="22_xtsil"]
 [ext_resource type="Texture2D" uid="uid://b5eahdro8gcl1" path="res://cutscenes/outro/slides/6.cozy_home.png" id="23_kiabe"]
 [ext_resource type="Texture2D" uid="uid://go64cbx1ohwd" path="res://theme/button/white_1x1px.png" id="23_xy7by"]
-[ext_resource type="Shader" uid="uid://gpgadexvoqm8" path="res://visuals/shaders/multiply.gdshader" id="24_4sw4g"]
 [ext_resource type="Resource" uid="uid://c8erc5hqtpp7i" path="res://art/pieces/piece_hiroshige_shokintei_in_yushima.tres" id="24_5ekmd"]
 [ext_resource type="Texture2D" uid="uid://blf8he4ae1vhn" path="res://cutscenes/outro/slides/7.travel.png" id="24_drhhn"]
 [ext_resource type="Resource" uid="uid://dprb0dcvsop7a" path="res://art/pieces/piece_hiroshige_kakegawa_akibayama_fork.tres" id="25_drhhn"]
@@ -45,6 +44,7 @@
 [ext_resource type="Resource" uid="uid://qjcc4emrpgu8" path="res://art/pieces/piece_hokusai_suspended_bridge.tres" id="34_7uuie"]
 [ext_resource type="PackedScene" uid="uid://csykkaqdpmv7l" path="res://main_menu/credits_list.tscn" id="39_7uuie"]
 [ext_resource type="LabelSettings" uid="uid://dpnq8h88a4njn" path="res://theme/fonts/presets/label_settings_outro_credits.tres" id="40_kjavs"]
+[ext_resource type="Material" uid="uid://cktp1jk7jhu" path="res://theme/scroll_panel/scroll_shadow_material.tres" id="45_7uuie"]
 
 [sub_resource type="Gradient" id="Gradient_4qknn"]
 offsets = PackedFloat32Array(0.00512295)
@@ -104,9 +104,6 @@ shader_parameter/gradient_tex = SubResource("GradientTexture2D_35omn")
 shader_parameter/gradient_factor = 0.83
 shader_parameter/noise_tex = SubResource("NoiseTexture2D_e4fdl")
 shader_parameter/noise_scale = Vector2(300, 50)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cq2dc"]
-shader = ExtResource("24_4sw4g")
 
 [sub_resource type="Gradient" id="Gradient_35omn"]
 offsets = PackedFloat32Array(0, 0.30957, 0.484375)
@@ -662,7 +659,7 @@ texture = ExtResource("23_xy7by")
 expand_mode = 1
 
 [node name="LeftShadow" type="TextureRect" parent="Main/LeftDowelContainer" unique_id=638373973]
-material = SubResource("ShaderMaterial_cq2dc")
+material = ExtResource("45_7uuie")
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 1
 anchors_preset = 10
@@ -721,7 +718,7 @@ texture = ExtResource("23_xy7by")
 expand_mode = 1
 
 [node name="RightShadow" type="TextureRect" parent="Main/RightDowelContainer" unique_id=1177589707]
-material = SubResource("ShaderMaterial_cq2dc")
+material = ExtResource("45_7uuie")
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 1
 anchors_preset = 10

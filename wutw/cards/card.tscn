@@ -18,8 +18,8 @@
 [ext_resource type="FontVariation" uid="uid://dn0ai0vy0frp1" path="res://theme/fonts/presets/font_card_ability.tres" id="12_1dpkt"]
 [ext_resource type="Texture2D" uid="uid://dykwqn284k67t" path="res://cards/art/signature_icon.png" id="13_acvkr"]
 [ext_resource type="Texture2D" uid="uid://bged7v8k4r7ty" path="res://cards/art/dowel_mask.png" id="14_iijrc"]
-[ext_resource type="Shader" uid="uid://gpgadexvoqm8" path="res://visuals/shaders/multiply.gdshader" id="16_hwwr4"]
 [ext_resource type="Material" uid="uid://dtsujt3iqw7ga" path="res://cards/art/card_dowel_mat_compatibility.tres" id="18_1sf5n"]
+[ext_resource type="Material" uid="uid://cktp1jk7jhu" path="res://theme/scroll_panel/scroll_shadow_material.tres" id="20_1sf5n"]
 
 [sub_resource type="Gradient" id="Gradient_p6473"]
 offsets = PackedFloat32Array(0.5061856, 0.56494844)
@@ -69,9 +69,6 @@ shader = ExtResource("9_iruc6")
 shader_parameter/noise_scale = 53.922
 shader_parameter/noise_strength = 0.242
 shader_parameter/noise_color = Color(0, 0, 0, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_acvkr"]
-shader = ExtResource("16_hwwr4")
 
 [sub_resource type="Gradient" id="Gradient_kbqer"]
 offsets = PackedFloat32Array(0, 0.30957, 0.484375)
@@ -792,7 +789,7 @@ expand_mode = 2
 
 [node name="Shadow" type="TextureRect" parent="RootVBox/Control/Dowel" unique_id=681517761]
 show_behind_parent = true
-material = SubResource("ShaderMaterial_acvkr")
+material = ExtResource("20_1sf5n")
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0

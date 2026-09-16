@@ -32,8 +32,8 @@
 [ext_resource type="Texture2D" uid="uid://5sok2l1kxkji" path="res://theme/scroll_panel/dowel_paper.png" id="25_n8ykd"]
 [ext_resource type="Texture2D" uid="uid://go64cbx1ohwd" path="res://theme/button/white_1x1px.png" id="26_8oym7"]
 [ext_resource type="Resource" uid="uid://bc6v02q8apwtq" path="res://art/pieces/piece_kouhou_river_torii.tres" id="26_oi0tg"]
-[ext_resource type="Shader" uid="uid://gpgadexvoqm8" path="res://visuals/shaders/multiply.gdshader" id="27_qcrl6"]
 [ext_resource type="Resource" uid="uid://by4bt7rw10s6j" path="res://art/pieces/piece_kouhou_moonlit_beach.tres" id="28_igx4k"]
+[ext_resource type="Material" uid="uid://cktp1jk7jhu" path="res://theme/scroll_panel/scroll_shadow_material.tres" id="34_igx4k"]
 
 [sub_resource type="Gradient" id="Gradient_4qknn"]
 offsets = PackedFloat32Array(0.00512295)
@@ -93,9 +93,6 @@ shader_parameter/gradient_tex = SubResource("GradientTexture2D_35omn")
 shader_parameter/gradient_factor = 0.83
 shader_parameter/noise_tex = SubResource("NoiseTexture2D_e4fdl")
 shader_parameter/noise_scale = Vector2(300, 50)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cq2dc"]
-shader = ExtResource("27_qcrl6")
 
 [sub_resource type="Gradient" id="Gradient_35omn"]
 offsets = PackedFloat32Array(0, 0.30957, 0.484375)
@@ -556,7 +553,7 @@ texture = ExtResource("26_8oym7")
 expand_mode = 1
 
 [node name="LeftShadow" type="TextureRect" parent="Main/LeftDowelContainer" unique_id=638373973]
-material = SubResource("ShaderMaterial_cq2dc")
+material = ExtResource("34_igx4k")
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 1
 anchors_preset = 10
@@ -615,7 +612,7 @@ texture = ExtResource("26_8oym7")
 expand_mode = 1
 
 [node name="RightShadow" type="TextureRect" parent="Main/RightDowelContainer" unique_id=1177589707]
-material = SubResource("ShaderMaterial_cq2dc")
+material = ExtResource("34_igx4k")
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 1
 anchors_preset = 10

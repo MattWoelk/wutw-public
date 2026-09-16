@@ -10,7 +10,7 @@
 [ext_resource type="Shader" uid="uid://bbe7ginxustev" path="res://theme/scroll_panel/scroll_panel_dowel.gdshader" id="7_dt8xp"]
 [ext_resource type="Texture2D" uid="uid://5sok2l1kxkji" path="res://theme/scroll_panel/dowel_paper.png" id="8_d4qo1"]
 [ext_resource type="Texture2D" uid="uid://go64cbx1ohwd" path="res://theme/button/white_1x1px.png" id="9_kf8n3"]
-[ext_resource type="Shader" uid="uid://gpgadexvoqm8" path="res://visuals/shaders/multiply.gdshader" id="10_t0kac"]
+[ext_resource type="Material" uid="uid://cktp1jk7jhu" path="res://theme/scroll_panel/scroll_shadow_material.tres" id="11_kwbr2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kwbr2"]
 shader = ExtResource("2_p8j3u")
@@ -53,9 +53,6 @@ shader_parameter/gradient_tex = SubResource("GradientTexture2D_35omn")
 shader_parameter/gradient_factor = 0.83
 shader_parameter/noise_tex = SubResource("NoiseTexture2D_e4fdl")
 shader_parameter/noise_scale = Vector2(300, 50)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_b5a66"]
-shader = ExtResource("10_t0kac")
 
 [sub_resource type="Gradient" id="Gradient_35omn"]
 offsets = PackedFloat32Array(0, 0.30957, 0.484375)
@@ -463,7 +460,7 @@ texture = ExtResource("9_kf8n3")
 expand_mode = 1
 
 [node name="LeftShadow" type="TextureRect" parent="Main/LeftDowelContainer" unique_id=1281413359]
-material = SubResource("ShaderMaterial_b5a66")
+material = ExtResource("11_kwbr2")
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 1
 anchors_preset = 10
@@ -512,7 +509,7 @@ texture = ExtResource("9_kf8n3")
 expand_mode = 1
 
 [node name="RightShadow" type="TextureRect" parent="Main/RightDowelContainer" unique_id=1411365644]
-material = SubResource("ShaderMaterial_b5a66")
+material = ExtResource("11_kwbr2")
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 1
 anchors_preset = 10

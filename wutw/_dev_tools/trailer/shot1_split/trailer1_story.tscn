@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://85oav62oshha"]
+[gd_scene format=3 uid="uid://85oav62oshha"]
 
 [ext_resource type="Script" uid="uid://dhl5t2e3yrwc6" path="res://_dev_tools/trailer/shot1_split/trailer1_story.gd" id="1_17p8p"]
 [ext_resource type="Texture2D" uid="uid://dfckpgronxi0j" path="res://_dev_tools/trailer/shot1_split/scenes.png" id="2_c0iqj"]
@@ -13,7 +13,7 @@
 [ext_resource type="Shader" uid="uid://bbe7ginxustev" path="res://theme/scroll_panel/scroll_panel_dowel.gdshader" id="11_quf86"]
 [ext_resource type="Texture2D" uid="uid://b0cvn7ev1bwut" path="res://theme/scroll_panel/dowel_wood.png" id="12_wn5j6"]
 [ext_resource type="Texture2D" uid="uid://go64cbx1ohwd" path="res://theme/button/white_1x1px.png" id="13_ywehr"]
-[ext_resource type="Shader" uid="uid://gpgadexvoqm8" path="res://visuals/shaders/multiply.gdshader" id="14_jvni3"]
+[ext_resource type="Material" uid="uid://cktp1jk7jhu" path="res://theme/scroll_panel/scroll_shadow_material.tres" id="14_17p8p"]
 [ext_resource type="Texture2D" uid="uid://5sok2l1kxkji" path="res://theme/scroll_panel/dowel_paper.png" id="15_4xu8f"]
 
 [sub_resource type="Animation" id="Animation_mlfyn"]
@@ -504,9 +504,6 @@ shader_parameter/gradient_factor = 0.83
 shader_parameter/noise_tex = SubResource("NoiseTexture2D_e4fdl")
 shader_parameter/noise_scale = Vector2(300, 50)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rxyoq"]
-shader = ExtResource("14_jvni3")
-
 [sub_resource type="Gradient" id="Gradient_35omn"]
 offsets = PackedFloat32Array(0, 0.30957, 0.484375)
 colors = PackedColorArray(0.5, 0.43825, 0.405, 1, 0.93, 0.899775, 0.8835, 1, 1, 1, 1, 1)
@@ -552,20 +549,18 @@ shader_parameter/gradient_factor = 0.83
 shader_parameter/noise_tex = SubResource("NoiseTexture2D_mnthn")
 shader_parameter/noise_scale = Vector2(300, 50)
 
-[node name="TrailerShot1" type="Node2D"]
+[node name="TrailerShot1" type="Node2D" unique_id=614627054]
 texture_filter = 4
 script = ExtResource("1_17p8p")
 metadata/movie_file = "C:/Users/max99/rendered_movies/1_story.avi"
 metadata/_edit_vertical_guides_ = [960.0]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=594218461]
 unique_name_in_owner = true
-libraries = {
-&"": SubResource("AnimationLibrary_tjuuw")
-}
+libraries/ = SubResource("AnimationLibrary_tjuuw")
 movie_quit_on_finish = true
 
-[node name="BlackBG" type="ColorRect" parent="."]
+[node name="BlackBG" type="ColorRect" parent="." unique_id=1887390235]
 z_index = -3
 offset_left = -255.0
 offset_top = -179.0
@@ -573,7 +568,7 @@ offset_right = 8132.0
 offset_bottom = 1291.0
 color = Color(0, 0, 0, 1)
 
-[node name="Scenes" type="TextureRect" parent="."]
+[node name="Scenes" type="TextureRect" parent="." unique_id=1095814565]
 z_index = -2
 offset_left = -6.0
 offset_top = -2.0
@@ -582,7 +577,7 @@ offset_bottom = 1078.0
 texture = ExtResource("2_c0iqj")
 stretch_mode = 2
 
-[node name="TearUnderLeft" type="TextureRect" parent="Scenes"]
+[node name="TearUnderLeft" type="TextureRect" parent="Scenes" unique_id=388873616]
 material = SubResource("ShaderMaterial_ayfy4")
 layout_mode = 1
 anchors_preset = 3
@@ -597,7 +592,7 @@ grow_vertical = 0
 texture = ExtResource("4_7wrk5")
 stretch_mode = 2
 
-[node name="TearUnderRight" type="TextureRect" parent="Scenes"]
+[node name="TearUnderRight" type="TextureRect" parent="Scenes" unique_id=605110103]
 material = SubResource("ShaderMaterial_atntp")
 layout_mode = 1
 anchors_preset = 3
@@ -613,7 +608,7 @@ pivot_offset = Vector2(1613.31, 1381.71)
 texture = ExtResource("6_opq4w")
 stretch_mode = 2
 
-[node name="TearOverLeft" type="TextureRect" parent="Scenes"]
+[node name="TearOverLeft" type="TextureRect" parent="Scenes" unique_id=301037821]
 material = SubResource("ShaderMaterial_1xnat")
 layout_mode = 1
 anchors_preset = 3
@@ -628,7 +623,7 @@ grow_vertical = 0
 texture = ExtResource("8_x15l8")
 stretch_mode = 2
 
-[node name="TearOverRight" type="TextureRect" parent="Scenes"]
+[node name="TearOverRight" type="TextureRect" parent="Scenes" unique_id=189172294]
 material = SubResource("ShaderMaterial_mnthn")
 layout_mode = 1
 anchors_preset = 3
@@ -644,7 +639,7 @@ pivot_offset = Vector2(1613.31, 1381.71)
 texture = ExtResource("9_msgvu")
 stretch_mode = 2
 
-[node name="LeftDowelContainer" type="NinePatchRect" parent="."]
+[node name="LeftDowelContainer" type="NinePatchRect" parent="." unique_id=245304390]
 texture_filter = 2
 custom_minimum_size = Vector2(0, 72)
 offset_left = -1076.0
@@ -658,7 +653,7 @@ patch_margin_right = 72
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[node name="LeftDowelWood" type="TextureRect" parent="LeftDowelContainer"]
+[node name="LeftDowelWood" type="TextureRect" parent="LeftDowelContainer" unique_id=722632184]
 unique_name_in_owner = true
 show_behind_parent = true
 material = SubResource("ShaderMaterial_7au80")
@@ -676,8 +671,8 @@ mouse_filter = 2
 texture = ExtResource("13_ywehr")
 expand_mode = 1
 
-[node name="LeftShadow" type="TextureRect" parent="LeftDowelContainer"]
-material = SubResource("ShaderMaterial_rxyoq")
+[node name="LeftShadow" type="TextureRect" parent="LeftDowelContainer" unique_id=799060520]
+material = ExtResource("14_17p8p")
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 1
 anchors_preset = 10
@@ -691,7 +686,7 @@ size_flags_vertical = 0
 mouse_filter = 2
 texture = SubResource("GradientTexture2D_6t0vr")
 
-[node name="ScrollHider" type="ColorRect" parent="LeftDowelContainer"]
+[node name="ScrollHider" type="ColorRect" parent="LeftDowelContainer" unique_id=11776107]
 z_index = -1
 layout_mode = 0
 offset_left = -60.3211
@@ -700,7 +695,7 @@ offset_right = 1285.68
 offset_bottom = 37.978
 color = Color(0, 0, 0, 1)
 
-[node name="RightDowelContainer" type="NinePatchRect" parent="."]
+[node name="RightDowelContainer" type="NinePatchRect" parent="." unique_id=888137064]
 z_index = 1
 texture_filter = 2
 custom_minimum_size = Vector2(0, 72)
@@ -715,7 +710,7 @@ patch_margin_right = 72
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[node name="RightDowelWood" type="TextureRect" parent="RightDowelContainer"]
+[node name="RightDowelWood" type="TextureRect" parent="RightDowelContainer" unique_id=1308179781]
 unique_name_in_owner = true
 show_behind_parent = true
 material = SubResource("ShaderMaterial_5ennp")
@@ -733,8 +728,8 @@ mouse_filter = 2
 texture = ExtResource("13_ywehr")
 expand_mode = 1
 
-[node name="RightShadow" type="TextureRect" parent="RightDowelContainer"]
-material = SubResource("ShaderMaterial_rxyoq")
+[node name="RightShadow" type="TextureRect" parent="RightDowelContainer" unique_id=1356239957]
+material = ExtResource("14_17p8p")
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 1
 anchors_preset = 10
@@ -749,7 +744,7 @@ size_flags_vertical = 0
 mouse_filter = 2
 texture = SubResource("GradientTexture2D_6t0vr")
 
-[node name="ScrollHider" type="ColorRect" parent="RightDowelContainer"]
+[node name="ScrollHider" type="ColorRect" parent="RightDowelContainer" unique_id=415438596]
 z_index = -1
 layout_mode = 0
 offset_left = -13.0
@@ -758,6 +753,6 @@ offset_right = 1333.0
 offset_bottom = 1942.0
 color = Color(0, 0, 0, 1)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=811932621]
 position = Vector2(960, 540)
 zoom = Vector2(0.905, 0.905)

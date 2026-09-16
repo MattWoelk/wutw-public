@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b6ob53b0vla40"]
+[gd_scene format=3 uid="uid://b6ob53b0vla40"]
 
 [ext_resource type="Script" uid="uid://dbnda81f1wygw" path="res://theme/scroll_panel/scroll_panel.gd" id="1_ld7ho"]
 [ext_resource type="WwiseEvent" uid="uid://pjwrft08x8pl" path="res://Wwise/resources/Event/{56D4F930-58EA-44D3-BDB6-A977BF1D19E9}.tres" id="2_hxtsi"]
@@ -7,10 +7,8 @@
 [ext_resource type="WwiseEvent" uid="uid://c3twaschx8pcj" path="res://Wwise/resources/Event/{AE5EE484-9079-4D94-AFAD-E10017944FFD}.tres" id="3_shtx1"]
 [ext_resource type="Texture2D" uid="uid://b0cvn7ev1bwut" path="res://theme/scroll_panel/dowel_wood.png" id="4_shtx1"]
 [ext_resource type="Texture2D" uid="uid://go64cbx1ohwd" path="res://theme/button/white_1x1px.png" id="5_uhmg2"]
-[ext_resource type="Shader" uid="uid://gpgadexvoqm8" path="res://visuals/shaders/multiply.gdshader" id="6_2xdj3"]
-[ext_resource type="Shader" uid="uid://cy23kwgtjt4et" path="res://theme/panel/panel.gdshader" id="7_mhhg2"]
-[ext_resource type="Texture2D" uid="uid://cgsn7350xgqr5" path="res://theme/panel/panel_bg.png" id="8_k2a6q"]
-[ext_resource type="Texture2D" uid="uid://bnkoruxi23qsp" path="res://theme/panel/panel_frame.png" id="9_t03af"]
+[ext_resource type="Material" uid="uid://cktp1jk7jhu" path="res://theme/scroll_panel/scroll_shadow_material.tres" id="8_ld7ho"]
+[ext_resource type="Material" uid="uid://dx3qmo2m6ybh4" path="res://theme/panel/ukiyoe_panel_container_material.tres" id="9_i2lm6"]
 [ext_resource type="StyleBox" uid="uid://d07v5v8gcmg2c" path="res://theme/panel/ukiyoe_panel_container_stylebox.tres" id="10_fckec"]
 [ext_resource type="Script" uid="uid://dveiu76ujl3xp" path="res://theme/panel/ukiyoe_panel_container.gd" id="11_3k3xd"]
 
@@ -40,7 +38,7 @@ color_ramp = SubResource("Gradient_0fvof")
 seamless = true
 seamless_blend_skirt = 0.27
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_uhmg2"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hxtsi"]
 shader = ExtResource("3_hxtsi")
 shader_parameter/size = Vector2(100, 49)
 shader_parameter/scroll_offset = 1.0
@@ -51,9 +49,6 @@ shader_parameter/gradient_factor = 0.83
 shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
 shader_parameter/noise_scale = Vector2(300, 50)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_spjwi"]
-shader = ExtResource("6_2xdj3")
-
 [sub_resource type="Gradient" id="Gradient_kbqer"]
 offsets = PackedFloat32Array(0, 0.30957, 0.484375)
 colors = PackedColorArray(0.5, 0.43825, 0.405, 1, 0.93, 0.899775, 0.8835, 1, 1, 1, 1, 1)
@@ -62,30 +57,7 @@ colors = PackedColorArray(0.5, 0.43825, 0.405, 1, 0.93, 0.899775, 0.8835, 1, 1, 
 gradient = SubResource("Gradient_kbqer")
 fill_to = Vector2(0, 1)
 
-[sub_resource type="Gradient" id="Gradient_4qknn"]
-offsets = PackedFloat32Array(0.00512295)
-colors = PackedColorArray(0.71, 0.543387, 0.2556, 0.168627)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_l7j7v"]
-gradient = SubResource("Gradient_4qknn")
-fill_from = Vector2(1, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2xdj3"]
-shader = ExtResource("7_mhhg2")
-shader_parameter/size = Vector2(126.818146, 68.18182)
-shader_parameter/background = ExtResource("8_k2a6q")
-shader_parameter/background_shade = SubResource("GradientTexture2D_l7j7v")
-shader_parameter/background_tex_size = Vector2(2291, 3118)
-shader_parameter/background_scale = 2.0
-shader_parameter/frame_tex = ExtResource("9_t03af")
-shader_parameter/frame_tex_size = Vector2(1127, 976)
-shader_parameter/frame_margin = Vector4(15, 15, 15, 15)
-shader_parameter/frame_scale = 0.93
-shader_parameter/frame_color = Color(0.24, 0.18848, 0.1056, 1)
-shader_parameter/decor_transform = Vector4(0, 0, 300, 100)
-shader_parameter/decor_modulate = Color(1, 1, 1, 0)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mhhg2"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_shtx1"]
 shader = ExtResource("3_hxtsi")
 shader_parameter/size = Vector2(98, 49)
 shader_parameter/scroll_offset = 1.0
@@ -96,7 +68,7 @@ shader_parameter/gradient_factor = 0.83
 shader_parameter/noise_tex = SubResource("NoiseTexture2D_jijvn")
 shader_parameter/noise_scale = Vector2(300, 50)
 
-[node name="ScrollPanel" type="VBoxContainer"]
+[node name="ScrollPanel" type="VBoxContainer" unique_id=693718778]
 custom_minimum_size = Vector2(200, 0)
 offset_right = 200.0
 offset_bottom = 146.0
@@ -108,7 +80,7 @@ min_height = 30.0
 roll_sound = ExtResource("2_hxtsi")
 roll_end_sound = ExtResource("3_shtx1")
 
-[node name="TopDowelContainer" type="NinePatchRect" parent="."]
+[node name="TopDowelContainer" type="NinePatchRect" parent="." unique_id=342493614]
 texture_filter = 2
 custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
@@ -118,10 +90,10 @@ patch_margin_right = 72
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[node name="TopDowelWood" type="TextureRect" parent="TopDowelContainer"]
+[node name="TopDowelWood" type="TextureRect" parent="TopDowelContainer" unique_id=1613891224]
 unique_name_in_owner = true
 show_behind_parent = true
-material = SubResource("ShaderMaterial_uhmg2")
+material = SubResource("ShaderMaterial_hxtsi")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -136,8 +108,8 @@ mouse_filter = 2
 texture = ExtResource("5_uhmg2")
 expand_mode = 1
 
-[node name="TopShadow" type="TextureRect" parent="TopDowelContainer"]
-material = SubResource("ShaderMaterial_spjwi")
+[node name="TopShadow" type="TextureRect" parent="TopDowelContainer" unique_id=48584747]
+material = ExtResource("8_ld7ho")
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 1
 anchors_preset = 10
@@ -151,16 +123,16 @@ size_flags_vertical = 0
 mouse_filter = 2
 texture = SubResource("GradientTexture2D_55rq6")
 
-[node name="Scroller" type="Control" parent="."]
+[node name="Scroller" type="Control" parent="." unique_id=1198019596]
 unique_name_in_owner = true
 show_behind_parent = true
-clip_contents = true
 custom_minimum_size = Vector2(0, 50)
+clip_contents = true
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="ScrollMargin" type="MarginContainer" parent="Scroller"]
+[node name="ScrollMargin" type="MarginContainer" parent="Scroller" unique_id=1378367648]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -174,9 +146,9 @@ mouse_filter = 2
 theme_override_constants/margin_left = 55
 theme_override_constants/margin_right = 52
 
-[node name="ContentPanel" type="PanelContainer" parent="Scroller/ScrollMargin"]
+[node name="ContentPanel" type="PanelContainer" parent="Scroller/ScrollMargin" unique_id=374786997]
 unique_name_in_owner = true
-material = SubResource("ShaderMaterial_2xdj3")
+material = ExtResource("9_i2lm6")
 clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 0
@@ -186,7 +158,7 @@ theme_override_styles/panel = ExtResource("10_fckec")
 script = ExtResource("11_3k3xd")
 metadata/_custom_type_script = "uid://dveiu76ujl3xp"
 
-[node name="ContentContainer" type="MarginContainer" parent="Scroller/ScrollMargin/ContentPanel"]
+[node name="ContentContainer" type="MarginContainer" parent="Scroller/ScrollMargin/ContentPanel" unique_id=1883726475]
 custom_minimum_size = Vector2(77, 0)
 layout_mode = 2
 mouse_filter = 2
@@ -195,7 +167,7 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 20
 
-[node name="BottomDowelContainer" type="NinePatchRect" parent="."]
+[node name="BottomDowelContainer" type="NinePatchRect" parent="." unique_id=1374984701]
 texture_filter = 2
 custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
@@ -205,10 +177,10 @@ patch_margin_left = 75
 patch_margin_right = 75
 axis_stretch_horizontal = 1
 
-[node name="BottomDowelWood" type="TextureRect" parent="BottomDowelContainer"]
+[node name="BottomDowelWood" type="TextureRect" parent="BottomDowelContainer" unique_id=1069182626]
 unique_name_in_owner = true
 show_behind_parent = true
-material = SubResource("ShaderMaterial_mhhg2")
+material = SubResource("ShaderMaterial_shtx1")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -224,8 +196,8 @@ texture = ExtResource("5_uhmg2")
 expand_mode = 1
 flip_v = true
 
-[node name="BottomShadow" type="TextureRect" parent="BottomDowelContainer"]
-material = SubResource("ShaderMaterial_spjwi")
+[node name="BottomShadow" type="TextureRect" parent="BottomDowelContainer" unique_id=190040716]
+material = ExtResource("8_ld7ho")
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 1
 anchors_preset = 12

@@ -11,6 +11,7 @@
 [ext_resource type="Material" uid="uid://dm0coidukcc6" path="res://theme/button/ukiyoe_button_material.tres" id="14_reldc"]
 [ext_resource type="StyleBox" uid="uid://cgfty8h2s2asc" path="res://theme/button/ukiyoe_button_stylebox.tres" id="15_pedef"]
 [ext_resource type="Script" uid="uid://tmvhmuymumhk" path="res://theme/button/ukiyoe_button.gd" id="16_ax4s5"]
+[ext_resource type="Material" uid="uid://cktp1jk7jhu" path="res://theme/scroll_panel/scroll_shadow_material.tres" id="16_pedef"]
 [ext_resource type="Texture2D" uid="uid://chxf88ekbq0ie" path="res://visuals/canvas.png" id="18_snsib"]
 [ext_resource type="Texture2D" uid="uid://cswm4x5hux4oa" path="res://cutscenes/intro/slides/frame.png" id="19_4u01g"]
 [ext_resource type="Texture2D" uid="uid://cghpxhug3r673" path="res://cutscenes/intro/slides/9.png" id="39_llqd5"]
@@ -18,7 +19,6 @@
 [ext_resource type="Shader" uid="uid://bbe7ginxustev" path="res://theme/scroll_panel/scroll_panel_dowel.gdshader" id="43_f27t6"]
 [ext_resource type="Texture2D" uid="uid://5sok2l1kxkji" path="res://theme/scroll_panel/dowel_paper.png" id="44_0a02i"]
 [ext_resource type="Texture2D" uid="uid://go64cbx1ohwd" path="res://theme/button/white_1x1px.png" id="45_3yjbs"]
-[ext_resource type="Shader" uid="uid://gpgadexvoqm8" path="res://visuals/shaders/multiply.gdshader" id="46_wiqdb"]
 
 [sub_resource type="Gradient" id="Gradient_4qknn"]
 offsets = PackedFloat32Array(0.00512295)
@@ -78,9 +78,6 @@ shader_parameter/gradient_tex = SubResource("GradientTexture2D_35omn")
 shader_parameter/gradient_factor = 0.83
 shader_parameter/noise_tex = SubResource("NoiseTexture2D_e4fdl")
 shader_parameter/noise_scale = Vector2(300, 50)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cq2dc"]
-shader = ExtResource("46_wiqdb")
 
 [sub_resource type="Gradient" id="Gradient_35omn"]
 offsets = PackedFloat32Array(0, 0.30957, 0.484375)
@@ -148,7 +145,6 @@ mouse_filter = 2
 
 [node name="UkiyoePanelContainer" type="PanelContainer" parent="Main" unique_id=1429352385]
 material = ExtResource("6_pedef")
-instance_shader_parameters/size = Vector2(151.1748, 36.624832)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -266,7 +262,7 @@ texture = ExtResource("45_3yjbs")
 expand_mode = 1
 
 [node name="LeftShadow" type="TextureRect" parent="Main/LeftDowelContainer" unique_id=383857116]
-material = SubResource("ShaderMaterial_cq2dc")
+material = ExtResource("16_pedef")
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 1
 anchors_preset = 10
@@ -316,7 +312,7 @@ texture = ExtResource("45_3yjbs")
 expand_mode = 1
 
 [node name="RightShadow" type="TextureRect" parent="Main/RightDowelContainer" unique_id=2071224950]
-material = SubResource("ShaderMaterial_cq2dc")
+material = ExtResource("16_pedef")
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 1
 anchors_preset = 10
@@ -334,7 +330,6 @@ texture = SubResource("GradientTexture2D_ygpw5")
 [node name="CloseButton" type="Button" parent="Main" unique_id=1178847054]
 material = ExtResource("14_reldc")
 instance_shader_parameters/background_offset = Vector2(0.081380576, 0.018749613)
-instance_shader_parameters/size = Vector2(56.45282, 27.886414)
 instance_shader_parameters/state = 0.0
 layout_mode = 1
 anchors_preset = 7
@@ -349,6 +344,7 @@ offset_bottom = 17.388184
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(1.159, 1.159)
+focus_mode = 0
 theme_override_styles/normal = ExtResource("15_pedef")
 theme_override_styles/pressed = ExtResource("15_pedef")
 theme_override_styles/hover = ExtResource("15_pedef")

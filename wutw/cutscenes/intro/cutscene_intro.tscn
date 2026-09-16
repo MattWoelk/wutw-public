@@ -19,7 +19,6 @@
 [ext_resource type="AudioStream" uid="uid://d07v5x6k14tal" path="res://cutscenes/intro/voice/5.mp3" id="10_hmyrg"]
 [ext_resource type="Texture2D" uid="uid://go64cbx1ohwd" path="res://theme/button/white_1x1px.png" id="10_p32e1"]
 [ext_resource type="Texture2D" uid="uid://cj11d1rj20dkh" path="res://cutscenes/intro/slides/6.png" id="11_7v3xh"]
-[ext_resource type="Shader" uid="uid://gpgadexvoqm8" path="res://visuals/shaders/multiply.gdshader" id="11_c6fh6"]
 [ext_resource type="AudioStream" uid="uid://bnegnea8i0fpy" path="res://cutscenes/intro/voice/6.mp3" id="11_kpoyh"]
 [ext_resource type="Texture2D" uid="uid://lycftsr86dkj" path="res://cutscenes/intro/slides/5.png" id="12_nw8ce"]
 [ext_resource type="Texture2D" uid="uid://5sok2l1kxkji" path="res://theme/scroll_panel/dowel_paper.png" id="12_twxug"]
@@ -47,6 +46,7 @@
 [ext_resource type="Resource" uid="uid://bhebbkxyburdw" path="res://art/pieces/piece_composed_shards_from_a_balcony.tres" id="29_p4lxa"]
 [ext_resource type="Resource" uid="uid://ns6dh6btwor7" path="res://art/pieces/piece_hokusai_mountain_climbers.tres" id="31_s1xu5"]
 [ext_resource type="Resource" uid="uid://bmcrejdna3l0t" path="res://art/pieces/piece_hiroshige_okabe_mount_utsu.tres" id="33_is1yu"]
+[ext_resource type="Material" uid="uid://cktp1jk7jhu" path="res://theme/scroll_panel/scroll_shadow_material.tres" id="47_0nh0s"]
 [ext_resource type="Texture2D" uid="uid://yyq4l22vf4bw" path="res://utils/input_icons/sd_rtrackpad_click_md.png" id="48_0nh0s"]
 
 [sub_resource type="Gradient" id="Gradient_4qknn"]
@@ -107,9 +107,6 @@ shader_parameter/gradient_tex = SubResource("GradientTexture2D_35omn")
 shader_parameter/gradient_factor = 0.83
 shader_parameter/noise_tex = SubResource("NoiseTexture2D_e4fdl")
 shader_parameter/noise_scale = Vector2(300, 50)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cq2dc"]
-shader = ExtResource("11_c6fh6")
 
 [sub_resource type="Gradient" id="Gradient_35omn"]
 offsets = PackedFloat32Array(0, 0.30957, 0.484375)
@@ -687,7 +684,7 @@ texture = ExtResource("10_p32e1")
 expand_mode = 1
 
 [node name="LeftShadow" type="TextureRect" parent="Main/LeftDowelContainer" unique_id=383857116]
-material = SubResource("ShaderMaterial_cq2dc")
+material = ExtResource("47_0nh0s")
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 1
 anchors_preset = 10
@@ -746,7 +743,7 @@ texture = ExtResource("10_p32e1")
 expand_mode = 1
 
 [node name="RightShadow" type="TextureRect" parent="Main/RightDowelContainer" unique_id=2071224950]
-material = SubResource("ShaderMaterial_cq2dc")
+material = ExtResource("47_0nh0s")
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 1
 anchors_preset = 10

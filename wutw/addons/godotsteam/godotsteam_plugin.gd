@@ -79,7 +79,8 @@ func remove_steamworks_dock() -> void:
 	#remove_control_from_docks(steamworks_dock)
 	# This is deprecated as of 4.6; when it is removed then 4.4.x will be deprecated for GodotSteam
 	remove_control_from_bottom_panel(steamworks_dock)
-	steamworks_dock.queue_free()
+	# This may be causing crashes for some people and is unnecessary with the call above
+	# steamworks_dock.queue_free()
 	steamworks_dock = null
 	dock_frame = null
 #endregion

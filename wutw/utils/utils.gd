@@ -122,7 +122,7 @@ static func is_demo() -> bool:
 	return OS.has_feature('demo')
 
 static func is_steam_deck() -> bool:
-	return is_packaged() and Steam.isSteamRunningOnSteamDeck()
+	return is_packaged() and Steam.isRunningOnSteamHardware()
 
 static func is_mac_os() -> bool:
 	return OS.has_feature('macos')
